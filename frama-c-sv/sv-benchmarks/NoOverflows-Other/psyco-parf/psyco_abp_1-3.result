@@ -1,0 +1,101 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 22 -eva-plevel 24 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 14 -machdep x86_32 /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/output/program.c /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:29: Warning: 
+INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
+INFO:FRAMAC:  Its formals will be inferred from actual arguments
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  m_Protocol ∈ {1}
+INFO:FRAMAC:  m_msg_2 ∈ {2}
+INFO:FRAMAC:  m_recv_ack_2 ∈ {3}
+INFO:FRAMAC:  m_msg_1_1 ∈ {4}
+INFO:FRAMAC:  m_msg_1_2 ∈ {5}
+INFO:FRAMAC:  m_recv_ack_1_1 ∈ {6}
+INFO:FRAMAC:  m_recv_ack_1_2 ∈ {7}
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:56: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:59: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:76: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:92: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:108: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:124: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:140: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:156: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:159: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:276: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:292: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:308: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:324: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:340: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:356: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:359: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:376: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:392: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:408: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:424: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:440: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:456: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:459: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:26: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:476: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:492: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:508: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:524: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:540: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:556: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:559: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva:alarm] output/program.c:567: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  q ∈ {2}
+INFO:FRAMAC:  method_id ∈ {2; 3; 4; 5; 6; 7}
+INFO:FRAMAC:  this_expect ∈ [--..--]
+INFO:FRAMAC:  this_buffer_empty ∈ {0; 1}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  3 functions analyzed (out of 18): 16% coverage.
+INFO:FRAMAC:  In these functions, 446 statements reached (out of 556): 80% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  0 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true
+
+real	0m2.483s
+user	0m3.043s
+sys	0m0.930s

@@ -1,0 +1,96 @@
+directory	file	line	function	property kind	status	property
+.	semver.c	71	has_valid_chars	precondition of strlen	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	94	parse_int	precondition of strtol	Unknown	valid_string_nptr: valid_read_string(nptr)
+.	semver.c	110	parse_slice	precondition of strchr	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	113	parse_slice	precondition of strlen	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	118	parse_slice	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	semver.c	118	parse_slice	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	semver.c	120	parse_slice	mem_access	Unknown	\valid(part + plen)
+.	semver.c	179	semver_parse_version	precondition of strchr	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	181	semver_parse_version	precondition of strlen	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	187	semver_parse_version	precondition of strtol	Unknown	valid_string_nptr: valid_read_string(nptr)
+.	semver.c	221	compare_prerelease	precondition of strchr	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	221	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)xptr, (void *)0)
+.	semver.c	223	compare_prerelease	precondition of strchr	Unknown	valid_string_s: valid_read_string(s)
+.	semver.c	223	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)yptr, (void *)0)
+.	semver.c	226	compare_prerelease	precondition of strtol	Unknown	valid_string_nptr: valid_read_string(nptr)
+.	semver.c	227	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)endptr, (void *)xptr)
+.	semver.c	228	compare_prerelease	precondition of strtol	Unknown	valid_string_nptr: valid_read_string(nptr)
+.	semver.c	229	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)endptr, (void *)yptr)
+.	semver.c	242	compare_prerelease	precondition of strncmp	Unknown	valid_string_s1: valid_read_nstring(s1, n)
+.	semver.c	242	compare_prerelease	precondition of strncmp	Unknown	valid_string_s2: valid_read_nstring(s2, n)
+.	semver.c	248	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)lastx, (void *)((x + xlen) + 1))
+.	semver.c	248	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)lasty, (void *)((y + ylen) + 1))
+.	semver.c	249	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)lastx, (void *)((x + xlen) + 1))
+.	semver.c	250	compare_prerelease	ptr_comparison	Unknown	\pointer_comparable((void *)lasty, (void *)((y + ylen) + 1))
+.	semver.c	466	semver_free	initialization	Unknown	\initialized(&x->metadata)
+.	semver.c	470	semver_free	initialization	Unknown	\initialized(&x->prerelease)
+.	semver.c	485	concat_num	precondition of strcat	Unknown	room_string: \valid(dest + (0 .. strlen(dest) + strlen(src)))
+.	semver.c	485	concat_num	precondition of strcat	Unknown	valid_string_dest: valid_string(dest)
+.	semver.c	485	concat_num	precondition of strcat	Unknown	valid_string_src: valid_read_string(src)
+.	semver.c	492	concat_char	precondition of strcat	Unknown	room_string: \valid(dest + (0 .. strlen(dest) + strlen(src)))
+.	semver.c	492	concat_char	precondition of strcat	Unknown	valid_string_dest: valid_string(dest)
+.	semver.c	492	concat_char	precondition of strcat	Unknown	valid_string_src: valid_read_string(src)
+.	semver.c	613	semver_numeric	signed_overflow	Unknown	num + tmp ≤ 2147483647
+.	semver.c	614	semver_numeric	signed_overflow	Unknown	num + tmp_0 ≤ 2147483647
+.	semver_test.c	44	compare_helper	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	68	test_parse_simple	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	69	test_parse_simple	initialization	Unknown	\initialized(&ver.major)
+.	semver_test.c	69	test_parse_simple	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	70	test_parse_simple	initialization	Unknown	\initialized(&ver.minor)
+.	semver_test.c	70	test_parse_simple	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	71	test_parse_simple	initialization	Unknown	\initialized(&ver.patch)
+.	semver_test.c	71	test_parse_simple	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	87	test_parse_major	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	88	test_parse_major	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	89	test_parse_major	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	106	test_parse_minor	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	107	test_parse_minor	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	108	test_parse_minor	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	109	test_parse_minor	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	125	test_parse_prerelease	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	126	test_parse_prerelease	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	127	test_parse_prerelease	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	128	test_parse_prerelease	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	129	test_parse_prerelease	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	129	test_parse_prerelease	precondition of strcmp	Unknown	valid_string_s1: valid_read_string(s1)
+.	semver_test.c	145	test_parse_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	146	test_parse_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	147	test_parse_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	148	test_parse_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	149	test_parse_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	149	test_parse_metadata	precondition of strcmp	Unknown	valid_string_s1: valid_read_string(s1)
+.	semver_test.c	165	test_parse_prerelerease_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	166	test_parse_prerelerease_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	167	test_parse_prerelerease_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	168	test_parse_prerelerease_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	169	test_parse_prerelerease_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	169	test_parse_prerelerease_metadata	precondition of strcmp	Unknown	valid_string_s1: valid_read_string(s1)
+.	semver_test.c	170	test_parse_prerelerease_metadata	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	170	test_parse_prerelerease_metadata	precondition of strcmp	Unknown	valid_string_s1: valid_read_string(s1)
+.	semver_test.c	492	test_satisfies	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	513	test_render	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	513	test_render	precondition of strcmp	Unknown	valid_string_s1: valid_read_string(s1)
+.	semver_test.c	520	test_render	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	520	test_render	precondition of strcmp	Unknown	valid_string_s1: valid_read_string(s1)
+.	semver_test.c	530	test_numeric	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	533	test_numeric	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	536	test_numeric	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	539	test_numeric	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	615	test_free	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	616	test_free	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	622	test_free	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	665	test_clean	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+.	semver_test.c	670	test_clean	precondition of __FC_assert	Unknown	nonnull_c: c ≢ 0
+FRAMAC_SHARE/libc	assert.h	31	__FC_assert	precondition	Unknown	nonnull_c: c ≢ 0
+FRAMAC_SHARE/libc	stdlib.h	165	strtol	precondition	Unknown	valid_string_nptr: valid_read_string(nptr)
+FRAMAC_SHARE/libc	string.h	95	memcpy	precondition	Unknown	valid_dest: valid_or_empty(dest, n)
+FRAMAC_SHARE/libc	string.h	96	memcpy	precondition	Unknown	valid_src: valid_read_or_empty(src, n)
+FRAMAC_SHARE/libc	string.h	141	strlen	precondition	Unknown	valid_string_s: valid_read_string(s)
+FRAMAC_SHARE/libc	string.h	153	strcmp	precondition	Unknown	valid_string_s1: valid_read_string(s1)
+FRAMAC_SHARE/libc	string.h	160	strncmp	precondition	Unknown	valid_string_s1: valid_read_nstring(s1, n)
+FRAMAC_SHARE/libc	string.h	161	strncmp	precondition	Unknown	valid_string_s2: valid_read_nstring(s2, n)
+FRAMAC_SHARE/libc	string.h	173	strchr	precondition	Unknown	valid_string_s: valid_read_string(s)
+FRAMAC_SHARE/libc	string.h	424	strcat	precondition	Unknown	valid_string_src: valid_read_string(src)
+FRAMAC_SHARE/libc	string.h	425	strcat	precondition	Unknown	valid_string_dest: valid_string(dest)
+FRAMAC_SHARE/libc	string.h	426	strcat	precondition	Unknown	room_string: \valid(dest + (0 .. strlen(dest) + strlen(src)))

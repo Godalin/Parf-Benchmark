@@ -1,0 +1,370 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/program.c /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0, 1 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:alarm] output/program.c:91: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__in_handshake + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:92: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ tmp___1 - 12288;
+INFO:FRAMAC:[eva:alarm] output/program.c:93: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ tmp___2 - 16384;
+INFO:FRAMAC:[eva:alarm] output/program.c:210: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert s__ctx__stats__sess_connect_renegotiate + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:221: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ s__version - 65280;
+INFO:FRAMAC:[eva:alarm] output/program.c:259: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_connect + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:603: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:603: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:586: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:603: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:586: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:603: Trace partitioning superposing up to 1100 states
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:603: loop not completely unrolled
+INFO:FRAMAC:[eva:alarm] output/program.c:462: Warning: 
+INFO:FRAMAC:  signed overflow. assert (long)s__s3__flags - (long)(-5L) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:467: Warning: 
+INFO:FRAMAC:  signed overflow. assert (long)s__s3__flags + 4L ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:586: Trace partitioning superposing up to 1500 states
+INFO:FRAMAC:[eva] output/program.c:603: Trace partitioning superposing up to 2200 states
+INFO:FRAMAC:[eva:alarm] output/program.c:506: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&s__s3__tmp__next_state___0);
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 5600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 5700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 5900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 6100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 6300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 6500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 6800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 7000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 7200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 7400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 7600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 7900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 8100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 8300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 8500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 8700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 9000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 9200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 9400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 9600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 9800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 10100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 10300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 10500 states
+INFO:FRAMAC:[eva:alarm] output/program.c:364: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&ag_X);
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 10600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 10700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 10900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 11800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 12800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 13900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 14900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 15900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 16900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 17900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 18900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 19800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 20900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 21900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 22900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 23900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24800 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 24900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 25900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26400 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26700 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 26900 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27000 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27100 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27200 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27300 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27400 states
+INFO:FRAMAC:[eva] output/program.c:102: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27500 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27600 states
+INFO:FRAMAC:[eva] output/program.c:538: Trace partitioning superposing up to 27700 states
+INFO:FRAMAC:[eva:alarm] output/program.c:616: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:514: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (long)s__s3__flags - 4L;
+INFO:FRAMAC:[eva:alarm] output/program.c:522: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_hit + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:527: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_connect_good + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:608: Trace partitioning superposing up to 36700 states
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function ssl3_connect:
+INFO:FRAMAC:  s__info_callback ∈ [--..--]
+INFO:FRAMAC:  s__in_handshake ∈ [-2147483648..2147483646]
+INFO:FRAMAC:  s__state ∈ [--..--]
+INFO:FRAMAC:  s__new_session ∈ {0; 1}
+INFO:FRAMAC:  s__server ∈ {0}
+INFO:FRAMAC:  s__version ∈ [-2147418368..2147483647]
+INFO:FRAMAC:  s__type ∈ {4096} or UNINITIALIZED
+INFO:FRAMAC:  s__init_num ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  s__bbio ∈ [--..--]
+INFO:FRAMAC:  s__wbio ∈ [--..--]
+INFO:FRAMAC:  s__hit ∈ [--..--]
+INFO:FRAMAC:  s__rwstate ∈ {1; 2} or UNINITIALIZED
+INFO:FRAMAC:  s__init_buf___0 ∈ [--..--]
+INFO:FRAMAC:  s__debug ∈ [--..--]
+INFO:FRAMAC:  s__shutdown ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  s__ctx__info_callback ∈ [--..--]
+INFO:FRAMAC:  s__ctx__stats__sess_connect_renegotiate ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  s__ctx__stats__sess_connect ∈ [--..--]
+INFO:FRAMAC:  s__ctx__stats__sess_hit ∈ [--..--]
+INFO:FRAMAC:  s__ctx__stats__sess_connect_good ∈ [--..--]
+INFO:FRAMAC:  s__s3__change_cipher_spec ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  s__s3__flags ∈ [--..--]
+INFO:FRAMAC:  s__s3__delay_buf_pop_ret ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  s__s3__tmp__cert_req ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__new_compression ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__reuse_message ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__new_cipher ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__new_cipher__algorithms ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__next_state___0 ∈ {3; 4560} or UNINITIALIZED
+INFO:FRAMAC:  s__s3__tmp__new_compression__id ∈ [--..--]
+INFO:FRAMAC:  s__session__cipher ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  s__session__compress_meth ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  buf ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp_19 ∈ [--..--]
+INFO:FRAMAC:  l ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  num1 ∈ [--..--]
+INFO:FRAMAC:  cb ∈ [--..--]
+INFO:FRAMAC:  ret ∈ [-2147483648..1]
+INFO:FRAMAC:  new_state ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  state ∈ [--..--]
+INFO:FRAMAC:  skip ∈ {0}
+INFO:FRAMAC:  tmp___0 ∈ {0}
+INFO:FRAMAC:  tmp___1 ∈ [-2147471360..2147483647]
+INFO:FRAMAC:  tmp___2 ∈ [--..--]
+INFO:FRAMAC:  tmp___3 ∈ [--..--]
+INFO:FRAMAC:  tmp___4 ∈ [--..--]
+INFO:FRAMAC:  tmp___5 ∈ [--..--]
+INFO:FRAMAC:  tmp___6 ∈ [--..--]
+INFO:FRAMAC:  tmp___7 ∈ [--..--]
+INFO:FRAMAC:  tmp___8 ∈ [--..--]
+INFO:FRAMAC:  tmp___9 ∈ [--..--]
+INFO:FRAMAC:  blastFlag ∈ {0; 1; 2; 3; 4; 5}
+INFO:FRAMAC:  ag_X ∈ {65535} or UNINITIALIZED
+INFO:FRAMAC:  ag_Y ∈ [--..--]
+INFO:FRAMAC:  __retres59 ∈ [-2147483648..1]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  __retres1 ∈ {0}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  4 functions analyzed (out of 19): 21% coverage.
+INFO:FRAMAC:  In these functions, 338 statements reached (out of 344): 98% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  13 alarms generated by the analysis:
+INFO:FRAMAC:      11 integer overflows
+INFO:FRAMAC:       2 accesses to uninitialized left-values
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown
+
+real	0m53.663s
+user	0m53.615s
+sys	0m1.414s

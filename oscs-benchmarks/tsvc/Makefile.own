@@ -1,0 +1,10 @@
+# This is a complement to the 'generic Makefile' available in OSCS
+# (Makefile.single-target) and must be included by it.
+
+# Optimization flag needed for non-static 'inline' functions, to avoid
+# "undefined reference to ..." errors.
+# See comment in https://stackoverflow.com/questions/19068705,
+# or use 'static inline' if you want to disable this.
+CFLAGS += -O1
+
+LDFLAGS += -lm

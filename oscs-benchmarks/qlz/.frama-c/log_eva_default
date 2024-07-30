@@ -1,0 +1,1457 @@
+[kernel] Parsing compress_file.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot41ec47.c:758:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing quicklz.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotde378e.c:769:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing fc_stubs.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotb510d2.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  qlz_decompress_core_bitlut[0] ∈ {4}
+                            [1] ∈ {0}
+                            [2] ∈ {1}
+                            [3] ∈ {0}
+                            [4] ∈ {2}
+                            [5] ∈ {0}
+                            [6] ∈ {1}
+                            [7] ∈ {0}
+                            [8] ∈ {3}
+                            [9] ∈ {0}
+                            [10] ∈ {1}
+                            [11] ∈ {0}
+                            [12] ∈ {2}
+                            [13] ∈ {0}
+                            [14] ∈ {1}
+                            [15] ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] compress_file.c:14: allocating variable __malloc_main_l14
+[eva] using specification for function fopen
+[eva] using specification for function fseek
+[eva:alarm] compress_file.c:20: Warning: 
+  function fseek: precondition 'valid_stream' got status unknown.
+[eva] using specification for function ftell
+[eva] compress_file.c:23: allocating variable __malloc_main_l23
+[eva] using specification for function fread
+[eva:alarm] compress_file.c:24: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva] compress_file.c:27: allocating variable __malloc_main_l27
+[eva:alarm] quicklz.c:70: Warning: 
+  out of bounds write. assert \valid(&state->hash[i].offset);
+[eva] quicklz.c:67: starting to merge loop iterations
+[kernel] quicklz.c:70: 
+  more than 200(4096) locations to update in array. Approximating.
+[kernel] quicklz.c:70: more than 200(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:268: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva:alarm] quicklz.c:117: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)src);
+[eva:alarm] quicklz.c:271: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:292: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].cache);
+[eva:alarm] quicklz.c:292: Warning: 
+  out of bounds read. assert \valid_read(&state->hash[hash].cache);
+[kernel] quicklz.c:293: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:295: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].offset);
+[eva:alarm] quicklz.c:296: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[kernel] quicklz.c:296: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)o, (void *)source);
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)src, (void *)(o + 1));
+[eva:alarm] quicklz.c:355: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:355: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:355: Warning: out of bounds read. assert \valid_read(src);
+[eva] quicklz.c:271: starting to merge loop iterations
+[eva:alarm] quicklz.c:296: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)(source + 3));
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:58: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src + n);
+[eva:alarm] quicklz.c:58: Warning: 
+  out of bounds read. assert \valid_read(src + n);
+[eva] quicklz.c:58: starting to merge loop iterations
+[eva:alarm] quicklz.c:167: Warning: 
+  out of bounds write. assert \valid((ui16 *)dst);
+[eva:alarm] quicklz.c:324: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:324: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:324: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:324: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:324: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:327: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:327: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:327: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:327: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:327: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:329: Warning: 
+  pointer subtraction.
+  assert \base_addr(last_byte - 4) ≡ \base_addr(src - 5);
+[eva:alarm] quicklz.c:329: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - (src - 5);
+[eva:alarm] quicklz.c:332: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:332: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:332: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:332: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:332: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:332: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva] quicklz.c:332: starting to merge loop iterations
+[eva:alarm] quicklz.c:337: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:164: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva] quicklz.c:354: Trace partitioning superposing up to 100 states
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer comparison.
+  assert
+  \pointer_comparable((void *)src, (void *)(source + (size_t)(size >> 1)));
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow. assert dst - destination ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:161: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva:alarm] quicklz.c:508: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_byte);
+[eva:alarm] quicklz.c:518: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)(last_byte - 3));
+[eva:alarm] quicklz.c:524: Warning: 
+  out of bounds write. assert \valid(&state->hash[hash_0].offset);
+[eva:alarm] quicklz.c:524: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[eva:alarm] quicklz.c:524: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[kernel] quicklz.c:524: 
+  more than 200(4096) locations to update in array. Approximating.
+[kernel] quicklz.c:525: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:537: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:537: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:537: Warning: out of bounds read. assert \valid_read(src);
+[eva] quicklz.c:508: starting to merge loop iterations
+[eva:alarm] quicklz.c:549: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:549: Warning: 
+  signed overflow. assert dst - destination ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:549: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:549: Warning: 
+  signed overflow. assert dst - destination ≤ 9223372036854775807;
+[kernel] quicklz.c:292: 
+  more than 200(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:754: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:754: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:alarm] quicklz.c:762: Warning: 
+  out of bounds write. assert \valid(&state->stream_counter);
+[eva:alarm] quicklz.c:788: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:789: Warning: 
+  out of bounds write. assert \valid(destination + 1);
+[eva:alarm] quicklz.c:790: Warning: 
+  out of bounds write. assert \valid(destination + 2);
+[eva:alarm] quicklz.c:794: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:799: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:800: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:801: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva] using specification for function fwrite
+[eva:alarm] compress_file.c:31: Warning: 
+  function fwrite: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] compress_file.c:31: Warning: 
+  function fwrite: precondition 'valid_stream' got status unknown.
+[eva] using specification for function fclose
+[eva] done for function eva_main
+[scope:rm_asserts] removing 5 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function fast_read:
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function fast_write:
+  __malloc_main_l27[0] ∈ {2; 3} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function hash_func:
+  __retres ∈ [0..4095]
+[eva:final-states] Values at end of function reset_table_compress:
+  i ∈ {4096}
+  __malloc_main_l14{.stream_counter; .hash[0].cache} ∈ UNINITIALIZED
+                   .hash{[0].offset; [1..4095]} ∈ {0} or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+[eva:final-states] Values at end of function same:
+  n ∈ {0; 1; 2; 3; 4; 5; 6}
+[eva:final-states] Values at end of function qlz_compress_core:
+  last_byte ∈
+           {{ NULL + [0..4294966894] ;
+              &__malloc_main_l23 + [0..4294966894] }}
+  src ∈ {{ NULL ; &__malloc_main_l23 + [0..18446744073709551615] }}
+  cword_ptr ∈
+           {{ NULL + {3; 7; 9; 13} ;
+              &__malloc_main_l27 + [3..18446744073709551615] }}
+  dst ∈
+     {{ NULL + {7; 13} ; &__malloc_main_l27 + [7..9223372036854775816] }}
+  cword_val ∈ [1..4294967295],1%2
+  last_matchstart ∈
+                 {{ NULL + [-10..4294966884] ;
+                    &__malloc_main_l23 + [-10..4294966884] }}
+  fetch ∈ [--..--]
+  lits ∈ [--..--]
+  __retres ∈ [0..9223372036854775807]
+  __malloc_main_l14.stream_counter ∈ UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l27[0..2] ∈ UNINITIALIZED
+                   [3..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function qlz_compress:
+  r ∈ [3..9223372036854775816] or UNINITIALIZED
+  compressed ∈ {0; 1} or UNINITIALIZED
+  base ∈ {3; 9} or UNINITIALIZED
+  __retres ∈ [0..9223372036854775816]
+  __malloc_main_l14.stream_counter ∈ {0} or UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l27[0] ∈ {68; 69; 70; 71} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  __fc_errno ∈ [4..75]
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  ifile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  ofile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  src ∈ {{ NULL ; &__malloc_main_l23[0] }}
+  dst ∈ {{ NULL ; &__malloc_main_l27[0] }}
+  state_compress ∈ {{ NULL ; &__malloc_main_l14 }}
+  len ∈ [--..--]
+  len2 ∈ [0..9223372036854775816]
+  __retres ∈ {0}
+  __malloc_main_l14.stream_counter ∈ {0} or UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l23[0..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l27[0] ∈ {68; 69; 70; 71} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function eva_main:
+  __fc_errno ∈ [4..75]
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  __malloc_main_l14.stream_counter ∈ {0} or UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l23[0..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l27[0] ∈ {68; 69; 70; 71} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  9 functions analyzed (out of 20): 45% coverage.
+  In these functions, 219 statements reached (out of 229): 95% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  68 alarms generated by the analysis:
+      27 invalid memory accesses
+      13 accesses to uninitialized left-values
+      12 integer overflows
+      16 others
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    14 valid     6 unknown     0 invalid     20 total
+  70% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.181s
+user	0m1.096s
+sys	0m0.062s
+[kernel] Parsing decompress_file.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotb427fe.c:758:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing quicklz.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotd451fe.c:769:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing fc_stubs.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot367410.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  qlz_decompress_core_bitlut[0] ∈ {4}
+                            [1] ∈ {0}
+                            [2] ∈ {1}
+                            [3] ∈ {0}
+                            [4] ∈ {2}
+                            [5] ∈ {0}
+                            [6] ∈ {1}
+                            [7] ∈ {0}
+                            [8] ∈ {3}
+                            [9] ∈ {0}
+                            [10] ∈ {1}
+                            [11] ∈ {0}
+                            [12] ∈ {2}
+                            [13] ∈ {0}
+                            [14] ∈ {1}
+                            [15] ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] decompress_file.c:14: allocating variable __malloc_main_l14
+[eva] using specification for function fopen
+[eva] using specification for function fseek
+[eva:alarm] decompress_file.c:21: Warning: 
+  function fseek: precondition 'valid_stream' got status unknown.
+[eva] using specification for function ftell
+[eva] decompress_file.c:24: allocating variable __malloc_main_l24
+[eva] using specification for function fread
+[eva:alarm] decompress_file.c:27: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] quicklz.c:180: Warning: 
+  accessing uninitialized left-value. assert \initialized(source);
+[eva:alarm] quicklz.c:180: Warning: 
+  out of bounds read. assert \valid_read(source);
+[eva:alarm] quicklz.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva:alarm] quicklz.c:117: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)src);
+[eva] decompress_file.c:29: allocating variable __malloc_main_l29
+[eva:alarm] quicklz.c:817: Warning: 
+  out of bounds read. assert \valid_read(source);
+[eva:alarm] quicklz.c:81: Warning: 
+  accessing uninitialized left-value. assert \initialized(&i);
+[eva:alarm] quicklz.c:197: Warning: 
+  out of bounds read. assert \valid_read(source);
+[eva:alarm] quicklz.c:824: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:824: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:alarm] quicklz.c:826: Warning: 
+  out of bounds write. assert \valid(&state->stream_counter);
+[eva] done for function eva_main
+[eva] quicklz.c:81: assertion 'Eva,initialization' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function fast_read:
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function qlz_size_decompressed:
+  n ∈ {1; 4}
+  r ∈ [--..--]
+  __retres ∈ [0..4294967295]
+[eva:final-states] Values at end of function qlz_size_header:
+  n ∈ {3; 9}
+[eva:final-states] Values at end of function reset_table_decompress:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function qlz_decompress:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function eva_main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 20): 35% coverage.
+  In these functions, 59 statements reached (out of 75): 78% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  8 alarms generated by the analysis:
+       5 invalid memory accesses
+       3 accesses to uninitialized left-values
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    12 valid     4 unknown     0 invalid     16 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.042s
+user	0m0.967s
+sys	0m0.055s
+[kernel] Parsing stream_compress.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot201b91.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing quicklz.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot4010cb.c:769:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing fc_stubs.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot377190.c:761:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  qlz_decompress_core_bitlut[0] ∈ {4}
+                            [1] ∈ {0}
+                            [2] ∈ {1}
+                            [3] ∈ {0}
+                            [4] ∈ {2}
+                            [5] ∈ {0}
+                            [6] ∈ {1}
+                            [7] ∈ {0}
+                            [8] ∈ {3}
+                            [9] ∈ {0}
+                            [10] ∈ {1}
+                            [11] ∈ {0}
+                            [12] ∈ {2}
+                            [13] ∈ {0}
+                            [14] ∈ {1}
+                            [15] ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] stream_compress.c:19: allocating variable __malloc_main_l19
+[eva] using specification for function fopen
+[eva] stream_compress.c:24: allocating variable __malloc_main_l24
+[eva] stream_compress.c:28: allocating variable __malloc_main_l28
+[eva:alarm] stream_compress.c:32: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] using specification for function rand
+[eva] using specification for function fread
+[eva:alarm] stream_compress.c:35: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] stream_compress.c:35: Warning: 
+  function fread: precondition 'valid_stream' got status unknown.
+[eva:alarm] quicklz.c:744: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->stream_counter);
+[eva:alarm] quicklz.c:744: Warning: 
+  out of bounds read. assert \valid_read(&state->stream_counter);
+[eva:alarm] quicklz.c:769: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:alarm] quicklz.c:268: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva:alarm] quicklz.c:271: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:379: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash_counter[hash]);
+[eva:alarm] quicklz.c:381: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].offset[0]);
+[eva:alarm] quicklz.c:382: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)offset2, (void *)(src - 2));
+[kernel] quicklz.c:419: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:472: Warning: out of bounds write. assert \valid(dst);
+[eva] quicklz.c:271: starting to merge loop iterations
+[eva:alarm] quicklz.c:117: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)src);
+[eva] quicklz.c:394: starting to merge loop iterations
+[eva:alarm] quicklz.c:472: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:396: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].offset[k]);
+[eva:alarm] quicklz.c:398: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)o, (void *)(src - 2));
+[eva:alarm] quicklz.c:385: Warning: 
+  accessing uninitialized left-value. assert \initialized(offset2 + matchlen);
+[eva:alarm] quicklz.c:385: Warning: 
+  accessing uninitialized left-value. assert \initialized(src + matchlen);
+[eva:alarm] quicklz.c:388: Warning: 
+  accessing uninitialized left-value. assert \initialized(offset2 + matchlen);
+[eva:alarm] quicklz.c:388: Warning: 
+  accessing uninitialized left-value. assert \initialized(src + matchlen);
+[eva] quicklz.c:388: starting to merge loop iterations
+[eva:alarm] quicklz.c:388: Warning: 
+  out of bounds read. assert \valid_read(offset2 + matchlen);
+[eva:alarm] quicklz.c:388: Warning: 
+  out of bounds read. assert \valid_read(src + matchlen);
+[eva:alarm] quicklz.c:404: Warning: 
+  accessing uninitialized left-value. assert \initialized(o + m);
+[eva:alarm] quicklz.c:404: Warning: 
+  accessing uninitialized left-value. assert \initialized(src + m);
+[eva] quicklz.c:404: starting to merge loop iterations
+[eva:alarm] quicklz.c:404: Warning: 
+  out of bounds read. assert \valid_read(o + m);
+[eva:alarm] quicklz.c:404: Warning: 
+  out of bounds read. assert \valid_read(src + m);
+[eva:alarm] quicklz.c:407: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)o, (void *)offset2);
+[eva:alarm] quicklz.c:424: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
+[eva:alarm] quicklz.c:427: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
+[eva:alarm] quicklz.c:432: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash_counter[hash]);
+[eva:alarm] quicklz.c:432: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash_counter[hash]);
+[eva] quicklz.c:429: starting to merge loop iterations
+[eva] quicklz.c:117: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:116: 
+  Assigning imprecise value to \result<fast_read>.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:126: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:95: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:95: 
+  Assigning imprecise value to \result<hash_func>.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:127: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:128: 
+  Assigning imprecise value to \result<hashat>.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva] quicklz.c:431: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned {quicklz.c:117}
+[eva:alarm] quicklz.c:432: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:432: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:432: Warning: 
+  out of bounds read. assert \valid_read(&state->hash_counter[hash]);
+[eva] quicklz.c:432: 
+  Assigning imprecise value to tmp_2.
+  The imprecision originates from Misaligned {quicklz.c:432}
+[eva:alarm] quicklz.c:432: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:432: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:432: Warning: 
+  out of bounds write. assert \valid(&state->hash_counter[hash]);
+[eva:alarm] quicklz.c:432: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)state->hash_counter[hash] + 1;
+[eva:alarm] quicklz.c:432: Warning: 
+  signed overflow. assert (int)state->hash_counter[hash] + 1 ≤ 2147483647;
+[eva] quicklz.c:432: 
+  Assigning imprecise value to state->hash_counter[hash]
+  (pointing to __malloc_main_l19 with offsets [0..4307128]).
+  The imprecision originates from Misaligned {quicklz.c:432}
+[eva] quicklz.c:432: 
+  Assigning imprecise value to c.
+  The imprecision originates from Misaligned {quicklz.c:432}
+[eva:alarm] quicklz.c:433: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:433: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:433: Warning: 
+  accessing out of bounds index. assert 0 ≤ (int)((int)c & (int)(16 - 1));
+[eva:alarm] quicklz.c:433: Warning: 
+  accessing out of bounds index. assert (int)((int)c & (int)(16 - 1)) < 16;
+[eva:alarm] quicklz.c:433: Warning: 
+  out of bounds write.
+  assert \valid(&state->hash[hash].offset[(int)((int)c & (int)(16 - 1))]);
+[eva] quicklz.c:117: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:116: 
+  Assigning imprecise value to \result<fast_read>.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:126: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:95: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:95: 
+  Assigning imprecise value to \result<hash_func>.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:127: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:128: 
+  Assigning imprecise value to \result<hashat>.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:431: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:432: 
+  Assigning imprecise value to tmp_2.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:432: 
+  Assigning imprecise value to state->hash_counter[hash]
+  (pointing to __malloc_main_l19 with offsets [0..4307128]).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:432: 
+  Assigning imprecise value to c.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:441: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:167: Warning: 
+  out of bounds write. assert \valid((ui16 *)dst);
+[eva:alarm] quicklz.c:164: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva:alarm] quicklz.c:161: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva] quicklz.c:376: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:377: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:379: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:379: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:379: Warning: 
+  out of bounds read. assert \valid_read(&state->hash_counter[hash]);
+[eva] quicklz.c:379: 
+  Assigning imprecise value to c.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:381: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:381: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:381: Warning: 
+  out of bounds read. assert \valid_read(&state->hash[hash].offset[0]);
+[eva] quicklz.c:381: 
+  Assigning imprecise value to offset2.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:382: 
+  Assigning imprecise value to tmp_0_0.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:396: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:396: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:396: Warning: 
+  out of bounds read. assert \valid_read(&state->hash[hash].offset[k]);
+[eva] quicklz.c:396: 
+  Assigning imprecise value to o.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:398: 
+  Assigning imprecise value to tmp_1.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:418: 
+  Assigning imprecise value to o.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:419: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:419: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:419: Warning: 
+  accessing out of bounds index. assert 0 ≤ (int)((int)c & (int)(16 - 1));
+[eva:alarm] quicklz.c:419: Warning: 
+  accessing out of bounds index. assert (int)((int)c & (int)(16 - 1)) < 16;
+[eva:alarm] quicklz.c:419: Warning: 
+  out of bounds write.
+  assert \valid(&state->hash[hash].offset[(int)((int)c & (int)(16 - 1))]);
+[eva:alarm] quicklz.c:420: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)c + 1;
+[eva:alarm] quicklz.c:420: Warning: 
+  signed overflow. assert (int)c + 1 ≤ 2147483647;
+[eva] quicklz.c:420: 
+  Assigning imprecise value to c.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:421: Warning: 
+  accessing out of bounds index. assert 0 ≤ hash;
+[eva:alarm] quicklz.c:421: Warning: 
+  accessing out of bounds index. assert hash < 4096;
+[eva:alarm] quicklz.c:421: Warning: 
+  out of bounds write. assert \valid(&state->hash_counter[hash]);
+[eva] quicklz.c:421: 
+  Assigning imprecise value to state->hash_counter[hash]
+  (pointing to __malloc_main_l19 with offsets [0..4307128]).
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:424: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ src - o;
+[eva:alarm] quicklz.c:424: Warning: 
+  signed overflow. assert src - o ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:427: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ src - o;
+[eva:alarm] quicklz.c:427: Warning: 
+  signed overflow. assert src - o ≤ 9223372036854775807;
+[eva] quicklz.c:427: 
+  Assigning imprecise value to offset.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..160],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:446: 
+  Assigning imprecise value to f.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..160],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:452: 
+  Assigning imprecise value to f_0.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:459: 
+  Assigning imprecise value to f_1.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..160],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:465: 
+  Assigning imprecise value to f_2.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..160],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..160],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..83184],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..83168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..83168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:394: Trace partitioning superposing up to 100 states
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva] quicklz.c:284: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:508: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_byte);
+[eva:alarm] quicklz.c:537: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:537: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:549: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:549: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[kernel] quicklz.c:381: 
+  more than 200(4206) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:774: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva] quicklz.c:67: starting to merge loop iterations
+[eva] quicklz.c:783: 
+  Assigning imprecise value to state->stream_counter
+  (pointing to __malloc_main_l19 with offsets {80000}).
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:788: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:794: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva] using specification for function printf_va_1
+[eva] using specification for function fwrite
+[eva:alarm] stream_compress.c:42: Warning: 
+  function fwrite: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] stream_compress.c:42: Warning: 
+  function fwrite: precondition 'valid_stream' got status unknown.
+[eva] stream_compress.c:35: starting to merge loop iterations
+[eva:alarm] quicklz.c:371: Warning: 
+  pointer subtraction. assert \base_addr(last_byte - 4) ≡ \base_addr(src);
+[eva:alarm] quicklz.c:371: Warning: 
+  pointer subtraction. assert \base_addr(last_byte - 4) ≡ \base_addr(src);
+[eva] quicklz.c:421: 
+  Assigning imprecise value to state->hash_counter[hash]
+  (pointing to __malloc_main_l19 with offsets [4274368..4307128],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:117: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:116: 
+  Assigning imprecise value to \result<fast_read>.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:126: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:95: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:95: 
+  Assigning imprecise value to \result<hash_func>.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:127: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:128: 
+  Assigning imprecise value to \result<hashat>.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:431: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 104; 112}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:376: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:377: 
+  Assigning imprecise value to hash.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:alarm] quicklz.c:537: Warning: out of bounds read. assert \valid_read(src);
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 104; 112; 120}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:508: starting to merge loop iterations
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 104; 112; 120;
+                                               128}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..144],0%8).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..152],0%8).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[kernel] quicklz.c:381: 
+  more than 200(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:754: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:754: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] quicklz.c:767: 
+  Assigning imprecise value to src.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:769: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:769: Warning: 
+  function memcpy: precondition 'separation' got status unknown.
+[kernel] quicklz.c:769: 
+  writing somewhere in {NULL; __malloc_main_l19} because of Misaligned.
+[eva] quicklz.c:257: 
+  Assigning imprecise value to last_byte.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:258: 
+  Assigning imprecise value to src.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:262: 
+  Assigning imprecise value to last_matchstart.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:269: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - src;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow. assert (last_byte - 4) - src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow.
+  assert -9223372036854775808 ≤ (long)((last_byte - 4) - src) + 1;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow.
+  assert (long)((last_byte - 4) - src) + 1 ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - src;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow. assert (last_byte - 4) - src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow.
+  assert -9223372036854775808 ≤ (long)((last_byte - 4) - src) + 1;
+[eva:alarm] quicklz.c:371: Warning: 
+  signed overflow.
+  assert (long)((last_byte - 4) - src) + 1 ≤ 9223372036854775807;
+[eva] quicklz.c:371: 
+  Assigning imprecise value to tmp_0.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:371: 
+  Assigning imprecise value to remaining.
+  The imprecision originates from Misaligned
+[eva] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 104}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 104}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 104}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 104}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 104}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:394: Trace partitioning superposing up to 100 states
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer comparison.
+  assert
+  \pointer_comparable((void *)src, (void *)(source + (size_t)(size >> 1)));
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ src - source;
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow.
+  assert
+  -9223372036854775808 ≤
+  (long)(src - source) - (long)((long)(src - source) >> 5);
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow.
+  assert
+  (long)(src - source) - (long)((long)(src - source) >> 5) ≤
+  9223372036854775807;
+[eva:alarm] quicklz.c:774: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] quicklz.c:783: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->stream_counter);
+[eva] quicklz.c:269: 
+  Assigning imprecise value to fetch.
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 104}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 104; 112}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva] quicklz.c:421: 
+  Assigning imprecise value to state->hash_counter[hash]
+  (pointing to __malloc_main_l19 with offsets [0..4307128];
+  __malloc_main_l24 with offsets [0..79992]).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:432: 
+  Assigning imprecise value to state->hash_counter[hash]
+  (pointing to __malloc_main_l19 with offsets [0..4307128];
+  __malloc_main_l24 with offsets [0..79992]).
+  The imprecision originates from Misaligned
+[kernel] quicklz.c:769: 
+  writing somewhere in {NULL; __malloc_main_l19; __malloc_main_l24} because of Misaligned.
+[eva] using specification for function fclose
+[eva:alarm] stream_compress.c:45: Warning: 
+  function fclose: precondition 'valid_stream' got status unknown.
+[eva] done for function eva_main
+[scope:rm_asserts] removing 22 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function fast_read:
+  __retres ∈
+          {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+           (origin: Misaligned) }}
+[eva:final-states] Values at end of function fast_write:
+  __malloc_main_l28[0] ∈ {2; 3; 124; 125; 126; 127} or UNINITIALIZED
+                   [1..2] ∈ [--..--] or UNINITIALIZED
+                   [3..10399] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+[eva:final-states] Values at end of function hash_func:
+  __retres ∈
+          {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+           (origin: Misaligned) }}
+[eva:final-states] Values at end of function hashat:
+  fetch ∈
+       {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+        (origin: Misaligned) }}
+  hash ∈
+      {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+       (origin: Misaligned) }}
+[eva:final-states] Values at end of function qlz_compress_core:
+  last_byte ∈
+           {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+            (origin: Misaligned) }}
+  src ∈
+     {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+      (origin: Misaligned) }}
+  cword_ptr ∈ {{ NULL + {3; 7; 9; 13} ; &__malloc_main_l28 + [3..10400] }}
+  dst ∈ {{ NULL + {7; 13} ; &__malloc_main_l28 + [7..10400] }}
+  cword_val ∈ [1..4294967295],1%2
+  last_matchstart ∈
+                 {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                  (origin: Misaligned) }}
+  fetch ∈
+       {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+        (origin: Misaligned) }}
+  lits ∈ {0}
+  __retres ∈ [0..10397]
+  __malloc_main_l19 ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l24[0..9999] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l28[0] ∈ {124; 125; 126; 127} or UNINITIALIZED
+                   [1..2] ∈ [--..--] or UNINITIALIZED
+                   [3..10399] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+[eva:final-states] Values at end of function reset_table_compress:
+  i ∈ {4096}
+  __malloc_main_l19 ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+[eva:final-states] Values at end of function qlz_compress:
+  r ∈ [3..10406]
+  compressed ∈ {0; 1}
+  base ∈ {3; 9}
+  __retres ∈ [3..10406]
+  __malloc_main_l19.stream_buffer[0..9999] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+                   .stream_counter ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }}
+                   {.hash[0..4095]; .hash_counter[0..4095]} ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l24[0..9999] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l28[0] ∈ {124; 125; 126; 127}
+                   [1..2] ∈ [--..--]
+                   [3..10399] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  __fc_random_counter ∈ [--..--]
+  ifile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  ofile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  file_data ∈ {{ NULL ; &__malloc_main_l24[0] }}
+  compressed ∈ {{ NULL ; &__malloc_main_l28[0] }}
+  d ∈ {0}
+  c ∈ [3..10406] or UNINITIALIZED
+  state_compress ∈ {{ NULL ; &__malloc_main_l19 }}
+  __retres ∈ {0}
+  S___fc_stdout[0..1] ∈ [--..--]
+  __malloc_main_l19 ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l24[0..9999] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l28[0] ∈ {124; 125; 126; 127} or UNINITIALIZED
+                   [1..2] ∈ [--..--] or UNINITIALIZED
+                   [3..10399] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+[eva:final-states] Values at end of function eva_main:
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  __fc_random_counter ∈ [--..--]
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stdout[0..1] ∈ [--..--]
+  __malloc_main_l19 ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l24[0..9999] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+  __malloc_main_l28[0] ∈ {124; 125; 126; 127} or UNINITIALIZED
+                   [1..2] ∈ [--..--] or UNINITIALIZED
+                   [3..10399] ∈
+                   {{ garbled mix of &{__malloc_main_l19; __malloc_main_l24}
+                    (origin: Misaligned) }} or UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  9 functions analyzed (out of 18): 50% coverage.
+  In these functions, 276 statements reached (out of 294): 93% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  94 alarms generated by the analysis:
+      23 invalid memory accesses
+      20 accesses out of bounds index
+      20 integer overflows
+      16 accesses to uninitialized left-values
+      15 others
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid    13 unknown     0 invalid     23 total
+  43% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.773s
+user	0m1.693s
+sys	0m0.059s
+[kernel] Parsing stream_decompress.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot05f86c.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing quicklz.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotfb4280.c:769:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing fc_stubs.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotd6f909.c:761:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  qlz_decompress_core_bitlut[0] ∈ {4}
+                            [1] ∈ {0}
+                            [2] ∈ {1}
+                            [3] ∈ {0}
+                            [4] ∈ {2}
+                            [5] ∈ {0}
+                            [6] ∈ {1}
+                            [7] ∈ {0}
+                            [8] ∈ {3}
+                            [9] ∈ {0}
+                            [10] ∈ {1}
+                            [11] ∈ {0}
+                            [12] ∈ {2}
+                            [13] ∈ {0}
+                            [14] ∈ {1}
+                            [15] ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] stream_decompress.c:19: allocating variable __malloc_main_l19
+[eva] using specification for function fopen
+[eva] stream_decompress.c:27: allocating variable __malloc_main_l27
+[eva] stream_decompress.c:30: allocating variable __malloc_main_l30
+[eva:alarm] stream_decompress.c:34: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] using specification for function fread
+[eva:alarm] stream_decompress.c:39: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] stream_decompress.c:39: Warning: 
+  function fread: precondition 'valid_stream' got status unknown.
+[eva:alarm] quicklz.c:189: Warning: 
+  accessing uninitialized left-value. assert \initialized(source);
+[eva:alarm] quicklz.c:189: Warning: 
+  out of bounds read. assert \valid_read(source);
+[eva:alarm] quicklz.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva:alarm] stream_decompress.c:42: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] quicklz.c:814: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->stream_counter);
+[eva:alarm] quicklz.c:814: Warning: 
+  out of bounds read. assert \valid_read(&state->stream_counter);
+[eva:alarm] quicklz.c:81: Warning: 
+  accessing uninitialized left-value. assert \initialized(&i);
+[eva:alarm] quicklz.c:824: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:824: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:alarm] quicklz.c:217: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)(src + f));
+[eva:alarm] quicklz.c:217: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)(src + f));
+[eva] quicklz.c:215: starting to merge loop iterations
+[eva:alarm] quicklz.c:217: Warning: 
+  out of bounds write. assert \valid((ui32 *)(dst + f));
+[eva:alarm] quicklz.c:685: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)dst, (void *)last_matchstart);
+[eva:alarm] quicklz.c:689: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva] quicklz.c:568: starting to merge loop iterations
+[eva:alarm] quicklz.c:117: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)src);
+[eva:alarm] quicklz.c:689: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva:alarm] quicklz.c:702: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)dst, (void *)last_destination_byte);
+[eva:alarm] quicklz.c:713: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:713: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva] quicklz.c:702: starting to merge loop iterations
+[eva:alarm] quicklz.c:713: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:839: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:839: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] quicklz.c:842: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:842: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] using specification for function printf_va_1
+[eva] using specification for function fwrite
+[eva:alarm] stream_decompress.c:45: Warning: 
+  function fwrite: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] stream_decompress.c:45: Warning: 
+  function fwrite: precondition 'valid_stream' got status unknown.
+[eva] stream_decompress.c:39: starting to merge loop iterations
+[eva] using specification for function fclose
+[eva:alarm] stream_decompress.c:48: Warning: 
+  function fclose: precondition 'valid_stream' got status unknown.
+[eva] done for function eva_main
+[eva] quicklz.c:81: assertion 'Eva,initialization' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function fast_read:
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function memcpy_up:
+  f ∈ [3..10005],0%3
+  __malloc_main_l19.stream_buffer[0..9999] ∈ [--..--] or UNINITIALIZED
+                   .stream_counter ∈ [--..--]
+[eva:final-states] Values at end of function qlz_size_compressed:
+  n ∈ {1; 4}
+  r ∈ [--..--]
+  __retres ∈ [0..4294967295]
+[eva:final-states] Values at end of function qlz_size_decompressed:
+  n ∈ {1; 4}
+  r ∈ [--..--]
+  __retres ∈ [0..4294967295]
+[eva:final-states] Values at end of function qlz_size_header:
+  n ∈ {3; 9}
+[eva:final-states] Values at end of function qlz_decompress_core:
+  src ∈ {{ &__malloc_main_l27 + [3..10400] }}
+  dst ∈ {{ &__malloc_main_l19 + [0..18446744073709551615] }}
+  last_destination_byte ∈
+                       {{ &__malloc_main_l19 + [-1..18446744073709551614] }}
+  cword_val ∈ [0..4294967294]
+  last_matchstart ∈ {{ &__malloc_main_l19 + [-11..18446744073709551615] }}
+  last_hashed ∈ {{ &__malloc_main_l19 + [-1..18446744073709551614] }}
+  last_source_byte ∈ {{ &__malloc_main_l27 + [-1..4294967294] }}
+  __retres ∈ [0..4294967295]
+  __malloc_main_l19.stream_buffer[0..9999] ∈ [--..--] or UNINITIALIZED
+                   .stream_counter ∈ [--..--]
+[eva:final-states] Values at end of function reset_table_decompress:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function qlz_decompress:
+  dsiz ∈ [0..4294967295]
+  __malloc_main_l19.stream_buffer[0..9999] ∈ [--..--] or UNINITIALIZED
+                   .stream_counter ∈ [--..--]
+  __malloc_main_l30[0..9999] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  ifile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  ofile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  file_data ∈ {{ NULL ; &__malloc_main_l27[0] }}
+  decompressed ∈ {{ NULL ; &__malloc_main_l30[0] }}
+  d ∈ [0..4294967295] or UNINITIALIZED
+  c ∈ {0}
+  state_decompress ∈ {{ NULL ; &__malloc_main_l19 }}
+  __retres ∈ {0}
+  S___fc_stdout[0..1] ∈ [--..--]
+  __malloc_main_l19 ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l27[0..10399] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l30[0..9999] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function eva_main:
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stdout[0..1] ∈ [--..--]
+  __malloc_main_l19 ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l27[0..10399] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l30[0..9999] ∈ [--..--] or UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  10 functions analyzed (out of 18): 55% coverage.
+  In these functions, 156 statements reached (out of 164): 95% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  17 alarms generated by the analysis:
+       8 invalid memory accesses
+       7 accesses to uninitialized left-values
+       2 others
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    12 valid    13 unknown     0 invalid     25 total
+  48% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.085s
+user	0m1.007s
+sys	0m0.057s

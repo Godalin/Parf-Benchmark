@@ -1,0 +1,3344 @@
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 1 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 16.
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 10.
+  option -eva-ilevel set to 12.
+  option -eva-plevel set to 20.
+  option -eva-subdivide-non-linear set to 20.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,symbolic-locations'.
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 2 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 32.
+  option -eva-widening-delay set to 2.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 20.
+  option -eva-ilevel set to 16.
+  option -eva-plevel set to 40.
+  option -eva-subdivide-non-linear set to 40.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,symbolic-locations'.
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 3 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 64.
+  option -eva-widening-delay set to 2.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 35.
+  option -eva-ilevel set to 24.
+  option -eva-plevel set to 70.
+  option -eva-subdivide-non-linear set to 60.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,symbolic-locations'.
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 4 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 96.
+  option -eva-widening-delay set to 3 (default value).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 60.
+  option -eva-ilevel set to 32.
+  option -eva-plevel set to 100.
+  option -eva-subdivide-non-linear set to 80.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 5 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 128.
+  option -eva-widening-delay set to 3 (default value).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 100.
+  option -eva-ilevel set to 48.
+  option -eva-plevel set to 150.
+  option -eva-subdivide-non-linear set to 100.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 6 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 192.
+  option -eva-widening-delay set to 4.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 160.
+  option -eva-ilevel set to 64.
+  option -eva-plevel set to 200 (default value).
+  option -eva-subdivide-non-linear set to 120.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 7 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 256.
+  option -eva-widening-delay set to 4.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 250.
+  option -eva-ilevel set to 128.
+  option -eva-plevel set to 300.
+  option -eva-subdivide-non-linear set to 140.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 8 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 1.
+  option -eva-auto-loop-unroll set to 384.
+  option -eva-widening-delay set to 5.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 500.
+  option -eva-ilevel set to 192.
+  option -eva-plevel set to 500.
+  option -eva-subdivide-non-linear set to 160.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 9 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 2.
+  option -eva-auto-loop-unroll set to 512.
+  option -eva-widening-delay set to 5.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 1000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 700.
+  option -eva-subdivide-non-linear set to 180.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 10 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 3.
+  option -eva-auto-loop-unroll set to 768.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 2000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 1000.
+  option -eva-subdivide-non-linear set to 200.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+[kernel] Parsing sw/airborne/autopilot/ad7714.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/adc.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/estimator.c (with preprocessing)
+[kernel:parser:decimal-float] sw/airborne/autopilot/estimator.c:141: Warning: 
+  Floating-point constant 9.81 is not represented exactly. Will use 0x1.39eb851eb851fp3.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing sw/airborne/autopilot/gps_ubx.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/if_calib.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/infrared.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/link_fbw.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/main.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/mainloop.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/modem.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/nav.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/pid.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/spi.c (with preprocessing)
+[kernel] Parsing sw/airborne/autopilot/uart.c (with preprocessing)
+[kernel] Parsing sw/lib/c/pp_math.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/math.c (with preprocessing)
+[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 4.
+  option -eva-auto-loop-unroll set to 1024.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 2.
+  option -eva-slevel set to 5000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 2000.
+  option -eva-subdivide-non-linear set to 220.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(pprz_mode_update__fc_inline) == 0 (auto)
+  \return(inflight_calib_mode_update__fc_inline) == 0 (auto)
+  \return(timer_periodic_0) == 0 (auto)
+  \return(approaching) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  ad7714_sample ∈ {0}
+  ad7714_sample_read ∈ {0}
+  spi_cur_slave ∈ [--..--]
+  spi_nb_ovrn ∈ {0}
+  ad7714_setup_data[0] ∈ {36}
+                   [1] ∈ {167}
+                   [2] ∈ {52}
+                   [3] ∈ {208}
+                   [4] ∈ {20}
+                   [5] ∈ {60}
+  ad7714_setup.len ∈ {6}
+              .[bits 8 to 63] ∈ {0}
+              .data ∈ {{ &ad7714_setup_data[0] }}
+  ad7714_read_data[0] ∈ {92}
+                  [1] ∈ {0}
+                  [2] ∈ {170}
+  ad7714_read.len ∈ {3}
+             .[bits 8 to 63] ∈ {0}
+             .data ∈ {{ &ad7714_read_data[0] }}
+  ad7714_select_channel_data[0] ∈ {20}
+                            [1] ∈ {28}
+  ad7714_select_channel.len ∈ {2}
+                       .[bits 8 to 63] ∈ {0}
+                       .data ∈ {{ &ad7714_select_channel_data[0] }}
+  ad7714_status ∈ {0}
+  adc_samples[0..7] ∈ {0}
+  estimator_x ∈ {0}
+  estimator_y ∈ {0}
+  estimator_z ∈ {0}
+  estimator_phi ∈ {0}
+  estimator_psi ∈ {0}
+  estimator_theta ∈ {0}
+  estimator_x_dot ∈ {0}
+  estimator_y_dot ∈ {0}
+  estimator_z_dot ∈ {0}
+  estimator_phi_dot ∈ {0}
+  estimator_psi_dot ∈ {0}
+  estimator_flight_time ∈ {0}
+  estimator_t ∈ {0}
+  estimator_hspeed_mod ∈ [--..--]
+  estimator_hspeed_dir ∈ {0}
+  estimator_rad_of_ir ∈ {0}
+  estimator_ir ∈ {0}
+  estimator_rad ∈ {0}
+  gps_mode ∈ [--..--]
+  gps_ftow ∈ {0}
+  gps_falt ∈ {0}
+  gps_fspeed ∈ {0}
+  gps_fclimb ∈ {0}
+  gps_fcourse ∈ {0}
+  gps_utm_east ∈ {0}
+  gps_utm_north ∈ {0}
+  gps_east ∈ {0}
+  gps_north ∈ {0}
+  gps_msg_received ∈ [--..--]
+  gps_pos_available ∈ {0}
+  gps_nb_ovrn ∈ {0}
+  utm_east0 ∈ {605530}
+  utm_north0 ∈ {5797350}
+  desired_roll ∈ {0}
+  max_roll ∈ {0.34999999404}
+  desired_pitch ∈ {0}
+  roll_pgain ∈ {10000.}
+  pitch_pgain ∈ {15000.}
+  pitch_of_roll ∈ {0}
+  course_pgain ∈ {-0.20000000298}
+  desired_course ∈ {0}
+  climb_pgain ∈ {-0.0299999993294}
+  climb_igain ∈ {0.10000000149}
+  climb_sum_err ∈ {0}
+  desired_climb ∈ {0}
+  pre_climb ∈ {0}
+  desired_gaz ∈ {0}
+  desired_aileron ∈ {0}
+  desired_elevator ∈ {0}
+  pitch_of_vz_pgain ∈ {0.0500000007451}
+  pitch_of_vz ∈ {0}
+  ir_roll ∈ {0}
+  ir_pitch ∈ {0}
+  ir_rad_of_ir ∈ {0.00374999991618}
+  ir_contrast ∈ {200}
+  ir_roll_neutral ∈ {-915}
+  ir_pitch_neutral ∈ {110}
+  pprz_mode ∈ {0}
+  ir_estim_mode ∈ {1}
+  fatal_error_nb ∈ {0}
+  inflight_calib_mode ∈ {0}
+  vertical_mode ∈ {0}
+  auto_pitch ∈ {0}
+  lateral_mode ∈ {0}
+  vsupply ∈ {0}
+  rc_event_1 ∈ {0}
+  rc_event_2 ∈ {0}
+  slider_1_val ∈ {0}
+  slider_2_val ∈ {0}
+  launch ∈ {0}
+  estimator_theta_dot ∈ {0}
+  link_fbw_nb_err ∈ [--..--]
+  link_fbw_fbw_nb_err ∈ {0}
+  from_fbw ∈ [--..--]
+  to_fbw ∈ [--..--]
+  link_fbw_receive_complete ∈ [--..--]
+  link_fbw_receive_valid ∈ [--..--]
+  nav_stage ∈ {0}
+  nav_block ∈ {0}
+  dist2_to_wp ∈ {0}
+  dist2_to_home ∈ {0}
+  nav_east0 ∈ {605530}
+  nav_north0 ∈ {5797350}
+  nb_waypoint ∈ {7}
+  waypoints[0]{.x; .y} ∈ {0}
+           [0].a ∈ {200.}
+           [1]{.x; .y} ∈ {0}
+           [1].a ∈ {200.}
+           [2].x ∈ {115.}
+           [2].y ∈ {-75.}
+           [2].a ∈ {200.}
+           [3].x ∈ {156.699996948}
+           [3].y ∈ {-41.7000007629}
+           [3].a ∈ {200.}
+           [4].x ∈ {115.}
+           [4].y ∈ {0}
+           [4].a ∈ {200.}
+           [5].x ∈ {0}
+           [5].y ∈ {-75.}
+           [5].a ∈ {200.}
+           [6].x ∈ {-51.7000007629}
+           [6].y ∈ {-36.7000007629}
+           [6].a ∈ {200.}
+           [7] ∈ {0}
+  desired_altitude ∈ {175.}
+  desired_x ∈ {0}
+  desired_y ∈ {0}
+  nav_desired_gaz ∈ {0}
+  nav_pitch ∈ {0}
+  rc_pitch ∈ {0}
+  too_far_from_home ∈ {0}
+  stage_time ∈ {0}
+  block_time ∈ {0}
+  stage_time_ds ∈ {0}
+  nav_desired_roll ∈ {0}
+  modem_nb_ovrn ∈ {0}
+  tx_head ∈ {0}
+  tx_tail ∈ [--..--]
+  tx_buf[0..254] ∈ {0}
+  tx_byte ∈ {0}
+  tx_byte_idx ∈ {0}
+  ck_a ∈ {0}
+  ck_b ∈ {0}
+  excpt_stage ∈ {0}
+  climb_pitch_pgain ∈ {-0.10000000149}
+  climb_pitch_igain ∈ {0.0250000003725}
+  climb_pitch_sum_err ∈ {0}
+  max_pitch ∈ {0.34999999404}
+  min_pitch ∈ {-0.34999999404}
+  altitude_pgain ∈ {-0.0250000003725}
+  msg ∈ {0}
+  idx ∈ {0}
+  buffers[0..7] ∈ {0}
+  estimator_update_ir_estim_last_hspeed_dir ∈ {0}
+  estimator_update_ir_estim_last_t ∈ {0}
+  estimator_update_ir_estim_initialized ∈ {0}
+  estimator_update_ir_estim_sum_xy ∈ {0}
+  estimator_update_ir_estim_sum_xx ∈ {0}
+  ubx_msg_buf[0..254] ∈ {0}
+  ubx_status ∈ [--..--]
+  ubx_len ∈ {0}
+  ubx_msg_idx ∈ {0}
+  ck_a_0 ∈ [--..--]
+  ck_b_0 ∈ [--..--]
+  ubx_id ∈ [--..--]
+  ubx_class ∈ [--..--]
+  slider1_init ∈ {0}
+  slider2_init ∈ {0}
+  inflight_calib_ir_pitch_neutral_init ∈ {0}
+  inflight_calib_ir_roll_neutral_init ∈ {0}
+  inflight_calib_course_pgain_init ∈ {0}
+  inflight_calib_max_roll_init ∈ {0}
+  buf_ir1 ∈ {0}
+  buf_ir2 ∈ {0}
+  idx_buf ∈ {0}
+  xor_in ∈ {0}
+  xor_out ∈ {0}
+  version ∈ {1}
+  cputime ∈ {0}
+  mcu1_status ∈ {0}
+  mcu1_ppm_cpt ∈ {0}
+  low_battery ∈ {0}
+  boot ∈ {1}
+  count ∈ {0}
+  ground_calibrate_calib_status ∈ {0}
+  events_update_event1_cpt ∈ {0}
+  events_update_event2_cpt ∈ {0}
+  _20Hz ∈ {0}
+  _1Hz ∈ {0}
+  periodic_task__10Hz ∈ {0}
+  periodic_task__4Hz ∈ {0}
+  periodic_task_t ∈ {0}
+  periodic_task_odd ∈ {0}
+  last_x ∈ {0}
+  last_y ∈ {0}
+  last_wp ∈ {0}
+  qdr ∈ {0}
+  auto_nav_carrot_x ∈ {0}
+  auto_nav_carrot_y ∈ {0}
+  carrot ∈ {0}
+  alpha ∈ {0}
+  leg ∈ {0}
+  tx_head0 ∈ {0}
+  tx_tail0 ∈ [--..--]
+  tx_buf0[0..255] ∈ {0}
+  tx_head1 ∈ {0}
+  tx_tail1 ∈ [--..--]
+  tx_buf1[0..255] ∈ {0}
+[eva:alarm] sw/airborne/autopilot/timer.h:50: Warning: 
+  out of bounds write. assert \valid((uint8_t volatile *)((int)(0x2F + 0x20)));
+[kernel] sw/airborne/autopilot/timer.h:50: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] sw/airborne/autopilot/timer.h:50: 
+  assertion 'Eva,mem_access' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function timer_init_0:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 98): 2% coverage.
+  In these functions, 2 statements reached (out of 36): 5% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  No logical properties have been reached by the analysis.
+  ----------------------------------------------------------------------------
+
+real	0m33.879s
+user	0m28.556s
+sys	0m4.263s

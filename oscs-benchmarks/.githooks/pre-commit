@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+
+# Redirect output to stderr.
+exec 1>&2
+
+errors=0
+
+for p in $(git ls-files '*/.frama-c/path.mk'); do
+    if [ ! -L "$p" ]; then
+       echo "pre-commit error: $p should be a symbolic link"
+       errors=$((errors+1))
+    fi
+done
+
+if [ $errors -gt 0 ]; then
+   echo "$errors error(s), aborting commit. Add '--no-verify' to bypass hooks."
+   exit 1
+fi

@@ -1,0 +1,987 @@
+[kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot3f6812.c:761:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing tests/testutils.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot1acd61.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing tests/t-add.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot3e2990.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing tests/hex-random.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotda010a.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel:typing:implicit-function-declaration] tests/hex-random.c:251: Warning: 
+  __builtin_constant_p is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+[kernel] Parsing tests/mini-random.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot6fac7e.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing fc_stubs.h (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannota11384.c:760:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at testmain
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  mp_bits_per_limb ∈ {64}
+  gmp_allocate_func ∈ {{ &gmp_default_alloc }}
+  gmp_reallocate_func ∈ {{ &gmp_default_realloc }}
+  gmp_free_func ∈ {{ &gmp_default_free }}
+  gmp_detect_endian_i ∈ {2}
+  total_alloc ∈ {0}
+  block_end[0] ∈ {124}
+           [1] ∈ {55}
+           [2] ∈ {-42}
+           [3] ∈ {18}
+           [4] ∈ {-88}
+           [5] ∈ {108}
+           [6] ∈ {1}
+           [7] ∈ {-47}
+  state[0] ∈ {0}
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_1
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_2
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: allocating variable __malloc_asprintf_l124
+[eva] using specification for function Frama_C_make_unknown
+[eva:alarm] FRAMAC_SHARE/libc/stdio.c:130: Warning: 
+  function Frama_C_make_unknown: precondition 'valid_p' got status unknown.
+[eva:alarm] FRAMAC_SHARE/libc/stdio.c:131: Warning: 
+  out of bounds write. assert \valid(*strp + (size_t)(len - 1U));
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_0
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_1
+[eva] using specification for function __gmpz_clear
+[eva:alarm] mini-gmp.c:4109: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4109: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:4112: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4112: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4137: Warning: 
+  function strlen: precondition 'valid_string_s' got status unknown.
+[eva:alarm] mini-gmp.c:255: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_3
+[eva:alarm] mini-gmp.c:4140: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4140: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4144: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4144: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4146: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4146: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4146: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4146: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4147: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4147: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4148: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4148: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4148: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4148: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4149: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4149: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4150: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4150: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4150: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4150: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva:alarm] mini-gmp.c:4151: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp);
+[eva:alarm] mini-gmp.c:4151: Warning: 
+  out of bounds read. assert \valid_read(sp);
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:4162: Warning: 
+  out of bounds write. assert \valid(dp + tmp_3);
+                       (tmp_3 from sn++)
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269
+[eva:alarm] mini-gmp.c:1284: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp + j);
+[eva:alarm] mini-gmp.c:1284: Warning: 
+  out of bounds read. assert \valid_read(sp + j);
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:1284: Warning: 
+  out of bounds write. assert \valid(rp + tmp);
+                       (tmp from rn++)
+[eva:alarm] mini-gmp.c:1289: Warning: 
+  out of bounds write. assert \valid(rp + (mp_size_t)(rn - 1));
+[eva:alarm] mini-gmp.c:1289: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp + j);
+[eva:alarm] mini-gmp.c:1289: Warning: 
+  out of bounds read. assert \valid_read(sp + j);
+[eva:alarm] mini-gmp.c:1289: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(rp + (mp_size_t)(rn - 1));
+[eva:alarm] mini-gmp.c:1284: Warning: 
+  signed overflow. assert rn + 1 ≤ 9223372036854775807;
+[eva:alarm] mini-gmp.c:376: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(xp + (mp_size_t)(n - 1));
+[eva:alarm] mini-gmp.c:376: Warning: 
+  out of bounds read. assert \valid_read(xp + (mp_size_t)(n - 1));
+[eva:alarm] mini-gmp.c:4181: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] using specification for function fprintf_va_12
+[eva:alarm] tests/mini-random.c:30: Warning: 
+  function fprintf_va_12: precondition valid_read_string(param0) got status unknown.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_4
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_1
+[eva:alarm] mini-gmp.c:1897: Warning: 
+  signed overflow. assert -a->_mp_size ≤ 2147483647;
+[eva:alarm] mini-gmp.c:1898: Warning: 
+  signed overflow. assert -b->_mp_size ≤ 2147483647;
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_2
+[eva:alarm] mini-gmp.c:437: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] mini-gmp.c:422: Warning: 
+  accessing uninitialized left-value. assert \initialized(ap + i);
+[eva:alarm] mini-gmp.c:422: Warning: 
+  accessing uninitialized left-value. assert \initialized(bp + i);
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:422: Warning: 
+  out of bounds read. assert \valid_read(ap + i);
+[eva:alarm] mini-gmp.c:422: Warning: 
+  out of bounds read. assert \valid_read(bp + i);
+[eva:alarm] mini-gmp.c:427: Warning: out of bounds write. assert \valid(rp + i);
+[eva:alarm] mini-gmp.c:399: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] mini-gmp.c:403: Warning: 
+  accessing uninitialized left-value. assert \initialized(ap + i);
+[eva:alarm] mini-gmp.c:403: Warning: 
+  out of bounds read. assert \valid_read(ap + i);
+[eva:alarm] mini-gmp.c:406: Warning: out of bounds write. assert \valid(rp + i);
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:1911: Warning: 
+  out of bounds write. assert \valid(rp + an);
+[eva:alarm] mini-gmp.c:1919: Warning: 
+  signed overflow. assert -a->_mp_size ≤ 2147483647;
+[eva:alarm] mini-gmp.c:1920: Warning: 
+  signed overflow. assert -b->_mp_size ≤ 2147483647;
+[eva:alarm] mini-gmp.c:358: Warning: 
+  accessing uninitialized left-value. assert \initialized(ap + n);
+[eva:alarm] mini-gmp.c:358: Warning: 
+  accessing uninitialized left-value. assert \initialized(bp + n);
+[eva:alarm] mini-gmp.c:358: Warning: 
+  out of bounds read. assert \valid_read(ap + n);
+[eva:alarm] mini-gmp.c:358: Warning: 
+  out of bounds read. assert \valid_read(bp + n);
+[eva:alarm] mini-gmp.c:359: Warning: 
+  accessing uninitialized left-value. assert \initialized(ap + n);
+[eva:alarm] mini-gmp.c:359: Warning: 
+  accessing uninitialized left-value. assert \initialized(bp + n);
+[eva:alarm] mini-gmp.c:359: Warning: 
+  out of bounds read. assert \valid_read(ap + n);
+[eva:alarm] mini-gmp.c:359: Warning: 
+  out of bounds read. assert \valid_read(bp + n);
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_3
+[eva:alarm] mini-gmp.c:489: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] mini-gmp.c:475: Warning: 
+  accessing uninitialized left-value. assert \initialized(ap + i);
+[eva:alarm] mini-gmp.c:475: Warning: 
+  accessing uninitialized left-value. assert \initialized(bp + i);
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:475: Warning: 
+  out of bounds read. assert \valid_read(ap + i);
+[eva:alarm] mini-gmp.c:475: Warning: 
+  out of bounds read. assert \valid_read(bp + i);
+[eva:alarm] mini-gmp.c:479: Warning: out of bounds write. assert \valid(rp + i);
+[eva:alarm] mini-gmp.c:450: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] mini-gmp.c:455: Warning: 
+  accessing uninitialized left-value. assert \initialized(ap + i);
+[eva:alarm] mini-gmp.c:455: Warning: 
+  out of bounds read. assert \valid_read(ap + i);
+[eva:alarm] mini-gmp.c:458: Warning: out of bounds write. assert \valid(rp + i);
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:1928: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_4
+[eva:alarm] mini-gmp.c:1934: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] using specification for function fprintf_va_11
+[eva:alarm] mini-gmp.c:3998: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(up + (mp_size_t)(un - 1));
+[eva:alarm] mini-gmp.c:3998: Warning: 
+  out of bounds read. assert \valid_read(up + (mp_size_t)(un - 1));
+[eva:alarm] mini-gmp.c:1151: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_6
+[eva:alarm] mini-gmp.c:1164: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(up + (mp_size_t)(un - 1));
+[eva:alarm] mini-gmp.c:1164: Warning: 
+  out of bounds read. assert \valid_read(up + (mp_size_t)(un - 1));
+[eva:alarm] mini-gmp.c:1171: Warning: 
+  accessing uninitialized left-value. assert \initialized(up + i);
+[eva:alarm] mini-gmp.c:1180: Warning: 
+  out of bounds write. assert \valid(sp + j);
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:1178: Warning: 
+  accessing uninitialized left-value. assert \initialized(up + i);
+[eva:alarm] mini-gmp.c:1178: Warning: 
+  out of bounds read. assert \valid_read(up + i);
+[eva:alarm] mini-gmp.c:1171: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ shift < 64;
+[eva:alarm] mini-gmp.c:1171: Warning: 
+  out of bounds read. assert \valid_read(up + i);
+[eva:alarm] mini-gmp.c:4091: Warning: 
+  accessing uninitialized left-value. assert \initialized(sp + i);
+[eva:alarm] mini-gmp.c:4091: Warning: 
+  out of bounds read. assert \valid_read(digits + (unsigned char)*(sp + i));
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:4091: Warning: 
+  out of bounds write. assert \valid(sp + i);
+[eva:alarm] mini-gmp.c:4093: Warning: 
+  out of bounds write. assert \valid(sp + sn);
+[eva] using specification for function fprintf_va_7
+[eva:alarm] tests/testutils.c:159: Warning: 
+  function fprintf_va_7: precondition valid_read_string(param1) got status unknown.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_7
+[eva:alarm] mini-gmp.c:3992: Warning: 
+  signed overflow. assert -u->_mp_size ≤ 2147483647;
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_8
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_9
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:1398: Warning: 
+  signed overflow. assert -r->_mp_size ≤ 2147483647;
+[eva] done for function testmain
+[scope:rm_asserts] removing 26 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function gmp_default_free:
+  p ∈
+   {{ (void *)&__malloc_gmp_default_alloc_l257 ;
+      (void *)&__malloc_gmp_default_alloc_l257_0 ;
+      (void *)&__malloc_gmp_default_alloc_l257_1 ;
+      (void *)&__malloc_gmp_default_alloc_l257_2 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_0 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_1 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_2 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_3 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  dp ∈ ESCAPINGADDR
+  p ∈ ESCAPINGADDR
+  buf ∈ ESCAPINGADDR
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }} or ESCAPINGADDR
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }} or ESCAPINGADDR
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }} or ESCAPINGADDR
+[eva:final-states] Values at end of function gmp_die:
+  NON TERMINATING FUNCTION
+[eva:final-states] Values at end of function asprintf:
+  Frama_C_entropy_source ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  args ∈ {{ &__va_args[0] ; &__va_args_24[0] ; &__va_args_28[0] }}
+  len ∈ [1..256]
+  ap ∈ {{ NULL ; &__malloc_w_asprintf_l124[0] }}
+  bp ∈ {{ NULL ; &__malloc_w_asprintf_l124_0[0] }} or UNINITIALIZED
+  rp ∈ {{ NULL ; &__malloc_w_asprintf_l124_1[0] }} or UNINITIALIZED
+  __retres ∈ [-1..256]
+  __malloc_w_asprintf_l124[0..254] ∈ [--..--] or UNINITIALIZED
+                          [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_0[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_1[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function gmp_default_alloc:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ [--..--]
+  p ∈
+   {{ (void *)&__malloc_gmp_default_alloc_l257 ;
+      (void *)&__malloc_gmp_default_alloc_l257_0 ;
+      (void *)&__malloc_gmp_default_alloc_l257_1 ;
+      (void *)&__malloc_gmp_default_alloc_l257_2 ;
+      (void *)&__malloc_w_gmp_default_alloc_l257_3 ;
+      (void *)&__malloc_w_gmp_default_alloc_l257_4 ;
+      (void *)&__malloc_w_gmp_default_alloc_l257_5 ;
+      (void *)&__malloc_gmp_default_alloc_l257_6 ;
+      (void *)&__malloc_gmp_default_alloc_l257_7 ;
+      (void *)&__malloc_gmp_default_alloc_l257_8 ;
+      (void *)&__malloc_gmp_default_alloc_l257_9 }}
+[eva:final-states] Values at end of function gmp_xalloc_limbs:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+[eva:final-states] Values at end of function hex_random_op3:
+  Frama_C_entropy_source ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  __fc_random_counter ∈ [--..--]
+  a[0] ∈
+   {{ garbled mix of &{a}
+    (origin: Library function {tests/hex-random.c:151}) }} or UNINITIALIZED
+  b[0] ∈
+   {{ garbled mix of &{b}
+    (origin: Library function {tests/hex-random.c:153}) }} or UNINITIALIZED
+  r[0] ∈
+   {{ garbled mix of &{a; b}
+    (origin: Library function {tests/hex-random.c:160}) }}
+  abits ∈ [0..399]
+  bbits ∈ [0..399]
+  signs ∈ [--..--]
+  ap ∈ {{ NULL ; &__malloc_w_asprintf_l124[0] }}
+  bp ∈ {{ NULL ; &__malloc_w_asprintf_l124_0[0] }}
+  rp ∈ {{ NULL ; &__malloc_w_asprintf_l124_1[0] }}
+  state[0] ∈ [--..--]
+  __malloc_w_asprintf_l124[0..254] ∈ [--..--] or UNINITIALIZED
+                          [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_0[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_1[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function mp_get_memory_functions:
+  freefunc ∈ {{ &gmp_default_free }}
+[eva:final-states] Values at end of function mpn_add_1:
+  b ∈ {0; 1}
+  i ∈ [1..2147483648]
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_add_n:
+  i ∈ [0..9223372036854775807]
+  cy ∈ {0; 1; 2}
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_add:
+  cy ∈ {0; 1; 2}
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_base_power_of_two_p:
+  __retres ∈ {4}
+[eva:final-states] Values at end of function mpn_cmp:
+  n ∈ [-1..2147483647]
+  __retres ∈ {-1; 0; 1}
+[eva:final-states] Values at end of function mpn_cmp4:
+  __retres ∈ {-1; 0; 1}
+[eva:final-states] Values at end of function mpn_limb_size_in_base_2:
+  shift ∈ [--..--]
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function mpn_get_str_bits:
+  mask ∈ {15}
+  sn ∈ [0..4611686018427387903]
+  j ∈ [--..--]
+  i ∈ [0..9223372036854775807]
+  shift ∈ [0..64],0%4
+  __malloc_gmp_default_alloc_l257_6[0] ∈ [0..45] or UNINITIALIZED
+                                   [1..4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_7[0] ∈ [0..45] or UNINITIALIZED
+                                   [1..4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_8[0] ∈ [0..45] or UNINITIALIZED
+                                   [1..4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_9[0] ∈ [0..45] or UNINITIALIZED
+                                   [1..4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_normalized_size:
+  n ∈ [0..288230376151711743]
+[eva:final-states] Values at end of function mpn_set_str_bits:
+  rn ∈ [0..288230376151711743]
+  j ∈ [--..--]
+  shift ∈ [0..60],0%4
+  __malloc_gmp_default_alloc_l257[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_0[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_2[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269[0..2305843009213693943] ∈
+                                      [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_0[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_1[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_sub_1:
+  b ∈ {0; 1}
+  i ∈ [1..2147483648]
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_sub_n:
+  i ∈ [0..9223372036854775807]
+  cy ∈ {0; 1; 2}
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpn_sub:
+  cy ∈ {0; 1; 2}
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpz_clear:
+  a[0]._mp_alloc ∈ [--..--]
+   [0]._mp_size ∈ [-2147483647..2147483647]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }} or ESCAPINGADDR
+  b[0]._mp_alloc ∈ [--..--]
+   [0]._mp_size ∈ [-2147483647..2147483647]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }} or ESCAPINGADDR
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }} or ESCAPINGADDR
+[eva:final-states] Values at end of function mpz_cmp:
+  asize ∈ [-2147483648..2147483647]
+  bsize ∈ [-2147483648..2147483647]
+  __retres ∈ {-1; 0; 1}
+[eva:final-states] Values at end of function mpz_init:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  a[0]._mp_alloc ∈ {1}
+   [0]._mp_size ∈ {0}
+   [0]._mp_d ∈ {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 }}
+  b[0]._mp_alloc ∈ {1} or UNINITIALIZED
+   [0]._mp_size ∈ {0} or UNINITIALIZED
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 }} or UNINITIALIZED
+  res[0]._mp_alloc ∈ {1} or UNINITIALIZED
+     [0]._mp_size ∈ {0} or UNINITIALIZED
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 }} or UNINITIALIZED
+  ref[0]._mp_alloc ∈ {1} or UNINITIALIZED
+     [0]._mp_size ∈ {0} or UNINITIALIZED
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 }} or UNINITIALIZED
+[eva:final-states] Values at end of function mpz_sizeinbase:
+  un ∈ [0..2147483647]
+  up ∈
+    {{ (mp_limb_t const *)&__malloc_gmp_default_alloc_l257 ;
+       (mp_limb_t const *)&__malloc_gmp_default_alloc_l257_0 ;
+       (mp_limb_t const *)&__malloc_gmp_default_alloc_l257_1 ;
+       (mp_limb_t const *)&__malloc_gmp_default_alloc_l257_2 ;
+       (mp_limb_t const *)&__realloc_w_gmp_default_realloc_l269 ;
+       (mp_limb_t const *)&__realloc_w_gmp_default_realloc_l269_0 ;
+       (mp_limb_t const *)&__realloc_w_gmp_default_realloc_l269_1 ;
+       (mp_limb_t const *)&__realloc_w_gmp_default_realloc_l269_2 ;
+       (mp_limb_t const *)&__realloc_w_gmp_default_realloc_l269_3 ;
+       (mp_limb_t const *)&__realloc_w_gmp_default_realloc_l269_4 }} or UNINITIALIZED
+  bits ∈ [--..--] or UNINITIALIZED
+  __retres ∈ [0..4611686018427387903]
+[eva:final-states] Values at end of function mpz_get_str:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ [--..--]
+  sp ∈
+    {{ &__malloc_gmp_default_alloc_l257_6[0] ;
+       &__malloc_gmp_default_alloc_l257_7[0] ;
+       &__malloc_gmp_default_alloc_l257_8[0] ;
+       &__malloc_gmp_default_alloc_l257_9[0] }}
+  bits ∈ {4} or UNINITIALIZED
+  digits ∈ {{ "0123456789abcdefghijklmnopqrstuvwxyz" }}
+  un ∈ [0..2147483647]
+  i ∈ [0..9223372036854775807] or UNINITIALIZED
+  sn ∈ [0..4611686018427387904]
+  __retres ∈
+          {{ &__malloc_gmp_default_alloc_l257_6[0] ;
+             &__malloc_gmp_default_alloc_l257_7[0] ;
+             &__malloc_gmp_default_alloc_l257_8[0] ;
+             &__malloc_gmp_default_alloc_l257_9[0] }}
+  __malloc_gmp_default_alloc_l257_6[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_7[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_8[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_9[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+[eva:final-states] Values at end of function gmp_default_realloc:
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  old ∈
+     {{ (void *)&__malloc_gmp_default_alloc_l257 ;
+        (void *)&__malloc_gmp_default_alloc_l257_0 ;
+        (void *)&__malloc_gmp_default_alloc_l257_1 ;
+        (void *)&__malloc_gmp_default_alloc_l257_2 ;
+        (void *)&__realloc_w_gmp_default_realloc_l269 ;
+        (void *)&__realloc_w_gmp_default_realloc_l269_0 ;
+        (void *)&__realloc_w_gmp_default_realloc_l269_1 ;
+        (void *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (void *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (void *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  p ∈
+   {{ (void *)&__realloc_w_gmp_default_realloc_l269 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_0 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_1 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_2 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_3 ;
+      (void *)&__realloc_w_gmp_default_realloc_l269_4 }}
+  old ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+        (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+        (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }} or ESCAPINGADDR
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }} or ESCAPINGADDR
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }} or ESCAPINGADDR
+[eva:final-states] Values at end of function gmp_xrealloc_limbs:
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  old ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+        (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+        (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }} or ESCAPINGADDR
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }} or ESCAPINGADDR
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }} or ESCAPINGADDR
+[eva:final-states] Values at end of function mpz_realloc:
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  size ∈ [1..288230376151711743]
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }}
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }}
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }}
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }}
+  __retres ∈
+          {{ (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 ;
+             (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 ;
+             (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 ;
+             (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+             (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+             (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }}
+[eva:final-states] Values at end of function mpz_abs_add:
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  a ∈ {{ &a[0] ; &b[0] }}
+  b ∈ {{ &a[0] ; &b[0] }}
+  an ∈ [0..2147483647]
+  bn ∈ [0..2147483647]
+  rp ∈
+    {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }}
+  cy ∈ {0; 1; 2}
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }}
+  __retres ∈ [0..2147483649]
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpz_abs_sub:
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  an ∈ [0..2147483647]
+  bn ∈ [0..2147483647]
+  cmp ∈ {-1; 0; 1}
+  rp ∈
+    {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or UNINITIALIZED
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }}
+  __retres ∈ [-2147483647..2147483647]
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpz_add:
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  rn ∈ [-2147483647..2147483649]
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }}
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mpz_set_str:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  sp ∈
+    {{ &__malloc_w_asprintf_l124 + [0..255] ;
+       &__malloc_w_asprintf_l124_0 + [0..255] ;
+       &__malloc_w_asprintf_l124_1 + [0..255] }}
+  bits ∈ {4} or UNINITIALIZED
+  rn ∈ [0..288230376151711743] or UNINITIALIZED
+  alloc ∈ [0..288230376151711743] or UNINITIALIZED
+  rp ∈
+    {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+       (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+       (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 ;
+       (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }} or UNINITIALIZED
+  sn ∈ [--..--]
+  sign ∈ {0; 1}
+  dp ∈ ESCAPINGADDR
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }}
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }}
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }}
+  __retres ∈ {-1; 0}
+  __malloc_gmp_default_alloc_l257[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_0[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_2[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_3[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269[0..2305843009213693943] ∈
+                                      [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_4[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_0[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_5[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_1[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function set_str:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }}
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }}
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }}
+  __malloc_gmp_default_alloc_l257[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_0[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_2[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_3[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269[0..2305843009213693943] ∈
+                                      [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_4[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_0[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_5[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_1[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function mini_random_op3:
+  Frama_C_entropy_source ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  __fc_random_counter ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  a[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }}
+  b[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }}
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }}
+  ap ∈ {{ NULL ; &__malloc_w_asprintf_l124[0] }} or ESCAPINGADDR
+  bp ∈ {{ NULL ; &__malloc_w_asprintf_l124_0[0] }} or ESCAPINGADDR
+  rp ∈ {{ NULL ; &__malloc_w_asprintf_l124_1[0] }} or ESCAPINGADDR
+  state[0] ∈ [--..--]
+  __malloc_gmp_default_alloc_l257[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_0[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_2[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_w_asprintf_l124[0..254] ∈ [--..--] or UNINITIALIZED
+                          [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_0[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_1[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_3[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269[0..2305843009213693943] ∈
+                                      [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_4[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_0[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_5[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_1[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function testfree:
+  p ∈ ESCAPINGADDR
+  freefunc ∈ {{ &gmp_default_free }}
+  buf ∈ ESCAPINGADDR
+[eva:final-states] Values at end of function dump:
+  __fc_heap_status ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ [--..--]
+  buf ∈ ESCAPINGADDR
+  __malloc_gmp_default_alloc_l257_6[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_7[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_8[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_9[0..4611686018427387903] ∈
+                                   [0..122] or UNINITIALIZED
+                                   [4611686018427387904] ∈
+                                   [0..15] or UNINITIALIZED
+[eva:final-states] Values at end of function testmain:
+  Frama_C_entropy_source ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  __fc_random_counter ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ {0}
+  i ∈ {10000}
+  a[0]._mp_alloc ∈ [--..--]
+   [0]._mp_size ∈ [-2147483647..2147483647]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269 }} or ESCAPINGADDR
+  b[0]._mp_alloc ∈ [--..--]
+   [0]._mp_size ∈ [-2147483647..2147483647]
+   [0]._mp_d ∈
+   {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_0 ;
+      (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_0 }} or ESCAPINGADDR
+  res[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_1 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_3 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_4 }} or ESCAPINGADDR
+  ref[0]{._mp_alloc; ._mp_size} ∈ [--..--]
+     [0]._mp_d ∈
+     {{ (mp_limb_t *)&__malloc_gmp_default_alloc_l257_2 ;
+        (mp_limb_t *)&__realloc_w_gmp_default_realloc_l269_1 }} or ESCAPINGADDR
+  state[0] ∈ [--..--]
+  __malloc_gmp_default_alloc_l257[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_0[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_1[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_gmp_default_alloc_l257_2[0..7] ∈ [--..--] or UNINITIALIZED
+  __malloc_w_asprintf_l124[0..254] ∈ [--..--] or UNINITIALIZED
+                          [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_0[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_asprintf_l124_1[0..254] ∈ [--..--] or UNINITIALIZED
+                            [255] ∈ {0} or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_3[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269[0..2305843009213693943] ∈
+                                      [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_4[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_0[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+  __malloc_w_gmp_default_alloc_l257_5[0..255] ∈ [0..15] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_1[0..2305843009213693943] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_2[0..17179869183] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_3[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+  __realloc_w_gmp_default_realloc_l269_4[0..17179869175] ∈
+                                        [--..--] or UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    19 valid    13 unknown     0 invalid     32 total
+  59% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m2.016s
+user	0m1.839s
+sys	0m0.112s

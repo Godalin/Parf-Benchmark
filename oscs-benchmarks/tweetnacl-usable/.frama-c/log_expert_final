@@ -1,0 +1,863 @@
+[kernel] Parsing main.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotfa662a.c:758:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing tweetnacl.c (with preprocessing)
+[kernel] Parsing randombytes.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot1ca628.c:758:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[variadic:typing] main.c:21: Warning: 
+  Incorrect type for argument 2. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 4.
+  option -eva-auto-loop-unroll set to 1024.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 2.
+  option -eva-slevel set to 5000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 2000.
+  option -eva-subdivide-non-linear set to 220.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(fread) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(crypto_onetimeauth_poly1305_tweet_verify) == 0 (auto)
+  \return(crypto_verify_32_tweet) == 0 (auto)
+  \return(neq25519) == 0 (auto)
+  \return(unpackneg) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  _0[0..15] ∈ {0}
+  _9[0] ∈ {9}
+    [1..31] ∈ {0}
+  gf0[0..15] ∈ {0}
+  gf1[0] ∈ {1}
+     [1..15] ∈ {0}
+  _121665[0] ∈ {56129}
+         [1] ∈ {1}
+         [2..15] ∈ {0}
+  D[0] ∈ {30883}
+   [1] ∈ {4953}
+   [2] ∈ {19914}
+   [3] ∈ {30187}
+   [4] ∈ {55467}
+   [5] ∈ {16705}
+   [6] ∈ {2637}
+   [7] ∈ {112}
+   [8] ∈ {59544}
+   [9] ∈ {30585}
+   [10] ∈ {16505}
+   [11] ∈ {36039}
+   [12] ∈ {65139}
+   [13] ∈ {11119}
+   [14] ∈ {27886}
+   [15] ∈ {20995}
+  D2[0] ∈ {61785}
+    [1] ∈ {9906}
+    [2] ∈ {39828}
+    [3] ∈ {60374}
+    [4] ∈ {45398}
+    [5] ∈ {33411}
+    [6] ∈ {5274}
+    [7] ∈ {224}
+    [8] ∈ {53552}
+    [9] ∈ {61171}
+    [10] ∈ {33010}
+    [11] ∈ {6542}
+    [12] ∈ {64743}
+    [13] ∈ {22239}
+    [14] ∈ {55772}
+    [15] ∈ {9222}
+  X[0] ∈ {54554}
+   [1] ∈ {36645}
+   [2] ∈ {11616}
+   [3] ∈ {51542}
+   [4] ∈ {42930}
+   [5] ∈ {38181}
+   [6] ∈ {51040}
+   [7] ∈ {26924}
+   [8] ∈ {56412}
+   [9] ∈ {64982}
+   [10] ∈ {57905}
+   [11] ∈ {49316}
+   [12] ∈ {21502}
+   [13] ∈ {52590}
+   [14] ∈ {14035}
+   [15] ∈ {8553}
+  Y[0] ∈ {26200}
+   [1..15] ∈ {26214}
+  I[0] ∈ {41136}
+   [1] ∈ {18958}
+   [2] ∈ {6951}
+   [3] ∈ {50414}
+   [4] ∈ {58488}
+   [5] ∈ {44335}
+   [6] ∈ {6150}
+   [7] ∈ {12099}
+   [8] ∈ {55207}
+   [9] ∈ {15867}
+   [10] ∈ {153}
+   [11] ∈ {11085}
+   [12] ∈ {57099}
+   [13] ∈ {20417}
+   [14] ∈ {9344}
+   [15] ∈ {11139}
+  sigma[0] ∈ {101}
+       [1] ∈ {120}
+       [2] ∈ {112}
+       [3] ∈ {97}
+       [4] ∈ {110}
+       [5] ∈ {100}
+       [6] ∈ {32}
+       [7] ∈ {51}
+       [8] ∈ {50}
+       [9] ∈ {45}
+       [10] ∈ {98}
+       [11] ∈ {121}
+       [12] ∈ {116}
+       [13] ∈ {101}
+       [14] ∈ {32}
+       [15] ∈ {107}
+  minusp[0] ∈ {5}
+        [1..15] ∈ {0}
+        [16] ∈ {252}
+  K[0] ∈ {4794697086780616226}
+   [1] ∈ {8158064640168781261}
+   [2] ∈ {13096744586834688815}
+   [3] ∈ {16840607885511220156}
+   [4] ∈ {4131703408338449720}
+   [5] ∈ {6480981068601479193}
+   [6] ∈ {10538285296894168987}
+   [7] ∈ {12329834152419229976}
+   [8] ∈ {15566598209576043074}
+   [9] ∈ {1334009975649890238}
+   [10] ∈ {2608012711638119052}
+   [11] ∈ {6128411473006802146}
+   [12] ∈ {8268148722764581231}
+   [13] ∈ {9286055187155687089}
+   [14] ∈ {11230858885718282805}
+   [15] ∈ {13951009754708518548}
+   [16] ∈ {16472876342353939154}
+   [17] ∈ {17275323862435702243}
+   [18] ∈ {1135362057144423861}
+   [19] ∈ {2597628984639134821}
+   [20] ∈ {3308224258029322869}
+   [21] ∈ {5365058923640841347}
+   [22] ∈ {6679025012923562964}
+   [23] ∈ {8573033837759648693}
+   [24] ∈ {10970295158949994411}
+   [25] ∈ {12119686244451234320}
+   [26] ∈ {12683024718118986047}
+   [27] ∈ {13788192230050041572}
+   [28] ∈ {14330467153632333762}
+   [29] ∈ {15395433587784984357}
+   [30] ∈ {489312712824947311}
+   [31] ∈ {1452737877330783856}
+   [32] ∈ {2861767655752347644}
+   [33] ∈ {3322285676063803686}
+   [34] ∈ {5560940570517711597}
+   [35] ∈ {5996557281743188959}
+   [36] ∈ {7280758554555802590}
+   [37] ∈ {8532644243296465576}
+   [38] ∈ {9350256976987008742}
+   [39] ∈ {10552545826968843579}
+   [40] ∈ {11727347734174303076}
+   [41] ∈ {12113106623233404929}
+   [42] ∈ {14000437183269869457}
+   [43] ∈ {14369950271660146224}
+   [44] ∈ {15101387698204529176}
+   [45] ∈ {15463397548674623760}
+   [46] ∈ {17586052441742319658}
+   [47] ∈ {1182934255886127544}
+   [48] ∈ {1847814050463011016}
+   [49] ∈ {2177327727835720531}
+   [50] ∈ {2830643537854262169}
+   [51] ∈ {3796741975233480872}
+   [52] ∈ {4115178125766777443}
+   [53] ∈ {5681478168544905931}
+   [54] ∈ {6601373596472566643}
+   [55] ∈ {7507060721942968483}
+   [56] ∈ {8399075790359081724}
+   [57] ∈ {8693463985226723168}
+   [58] ∈ {9568029438360202098}
+   [59] ∈ {10144078919501101548}
+   [60] ∈ {10430055236837252648}
+   [61] ∈ {11840083180663258601}
+   [62] ∈ {13761210420658862357}
+   [63] ∈ {14299343276471374635}
+   [64] ∈ {14566680578165727644}
+   [65] ∈ {15097957966210449927}
+   [66] ∈ {16922976911328602910}
+   [67] ∈ {17689382322260857208}
+   [68] ∈ {500013540394364858}
+   [69] ∈ {748580250866718886}
+   [70] ∈ {1242879168328830382}
+   [71] ∈ {1977374033974150939}
+   [72] ∈ {2944078676154940804}
+   [73] ∈ {3659926193048069267}
+   [74] ∈ {4368137639120453308}
+   [75] ∈ {4836135668995329356}
+   [76] ∈ {5532061633213252278}
+   [77] ∈ {6448918945643986474}
+   [78] ∈ {6902733635092675308}
+   [79] ∈ {7801388544844847127}
+  iv[0] ∈ {106}
+    [1] ∈ {9}
+    [2] ∈ {230}
+    [3] ∈ {103}
+    [4] ∈ {243}
+    [5] ∈ {188}
+    [6] ∈ {201}
+    [7] ∈ {8}
+    [8] ∈ {187}
+    [9] ∈ {103}
+    [10] ∈ {174}
+    [11] ∈ {133}
+    [12] ∈ {132}
+    [13] ∈ {202}
+    [14] ∈ {167}
+    [15] ∈ {59}
+    [16] ∈ {60}
+    [17] ∈ {110}
+    [18] ∈ {243}
+    [19] ∈ {114}
+    [20] ∈ {254}
+    [21] ∈ {148}
+    [22] ∈ {248}
+    [23] ∈ {43}
+    [24] ∈ {165}
+    [25] ∈ {79}
+    [26] ∈ {245}
+    [27] ∈ {58}
+    [28] ∈ {95}
+    [29] ∈ {29}
+    [30] ∈ {54}
+    [31] ∈ {241}
+    [32] ∈ {81}
+    [33] ∈ {14}
+    [34] ∈ {82}
+    [35] ∈ {127}
+    [36] ∈ {173}
+    [37] ∈ {230}
+    [38] ∈ {130}
+    [39] ∈ {209}
+    [40] ∈ {155}
+    [41] ∈ {5}
+    [42] ∈ {104}
+    [43] ∈ {140}
+    [44] ∈ {43}
+    [45] ∈ {62}
+    [46] ∈ {108}
+    [47..48] ∈ {31}
+    [49] ∈ {131}
+    [50] ∈ {217}
+    [51] ∈ {171}
+    [52] ∈ {251}
+    [53] ∈ {65}
+    [54] ∈ {189}
+    [55] ∈ {107}
+    [56] ∈ {91}
+    [57] ∈ {224}
+    [58] ∈ {205}
+    [59] ∈ {25}
+    [60] ∈ {19}
+    [61] ∈ {126}
+    [62] ∈ {33}
+    [63] ∈ {121}
+  L[0] ∈ {237}
+   [1] ∈ {211}
+   [2] ∈ {245}
+   [3] ∈ {92}
+   [4] ∈ {26}
+   [5] ∈ {99}
+   [6] ∈ {18}
+   [7] ∈ {88}
+   [8] ∈ {214}
+   [9] ∈ {156}
+   [10] ∈ {247}
+   [11] ∈ {162}
+   [12] ∈ {222}
+   [13] ∈ {249}
+   [14] ∈ {222}
+   [15] ∈ {20}
+   [16..30] ∈ {0}
+   [31] ∈ {16}
+[eva] using specification for function fopen
+[eva] using specification for function fread
+[eva] using specification for function fclose
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function exit
+[eva] using specification for function printf_va_3
+[eva] using specification for function printf_va_1
+[eva] using specification for function printf_va_2
+[eva:loop-unroll:auto] tweetnacl.c:400: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:339: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:404: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:409: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:289: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:346: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:352: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:358: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:359: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:359: Automatic loop unrolling.
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 200 states
+[eva:loop-unroll:auto] tweetnacl.c:360: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:361: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:278: Automatic loop unrolling.
+[eva:alarm] tweetnacl.c:282: Warning: 
+  invalid LHS operand for left shift. assert 0 ≤ c;
+[eva:alarm] tweetnacl.c:359: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ *(a + i) * *(b + j);
+[eva:alarm] tweetnacl.c:359: Warning: 
+  signed overflow. assert *(a + i) * *(b + j) ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:359: Warning: 
+  signed overflow.
+  assert -9223372036854775808 ≤ t[(i64)(i + j)] + (i64)(*(a + i) * *(b + j));
+[eva:alarm] tweetnacl.c:359: Warning: 
+  signed overflow.
+  assert t[(i64)(i + j)] + (i64)(*(a + i) * *(b + j)) ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:360: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ 38 * t[(i64)(i + 16)];
+[eva:alarm] tweetnacl.c:360: Warning: 
+  signed overflow. assert 38 * t[(i64)(i + 16)] ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:360: Warning: 
+  signed overflow.
+  assert -9223372036854775808 ≤ t[i] + (i64)(38 * t[(i64)(i + 16)]);
+[eva:alarm] tweetnacl.c:360: Warning: 
+  signed overflow.
+  assert t[i] + (i64)(38 * t[(i64)(i + 16)]) ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:279: Warning: 
+  signed overflow.
+  assert *(o + i) + (long long)(1LL << 16) ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:281: Warning: 
+  signed overflow.
+  assert
+  -9223372036854775808 ≤
+  *(o + (int)((int)(i + 1) * (int)(i < 15? 1: 0))) +
+  (i64)((i64)(c - 1) +
+        (i64)((i64)(37 * (i64)(c - 1)) * (i64)((int)(i ≡ 15? 1: 0))));
+[eva:alarm] tweetnacl.c:281: Warning: 
+  signed overflow.
+  assert
+  *(o + (int)((int)(i + 1) * (int)(i < 15? 1: 0))) +
+  (i64)((i64)(c - 1) +
+        (i64)((i64)(37 * (i64)(c - 1)) * (i64)((int)(i ≡ 15? 1: 0))))
+  ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:282: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ *(o + i) - (i64)(c << 16);
+[eva:alarm] tweetnacl.c:346: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ *(a + i) + *(b + i);
+[eva:alarm] tweetnacl.c:346: Warning: 
+  signed overflow. assert *(a + i) + *(b + i) ≤ 9223372036854775807;
+[eva:alarm] tweetnacl.c:352: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ *(a + i) - *(b + i);
+[eva:alarm] tweetnacl.c:352: Warning: 
+  signed overflow. assert *(a + i) - *(b + i) ≤ 9223372036854775807;
+[eva] tweetnacl.c:409: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:409: Trace partitioning superposing up to 200 states
+[eva:loop-unroll:auto] tweetnacl.c:434: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:375: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:376: Automatic loop unrolling.
+[eva] tweetnacl.c:376: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:376: Trace partitioning superposing up to 200 states
+[eva:loop-unroll:auto] tweetnacl.c:380: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:300: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:304: Automatic loop unrolling.
+[eva:alarm] tweetnacl.c:305: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ t[0] - 0xffed;
+[eva:loop-unroll:auto] tweetnacl.c:306: Automatic loop unrolling.
+[eva:alarm] tweetnacl.c:307: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ t[i] - 0xffff;
+[eva:alarm] tweetnacl.c:307: Warning: 
+  signed overflow.
+  assert
+  -9223372036854775808 ≤
+  (i64)(t[i] - 0xffff) - (long long)((i64)(m[(int)(i - 1)] >> 16) & 1);
+[eva:alarm] tweetnacl.c:310: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ t[15] - 0x7fff;
+[eva:alarm] tweetnacl.c:310: Warning: 
+  signed overflow.
+  assert
+  -9223372036854775808 ≤
+  (i64)(t[15] - 0x7fff) - (long long)((i64)(m[14] >> 16) & 1);
+[eva:loop-unroll:auto] tweetnacl.c:315: Automatic loop unrolling.
+[eva] using specification for function printf_va_4
+[eva] using specification for function printf_va_5
+[eva] using specification for function printf_va_6
+[eva] using specification for function printf_va_7
+[eva] main.c:56: allocating variable __malloc_main_l56
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva:alarm] main.c:57: Warning: 
+  function memset: precondition 'valid_s' got status invalid.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva] main.c:60: allocating variable __malloc_main_l60
+[eva] main.c:63: allocating variable __malloc_main_l63
+[eva:alarm] main.c:64: Warning: 
+  out of bounds write. assert \valid(decryptedmessage + padded_mlen);
+[kernel] main.c:64: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva:loop-unroll:auto] tweetnacl.c:76: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:83: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:85: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:86: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:87: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:92: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:94: Automatic loop unrolling.
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 200 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 300 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 400 states
+[eva:loop-unroll:auto] tweetnacl.c:98: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:99: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:103: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:45: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:130: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:131: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:132: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:108: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:134: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:136: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:147: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:189: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:190: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:201: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:202: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:174: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:206: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:208: Automatic loop unrolling.
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 200 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 300 states
+[eva:loop-unroll:auto] tweetnacl.c:210: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:212: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:219: Automatic loop unrolling.
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 400 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 500 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 600 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 700 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 800 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 900 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1000 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1100 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1200 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1300 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1400 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1500 states
+[eva:loop-unroll:auto] tweetnacl.c:227: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:230: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:232: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:235: Automatic loop unrolling.
+[eva:loop-unroll:auto] tweetnacl.c:252: Automatic loop unrolling.
+[eva:alarm] tweetnacl.c:134: Warning: out of bounds write. assert \valid(c + i);
+[kernel] tweetnacl.c:134: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function printf_va_8
+[eva] using specification for function printf_va_9
+[eva] main.c:20: Trace partitioning superposing up to 100 states
+[eva:loop-unroll:auto] tweetnacl.c:57: Automatic loop unrolling.
+[eva] tweetnacl.c:243: cannot properly split on \result == 0
+[eva:loop-unroll:auto] tweetnacl.c:264: Automatic loop unrolling.
+[eva] using specification for function printf_va_10
+[eva] using specification for function printf_va_11
+[eva:alarm] main.c:21: Warning: 
+  accessing uninitialized left-value. assert \initialized(data + i);
+[eva] using specification for function printf_va_12
+[eva] done for function main
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function A:
+  i ∈ {16}
+  a[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  e[0..15] ∈ [--..--]
+[eva:final-states] Values at end of function L32:
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function Z:
+  i ∈ {16}
+  a[0..15] ∈ [--..--]
+  b[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+[eva:final-states] Values at end of function add1305:
+  j ∈ {17}
+  u ∈ {0; 1}
+  h[0..15] ∈ [0..255]
+   [16] ∈ [0..8] ∪ [248..255]
+[eva:final-states] Values at end of function car25519:
+  i ∈ {16}
+  c ∈ [0..140737488355327]
+  t[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  x[0..14] ∈ [0..65535]
+   [15] ∈ [0..32767]
+   [16..79] ∈ [--..--] or UNINITIALIZED
+  a[0..15] ∈ [--..--]
+  b[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  d[0..15] ∈ [--..--]
+  f[0..15] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function M:
+  i ∈ {16}
+  j ∈ {16}
+  t[0..30] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  x[0..14] ∈ [0..65535]
+   [15] ∈ [0..32767]
+   [16..79] ∈ [--..--] or UNINITIALIZED
+  a[0..15] ∈ [--..--]
+  b[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  d[0..15] ∈ [--..--]
+  f[0..15] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function S:
+  c[0..15] ∈ [--..--]
+  b[0..15] ∈ [--..--]
+  d[0..15] ∈ [--..--]
+  f[0..15] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function crypto_onetimeauth_poly1305_tweet:
+  m ∈ {{ &__malloc_main_l60[105] }}
+  n ∈ {0}
+  s ∈ {0; 18446744073709551615}
+  i ∈ {17}
+  j ∈ {16}
+  u ∈ {0; 1; 2; 3; 4}
+  x[0] ∈ [0..212714625]
+   [1] ∈ [0..191971650]
+   [2] ∈ [0..190428675]
+   [3] ∈ [0..170248500]
+   [4] ∈ [0..149509560]
+   [5] ∈ [0..128766585]
+   [6] ∈ [0..127223610]
+   [7] ∈ [0..107043435]
+   [8] ∈ [0..86304495]
+   [9] ∈ [0..65561520]
+   [10] ∈ [0..64018545]
+   [11] ∈ [0..43838370]
+   [12] ∈ [0..23099430]
+   [13] ∈ [0..2356455]
+   [14] ∈ [0..813480]
+   [15] ∈ [0..793305]
+   [16] ∈ [0..729555]
+  r[0..2] ∈ [0..255]
+   [3] ∈ [0..15]
+   [4] ∈
+   {0; 4; 8; 12; 16; 20; 24; 28; 32; 36; 40; 44; 48; 52; 56; 60; 64; 68; 72;
+    76; 80; 84; 88; 92; 96; 100; 104; 108; 112; 116; 120; 124; 128; 132; 136;
+    140; 144; 148; 152; 156; 160; 164; 168; 172; 176; 180; 184; 188; 192;
+    196; 200; 204; 208; 212; 216; 220; 224; 228; 232; 236; 240; 244; 248;
+    252}
+   [5..6] ∈ [0..255]
+   [7] ∈ [0..15]
+   [8] ∈
+   {0; 4; 8; 12; 16; 20; 24; 28; 32; 36; 40; 44; 48; 52; 56; 60; 64; 68; 72;
+    76; 80; 84; 88; 92; 96; 100; 104; 108; 112; 116; 120; 124; 128; 132; 136;
+    140; 144; 148; 152; 156; 160; 164; 168; 172; 176; 180; 184; 188; 192;
+    196; 200; 204; 208; 212; 216; 220; 224; 228; 232; 236; 240; 244; 248;
+    252}
+   [9..10] ∈ [0..255]
+   [11] ∈ [0..15]
+   [12] ∈
+   {0; 4; 8; 12; 16; 20; 24; 28; 32; 36; 40; 44; 48; 52; 56; 60; 64; 68; 72;
+    76; 80; 84; 88; 92; 96; 100; 104; 108; 112; 116; 120; 124; 128; 132; 136;
+    140; 144; 148; 152; 156; 160; 164; 168; 172; 176; 180; 184; 188; 192;
+    196; 200; 204; 208; 212; 216; 220; 224; 228; 232; 236; 240; 244; 248;
+    252}
+   [13..14] ∈ [0..255]
+   [15] ∈ [0..15]
+   [16] ∈ {0}
+  h[0..15] ∈ [0..255]
+   [16] ∈ [0..8] ∪ [248..255]
+  c[0..15] ∈ [0..255]
+   [16] ∈ {0}
+  g[0..15] ∈ [0..255]
+   [16] ∈ {0; 1; 2; 3; 4}
+  x[0..15] ∈ [--..--]
+  __retres ∈ {0}
+  __malloc_main_l60[0..104] ∈ [--..--]
+[eva:final-states] Values at end of function inv25519:
+  c[0..15] ∈ [--..--]
+  a ∈ {16}
+  x[0..14] ∈ [0..65535]
+   [15] ∈ [0..32767]
+   [16..79] ∈ [--..--]
+[eva:final-states] Values at end of function ld32:
+  u ∈ [0..16777215]
+  __retres ∈ [0..4294967295]
+[eva:final-states] Values at end of function hexdump:
+  i ∈ {24; 32; 105}
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function randombytes:
+  __fc_fopen[0..15] ∈ [--..--]
+  sk[0..31] ∈ [--..--]
+  sk2[0..31] ∈ [--..--]
+  nonce[0..23] ∈ [--..--]
+  failed ∈ {0}
+  fh ∈
+    {{ &__fc_fopen{[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
+                   [11], [12], [13], [14], [15]} }}
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function sel25519:
+  t ∈ [--..--]
+  i ∈ {16}
+  c ∈ {-1; 0}
+  m[0..15] ∈ [--..--]
+  t[0..15] ∈ [--..--]
+  a[0..15] ∈ [--..--]
+  b[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  d[0..15] ∈ [--..--]
+[eva:final-states] Values at end of function pack25519:
+  pk[0..31] ∈ [--..--]
+  pk2[0..31] ∈ [--..--]
+  i ∈ {16}
+  j ∈ {2}
+  b ∈ {0; 1}
+  m[0..15] ∈ [--..--]
+  t[0..15] ∈ [--..--]
+  s[0..31] ∈ [--..--]
+[eva:final-states] Values at end of function st32:
+  u ∈ [0..4294967295]
+  i ∈ {4}
+  x[0..3] ∈ [--..--]
+   [4..63] ∈ [--..--] or UNINITIALIZED
+  s[0..3] ∈ [--..--]
+   [4..31] ∈ [--..--] or UNINITIALIZED
+  s[0..3] ∈ [--..--]
+   [4..31] ∈ [--..--] or UNINITIALIZED
+  k[0..3] ∈ [--..--]
+   [4..31] ∈ [--..--] or UNINITIALIZED
+  k[0..3] ∈ [--..--]
+   [4..31] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function core:
+  w[0..15] ∈ [--..--]
+  x[0..15] ∈ [--..--]
+  y[0] ∈ {1634760805}
+   [1..4] ∈ [0..4294967295]
+   [5] ∈ {857760878}
+   [6..9] ∈ [0..4294967295]
+   [10] ∈ {2036477234}
+   [11..14] ∈ [0..4294967295]
+   [15] ∈ {1797285236}
+  t[0..3] ∈ [--..--]
+  i ∈ {4; 16}
+  j ∈ {4}
+  m ∈ {16}
+  x[0..63] ∈ [--..--]
+  s[0..31] ∈ [--..--]
+  s[0..31] ∈ [--..--]
+  k[0..31] ∈ [--..--]
+  k[0..31] ∈ [--..--]
+[eva:final-states] Values at end of function crypto_core_hsalsa20_tweet:
+  s[0..31] ∈ [--..--]
+  s[0..31] ∈ [--..--]
+  k[0..31] ∈ [--..--]
+  k[0..31] ∈ [--..--]
+  __retres ∈ {0}
+[eva:final-states] Values at end of function crypto_core_salsa20_tweet:
+  x[0..63] ∈ [--..--]
+  __retres ∈ {0}
+[eva:final-states] Values at end of function crypto_stream_salsa20_tweet_xor:
+  c ∈
+   {{ &x[0] ; &__malloc_main_l60[64] ;
+      (unsigned char *)&__malloc_main_l63[64] }}
+  m ∈
+   {{ NULL ; (unsigned char const *)&__malloc_main_l56[64] ;
+      &__malloc_main_l60[64] }}
+  b ∈ {32; 41}
+  z[0..7] ∈ [--..--]
+   [8] ∈ {0; 1}
+   [9..15] ∈ {0}
+  x[0..63] ∈ [--..--]
+  u ∈ {0} or UNINITIALIZED
+  i ∈ {32; 41}
+  x[0..31] ∈ [--..--]
+  __retres ∈ {0}
+  __malloc_main_l60[0..104] ∈ [--..--]
+  __malloc_main_l63[0..104] ∈ [--..--] or UNINITIALIZED
+                   [105] ∈ {0}
+[eva:final-states] Values at end of function crypto_stream_salsa20_tweet:
+  x[0..31] ∈ [--..--]
+[eva:final-states] Values at end of function crypto_stream_xsalsa20_tweet:
+  s[0..31] ∈ [--..--]
+  x[0..31] ∈ [--..--]
+[eva:final-states] Values at end of function crypto_stream_xsalsa20_tweet_xor:
+  s[0..31] ∈ [--..--]
+  __malloc_main_l60[0..104] ∈ [--..--]
+  __malloc_main_l63[0..104] ∈ [--..--] or UNINITIALIZED
+                   [105] ∈ {0}
+[eva:final-states] 
+  Values at end of function crypto_secretbox_xsalsa20poly1305_tweet:
+  i ∈ {16}
+  __retres ∈ {0}
+  __malloc_main_l60[0..15] ∈ {0}
+                   [16..104] ∈ [--..--]
+[eva:final-states] 
+  Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_afternm:
+  __malloc_main_l60[0..15] ∈ {0}
+                   [16..104] ∈ [--..--]
+[eva:final-states] Values at end of function unpack25519:
+  i ∈ {16}
+  x[0..14] ∈ [0..65535]
+   [15] ∈ [0..32767]
+   [16..79] ∈ UNINITIALIZED
+[eva:final-states] Values at end of function crypto_scalarmult_curve25519_tweet:
+  pk[0..31] ∈ [--..--]
+  pk2[0..31] ∈ [--..--]
+  z[0] ∈
+   {0; 8; 16; 24; 32; 40; 48; 56; 64; 72; 80; 88; 96; 104; 112; 120; 128;
+    136; 144; 152; 160; 168; 176; 184; 192; 200; 208; 216; 224; 232; 240;
+    248}
+   [1..30] ∈ [--..--]
+   [31] ∈ [64..127]
+  x[0..14] ∈ [0..65535]
+   [15] ∈ [0..32767]
+   [16..79] ∈ [--..--]
+  r ∈ {0}
+  i ∈ {16}
+  a[0..15] ∈ [--..--]
+  b[0..15] ∈ [--..--]
+  c[0..15] ∈ [--..--]
+  d[0..15] ∈ [--..--]
+  e[0..15] ∈ [--..--]
+  f[0..15] ∈ [--..--]
+  s[0..31] ∈ [--..--]
+  __retres ∈ {0}
+[eva:final-states] 
+  Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_beforenm:
+  s[0..31] ∈ [--..--]
+  k[0..31] ∈ [--..--]
+  k[0..31] ∈ [--..--]
+[eva:final-states] 
+  Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet:
+  k[0..31] ∈ [--..--]
+  __malloc_main_l60[0..15] ∈ {0}
+                   [16..104] ∈ [--..--]
+[eva:final-states] 
+  Values at end of function crypto_scalarmult_curve25519_tweet_base:
+  pk[0..31] ∈ [--..--]
+  pk2[0..31] ∈ [--..--]
+[eva:final-states] 
+  Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_keypair:
+  __fc_fopen[0..15] ∈ [--..--]
+  sk[0..31] ∈ [--..--]
+  pk[0..31] ∈ [--..--]
+  sk2[0..31] ∈ [--..--]
+  pk2[0..31] ∈ [--..--]
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function vn:
+  i ∈ {16}
+  d ∈ [0..255]
+  __retres ∈ {-1; 0}
+[eva:final-states] Values at end of function crypto_verify_16_tweet:
+  
+[eva:final-states] 
+  Values at end of function crypto_onetimeauth_poly1305_tweet_verify:
+  x[0..15] ∈ [--..--]
+[eva:final-states] 
+  Values at end of function crypto_secretbox_xsalsa20poly1305_tweet_open:
+  i ∈ {32} or UNINITIALIZED
+  x[0..31] ∈ [--..--]
+  __retres ∈ {-1; 0}
+  __malloc_main_l63[0..31] ∈ {0} or UNINITIALIZED
+                   [32..104] ∈ [--..--] or UNINITIALIZED
+                   [105] ∈ {0}
+[eva:final-states] 
+  Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_open_afternm:
+  __malloc_main_l63[0..31] ∈ {0} or UNINITIALIZED
+                   [32..104] ∈ [--..--] or UNINITIALIZED
+                   [105] ∈ {0}
+[eva:final-states] 
+  Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_open:
+  k[0..31] ∈ [--..--]
+  __malloc_main_l63[0..31] ∈ {0} or UNINITIALIZED
+                   [32..104] ∈ [--..--] or UNINITIALIZED
+                   [105] ∈ {0}
+[eva:final-states] Values at end of function main:
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  padded_message ∈ ESCAPINGADDR
+  padded_mlen ∈ {105}
+  sk[0..31] ∈ [--..--]
+  pk[0..31] ∈ [--..--]
+  sk2[0..31] ∈ [--..--]
+  pk2[0..31] ∈ [--..--]
+  nonce[0..23] ∈ [--..--]
+  message ∈
+         {{ "This is a cross-platform test of crypto_box/crypto_box_open in TweetNaCl." }}
+  ciphertext ∈ ESCAPINGADDR
+  decryptedmessage ∈ ESCAPINGADDR
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  37 functions analyzed (out of 64): 57% coverage.
+  In these functions, 649 statements reached (out of 659): 98% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  25 alarms generated by the analysis:
+      21 integer overflows
+       2 invalid memory accesses
+       1 invalid shift
+       1 access to uninitialized left-values
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    34 valid     1 unknown     0 invalid     35 total
+  97% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m49.292s
+user	0m48.946s
+sys	0m0.102s

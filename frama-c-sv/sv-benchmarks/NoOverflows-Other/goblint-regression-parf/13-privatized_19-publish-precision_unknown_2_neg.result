@@ -1,0 +1,25 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+Traceback (most recent call last):
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/./frama-c-sv.py", line 532, in <module>
+    property_ = Property.from_text(property_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/./frama-c-sv.py", line 162, in from_text
+    raise ValueError("unknown property %s" % property_text)
+ValueError: unknown property format_version: '2.0'
+
+# original top comment:  PARAM: --set ana.int.interval true --set solver "'td3'"
+input_files: '13-privatized_19-publish-precision_unknown_2_neg.i'
+
+properties:
+  - property_file: ../properties/unreach-call.prp
+    expected_verdict: false
+
+options:
+  language: C
+  data_model: ILP32
+
+
+real	0m0.250s
+user	0m0.838s
+sys	0m0.692s

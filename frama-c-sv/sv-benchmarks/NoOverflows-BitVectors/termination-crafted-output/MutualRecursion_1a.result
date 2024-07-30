@@ -1,0 +1,148 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/program.c /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:25: Warning: 
+INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
+INFO:FRAMAC:  Its formals will be inferred from actual arguments
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:recursion] output/program.c:14: detected recursive call of function g.
+INFO:FRAMAC:[eva] output/program.c:14: User Error: 
+INFO:FRAMAC:  Recursive call to g without assigns clause.
+INFO:FRAMAC:  Generating probably incomplete assigns to interpret the call. Try to increase
+INFO:FRAMAC:  the -eva-unroll-recursive-calls parameter or write a correct specification
+INFO:FRAMAC:  for function g.
+INFO:FRAMAC:[eva] using specification for function g
+INFO:FRAMAC:[eva:recursion] output/program.c:14: detected recursive call of function g.
+INFO:FRAMAC:[eva] output/program.c:14: Warning: 
+INFO:FRAMAC:  Using specification of function g for recursive calls. Analysis of function g
+INFO:FRAMAC:  is thus incomplete and its soundness relies on the written specification.
+INFO:FRAMAC:[eva:alarm] output/program.c:14: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ tmp + tmp_0;
+INFO:FRAMAC:  (tmp from g(x), tmp_0 from g(x + 1))
+INFO:FRAMAC:[eva:alarm] output/program.c:14: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert tmp + tmp_0 ≤ 2147483647;
+INFO:FRAMAC:  (tmp from g(x), tmp_0 from g(x + 1))
+INFO:FRAMAC:[eva] output/program.c:14: Warning: 
+INFO:FRAMAC:  Using specification of function g for recursive calls. Analysis of function g
+INFO:FRAMAC:  is thus incomplete and its soundness relies on the written specification.
+INFO:FRAMAC:[eva:alarm] output/program.c:20: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ tmp + tmp_0;
+INFO:FRAMAC:  (tmp from f(x - 1), tmp_0 from f(x - 2))
+INFO:FRAMAC:[eva:alarm] output/program.c:20: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert tmp + tmp_0 ≤ 2147483647;
+INFO:FRAMAC:  (tmp from f(x - 1), tmp_0 from f(x - 2))
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  x ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function f:
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function g:
+INFO:FRAMAC:  __retres ∈ UNINITIALIZED
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  4 functions analyzed (out of 19): 21% coverage.
+INFO:FRAMAC:  In these functions, 28 statements reached (out of 28): 100% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      1 error    2 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  4 alarms generated by the analysis:
+INFO:FRAMAC:       4 integer overflows
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     0 invalid      1 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[eva] User Error: Deferred error message was emitted during execution. See above messages for more information.
+INFO:FRAMAC:[kernel] Plug-in eva aborted: invalid user input.
+INFO:RESULT:unknown(recursive)
+
+real	0m2.418s
+user	0m3.132s
+sys	0m0.434s

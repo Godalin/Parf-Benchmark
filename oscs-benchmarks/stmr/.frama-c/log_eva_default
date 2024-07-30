@@ -1,0 +1,709 @@
+[kernel] Parsing stmr.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotfb11ba.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing test.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot916043.c:758:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot12b335.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot9d4e68.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  b ∈ {0}
+  k ∈ {0}
+  k0 ∈ {0}
+  j ∈ {0}
+  assertionCount ∈ {0}
+  errorCount ∈ {0}
+[eva] using specification for function fopen
+[eva] using specification for function ferror
+[eva] using specification for function feof
+[eva] FRAMAC_SHARE/libc/stdio.c:73: allocating variable __malloc_getline_l73
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_unsigned_char_interval
+[eva:alarm] FRAMAC_SHARE/libc/stdio.c:90: Warning: 
+  out of bounds write. assert \valid(*lineptr + tmp_2);
+                       (tmp_2 from cur++)
+[eva] FRAMAC_SHARE/libc/stdio.c:83: starting to merge loop iterations
+[eva] FRAMAC_SHARE/libc/stdio.c:104: allocating variable __realloc_getline_l104
+[eva] FRAMAC_SHARE/libc/stdio.c:82: starting to merge loop iterations
+[eva:alarm] FRAMAC_SHARE/libc/stdio.c:93: Warning: 
+  out of bounds write. assert \valid(*lineptr + cur);
+[eva] FRAMAC_SHARE/libc/stdio.c:73: allocating variable __malloc_getline_l73_0
+[eva] FRAMAC_SHARE/libc/stdio.c:104: 
+  allocating variable __realloc_getline_l104_0
+[eva:alarm] test.c:63: Warning: 
+  function strlen: precondition 'valid_string_s' got status unknown.
+[eva:alarm] test.c:63: Warning: 
+  out of bounds write.
+  assert \valid(lineIn + (size_t)(tmp - 1));
+  (tmp from strlen((char const *)lineIn))
+[eva:alarm] test.c:64: Warning: 
+  function strlen: precondition 'valid_string_s' got status unknown.
+[eva:alarm] test.c:64: Warning: 
+  out of bounds write.
+  assert \valid(lineOut + (size_t)(tmp_0 - 1));
+  (tmp_0 from strlen((char const *)lineOut))
+[eva:alarm] FRAMAC_SHARE/libc/string.c:318: Warning: 
+  function strlen: precondition 'valid_string_s' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319
+[eva:alarm] FRAMAC_SHARE/libc/string.c:324: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] FRAMAC_SHARE/libc/string.c:324: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_0
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_1
+[eva:alarm] test.c:21: Warning: 
+  function strlen: precondition 'valid_string_s' got status unknown.
+[eva:alarm] stmr.c:266: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + k);
+[eva:alarm] stmr.c:266: Warning: out of bounds read. assert \valid_read(b + k);
+[eva:alarm] stmr.c:204: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + k);
+[eva:alarm] stmr.c:204: Warning: out of bounds read. assert \valid_read(b + k);
+[eva:alarm] stmr.c:208: Warning: 
+  signed overflow. assert (int)(k - k0) + 1 ≤ 2147483647;
+[eva:alarm] FRAMAC_SHARE/libc/string.c:169: Warning: 
+  accessing uninitialized left-value. assert \initialized(p1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:169: Warning: 
+  out of bounds read. assert \valid_read(p1 + i);
+[eva] FRAMAC_SHARE/libc/string.c:168: starting to merge loop iterations
+[eva:alarm] FRAMAC_SHARE/libc/string.c:169: Warning: 
+  accessing uninitialized left-value. assert \initialized(p1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:169: Warning: 
+  out of bounds read. assert \valid_read(p1 + i);
+[eva:alarm] stmr.c:227: Warning: 
+  function memmove: precondition 'valid_dest' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:124: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:alarm] stmr.c:271: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + (int)(k - 1));
+[eva:alarm] stmr.c:271: Warning: 
+  out of bounds read. assert \valid_read(b + (int)(k - 1));
+[eva:alarm] stmr.c:66: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + index_0);
+[eva] stmr.c:99: starting to merge loop iterations
+[eva:alarm] stmr.c:66: Warning: 
+  out of bounds read. assert \valid_read(b + index_0);
+[eva:recursion] stmr.c:74: detected recursive call of function isConsonant.
+[eva] stmr.c:74: Warning: 
+  Using specification of function isConsonant for recursive calls.
+  Analysis of function isConsonant is thus incomplete and its soundness
+  relies on the written specification.
+[eva] using specification for function isConsonant
+[eva] stmr.c:113: starting to merge loop iterations
+[eva] stmr.c:114: starting to merge loop iterations
+[eva] stmr.c:129: starting to merge loop iterations
+[eva:alarm] stmr.c:127: Warning: 
+  signed overflow. assert position + 1 ≤ 2147483647;
+[eva] stmr.c:152: starting to merge loop iterations
+[eva:alarm] stmr.c:152: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[kernel] stmr.c:227: too many locations to update in array. Approximating.
+[eva:alarm] stmr.c:164: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + index_0);
+[eva:alarm] stmr.c:164: Warning: 
+  out of bounds read. assert \valid_read(b + index_0);
+[eva:alarm] stmr.c:164: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(b + (int)(index_0 - 1));
+[eva:alarm] stmr.c:164: Warning: 
+  out of bounds read. assert \valid_read(b + (int)(index_0 - 1));
+[eva:alarm] stmr.c:292: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + k);
+[eva:alarm] stmr.c:292: Warning: out of bounds read. assert \valid_read(b + k);
+[eva:alarm] stmr.c:189: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + index_0);
+[eva:alarm] stmr.c:189: Warning: 
+  out of bounds read. assert \valid_read(b + index_0);
+[eva:alarm] stmr.c:308: Warning: out of bounds write. assert \valid(b + k);
+[eva:alarm] stmr.c:318: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + (int)(k - 1));
+[eva:alarm] stmr.c:318: Warning: 
+  out of bounds read. assert \valid_read(b + (int)(k - 1));
+[eva:alarm] stmr.c:229: Warning: 
+  signed overflow. assert j + length ≤ 2147483647;
+[eva:alarm] stmr.c:457: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + k);
+[eva:alarm] stmr.c:457: Warning: out of bounds read. assert \valid_read(b + k);
+[eva:alarm] stmr.c:508: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + (int)(k - 1));
+[eva:alarm] stmr.c:508: Warning: 
+  out of bounds read. assert \valid_read(b + (int)(k - 1));
+[eva:alarm] stmr.c:566: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + j);
+[eva:alarm] stmr.c:566: Warning: out of bounds read. assert \valid_read(b + j);
+[eva:alarm] stmr.c:566: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + j);
+[eva:alarm] stmr.c:566: Warning: out of bounds read. assert \valid_read(b + j);
+[eva:alarm] stmr.c:628: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + k);
+[eva:alarm] stmr.c:628: Warning: out of bounds read. assert \valid_read(b + k);
+[eva:alarm] stmr.c:108: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[eva:alarm] stmr.c:111: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[eva:alarm] stmr.c:123: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[eva:alarm] stmr.c:126: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[eva:alarm] stmr.c:138: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[eva:alarm] stmr.c:141: Warning: 
+  signed overflow. assert index_0 + 1 ≤ 2147483647;
+[eva:alarm] stmr.c:636: Warning: 
+  accessing uninitialized left-value. assert \initialized(b + k);
+[eva:alarm] stmr.c:636: Warning: out of bounds read. assert \valid_read(b + k);
+[eva:alarm] test.c:21: Warning: 
+  signed overflow.
+  assert tmp_0 + 1 ≤ 2147483647;
+  (tmp_0 from stem(result, 0, (int)(strlen((char const *)result) - (size_t)1)))
+[eva:alarm] test.c:21: Warning: 
+  out of bounds write.
+  assert \valid(result + (int)(tmp_0 + 1));
+  (tmp_0 from stem(result, 0, (int)(strlen((char const *)result) - (size_t)1)))
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  accessing uninitialized left-value. assert \initialized(s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  accessing uninitialized left-value. assert \initialized(s2 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva] FRAMAC_SHARE/libc/string.c:146: starting to merge loop iterations
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s2 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:147: Warning: 
+  accessing uninitialized left-value. assert \initialized(s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:147: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:149: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized((unsigned char *)s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:149: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized((unsigned char *)s2 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:149: Warning: 
+  out of bounds read. assert \valid_read((unsigned char *)s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:149: Warning: 
+  out of bounds read. assert \valid_read((unsigned char *)s2 + i);
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_2
+[eva:alarm] test.c:27: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param0) got status unknown.
+[eva:alarm] test.c:27: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] test.c:27: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function fprintf_va_3
+[eva] using specification for function fprintf_va_4
+[eva] using specification for function printf_va_1
+[eva] test.c:59: starting to merge loop iterations
+[eva:alarm] test.c:24: Warning: 
+  signed overflow. assert errorCount + 1 ≤ 2147483647;
+[eva:alarm] test.c:34: Warning: 
+  signed overflow. assert assertionCount + 1 ≤ 2147483647;
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_2
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_3
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_4
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_5
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_6
+[eva] FRAMAC_SHARE/libc/string.c:319: allocating variable __malloc_strdup_l319_7
+[eva] using specification for function printf_va_2
+[eva] using specification for function printf_va_3
+[eva] using specification for function printf_va_4
+[eva] using specification for function printf_va_5
+[eva] using specification for function printf_va_6
+[eva] using specification for function exit
+[eva] using specification for function printf_va_7
+[eva] using specification for function printf_va_8
+[eva] using specification for function printf_va_9
+[eva] using specification for function printf_va_10
+[eva] done for function main
+[scope:rm_asserts] removing 6 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function fgetc:
+  __fc_errno ∈ [--..--]
+  Frama_C_entropy_source ∈ [--..--]
+  __retres ∈ [-1..255]
+[eva:final-states] Values at end of function memcmp:
+  p1 ∈
+    {{ &__malloc_strdup_l319_0 + [0..2147483646] ;
+       (unsigned char const *)&__malloc_strdup_l319_3{[6], [8], [12]} ;
+       (unsigned char const *)&__malloc_strdup_l319_6{[4], [5], [6], [8]} }}
+  p2 ∈
+    {{ "\004sses" + {1} ; "\003ies" + {1} ; "\003eed" + {1} ;
+       "\002ed" + {1} ; "\003ing" + {1} ; "\002at" + {1} ; "\002bl" + {1} ;
+       "\002iz" + {1} ; "\001y" + {1} ; "\007ational" + {1} ;
+       "\006tional" + {1} ; "\004enci" + {1} ; "\004anci" + {1} ;
+       "\004izer" + {1} ; "\003bli" + {1} ; "\004alli" + {1} ;
+       "\005entli" + {1} ; "\003eli" + {1} ; "\005ousli" + {1} ;
+       "\007ization" + {1} ; "\005ation" + {1} ; "\004ator" + {1} ;
+       "\005alism" + {1} ; "\007iveness" + {1} ; "\007fulness" + {1} ;
+       "\007ousness" + {1} ; "\005aliti" + {1} ; "\005iviti" + {1} ;
+       "\006biliti" + {1} ; "\004logi" + {1} ; "\005icate" + {1} ;
+       "\005ative" + {1} ; "\005alize" + {1} ; "\005iciti" + {1} ;
+       "\004ical" + {1} ; "\003ful" + {1} ; "\004ness" + {1} ;
+       "\002al" + {1} ; "\004ance" + {1} ; "\004ence" + {1} ;
+       "\002er" + {1} ; "\002ic" + {1} ; "\004able" + {1} ;
+       "\004ible" + {1} ; "\003ant" + {1} ; "\005ement" + {1} ;
+       "\004ment" + {1} ; "\003ent" + {1} ; "\003ion" + {1} ;
+       "\002ou" + {1} ; "\003ism" + {1} ; "\003ate" + {1} ; "\003iti" + {1} ;
+       "\003ous" + {1} ; "\003ive" + {1} ; "\003ize" + {1} }}
+  __retres ∈ [-122..158]
+[eva:final-states] Values at end of function ends:
+  length ∈ {1; 2; 3; 4; 5; 6; 7}
+  j ∈ [-1..2147483647]
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function getline:
+  __fc_heap_status ∈ [--..--]
+  __fc_errno ∈ [--..--]
+  lineIn ∈
+        {{ NULL ; &__malloc_w_getline_l73[0] ;
+           &__realloc_w_getline_l104[0] }}
+  lineOut ∈
+         {{ NULL ; &__malloc_w_getline_l73_0[0] ;
+            &__realloc_w_getline_l104_0[0] }}
+  lengthIn ∈ [0..9223372036854775807]
+  lengthOut ∈ [0..9223372036854775807]
+  Frama_C_entropy_source ∈ [--..--]
+  cur ∈ [0..9223372036854775807]
+  __retres ∈ [-1..9223372036854775806]
+  __malloc_w_getline_l73[0..1] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_getline_l104[0..9223372036854775805] ∈
+                          [--..--] or UNINITIALIZED
+                          [9223372036854775806] ∈ {0} or UNINITIALIZED
+  __malloc_w_getline_l73_0[0..1] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_getline_l104_0[0..9223372036854775805] ∈
+                            [--..--] or UNINITIALIZED
+                            [9223372036854775806] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function setTo:
+  length ∈ {0; 1; 2; 3; 4}
+  k ∈ [-1..2147483647]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_3[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {101}
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111}
+                        [14] ∈ {110}
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_6[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97}
+                        [7] ∈ {108}
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115}
+                        [10] ∈ {109}
+                        [11] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..9223372036854775806]
+  __retres ∈ [-255..255]
+[eva:final-states] Values at end of function strdup:
+  __fc_heap_status ∈ [--..--]
+  __fc_errno ∈ [--..--]
+  l ∈ [1..9223372036854775807]
+  p ∈
+   {{ NULL ; &__malloc_w_strdup_l319[0] ; &__malloc_strdup_l319_0[0] ;
+      &__malloc_strdup_l319_1[0] ; &__malloc_strdup_l319_2[0] ;
+      &__malloc_strdup_l319_3[0] ; &__malloc_strdup_l319_4[0] ;
+      &__malloc_strdup_l319_5[0] ; &__malloc_strdup_l319_6[0] ;
+      &__malloc_strdup_l319_7[0] }}
+  __retres ∈
+          {{ NULL ; &__malloc_w_strdup_l319[0] ; &__malloc_strdup_l319_0[0] ;
+             &__malloc_strdup_l319_1[0] ; &__malloc_strdup_l319_2[0] ;
+             &__malloc_strdup_l319_3[0] ; &__malloc_strdup_l319_4[0] ;
+             &__malloc_strdup_l319_5[0] ; &__malloc_strdup_l319_6[0] ;
+             &__malloc_strdup_l319_7[0] }}
+  __malloc_w_strdup_l319[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_1[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_2[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111} or UNINITIALIZED
+                        [14] ∈ {110} or UNINITIALIZED
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_3[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111} or UNINITIALIZED
+                        [14] ∈ {110} or UNINITIALIZED
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_4[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_5[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115} or UNINITIALIZED
+                        [10] ∈ {109} or UNINITIALIZED
+                        [11] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_6[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115} or UNINITIALIZED
+                        [10] ∈ {109} or UNINITIALIZED
+                        [11] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_7[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function isConsonant:
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function cvc:
+  character ∈ [-128..127] or UNINITIALIZED
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function getMeasure:
+  position ∈ [0..2147483647]
+  index_0 ∈ [0..2147483647]
+  __retres ∈ [0..2147483647]
+[eva:final-states] Values at end of function isDoubleConsonant:
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function replace:
+  k ∈ [-1..2147483647]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_3[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97; 101} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111}
+                        [14] ∈ {110}
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_6[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115}
+                        [10] ∈ {109}
+                        [11] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function step2:
+  k ∈ [0..2147483647]
+  j ∈ [-1..2147483647]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_3[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97; 101} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111}
+                        [14] ∈ {110}
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_6[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115}
+                        [10] ∈ {109}
+                        [11] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function step3:
+  k ∈ [-1..2147483647]
+  j ∈ [-1..2147483647]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_3[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97; 101} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111}
+                        [14] ∈ {110}
+                        [15] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function step4:
+  k ∈ [-1..2147483647]
+  j ∈ [-1..2147483647]
+[eva:final-states] Values at end of function step5:
+  a ∈ [0..2147483647] or UNINITIALIZED
+  k ∈ [0..2147483647]
+  j ∈ [-1..2147483647]
+[eva:final-states] Values at end of function vowelInStem:
+  index_0 ∈ [0..2147483647]
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function step1ab:
+  character ∈ [-128..127] or UNINITIALIZED
+  k ∈ [-1..2147483647]
+  j ∈ [-1..2147483647]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function step1c:
+  j ∈ [-1..2147483647]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function stem:
+  b ∈
+   {{ NULL ; &__malloc_strdup_l319_0[0] ; &__malloc_strdup_l319_3[0] ;
+      &__malloc_strdup_l319_6[0] }}
+  k ∈ [--..--]
+  k0 ∈ {0}
+  j ∈ [-1..2147483647]
+  __retres ∈ [--..--]
+  __malloc_strdup_l319_0[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_3[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97; 101} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111}
+                        [14] ∈ {110}
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_6[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115}
+                        [10] ∈ {109}
+                        [11] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function assertStem:
+  __fc_heap_status ∈ [--..--]
+  __fc_errno ∈ [--..--]
+  value ∈
+       {{ NULL ; &__malloc_w_strdup_l319[0] ; &__malloc_strdup_l319_2[0] ;
+          &__malloc_strdup_l319_5[0] }} or ESCAPINGADDR
+  result ∈ ESCAPINGADDR
+  fixture ∈ ESCAPINGADDR
+  __fc_initial_stdout.__fc_FILE_id ∈ {1}
+                     .__fc_FILE_data ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ [--..--]
+  b ∈ {0} or ESCAPINGADDR
+  k ∈ [--..--]
+  k0 ∈ {0}
+  j ∈ [-1..2147483647]
+  assertionCount ∈ [1..2147483647]
+  errorCount ∈ [0..2147483647]
+  __malloc_w_strdup_l319[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_2[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111} or UNINITIALIZED
+                        [14] ∈ {110} or UNINITIALIZED
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_5[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115} or UNINITIALIZED
+                        [10] ∈ {109} or UNINITIALIZED
+                        [11] ∈ {0} or UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  __fc_heap_status ∈ [--..--]
+  __fc_errno ∈ [--..--]
+  input ∈ {{ NULL ; &__fc_fopen + [0..120],0%8 }}
+  output ∈ {{ NULL ; &__fc_fopen + [0..120],0%8 }}
+  lineIn ∈
+        {{ NULL ; &__malloc_w_getline_l73[0] ;
+           &__realloc_w_getline_l104[0] }}
+  lineOut ∈
+         {{ NULL ; &__malloc_w_getline_l73_0[0] ;
+            &__realloc_w_getline_l104_0[0] }}
+  lengthIn ∈ [0..9223372036854775807]
+  lengthOut ∈ [0..9223372036854775807]
+  Frama_C_entropy_source ∈ [--..--]
+  __fc_initial_stdout.__fc_FILE_id ∈ {1}
+                     .__fc_FILE_data ∈ [--..--]
+  __fc_initial_stderr.__fc_FILE_id ∈ {2}
+                     .__fc_FILE_data ∈ [--..--]
+  b ∈ ESCAPINGADDR
+  k ∈ {5; 7; 10}
+  k0 ∈ {0}
+  j ∈ {5; 7; 10}
+  assertionCount ∈ [2..2147483647]
+  errorCount ∈ {0}
+  __retres ∈ {0}
+  __malloc_w_getline_l73[0..1] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_getline_l104[0..9223372036854775805] ∈
+                          [--..--] or UNINITIALIZED
+                          [9223372036854775806] ∈ {0} or UNINITIALIZED
+  __malloc_w_getline_l73_0[0..1] ∈ [--..--] or UNINITIALIZED
+  __realloc_w_getline_l104_0[0..9223372036854775805] ∈
+                            [--..--] or UNINITIALIZED
+                            [9223372036854775806] ∈ {0} or UNINITIALIZED
+  __malloc_w_strdup_l319[0..9223372036854775806] ∈
+                        [--..--] or UNINITIALIZED
+  __malloc_strdup_l319_2[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {122} or UNINITIALIZED
+                        [10] ∈ {97} or UNINITIALIZED
+                        [11] ∈ {116} or UNINITIALIZED
+                        [12] ∈ {105} or UNINITIALIZED
+                        [13] ∈ {111} or UNINITIALIZED
+                        [14] ∈ {110} or UNINITIALIZED
+                        [15] ∈ {0} or UNINITIALIZED
+  __malloc_strdup_l319_5[0] ∈ {110} or UNINITIALIZED
+                        [1] ∈ {97} or UNINITIALIZED
+                        [2] ∈ {116} or UNINITIALIZED
+                        [3] ∈ {105} or UNINITIALIZED
+                        [4] ∈ {111} or UNINITIALIZED
+                        [5] ∈ {110} or UNINITIALIZED
+                        [6] ∈ {97} or UNINITIALIZED
+                        [7] ∈ {108} or UNINITIALIZED
+                        [8] ∈ {105} or UNINITIALIZED
+                        [9] ∈ {115} or UNINITIALIZED
+                        [10] ∈ {109} or UNINITIALIZED
+                        [11] ∈ {0} or UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  17 functions analyzed (out of 17): 100% coverage.
+  In these functions, 497 statements reached (out of 500): 99% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    1 warning
+    by the Frama-C kernel:    0 errors    0 warnings
+  ----------------------------------------------------------------------------
+  63 alarms generated by the analysis:
+      28 invalid memory accesses
+      22 accesses to uninitialized left-values
+      13 integer overflows
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    32 valid    10 unknown     0 invalid     42 total
+  76% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.564s
+user	0m1.465s
+sys	0m0.072s

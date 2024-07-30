@@ -1,0 +1,95 @@
+[metrics] Eva coverage statistics
+=======================
+Syntactically reachable functions = 95 (out of 255)
+Semantically reached functions = 65
+Coverage estimation = 68.4% 
+
+Unreached functions (30) =
+  <async.c>: __redisAsyncCopyError; __redisAsyncDisconnect; __redisAsyncFree;
+    __redisGetSubscribeCallback; __redisPushCallback; __redisRunCallback;
+    __redisShiftCallback; redisAsyncRead; redisAsyncWrite;
+    redisProcessCallbacks; 
+  <async_private.h>: refreshTimeout; 
+  <dict.c>: _dictClear; _dictReset; dictDelete; dictFind; dictGetIterator;
+    dictNext; dictRelease; dictReleaseIterator; 
+  <hiredis.c>: redisBufferRead; redisBufferWrite; redisGetReply;
+    redisGetReplyFromReader; 
+  <net.c>: redisContextSetTimeout; redisNetRead; redisNetWrite;
+    redisSetReuseAddr; 
+  <sds.h>: sdslen; sdslen_0; sdslen_1;
+[metrics] References to non-analyzed functions
+------------------------------------
+Function redisConnectWithOptions calls redisContextSetTimeout (at hiredis.c:771)
+Function redisCreateSocket calls redisSetReuseAddr (at net.c:124)
+Initializer of redisContextDefaultFuncs references redisAsyncRead (at hiredis.c:49)
+Initializer of redisContextDefaultFuncs references redisAsyncWrite (at hiredis.c:50)
+Initializer of redisContextDefaultFuncs references redisNetRead (at hiredis.c:51)
+Initializer of redisContextDefaultFuncs references redisNetWrite (at hiredis.c:52)
+[metrics] Statements analyzed by Eva
+--------------------------
+1920 stmts in analyzed functions, 1785 stmts analyzed (93.0%)
+__redisReaderSetError: 21 stmts out of 21 (100.0%)
+__redisReaderSetErrorOOM: 2 stmts out of 2 (100.0%)
+__redisReaderSetErrorProtocolByte: 4 stmts out of 4 (100.0%)
+__redisSetErrorFromErrno: 10 stmts out of 10 (100.0%)
+chrtos: 36 stmts out of 36 (100.0%)
+createArrayObject: 26 stmts out of 26 (100.0%)
+createBoolObject: 19 stmts out of 19 (100.0%)
+createDoubleObject: 27 stmts out of 27 (100.0%)
+createIntegerObject: 19 stmts out of 19 (100.0%)
+createNilObject: 18 stmts out of 18 (100.0%)
+createReplyObject: 8 stmts out of 8 (100.0%)
+createStringObject: 36 stmts out of 36 (100.0%)
+eva_main: 13 stmts out of 13 (100.0%)
+freeReplyObject: 13 stmts out of 13 (100.0%)
+hi_malloc: 4 stmts out of 4 (100.0%)
+hi_strdup: 4 stmts out of 4 (100.0%)
+processAggregateItem: 67 stmts out of 67 (100.0%)
+processBulkItem: 53 stmts out of 53 (100.0%)
+readBytes: 8 stmts out of 8 (100.0%)
+readLine: 12 stmts out of 12 (100.0%)
+redisCheckSocketError: 19 stmts out of 19 (100.0%)
+redisConnect: 6 stmts out of 6 (100.0%)
+redisConnectUnix: 5 stmts out of 5 (100.0%)
+redisContextConnectBindTcp: 2 stmts out of 2 (100.0%)
+redisContextInit: 19 stmts out of 19 (100.0%)
+redisNetClose: 5 stmts out of 5 (100.0%)
+redisReaderCreate: 2 stmts out of 2 (100.0%)
+redisReaderCreateWithFunctions: 16 stmts out of 16 (100.0%)
+redisReaderFeed: 26 stmts out of 26 (100.0%)
+redisReaderFree: 10 stmts out of 10 (100.0%)
+redisReaderGetReply: 42 stmts out of 42 (100.0%)
+redisSetBlocking: 19 stmts out of 19 (100.0%)
+redisSetTcpNoDelay: 10 stmts out of 10 (100.0%)
+sdsMakeRoomFor: 39 stmts out of 39 (100.0%)
+sdsReqType: 18 stmts out of 18 (100.0%)
+sdsavail_2: 28 stmts out of 28 (100.0%)
+sdsavail_3: 28 stmts out of 28 (100.0%)
+sdscatlen: 11 stmts out of 11 (100.0%)
+sdsempty: 2 stmts out of 2 (100.0%)
+sdsfree: 8 stmts out of 8 (100.0%)
+sdslen_2: 24 stmts out of 24 (100.0%)
+sdslen_3: 24 stmts out of 24 (100.0%)
+sdsrange: 30 stmts out of 30 (100.0%)
+sdssetalloc_3: 12 stmts out of 12 (100.0%)
+sdssetlen_3: 15 stmts out of 15 (100.0%)
+seekNewline: 23 stmts out of 23 (100.0%)
+string2ll: 79 stmts out of 79 (100.0%)
+test_blocking_connection_errors: 69 stmts out of 69 (100.0%)
+test_reply_reader: 268 stmts out of 271 (98.9%)
+main: 76 stmts out of 77 (98.7%)
+redisContextWaitReady: 32 stmts out of 33 (97.0%)
+processLineItem: 87 stmts out of 90 (96.7%)
+moveToNextTask: 26 stmts out of 27 (96.3%)
+processItem: 47 stmts out of 50 (94.0%)
+redisFree: 15 stmts out of 16 (93.8%)
+redisContextConnectUnix: 48 stmts out of 55 (87.3%)
+__redisSetError: 9 stmts out of 11 (81.8%)
+test_free_null: 17 stmts out of 21 (81.0%)
+sdsHdrSize: 13 stmts out of 18 (72.2%)
+_redisContextConnectTcp: 88 stmts out of 131 (67.2%)
+redisCreateSocket: 10 stmts out of 15 (66.7%)
+redisCheckConnectDone: 12 stmts out of 19 (63.2%)
+redisConnectWithOptions: 16 stmts out of 27 (59.3%)
+sdsnewlen: 24 stmts out of 48 (50.0%)
+redisContextTimeoutMsec: 6 stmts out of 20 (30.0%)

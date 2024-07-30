@@ -1,0 +1,27 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+Traceback (most recent call last):
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/./frama-c-sv.py", line 532, in <module>
+    property_ = Property.from_text(property_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/./frama-c-sv.py", line 162, in from_text
+    raise ValueError("unknown property %s" % property_text)
+ValueError: unknown property format_version: '2.0'
+
+# old file name: LexIndexValue-Pointer_false-valid-deref.c
+input_files: 'LexIndexValue-Pointer-3.c'
+
+properties:
+  - property_file: ../properties/valid-memsafety.prp
+    expected_verdict: false
+    subproperty: valid-deref
+  - property_file: ../properties/coverage-branches.prp
+
+options:
+  language: C
+  data_model: LP64
+
+
+real	0m0.237s
+user	0m0.563s
+sys	0m0.872s

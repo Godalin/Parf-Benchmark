@@ -1,0 +1,186 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 14 -eva-plevel 20 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 8 -machdep x86_32 /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/output/program.c /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0, 2 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_long_interval
+INFO:FRAMAC:[eva] using specification for function Frama_C_long_interval
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:alarm] output/program.c:99: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__in_handshake + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:116: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: division by zero. assert ag_Z ≢ 0;
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ ag_X * ag_Y;
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  signed overflow. assert ag_X * ag_Y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(ag_X * ag_Y) / ag_Z ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:276: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_accept + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:278: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert s__ctx__stats__sess_accept_renegotiate + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:377: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ tmp___6 * 8;
+INFO:FRAMAC:[eva:alarm] output/program.c:377: Warning: 
+INFO:FRAMAC:  signed overflow. assert tmp___6 * 8 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:468: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&s__s3__tmp__next_state___0);
+INFO:FRAMAC:[eva] output/program.c:610: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva:alarm] output/program.c:690: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:595: Warning: 
+INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_accept_good + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_long:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_ulong:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function ssl3_accept:
+INFO:FRAMAC:  s__info_callback ∈ [--..--]
+INFO:FRAMAC:  s__in_handshake ∈ [--..--]
+INFO:FRAMAC:  s__state ∈ [--..--]
+INFO:FRAMAC:  s__new_session ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  s__server ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:  s__version ∈ [--..--]
+INFO:FRAMAC:  s__type ∈ {8192} or UNINITIALIZED
+INFO:FRAMAC:  s__init_num ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  s__hit ∈ [--..--]
+INFO:FRAMAC:  s__rwstate ∈ {1; 2} or UNINITIALIZED
+INFO:FRAMAC:  s__init_buf___0 ∈ [--..--]
+INFO:FRAMAC:  s__debug ∈ [--..--]
+INFO:FRAMAC:  s__shutdown ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  s__cert ∈ [--..--]
+INFO:FRAMAC:  s__options ∈ [--..--]
+INFO:FRAMAC:  s__verify_mode ∈ [--..--]
+INFO:FRAMAC:  s__session__peer ∈ [--..--]
+INFO:FRAMAC:  s__cert__pkeys__AT0__privatekey ∈ [--..--]
+INFO:FRAMAC:  s__ctx__info_callback ∈ [--..--]
+INFO:FRAMAC:  s__ctx__stats__sess_accept_renegotiate ∈ [--..--]
+INFO:FRAMAC:  s__ctx__stats__sess_accept ∈ [--..--]
+INFO:FRAMAC:  s__ctx__stats__sess_accept_good ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__cert_request ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  s__s3__tmp__reuse_message ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__use_rsa_tmp ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  s__s3__tmp__new_cipher ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__new_cipher__algorithms ∈ [--..--]
+INFO:FRAMAC:  s__s3__tmp__next_state___0 ∈ {3; 8482; 8576; 8640} or UNINITIALIZED
+INFO:FRAMAC:  s__s3__tmp__new_cipher__algo_strength ∈ [--..--]
+INFO:FRAMAC:  s__session__cipher ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  buf ∈ [--..--]
+INFO:FRAMAC:  l ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  Time ∈ [--..--]
+INFO:FRAMAC:  tmp_19 ∈ [--..--]
+INFO:FRAMAC:  cb ∈ [--..--]
+INFO:FRAMAC:  num1 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  ret ∈ [--..--]
+INFO:FRAMAC:  new_state ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  state ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  skip ∈ {0}
+INFO:FRAMAC:  got_new_session ∈ {0; 1}
+INFO:FRAMAC:  tmp___1 ∈ [--..--]
+INFO:FRAMAC:  tmp___2 ∈ [--..--]
+INFO:FRAMAC:  tmp___3 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___4 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___5 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___6 ∈ [-2147483647..2147483646] or UNINITIALIZED
+INFO:FRAMAC:  tmp___7 ∈ {512; 1024} or UNINITIALIZED
+INFO:FRAMAC:  tmp___8 ∈ [--..--]
+INFO:FRAMAC:  tmp___9 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___10 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  blastFlag ∈ {0; 1; 2; 3; 4}
+INFO:FRAMAC:  ag_X ∈ [--..--]
+INFO:FRAMAC:  ag_Y ∈ [--..--]
+INFO:FRAMAC:  ag_Z ∈ [--..--]
+INFO:FRAMAC:  __retres70 ∈ [-2147483648..1]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  s ∈ {8464}
+INFO:FRAMAC:  tmp ∈ [-2147483648..1]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  7 functions analyzed (out of 20): 35% coverage.
+INFO:FRAMAC:  In these functions, 383 statements reached (out of 390): 98% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  11 alarms generated by the analysis:
+INFO:FRAMAC:       9 integer overflows
+INFO:FRAMAC:       1 division by zero
+INFO:FRAMAC:       1 access to uninitialized left-values
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     3 valid     0 unknown     1 invalid      4 total
+INFO:FRAMAC:  75% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown
+
+real	0m2.364s
+user	0m2.664s
+sys	0m0.978s

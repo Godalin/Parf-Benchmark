@@ -1,0 +1,8 @@
+# This is a complement to the 'generic Makefile' available in OSCS
+# (Makefile.single-target) and must be included by it.
+
+SOURCES += sources/main.c avr-libc/libc/stdio/iob.c \
+  sources/eeprom_stubs.c sources/avr_stubs.c
+
+CPPFLAGS += -Iavr-libc/include -D__AVR_ATmega328P__ -DF_CPU=1000000UL \
+  -D__OPTIMIZE__

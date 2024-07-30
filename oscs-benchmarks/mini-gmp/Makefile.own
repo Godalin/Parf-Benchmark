@@ -1,0 +1,9 @@
+# This is a complement to the 'generic Makefile' available in OSCS
+# (Makefile.single-target) and must be included by it.
+
+# We _remove_ mini-gmp.c from SOURCES: it is already included by testutils.c
+SOURCES := $(addprefix tests/,testutils.c t-add.c hex-random.c mini-random.c)
+
+CPPFLAGS += -I.
+
+LDFLAGS = -lgmp

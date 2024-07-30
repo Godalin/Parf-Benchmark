@@ -1,0 +1,26 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+Traceback (most recent call last):
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/./frama-c-sv.py", line 532, in <module>
+    property_ = Property.from_text(property_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/./frama-c-sv.py", line 162, in from_text
+    raise ValueError("unknown property %s" % property_text)
+ValueError: unknown property format_version: '2.0'
+
+# original top comment:  PARAM: --set ana.activated[+] "'region'"
+input_files: '28-race_reach_85-list2_racefree.i'
+
+properties:
+  - property_file: ../properties/unreach-call.prp
+    expected_verdict: true
+  - property_file: ../properties/coverage-branches.prp
+
+options:
+  language: C
+  data_model: ILP32
+
+
+real	0m0.258s
+user	0m0.896s
+sys	0m0.532s

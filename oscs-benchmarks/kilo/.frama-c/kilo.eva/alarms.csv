@@ -1,0 +1,586 @@
+directory	file	line	function	property kind	status	property
+.	kilo.c	247	editorReadKey	initialization	Unknown	\initialized(&c)
+.	kilo.c	254	editorReadKey	initialization	Unknown	\initialized((char *)seq)
+.	kilo.c	255	editorReadKey	initialization	Unknown	\initialized(&seq[1])
+.	kilo.c	258	editorReadKey	initialization	Unknown	\initialized(&seq[2])
+.	kilo.c	279	editorReadKey	initialization	Unknown	\initialized(&seq[1])
+.	kilo.c	304	getCursorPosition	initialization	Unknown	\initialized(&buf[i])
+.	kilo.c	310	getCursorPosition	initialization	Unknown	\initialized((char *)buf)
+.	kilo.c	310	getCursorPosition	initialization	Unknown	\initialized(&buf[1])
+.	kilo.c	311	getCursorPosition	precondition of sscanf_va_1	Unknown	valid_read_string(s)
+.	kilo.c	321	getWindowSize	initialization	Unknown	\initialized(&ws.ws_col)
+.	kilo.c	336	getWindowSize	initialization	Unknown	\initialized(&orig_col)
+.	kilo.c	336	getWindowSize	initialization	Unknown	\initialized(&orig_row)
+.	kilo.c	337	getWindowSize	precondition of strlen	Unknown	valid_string_s: valid_read_string(s)
+.	kilo.c	343	getWindowSize	initialization	Unknown	\initialized(&ws.ws_row)
+.	kilo.c	354	is_separator	precondition of isspace	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+.	kilo.c	361	editorRowHasOpenComment	dangling_pointer	Unknown	¬\dangling(&row->hl)
+.	kilo.c	361	editorRowHasOpenComment	initialization	Unknown	\initialized(&row->hl)
+.	kilo.c	361	editorRowHasOpenComment	mem_access	Unknown	\valid_read(&row->hl)
+.	kilo.c	361	editorRowHasOpenComment	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row->hl)
+.	kilo.c	361	editorRowHasOpenComment	dangling_pointer	Unknown	¬\dangling(&row->rsize)
+.	kilo.c	361	editorRowHasOpenComment	initialization	Unknown	\initialized(&row->rsize)
+.	kilo.c	361	editorRowHasOpenComment	mem_access	Unknown	\valid_read(&row->rsize)
+.	kilo.c	361	editorRowHasOpenComment	initialization	Unknown	\initialized(row->hl + (int)(row->rsize - 1))
+.	kilo.c	361	editorRowHasOpenComment	mem_access	Unknown	\valid_read(row->hl + (int)(row->rsize - 1))
+.	kilo.c	361	editorRowHasOpenComment	signed_overflow	Unknown	-2147483648 ≤ row->rsize - 1
+.	kilo.c	361	editorRowHasOpenComment	signed_overflow	Unknown	row->rsize - 1 ≤ 2147483647
+.	kilo.c	362	editorRowHasOpenComment	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	362	editorRowHasOpenComment	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	362	editorRowHasOpenComment	initialization	Unknown	\initialized(row->render + (int)(row->rsize - 2))
+.	kilo.c	362	editorRowHasOpenComment	mem_access	Unknown	\valid_read(&row->render)
+.	kilo.c	362	editorRowHasOpenComment	mem_access	Unknown	\valid_read(row->render + (int)(row->rsize - 2))
+.	kilo.c	362	editorRowHasOpenComment	signed_overflow	Unknown	-2147483648 ≤ row->rsize - 2
+.	kilo.c	362	editorRowHasOpenComment	signed_overflow	Unknown	row->rsize - 2 ≤ 2147483647
+.	kilo.c	363	editorRowHasOpenComment	initialization	Unknown	\initialized(row->render + (int)(row->rsize - 1))
+.	kilo.c	363	editorRowHasOpenComment	mem_access	Unknown	\valid_read(row->render + (int)(row->rsize - 1))
+.	kilo.c	370	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->hl)
+.	kilo.c	370	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->rsize)
+.	kilo.c	370	editorUpdateSyntax	initialization	Unknown	\initialized(&row->hl)
+.	kilo.c	370	editorUpdateSyntax	initialization	Unknown	\initialized(&row->rsize)
+.	kilo.c	370	editorUpdateSyntax	mem_access	Unknown	\valid(&row->hl)
+.	kilo.c	370	editorUpdateSyntax	mem_access	Unknown	\valid_read(&row->hl)
+.	kilo.c	370	editorUpdateSyntax	mem_access	Unknown	\valid_read(&row->rsize)
+.	kilo.c	370	editorUpdateSyntax	precondition of realloc	Unknown	freeable: ptr ≡ \null ∨ \freeable(ptr)
+.	kilo.c	371	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->hl)
+.	kilo.c	371	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->rsize)
+.	kilo.c	371	editorUpdateSyntax	initialization	Unknown	\initialized(&row->hl)
+.	kilo.c	371	editorUpdateSyntax	initialization	Unknown	\initialized(&row->rsize)
+.	kilo.c	371	editorUpdateSyntax	precondition of memset	Unknown	valid_s: valid_or_empty(s, n)
+.	kilo.c	383	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	383	editorUpdateSyntax	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	383	editorUpdateSyntax	mem_access	Unknown	\valid_read(&row->render)
+.	kilo.c	385	editorUpdateSyntax	initialization	Unknown	\initialized(p)
+.	kilo.c	385	editorUpdateSyntax	mem_access	Unknown	\valid_read(p)
+.	kilo.c	385	editorUpdateSyntax	precondition of isspace	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+.	kilo.c	387	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	395	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->idx)
+.	kilo.c	395	editorUpdateSyntax	initialization	Unknown	\initialized(&row->idx)
+.	kilo.c	395	editorUpdateSyntax	mem_access	Unknown	\valid_read(&row->idx)
+.	kilo.c	395	editorUpdateSyntax	signed_overflow	Unknown	-2147483648 ≤ row->idx - 1
+.	kilo.c	395	editorUpdateSyntax	signed_overflow	Unknown	row->idx - 1 ≤ 2147483647
+.	kilo.c	398	editorUpdateSyntax	initialization	Unknown	\initialized(p)
+.	kilo.c	398	editorUpdateSyntax	mem_access	Unknown	\valid_read(p)
+.	kilo.c	400	editorUpdateSyntax	initialization	Unknown	\initialized(p + 1)
+.	kilo.c	400	editorUpdateSyntax	mem_access	Unknown	\valid_read(p + 1)
+.	kilo.c	402	editorUpdateSyntax	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	402	editorUpdateSyntax	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	402	editorUpdateSyntax	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	402	editorUpdateSyntax	precondition of memset	Unknown	valid_s: valid_or_empty(s, n)
+.	kilo.c	402	editorUpdateSyntax	signed_overflow	Unknown	-2147483648 ≤ row->size - i
+.	kilo.c	402	editorUpdateSyntax	signed_overflow	Unknown	row->size - i ≤ 2147483647
+.	kilo.c	408	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + i)
+.	kilo.c	409	editorUpdateSyntax	initialization	Unknown	\initialized(p)
+.	kilo.c	409	editorUpdateSyntax	initialization	Unknown	\initialized(p + 1)
+.	kilo.c	409	editorUpdateSyntax	mem_access	Unknown	\valid_read(p + 1)
+.	kilo.c	410	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	410	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + (int)(i + 1))
+.	kilo.c	411	editorUpdateSyntax	signed_overflow	Unknown	i + 2 ≤ 2147483647
+.	kilo.c	417	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	420	editorUpdateSyntax	initialization	Unknown	\initialized(p + 1)
+.	kilo.c	420	editorUpdateSyntax	mem_access	Unknown	\valid_read(p + 1)
+.	kilo.c	421	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + i)
+.	kilo.c	422	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	422	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + (int)(i + 1))
+.	kilo.c	423	editorUpdateSyntax	signed_overflow	Unknown	i + 2 ≤ 2147483647
+.	kilo.c	431	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + i)
+.	kilo.c	432	editorUpdateSyntax	initialization	Unknown	\initialized(p)
+.	kilo.c	433	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	433	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + (int)(i + 1))
+.	kilo.c	434	editorUpdateSyntax	signed_overflow	Unknown	i + 2 ≤ 2147483647
+.	kilo.c	439	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	444	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + i)
+.	kilo.c	445	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	452	editorUpdateSyntax	precondition of isprint	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+.	kilo.c	453	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + i)
+.	kilo.c	454	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	460	editorUpdateSyntax	precondition of isdigit	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+.	kilo.c	460	editorUpdateSyntax	initialization	Unknown	\initialized(row->hl + (int)(i - 1))
+.	kilo.c	460	editorUpdateSyntax	mem_access	Unknown	\valid_read(row->hl + (int)(i - 1))
+.	kilo.c	461	editorUpdateSyntax	initialization	Unknown	\initialized(row->hl + (int)(i - 1))
+.	kilo.c	461	editorUpdateSyntax	mem_access	Unknown	\valid_read(row->hl + (int)(i - 1))
+.	kilo.c	462	editorUpdateSyntax	mem_access	Unknown	\valid(row->hl + i)
+.	kilo.c	463	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	471	editorUpdateSyntax	mem_access	Unknown	\valid_read(keywords + j)
+.	kilo.c	473	editorUpdateSyntax	mem_access	Unknown	\valid_read(*(keywords + j) + (int)(klen - 1))
+.	kilo.c	477	editorUpdateSyntax	initialization	Unknown	\initialized(p + klen)
+.	kilo.c	477	editorUpdateSyntax	mem_access	Unknown	\valid_read(p + klen)
+.	kilo.c	480	editorUpdateSyntax	precondition of memset	Unknown	valid_s: valid_or_empty(s, n)
+.	kilo.c	482	editorUpdateSyntax	signed_overflow	Unknown	i + klen ≤ 2147483647
+.	kilo.c	493	editorUpdateSyntax	initialization	Unknown	\initialized(p)
+.	kilo.c	493	editorUpdateSyntax	mem_access	Unknown	\valid_read(p)
+.	kilo.c	494	editorUpdateSyntax	signed_overflow	Unknown	i + 1 ≤ 2147483647
+.	kilo.c	506	editorUpdateSyntax	mem_access	Unknown	\valid(&row->hl_oc)
+.	kilo.c	533	editorSelectSyntaxHighlight	mem_access	Unknown	\valid_read(p + patlen)
+.	kilo.c	551	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	551	editorUpdateRow	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	551	editorUpdateRow	mem_access	Unknown	\valid_read(&row->render)
+.	kilo.c	551	editorUpdateRow	precondition of free	Unknown	freeable: p ≡ \null ∨ \freeable(p)
+.	kilo.c	552	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	552	editorUpdateRow	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	552	editorUpdateRow	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	552	editorUpdateRow	signed_overflow	Unknown	j + 1 ≤ 2147483647
+.	kilo.c	553	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	553	editorUpdateRow	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	553	editorUpdateRow	initialization	Unknown	\initialized(row->chars + j)
+.	kilo.c	553	editorUpdateRow	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	553	editorUpdateRow	mem_access	Unknown	\valid_read(row->chars + j)
+.	kilo.c	553	editorUpdateRow	signed_overflow	Unknown	tabs + 1 ≤ 2147483647
+.	kilo.c	555	editorUpdateRow	mem_access	Unknown	\valid(&row->render)
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	(int)((int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9)) + 1 ≤ 2147483647
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	(int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9) ≤ 2147483647
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	-2147483648 ≤ (int)((int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9)) + 1
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	-2147483648 ≤ (int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9)
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	-2147483648 ≤ row->size + (int)(tabs * 8)
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	row->size + (int)(tabs * 8) ≤ 2147483647
+.	kilo.c	555	editorUpdateRow	signed_overflow	Unknown	tabs * 8 ≤ 2147483647
+.	kilo.c	557	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	557	editorUpdateRow	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	557	editorUpdateRow	signed_overflow	Unknown	j + 1 ≤ 2147483647
+.	kilo.c	558	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	558	editorUpdateRow	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	558	editorUpdateRow	initialization	Unknown	\initialized(row->chars + j)
+.	kilo.c	558	editorUpdateRow	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	558	editorUpdateRow	mem_access	Unknown	\valid_read(row->chars + j)
+.	kilo.c	559	editorUpdateRow	signed_overflow	Unknown	idx + 1 ≤ 2147483647
+.	kilo.c	559	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	559	editorUpdateRow	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	559	editorUpdateRow	mem_access	Unknown	\valid(row->render + tmp)
+.	kilo.c	560	editorUpdateRow	signed_overflow	Unknown	idx + 1 ≤ 2147483647
+.	kilo.c	560	editorUpdateRow	mem_access	Unknown	\valid(row->render + tmp_0)
+.	kilo.c	562	editorUpdateRow	signed_overflow	Unknown	idx + 1 ≤ 2147483647
+.	kilo.c	562	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	562	editorUpdateRow	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	562	editorUpdateRow	mem_access	Unknown	\valid(row->render + tmp_1)
+.	kilo.c	565	editorUpdateRow	mem_access	Unknown	\valid(&row->rsize)
+.	kilo.c	566	editorUpdateRow	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	566	editorUpdateRow	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	566	editorUpdateRow	mem_access	Unknown	\valid(row->render + idx)
+.	kilo.c	576	editorInsertRow	signed_overflow	Unknown	E.numrows + 1 ≤ 2147483647
+.	kilo.c	578	editorInsertRow	precondition of memmove	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	578	editorInsertRow	precondition of memmove	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	578	editorInsertRow	signed_overflow	Unknown	E.numrows - at ≤ 2147483647
+.	kilo.c	579	editorInsertRow	signed_overflow	Unknown	at + 1 ≤ 2147483647
+.	kilo.c	579	editorInsertRow	dangling_pointer	Unknown	¬\dangling(&(E.row + j)->idx)
+.	kilo.c	579	editorInsertRow	initialization	Unknown	\initialized(&(E.row + j)->idx)
+.	kilo.c	579	editorInsertRow	mem_access	Unknown	\valid(&(E.row + j)->idx)
+.	kilo.c	579	editorInsertRow	signed_overflow	Unknown	(E.row + j)->idx + 1 ≤ 2147483647
+.	kilo.c	579	editorInsertRow	signed_overflow	Unknown	-2147483648 ≤ (E.row + j)->idx + 1
+.	kilo.c	581	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->size)
+.	kilo.c	582	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->chars)
+.	kilo.c	583	editorInsertRow	dangling_pointer	Unknown	¬\dangling(&(E.row + at)->chars)
+.	kilo.c	583	editorInsertRow	initialization	Unknown	\initialized(&(E.row + at)->chars)
+.	kilo.c	583	editorInsertRow	mem_access	Unknown	\valid_read(&(E.row + at)->chars)
+.	kilo.c	583	editorInsertRow	precondition of memcpy	Unknown	separation: \separated((char *)dest + (0 .. n - 1), (char *)src + (0 .. n - 1))
+.	kilo.c	583	editorInsertRow	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	583	editorInsertRow	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	584	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->hl)
+.	kilo.c	585	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->hl_oc)
+.	kilo.c	586	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->render)
+.	kilo.c	587	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->rsize)
+.	kilo.c	588	editorInsertRow	mem_access	Unknown	\valid(&(E.row + at)->idx)
+.	kilo.c	591	editorInsertRow	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	596	editorFreeRow	dangling_pointer	Unknown	¬\dangling(&row->render)
+.	kilo.c	596	editorFreeRow	initialization	Unknown	\initialized(&row->render)
+.	kilo.c	596	editorFreeRow	mem_access	Unknown	\valid_read(&row->render)
+.	kilo.c	596	editorFreeRow	precondition of free	Unknown	freeable: p ≡ \null ∨ \freeable(p)
+.	kilo.c	597	editorFreeRow	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	597	editorFreeRow	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	597	editorFreeRow	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	597	editorFreeRow	precondition of free	Unknown	freeable: p ≡ \null ∨ \freeable(p)
+.	kilo.c	598	editorFreeRow	dangling_pointer	Unknown	¬\dangling(&row->hl)
+.	kilo.c	598	editorFreeRow	initialization	Unknown	\initialized(&row->hl)
+.	kilo.c	598	editorFreeRow	mem_access	Unknown	\valid_read(&row->hl)
+.	kilo.c	598	editorFreeRow	precondition of free	Unknown	freeable: p ≡ \null ∨ \freeable(p)
+.	kilo.c	609	editorDelRow	precondition of memmove	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	609	editorDelRow	precondition of memmove	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	610	editorDelRow	dangling_pointer	Unknown	¬\dangling(&(E.row + j)->idx)
+.	kilo.c	610	editorDelRow	initialization	Unknown	\initialized(&(E.row + j)->idx)
+.	kilo.c	610	editorDelRow	mem_access	Unknown	\valid(&(E.row + j)->idx)
+.	kilo.c	610	editorDelRow	signed_overflow	Unknown	(E.row + j)->idx + 1 ≤ 2147483647
+.	kilo.c	610	editorDelRow	signed_overflow	Unknown	-2147483648 ≤ (E.row + j)->idx + 1
+.	kilo.c	612	editorDelRow	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	626	editorRowsToString	dangling_pointer	Unknown	¬\dangling(&(E.row + j)->size)
+.	kilo.c	626	editorRowsToString	initialization	Unknown	\initialized(&(E.row + j)->size)
+.	kilo.c	626	editorRowsToString	mem_access	Unknown	\valid_read(&(E.row + j)->size)
+.	kilo.c	626	editorRowsToString	signed_overflow	Unknown	-2147483648 ≤ totlen + (int)((E.row + j)->size + 1)
+.	kilo.c	626	editorRowsToString	signed_overflow	Unknown	totlen + (int)((E.row + j)->size + 1) ≤ 2147483647
+.	kilo.c	626	editorRowsToString	signed_overflow	Unknown	(E.row + j)->size + 1 ≤ 2147483647
+.	kilo.c	626	editorRowsToString	signed_overflow	Unknown	-2147483648 ≤ (E.row + j)->size + 1
+.	kilo.c	628	editorRowsToString	signed_overflow	Unknown	-2147483648 ≤ totlen + 1
+.	kilo.c	628	editorRowsToString	signed_overflow	Unknown	totlen + 1 ≤ 2147483647
+.	kilo.c	632	editorRowsToString	dangling_pointer	Unknown	¬\dangling(&(E.row + j)->chars)
+.	kilo.c	632	editorRowsToString	dangling_pointer	Unknown	¬\dangling(&(E.row + j)->size)
+.	kilo.c	632	editorRowsToString	initialization	Unknown	\initialized(&(E.row + j)->chars)
+.	kilo.c	632	editorRowsToString	initialization	Unknown	\initialized(&(E.row + j)->size)
+.	kilo.c	632	editorRowsToString	mem_access	Unknown	\valid_read(&(E.row + j)->chars)
+.	kilo.c	632	editorRowsToString	mem_access	Unknown	\valid_read(&(E.row + j)->size)
+.	kilo.c	632	editorRowsToString	precondition of memcpy	Unknown	separation: \separated((char *)dest + (0 .. n - 1), (char *)src + (0 .. n - 1))
+.	kilo.c	632	editorRowsToString	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	632	editorRowsToString	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	634	editorRowsToString	mem_access	Unknown	\valid(p)
+.	kilo.c	637	editorRowsToString	mem_access	Unknown	\valid(p)
+.	kilo.c	644	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	644	editorRowInsertChar	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	644	editorRowInsertChar	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	647	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ at - row->size
+.	kilo.c	647	editorRowInsertChar	signed_overflow	Unknown	at - row->size ≤ 2147483647
+.	kilo.c	649	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	649	editorRowInsertChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	649	editorRowInsertChar	mem_access	Unknown	\valid(&row->chars)
+.	kilo.c	649	editorRowInsertChar	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	649	editorRowInsertChar	precondition of realloc	Unknown	freeable: ptr ≡ \null ∨ \freeable(ptr)
+.	kilo.c	649	editorRowInsertChar	signed_overflow	Unknown	(int)(row->size + padlen) + 2 ≤ 2147483647
+.	kilo.c	649	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ (int)(row->size + padlen) + 2
+.	kilo.c	649	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ row->size + padlen
+.	kilo.c	649	editorRowInsertChar	signed_overflow	Unknown	row->size + padlen ≤ 2147483647
+.	kilo.c	650	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&padlen)
+.	kilo.c	650	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	650	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	650	editorRowInsertChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	650	editorRowInsertChar	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	650	editorRowInsertChar	precondition of memset	Unknown	valid_s: valid_or_empty(s, n)
+.	kilo.c	651	editorRowInsertChar	signed_overflow	Unknown	(int)(row->size + padlen) + 1 ≤ 2147483647
+.	kilo.c	651	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ (int)(row->size + padlen) + 1
+.	kilo.c	651	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ row->size + padlen
+.	kilo.c	651	editorRowInsertChar	signed_overflow	Unknown	row->size + padlen ≤ 2147483647
+.	kilo.c	651	editorRowInsertChar	mem_access	Unknown	\valid(row->chars + (int)((int)(row->size + padlen) + 1))
+.	kilo.c	652	editorRowInsertChar	mem_access	Unknown	\valid(&row->size)
+.	kilo.c	652	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ row->size + (int)(padlen + 1)
+.	kilo.c	652	editorRowInsertChar	signed_overflow	Unknown	row->size + (int)(padlen + 1) ≤ 2147483647
+.	kilo.c	652	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ padlen + 1
+.	kilo.c	652	editorRowInsertChar	signed_overflow	Unknown	padlen + 1 ≤ 2147483647
+.	kilo.c	656	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	656	editorRowInsertChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	656	editorRowInsertChar	mem_access	Unknown	\valid(&row->chars)
+.	kilo.c	656	editorRowInsertChar	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	656	editorRowInsertChar	precondition of realloc	Unknown	freeable: ptr ≡ \null ∨ \freeable(ptr)
+.	kilo.c	656	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ row->size + 2
+.	kilo.c	656	editorRowInsertChar	signed_overflow	Unknown	row->size + 2 ≤ 2147483647
+.	kilo.c	657	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&at)
+.	kilo.c	657	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	657	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	657	editorRowInsertChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	657	editorRowInsertChar	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	657	editorRowInsertChar	precondition of memmove	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	657	editorRowInsertChar	precondition of memmove	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	657	editorRowInsertChar	signed_overflow	Unknown	(int)(row->size - at) + 1 ≤ 2147483647
+.	kilo.c	657	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ (int)(row->size - at) + 1
+.	kilo.c	657	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ row->size - at
+.	kilo.c	657	editorRowInsertChar	signed_overflow	Unknown	row->size - at ≤ 2147483647
+.	kilo.c	658	editorRowInsertChar	mem_access	Unknown	\valid(&row->size)
+.	kilo.c	658	editorRowInsertChar	signed_overflow	Unknown	-2147483648 ≤ row->size + 1
+.	kilo.c	658	editorRowInsertChar	signed_overflow	Unknown	row->size + 1 ≤ 2147483647
+.	kilo.c	660	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&at)
+.	kilo.c	660	editorRowInsertChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	660	editorRowInsertChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	660	editorRowInsertChar	mem_access	Unknown	\valid(row->chars + at)
+.	kilo.c	660	editorRowInsertChar	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	662	editorRowInsertChar	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	667	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	667	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	667	editorRowAppendString	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	667	editorRowAppendString	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	667	editorRowAppendString	mem_access	Unknown	\valid(&row->chars)
+.	kilo.c	667	editorRowAppendString	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	667	editorRowAppendString	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	667	editorRowAppendString	precondition of realloc	Unknown	freeable: ptr ≡ \null ∨ \freeable(ptr)
+.	kilo.c	668	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&len)
+.	kilo.c	668	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	668	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	668	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&s)
+.	kilo.c	668	editorRowAppendString	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	668	editorRowAppendString	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	668	editorRowAppendString	precondition of memcpy	Unknown	separation: \separated((char *)dest + (0 .. n - 1), (char *)src + (0 .. n - 1))
+.	kilo.c	668	editorRowAppendString	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	668	editorRowAppendString	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	669	editorRowAppendString	mem_access	Unknown	\valid(&row->size)
+.	kilo.c	670	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	670	editorRowAppendString	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	670	editorRowAppendString	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	670	editorRowAppendString	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	670	editorRowAppendString	mem_access	Unknown	\valid(row->chars + row->size)
+.	kilo.c	672	editorRowAppendString	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	677	editorRowDelChar	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	677	editorRowDelChar	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	677	editorRowDelChar	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	678	editorRowDelChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	678	editorRowDelChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	678	editorRowDelChar	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	678	editorRowDelChar	precondition of memmove	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	678	editorRowDelChar	precondition of memmove	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	678	editorRowDelChar	signed_overflow	Unknown	-2147483648 ≤ row->size - at
+.	kilo.c	678	editorRowDelChar	signed_overflow	Unknown	row->size - at ≤ 2147483647
+.	kilo.c	680	editorRowDelChar	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	680	editorRowDelChar	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	680	editorRowDelChar	mem_access	Unknown	\valid(&row->size)
+.	kilo.c	680	editorRowDelChar	signed_overflow	Unknown	-2147483648 ≤ row->size - 1
+.	kilo.c	680	editorRowDelChar	signed_overflow	Unknown	row->size - 1 ≤ 2147483647
+.	kilo.c	681	editorRowDelChar	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	686	editorInsertChar	signed_overflow	Unknown	-2147483648 ≤ E.rowoff + E.cy
+.	kilo.c	686	editorInsertChar	signed_overflow	Unknown	E.rowoff + E.cy ≤ 2147483647
+.	kilo.c	687	editorInsertChar	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	687	editorInsertChar	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	687	editorInsertChar	signed_overflow	Unknown	-2147483648 ≤ E.coloff + E.cx
+.	kilo.c	687	editorInsertChar	signed_overflow	Unknown	E.coloff + E.cx ≤ 2147483647
+.	kilo.c	692	editorInsertChar	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	697	editorInsertChar	dangling_pointer	Unknown	¬\dangling(&filecol)
+.	kilo.c	698	editorInsertChar	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	698	editorInsertChar	signed_overflow	Unknown	-2147483648 ≤ E.screencols - 1
+.	kilo.c	699	editorInsertChar	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	699	editorInsertChar	signed_overflow	Unknown	-2147483648 ≤ E.coloff + 1
+.	kilo.c	699	editorInsertChar	signed_overflow	Unknown	E.coloff + 1 ≤ 2147483647
+.	kilo.c	701	editorInsertChar	signed_overflow	Unknown	-2147483648 ≤ E.cx + 1
+.	kilo.c	701	editorInsertChar	signed_overflow	Unknown	E.cx + 1 ≤ 2147483647
+.	kilo.c	702	editorInsertChar	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	708	editorInsertNewline	signed_overflow	Unknown	-2147483648 ≤ E.rowoff + E.cy
+.	kilo.c	708	editorInsertNewline	signed_overflow	Unknown	E.rowoff + E.cy ≤ 2147483647
+.	kilo.c	709	editorInsertNewline	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	709	editorInsertNewline	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	709	editorInsertNewline	signed_overflow	Unknown	-2147483648 ≤ E.coloff + E.cx
+.	kilo.c	709	editorInsertNewline	signed_overflow	Unknown	E.coloff + E.cx ≤ 2147483647
+.	kilo.c	712	editorInsertNewline	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	721	editorInsertNewline	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	721	editorInsertNewline	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	721	editorInsertNewline	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	726	editorInsertNewline	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	726	editorInsertNewline	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	726	editorInsertNewline	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	726	editorInsertNewline	signed_overflow	Unknown	-2147483648 ≤ row->size - filecol
+.	kilo.c	726	editorInsertNewline	signed_overflow	Unknown	row->size - filecol ≤ 2147483647
+.	kilo.c	728	editorInsertNewline	dangling_pointer	Unknown	¬\dangling(&filecol)
+.	kilo.c	728	editorInsertNewline	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	728	editorInsertNewline	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	728	editorInsertNewline	mem_access	Unknown	\valid(row->chars + filecol)
+.	kilo.c	728	editorInsertNewline	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	729	editorInsertNewline	mem_access	Unknown	\valid(&row->size)
+.	kilo.c	733	editorInsertNewline	signed_overflow	Unknown	-2147483648 ≤ E.screenrows - 1
+.	kilo.c	734	editorInsertNewline	signed_overflow	Unknown	E.rowoff + 1 ≤ 2147483647
+.	kilo.c	744	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.rowoff + E.cy
+.	kilo.c	744	editorDelChar	signed_overflow	Unknown	E.rowoff + E.cy ≤ 2147483647
+.	kilo.c	745	editorDelChar	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	745	editorDelChar	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	745	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.coloff + E.cx
+.	kilo.c	745	editorDelChar	signed_overflow	Unknown	E.coloff + E.cx ≤ 2147483647
+.	kilo.c	748	editorDelChar	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	752	editorDelChar	dangling_pointer	Unknown	¬\dangling(&(E.row + (int)(filerow - 1))->size)
+.	kilo.c	752	editorDelChar	initialization	Unknown	\initialized(&(E.row + (int)(filerow - 1))->size)
+.	kilo.c	752	editorDelChar	mem_access	Unknown	\valid_read(&(E.row + (int)(filerow - 1))->size)
+.	kilo.c	752	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ filerow - 1
+.	kilo.c	753	editorDelChar	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	753	editorDelChar	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	753	editorDelChar	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	753	editorDelChar	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	753	editorDelChar	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	753	editorDelChar	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	757	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.rowoff - 1
+.	kilo.c	759	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.cy - 1
+.	kilo.c	760	editorDelChar	dangling_pointer	Unknown	¬\dangling(&filecol)
+.	kilo.c	762	editorDelChar	signed_overflow	Unknown	(int)(E.screencols - E.cx) + 1 ≤ 2147483647
+.	kilo.c	762	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ (int)(E.screencols - E.cx) + 1
+.	kilo.c	762	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.screencols - E.cx
+.	kilo.c	762	editorDelChar	signed_overflow	Unknown	E.screencols - E.cx ≤ 2147483647
+.	kilo.c	763	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.cx - shift
+.	kilo.c	763	editorDelChar	signed_overflow	Unknown	E.cx - shift ≤ 2147483647
+.	kilo.c	764	editorDelChar	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	764	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.coloff + shift
+.	kilo.c	764	editorDelChar	signed_overflow	Unknown	E.coloff + shift ≤ 2147483647
+.	kilo.c	767	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ filecol - 1
+.	kilo.c	767	editorDelChar	signed_overflow	Unknown	filecol - 1 ≤ 2147483647
+.	kilo.c	768	editorDelChar	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	768	editorDelChar	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	769	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.coloff - 1
+.	kilo.c	769	editorDelChar	signed_overflow	Unknown	E.coloff - 1 ≤ 2147483647
+.	kilo.c	771	editorDelChar	signed_overflow	Unknown	-2147483648 ≤ E.cx - 1
+.	kilo.c	771	editorDelChar	signed_overflow	Unknown	E.cx - 1 ≤ 2147483647
+.	kilo.c	773	editorDelChar	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	774	editorDelChar	signed_overflow	Unknown	E.dirty + 1 ≤ 2147483647
+.	kilo.c	799	editorOpen	initialization	Unknown	\initialized(line + (ssize_t)(linelen - 1))
+.	kilo.c	799	editorOpen	mem_access	Unknown	\valid_read(line + (ssize_t)(linelen - 1))
+.	kilo.c	800	editorOpen	mem_access	Unknown	\valid(line + linelen)
+.	kilo.c	813	editorSave	precondition of __va_open_mode_t	Unknown	valid_filename: valid_read_string(filename)
+.	kilo.c	819	editorSave	precondition of write	Unknown	buf_has_room: \valid_read((char *)buf + (0 .. count - 1))
+.	kilo.c	848	abAppend	signed_overflow	Unknown	-2147483648 ≤ ab->len + len
+.	kilo.c	848	abAppend	signed_overflow	Unknown	ab->len + len ≤ 2147483647
+.	kilo.c	851	abAppend	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	851	abAppend	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	871	editorRefreshScreen	signed_overflow	Unknown	E.rowoff + y ≤ 2147483647
+.	kilo.c	878	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ E.screencols - welcomelen
+.	kilo.c	878	editorRefreshScreen	signed_overflow	Unknown	E.screencols - welcomelen ≤ 2147483647
+.	kilo.c	883	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ padding - 1
+.	kilo.c	893	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	893	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&r->rsize)
+.	kilo.c	893	editorRefreshScreen	initialization	Unknown	\initialized(&r->rsize)
+.	kilo.c	893	editorRefreshScreen	mem_access	Unknown	\valid_read(&r->rsize)
+.	kilo.c	893	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ r->rsize - E.coloff
+.	kilo.c	893	editorRefreshScreen	signed_overflow	Unknown	r->rsize - E.coloff ≤ 2147483647
+.	kilo.c	897	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&r->render)
+.	kilo.c	897	editorRefreshScreen	initialization	Unknown	\initialized(&r->render)
+.	kilo.c	897	editorRefreshScreen	mem_access	Unknown	\valid_read(&r->render)
+.	kilo.c	898	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&r->hl)
+.	kilo.c	898	editorRefreshScreen	initialization	Unknown	\initialized(&r->hl)
+.	kilo.c	898	editorRefreshScreen	mem_access	Unknown	\valid_read(&r->hl)
+.	kilo.c	900	editorRefreshScreen	signed_overflow	Unknown	j + 1 ≤ 2147483647
+.	kilo.c	901	editorRefreshScreen	initialization	Unknown	\initialized(hl + j)
+.	kilo.c	901	editorRefreshScreen	mem_access	Unknown	\valid_read(hl + j)
+.	kilo.c	904	editorRefreshScreen	initialization	Unknown	\initialized(c + j)
+.	kilo.c	904	editorRefreshScreen	mem_access	Unknown	\valid_read(c + j)
+.	kilo.c	937	editorRefreshScreen	precondition of snprintf_va_4	Unknown	valid_read_nstring(param0, 20)
+.	kilo.c	940	editorRefreshScreen	signed_overflow	Unknown	(int)(E.rowoff + E.cy) + 1 ≤ 2147483647
+.	kilo.c	940	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ E.rowoff + E.cy
+.	kilo.c	940	editorRefreshScreen	signed_overflow	Unknown	E.rowoff + E.cy ≤ 2147483647
+.	kilo.c	944	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ E.screencols - len_0
+.	kilo.c	944	editorRefreshScreen	signed_overflow	Unknown	E.screencols - len_0 ≤ 2147483647
+.	kilo.c	956	editorRefreshScreen	precondition of strlen	Unknown	valid_string_s: valid_read_string(s)
+.	kilo.c	957	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ tmp_8 - E.statusmsg_time
+.	kilo.c	957	editorRefreshScreen	signed_overflow	Unknown	tmp_8 - E.statusmsg_time ≤ 2147483647
+.	kilo.c	967	editorRefreshScreen	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	968	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	968	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	968	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ E.cx + E.coloff
+.	kilo.c	968	editorRefreshScreen	signed_overflow	Unknown	E.cx + E.coloff ≤ 2147483647
+.	kilo.c	968	editorRefreshScreen	signed_overflow	Unknown	-2147483648 ≤ j_0 + 1
+.	kilo.c	968	editorRefreshScreen	signed_overflow	Unknown	j_0 + 1 ≤ 2147483647
+.	kilo.c	969	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	969	editorRefreshScreen	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	969	editorRefreshScreen	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	969	editorRefreshScreen	dangling_pointer	Unknown	¬\dangling(&row->chars)
+.	kilo.c	969	editorRefreshScreen	initialization	Unknown	\initialized(&row->chars)
+.	kilo.c	969	editorRefreshScreen	initialization	Unknown	\initialized(row->chars + j_0)
+.	kilo.c	969	editorRefreshScreen	mem_access	Unknown	\valid_read(&row->chars)
+.	kilo.c	969	editorRefreshScreen	mem_access	Unknown	\valid_read(row->chars + j_0)
+.	kilo.c	969	editorRefreshScreen	signed_overflow	Unknown	cx + (int)(7 - (int)(cx % 8)) ≤ 2147483647
+.	kilo.c	970	editorRefreshScreen	signed_overflow	Unknown	cx + 1 ≤ 2147483647
+.	kilo.c	973	editorRefreshScreen	signed_overflow	Unknown	E.cy + 1 ≤ 2147483647
+.	kilo.c	974	editorRefreshScreen	precondition of strlen	Unknown	valid_string_s: valid_read_string(s)
+.	kilo.c	976	editorRefreshScreen	precondition of write	Unknown	buf_has_room: \valid_read((char *)buf + (0 .. count - 1))
+.	kilo.c	1010	editorFind	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	1011	editorFind	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	1027	editorFind	dangling_pointer	Unknown	¬\dangling(&(E.row + saved_hl_line)->hl)
+.	kilo.c	1027	editorFind	dangling_pointer	Unknown	¬\dangling(&(E.row + saved_hl_line)->rsize)
+.	kilo.c	1027	editorFind	initialization	Unknown	\initialized(&(E.row + saved_hl_line)->hl)
+.	kilo.c	1027	editorFind	initialization	Unknown	\initialized(&(E.row + saved_hl_line)->rsize)
+.	kilo.c	1027	editorFind	mem_access	Unknown	\valid_read(&(E.row + saved_hl_line)->hl)
+.	kilo.c	1027	editorFind	mem_access	Unknown	\valid_read(&(E.row + saved_hl_line)->rsize)
+.	kilo.c	1027	editorFind	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	1027	editorFind	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	1034	editorFind	precondition of isprint	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+.	kilo.c	1050	editorFind	signed_overflow	Unknown	current + find_next ≤ 2147483647
+.	kilo.c	1053	editorFind	dangling_pointer	Unknown	¬\dangling(&(E.row + current)->render)
+.	kilo.c	1053	editorFind	initialization	Unknown	\initialized(&(E.row + current)->render)
+.	kilo.c	1053	editorFind	mem_access	Unknown	\valid_read(&(E.row + current)->render)
+.	kilo.c	1054	editorFind	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)match)
+.	kilo.c	1055	editorFind	differing_blocks	Unknown	\base_addr(match) ≡ \base_addr((E.row + current)->render)
+.	kilo.c	1055	editorFind	signed_overflow	Unknown	-2147483648 ≤ match - (E.row + current)->render
+.	kilo.c	1055	editorFind	signed_overflow	Unknown	match - (E.row + current)->render ≤ 2147483647
+.	kilo.c	1062	editorFind	dangling_pointer	Unknown	¬\dangling(&(E.row + saved_hl_line)->hl)
+.	kilo.c	1062	editorFind	dangling_pointer	Unknown	¬\dangling(&(E.row + saved_hl_line)->rsize)
+.	kilo.c	1062	editorFind	initialization	Unknown	\initialized(&(E.row + saved_hl_line)->hl)
+.	kilo.c	1062	editorFind	initialization	Unknown	\initialized(&(E.row + saved_hl_line)->rsize)
+.	kilo.c	1062	editorFind	mem_access	Unknown	\valid_read(&(E.row + saved_hl_line)->hl)
+.	kilo.c	1062	editorFind	mem_access	Unknown	\valid_read(&(E.row + saved_hl_line)->rsize)
+.	kilo.c	1062	editorFind	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	1062	editorFind	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	1064	editorFind	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)match)
+.	kilo.c	1067	editorFind	dangling_pointer	Unknown	¬\dangling(&row->hl)
+.	kilo.c	1067	editorFind	initialization	Unknown	\initialized(&row->hl)
+.	kilo.c	1067	editorFind	mem_access	Unknown	\valid_read(&row->hl)
+.	kilo.c	1067	editorFind	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row->hl)
+.	kilo.c	1069	editorFind	dangling_pointer	Unknown	¬\dangling(&row->rsize)
+.	kilo.c	1069	editorFind	initialization	Unknown	\initialized(&row->rsize)
+.	kilo.c	1069	editorFind	mem_access	Unknown	\valid_read(&row->rsize)
+.	kilo.c	1070	editorFind	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	kilo.c	1070	editorFind	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	kilo.c	1071	editorFind	precondition of memset	Unknown	valid_s: valid_or_empty(s, n)
+.	kilo.c	1079	editorFind	signed_overflow	Unknown	-2147483648 ≤ E.cx - E.screencols
+.	kilo.c	1079	editorFind	signed_overflow	Unknown	E.cx - E.screencols ≤ 2147483647
+.	kilo.c	1080	editorFind	signed_overflow	Unknown	-2147483648 ≤ E.cx - diff
+.	kilo.c	1080	editorFind	signed_overflow	Unknown	E.cx - diff ≤ 2147483647
+.	kilo.c	1081	editorFind	signed_overflow	Unknown	-2147483648 ≤ E.coloff + diff
+.	kilo.c	1081	editorFind	signed_overflow	Unknown	E.coloff + diff ≤ 2147483647
+.	kilo.c	1092	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.rowoff + E.cy
+.	kilo.c	1092	editorMoveCursor	signed_overflow	Unknown	E.rowoff + E.cy ≤ 2147483647
+.	kilo.c	1093	editorMoveCursor	dangling_pointer	Unknown	¬\dangling(&E.coloff)
+.	kilo.c	1093	editorMoveCursor	dangling_pointer	Unknown	¬\dangling(&E.cx)
+.	kilo.c	1093	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.coloff + E.cx
+.	kilo.c	1093	editorMoveCursor	signed_overflow	Unknown	E.coloff + E.cx ≤ 2147483647
+.	kilo.c	1101	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.coloff - 1
+.	kilo.c	1101	editorMoveCursor	signed_overflow	Unknown	E.coloff - 1 ≤ 2147483647
+.	kilo.c	1104	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.cy - 1
+.	kilo.c	1105	editorMoveCursor	dangling_pointer	Unknown	¬\dangling(&(E.row + (int)(filerow - 1))->size)
+.	kilo.c	1105	editorMoveCursor	initialization	Unknown	\initialized(&(E.row + (int)(filerow - 1))->size)
+.	kilo.c	1105	editorMoveCursor	mem_access	Unknown	\valid_read(&(E.row + (int)(filerow - 1))->size)
+.	kilo.c	1106	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.screencols - 1
+.	kilo.c	1107	editorMoveCursor	signed_overflow	Unknown	(int)(E.cx - E.screencols) + 1 ≤ 2147483647
+.	kilo.c	1107	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ (int)(E.cx - E.screencols) + 1
+.	kilo.c	1107	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.cx - E.screencols
+.	kilo.c	1107	editorMoveCursor	signed_overflow	Unknown	E.cx - E.screencols ≤ 2147483647
+.	kilo.c	1113	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.cx - 1
+.	kilo.c	1113	editorMoveCursor	signed_overflow	Unknown	E.cx - 1 ≤ 2147483647
+.	kilo.c	1117	editorMoveCursor	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	1117	editorMoveCursor	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	1117	editorMoveCursor	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	1117	editorMoveCursor	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	1118	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.screencols - 1
+.	kilo.c	1119	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.coloff + 1
+.	kilo.c	1119	editorMoveCursor	signed_overflow	Unknown	E.coloff + 1 ≤ 2147483647
+.	kilo.c	1121	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.cx + 1
+.	kilo.c	1121	editorMoveCursor	signed_overflow	Unknown	E.cx + 1 ≤ 2147483647
+.	kilo.c	1123	editorMoveCursor	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	1123	editorMoveCursor	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	1123	editorMoveCursor	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	1123	editorMoveCursor	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	1126	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.screenrows - 1
+.	kilo.c	1127	editorMoveCursor	signed_overflow	Unknown	E.rowoff + 1 ≤ 2147483647
+.	kilo.c	1135	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.rowoff - 1
+.	kilo.c	1137	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.cy - 1
+.	kilo.c	1142	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.screenrows - 1
+.	kilo.c	1143	editorMoveCursor	signed_overflow	Unknown	E.rowoff + 1 ≤ 2147483647
+.	kilo.c	1145	editorMoveCursor	signed_overflow	Unknown	E.cy + 1 ≤ 2147483647
+.	kilo.c	1151	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.rowoff + E.cy
+.	kilo.c	1151	editorMoveCursor	signed_overflow	Unknown	E.rowoff + E.cy ≤ 2147483647
+.	kilo.c	1152	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.coloff + E.cx
+.	kilo.c	1152	editorMoveCursor	signed_overflow	Unknown	E.coloff + E.cx ≤ 2147483647
+.	kilo.c	1154	editorMoveCursor	dangling_pointer	Unknown	¬\dangling(&row->size)
+.	kilo.c	1154	editorMoveCursor	initialization	Unknown	\initialized(&row->size)
+.	kilo.c	1154	editorMoveCursor	mem_access	Unknown	\valid_read(&row->size)
+.	kilo.c	1154	editorMoveCursor	ptr_comparison	Unknown	\pointer_comparable((void *)0, (void *)row)
+.	kilo.c	1156	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.cx - (int)(filecol - rowlen)
+.	kilo.c	1156	editorMoveCursor	signed_overflow	Unknown	E.cx - (int)(filecol - rowlen) ≤ 2147483647
+.	kilo.c	1156	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ filecol - rowlen
+.	kilo.c	1156	editorMoveCursor	signed_overflow	Unknown	filecol - rowlen ≤ 2147483647
+.	kilo.c	1158	editorMoveCursor	signed_overflow	Unknown	-2147483648 ≤ E.coloff + E.cx
+.	kilo.c	1158	editorMoveCursor	signed_overflow	Unknown	E.coloff + E.cx ≤ 2147483647
+.	kilo.c	1206	editorProcessKeypress	signed_overflow	Unknown	-2147483648 ≤ E.screenrows - 1
+.	kilo.c	1210	editorProcessKeypress	signed_overflow	Unknown	-2147483648 ≤ times - 1
+.	kilo.c	1256	initEditor	signed_overflow	Unknown	-2147483648 ≤ E.screenrows - 2
+FRAMAC_SHARE/libc	ctype.h	94	isdigit	precondition	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+FRAMAC_SHARE/libc	ctype.h	134	isprint	precondition	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+FRAMAC_SHARE/libc	ctype.h	161	isspace	precondition	Unknown	c_uchar_or_eof: (0 ≤ c ≤ 255) ∨ c ≡ -1
+FRAMAC_SHARE/libc	fcntl.h	175	__va_open_mode_t	precondition	Unknown	valid_filename: valid_read_string(filename)
+FRAMAC_SHARE/libc	stdio.c	90	getline	mem_access	Unknown	\valid(*lineptr + tmp_2)
+FRAMAC_SHARE/libc	stdio.c	93	getline	mem_access	Unknown	\valid(*lineptr + cur)
+FRAMAC_SHARE/libc	stdio.h	213	snprintf_va_4	precondition	Unknown	valid_read_nstring(param0, 20)
+FRAMAC_SHARE/libc	stdio.h	217	sscanf_va_1	precondition	Unknown	valid_read_string(s)
+FRAMAC_SHARE/libc	stdlib.h	405	free	precondition	Unknown	freeable: p ≡ \null ∨ \freeable(p)
+FRAMAC_SHARE/libc	stdlib.h	422	realloc	precondition	Unknown	freeable: ptr ≡ \null ∨ \freeable(ptr)
+FRAMAC_SHARE/libc	string.c	169	memcmp	initialization	Unknown	\initialized(p1 + i)
+FRAMAC_SHARE/libc	string.c	169	memcmp	mem_access	Unknown	\valid_read(p1 + i)
+FRAMAC_SHARE/libc	string.c	169	memcmp	mem_access	Unknown	\valid_read(p2 + i)
+FRAMAC_SHARE/libc	string.c	290	strstr	initialization	Unknown	\initialized(haystack + i)
+FRAMAC_SHARE/libc	string.c	290	strstr	mem_access	Unknown	\valid_read(haystack + i)
+FRAMAC_SHARE/libc	string.c	292	strstr	initialization	Unknown	\initialized(haystack + (size_t)(i + j))
+FRAMAC_SHARE/libc	string.c	292	strstr	mem_access	Unknown	\valid_read(haystack + (size_t)(i + j))
+FRAMAC_SHARE/libc	string.c	293	strstr	mem_access	Unknown	\valid_read(needle + j)
+FRAMAC_SHARE/libc	string.c	295	strstr	mem_access	Unknown	\valid_read(needle + j)
+FRAMAC_SHARE/libc	string.c	324	strdup	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+FRAMAC_SHARE/libc	string.h	95	memcpy	precondition	Unknown	valid_dest: valid_or_empty(dest, n)
+FRAMAC_SHARE/libc	string.h	96	memcpy	precondition	Unknown	valid_src: valid_read_or_empty(src, n)
+FRAMAC_SHARE/libc	string.h	98	memcpy	precondition	Unknown	separation: \separated((char *)dest + (0 .. n - 1), (char *)src + (0 .. n - 1))
+FRAMAC_SHARE/libc	string.h	120	memmove	precondition	Unknown	valid_dest: valid_or_empty(dest, n)
+FRAMAC_SHARE/libc	string.h	121	memmove	precondition	Unknown	valid_src: valid_read_or_empty(src, n)
+FRAMAC_SHARE/libc	string.h	131	memset	precondition	Unknown	valid_s: valid_or_empty(s, n)
+FRAMAC_SHARE/libc	string.h	141	strlen	precondition	Unknown	valid_string_s: valid_read_string(s)
+FRAMAC_SHARE/libc	unistd.h	860	ftruncate	assigns clause	Unknown	assigns \nothing;
+FRAMAC_SHARE/libc	unistd.h	860	ftruncate	from clause	Unknown	assigns \result \from __x0, __x1;
+FRAMAC_SHARE/libc	unistd.h	1160	write	precondition	Unknown	buf_has_room: \valid_read((char *)buf + (0 .. count - 1))

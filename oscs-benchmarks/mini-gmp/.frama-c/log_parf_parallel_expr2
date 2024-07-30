@@ -1,0 +1,3449 @@
+Entering directory '/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1'
+Leaving directory '/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1'
+[kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
+[kernel] Parsing tests/testutils.c (with preprocessing)
+[kernel] Parsing tests/t-add.c (with preprocessing)
+[kernel] Parsing tests/hex-random.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] tests/hex-random.c:251: Warning: 
+  __builtin_constant_p is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+[kernel] Parsing tests/mini-random.c (with preprocessing)
+[kernel] Parsing fc_stubs.h (with preprocessing)
+mkdir: .parf_temp_files: File exists
+rm: .parf_temp_files/*.sav: No such file or directory
+[parf] checkout project: project "default"
+[parf] init parameters: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0
+[parf] @default,cvalue
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_1
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_2
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: allocating variable __malloc_asprintf_l124
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_0
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_1
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_3
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_4
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_1
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_2
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_3
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_4
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_6
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_8
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_9
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    19 valid    13 unknown     0 invalid     32 total
+  59% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[parf] base: base00
+[parf] Analysis time for this epoch: 180
+[parf] sample: base00-sample00
+[parf] sample: base00-sample01
+[parf] sample: base00-sample02
+[parf] sample: base00-sample03
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 11 -eva-plevel 33 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,octagon -eva-auto-loop-unroll 10
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 11 -eva-plevel 32 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 9
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 7 -eva-slevel 7 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls none -eva-domains cvalue,octagon -eva-auto-loop-unroll 12
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 7 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 12
+[parf] @default,cvalue,octagon
+[parf] @default,cvalue,octagon
+[parf] @default,cvalue,equality,gauges,octagon
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_rrandomb
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] using specification for function __FC_assert
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function __gmpz_neg
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function __gmpz_init
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] using specification for function Frama_C_interval
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function __gmpz_clear
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function isspace
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function isspace
+[eva] using specification for function __gmpz_clear
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] using specification for function isspace
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] using specification for function __gmpz_clear
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] using specification for function fprintf_va_12
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] using specification for function fprintf_va_11
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[scope:rm_asserts] removing 26 assertion(s)
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    22 valid    10 unknown     0 invalid     32 total
+  68% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[scope:rm_asserts] removing 14 assertion(s)
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    22 valid    10 unknown     0 invalid     32 total
+  68% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    22 valid    10 unknown     0 invalid     32 total
+  68% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[parf] sample base00-sample00: subset of base? true
+[parf] sample base00-sample01: subset of base? true
+[parf] sample base00-sample03: subset of base? true
+[parf] sample base00-sample02: subset of base? true
+[parf] base: base01
+[parf] Analysis time for this epoch: 270
+[parf] sample: base01-sample00
+[parf] sample: base01-sample01
+[parf] sample: base01-sample02
+[parf] sample: base01-sample03
+[parf] run eva: start
+[parf] run eva: start
+[parf] set eva options
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 8 -eva-slevel 43 -eva-remove-redundant-alarms -eva-plevel 165 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 56 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 52
+[parf] parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 39 -eva-remove-redundant-alarms -eva-plevel 142 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 57 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 65
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 8 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 47 -eva-remove-redundant-alarms -eva-plevel 164 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 60 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 46
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 8 -eva-subdivide-non-linear 13 -eva-slevel 37 -eva-remove-redundant-alarms -eva-plevel 136 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 55 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 50
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmp_urandomb_ui
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function fprintf_va_1
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function abort
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function __gmpz_add
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function isspace
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] using specification for function __gmpz_clear
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] using specification for function fprintf_va_12
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:4181: 
+  The evaluation of the expression (rn <= alloc) != 0
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:1929: 
+  The evaluation of the expression an
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:1935: 
+  The evaluation of the expression bn
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[scope:rm_asserts] removing 14 assertion(s)
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    23 valid     9 unknown     0 invalid     32 total
+  71% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[scope:rm_asserts] removing 14 assertion(s)
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    23 valid     9 unknown     0 invalid     32 total
+  71% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[scope:rm_asserts] removing 14 assertion(s)
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    23 valid     9 unknown     0 invalid     32 total
+  71% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 200 states
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 300 states
+[scope:rm_asserts] removing 14 assertion(s)
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    22 valid    10 unknown     0 invalid     32 total
+  68% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[parf] sample base01-sample01: subset of base? true
+[parf] sample base01-sample00: subset of base? true
+[parf] sample base01-sample02: subset of base? true
+[parf] sample base01-sample03: subset of base? true
+[parf] base: base02
+[parf] Analysis time for this epoch: 405
+[parf] sample: base02-sample00
+[parf] sample: base02-sample01
+[parf] sample: base02-sample02
+[parf] sample: base02-sample03
+[parf] run eva: start
+[parf] run eva: start
+[parf] run eva: start
+[parf] set eva options
+[parf] set eva options
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 29 -eva-split-return auto -eva-slevel 143 -eva-remove-redundant-alarms -eva-plevel 503 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 7 -eva-ilevel 204 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 161
+[parf] run eva: start
+[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 34 -eva-slevel 144 -eva-remove-redundant-alarms -eva-plevel 514 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 7 -eva-ilevel 186 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 171
+[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 148 -eva-remove-redundant-alarms -eva-plevel 504 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 7 -eva-ilevel 190 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 169
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 25 -eva-split-return auto -eva-slevel 149 -eva-remove-redundant-alarms -eva-plevel 496 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 7 -eva-ilevel 198 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 186
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function abort
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_neg
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function isspace
+[eva] using specification for function isspace
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 400 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 400 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 400 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 400 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 500 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 500 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 500 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] using specification for function fprintf_va_12
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:1180: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 500 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1925: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[parf] base: base03
+[parf] Analysis time for this epoch: 1012
+[parf] sample: base03-sample00
+[parf] sample: base03-sample01
+[parf] sample: base03-sample02
+[parf] sample: base03-sample03
+[parf] run eva: start
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 15 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 88 -eva-remove-redundant-alarms -eva-plevel 317 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 122 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 104
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 14 -eva-subdivide-non-linear 12 -eva-slevel 83 -eva-remove-redundant-alarms -eva-plevel 324 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 126 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 114
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 12 -eva-subdivide-non-linear 14 -eva-slevel 101 -eva-remove-redundant-alarms -eva-plevel 295 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 131 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 109
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 13 -eva-subdivide-non-linear 18 -eva-slevel 92 -eva-remove-redundant-alarms -eva-plevel 340 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 6 -eva-ilevel 125 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 108
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] Analyzing a complete application starting at testmain
+[eva] Analyzing a complete application starting at testmain
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __FC_assert
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] using specification for function Frama_C_interval
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function isspace
+[eva] using specification for function __gmpz_clear
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] using specification for function fprintf_va_12
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:1180: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[parf] base: base04
+[parf] Analysis time for this epoch: 189
+[parf] sample: base04-sample00
+[parf] sample: base04-sample01
+[parf] sample: base04-sample02
+[parf] sample: base04-sample03
+[parf] run eva: start
+[parf] run eva: start
+[parf] set eva options
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 11 -eva-subdivide-non-linear 15 -eva-slevel 74 -eva-remove-redundant-alarms -eva-plevel 230 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 91 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 79
+[parf] parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 9 -eva-split-return auto -eva-slevel 59 -eva-remove-redundant-alarms -eva-plevel 226 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 87 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 72
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 14 -eva-subdivide-non-linear 9 -eva-split-return auto -eva-slevel 63 -eva-remove-redundant-alarms -eva-plevel 239 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 99 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 78
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 14 -eva-split-return auto -eva-slevel 65 -eva-remove-redundant-alarms -eva-plevel 244 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 95 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 77
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at testmain
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] Analyzing a complete application starting at testmain
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] Analyzing a complete application starting at testmain
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __FC_assert
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_neg
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_add
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] using specification for function Frama_C_interval
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function __gmpz_add
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] Analyzing a complete application starting at testmain
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __FC_assert
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] using specification for function __gmpz_clear
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] using specification for function isspace
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function isspace
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] using specification for function fprintf_va_12
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:1180: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_7
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[parf] Final parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 6 -eva-slevel 37 -eva-remove-redundant-alarms -eva-plevel 136 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 55 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 46
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[parf] ================================= Summary ==================================
+[parf] ====== project "Initial Base 2" ======
+[parf] Parameter: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Uninitialized(*sp)
+[parf] alarm (  4): Memory_access(*sp, read)
+[parf] alarm (  5): Uninitialized(*(ap + i))
+[parf] alarm (  6): Memory_access(*(ap + i), read)
+[parf] alarm (  7): Uninitialized(*(sp + j))
+[parf] alarm (  8): Memory_access(*(sp + j), read)
+[parf] alarm (  9): Memory_access(*(rp + tmp), write)
+[parf] alarm ( 10): Uninitialized(*sp)
+[parf] alarm ( 11): Memory_access(*sp, read)
+[parf] alarm ( 12): Memory_access(*(sp + j), read)
+[parf] alarm ( 13): Uninitialized(*(sp + j))
+[parf] alarm ( 14): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 15): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 16): Uninitialized(*sp)
+[parf] alarm ( 17): Memory_access(*sp, read)
+[parf] alarm ( 18): Memory_access(*(rp + i), write)
+[parf] alarm ( 19): Memory_access(*(up + i), read)
+[parf] alarm ( 20): Uninitialized(*(up + i))
+[parf] alarm ( 21): Memory_access(*(sp + j), write)
+[parf] alarm ( 22): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 23): Uninitialized(*(ap + i))
+[parf] alarm ( 24): Memory_access(*(ap + i), read)
+[parf] alarm ( 25): Memory_access(*(bp + i), read)
+[parf] alarm ( 26): Uninitialized(*(bp + i))
+[parf] alarm ( 27): Memory_access(*(rp + i), write)
+[parf] alarm ( 28): Memory_access(*(ap + n), read)
+[parf] alarm ( 29): Uninitialized(*(bp + n))
+[parf] alarm ( 30): Uninitialized(*(ap + n))
+[parf] alarm ( 31): Memory_access(*(bp + n), read)
+[parf] alarm ( 32): Memory_access(*(bp + n), read)
+[parf] alarm ( 33): Uninitialized(*(ap + n))
+[parf] alarm ( 34): Memory_access(*(ap + n), read)
+[parf] alarm ( 35): Uninitialized(*(bp + n))
+[parf] alarm ( 36): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 37): Memory_access(*(sp + i), write)
+[parf] alarm ( 38): Uninitialized(*(sp + i))
+[parf] alarm ( 39): Memory_access(*(sp + sn), write)
+[parf] alarm ( 40): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 41): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 42): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 43): Memory_access(*sp, read)
+[parf] alarm ( 44): Uninitialized(*sp)
+[parf] alarm ( 45): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 46): Uninitialized(*sp)
+[parf] alarm ( 47): Memory_access(*sp, read)
+[parf] alarm ( 48): Uninitialized(*(ap + i))
+[parf] alarm ( 49): Memory_access(*(ap + i), read)
+[parf] alarm ( 50): Memory_access(*(rp + i), write)
+[parf] alarm ( 51): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(rp + an), write)
+[parf] alarm ( 53): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 54): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 55): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 56): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*(ap + i), read)
+[parf] alarm ( 58): Uninitialized(*(ap + i))
+[parf] alarm ( 59): Uninitialized(*(bp + i))
+[parf] alarm ( 60): Memory_access(*(bp + i), read)
+[parf] alarm ( 61): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Uninitialized(*sp)
+[parf] alarm ( 64): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 65): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 66): Memory_access(*(rp + i), write)
+[parf] alarm ( 67): Uninitialized(*sp)
+[parf] alarm ( 68): Memory_access(*sp, read)
+[parf] alarm ( 69): Uninitialized(*sp)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Uninitialized(*sp)
+[parf] alarm ( 72): Memory_access(*sp, read)
+[parf] alarm ( 73): Memory_access(*sp, read)
+[parf] alarm ( 74): Uninitialized(*sp)
+[parf] alarm ( 75): Uninitialized(*sp)
+[parf] alarm ( 76): Memory_access(*sp, read)
+[parf] alarm ( 77): Uninitialized(*(up + i))
+[parf] alarm ( 78): Memory_access(*(up + i), read)
+[parf] alarm ( 79): Invalid_shift(shift <= 64)
+[parf] alarm ( 80): Memory_access(*sp, read)
+[parf] alarm ( 81): Uninitialized(*sp)
+[parf] alarm ( 82): Memory_access(*sp, read)
+[parf] alarm ( 83): Uninitialized(*sp)
+[parf] ============================================================================
+[parf] ====== project "base00-sample00 2" ======
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 7 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 12
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Memory_access(*sp, read)
+[parf] alarm (  4): Uninitialized(*(ap + i))
+[parf] alarm (  5): Memory_access(*(ap + i), read)
+[parf] alarm (  6): Uninitialized(*(sp + j))
+[parf] alarm (  7): Memory_access(*(sp + j), read)
+[parf] alarm (  8): Memory_access(*(rp + tmp), write)
+[parf] alarm (  9): Memory_access(*sp, read)
+[parf] alarm ( 10): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 11): Memory_access(*(sp + j), read)
+[parf] alarm ( 12): Uninitialized(*(sp + j))
+[parf] alarm ( 13): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 14): Memory_access(*sp, read)
+[parf] alarm ( 15): Memory_access(*(rp + i), write)
+[parf] alarm ( 16): Memory_access(*(up + i), read)
+[parf] alarm ( 17): Uninitialized(*(up + i))
+[parf] alarm ( 18): Memory_access(*(sp + j), write)
+[parf] alarm ( 19): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 20): Uninitialized(*(ap + i))
+[parf] alarm ( 21): Memory_access(*(ap + i), read)
+[parf] alarm ( 22): Memory_access(*(bp + i), read)
+[parf] alarm ( 23): Uninitialized(*(bp + i))
+[parf] alarm ( 24): Memory_access(*(rp + i), write)
+[parf] alarm ( 25): Memory_access(*(ap + n), read)
+[parf] alarm ( 26): Uninitialized(*(bp + n))
+[parf] alarm ( 27): Uninitialized(*(ap + n))
+[parf] alarm ( 28): Memory_access(*(bp + n), read)
+[parf] alarm ( 29): Memory_access(*(bp + n), read)
+[parf] alarm ( 30): Memory_access(*(ap + n), read)
+[parf] alarm ( 31): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 32): Memory_access(*(sp + i), write)
+[parf] alarm ( 33): Uninitialized(*(sp + i))
+[parf] alarm ( 34): Memory_access(*(sp + sn), write)
+[parf] alarm ( 35): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 36): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 37): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 38): Memory_access(*sp, read)
+[parf] alarm ( 39): Uninitialized(*sp)
+[parf] alarm ( 40): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 41): Uninitialized(*sp)
+[parf] alarm ( 42): Memory_access(*sp, read)
+[parf] alarm ( 43): Uninitialized(*(ap + i))
+[parf] alarm ( 44): Memory_access(*(ap + i), read)
+[parf] alarm ( 45): Memory_access(*(rp + i), write)
+[parf] alarm ( 46): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 47): Memory_access(*(rp + an), write)
+[parf] alarm ( 48): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 49): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 50): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 51): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(ap + i), read)
+[parf] alarm ( 53): Uninitialized(*(ap + i))
+[parf] alarm ( 54): Uninitialized(*(bp + i))
+[parf] alarm ( 55): Memory_access(*(bp + i), read)
+[parf] alarm ( 56): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*sp, read)
+[parf] alarm ( 58): Uninitialized(*sp)
+[parf] alarm ( 59): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 60): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 61): Memory_access(*(rp + i), write)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Memory_access(*sp, read)
+[parf] alarm ( 64): Memory_access(*sp, read)
+[parf] alarm ( 65): Memory_access(*sp, read)
+[parf] alarm ( 66): Memory_access(*sp, read)
+[parf] alarm ( 67): Uninitialized(*(up + i))
+[parf] alarm ( 68): Memory_access(*(up + i), read)
+[parf] alarm ( 69): Invalid_shift(shift <= 64)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Memory_access(*sp, read)
+[parf] ============================================================================
+[parf] ====== project "base00-sample01 2" ======
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 11 -eva-plevel 33 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,octagon -eva-auto-loop-unroll 10
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Uninitialized(*sp)
+[parf] alarm (  4): Memory_access(*sp, read)
+[parf] alarm (  5): Uninitialized(*(ap + i))
+[parf] alarm (  6): Memory_access(*(ap + i), read)
+[parf] alarm (  7): Uninitialized(*(sp + j))
+[parf] alarm (  8): Memory_access(*(sp + j), read)
+[parf] alarm (  9): Memory_access(*(rp + tmp), write)
+[parf] alarm ( 10): Uninitialized(*sp)
+[parf] alarm ( 11): Memory_access(*sp, read)
+[parf] alarm ( 12): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 13): Memory_access(*(sp + j), read)
+[parf] alarm ( 14): Uninitialized(*(sp + j))
+[parf] alarm ( 15): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 16): Uninitialized(*sp)
+[parf] alarm ( 17): Memory_access(*sp, read)
+[parf] alarm ( 18): Memory_access(*(rp + i), write)
+[parf] alarm ( 19): Memory_access(*(up + i), read)
+[parf] alarm ( 20): Uninitialized(*(up + i))
+[parf] alarm ( 21): Memory_access(*(sp + j), write)
+[parf] alarm ( 22): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 23): Uninitialized(*(ap + i))
+[parf] alarm ( 24): Memory_access(*(ap + i), read)
+[parf] alarm ( 25): Memory_access(*(bp + i), read)
+[parf] alarm ( 26): Uninitialized(*(bp + i))
+[parf] alarm ( 27): Memory_access(*(rp + i), write)
+[parf] alarm ( 28): Memory_access(*(ap + n), read)
+[parf] alarm ( 29): Uninitialized(*(bp + n))
+[parf] alarm ( 30): Uninitialized(*(ap + n))
+[parf] alarm ( 31): Memory_access(*(bp + n), read)
+[parf] alarm ( 32): Memory_access(*(bp + n), read)
+[parf] alarm ( 33): Uninitialized(*(ap + n))
+[parf] alarm ( 34): Memory_access(*(ap + n), read)
+[parf] alarm ( 35): Uninitialized(*(bp + n))
+[parf] alarm ( 36): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 37): Memory_access(*(sp + i), write)
+[parf] alarm ( 38): Uninitialized(*(sp + i))
+[parf] alarm ( 39): Memory_access(*(sp + sn), write)
+[parf] alarm ( 40): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 41): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 42): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 43): Memory_access(*sp, read)
+[parf] alarm ( 44): Uninitialized(*sp)
+[parf] alarm ( 45): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 46): Uninitialized(*sp)
+[parf] alarm ( 47): Memory_access(*sp, read)
+[parf] alarm ( 48): Uninitialized(*(ap + i))
+[parf] alarm ( 49): Memory_access(*(ap + i), read)
+[parf] alarm ( 50): Memory_access(*(rp + i), write)
+[parf] alarm ( 51): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(rp + an), write)
+[parf] alarm ( 53): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 54): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 55): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 56): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*(ap + i), read)
+[parf] alarm ( 58): Uninitialized(*(ap + i))
+[parf] alarm ( 59): Uninitialized(*(bp + i))
+[parf] alarm ( 60): Memory_access(*(bp + i), read)
+[parf] alarm ( 61): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Uninitialized(*sp)
+[parf] alarm ( 64): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 65): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 66): Memory_access(*(rp + i), write)
+[parf] alarm ( 67): Uninitialized(*sp)
+[parf] alarm ( 68): Memory_access(*sp, read)
+[parf] alarm ( 69): Uninitialized(*sp)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Uninitialized(*sp)
+[parf] alarm ( 72): Memory_access(*sp, read)
+[parf] alarm ( 73): Memory_access(*sp, read)
+[parf] alarm ( 74): Uninitialized(*sp)
+[parf] alarm ( 75): Uninitialized(*sp)
+[parf] alarm ( 76): Memory_access(*sp, read)
+[parf] alarm ( 77): Uninitialized(*(up + i))
+[parf] alarm ( 78): Memory_access(*(up + i), read)
+[parf] alarm ( 79): Invalid_shift(shift <= 64)
+[parf] alarm ( 80): Memory_access(*sp, read)
+[parf] alarm ( 81): Uninitialized(*sp)
+[parf] alarm ( 82): Memory_access(*sp, read)
+[parf] alarm ( 83): Uninitialized(*sp)
+[parf] ============================================================================
+[parf] ====== project "base00-sample02 2" ======
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 7 -eva-slevel 7 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls none -eva-domains cvalue,octagon -eva-auto-loop-unroll 12
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Uninitialized(*sp)
+[parf] alarm (  4): Memory_access(*sp, read)
+[parf] alarm (  5): Uninitialized(*(ap + i))
+[parf] alarm (  6): Memory_access(*(ap + i), read)
+[parf] alarm (  7): Uninitialized(*(sp + j))
+[parf] alarm (  8): Memory_access(*(sp + j), read)
+[parf] alarm (  9): Memory_access(*(rp + tmp), write)
+[parf] alarm ( 10): Uninitialized(*sp)
+[parf] alarm ( 11): Memory_access(*sp, read)
+[parf] alarm ( 12): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 13): Memory_access(*(sp + j), read)
+[parf] alarm ( 14): Uninitialized(*(sp + j))
+[parf] alarm ( 15): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 16): Uninitialized(*sp)
+[parf] alarm ( 17): Memory_access(*sp, read)
+[parf] alarm ( 18): Memory_access(*(rp + i), write)
+[parf] alarm ( 19): Memory_access(*(up + i), read)
+[parf] alarm ( 20): Uninitialized(*(up + i))
+[parf] alarm ( 21): Memory_access(*(sp + j), write)
+[parf] alarm ( 22): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 23): Uninitialized(*(ap + i))
+[parf] alarm ( 24): Memory_access(*(ap + i), read)
+[parf] alarm ( 25): Memory_access(*(bp + i), read)
+[parf] alarm ( 26): Uninitialized(*(bp + i))
+[parf] alarm ( 27): Memory_access(*(rp + i), write)
+[parf] alarm ( 28): Memory_access(*(ap + n), read)
+[parf] alarm ( 29): Uninitialized(*(bp + n))
+[parf] alarm ( 30): Uninitialized(*(ap + n))
+[parf] alarm ( 31): Memory_access(*(bp + n), read)
+[parf] alarm ( 32): Memory_access(*(bp + n), read)
+[parf] alarm ( 33): Uninitialized(*(ap + n))
+[parf] alarm ( 34): Memory_access(*(ap + n), read)
+[parf] alarm ( 35): Uninitialized(*(bp + n))
+[parf] alarm ( 36): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 37): Memory_access(*(sp + i), write)
+[parf] alarm ( 38): Uninitialized(*(sp + i))
+[parf] alarm ( 39): Memory_access(*(sp + sn), write)
+[parf] alarm ( 40): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 41): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 42): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 43): Memory_access(*sp, read)
+[parf] alarm ( 44): Uninitialized(*sp)
+[parf] alarm ( 45): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 46): Uninitialized(*sp)
+[parf] alarm ( 47): Memory_access(*sp, read)
+[parf] alarm ( 48): Uninitialized(*(ap + i))
+[parf] alarm ( 49): Memory_access(*(ap + i), read)
+[parf] alarm ( 50): Memory_access(*(rp + i), write)
+[parf] alarm ( 51): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(rp + an), write)
+[parf] alarm ( 53): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 54): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 55): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 56): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*(ap + i), read)
+[parf] alarm ( 58): Uninitialized(*(ap + i))
+[parf] alarm ( 59): Uninitialized(*(bp + i))
+[parf] alarm ( 60): Memory_access(*(bp + i), read)
+[parf] alarm ( 61): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Uninitialized(*sp)
+[parf] alarm ( 64): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 65): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 66): Memory_access(*(rp + i), write)
+[parf] alarm ( 67): Uninitialized(*sp)
+[parf] alarm ( 68): Memory_access(*sp, read)
+[parf] alarm ( 69): Uninitialized(*sp)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Uninitialized(*sp)
+[parf] alarm ( 72): Memory_access(*sp, read)
+[parf] alarm ( 73): Memory_access(*sp, read)
+[parf] alarm ( 74): Uninitialized(*sp)
+[parf] alarm ( 75): Uninitialized(*sp)
+[parf] alarm ( 76): Memory_access(*sp, read)
+[parf] alarm ( 77): Uninitialized(*(up + i))
+[parf] alarm ( 78): Memory_access(*(up + i), read)
+[parf] alarm ( 79): Invalid_shift(shift <= 64)
+[parf] alarm ( 80): Memory_access(*sp, read)
+[parf] alarm ( 81): Uninitialized(*sp)
+[parf] alarm ( 82): Memory_access(*sp, read)
+[parf] alarm ( 83): Uninitialized(*sp)
+[parf] ============================================================================
+[parf] ====== project "base00-sample03 2" ======
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 11 -eva-plevel 32 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 9
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Uninitialized(*sp)
+[parf] alarm (  4): Memory_access(*sp, read)
+[parf] alarm (  5): Uninitialized(*(ap + i))
+[parf] alarm (  6): Memory_access(*(ap + i), read)
+[parf] alarm (  7): Uninitialized(*(sp + j))
+[parf] alarm (  8): Memory_access(*(sp + j), read)
+[parf] alarm (  9): Memory_access(*(rp + tmp), write)
+[parf] alarm ( 10): Uninitialized(*sp)
+[parf] alarm ( 11): Memory_access(*sp, read)
+[parf] alarm ( 12): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 13): Memory_access(*(sp + j), read)
+[parf] alarm ( 14): Uninitialized(*(sp + j))
+[parf] alarm ( 15): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 16): Uninitialized(*sp)
+[parf] alarm ( 17): Memory_access(*sp, read)
+[parf] alarm ( 18): Memory_access(*(rp + i), write)
+[parf] alarm ( 19): Memory_access(*(up + i), read)
+[parf] alarm ( 20): Uninitialized(*(up + i))
+[parf] alarm ( 21): Memory_access(*(sp + j), write)
+[parf] alarm ( 22): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 23): Uninitialized(*(ap + i))
+[parf] alarm ( 24): Memory_access(*(ap + i), read)
+[parf] alarm ( 25): Memory_access(*(bp + i), read)
+[parf] alarm ( 26): Uninitialized(*(bp + i))
+[parf] alarm ( 27): Memory_access(*(rp + i), write)
+[parf] alarm ( 28): Memory_access(*(ap + n), read)
+[parf] alarm ( 29): Uninitialized(*(bp + n))
+[parf] alarm ( 30): Uninitialized(*(ap + n))
+[parf] alarm ( 31): Memory_access(*(bp + n), read)
+[parf] alarm ( 32): Memory_access(*(bp + n), read)
+[parf] alarm ( 33): Uninitialized(*(ap + n))
+[parf] alarm ( 34): Memory_access(*(ap + n), read)
+[parf] alarm ( 35): Uninitialized(*(bp + n))
+[parf] alarm ( 36): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 37): Memory_access(*(sp + i), write)
+[parf] alarm ( 38): Uninitialized(*(sp + i))
+[parf] alarm ( 39): Memory_access(*(sp + sn), write)
+[parf] alarm ( 40): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 41): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 42): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 43): Memory_access(*sp, read)
+[parf] alarm ( 44): Uninitialized(*sp)
+[parf] alarm ( 45): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 46): Uninitialized(*sp)
+[parf] alarm ( 47): Memory_access(*sp, read)
+[parf] alarm ( 48): Uninitialized(*(ap + i))
+[parf] alarm ( 49): Memory_access(*(ap + i), read)
+[parf] alarm ( 50): Memory_access(*(rp + i), write)
+[parf] alarm ( 51): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(rp + an), write)
+[parf] alarm ( 53): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 54): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 55): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 56): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*(ap + i), read)
+[parf] alarm ( 58): Uninitialized(*(ap + i))
+[parf] alarm ( 59): Uninitialized(*(bp + i))
+[parf] alarm ( 60): Memory_access(*(bp + i), read)
+[parf] alarm ( 61): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Uninitialized(*sp)
+[parf] alarm ( 64): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 65): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 66): Memory_access(*(rp + i), write)
+[parf] alarm ( 67): Uninitialized(*sp)
+[parf] alarm ( 68): Memory_access(*sp, read)
+[parf] alarm ( 69): Uninitialized(*sp)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Uninitialized(*sp)
+[parf] alarm ( 72): Memory_access(*sp, read)
+[parf] alarm ( 73): Memory_access(*sp, read)
+[parf] alarm ( 74): Uninitialized(*sp)
+[parf] alarm ( 75): Uninitialized(*sp)
+[parf] alarm ( 76): Memory_access(*sp, read)
+[parf] alarm ( 77): Uninitialized(*(up + i))
+[parf] alarm ( 78): Memory_access(*(up + i), read)
+[parf] alarm ( 79): Invalid_shift(shift <= 64)
+[parf] alarm ( 80): Memory_access(*sp, read)
+[parf] alarm ( 81): Uninitialized(*sp)
+[parf] alarm ( 82): Memory_access(*sp, read)
+[parf] alarm ( 83): Uninitialized(*sp)
+[parf] ============================================================================
+[parf] ====== project "base01-sample00 2" ======
+[parf] Parameter: -eva-widening-delay 8 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 47 -eva-remove-redundant-alarms -eva-plevel 164 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 60 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 46
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Memory_access(*sp, read)
+[parf] alarm (  4): Uninitialized(*(ap + i))
+[parf] alarm (  5): Memory_access(*(ap + i), read)
+[parf] alarm (  6): Uninitialized(*(sp + j))
+[parf] alarm (  7): Memory_access(*(sp + j), read)
+[parf] alarm (  8): Memory_access(*(rp + tmp), write)
+[parf] alarm (  9): Memory_access(*sp, read)
+[parf] alarm ( 10): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 11): Memory_access(*(sp + j), read)
+[parf] alarm ( 12): Uninitialized(*(sp + j))
+[parf] alarm ( 13): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 14): Memory_access(*sp, read)
+[parf] alarm ( 15): Memory_access(*(rp + i), write)
+[parf] alarm ( 16): Memory_access(*(up + i), read)
+[parf] alarm ( 17): Uninitialized(*(up + i))
+[parf] alarm ( 18): Memory_access(*(sp + j), write)
+[parf] alarm ( 19): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 20): Uninitialized(*(ap + i))
+[parf] alarm ( 21): Memory_access(*(ap + i), read)
+[parf] alarm ( 22): Memory_access(*(bp + i), read)
+[parf] alarm ( 23): Uninitialized(*(bp + i))
+[parf] alarm ( 24): Memory_access(*(rp + i), write)
+[parf] alarm ( 25): Memory_access(*(ap + n), read)
+[parf] alarm ( 26): Uninitialized(*(bp + n))
+[parf] alarm ( 27): Uninitialized(*(ap + n))
+[parf] alarm ( 28): Memory_access(*(bp + n), read)
+[parf] alarm ( 29): Memory_access(*(bp + n), read)
+[parf] alarm ( 30): Memory_access(*(ap + n), read)
+[parf] alarm ( 31): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 32): Memory_access(*(sp + i), write)
+[parf] alarm ( 33): Uninitialized(*(sp + i))
+[parf] alarm ( 34): Memory_access(*(sp + sn), write)
+[parf] alarm ( 35): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 36): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 37): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 38): Memory_access(*sp, read)
+[parf] alarm ( 39): Uninitialized(*sp)
+[parf] alarm ( 40): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 41): Uninitialized(*sp)
+[parf] alarm ( 42): Memory_access(*sp, read)
+[parf] alarm ( 43): Uninitialized(*(ap + i))
+[parf] alarm ( 44): Memory_access(*(ap + i), read)
+[parf] alarm ( 45): Memory_access(*(rp + i), write)
+[parf] alarm ( 46): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 47): Memory_access(*(rp + an), write)
+[parf] alarm ( 48): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 49): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 50): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 51): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(ap + i), read)
+[parf] alarm ( 53): Uninitialized(*(ap + i))
+[parf] alarm ( 54): Uninitialized(*(bp + i))
+[parf] alarm ( 55): Memory_access(*(bp + i), read)
+[parf] alarm ( 56): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*sp, read)
+[parf] alarm ( 58): Uninitialized(*sp)
+[parf] alarm ( 59): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 60): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 61): Memory_access(*(rp + i), write)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Memory_access(*sp, read)
+[parf] alarm ( 64): Memory_access(*sp, read)
+[parf] alarm ( 65): Memory_access(*sp, read)
+[parf] alarm ( 66): Memory_access(*sp, read)
+[parf] alarm ( 67): Uninitialized(*(up + i))
+[parf] alarm ( 68): Memory_access(*(up + i), read)
+[parf] alarm ( 69): Invalid_shift(shift <= 64)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Memory_access(*sp, read)
+[parf] ============================================================================
+[parf] ====== project "base01-sample01 2" ======
+[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 8 -eva-slevel 43 -eva-remove-redundant-alarms -eva-plevel 165 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 56 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 52
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Memory_access(*sp, read)
+[parf] alarm (  4): Uninitialized(*(ap + i))
+[parf] alarm (  5): Memory_access(*(ap + i), read)
+[parf] alarm (  6): Uninitialized(*(sp + j))
+[parf] alarm (  7): Memory_access(*(sp + j), read)
+[parf] alarm (  8): Memory_access(*(rp + tmp), write)
+[parf] alarm (  9): Memory_access(*sp, read)
+[parf] alarm ( 10): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 11): Memory_access(*(sp + j), read)
+[parf] alarm ( 12): Uninitialized(*(sp + j))
+[parf] alarm ( 13): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 14): Memory_access(*sp, read)
+[parf] alarm ( 15): Memory_access(*(rp + i), write)
+[parf] alarm ( 16): Memory_access(*(up + i), read)
+[parf] alarm ( 17): Uninitialized(*(up + i))
+[parf] alarm ( 18): Memory_access(*(sp + j), write)
+[parf] alarm ( 19): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 20): Uninitialized(*(ap + i))
+[parf] alarm ( 21): Memory_access(*(ap + i), read)
+[parf] alarm ( 22): Memory_access(*(bp + i), read)
+[parf] alarm ( 23): Uninitialized(*(bp + i))
+[parf] alarm ( 24): Memory_access(*(rp + i), write)
+[parf] alarm ( 25): Memory_access(*(ap + n), read)
+[parf] alarm ( 26): Uninitialized(*(bp + n))
+[parf] alarm ( 27): Uninitialized(*(ap + n))
+[parf] alarm ( 28): Memory_access(*(bp + n), read)
+[parf] alarm ( 29): Memory_access(*(bp + n), read)
+[parf] alarm ( 30): Memory_access(*(ap + n), read)
+[parf] alarm ( 31): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 32): Memory_access(*(sp + i), write)
+[parf] alarm ( 33): Uninitialized(*(sp + i))
+[parf] alarm ( 34): Memory_access(*(sp + sn), write)
+[parf] alarm ( 35): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 36): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 37): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 38): Memory_access(*sp, read)
+[parf] alarm ( 39): Uninitialized(*sp)
+[parf] alarm ( 40): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 41): Uninitialized(*sp)
+[parf] alarm ( 42): Memory_access(*sp, read)
+[parf] alarm ( 43): Uninitialized(*(ap + i))
+[parf] alarm ( 44): Memory_access(*(ap + i), read)
+[parf] alarm ( 45): Memory_access(*(rp + i), write)
+[parf] alarm ( 46): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 47): Memory_access(*(rp + an), write)
+[parf] alarm ( 48): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 49): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 50): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 51): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(ap + i), read)
+[parf] alarm ( 53): Uninitialized(*(ap + i))
+[parf] alarm ( 54): Uninitialized(*(bp + i))
+[parf] alarm ( 55): Memory_access(*(bp + i), read)
+[parf] alarm ( 56): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*sp, read)
+[parf] alarm ( 58): Uninitialized(*sp)
+[parf] alarm ( 59): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 60): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 61): Memory_access(*(rp + i), write)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Memory_access(*sp, read)
+[parf] alarm ( 64): Memory_access(*sp, read)
+[parf] alarm ( 65): Memory_access(*sp, read)
+[parf] alarm ( 66): Memory_access(*sp, read)
+[parf] alarm ( 67): Uninitialized(*(up + i))
+[parf] alarm ( 68): Memory_access(*(up + i), read)
+[parf] alarm ( 69): Invalid_shift(shift <= 64)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Memory_access(*sp, read)
+[parf] ============================================================================
+[parf] ====== project "base01-sample02 2" ======
+[parf] Parameter: -eva-widening-delay 8 -eva-subdivide-non-linear 13 -eva-slevel 37 -eva-remove-redundant-alarms -eva-plevel 136 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 55 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 50
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Memory_access(*sp, read)
+[parf] alarm (  4): Uninitialized(*(ap + i))
+[parf] alarm (  5): Memory_access(*(ap + i), read)
+[parf] alarm (  6): Uninitialized(*(sp + j))
+[parf] alarm (  7): Memory_access(*(sp + j), read)
+[parf] alarm (  8): Memory_access(*(rp + tmp), write)
+[parf] alarm (  9): Memory_access(*sp, read)
+[parf] alarm ( 10): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 11): Memory_access(*(sp + j), read)
+[parf] alarm ( 12): Uninitialized(*(sp + j))
+[parf] alarm ( 13): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 14): Memory_access(*sp, read)
+[parf] alarm ( 15): Memory_access(*(rp + i), write)
+[parf] alarm ( 16): Memory_access(*(up + i), read)
+[parf] alarm ( 17): Uninitialized(*(up + i))
+[parf] alarm ( 18): Memory_access(*(sp + j), write)
+[parf] alarm ( 19): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 20): Uninitialized(*(ap + i))
+[parf] alarm ( 21): Memory_access(*(ap + i), read)
+[parf] alarm ( 22): Memory_access(*(bp + i), read)
+[parf] alarm ( 23): Uninitialized(*(bp + i))
+[parf] alarm ( 24): Memory_access(*(rp + i), write)
+[parf] alarm ( 25): Memory_access(*(ap + n), read)
+[parf] alarm ( 26): Uninitialized(*(bp + n))
+[parf] alarm ( 27): Uninitialized(*(ap + n))
+[parf] alarm ( 28): Memory_access(*(bp + n), read)
+[parf] alarm ( 29): Memory_access(*(bp + n), read)
+[parf] alarm ( 30): Memory_access(*(ap + n), read)
+[parf] alarm ( 31): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 32): Memory_access(*(sp + i), write)
+[parf] alarm ( 33): Uninitialized(*(sp + i))
+[parf] alarm ( 34): Memory_access(*(sp + sn), write)
+[parf] alarm ( 35): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 36): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 37): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 38): Memory_access(*sp, read)
+[parf] alarm ( 39): Uninitialized(*sp)
+[parf] alarm ( 40): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 41): Uninitialized(*sp)
+[parf] alarm ( 42): Memory_access(*sp, read)
+[parf] alarm ( 43): Uninitialized(*(ap + i))
+[parf] alarm ( 44): Memory_access(*(ap + i), read)
+[parf] alarm ( 45): Memory_access(*(rp + i), write)
+[parf] alarm ( 46): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 47): Memory_access(*(rp + an), write)
+[parf] alarm ( 48): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 49): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 50): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 51): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(ap + i), read)
+[parf] alarm ( 53): Uninitialized(*(ap + i))
+[parf] alarm ( 54): Uninitialized(*(bp + i))
+[parf] alarm ( 55): Memory_access(*(bp + i), read)
+[parf] alarm ( 56): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*sp, read)
+[parf] alarm ( 58): Uninitialized(*sp)
+[parf] alarm ( 59): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 60): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 61): Memory_access(*(rp + i), write)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Memory_access(*sp, read)
+[parf] alarm ( 64): Memory_access(*sp, read)
+[parf] alarm ( 65): Memory_access(*sp, read)
+[parf] alarm ( 66): Memory_access(*sp, read)
+[parf] alarm ( 67): Uninitialized(*(up + i))
+[parf] alarm ( 68): Memory_access(*(up + i), read)
+[parf] alarm ( 69): Invalid_shift(shift <= 64)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Memory_access(*sp, read)
+[parf] ============================================================================
+[parf] ====== project "base01-sample03 2" ======
+[parf] Parameter: -eva-widening-delay 10 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 39 -eva-remove-redundant-alarms -eva-plevel 142 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 57 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 65
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Memory_access(*sp, read)
+[parf] alarm (  4): Uninitialized(*(ap + i))
+[parf] alarm (  5): Memory_access(*(ap + i), read)
+[parf] alarm (  6): Uninitialized(*(sp + j))
+[parf] alarm (  7): Memory_access(*(sp + j), read)
+[parf] alarm (  8): Memory_access(*(rp + tmp), write)
+[parf] alarm (  9): Memory_access(*sp, read)
+[parf] alarm ( 10): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 11): Memory_access(*(sp + j), read)
+[parf] alarm ( 12): Uninitialized(*(sp + j))
+[parf] alarm ( 13): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 14): Memory_access(*sp, read)
+[parf] alarm ( 15): Memory_access(*(rp + i), write)
+[parf] alarm ( 16): Memory_access(*(up + i), read)
+[parf] alarm ( 17): Uninitialized(*(up + i))
+[parf] alarm ( 18): Memory_access(*(sp + j), write)
+[parf] alarm ( 19): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 20): Uninitialized(*(ap + i))
+[parf] alarm ( 21): Memory_access(*(ap + i), read)
+[parf] alarm ( 22): Memory_access(*(bp + i), read)
+[parf] alarm ( 23): Uninitialized(*(bp + i))
+[parf] alarm ( 24): Memory_access(*(rp + i), write)
+[parf] alarm ( 25): Memory_access(*(ap + n), read)
+[parf] alarm ( 26): Uninitialized(*(bp + n))
+[parf] alarm ( 27): Uninitialized(*(ap + n))
+[parf] alarm ( 28): Memory_access(*(bp + n), read)
+[parf] alarm ( 29): Memory_access(*(bp + n), read)
+[parf] alarm ( 30): Memory_access(*(ap + n), read)
+[parf] alarm ( 31): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 32): Memory_access(*(sp + i), write)
+[parf] alarm ( 33): Uninitialized(*(sp + i))
+[parf] alarm ( 34): Memory_access(*(sp + sn), write)
+[parf] alarm ( 35): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 36): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 37): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 38): Memory_access(*sp, read)
+[parf] alarm ( 39): Uninitialized(*sp)
+[parf] alarm ( 40): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 41): Uninitialized(*sp)
+[parf] alarm ( 42): Memory_access(*sp, read)
+[parf] alarm ( 43): Uninitialized(*(ap + i))
+[parf] alarm ( 44): Memory_access(*(ap + i), read)
+[parf] alarm ( 45): Memory_access(*(rp + i), write)
+[parf] alarm ( 46): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 47): Memory_access(*(rp + an), write)
+[parf] alarm ( 48): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 49): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 50): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 51): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(ap + i), read)
+[parf] alarm ( 53): Uninitialized(*(ap + i))
+[parf] alarm ( 54): Uninitialized(*(bp + i))
+[parf] alarm ( 55): Memory_access(*(bp + i), read)
+[parf] alarm ( 56): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*sp, read)
+[parf] alarm ( 58): Uninitialized(*sp)
+[parf] alarm ( 59): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 60): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 61): Memory_access(*(rp + i), write)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Memory_access(*sp, read)
+[parf] alarm ( 64): Memory_access(*sp, read)
+[parf] alarm ( 65): Memory_access(*sp, read)
+[parf] alarm ( 66): Memory_access(*sp, read)
+[parf] alarm ( 67): Uninitialized(*(up + i))
+[parf] alarm ( 68): Memory_access(*(up + i), read)
+[parf] alarm ( 69): Invalid_shift(shift <= 64)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Memory_access(*sp, read)
+[parf] ============================================================================
+[parf] Final parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 7 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 12
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(*strp + (len - (size_t)1U)), write)
+[parf] alarm (  2): Signed_overflow(rn + 1L <= 9223372036854775807)
+[parf] alarm (  3): Memory_access(*sp, read)
+[parf] alarm (  4): Uninitialized(*(ap + i))
+[parf] alarm (  5): Memory_access(*(ap + i), read)
+[parf] alarm (  6): Uninitialized(*(sp + j))
+[parf] alarm (  7): Memory_access(*(sp + j), read)
+[parf] alarm (  8): Memory_access(*(rp + tmp), write)
+[parf] alarm (  9): Memory_access(*sp, read)
+[parf] alarm ( 10): Memory_access(*(rp + (rn - (mp_size_t)1)), write)
+[parf] alarm ( 11): Memory_access(*(sp + j), read)
+[parf] alarm ( 12): Uninitialized(*(sp + j))
+[parf] alarm ( 13): Uninitialized(*(rp + (rn - (mp_size_t)1)))
+[parf] alarm ( 14): Memory_access(*sp, read)
+[parf] alarm ( 15): Memory_access(*(rp + i), write)
+[parf] alarm ( 16): Memory_access(*(up + i), read)
+[parf] alarm ( 17): Uninitialized(*(up + i))
+[parf] alarm ( 18): Memory_access(*(sp + j), write)
+[parf] alarm ( 19): Memory_access(*(dp + tmp_3), write)
+[parf] alarm ( 20): Uninitialized(*(ap + i))
+[parf] alarm ( 21): Memory_access(*(ap + i), read)
+[parf] alarm ( 22): Memory_access(*(bp + i), read)
+[parf] alarm ( 23): Uninitialized(*(bp + i))
+[parf] alarm ( 24): Memory_access(*(rp + i), write)
+[parf] alarm ( 25): Memory_access(*(ap + n), read)
+[parf] alarm ( 26): Uninitialized(*(bp + n))
+[parf] alarm ( 27): Uninitialized(*(ap + n))
+[parf] alarm ( 28): Memory_access(*(bp + n), read)
+[parf] alarm ( 29): Memory_access(*(bp + n), read)
+[parf] alarm ( 30): Memory_access(*(ap + n), read)
+[parf] alarm ( 31): Memory_access(*(digits + (unsigned char)*(sp + i)), read)
+[parf] alarm ( 32): Memory_access(*(sp + i), write)
+[parf] alarm ( 33): Uninitialized(*(sp + i))
+[parf] alarm ( 34): Memory_access(*(sp + sn), write)
+[parf] alarm ( 35): Memory_access(*(xp + (n - (mp_size_t)1)), read)
+[parf] alarm ( 36): Uninitialized(*(xp + (n - (mp_size_t)1)))
+[parf] alarm ( 37): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 38): Memory_access(*sp, read)
+[parf] alarm ( 39): Uninitialized(*sp)
+[parf] alarm ( 40): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 41): Uninitialized(*sp)
+[parf] alarm ( 42): Memory_access(*sp, read)
+[parf] alarm ( 43): Uninitialized(*(ap + i))
+[parf] alarm ( 44): Memory_access(*(ap + i), read)
+[parf] alarm ( 45): Memory_access(*(rp + i), write)
+[parf] alarm ( 46): Signed_overflow(- u->_mp_size <= 2147483647)
+[parf] alarm ( 47): Memory_access(*(rp + an), write)
+[parf] alarm ( 48): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 49): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 50): Signed_overflow(- a->_mp_size <= 2147483647)
+[parf] alarm ( 51): Signed_overflow(- b->_mp_size <= 2147483647)
+[parf] alarm ( 52): Memory_access(*(ap + i), read)
+[parf] alarm ( 53): Uninitialized(*(ap + i))
+[parf] alarm ( 54): Uninitialized(*(bp + i))
+[parf] alarm ( 55): Memory_access(*(bp + i), read)
+[parf] alarm ( 56): Signed_overflow(- r->_mp_size <= 2147483647)
+[parf] alarm ( 57): Memory_access(*sp, read)
+[parf] alarm ( 58): Uninitialized(*sp)
+[parf] alarm ( 59): Memory_access(*(up + (un - (mp_size_t)1)), read)
+[parf] alarm ( 60): Uninitialized(*(up + (un - (mp_size_t)1)))
+[parf] alarm ( 61): Memory_access(*(rp + i), write)
+[parf] alarm ( 62): Memory_access(*sp, read)
+[parf] alarm ( 63): Memory_access(*sp, read)
+[parf] alarm ( 64): Memory_access(*sp, read)
+[parf] alarm ( 65): Memory_access(*sp, read)
+[parf] alarm ( 66): Memory_access(*sp, read)
+[parf] alarm ( 67): Uninitialized(*(up + i))
+[parf] alarm ( 68): Memory_access(*(up + i), read)
+[parf] alarm ( 69): Invalid_shift(shift <= 64)
+[parf] alarm ( 70): Memory_access(*sp, read)
+[parf] alarm ( 71): Memory_access(*sp, read)
+
+real	30m7.269s
+user	47m59.141s
+sys	18m6.973s

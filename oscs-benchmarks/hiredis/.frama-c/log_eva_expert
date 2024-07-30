@@ -1,0 +1,3454 @@
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.c:146: starting to merge loop iterations
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s2 + i);
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:971: starting to merge loop iterations
+[eva:alarm] test.c:977: Warning: 
+  function atoi: precondition 'valid_nptr' got status unknown.
+[eva:alarm] test.c:1005: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param0) got status unknown.
+[eva:alarm] test.c:972: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:975: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:978: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:981: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:983: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:985: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:1005: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva:alarm] test.c:1015: Warning: 
+  function access: precondition 'valid_string_path' got status unknown.
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv + [8..--],0%8 }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  9 alarms generated by the analysis:
+       9 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     5 valid     3 unknown     0 invalid      8 total
+  62% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 1 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 16.
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 10.
+  option -eva-ilevel set to 12.
+  option -eva-plevel set to 20.
+  option -eva-subdivide-non-linear set to 20.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,symbolic-locations'.
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function atoi
+[eva] FRAMAC_SHARE/libc/string.c:146: starting to merge loop iterations
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s2 + i);
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva:alarm] test.c:977: Warning: 
+  function atoi: precondition 'valid_nptr' got status unknown.
+[eva] test.c:971: starting to merge loop iterations
+[eva:alarm] test.c:972: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:975: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:981: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva:alarm] test.c:1015: Warning: 
+  function access: precondition 'valid_string_path' got status unknown.
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv + [8..--],0%8 }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  5 alarms generated by the analysis:
+       5 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     6 valid     2 unknown     0 invalid      8 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 2 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 32.
+  option -eva-widening-delay set to 2.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 20.
+  option -eva-ilevel set to 16.
+  option -eva-plevel set to 40.
+  option -eva-subdivide-non-linear set to 40.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,symbolic-locations'.
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] test.c:977: Warning: 
+  function atoi: precondition 'valid_nptr' got status unknown.
+[eva:alarm] test.c:972: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:981: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva:alarm] test.c:1015: Warning: 
+  function access: precondition 'valid_string_path' got status unknown.
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5], [6]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  3 alarms generated by the analysis:
+       3 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     6 valid     2 unknown     0 invalid      8 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 3 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 64.
+  option -eva-widening-delay set to 2.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 35.
+  option -eva-ilevel set to 24.
+  option -eva-plevel set to 70.
+  option -eva-subdivide-non-linear set to 60.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,symbolic-locations'.
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] test.c:977: Warning: 
+  function atoi: precondition 'valid_nptr' got status unknown.
+[eva:alarm] test.c:981: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva:alarm] test.c:1015: Warning: 
+  function access: precondition 'valid_string_path' got status unknown.
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5], [6]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     6 valid     2 unknown     0 invalid      8 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 4 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 96.
+  option -eva-widening-delay set to 3 (default value).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 60.
+  option -eva-ilevel set to 32.
+  option -eva-plevel set to 100.
+  option -eva-subdivide-non-linear set to 80.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.c:149: cannot properly split on \result == 0
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] test.c:977: Warning: 
+  function atoi: precondition 'valid_nptr' got status unknown.
+[eva:alarm] test.c:981: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva:alarm] test.c:1015: Warning: 
+  function access: precondition 'valid_string_path' got status unknown.
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5], [6]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     6 valid     2 unknown     0 invalid      8 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 5 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 128.
+  option -eva-widening-delay set to 3 (default value).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 100.
+  option -eva-ilevel set to 48.
+  option -eva-plevel set to 150.
+  option -eva-subdivide-non-linear set to 100.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.c:149: cannot properly split on \result == 0
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva:alarm] test.c:977: Warning: 
+  function atoi: precondition 'valid_nptr' got status unknown.
+[eva:alarm] test.c:974: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:977: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:980: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva:alarm] test.c:981: Warning: 
+  out of bounds read. assert \valid_read(argv + 0);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva:alarm] test.c:1015: Warning: 
+  function access: precondition 'valid_string_path' got status unknown.
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5], [6]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ NULL ; &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  5 alarms generated by the analysis:
+       5 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     6 valid     2 unknown     0 invalid      8 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 6 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 192.
+  option -eva-widening-delay set to 4.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 160.
+  option -eva-ilevel set to 64.
+  option -eva-plevel set to 200 (default value).
+  option -eva-subdivide-non-linear set to 120.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to false (default value).
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.c:149: cannot properly split on \result == 0
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva] test.c:1008: Trace partitioning superposing up to 300 states
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈ {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 7 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 256.
+  option -eva-widening-delay set to 4.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 250.
+  option -eva-ilevel set to 128.
+  option -eva-plevel set to 300.
+  option -eva-subdivide-non-linear set to 140.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.c:149: cannot properly split on \result == 0
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva] test.c:1008: Trace partitioning superposing up to 300 states
+[eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
+  out of bounds read. assert \valid_read(s1 + i);
+[eva] test.c:1008: Trace partitioning superposing up to 400 states
+[eva] test.c:1008: Trace partitioning superposing up to 500 states
+[eva] test.c:1008: Trace partitioning superposing up to 600 states
+[eva] test.c:1008: Trace partitioning superposing up to 700 states
+[eva] test.c:1008: Trace partitioning superposing up to 800 states
+[eva] test.c:1008: Trace partitioning superposing up to 900 states
+[eva] test.c:1008: Trace partitioning superposing up to 1000 states
+[eva] test.c:971: starting to merge loop iterations
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈ {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 invalid memory access
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 8 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 1.
+  option -eva-auto-loop-unroll set to 384.
+  option -eva-widening-delay set to 5.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 500.
+  option -eva-ilevel set to 192.
+  option -eva-plevel set to 500.
+  option -eva-subdivide-non-linear set to 160.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva:loop-unroll:partial] FRAMAC_SHARE/libc/string.c:146: 
+  loop not completely unrolled
+[eva] FRAMAC_SHARE/libc/string.c:149: cannot properly split on \result == 0
+[eva] using specification for function atoi
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva:loop-unroll:partial] test.c:1008: loop not completely unrolled
+[eva] test.c:1008: Trace partitioning superposing up to 300 states
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈ {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  0 alarms generated by the analysis.
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 9 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 2.
+  option -eva-auto-loop-unroll set to 512.
+  option -eva-widening-delay set to 5.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 1000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 700.
+  option -eva-subdivide-non-linear set to 180.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function atoi
+[eva:loop-unroll:partial] FRAMAC_SHARE/libc/string.c:146: 
+  loop not completely unrolled
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva] test.c:1008: Trace partitioning superposing up to 300 states
+[eva:loop-unroll:partial] test.c:1008: loop not completely unrolled
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈ {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  0 alarms generated by the analysis.
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 10 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 3.
+  option -eva-auto-loop-unroll set to 768.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 1.
+  option -eva-slevel set to 2000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 1000.
+  option -eva-subdivide-non-linear set to 200.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function atoi
+[eva:loop-unroll:partial] FRAMAC_SHARE/libc/string.c:146: 
+  loop not completely unrolled
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva] test.c:1008: Trace partitioning superposing up to 300 states
+[eva:loop-unroll:partial] test.c:1008: loop not completely unrolled
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈ {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  0 alarms generated by the analysis.
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[kernel] Parsing alloc.c (with preprocessing)
+[kernel] Parsing async.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] async.c:279: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:285: Warning: 
+  implicit conversion from void * to redisCallback *
+[kernel:typing:implicit-conv-void-ptr] async.c:475: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel:typing:implicit-conv-void-ptr] async.c:479: Warning: 
+  implicit conversion from void * to redisReply *
+[kernel] Parsing dict.c (with preprocessing)
+[kernel] Parsing hiredis.c (with preprocessing)
+[kernel] Parsing net.c (with preprocessing)
+[kernel] Parsing read.c (with preprocessing)
+[kernel] Parsing sds.c (with preprocessing)
+[kernel] Parsing sockcompat.c (with preprocessing)
+[kernel] Parsing test.c (with preprocessing)
+[kernel:typing:implicit-conv-void-ptr] test.c:309: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:477: Warning: 
+  implicit conversion from void * to redisContext *
+[kernel:typing:implicit-conv-void-ptr] test.c:817: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:830: Warning: 
+  implicit conversion from void * to void **
+[kernel:typing:implicit-conv-void-ptr] test.c:844: Warning: 
+  implicit conversion from void * to void **
+[kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[kernel] Parsing FRAMAC_SHARE/libc/netdb.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[variadic:typing] read.c:90: Warning: 
+  Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 4.
+  option -eva-auto-loop-unroll set to 1024.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 2.
+  option -eva-slevel set to 5000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 2000.
+  option -eva-subdivide-non-linear set to 220.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(Frama_C_nondet) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(strtol) == 2 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(hi_malloc) == 0 (auto)
+  \return(hi_calloc) == 0 (auto)
+  \return(hi_realloc) == 0 (auto)
+  \return(hi_strdup) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memrchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strcasecmp) == 0 (auto)
+  \return(strncasecmp) == 0 (auto)
+  \return(isdigit) == 0 (auto)
+  \return(isprint) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(tolower) == 112 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(redisReaderCreateWithFunctions) == 0 (auto)
+  \return(redisReaderFeed) == 0 (auto)
+  \return(redisReaderGetReply) == -1, 0 (auto)
+  \return(sdsnewlen) == 0 (auto)
+  \return(sdsnew) == 0 (auto)
+  \return(sdsempty) == 0 (auto)
+  \return(sdsdup) == 0 (auto)
+  \return(sdsgrowzero) == 0 (auto)
+  \return(sdscatlen) == 0 (auto)
+  \return(sdscat) == 0 (auto)
+  \return(sdscatsds) == 0 (auto)
+  \return(sdscpylen) == 0 (auto)
+  \return(sdscpy) == 0 (auto)
+  \return(sdscatvprintf) == 0 (auto)
+  \return(sdscatprintf) == 0 (auto)
+  \return(sdscatfmt) == 0 (auto)
+  \return(sdstrim) == 0 (auto)
+  \return(sdssplitlen) == 0 (auto)
+  \return(sdsfromlonglong) == 0 (auto)
+  \return(sdscatrepr) == 0 (auto)
+  \return(sdssplitargs) == 0 (auto)
+  \return(sdsmapchars) == 0 (auto)
+  \return(sdsjoin) == 0 (auto)
+  \return(sdsjoinsds) == 0 (auto)
+  \return(sdsMakeRoomFor) == 0 (auto)
+  \return(sdsRemoveFreeSpace) == 0 (auto)
+  \return(sdsAllocPtr) == 0 (auto)
+  \return(sds_malloc) == 0 (auto)
+  \return(sds_realloc) == 0 (auto)
+  \return(redisReaderCreate) == 0 (auto)
+  \return(redisvFormatCommand) == -2, -1 (auto)
+  \return(redisFormatCommand) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisFormatSdsCommandArgv) == -1, 27, 28, 31, 35, 38 (auto)
+  \return(redisConnectWithOptions) == 0 (auto)
+  \return(redisConnect) == 0 (auto)
+  \return(redisConnectWithTimeout) == 0 (auto)
+  \return(redisConnectNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlock) == 0 (auto)
+  \return(redisConnectBindNonBlockWithReuse) == 0 (auto)
+  \return(redisConnectUnix) == 0 (auto)
+  \return(redisConnectUnixWithTimeout) == 0 (auto)
+  \return(redisConnectUnixNonBlock) == 0 (auto)
+  \return(redisConnectFd) == 0 (auto)
+  \return(redisSetTimeout) == 0 (auto)
+  \return(redisBufferRead) == -1 (auto)
+  \return(redisBufferWrite) == -1 (auto)
+  \return(redisGetReply) == -1, 0 (auto)
+  \return(redisGetReplyFromReader) == -1 (auto)
+  \return(redisAppendFormattedCommand) == 0 (auto)
+  \return(redisvAppendCommand) == 0 (auto)
+  \return(redisAppendCommand) == 0 (auto)
+  \return(redisAppendCommandArgv) == 0 (auto)
+  \return(redisvCommand) == 0 (auto)
+  \return(redisCommand) == 0 (auto)
+  \return(redisCommandArgv) == 0 (auto)
+  \return(redisAsyncConnectWithOptions) == 0 (auto)
+  \return(redisAsyncConnect) == 0 (auto)
+  \return(redisAsyncConnectBind) == 0 (auto)
+  \return(redisAsyncConnectBindWithReuse) == 0 (auto)
+  \return(redisAsyncConnectUnix) == 0 (auto)
+  \return(redisKeepAlive) == 0 (auto)
+  \return(redisCheckConnectDone) == -1, 0 (auto)
+  \return(__redisAppendCommand) == 0 (auto)
+  \return(__va_fcntl_void) == -1 (auto)
+  \return(__va_fcntl_int) == -1 (auto)
+  \return(access) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(bind) == -1 (auto)
+  \return(connect) == -1, 0 (auto)
+  \return(getsockopt) == -1 (auto)
+  \return(recv) == -1, 0 (auto)
+  \return(setsockopt) == -1 (auto)
+  \return(socket) == -1 (auto)
+  \return(signal) == 0 (auto)
+  \return(inet_addr) == 4294967295 (auto)
+  \return(inet_ntoa) == 0 (auto)
+  \return(inet_ntop) == 0 (auto)
+  \return(gai_strerror) == 0 (auto)
+  \return(getaddrinfo) == 0 (auto)
+  \return(gethostbyname) == 0 (auto)
+  \return(poll) == -1, 0 (auto)
+  \return(__fc_fpclassifyf) == 0 (auto)
+  \return(__fc_fpclassify) == 0 (auto)
+  \return(is_hex_digit) == 0 (auto)
+  \return(sdslen) == 0 (auto)
+  \return(dictCreate) == 0 (auto)
+  \return(dictAdd) == 0 (auto)
+  \return(dictReplace) == 0 (auto)
+  \return(dictFind) == 0 (auto)
+  \return(dictGetIterator) == 0 (auto)
+  \return(dictNext) == 0 (auto)
+  \return(_dictExpandIfNeeded) == 1 (auto)
+  \return(_dictKeyIndex) == -1 (auto)
+  \return(callbackValDup) == 0 (auto)
+  \return(redisAsyncInitialize) == 0 (auto)
+  \return(__redisShiftCallback) == -1, 0 (auto)
+  \return(__redisAsyncHandleConnect) == 0 (auto)
+  \return(nextArgument) == 0 (auto)
+  \return(dictCreate_0) == 0 (auto)
+  \return(dictAdd_0) == 0 (auto)
+  \return(dictFind_0) == 0 (auto)
+  \return(dictGetIterator_0) == 0 (auto)
+  \return(dictNext_0) == 0 (auto)
+  \return(_dictExpandIfNeeded_0) == 1 (auto)
+  \return(_dictKeyIndex_0) == -1 (auto)
+  \return(sdslen_0) == 0 (auto)
+  \return(createReplyObject) == 0 (auto)
+  \return(createStringObject) == 0 (auto)
+  \return(createArrayObject) == 0 (auto)
+  \return(createIntegerObject) == 0 (auto)
+  \return(createDoubleObject) == 0 (auto)
+  \return(createNilObject) == 0 (auto)
+  \return(createBoolObject) == 0 (auto)
+  \return(redisContextInit) == 0 (auto)
+  \return(__redisBlockForReply) == 0 (auto)
+  \return(redisSetReuseAddr) == -1 (auto)
+  \return(redisSetBlocking) == 0 (auto)
+  \return(redisSetTcpNoDelay) == 0 (auto)
+  \return(redisContextTimeoutMsec) == 0 (auto)
+  \return(redisContextWaitReady) == 0 (auto)
+  \return(readBytes) == 0 (auto)
+  \return(seekNewline) == 0 (auto)
+  \return(string2ll) == -1 (auto)
+  \return(readLine) == 0 (auto)
+  \return(processItem) == 0 (auto)
+  \return(sdslen_3) == 0 (auto)
+  \return(sdsavail_3) == 0 (auto)
+  \return(sdsReqType) == 0 (auto)
+  \return(select_database) == 0 (auto)
+  \return(do_connect) == 0 (auto)
+  \return(detect_debug_sleep) == 0 (auto)
+  \return(char_equal_ignore_case) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  callbackDict.hashFunction ∈ {{ &callbackHash }}
+              .keyDup ∈ {0}
+              .valDup ∈ {{ &callbackValDup }}
+              .keyCompare ∈ {{ &callbackKeyCompare }}
+              .keyDestructor ∈ {{ &callbackKeyDestructor }}
+              .valDestructor ∈ {{ &callbackValDestructor }}
+  redisContextDefaultFuncs.free_privdata ∈ {0}
+                          .async_read ∈ {{ &redisAsyncRead }}
+                          .async_write ∈ {{ &redisAsyncWrite }}
+                          .read ∈ {{ &redisNetRead }}
+                          .write ∈ {{ &redisNetWrite }}
+  defaultFunctions.createString ∈ {{ &createStringObject }}
+                  .createArray ∈ {{ &createArrayObject }}
+                  .createInteger ∈ {{ &createIntegerObject }}
+                  .createDouble ∈ {{ &createDoubleObject }}
+                  .createNil ∈ {{ &createNilObject }}
+                  .createBool ∈ {{ &createBoolObject }}
+                  .freeObject ∈ {{ &freeReplyObject }}
+  redisvFormatCommand_intfmts[0] ∈ {100}
+                             [1] ∈ {105}
+                             [2] ∈ {111}
+                             [3] ∈ {117}
+                             [4] ∈ {120}
+                             [5] ∈ {88}
+                             [6] ∈ {0}
+  redisvFormatCommand_flags[0] ∈ {35}
+                           [1] ∈ {48}
+                           [2] ∈ {45}
+                           [3] ∈ {43}
+                           [4] ∈ {32}
+                           [5] ∈ {0}
+  tests ∈ {0}
+  fails ∈ {0}
+  skips ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function atoi
+[eva:loop-unroll:partial] FRAMAC_SHARE/libc/string.c:146: 
+  loop not completely unrolled
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function exit
+[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva] test.c:1008: Trace partitioning superposing up to 300 states
+[eva] using specification for function signal
+[eva] using specification for function access
+[eva] using specification for function printf_va_271
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function strcmp:
+  i ∈ [0..17]
+  __retres ∈ [-117..255]
+[eva:final-states] Values at end of function main:
+  argc ∈ {0}
+  argv ∈ {{ &argv{[1], [2], [3], [4], [5]} }}
+  cfg{.type; .[bits 32 to 63]} ∈ {0}
+     .tcp.host ∈ {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "127.0.0.1" }}
+     .tcp.port ∈ [--..--]
+     .tcp{.timeout; .[bits 96 to 127]} ∈ {0}
+     .unix_sock.path ∈
+     {{ &argv2[0] ; &argv3[0] ; &argv4[0] ; "/tmp/redis.sock" }}
+     .ssl ∈ {0}
+  throughput ∈ {0; 1}
+  test_inherit_fd ∈ {0; 1}
+  skips_as_fails ∈ {0; 1}
+  test_unix_socket ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  2 functions analyzed (out of 255): 0% coverage.
+  In these functions, 79 statements reached (out of 87): 90% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    9 warnings
+  ----------------------------------------------------------------------------
+  0 alarms generated by the analysis.
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m44.214s
+user	0m39.274s
+sys	0m3.939s

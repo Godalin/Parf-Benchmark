@@ -1,0 +1,1564 @@
+Entering directory '/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1'
+Leaving directory '/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1'
+[kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
+[kernel] Parsing tests/testutils.c (with preprocessing)
+[kernel] Parsing tests/t-add.c (with preprocessing)
+[kernel] Parsing tests/hex-random.c (with preprocessing)
+[kernel:typing:implicit-function-declaration] tests/hex-random.c:251: Warning: 
+  __builtin_constant_p is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+[kernel] Parsing tests/mini-random.c (with preprocessing)
+[kernel] Parsing fc_stubs.h (with preprocessing)
+[parf] checkout project: project "default"
+[parf] init parameters: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-split-return false -eva-slevel 0 -eva-remove-redundant-alarms false -eva-plevel 10 -eva-partition-history 0 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls false -eva-domains cvalue -eva-auto-loop-unroll 0
+[parf] use metrics (not implemented)
+[parf] base: base00
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-split-return false -eva-slevel 0 -eva-remove-redundant-alarms false -eva-plevel 10 -eva-partition-history 0 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls false -eva-domains cvalue -eva-auto-loop-unroll 0
+[parf] @default,cvalue
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_1
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_2
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: allocating variable __malloc_asprintf_l124
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_0
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_1
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_3
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_4
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_0
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_5
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_1
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_2
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_3
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_4
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_6
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_8
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_9
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    19 valid    13 unknown     0 invalid     32 total
+  59% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base00-sample00
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return true -eva-slevel 22 -eva-remove-redundant-alarms false -eva-plevel 20 -eva-partition-history 1 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls true -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 15
+[parf] @default,cvalue,equality,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_10
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_13
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_2
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_3
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_4
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_14
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_5
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_15
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_6
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_16
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_7
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_8
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_9
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_10
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_17
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_19
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_20
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base00-sample01
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return true -eva-slevel 25 -eva-remove-redundant-alarms false -eva-plevel 20 -eva-partition-history 0 -eva-octagon-through-calls true -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls true -eva-domains cvalue,equality -eva-auto-loop-unroll 9
+[parf] @default,cvalue,equality
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_21
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_22
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_23
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_24
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_5
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_6
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_7
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_25
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_11
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_26
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_27
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_13
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_14
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_15
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_16
+[eva] mini-gmp.c:1764: cannot properly split on \result == 0
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_28
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_29
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_30
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_31
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  83 alarms generated by the analysis:
+      43 invalid memory accesses
+      32 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    19 valid    13 unknown     0 invalid     32 total
+  59% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base00-sample02
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return false -eva-slevel 19 -eva-remove-redundant-alarms false -eva-plevel 22 -eva-partition-history 1 -eva-octagon-through-calls true -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls false -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 5
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_32
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_33
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_34
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_35
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_8
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_9
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_10
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_36
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_17
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_37
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_18
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_38
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_19
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_20
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_21
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_22
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_39
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_40
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_41
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_42
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    22 valid    10 unknown     0 invalid     32 total
+  68% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample base00-sample02: subset of base? true
+[parf] sample base00-sample01: subset of base? true
+[parf] sample base00-sample00: subset of base? true
+[parf] base: base01
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return false -eva-slevel 19 -eva-remove-redundant-alarms false -eva-plevel 20 -eva-partition-history 1 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls false -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 5
+[parf] @default,cvalue,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_43
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_44
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_45
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_46
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_11
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_12
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_13
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_47
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_23
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_48
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_24
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_49
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_25
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_26
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_27
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_28
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_50
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_51
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_52
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_53
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base01-sample00
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 0 -eva-split-return true -eva-slevel 34 -eva-remove-redundant-alarms false -eva-plevel 42 -eva-partition-history 1 -eva-octagon-through-calls true -eva-min-loop-unroll 0 -eva-ilevel 30 -eva-equality-through-calls true -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 10
+[parf] @default,cvalue,equality,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_54
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_55
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_56
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_57
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_14
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_15
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_16
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_58
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_29
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:4181: 
+  The evaluation of the expression (rn <= alloc) != 0
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_59
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_30
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_60
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_31
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_32
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_33
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:1929: 
+  The evaluation of the expression an
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_34
+[eva] mini-gmp.c:1935: 
+  The evaluation of the expression bn
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_61
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_62
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_63
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_64
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 200 states
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    22 valid    10 unknown     0 invalid     32 total
+  68% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample base01-sample00: subset of base? true
+[parf] base: base02
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return false -eva-slevel 19 -eva-remove-redundant-alarms false -eva-plevel 20 -eva-partition-history 1 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls false -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 5
+[parf] @default,cvalue,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_65
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_66
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_67
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_68
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_17
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_18
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_19
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_69
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_35
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_70
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_36
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_71
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_37
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_38
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_39
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_40
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:1152: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_72
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_73
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_74
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_75
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base02-sample00
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 3 -eva-split-return true -eva-slevel 63 -eva-remove-redundant-alarms false -eva-plevel 62 -eva-partition-history 3 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 32 -eva-equality-through-calls false -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 21
+[parf] @default,cvalue,equality,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_76
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_77
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_78
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_79
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_20
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_21
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_22
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_80
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_41
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_81
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_42
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_82
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_43
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_44
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_45
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_46
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_83
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_84
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_85
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_86
+[eva] mini-gmp.c:1928: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1929: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 200 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 300 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 400 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 500 states
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 600 states
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  70 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       6 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base02-sample01
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 5 -eva-subdivide-non-linear 1 -eva-split-return false -eva-slevel 61 -eva-remove-redundant-alarms false -eva-plevel 49 -eva-partition-history 2 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 43 -eva-equality-through-calls true -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 20
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_87
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_88
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_89
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_90
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_23
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_24
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_25
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_91
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_47
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_92
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_48
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_93
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_49
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_50
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_51
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_52
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_94
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_95
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_96
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_97
+[eva] mini-gmp.c:1929: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 200 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 300 states
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 400 states
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  71 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       7 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample base02-sample01: subset of base? true
+[parf] sample base02-sample00: subset of base? true
+[parf] base: base03
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 3 -eva-split-return true -eva-slevel 63 -eva-remove-redundant-alarms false -eva-plevel 62 -eva-partition-history 3 -eva-octagon-through-calls false -eva-min-loop-unroll 0 -eva-ilevel 32 -eva-equality-through-calls false -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 21
+[parf] @default,cvalue,equality,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_98
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_99
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_100
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_101
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_26
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_27
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_28
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_102
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_53
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_103
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_54
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_104
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_55
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_56
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_57
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_58
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_105
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_106
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_107
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_108
+[eva] mini-gmp.c:1928: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1929: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 100 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 200 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 300 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 400 states
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 500 states
+[eva] tests/t-add.c:39: starting to merge loop iterations
+[eva] tests/t-add.c:43: Trace partitioning superposing up to 600 states
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  36 functions analyzed (out of 220): 16% coverage.
+  In these functions, 500 statements reached (out of 628): 79% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  70 alarms generated by the analysis:
+      43 invalid memory accesses
+      20 accesses to uninitialized left-values
+       6 integer overflows
+       1 invalid shift
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    21 valid    11 unknown     0 invalid     32 total
+  65% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] finish run eva =============================
+[parf] sample: base03-sample00
+[parf] === !!! start run eva ======================
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 4 -eva-split-return true -eva-slevel 123 -eva-remove-redundant-alarms false -eva-plevel 117 -eva-partition-history 5 -eva-octagon-through-calls true -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls false -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 45
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_interval) == 0, 10 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgetc) == -1, 10 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(feof) == 0 (auto)
+  \return(ferror) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(strtoul) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(mpn_zero_p) == 0 (auto)
+  \return(mpn_add_1) == 0 (auto)
+  \return(mpn_sub_1) == 0 (auto)
+  \return(mpn_sub) == 0 (auto)
+  \return(mpn_submul_1) == 0 (auto)
+  \return(mpn_lshift) == 0 (auto)
+  \return(mpn_rshift) == 0 (auto)
+  \return(mpz_sgn) == 0 (auto)
+  \return(mpz_cmp_ui) == 0 (auto)
+  \return(mpz_cmp) == 0 (auto)
+  \return(mpz_cmpabs_ui) == 0 (auto)
+  \return(mpz_gcd_ui) == 1 (auto)
+  \return(mpz_invert) == 0 (auto)
+  \return(mpz_tstbit) == 0 (auto)
+  \return(mpz_limbs_read) == 0 (auto)
+  \return(mpz_limbs_modify) == 0 (auto)
+  \return(mpz_limbs_write) == 0 (auto)
+  \return(mpz_roinit_n) == 0 (auto)
+  \return(mpz_get_str) == 0 (auto)
+  \return(mpz_set_str) == 0 (auto)
+  \return(mpz_export) == 0 (auto)
+  \return(hex_urandomb) == 0 (auto)
+  \return(hex_rrandomb) == 0 (auto)
+  \return(hex_rrandomb_export) == 0 (auto)
+  \return(isspace) == 0 (auto)
+  \return(memcmp) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strlen) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(__gmpz_cmp_ui) == 0 (auto)
+  \return(__gmpz_export) == 0 (auto)
+  \return(__gmpz_get_str) == 0 (auto)
+  \return(is_valid_mode) == 0 (auto)
+  \return(gmp_default_alloc) == 0 (auto)
+  \return(gmp_default_realloc) == 0 (auto)
+  \return(gmp_xalloc_limbs) == 0 (auto)
+  \return(gmp_xrealloc_limbs) == 0 (auto)
+  \return(mpn_normalized_size) == 0 (auto)
+  \return(mpn_base_power_of_two_p) == 0 (auto)
+  \return(mpz_realloc) == 0 (auto)
+  \return(mpz_div_qr) == 0 (auto)
+  \return(mpz_div_qr_ui) == 0 (auto)
+  \return(mpn_gcd_11) == 0 (auto)
+  \return(gmp_millerrabin) == 0 (auto)
+  \return(gmp_detect_endian) == 0, 1 (auto)
+  \return(block_init) == 0 (auto)
+  \return(block_check) == 0 (auto)
+  \return(tu_alloc) == 0 (auto)
+  \return(tu_realloc) == 0 (auto)
+[eva] Analyzing a complete application starting at testmain
+[eva] using specification for function __FC_assert
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_109
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function abort
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_110
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_111
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_112
+[eva] using specification for function __gmpz_init
+[eva] using specification for function __gmp_urandomb_ui
+[eva] using specification for function __gmpz_rrandomb
+[eva] using specification for function __gmpz_neg
+[eva] using specification for function __gmpz_add
+[eva] using specification for function Frama_C_interval
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_29
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_30
+[eva] FRAMAC_SHARE/libc/stdio.c:124: 
+  allocating variable __malloc_asprintf_l124_31
+[eva] using specification for function __gmpz_clear
+[eva] using specification for function isspace
+[eva] mini-gmp.c:4109: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4109: starting to merge loop iterations
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_113
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 200 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 300 states
+[eva] mini-gmp.c:4140: starting to merge loop iterations
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 400 states
+[eva] mini-gmp.c:4155: Trace partitioning superposing up to 500 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_59
+[eva] mini-gmp.c:1280: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva] mini-gmp.c:376: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:376: starting to merge loop iterations
+[kernel] mini-gmp.c:1284: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva] mini-gmp.c:4181: 
+  The evaluation of the expression (rn <= alloc) != 0
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva] using specification for function fprintf_va_12
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_114
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_60
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_115
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_61
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_62
+[eva] mini-gmp.c:419: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:419: starting to merge loop iterations
+[eva] mini-gmp.c:401: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:401: starting to merge loop iterations
+[eva] mini-gmp.c:410: cannot properly split on \result == 0
+[eva] mini-gmp.c:356: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:356: starting to merge loop iterations
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_63
+[eva] mini-gmp.c:472: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:472: starting to merge loop iterations
+[eva] mini-gmp.c:453: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:453: starting to merge loop iterations
+[eva] mini-gmp.c:463: cannot properly split on \result == 0
+[eva] mini-gmp.c:494: cannot properly split on \result == 0
+[eva] mini-gmp.c:1929: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:269: allocating variable __realloc_gmp_default_realloc_l269_64
+[eva] using specification for function fprintf_va_11
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_116
+[eva] mini-gmp.c:1169: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:1169: starting to merge loop iterations
+[eva] mini-gmp.c:4090: Trace partitioning superposing up to 100 states
+[eva] mini-gmp.c:4090: starting to merge loop iterations
+[eva] using specification for function fprintf_va_7
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_117
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_118
+[eva] mini-gmp.c:257: allocating variable __malloc_gmp_default_alloc_l257_119
+[eva] mini-gmp.c:1929: Trace partitioning superposing up to 500 states
+[eva] mini-gmp.c:1929: Trace partitioning superposing up to 300 states
+
+real	10m0.340s
+user	9m23.005s
+sys	0m30.430s

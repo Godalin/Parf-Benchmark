@@ -1,0 +1,111 @@
+[kernel] warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[wp] warning: Missing RTE guards
+src/x509-parser.c:9054:[wp] warning: \valid_function not yet implemented
+(\valid_function(sig_alg->parse_sig))
+src/x509-parser.c:9242:[wp] warning: Cast with incompatible pointers types (source: uint8*) (target: sint8*)
+FRAMAC_SHARE/libc/__fc_builtin.h:38:[wp] warning: Memory model hypotheses for function 'Frama_C_make_unknown':
+/*@
+   behavior wp_typed:
+     requires \separated(p + (..), &Frama_C_entropy_source);
+     requires \separated(p + (0 .. l - 1), &Frama_C_entropy_source);
+   */
+extern void Frama_C_make_unknown(char *p, size_t l);
+src/x509-parser.c:9236:[wp:pedantic-assigns] warning: No 'assigns' specification for function 'main'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:1876:[wp:pedantic-assigns] warning: No \from specification for assigned pointer 'param->curve_param'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:1878:[wp] warning: Memory model hypotheses for function 'parse_algoid_params_ecPublicKey':
+/*@
+   behavior wp_typed:
+     requires
+       \separated((_curve const **)known_curves + (..), &param->curve_param);
+     requires \separated(buf + (..), (_curve const **)known_curves + (..));
+     requires \separated(param, (_curve const **)known_curves + (..));
+     ensures
+       \separated((_curve const **)known_curves + (..), &param->curve_param);
+   */
+static int parse_algoid_params_ecPublicKey(u8 const *buf, u16 len,
+                                           alg_param *param);
+src/x509-parser.c:2140:[wp:pedantic-assigns] warning: No \from specification for assigned pointer 'param->null_param'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:1827:[wp:pedantic-assigns] warning: No 'assigns \result \from ...' specification for function 'find_curve_by_oid'returning pointer type.
+Callers assumptions might be imprecise.
+src/x509-parser.c:1827:[wp] warning: Memory model hypotheses for function 'find_curve_by_oid':
+/*@
+   behavior wp_typed:
+     requires \separated(buf + (..), (_curve const **)known_curves + (..));
+     ensures \separated(\result, (_curve const **)known_curves + (..));
+   */
+static _curve const *find_curve_by_oid(u8 const *buf, u16 len);
+src/x509-parser.c:2315:[wp:pedantic-assigns] warning: No 'assigns \result \from ...' specification for function 'find_alg_by_oid'returning pointer type.
+Callers assumptions might be imprecise.
+src/x509-parser.c:2315:[wp] warning: Memory model hypotheses for function 'find_alg_by_oid':
+/*@
+   behavior wp_typed:
+     requires \separated(buf + (..), (_alg_id const **)known_algs + (..));
+     ensures \separated(\result, (_alg_id const **)known_algs + (..));
+   */
+static _alg_id const *find_alg_by_oid(u8 const *buf, u16 len);
+src/x509-parser.c:2373:[wp:pedantic-assigns] warning: No \from specification for assigned pointer '*alg'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:2375:[wp] warning: Memory model hypotheses for function 'parse_x509_AlgorithmIdentifier':
+/*@
+   behavior wp_typed:
+     requires \separated(buf + (..), (_alg_id const **)known_algs + (..));
+     requires \separated(param + (..), (_alg_id const **)known_algs + (..));
+     requires \separated(alg, (_alg_id const **)known_algs + (..));
+     requires \separated(eaten, (_alg_id const **)known_algs + (..));
+     requires \separated(param, (_alg_id const **)known_algs + (..));
+     ensures \separated(alg, (_alg_id const **)known_algs + (..));
+   */
+static int parse_x509_AlgorithmIdentifier(u8 const *buf, u16 len,
+                                          _alg_id const **alg,
+                                          alg_param *param, u16 *eaten);
+src/x509-parser.c:3487:[wp:pedantic-assigns] warning: No 'assigns \result \from ...' specification for function 'find_dn_by_oid'returning pointer type.
+Callers assumptions might be imprecise.
+src/x509-parser.c:4387:[wp] warning: Memory model hypotheses for function 'parse_x509_subjectPublicKeyInfo':
+/*@
+   behavior wp_typed:
+     requires \separated(buf + (..), (_alg_id const **)known_algs + (..));
+     requires \separated(eaten, (_alg_id const **)known_algs + (..));
+   */
+static int parse_x509_subjectPublicKeyInfo(u8 const *buf, u16 len, u16 *eaten);
+src/x509-parser.c:7196:[wp:pedantic-assigns] warning: No 'assigns \result \from ...' specification for function 'find_kp_by_oid'returning pointer type.
+Callers assumptions might be imprecise.
+src/x509-parser.c:8067:[wp:pedantic-assigns] warning: No 'assigns \result \from ...' specification for function 'find_ext_by_oid'returning pointer type.
+Callers assumptions might be imprecise.
+src/x509-parser.c:8110:[wp:pedantic-assigns] warning: No \from specification for assigned pointer '*(parsed_oid_list +
+                                               (0 ..
+                                                    sizeof(known_ext_oids) /
+                                                    sizeof(known_ext_oids[0])
+                                                    - 1))'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:8180:[wp:pedantic-assigns] warning: No \from specification for assigned pointer '*(parsed_oid_list +
+                                               (0 ..
+                                                    sizeof(known_ext_oids) /
+                                                    sizeof(known_ext_oids[0])
+                                                    - 1))'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:8492:[wp:pedantic-assigns] warning: No \from specification for assigned pointer '*sig_alg'.
+Callers assumptions might be imprecise.
+src/x509-parser.c:8494:[wp] warning: Memory model hypotheses for function 'parse_x509_tbsCertificate':
+/*@
+   behavior wp_typed:
+     requires \separated(buf + (..), (_alg_id const **)known_algs + (..));
+     requires \separated(eaten, (_alg_id const **)known_algs + (..));
+     requires \separated(sig_alg, (_alg_id const **)known_algs + (..));
+     ensures \separated(sig_alg, (_alg_id const **)known_algs + (..));
+   */
+static int parse_x509_tbsCertificate(u8 const *buf, u16 len,
+                                     _alg_id const **sig_alg, u16 *eaten);
+src/x509-parser.c:8824:[wp] warning: Memory model hypotheses for function 'parse_x509_signatureAlgorithm':
+/*@
+   behavior wp_typed:
+     requires \separated(buf + (..), (_alg_id const **)known_algs + (..));
+     requires
+       \separated(exp_sig_alg + (..), (_alg_id const **)known_algs + (..));
+     requires \separated(eaten, (_alg_id const **)known_algs + (..));
+   */
+static int parse_x509_signatureAlgorithm(u8 const *buf, u16 len,
+                                         _alg_id const *exp_sig_alg,
+                                         u16 *eaten);

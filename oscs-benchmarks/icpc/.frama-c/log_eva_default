@@ -1,0 +1,489 @@
+[kernel] Parsing src/impls.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotb0a3f7.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing src/roco.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot413fc3.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel:parser:decimal-float] src/roco_config.h:7: Warning: 
+  Floating-point constant 0.33 is not represented exactly. Will use 0x1.51eb851eb851fp-2.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing src/sim.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot3d3d7e.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing src/main.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot960e35.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[variadic] src/main.c:33: Warning: 
+  Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[variadic] src/main.c:41: Warning: 
+  Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  Engine_maxVoltage_PARAM ∈ {24.}
+  Engine_minVoltage_PARAM ∈ {-24.}
+  Battery_voltage ∈ {0}
+  dT ∈ {0}
+  Engine_realVoltage ∈ {0}
+  Env_humidity ∈ {0}
+  Env_temperature ∈ {0}
+  Global_emergencyMode ∈ {0}
+  LegSensor_atMark ∈ {0}
+  LegSensor_signal ∈ {0}
+  RoCo_acceleration_CURVE.numPoints ∈ {4}
+                         {.x[0]; .[bits 16 to 63]} ∈ {0}
+                         .x[1] ∈ {0.33}
+                         .x[2] ∈ {0.67}
+                         .x[3] ∈ {1.}
+                         {.x[4..9]; .y[0]} ∈ {0}
+                         .y[1] ∈ {0.2}
+                         .y[2] ∈ {0.5}
+                         .y[3] ∈ {1.}
+                         .y[4..9] ∈ {0}
+  RoCo_accelerationFast_CURVE.numPoints ∈ {4}
+                             {.x[0]; .[bits 16 to 63]} ∈ {0}
+                             .x[1] ∈ {0.33}
+                             .x[2] ∈ {0.67}
+                             .x[3] ∈ {1.}
+                             {.x[4..9]; .y[0]} ∈ {0}
+                             .y[1] ∈ {2.}
+                             .y[2] ∈ {4.}
+                             .y[3] ∈ {5.}
+                             .y[4..9] ∈ {0}
+  RoCo_deceleration_CURVE.numPoints ∈ {4}
+                         {.x[0]; .[bits 16 to 63]} ∈ {0}
+                         .x[1] ∈ {0.33}
+                         .x[2] ∈ {0.67}
+                         .x[3] ∈ {1.}
+                         {.x[4..9]; .y[0]} ∈ {0}
+                         .y[1] ∈ {0.25}
+                         .y[2] ∈ {0.75}
+                         .y[3] ∈ {1.}
+                         .y[4..9] ∈ {0}
+  RoCo_decelerationFast_CURVE.numPoints ∈ {4}
+                             {.x[0]; .[bits 16 to 63]} ∈ {0}
+                             .x[1] ∈ {0.33}
+                             .x[2] ∈ {0.67}
+                             .x[3] ∈ {1.}
+                             {.x[4..9]; .y[0]} ∈ {0}
+                             .y[1] ∈ {2.}
+                             .y[2] ∈ {4.}
+                             .y[3] ∈ {5.}
+                             .y[4..9] ∈ {0}
+  RoCo_angleAtMark_PARAM ∈ {19.}
+  LegSensorSignalToAngle_CURVE.numPoints ∈ {4}
+                              .[bits 16 to 63] ∈ {0}
+                              .x[0] ∈ {-24.}
+                              .x[1] ∈ {-12.}
+                              .x[2] ∈ {12.}
+                              .x[3] ∈ {24.}
+                              .x[4..9] ∈ {0}
+                              .y[0] ∈ {-60.}
+                              .y[1] ∈ {-30.}
+                              .y[2] ∈ {30.}
+                              .y[3] ∈ {60.}
+                              .y[4..9] ∈ {0}
+  RoCo_angleReachedThreshold1_PARAM ∈ {5.}
+  RoCo_angleReachedThreshold2_PARAM ∈ {0.5}
+  RoCo_batteryLowLimit_PARAM ∈ {19.5}
+  RoCo_batteryLowDelay_PARAM ∈ {60.}
+  RoCo_checkBatteryVoltage_PARAM ∈ {1}
+  RoCo_humidityLimit_PARAM ∈ {0.8}
+  RoCo_checkHumidity_PARAM ∈ {0}
+  RoCo_envTempLowerLimit_PARAM ∈ {5.}
+  RoCo_envTempUpperLimit_PARAM ∈ {30.}
+  RoCo_TempFltT_PARAM ∈ {0.1}
+  RoCo_hasMinMaxAngles_PARAM ∈ {1}
+  RoCo_maxAngle_PARAM ∈ {120.}
+  RoCo_minAngle_PARAM ∈ {-120.}
+  RoCo_initMoveSpeed_PARAM ∈ {1.}
+  RoCo_initRampSlopeNeg_PARAM ∈ {1.}
+  RoCo_initRampSlopePos_PARAM ∈ {1.}
+  RoCo_idlePosition_PARAM ∈ {0}
+  RoCo_initTimeout_PARAM ∈ {20.}
+  RoCo_shutdownTimeout_PARAM ∈ {30.}
+  RoCo_stepSpeed_PARAM ∈ {2.}
+  RoCo_TimeSlopeNeg_PARAM ∈ {1.}
+  RoCo_TimeSlopePos_PARAM ∈ {0.5}
+  EngineSpeedToVoltage_CURVE.numPoints ∈ {5}
+                            .[bits 16 to 63] ∈ {0}
+                            .x[0] ∈ {-3.}
+                            .x[1] ∈ {-1.5}
+                            .x[2] ∈ {0}
+                            .x[3] ∈ {1.5}
+                            .x[4] ∈ {3.}
+                            .x[5..9] ∈ {0}
+                            .y[0] ∈ {-24.}
+                            .y[1] ∈ {-15.}
+                            .y[2] ∈ {0}
+                            .y[3] ∈ {15.}
+                            .y[4] ∈ {24.}
+                            .y[5..9] ∈ {0}
+  RoCo_voltageFilter_PARAM ∈ {0.1}
+  RoCo_activeDesired ∈ {0}
+  RoCo_commandMoveByAngle ∈ {0}
+  RoCo_desiredDeltaAngle ∈ {0}
+  RoCo_commandMoveToAngle ∈ {0}
+  RoCo_desiredTargetAngle ∈ {0}
+  RoCo_moveFast ∈ {0}
+  RoCo_commandShutOff ∈ {0}
+  RoCo_error ∈ {0}
+  RoCo_isActive ∈ {0}
+  RoCo_legAngle ∈ {0}
+  RoCo_legAngleValid ∈ {0}
+  RoCo_engineVoltage ∈ {0}
+  RoCo_adaptationActive ∈ {1}
+  RoCo_angleReachedThreshold1Fast_PARAM ∈ {10.}
+  RoCo_initStandstillTimeout_PARAM ∈ {2.}
+  RoCo_initialDeltaSearchRange_PARAM ∈ {2.}
+  RoCo_initialDeltaSearchTimeout_PARAM ∈ {2.}
+  RoCo_isAdapted ∈ {0}
+  buf1 ∈ {0}
+  buf2 ∈ {0}
+  buf3 ∈ {0}
+  buf4 ∈ {0}
+  buf5 ∈ {0}
+  internalPosition ∈ {22.5}
+  oldInternalPosition ∈ {0}
+  Sim_maxPos_PARAM ∈ {100.}
+  Sim_minPos_PARAM ∈ {-100.}
+  Srv_PT1 ∈ {0}
+  output_header ∈
+               {{ "time(ms)\tengineVoltage\tlegAngle\tlegAngleValid\tisActive\n" }}
+  output_row_fmt_string ∈ {{ "%d\t%f\t%f\t%d\t%d\n" }}
+  _t ∈ {0}
+  angleDiffRequest ∈ {0}
+  desiredEngineVoltage ∈ {0}
+  initBackwards ∈ {0}
+  limitationActive ∈ {0}
+  prevAngleSignal ∈ {0}
+  rampValue ∈ {0}
+  wasActive ∈ {0}
+  wasInit ∈ {0}
+  enabled ∈ {0}
+  rampTarget ∈ {0}
+  filteredEnvTemp ∈ {0}
+  direction ∈ {0}
+  targetAngle ∈ {0}
+  init ∈ {0}
+  final ∈ {0}
+  deltaSearchPhase ∈ {0}
+  initRamp ∈ {0}
+  initTimer ∈ {0}
+  moveTimeRamp ∈ {0}
+  envTempFilter ∈ {0}
+  shutdownTimer ∈ {0}
+  voltageFilter ∈ {0}
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ {0}
+  adaptation[0..1] ∈ {0}
+  rampHighReached ∈ {0}
+  wasRampEnded ∈ {0}
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_2
+[eva] src/main.c:35: starting to merge loop iterations
+[eva] src/impls.c:46: starting to merge loop iterations
+[eva] using specification for function fabs
+[eva:alarm] src/impls.c:48: Warning: 
+  non-finite double value.
+  assert
+  \is_finite(\div_double(\sub_double(x, curve->x[i]),
+                        \sub_double(curve->x[(int)((int)i + 1)], curve->x[i])));
+[eva:alarm] src/impls.c:48: Warning: 
+  non-finite double value.
+  assert
+  \is_finite(\mul_double(\div_double(\sub_double(x, curve->x[i]),
+                                    \sub_double(curve->x[(int)((int)i + 1)],
+                                               curve->x[i])),
+                        \sub_double(curve->y[(int)((int)i + 1)], curve->y[i])));
+[eva:alarm] src/roco.c:150: Warning: 
+  non-finite double value. assert \is_finite(\add_double(RoCo_legAngle, t15));
+[eva:alarm] src/roco.c:268: Warning: 
+  non-finite double value.
+  assert \is_finite(\add_double(adaptation[RoCo_moveFast], tmp_13));
+  (tmp_13 from fabs(t10))
+[eva:alarm] src/impls.c:26: Warning: 
+  function exp: precondition 'not_overflow' got status unknown.
+[eva:alarm] src/impls.c:27: Warning: 
+  non-finite double value.
+  assert \is_finite(\mul_double(\sub_double((double)1.0, c), x));
+[eva:alarm] src/impls.c:27: Warning: 
+  non-finite double value. assert \is_finite(\mul_double(c, *state));
+[eva:alarm] src/impls.c:27: Warning: 
+  non-finite double value.
+  assert
+  \is_finite(\add_double(\mul_double(\sub_double((double)1.0, c), x),
+                        \mul_double(c, *state)));
+[eva:alarm] src/sim.c:34: Warning: 
+  non-finite double value.
+  assert \is_finite(\mul_double(tmp, dT));
+  (tmp from PT1_Filter(& Srv_PT1, buf5 * 0.9, 0.15, dT))
+[eva:alarm] src/impls.c:96: Warning: 
+  signed overflow. assert _t + delayMs ≤ 2147483647;
+[eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva] done for function main
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function Interpolate_from_curve:
+  result ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  i ∈ {0; 1; 2; 3} or UNINITIALIZED
+[eva:final-states] Values at end of function Limiter_out:
+  result ∈ [-121. .. 121.]
+[eva:final-states] Values at end of function Ramp_getDir:
+  __retres ∈ {-1; 0; 1}
+[eva:final-states] Values at end of function Ramp_out:
+  initRamp.dir ∈ {-1; 0; 1}
+          .[bits 16 to 63] ∈ {0}
+          .state ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+          .target ∈ [-1. .. 1.]
+  moveTimeRamp.dir ∈ {-1; 0; 1}
+              .[bits 16 to 63] ∈ {0}
+              .state ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+              .target ∈ [0. .. 1.]
+  __retres ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+[eva:final-states] Values at end of function RoCo_init:
+  RoCo_activeDesired ∈ {0}
+  RoCo_commandMoveByAngle ∈ {0}
+  RoCo_desiredDeltaAngle ∈ {0}
+  RoCo_commandMoveToAngle ∈ {0}
+  RoCo_desiredTargetAngle ∈ {0}
+  RoCo_moveFast ∈ {0}
+  RoCo_commandShutOff ∈ {0}
+  RoCo_error ∈ {0}
+  RoCo_isActive ∈ {0}
+  RoCo_legAngle ∈ {0}
+  RoCo_legAngleValid ∈ {0}
+  RoCo_engineVoltage ∈ {0}
+  RoCo_isAdapted ∈ {0}
+  angleDiffRequest ∈ {0}
+  desiredEngineVoltage ∈ {0}
+  initBackwards ∈ {0}
+  limitationActive ∈ {0}
+  prevAngleSignal ∈ {0}
+  rampValue ∈ {0}
+  wasActive ∈ {0}
+  wasInit ∈ {0}
+  enabled ∈ {0}
+  rampTarget ∈ {0}
+  filteredEnvTemp ∈ {0}
+  direction ∈ {0}
+  targetAngle ∈ {0}
+  init ∈ {0}
+  final ∈ {0}
+  deltaSearchPhase ∈ {0}
+  initTimer ∈ {0}
+  envTempFilter ∈ {0}
+  shutdownTimer ∈ {0}
+  voltageFilter ∈ {0}
+  batteryLowDelay ∈ {0}
+[eva:final-states] Values at end of function Sim_init:
+  Engine_realVoltage ∈ {0}
+  LegSensor_atMark ∈ {0}
+  LegSensor_signal ∈ {0}
+  buf1 ∈ {0}
+  buf2 ∈ {0}
+  buf3 ∈ {0}
+  buf4 ∈ {0}
+  buf5 ∈ {0}
+  internalPosition ∈ {20.}
+  oldInternalPosition ∈ {0}
+  Srv_PT1 ∈ {0}
+[eva:final-states] Values at end of function Sleep:
+  _t ∈ [20..2147483640],0%20
+[eva:final-states] Values at end of function Time:
+  
+[eva:final-states] Values at end of function Timer_elapsedTime:
+  __retres ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+[eva:final-states] Values at end of function Timer_start:
+  initTimer ∈ [-3.42 .. 3.78]
+  shutdownTimer ∈ {0}
+[eva:final-states] Values at end of function Timer_tick:
+  initTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  shutdownTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+[eva:final-states] Values at end of function Turn_on_delay:
+  result ∈ {0; 1}
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ [-3.40282346639e+38 .. 2147485.64]
+[eva:final-states] Values at end of function PT1_Filter:
+  __fc_errno ∈ [--..--]
+  Srv_PT1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  envTempFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  voltageFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  __retres ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+[eva:final-states] Values at end of function Sim_process:
+  __fc_errno ∈ [--..--]
+  Engine_realVoltage ∈ [-1.61792382138e+308 .. 1.61792382138e+308]
+  LegSensor_atMark ∈ {0; 1}
+  LegSensor_signal ∈ [-96.8 .. 96.8]
+  buf1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf2 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf3 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf4 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf5 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  internalPosition ∈ [-121. .. 121.]
+  oldInternalPosition ∈ [-121. .. 121.]
+  Sim_maxPos_PARAM ∈ {121.}
+  Sim_minPos_PARAM ∈ {-121.}
+  Srv_PT1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  t1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  t2 ∈ [-1.61792382138e+308 .. 1.61792382138e+308]
+  t3 ∈ {0; 1}
+  t4 ∈ [-242. .. 242.]
+[eva:final-states] Values at end of function RoCo_process:
+  __fc_errno ∈ [--..--]
+  RoCo_activeDesired ∈ {0; 1}
+  RoCo_commandMoveToAngle ∈ {0; 1}
+  RoCo_commandShutOff ∈ {0; 1}
+  RoCo_error ∈ {0; 1}
+  RoCo_isActive ∈ {0; 1}
+  RoCo_legAngle ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  RoCo_legAngleValid ∈ {0; 1}
+  RoCo_engineVoltage ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  RoCo_isAdapted ∈ {0; 1}
+  t1 ∈ {21.3}
+  t2 ∈ {0.5}
+  t3 ∈ {20.}
+  t4 ∈ {0; 1}
+  t5 ∈ [-96.8 .. 96.8]
+  t9 ∈ [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+  t10 ∈ [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+  t11 ∈ [5. .. 1.79769313486e+308] or UNINITIALIZED
+  t12 ∈
+     {{ &RoCo_acceleration_CURVE ; &RoCo_deceleration_CURVE }} or UNINITIALIZED
+  t13 ∈ {0.1} or UNINITIALIZED
+  t14 ∈ {1} or UNINITIALIZED
+  t15 ∈ [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+  angleDiffRequest ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  desiredEngineVoltage ∈ [-24. .. 24.]
+  initBackwards ∈ {0; 1}
+  limitationActive ∈ {0; 1}
+  rampValue ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  wasActive ∈ {0; 1}
+  wasInit ∈ {0; 1}
+  enabled ∈ {0; 1}
+  rampTarget ∈ [-1. .. 1.]
+  filteredEnvTemp ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  direction ∈ {-1; 0; 1}
+  targetAngle ∈ [-55. .. 30.]
+  init ∈ {0; 1}
+  final ∈ {0; 1}
+  initRamp.dir ∈ {-1; 0; 1}
+          .[bits 16 to 63] ∈ {0}
+          .state ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+          .target ∈ [-1. .. 1.]
+  initTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  moveTimeRamp.dir ∈ {-1; 0; 1}
+              .[bits 16 to 63] ∈ {0}
+              .state ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+              .target ∈ [0. .. 1.]
+  envTempFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  shutdownTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  voltageFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ [-3.40282346639e+38 .. 2147485.64]
+  adaptation[0] ∈ [0. .. 1.79769313486e+308]
+            [1] ∈ {0}
+  rampHighReached ∈ {0; 1}
+  wasRampEnded ∈ {0; 1}
+[eva:final-states] Values at end of function main:
+  __fc_errno ∈ [--..--]
+  Battery_voltage ∈ {21.3}
+  dT ∈ [-2147483.64 .. 2147483.64]
+  Engine_realVoltage ∈ [-1.61792382138e+308 .. 1.61792382138e+308]
+  Env_humidity ∈ {0.5}
+  Env_temperature ∈ {20.}
+  Global_emergencyMode ∈ {0}
+  LegSensor_atMark ∈ {0; 1}
+  LegSensor_signal ∈ [-96.8 .. 96.8]
+  RoCo_activeDesired ∈ {0; 1}
+  RoCo_commandMoveByAngle ∈ {0}
+  RoCo_desiredDeltaAngle ∈ {0}
+  RoCo_commandMoveToAngle ∈ {0; 1}
+  RoCo_desiredTargetAngle ∈ [-55. .. 30.]
+  RoCo_moveFast ∈ {0}
+  RoCo_commandShutOff ∈ {0; 1}
+  RoCo_error ∈ {0; 1}
+  RoCo_isActive ∈ {0; 1}
+  RoCo_legAngle ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  RoCo_legAngleValid ∈ {0; 1}
+  RoCo_engineVoltage ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  RoCo_isAdapted ∈ {0; 1}
+  buf1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf2 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf3 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf4 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  buf5 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  internalPosition ∈ [-121. .. 121.]
+  oldInternalPosition ∈ [-121. .. 121.]
+  Sim_maxPos_PARAM ∈ [100. .. 121.]
+  Sim_minPos_PARAM ∈ [-121. .. -100.]
+  Srv_PT1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  lastTime ∈ [0..2147483640],0%20
+  cnt ∈ {9000}
+  _t ∈ [0..2147483640],0%20
+  angleDiffRequest ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  desiredEngineVoltage ∈ [-24. .. 24.]
+  initBackwards ∈ {0; 1}
+  limitationActive ∈ {0; 1}
+  prevAngleSignal ∈ {0}
+  rampValue ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  wasActive ∈ {0; 1}
+  wasInit ∈ {0; 1}
+  enabled ∈ {0; 1}
+  rampTarget ∈ [-1. .. 1.]
+  filteredEnvTemp ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  direction ∈ {-1; 0; 1}
+  targetAngle ∈ [-55. .. 30.]
+  init ∈ {0; 1}
+  final ∈ {0; 1}
+  deltaSearchPhase ∈ {0}
+  initRamp.dir ∈ {-1; 0; 1}
+          .[bits 16 to 63] ∈ {0}
+          .state ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+          .target ∈ [-1. .. 1.]
+  initTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  moveTimeRamp.dir ∈ {-1; 0; 1}
+              .[bits 16 to 63] ∈ {0}
+              .state ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+              .target ∈ [0. .. 1.]
+  envTempFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  shutdownTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  voltageFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ [-3.40282346639e+38 .. 2147485.64]
+  adaptation[0] ∈ [0. .. 1.79769313486e+308]
+            [1] ∈ {0}
+  rampHighReached ∈ {0; 1}
+  wasRampEnded ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  16 functions analyzed (out of 18): 88% coverage.
+  In these functions, 405 statements reached (out of 424): 95% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  9 alarms generated by the analysis:
+       8 nan or infinite floating-point values
+       1 integer overflow
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    13 valid     1 unknown     0 invalid     14 total
+  92% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.513s
+user	0m1.405s
+sys	0m0.079s

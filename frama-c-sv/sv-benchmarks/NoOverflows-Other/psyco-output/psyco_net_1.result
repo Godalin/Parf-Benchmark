@@ -1,0 +1,130 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+frama-c -val -rte -machdep x86_32 /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/program.c /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:85: Warning: 
+INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
+INFO:FRAMAC:  Its formals will be inferred from actual arguments
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  m_getInetAddress ∈ {1}
+INFO:FRAMAC:  m_getOOBInline ∈ {2}
+INFO:FRAMAC:  m_getLocalPort ∈ {3}
+INFO:FRAMAC:  m_isInputShutdown ∈ {4}
+INFO:FRAMAC:  m_setTcpNoDelay ∈ {5}
+INFO:FRAMAC:  m_isConnected ∈ {6}
+INFO:FRAMAC:  m_getKeepAlive ∈ {7}
+INFO:FRAMAC:  m_getLocalAddress ∈ {8}
+INFO:FRAMAC:  m_bind ∈ {9}
+INFO:FRAMAC:  m_getChannel ∈ {10}
+INFO:FRAMAC:  m_getSoLinger ∈ {11}
+INFO:FRAMAC:  m_getImpl ∈ {12}
+INFO:FRAMAC:  m_getTcpNoDelay ∈ {13}
+INFO:FRAMAC:  m_getSoTimeout ∈ {14}
+INFO:FRAMAC:  m_isOutputShutdown ∈ {15}
+INFO:FRAMAC:  m_postAccept ∈ {16}
+INFO:FRAMAC:  m_close ∈ {17}
+INFO:FRAMAC:  m_setOOBInline ∈ {18}
+INFO:FRAMAC:  m_getLocalSocketAddress ∈ {19}
+INFO:FRAMAC:  m_getReceiveBufferSize ∈ {20}
+INFO:FRAMAC:  m_setReuseAddress ∈ {21}
+INFO:FRAMAC:  m_getTrafficClass ∈ {22}
+INFO:FRAMAC:  m_getReuseAddress ∈ {23}
+INFO:FRAMAC:  m_createImpl ∈ {24}
+INFO:FRAMAC:  m_setCreated ∈ {25}
+INFO:FRAMAC:  m_setKeepAlive ∈ {26}
+INFO:FRAMAC:  m_getInputStream ∈ {27}
+INFO:FRAMAC:  m_shutdownOutput ∈ {28}
+INFO:FRAMAC:  m_shutdownInput ∈ {29}
+INFO:FRAMAC:  m_setPerformancePreferences ∈ {30}
+INFO:FRAMAC:  m_getPort ∈ {31}
+INFO:FRAMAC:  m_sendUrgentData ∈ {32}
+INFO:FRAMAC:  m_isClosed ∈ {33}
+INFO:FRAMAC:  m_isBound ∈ {34}
+INFO:FRAMAC:  m_setBound ∈ {35}
+INFO:FRAMAC:  m_getSendBufferSize ∈ {36}
+INFO:FRAMAC:  m_getOutputStream ∈ {37}
+INFO:FRAMAC:  m_setConnected ∈ {38}
+INFO:FRAMAC:  m_Socket ∈ {39}
+INFO:FRAMAC:  m_getRemoteSocketAddress ∈ {40}
+INFO:FRAMAC:  m_setReceiveBufferSize_1 ∈ {41}
+INFO:FRAMAC:  m_setReceiveBufferSize_2 ∈ {42}
+INFO:FRAMAC:  m_connect2_1 ∈ {43}
+INFO:FRAMAC:  m_connect2_2 ∈ {44}
+INFO:FRAMAC:  m_setSoLinger_1 ∈ {45}
+INFO:FRAMAC:  m_setSoLinger_2 ∈ {46}
+INFO:FRAMAC:  m_connect1_1 ∈ {47}
+INFO:FRAMAC:  m_connect1_2 ∈ {48}
+INFO:FRAMAC:  m_setTrafficClass_1 ∈ {49}
+INFO:FRAMAC:  m_setTrafficClass_2 ∈ {50}
+INFO:FRAMAC:  m_setSoTimeout_1 ∈ {51}
+INFO:FRAMAC:  m_setSoTimeout_2 ∈ {52}
+INFO:FRAMAC:  m_setSendBufferSize_1 ∈ {53}
+INFO:FRAMAC:  m_setSendBufferSize_2 ∈ {54}
+INFO:FRAMAC:  m_setSocketImplFactory_1 ∈ {55}
+INFO:FRAMAC:  m_setSocketImplFactory_2 ∈ {56}
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] output/program.c:82: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:82: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:82: Trace partitioning superposing up to 1200 states
+INFO:FRAMAC:[eva] output/program.c:82: Trace partitioning superposing up to 2000 states
+INFO:FRAMAC:[eva] output/program.c:82: Trace partitioning superposing up to 2400 states
+INFO:FRAMAC:[eva] output/program.c:82: Trace partitioning superposing up to 2500 states
+INFO:FRAMAC:[eva:alarm] output/program.c:49140: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  q ∈ {1}
+INFO:FRAMAC:  method_id ∈ [4..56]
+INFO:FRAMAC:  this_oldImpl ∈ {0}
+INFO:FRAMAC:  this_factory ∈ [--..--]
+INFO:FRAMAC:  this_shutOut ∈ {0}
+INFO:FRAMAC:  this_created ∈ {0; 1}
+INFO:FRAMAC:  this_shutIn ∈ {0}
+INFO:FRAMAC:  this_closed ∈ {0}
+INFO:FRAMAC:  this_bound ∈ {0; 1}
+INFO:FRAMAC:  this_impl ∈ {1}
+INFO:FRAMAC:  this_connected ∈ {0; 1}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  3 functions analyzed (out of 18): 16% coverage.
+INFO:FRAMAC:  In these functions, 37948 statements reached (out of 74314): 51% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  0 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown
+
+real	3m16.562s
+user	3m16.495s
+sys	0m1.141s

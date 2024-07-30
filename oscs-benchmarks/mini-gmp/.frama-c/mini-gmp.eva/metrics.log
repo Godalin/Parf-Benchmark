@@ -1,0 +1,72 @@
+[metrics] Eva coverage statistics
+=======================
+Syntactically reachable functions = 59 (out of 257)
+Semantically reached functions = 42
+Coverage estimation = 71.2% 
+
+Unreached functions (17) =
+  <gmp.h>: __gmpz_and; __gmpz_gcd; __gmpz_ior; __gmpz_lcm; __gmpz_mul;
+    __gmpz_sub; __gmpz_xor; 
+  <mini-gmp.c>: mpn_copyi; mpn_div_qr_1_invert; mpn_div_qr_1_preinv;
+    mpn_get_base_info; mpn_get_str_other; mpn_invert_3by2; mpn_limb_get_str;
+    mpn_lshift; mpn_mul_1; mpn_set_str_other;
+[metrics] References to non-analyzed functions
+------------------------------------
+Function hex_random_op3 calls __gmpz_sub (at tests/hex-random.c:163)
+Function hex_random_op3 calls __gmpz_mul (at tests/hex-random.c:166)
+Function hex_random_op3 calls __gmpz_mul (at tests/hex-random.c:174)
+Function hex_random_op3 calls __gmpz_mul (at tests/hex-random.c:175)
+Function hex_random_op3 calls __gmpz_gcd (at tests/hex-random.c:177)
+Function hex_random_op3 calls __gmpz_mul (at tests/hex-random.c:185)
+Function hex_random_op3 calls __gmpz_mul (at tests/hex-random.c:186)
+Function hex_random_op3 calls __gmpz_lcm (at tests/hex-random.c:188)
+Function hex_random_op3 calls __gmpz_and (at tests/hex-random.c:191)
+Function hex_random_op3 calls __gmpz_ior (at tests/hex-random.c:194)
+Function hex_random_op3 calls __gmpz_xor (at tests/hex-random.c:197)
+Function mpz_get_str calls mpn_get_base_info (at mini-gmp.c:4082)
+Function mpz_get_str calls mpn_copyi (at mini-gmp.c:4084)
+Function mpz_get_str calls mpn_get_str_other (at mini-gmp.c:4086)
+Function mpz_set_str calls mpn_get_base_info (at mini-gmp.c:4176)
+Function mpz_set_str calls mpn_set_str_other (at mini-gmp.c:4179)
+Function mpz_sizeinbase calls mpn_copyi (at mini-gmp.c:4016)
+Function mpz_sizeinbase calls mpn_div_qr_1_invert (at mini-gmp.c:4017)
+Function mpz_sizeinbase calls mpn_div_qr_1_preinv (at mini-gmp.c:4023)
+[metrics] Statements analyzed by Eva
+--------------------------
+626 stmts in analyzed functions, 497 stmts analyzed (79.4%)
+dump: 4 stmts out of 4 (100.0%)
+gmp_default_alloc: 5 stmts out of 5 (100.0%)
+gmp_default_free: 2 stmts out of 2 (100.0%)
+gmp_default_realloc: 4 stmts out of 4 (100.0%)
+gmp_xalloc_limbs: 2 stmts out of 2 (100.0%)
+gmp_xrealloc_limbs: 3 stmts out of 3 (100.0%)
+mini_random_op3: 8 stmts out of 8 (100.0%)
+mpn_add: 5 stmts out of 5 (100.0%)
+mpn_add_1: 13 stmts out of 13 (100.0%)
+mpn_add_n: 15 stmts out of 15 (100.0%)
+mpn_cmp: 14 stmts out of 14 (100.0%)
+mpn_cmp4: 12 stmts out of 12 (100.0%)
+mpn_get_str_bits: 26 stmts out of 26 (100.0%)
+mpn_limb_size_in_base_2: 17 stmts out of 17 (100.0%)
+mpn_normalized_size: 7 stmts out of 7 (100.0%)
+mpn_sub: 5 stmts out of 5 (100.0%)
+mpn_sub_1: 14 stmts out of 14 (100.0%)
+mpn_sub_n: 14 stmts out of 14 (100.0%)
+mpz_abs_add: 24 stmts out of 24 (100.0%)
+mpz_abs_sub: 35 stmts out of 35 (100.0%)
+mpz_add: 7 stmts out of 7 (100.0%)
+mpz_clear: 2 stmts out of 2 (100.0%)
+mpz_cmp: 19 stmts out of 19 (100.0%)
+mpz_init: 4 stmts out of 4 (100.0%)
+set_str: 5 stmts out of 5 (100.0%)
+testfree: 3 stmts out of 3 (100.0%)
+testmain: 25 stmts out of 25 (100.0%)
+mpz_realloc: 14 stmts out of 15 (93.3%)
+mpn_set_str_bits: 24 stmts out of 28 (85.7%)
+mpz_get_str: 37 stmts out of 50 (74.0%)
+mpz_set_str: 63 stmts out of 88 (71.6%)
+mp_get_memory_functions: 5 stmts out of 7 (71.4%)
+gmp_die: 2 stmts out of 3 (66.7%)
+hex_random_op3: 35 stmts out of 64 (54.7%)
+mpz_sizeinbase: 19 stmts out of 48 (39.6%)
+mpn_base_power_of_two_p: 4 stmts out of 29 (13.8%)

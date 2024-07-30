@@ -1,0 +1,71 @@
+directory	file	line	function	property kind	status	property
+sw/airborne/autopilot	estimator.c	116	estimator_update_state_infrared	is_nan	Unknown	¬\is_NaN(\mul_float(rad_of_ir, (float)ir_roll))
+sw/airborne/autopilot	estimator.c	118	estimator_update_state_infrared	is_nan	Unknown	¬\is_NaN(\mul_float(rad_of_ir, (float)ir_pitch))
+sw/airborne/autopilot	estimator.c	158	estimator_update_ir_estim	is_nan	Unknown	¬\is_NaN(\div_float(estimator_update_ir_estim_sum_xy, estimator_update_ir_estim_sum_xx))
+sw/airborne/autopilot	estimator.c	166	estimator_update_ir_estim	is_nan	Unknown	¬\is_NaN(\mul_double(\mul_double((double)100., (double)estimator_rad_of_ir), (double)init_ir2))
+sw/airborne/autopilot	gps_ubx.c	242	parse_ubx	index_bound	Unknown	ubx_msg_idx < 255
+sw/airborne/autopilot	main.c	122	ground_calibrate__fc_inline	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	130	ground_calibrate__fc_inline	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	132	ground_calibrate__fc_inline	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	289	send_boot	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	290	send_boot	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	299	send_attitude	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	304	send_adc	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	307	send_settings	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	310	send_desired	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	313	send_bat	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	316	send_climb	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	319	send_mode	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	322	send_debug	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	325	send_nav_ref	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	362	radio_control_task	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	407	send_nav_values	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	492	periodic_task	float_to_int	Unknown	(double)stage_time_ds + .5 < 32768
+sw/airborne/autopilot	main.c	582	stabilisation_task	float_to_int	Unknown	-32769 < tmp
+sw/airborne/autopilot	main.c	582	stabilisation_task	float_to_int	Unknown	tmp < 32768
+sw/airborne/autopilot	main.c	582	stabilisation_task	is_nan_or_infinite	Unknown	\is_finite(tmp)
+sw/airborne/autopilot	main.c	608	send_gps_pos	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	615	send_radIR	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	main.c	620	send_takeOff	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/airborne/autopilot	main.c	623	send_takeOff	index_bound	Unknown	tx_tail < 255
+sw/airborne/autopilot	nav.c	130	approaching	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/airborne/autopilot	nav.c	159	route_to	is_nan	Unknown	¬\is_NaN(\div_float(\add_float(\mul_float(\sub_float(estimator_x, last_wp_x), leg_x), \mul_float(\sub_float(estimator_y, last_wp_y), leg_y)), leg2))
+sw/airborne/autopilot	nav.c	162	route_to	is_nan	Unknown	¬\is_NaN(\add_double((double)alpha, tmp_0))
+sw/airborne/autopilot	nav.c	162	route_to	is_nan	Unknown	¬\is_NaN(\div_float(carrot, leg))
+sw/airborne/autopilot	nav.c	164	route_to	is_nan	Unknown	¬\is_NaN(\mul_float(alpha, leg_x))
+sw/airborne/autopilot	nav.c	164	route_to	is_nan	Unknown	¬\is_NaN(\mul_float(alpha, leg_y))
+sw/airborne/autopilot	nav.c	181	nav_home	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/airborne/autopilot	nav.c	181	nav_home	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/airborne/autopilot	nav.c	181	nav_home	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/airborne/autopilot	nav.c	181	nav_home	precondition of pp_sin	Unknown	\is_finite(x)
+sw/airborne/autopilot	pid.c	54	roll_pitch_pid_run	float_to_int	Unknown	-32769 < tmp
+sw/airborne/autopilot	pid.c	54	roll_pitch_pid_run	float_to_int	Unknown	tmp < 32768
+sw/airborne/autopilot	pid.c	54	roll_pitch_pid_run	is_nan_or_infinite	Unknown	\is_finite(tmp)
+sw/airborne/autopilot	pid.c	57	roll_pitch_pid_run	is_nan	Unknown	¬\is_NaN(\mul_float(pitch_of_roll, tmp_0))
+sw/airborne/autopilot	pid.c	58	roll_pitch_pid_run	float_to_int	Unknown	-32769 < tmp_1
+sw/airborne/autopilot	pid.c	58	roll_pitch_pid_run	float_to_int	Unknown	tmp_1 < 32768
+sw/airborne/autopilot	pid.c	58	roll_pitch_pid_run	is_nan_or_infinite	Unknown	\is_finite(tmp_1)
+sw/airborne/autopilot	pid.c	114	climb_pid_run	float_to_int	Unknown	-32769 < tmp
+sw/airborne/autopilot	pid.c	114	climb_pid_run	float_to_int	Unknown	tmp < 32768
+sw/lib/c	pp_math.c	34	pp_atan2	is_nan	Unknown	¬\is_NaN(\div_double(\sub_double(x, abs_y), \add_double(x, abs_y)))
+sw/lib/c	pp_math.c	34	pp_atan2	is_nan	Unknown	¬\is_NaN(\sub_double(x, abs_y))
+sw/lib/c	pp_math.c	39	pp_atan2	is_nan	Unknown	¬\is_NaN(\div_double(\add_double(x, abs_y), \sub_double(abs_y, x)))
+sw/lib/c	pp_math.c	54	pp_sin	precondition	Unknown	\is_finite(x)
+sw/lib/c	pp_math.c	91	pp_sqrt	is_nan	Unknown	¬\is_NaN(\add_double((double)x, \div_double(n, (double)x)))
+sw/lib/c	pp_math.c	91	pp_sqrt	is_nan	Unknown	¬\is_NaN(\div_double(n, (double)x))
+sw/var/include	flight_plan.h	423	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	423	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	423	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	423	auto_nav	precondition of pp_sin	Unknown	\is_finite(x)
+sw/var/include	flight_plan.h	445	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	445	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	445	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	445	auto_nav	precondition of pp_sin	Unknown	\is_finite(x)
+sw/var/include	flight_plan.h	472	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	472	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	472	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	472	auto_nav	precondition of pp_sin	Unknown	\is_finite(x)
+sw/var/include	flight_plan.h	484	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	484	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	484	auto_nav	is_nan	Unknown	¬\is_NaN(estimator_hspeed_mod)
+sw/var/include	flight_plan.h	484	auto_nav	precondition of pp_sin	Unknown	\is_finite(x)

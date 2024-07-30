@@ -1,0 +1,100 @@
+[kernel] Parsing /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot8ebace.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[variadic:typing] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:109: Warning: 
+  Incorrect type for argument 2. The argument will be cast from uint64_t to int.
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  p[0..49] ∈ {0}
+[eva] using specification for function Frama_C_make_unknown
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:125: 
+  starting to merge loop iterations
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:123: Warning: 
+  loop invariant got status unknown.
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:48: 
+  starting to merge loop iterations
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:45: Warning: 
+  loop invariant got status unknown.
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:50: Warning: 
+  accessing out of bounds index. assert child_id < 10;
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:50: Warning: 
+  out of bounds read. assert \valid_read(buf + *offset);
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:29: Warning: 
+  function parse: postcondition got status unknown.
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:35: Warning: 
+  out of bounds read. assert \valid_read(buf + *offset);
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:134: Warning: 
+  function print_diff_child_age: precondition valid_person(p_id) got status unknown.
+[eva] using specification for function printf_va_1
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:72: Warning: 
+  accessing out of bounds index. assert p[p_id].children[i] < 50;
+[eva] using specification for function printf_va_2
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:71: 
+  starting to merge loop iterations
+[eva] using specification for function printf_va_3
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  starting to merge loop iterations
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:72: Warning: 
+  accessing out of bounds index. assert i < 10;
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:102: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function sum_age
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:102: Warning: 
+  loop invariant got status unknown.
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:105: 
+  starting to merge loop iterations
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:100: Warning: 
+  loop invariant got status unknown.
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:101: Warning: 
+  loop invariant got status unknown.
+[eva] using specification for function printf_va_4
+[eva] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:89: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function sum_age
+[eva:alarm] /Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:89: Warning: 
+  function compute_sum_age: postcondition got status unknown.
+[eva] done for function main
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function parse:
+  p[0..49] ∈ [--..--]
+  offset ∈ [1..32767]
+  __retres ∈ {-1; 0}
+[eva:final-states] Values at end of function print_diff_child_age:
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function compute_sum_age:
+  __retres ∈ [0..12750]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function run:
+  p[0..49] ∈ [--..--]
+  offset ∈ [0..32767]
+  p_nb ∈ [0..50]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function main:
+  Frama_C_entropy_source ∈ [--..--]
+  p[0..49] ∈ [--..--]
+  buf[0..99] ∈ [--..--]
+  len ∈ {100}
+  __retres ∈ {0}
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  5 functions analyzed (out of 7): 71% coverage.
+  In these functions, 89 statements reached (out of 89): 100% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  5 alarms generated by the analysis:
+       3 accesses out of bounds index
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     5 unknown     0 invalid      5 total
+    Preconditions     7 valid     1 unknown     0 invalid      8 total
+  53% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m0.936s
+user	0m0.899s
+sys	0m0.029s

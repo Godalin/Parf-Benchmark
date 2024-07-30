@@ -1,0 +1,25 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+Traceback (most recent call last):
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/./frama-c-sv.py", line 532, in <module>
+    property_ = Property.from_text(property_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/./frama-c-sv.py", line 162, in from_text
+    raise ValueError("unknown property %s" % property_text)
+ValueError: unknown property format_version: '2.0'
+
+# old file name: fibo_2calls_25_false-unreach-call.c
+input_files: 'fibo_2calls_25-1.c'
+
+properties:
+  - property_file: ../properties/unreach-call.prp
+    expected_verdict: false
+
+options:
+  language: C
+  data_model: ILP32
+
+
+real	0m0.236s
+user	0m0.448s
+sys	0m0.989s

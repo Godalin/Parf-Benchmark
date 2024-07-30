@@ -1,0 +1,200 @@
+default:
+  image: framac/frama-c:dev-stripped
+
+variables:
+  GIT_CLEAN_FLAGS: none #each use case cleans its own directory
+
+.make_job: &make_job
+  tags:
+    - docker
+  script:
+    - make -C $TARGET/.frama-c clean
+    - make $TARGET
+    # note: the command below is needed due to recent git releases, which
+    #       enforce stricter permission controls w.r.t to ownership of '.git'.
+    - git config --global --add safe.directory $PWD
+    - git diff --exit-code $TARGET
+    - make $TARGET.sarif
+  artifacts:
+    paths:
+    - "$TARGET/.frama-c/*.sarif"
+
+_2048:
+  variables:
+    TARGET: 2048
+  <<: *make_job
+
+basic-cwe-examples:
+  variables:
+    TARGET: basic-cwe-examples
+  <<: *make_job
+
+bench-moerman2018:
+  variables:
+    TARGET: bench-moerman2018
+  <<: *make_job
+
+cerberus:
+  variables:
+    TARGET: cerberus
+  <<: *make_job
+
+chrony:
+  variables:
+    TARGET: chrony
+  <<: *make_job
+
+c-testsuite:
+  variables:
+    TARGET: c-testsuite
+  <<: *make_job
+
+debie1:
+  variables:
+    TARGET: debie1
+  <<: *make_job
+
+genann:
+  variables:
+    TARGET: genann
+  <<: *make_job
+
+gzip124:
+  variables:
+    TARGET: gzip124
+  <<: *make_job
+
+hiredis:
+  variables:
+    TARGET: hiredis
+  <<: *make_job
+
+icpc:
+  variables:
+    TARGET: icpc
+  <<: *make_job
+
+ioccc:
+  variables:
+    TARGET: ioccc
+  <<: *make_job
+
+itc-benchmarks:
+  variables:
+    TARGET: itc-benchmarks
+  <<: *make_job
+
+jsmn:
+  variables:
+    TARGET: jsmn
+  <<: *make_job
+
+kgflags:
+  variables:
+    TARGET: kgflags
+  <<: *make_job
+
+khash:
+  variables:
+    TARGET: khash
+  <<: *make_job
+
+kilo:
+  variables:
+    TARGET: kilo
+  <<: *make_job
+
+libmodbus:
+  variables:
+    TARGET: libmodbus
+  <<: *make_job
+
+libspng:
+  variables:
+    TARGET: libspng
+  <<: *make_job
+
+libyaml:
+  variables:
+    TARGET: libyaml
+  <<: *make_job
+
+line-following-robot:
+  variables:
+    TARGET: line-following-robot
+  <<: *make_job
+
+microstrain:
+  variables:
+    TARGET: microstrain
+  <<: *make_job
+
+mini-gmp:
+  variables:
+    TARGET: mini-gmp
+  <<: *make_job
+
+miniz:
+  variables:
+    TARGET: miniz
+  <<: *make_job
+
+monocypher:
+  variables:
+    TARGET: monocypher
+  <<: *make_job
+
+papabench:
+  variables:
+    TARGET: papabench
+  <<: *make_job
+
+polarssl:
+  variables:
+    TARGET: polarssl
+  <<: *make_job
+
+qlz:
+  variables:
+    TARGET: qlz
+  <<: *make_job
+
+safestringlib:
+  variables:
+    TARGET: safestringlib
+  <<: *make_job
+
+semver:
+  variables:
+    TARGET: semver
+  <<: *make_job
+
+solitaire:
+  variables:
+    TARGET: solitaire
+  <<: *make_job
+
+stmr:
+  variables:
+    TARGET: stmr
+  <<: *make_job
+
+tsvc:
+  variables:
+    TARGET: tsvc
+  <<: *make_job
+
+tweetnacl-usable:
+  variables:
+    TARGET: tweetnacl-usable
+  <<: *make_job
+
+verisec:
+  variables:
+    TARGET: verisec
+  <<: *make_job
+
+x509-parser:
+  variables:
+    TARGET: x509-parser
+  <<: *make_job

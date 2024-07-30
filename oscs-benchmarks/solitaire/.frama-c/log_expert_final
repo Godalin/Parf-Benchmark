@@ -1,0 +1,376 @@
+[kernel] Parsing solitaire.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot6f3151.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 4.
+  option -eva-auto-loop-unroll set to 1024.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 2.
+  option -eva-slevel set to 5000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 2000.
+  option -eva-subdivide-non-linear set to 220.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  state ∈ {0}
+  verbose ∈ {0}
+  lastout ∈ {0}
+  cocount ∈ {0}
+  nondet ∈ [--..--]
+[eva:alarm] solitaire.c:267: Warning: 
+  signed overflow. assert -2147483648 ≤ argc - 1;
+[eva] using specification for function printf_va_3
+[eva:alarm] solitaire.c:273: Warning: 
+  out of bounds read. assert \valid_read(av);
+[eva] using specification for function strcmp
+[eva:alarm] solitaire.c:273: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:156: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva:alarm] solitaire.c:275: Warning: 
+  out of bounds read. assert \valid_read(av);
+[eva:alarm] solitaire.c:275: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva:alarm] solitaire.c:278: Warning: 
+  out of bounds read. assert \valid_read(av);
+[eva] using specification for function printf_va_4
+[eva:alarm] solitaire.c:278: Warning: 
+  function printf_va_4: precondition valid_read_string(param0) got status unknown.
+[eva] using specification for function exit
+[eva:alarm] solitaire.c:283: Warning: 
+  out of bounds read. assert \valid_read(av + 0);
+[eva:alarm] solitaire.c:213: Warning: 
+  out of bounds read. assert \valid_read(key);
+[eva] using specification for function __FC_assert
+[eva:loop-unroll:partial] solitaire.c:131: loop not completely unrolled
+[eva:alarm] solitaire.c:214: Warning: 
+  out of bounds read. assert \valid_read(key);
+[eva:alarm] solitaire.c:214: Warning: 
+  out of bounds read. assert \valid_read(key);
+[eva:alarm] solitaire.c:67: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] solitaire.c:68: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] solitaire.c:69: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:loop-unroll:partial] solitaire.c:107: loop not completely unrolled
+[eva:alarm] solitaire.c:107: Warning: 
+  out of bounds write. assert \valid(tmp_3);
+                       (tmp_3 from d++)
+[eva] solitaire.c:107: Trace partitioning superposing up to 100 states
+[eva] solitaire.c:111: Trace partitioning superposing up to 200 states
+[eva] solitaire.c:111: Trace partitioning superposing up to 300 states
+[eva:loop-unroll:partial] solitaire.c:111: loop not completely unrolled
+[eva] solitaire.c:111: Trace partitioning superposing up to 400 states
+[eva] solitaire.c:111: Trace partitioning superposing up to 500 states
+[eva] solitaire.c:111: Trace partitioning superposing up to 600 states
+[eva] solitaire.c:111: Trace partitioning superposing up to 700 states
+[eva] solitaire.c:111: Trace partitioning superposing up to 800 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 1300 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 1900 states
+[eva:alarm] solitaire.c:114: Warning: 
+  out of bounds write. assert \valid(tmp_8);
+                       (tmp_8 from d++)
+[eva] solitaire.c:114: Trace partitioning superposing up to 2500 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 3100 states
+[eva:loop-unroll:partial] solitaire.c:114: loop not completely unrolled
+[eva] solitaire.c:114: Trace partitioning superposing up to 3600 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 4100 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 4500 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 4900 states
+[eva] solitaire.c:114: Trace partitioning superposing up to 5200 states
+[eva] solitaire.c:114: starting to merge loop iterations
+[eva] solitaire.c:117: Trace partitioning superposing up to 7900 states
+[eva:loop-unroll:partial] solitaire.c:117: loop not completely unrolled
+[eva] solitaire.c:117: starting to merge loop iterations
+[eva:loop-unroll:partial] solitaire.c:124: loop not completely unrolled
+[eva:alarm] solitaire.c:124: Warning: 
+  out of bounds write. assert \valid(tmp_12);
+                       (tmp_12 from d++)
+[eva:alarm] solitaire.c:128: Warning: 
+  out of bounds write. assert \valid(tmp_15);
+                       (tmp_15 from d++)
+[eva:loop-unroll:partial] solitaire.c:128: loop not completely unrolled
+[eva] solitaire.c:131: starting to merge loop iterations
+[eva:alarm] solitaire.c:134: Warning: 
+  out of bounds write. assert \valid(tmp_19);
+                       (tmp_19 from d++)
+[eva:loop-unroll:partial] solitaire.c:134: loop not completely unrolled
+[eva] solitaire.c:134: starting to merge loop iterations
+[eva:alarm] solitaire.c:146: Warning: 
+  out of bounds write. assert \valid(tmp_21);
+                       (tmp_21 from d++)
+[eva:loop-unroll:partial] solitaire.c:146: loop not completely unrolled
+[eva:loop-unroll:partial] solitaire.c:149: loop not completely unrolled
+[eva] solitaire.c:151: 
+  The evaluation of the expression state.spare + ((53 - nccut) + nlo)
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva:alarm] solitaire.c:153: Warning: 
+  out of bounds write. assert \valid(tmp_26);
+                       (tmp_26 from d++)
+[eva:loop-unroll:partial] solitaire.c:153: loop not completely unrolled
+[eva] solitaire.c:153: starting to merge loop iterations
+[eva:alarm] solitaire.c:156: Warning: 
+  out of bounds write. assert \valid(tmp_28);
+                       (tmp_28 from d++)
+[eva:loop-unroll:partial] solitaire.c:156: loop not completely unrolled
+[eva:alarm] solitaire.c:217: Warning: 
+  out of bounds read. assert \valid_read(key);
+[eva] solitaire.c:219: Trace partitioning superposing up to 100 states
+[eva] solitaire.c:219: Trace partitioning superposing up to 200 states
+[eva] solitaire.c:219: Trace partitioning superposing up to 300 states
+[eva:alarm] solitaire.c:284: Warning: 
+  out of bounds read. assert \valid_read(av + 1);
+[eva] done for function main
+[eva] solitaire.c:284: assertion 'Eva,mem_access' got final status invalid.
+[scope:rm_asserts] removing 5 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function cycle_deck:
+  state.a ∈ [0..76]
+       .b ∈ [0..78]
+       .deck ∈ {{ &state.deck2[3] }}
+       .spare ∈ {{ &state.deck1[3] }}
+       .deck1[0..1] ∈ {0}
+       .deck1[2] ∈ {1}
+       .deck1[3] ∈ [3..28] ∪ {53}
+       .deck1[4] ∈ {2} ∪ [4..29]
+       .deck1[5] ∈ {3} ∪ [5..30]
+       .deck1[6] ∈ {4} ∪ [6..31]
+       .deck1[7] ∈ {5} ∪ [7..32]
+       .deck1[8] ∈ {6} ∪ [8..33]
+       .deck1[9] ∈ {7} ∪ [9..34]
+       .deck1[10] ∈ {8} ∪ [10..35]
+       .deck1[11] ∈ {9} ∪ [11..36]
+       .deck1[12] ∈ {10} ∪ [12..37]
+       .deck1[13] ∈ {11} ∪ [13..38]
+       .deck1[14] ∈ {12} ∪ [14..39]
+       .deck1[15] ∈ {13} ∪ [15..40]
+       .deck1[16] ∈ {14} ∪ [16..41]
+       .deck1[17] ∈ {15} ∪ [17..42]
+       .deck1[18] ∈ {16} ∪ [18..43]
+       .deck1[19] ∈ {17} ∪ [19..44]
+       .deck1[20] ∈ {18} ∪ [20..45]
+       .deck1[21] ∈ {19} ∪ [21..46]
+       .deck1[22] ∈ {20} ∪ [22..47]
+       .deck1[23] ∈ {21} ∪ [23..48]
+       .deck1[24] ∈ {22} ∪ [24..49]
+       .deck1[25] ∈ {23} ∪ [25..50]
+       .deck1[26] ∈ {24} ∪ [26..51]
+       .deck1[27] ∈ {25} ∪ [27..52]
+       .deck1[28] ∈ [2..26] ∪ [28..53]
+       .deck1[29] ∈ [2..27] ∪ [29..53]
+       .deck1[30] ∈ [1..53]
+       .deck1[31..55] ∈ [1..27] ∪ [29..53]
+       .deck1[56] ∈ {1; 53}
+       .deck2[0..2] ∈ {0}
+       .deck2[3..56] ∈ [1..53]
+  lastout ∈ [0..25]
+  cocount ∈ {0; 1}
+  rounds ∈ {-1; 0}
+  source ∈ {{ &state.deck1[3] }}
+  s ∈ {{ &state{.deck1[56], .deck2[0]} }}
+  sb ∈ {{ &state{.deck1[56], .deck2[0]} }}
+  d ∈ {{ &state + [264..--],0%4 }}
+  lo ∈ {1} ∪ [25..51]
+  hi ∈ [28..54]
+  nlo ∈ [0..26]
+  nhi ∈ [3..29] ∪ {53}
+  nccut ∈ [1..53]
+  output ∈ [0..25] ∪ {53}
+[eva:final-states] Values at end of function key_deck:
+  state.a ∈ [25..50] ∪ {52}
+       .b ∈ [26..51] ∪ {53}
+       .deck ∈ {{ &state.deck1[3] }}
+       .spare ∈ {{ &state.deck2[3] }}
+       .deck1[0..1] ∈ {0}
+       .deck1[2] ∈ {0; 1}
+       .deck1[3] ∈ {1} ∪ [3..28]
+       .deck1[4] ∈ {2} ∪ [4..29]
+       .deck1[5] ∈ {3} ∪ [5..30]
+       .deck1[6] ∈ {4} ∪ [6..31]
+       .deck1[7] ∈ {5} ∪ [7..32]
+       .deck1[8] ∈ {6} ∪ [8..33]
+       .deck1[9] ∈ {7} ∪ [9..34]
+       .deck1[10] ∈ {8} ∪ [10..35]
+       .deck1[11] ∈ {9} ∪ [11..36]
+       .deck1[12] ∈ {10} ∪ [12..37]
+       .deck1[13] ∈ {11} ∪ [13..38]
+       .deck1[14] ∈ {12} ∪ [14..39]
+       .deck1[15] ∈ {13} ∪ [15..40]
+       .deck1[16] ∈ {14} ∪ [16..41]
+       .deck1[17] ∈ {15} ∪ [17..42]
+       .deck1[18] ∈ {16} ∪ [18..43]
+       .deck1[19] ∈ {17} ∪ [19..44]
+       .deck1[20] ∈ {18} ∪ [20..45]
+       .deck1[21] ∈ {19} ∪ [21..46]
+       .deck1[22] ∈ {20} ∪ [22..47]
+       .deck1[23] ∈ {21} ∪ [23..48]
+       .deck1[24] ∈ {22} ∪ [24..49]
+       .deck1[25] ∈ {23} ∪ [25..50]
+       .deck1[26] ∈ {24} ∪ [26..51]
+       .deck1[27] ∈ {25} ∪ [27..52]
+       .deck1[28] ∈ {26} ∪ [28..53]
+       .deck1[29] ∈ {27} ∪ [29..53]
+       .deck1[30] ∈ {2; 28} ∪ [30..53]
+       .deck1[31] ∈ {2; 3; 29} ∪ [31..53]
+       .deck1[32] ∈ {2; 3; 4; 30} ∪ [32..53]
+       .deck1[33] ∈ [2..5] ∪ {31} ∪ [33..53]
+       .deck1[34] ∈ [2..6] ∪ {32} ∪ [34..53]
+       .deck1[35] ∈ [2..7] ∪ {33} ∪ [35..53]
+       .deck1[36] ∈ [2..8] ∪ {34} ∪ [36..53]
+       .deck1[37] ∈ [2..9] ∪ {35} ∪ [37..53]
+       .deck1[38] ∈ [2..10] ∪ {36} ∪ [38..53]
+       .deck1[39] ∈ [2..11] ∪ {37} ∪ [39..53]
+       .deck1[40] ∈ [2..12] ∪ {38} ∪ [40..53]
+       .deck1[41] ∈ [2..13] ∪ {39} ∪ [41..53]
+       .deck1[42] ∈ [2..14] ∪ {40} ∪ [42..53]
+       .deck1[43] ∈ [2..15] ∪ {41} ∪ [43..53]
+       .deck1[44] ∈ [2..16] ∪ {42} ∪ [44..53]
+       .deck1[45] ∈ [2..17] ∪ {43} ∪ [45..53]
+       .deck1[46] ∈ [2..18] ∪ {44} ∪ [46..53]
+       .deck1[47] ∈ [2..19] ∪ {45} ∪ [47..53]
+       .deck1[48] ∈ [2..20] ∪ {46} ∪ [48..53]
+       .deck1[49] ∈ [2..21] ∪ {47} ∪ [49..53]
+       .deck1[50] ∈ [2..22] ∪ {48} ∪ [50..53]
+       .deck1[51] ∈ [2..23] ∪ {49; 51; 52; 53}
+       .deck1[52] ∈ [2..24] ∪ {50; 52; 53}
+       .deck1[53] ∈ [2..25] ∪ {51; 53}
+       .deck1[54] ∈ [2..26] ∪ {52; 53}
+       .deck1[55] ∈ [2..27] ∪ {53}
+       .deck1[56] ∈ {1; 53}
+       .deck2[0..2] ∈ {0}
+       .deck2[3] ∈ {0; 2}
+       .deck2[4] ∈ {0; 3}
+       .deck2[5] ∈ {0; 4}
+       .deck2[6] ∈ {0; 5}
+       .deck2[7] ∈ {0; 6}
+       .deck2[8] ∈ {0; 7}
+       .deck2[9] ∈ {0; 8}
+       .deck2[10] ∈ {0; 9}
+       .deck2[11] ∈ {0; 10}
+       .deck2[12] ∈ {0; 11}
+       .deck2[13] ∈ {0; 12}
+       .deck2[14] ∈ {0; 13}
+       .deck2[15] ∈ {0; 14}
+       .deck2[16] ∈ {0; 15}
+       .deck2[17] ∈ {0; 16}
+       .deck2[18] ∈ {0; 17}
+       .deck2[19] ∈ {0; 18}
+       .deck2[20] ∈ {0; 19}
+       .deck2[21] ∈ {0; 20}
+       .deck2[22] ∈ {0; 21}
+       .deck2[23] ∈ {0; 22}
+       .deck2[24] ∈ {0; 23}
+       .deck2[25] ∈ {0; 24}
+       .deck2[26] ∈ {0; 25}
+       .deck2[27] ∈ {0; 26}
+       .deck2[28] ∈ {0; 27}
+       .deck2[29] ∈ {0; 28}
+       .deck2[30] ∈ {0; 29}
+       .deck2[31] ∈ {0; 30}
+       .deck2[32] ∈ {0; 31}
+       .deck2[33] ∈ {0; 32}
+       .deck2[34] ∈ {0; 33}
+       .deck2[35] ∈ {0; 34}
+       .deck2[36] ∈ {0; 35}
+       .deck2[37] ∈ {0; 36}
+       .deck2[38] ∈ {0; 37}
+       .deck2[39] ∈ {0; 38}
+       .deck2[40] ∈ {0; 39}
+       .deck2[41] ∈ {0; 40}
+       .deck2[42] ∈ {0; 41}
+       .deck2[43] ∈ {0; 42}
+       .deck2[44] ∈ {0; 43}
+       .deck2[45] ∈ {0; 44}
+       .deck2[46] ∈ {0; 45}
+       .deck2[47] ∈ {0; 46}
+       .deck2[48] ∈ {0; 47}
+       .deck2[49] ∈ {0; 48}
+       .deck2[50] ∈ {0; 49}
+       .deck2[51] ∈ {0; 50}
+       .deck2[52] ∈ {0; 51}
+       .deck2[53] ∈ {0; 52}
+       .deck2[54..55] ∈ {0; 53}
+       .deck2[56] ∈ {0; 1}
+  lastout ∈ {100}
+  cocount ∈ {0}
+  key ∈ {{ &S_1_S_argv{[0], [1]} }}
+  i ∈ {52; 53}
+  kval ∈ [1..26] or UNINITIALIZED
+  tmp ∈ {{ &state.deck2[3] }} or UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  NON TERMINATING FUNCTION
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  3 functions analyzed (out of 6): 50% coverage.
+  In these functions, 285 statements reached (out of 364): 78% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  18 alarms generated by the analysis:
+      17 invalid memory accesses
+       1 integer overflow
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions     4 valid     6 unknown     0 invalid     10 total
+  40% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	1m12.571s
+user	1m11.997s
+sys	0m0.165s

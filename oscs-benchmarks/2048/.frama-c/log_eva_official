@@ -1,0 +1,329 @@
+[kernel] Parsing 2048.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot98f426.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[variadic:typing] 2048.c:46: Warning: 
+  Incorrect type for argument 2. The argument will be cast from uint32_t to int.
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  score ∈ {0}
+  scheme ∈ {0}
+  addRandom_initialized ∈ {0}
+  setBufferedInput_enabled ∈ {1}
+  setBufferedInput_old ∈ {0}
+[eva] using specification for function printf_va_30
+[eva] using specification for function signal
+[eva] using specification for function time
+[eva] using specification for function srand
+[eva] using specification for function rand
+[eva:alarm] 2048.c:249: Warning: 
+  accessing uninitialized left-value. assert \initialized(&list[r][0]);
+[eva:alarm] 2048.c:250: Warning: 
+  accessing uninitialized left-value. assert \initialized(&list[r][1]);
+[eva] using specification for function printf_va_1
+[eva] using specification for function printf_va_2
+[eva] 2048.c:31: starting to merge loop iterations
+[eva:alarm] 2048.c:37: Warning: 
+  out of bounds read. assert \valid_read(foreground);
+[eva] using specification for function snprintf_va_1
+[eva] using specification for function printf_va_3
+[eva:alarm] 2048.c:51: Warning: 
+  function printf_va_3: precondition valid_read_string(param0) got status unknown.
+[eva] using specification for function printf_va_4
+[eva] using specification for function printf_va_5
+[eva] 2048.c:49: starting to merge loop iterations
+[eva] using specification for function printf_va_6
+[eva] using specification for function printf_va_7
+[eva:alarm] 2048.c:58: Warning: 
+  function printf_va_7: precondition valid_read_string(param0) got status unknown.
+[eva] using specification for function snprintf_va_2
+[eva:alarm] 2048.c:62: Warning: 
+  function strlen: precondition 'valid_string_s' got status unknown.
+[eva] using specification for function printf_va_8
+[eva:alarm] 2048.c:63: Warning: 
+  function printf_va_8: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function printf_va_9
+[eva] using specification for function printf_va_10
+[eva] 2048.c:56: starting to merge loop iterations
+[eva] using specification for function printf_va_11
+[eva] using specification for function printf_va_12
+[eva:alarm] 2048.c:72: Warning: 
+  function printf_va_12: precondition valid_read_string(param0) got status unknown.
+[eva] using specification for function printf_va_13
+[eva] using specification for function printf_va_14
+[eva] 2048.c:70: starting to merge loop iterations
+[eva] using specification for function printf_va_15
+[eva] 2048.c:48: starting to merge loop iterations
+[eva] using specification for function printf_va_16
+[eva] using specification for function printf_va_17
+[eva] using specification for function printf_va_18
+[eva] using specification for function tcgetattr
+[eva:alarm] 2048.c:287: Warning: 
+  accessing uninitialized left-value. assert \initialized(&new.c_lflag);
+[eva] using specification for function tcsetattr
+[eva] using specification for function getchar
+[eva] 2048.c:139: starting to merge loop iterations
+[eva] 2048.c:138: starting to merge loop iterations
+[eva] 2048.c:111: starting to merge loop iterations
+[eva] 2048.c:89: starting to merge loop iterations
+[eva:alarm] 2048.c:90: Warning: 
+  out of bounds read. assert \valid_read(array + t);
+[eva:alarm] 2048.c:123: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ (int)*(array + t) < 32;
+[eva] 2048.c:152: starting to merge loop iterations
+[eva:alarm] 2048.c:61: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ (int)(*(board + x))[y] < 32;
+[eva] using specification for function usleep
+[eva] 2048.c:203: starting to merge loop iterations
+[eva] 2048.c:202: starting to merge loop iterations
+[eva] 2048.c:192: starting to merge loop iterations
+[eva] 2048.c:191: starting to merge loop iterations
+[eva] using specification for function printf_va_32
+[eva] using specification for function printf_va_33
+[eva] 2048.c:387: starting to merge loop iterations
+[eva] using specification for function printf_va_31
+[eva] using specification for function printf_va_34
+[eva] done for function main
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function countEmpty:
+  x ∈ {4}
+  y ∈ {4} or UNINITIALIZED
+  count ∈ [--..--]
+[eva:final-states] Values at end of function findPairDown:
+  success ∈ {0}
+  x ∈ {0; 1; 2; 3; 4}
+  y ∈ {0; 1; 2; 3} or UNINITIALIZED
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function findTarget:
+  t ∈ {0; 1; 2} or UNINITIALIZED
+  __retres ∈ {0; 1; 2; 3}
+[eva:final-states] Values at end of function rotateBoard:
+  i ∈ {2}
+  j ∈ {2; 3} or UNINITIALIZED
+  n ∈ {4}
+  tmp ∈ [--..--] or UNINITIALIZED
+  board[0..3][0..3] ∈ [--..--]
+[eva:final-states] Values at end of function gameEnded:
+  ended ∈ {0; 1}
+  board[0..3][0..3] ∈ [--..--]
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function slideArray:
+  score ∈ [--..--]
+  success ∈ {0; 1}
+  x ∈ {4}
+  t ∈ {0; 1; 2; 3} or UNINITIALIZED
+  stop ∈ {0; 1; 2; 3; 4}
+  board[0..3][0..3] ∈ [--..--]
+[eva:final-states] Values at end of function moveUp:
+  score ∈ [--..--]
+  success ∈ {0; 1}
+  x ∈ {4}
+  board[0..3][0..3] ∈ [--..--]
+[eva:final-states] Values at end of function moveDown:
+  score ∈ [--..--]
+  success ∈ {0; 1}
+  board[0..3][0..3] ∈ [--..--]
+[eva:final-states] Values at end of function moveLeft:
+  score ∈ [--..--]
+  success ∈ {0; 1}
+  board[0..3][0..3] ∈ [--..--]
+[eva:final-states] Values at end of function moveRight:
+  score ∈ [--..--]
+  success ∈ {0; 1}
+  board[0..3][0..3] ∈ [--..--]
+[eva:final-states] Values at end of function getColor:
+  value ∈ [--..--]
+  original[0] ∈ {8}
+          [1] ∈ {255}
+          [2] ∈ {1}
+          [3] ∈ {255}
+          [4] ∈ {2}
+          [5] ∈ {255}
+          [6] ∈ {3}
+          [7] ∈ {255}
+          [8] ∈ {4}
+          [9] ∈ {255}
+          [10] ∈ {5}
+          [11] ∈ {255}
+          [12] ∈ {6}
+          [13] ∈ {255}
+          [14] ∈ {7}
+          [15] ∈ {255}
+          [16] ∈ {9}
+          [17] ∈ {0}
+          [18] ∈ {10}
+          [19] ∈ {0}
+          [20] ∈ {11}
+          [21] ∈ {0}
+          [22] ∈ {12}
+          [23] ∈ {0}
+          [24] ∈ {13}
+          [25] ∈ {0}
+          [26] ∈ {14}
+          [27] ∈ {0}
+          [28] ∈ {255}
+          [29] ∈ {0}
+          [30] ∈ {255}
+          [31] ∈ {0}
+  blackwhite[0] ∈ {232}
+            [1] ∈ {255}
+            [2] ∈ {234}
+            [3] ∈ {255}
+            [4] ∈ {236}
+            [5] ∈ {255}
+            [6] ∈ {238}
+            [7] ∈ {255}
+            [8] ∈ {240}
+            [9] ∈ {255}
+            [10] ∈ {242}
+            [11] ∈ {255}
+            [12] ∈ {244}
+            [13] ∈ {255}
+            [14] ∈ {246}
+            [15] ∈ {0}
+            [16] ∈ {248}
+            [17] ∈ {0}
+            [18] ∈ {249}
+            [19] ∈ {0}
+            [20] ∈ {250}
+            [21] ∈ {0}
+            [22] ∈ {251}
+            [23] ∈ {0}
+            [24] ∈ {252}
+            [25] ∈ {0}
+            [26] ∈ {253}
+            [27] ∈ {0}
+            [28] ∈ {254}
+            [29] ∈ {0}
+            [30] ∈ {255}
+            [31] ∈ {0}
+  bluered[0] ∈ {235}
+         [1] ∈ {255}
+         [2] ∈ {63}
+         [3] ∈ {255}
+         [4] ∈ {57}
+         [5] ∈ {255}
+         [6] ∈ {93}
+         [7] ∈ {255}
+         [8] ∈ {129}
+         [9] ∈ {255}
+         [10] ∈ {165}
+         [11] ∈ {255}
+         [12] ∈ {201}
+         [13] ∈ {255}
+         [14] ∈ {200}
+         [15] ∈ {255}
+         [16] ∈ {199}
+         [17] ∈ {255}
+         [18] ∈ {198}
+         [19] ∈ {255}
+         [20] ∈ {197}
+         [21] ∈ {255}
+         [22] ∈ {196}
+         [23] ∈ {255}
+         [24] ∈ {196}
+         [25] ∈ {255}
+         [26] ∈ {196}
+         [27] ∈ {255}
+         [28] ∈ {196}
+         [29] ∈ {255}
+         [30] ∈ {196}
+         [31] ∈ {255}
+  schemes[0] ∈ {{ &original[0] }}
+         [1] ∈ {{ &blackwhite[0] }}
+         [2] ∈ {{ &bluered[0] }}
+  background ∈ {{ &original + [0..30],0%2 }}
+  foreground ∈ {{ &original + [1..31],1%2 }}
+  color[0..39] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function drawBoard:
+  x ∈ {4} or UNINITIALIZED
+  y ∈ {4}
+  color[0..39] ∈ [--..--] or UNINITIALIZED
+  reset[0] ∈ {27}
+       [1] ∈ {91}
+       [2] ∈ {109}
+       [3] ∈ {0}
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function setBufferedInput:
+  Frama_C_entropy_source ∈ [--..--]
+  new ∈ [--..--] or UNINITIALIZED
+  setBufferedInput_enabled ∈ {0; 1}
+  setBufferedInput_old ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function addRandom:
+  __fc_random_counter ∈ [--..--]
+  x ∈ {0; 1; 2; 3; 4}
+  y ∈ {0; 1; 2; 3; 4}
+  r ∈ [0..15] or UNINITIALIZED
+  len ∈ [0..16]
+  n ∈ {1; 2} or UNINITIALIZED
+  list[0..3][0..1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [4][0] ∈ {1; 2; 3} or UNINITIALIZED
+      [4][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [5][0] ∈ {1; 2; 3} or UNINITIALIZED
+      [5][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [6][0] ∈ {1; 2; 3} or UNINITIALIZED
+      [6][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [7][0] ∈ {1; 2; 3} or UNINITIALIZED
+      [7][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [8][0] ∈ {2; 3} or UNINITIALIZED
+      [8][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [9][0] ∈ {2; 3} or UNINITIALIZED
+      [9][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [10][0] ∈ {2; 3} or UNINITIALIZED
+      [10][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [11][0] ∈ {2; 3} or UNINITIALIZED
+      [11][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [12][0] ∈ {3} or UNINITIALIZED
+      [12][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [13][0] ∈ {3} or UNINITIALIZED
+      [13][1] ∈ {1; 2; 3} or UNINITIALIZED
+      [14][0] ∈ {3} or UNINITIALIZED
+      [14][1] ∈ {2; 3} or UNINITIALIZED
+      [15][0..1] ∈ {3} or UNINITIALIZED
+  board[0..3][0..3] ∈ [--..--]
+  addRandom_initialized ∈ {1}
+[eva:final-states] Values at end of function initBoard:
+  __fc_random_counter ∈ [--..--]
+  score ∈ {0}
+  x ∈ {4}
+  y ∈ {4}
+  board[0..3][0..3] ∈ {0; 1; 2}
+  addRandom_initialized ∈ {1}
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function main:
+  __fc_random_counter ∈ [--..--]
+  Frama_C_entropy_source ∈ [--..--]
+  score ∈ [--..--]
+  board[0..3][0..3] ∈ [--..--]
+  c ∈ [--..--]
+  success ∈ {0; 1}
+  addRandom_initialized ∈ {1}
+  setBufferedInput_enabled ∈ {1}
+  setBufferedInput_old ∈ [--..--] or UNINITIALIZED
+  __retres ∈ {0}
+  S___fc_stdin[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  16 functions analyzed (out of 18): 88% coverage.
+  In these functions, 326 statements reached (out of 329): 99% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  7 alarms generated by the analysis:
+       3 accesses to uninitialized left-values
+       2 invalid memory accesses
+       2 invalid shifts
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    36 valid     5 unknown     0 invalid     41 total
+  87% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.178s
+user	0m1.103s
+sys	0m0.037s

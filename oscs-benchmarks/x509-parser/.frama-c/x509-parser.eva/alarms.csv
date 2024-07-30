@@ -1,0 +1,666 @@
+directory	file	line	function	property kind	status	property
+src	x509-parser.c	49	bufs_differ	precondition	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	50	bufs_differ	precondition	Unknown	\valid_read(b2 + (0 .. n - 1))
+src	x509-parser.c	59	bufs_differ	loop invariant	Unknown	0 ≤ i ≤ n
+src	x509-parser.c	60	bufs_differ	loop invariant	Unknown	bmatch(b1, b2, i)
+src	x509-parser.c	64	bufs_differ	mem_access	Unknown	\valid_read(b1 + i)
+src	x509-parser.c	64	bufs_differ	mem_access	Unknown	\valid_read(b2 + i)
+src	x509-parser.c	89	_extract_complex_tag	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	95	_extract_complex_tag	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	97	_extract_complex_tag	postcondition	Unknown	\result ≡ 0 ⇒ 1 ≤ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	98	_extract_complex_tag	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	121	_extract_complex_tag	loop invariant	Unknown	∀ ℤ x; 0 ≤ x < rbytes ⇒ (*(buf + x) & 0x80) ≢ 0
+src	x509-parser.c	132	_extract_complex_tag	mem_access	Unknown	\valid_read(buf + rbytes)
+src	x509-parser.c	146	_extract_complex_tag	user assertion	Unknown	(*(buf + (len - 1)) & 0x80) ≢ 0
+src	x509-parser.c	182	get_identifier	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	190	get_identifier	postcondition	Unknown	\result ≡ 0 ⇒ 0 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	193	get_identifier	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	224	get_identifier	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	260	get_identifier	user assertion	Unknown	len ≥ rbytes ∧ len - rbytes ≤ 65535 ∧ \valid_read(buf + (rbytes .. len - 1))
+src	x509-parser.c	263	get_identifier	precondition of _extract_complex_tag	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	293	get_length	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	298	get_length	postcondition	Unknown	\result ≡ 0 ⇒ 0 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	299	get_length	postcondition	Unknown	\result ≡ 0 ⇒ *\old(adv_len) ≤ \old(len)
+src	x509-parser.c	300	get_length	postcondition	Unknown	\result ≡ 0 ⇒ *\old(adv_len) + *\old(eaten) ≤ \old(len)
+src	x509-parser.c	301	get_length	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	323	get_length	user assertion	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	346	get_length	user assertion	Unknown	*eaten + *adv_len ≤ len
+src	x509-parser.c	394	get_length	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	410	get_length	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	410	get_length	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	435	get_length	user assertion	Unknown	len ≥ rbytes
+src	x509-parser.c	442	get_length	user assertion	Unknown	rbytes + l ≤ len
+src	x509-parser.c	485	parse_id_len	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	490	parse_id_len	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(parsed) ≤ \old(len)
+src	x509-parser.c	491	parse_id_len	postcondition	Unknown	\result ≡ 0 ⇒ *\old(content_len) ≤ \old(len)
+src	x509-parser.c	492	parse_id_len	postcondition	Unknown	\result ≡ 0 ⇒ *\old(content_len) + *\old(parsed) ≤ \old(len)
+src	x509-parser.c	493	parse_id_len	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	522	parse_id_len	precondition of get_identifier	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	527	parse_id_len	user assertion	Unknown	cur_parsed > 0
+src	x509-parser.c	548	parse_id_len	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)cur_parsed)
+src	x509-parser.c	552	parse_id_len	precondition of get_length	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	561	parse_id_len	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)cur_parsed)
+src	x509-parser.c	592	parse_explicit_id_len	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	597	parse_explicit_id_len	postcondition	Unknown	\result ≡ 0 ⇒ *\old(parsed) ≤ \old(len)
+src	x509-parser.c	598	parse_explicit_id_len	postcondition	Unknown	\result ≡ 0 ⇒ *\old(data_len) ≤ \old(len)
+src	x509-parser.c	599	parse_explicit_id_len	postcondition	Unknown	\result ≡ 0 ⇒ *\old(data_len) + *\old(parsed) ≤ \old(len)
+src	x509-parser.c	620	parse_explicit_id_len	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	628	parse_explicit_id_len	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)hdr_len)
+src	x509-parser.c	632	parse_explicit_id_len	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	639	parse_explicit_id_len	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)hdr_len)
+src	x509-parser.c	659	_parse_arc	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	664	_parse_arc	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	666	_parse_arc	postcondition	Unknown	\old(len) > 0 ∧ \old(buf) ≢ \null ∧ \result ≢ 0 ⇒ (∀ ℤ x; 0 ≤ x < \min(\old(len), 4) ⇒ (*(\old(buf) + x) & 0x80) ≢ 0)
+src	x509-parser.c	699	_parse_arc	loop invariant	Unknown	∀ ℤ x; 0 ≤ x < rbytes ⇒ (*(buf + x) & 0x80) ≢ 0
+src	x509-parser.c	713	_parse_arc	mem_access	Unknown	\valid_read(buf + rbytes)
+src	x509-parser.c	725	_parse_arc	user assertion	Unknown	(*(buf + (len - 1)) & 0x80) ≢ 0
+src	x509-parser.c	748	parse_OID	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	752	parse_OID	postcondition	Unknown	\result ≡ 0 ⇒ 2 < *\old(parsed) ≤ \old(len)
+src	x509-parser.c	753	parse_OID	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	771	parse_OID	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	778	parse_OID	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)hdr_len)
+src	x509-parser.c	785	parse_OID	user assertion	Unknown	\valid_read(buf + (0 .. data_len - 1))
+src	x509-parser.c	792	parse_OID	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	809	parse_OID	precondition of _parse_arc	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	815	parse_OID	user assertion	Unknown	rbytes ≤ remain
+src	x509-parser.c	820	parse_OID	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)rbytes)
+src	x509-parser.c	849	parse_integer	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	853	parse_integer	postcondition	Unknown	\result ≡ 0 ⇒ 2 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	854	parse_integer	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	872	parse_integer	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	899	parse_integer	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	899	parse_integer	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	905	parse_integer	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	931	parse_boolean	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	935	parse_boolean	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	936	parse_boolean	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	956	parse_boolean	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	956	parse_boolean	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	962	parse_boolean	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	993	parse_x509_Version	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	997	parse_x509_Version	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	998	parse_x509_Version	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	1014	parse_x509_Version	precondition of parse_explicit_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1060	parse_CertificateSerialNumber	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1064	parse_CertificateSerialNumber	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	1065	parse_CertificateSerialNumber	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	1083	parse_CertificateSerialNumber	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1100	parse_CertificateSerialNumber	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	1119	parse_CertificateSerialNumber	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	1685	parse_algoid_params_ecdsa_with	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1689	parse_algoid_params_ecdsa_with	postcondition	Unknown	\old(buf) ≢ \null ∧ \old(len) ≡ 0 ⇒ \result ≡ 0
+src	x509-parser.c	1690	parse_algoid_params_ecdsa_with	postcondition	Unknown	\old(len) ≢ 0 ⇒ \result < 0
+src	x509-parser.c	1821	find_curve_by_oid	precondition	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1822	find_curve_by_oid	postcondition	Unknown	\result ≢ (_curve const *)0 ⇒ (∃ ℤ i; 0 ≤ i < sizeof(known_curves) / sizeof(known_curves[0]) ∧ \result ≡ known_curves[i])
+src	x509-parser.c	1853	find_curve_by_oid	user assertion	Unknown	\valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1870	parse_algoid_params_ecPublicKey	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1873	parse_algoid_params_ecPublicKey	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	1875	parse_algoid_params_ecPublicKey	postcondition	Unknown	\result ≡ 0 ⇒ (∃ ℤ i; 0 ≤ i < sizeof(known_curves) / sizeof(known_curves[0]) ∧ \old(param)->curve_param ≡ known_curves[i])
+src	x509-parser.c	1922	parse_algoid_params_ecPublicKey	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1936	parse_algoid_params_ecPublicKey	precondition of find_curve_by_oid	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1976	parse_subjectpubkey_ec	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	1979	parse_subjectpubkey_ec	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	1999	parse_subjectpubkey_ec	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2024	parse_subjectpubkey_ec	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	2046	parse_subjectpubkey_ec	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	2105	parse_algoid_params_generic	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2107	parse_algoid_params_generic	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2133	parse_algoid_params_rsa	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2135	parse_algoid_params_rsa	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2166	parse_algoid_params_rsa	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	2197	parse_subjectpubkey_rsa	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2200	parse_subjectpubkey_rsa	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2225	parse_subjectpubkey_rsa	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2250	parse_subjectpubkey_rsa	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	2262	parse_subjectpubkey_rsa	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2273	parse_subjectpubkey_rsa	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2280	parse_subjectpubkey_rsa	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	2284	parse_subjectpubkey_rsa	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2291	parse_subjectpubkey_rsa	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	2309	find_alg_by_oid	precondition	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2310	find_alg_by_oid	postcondition	Unknown	\result ≢ (_alg_id const *)0 ⇒ (∃ ℤ i; 0 ≤ i < sizeof(known_algs) / sizeof(known_algs[0]) ∧ \result ≡ known_algs[i])
+src	x509-parser.c	2311	find_alg_by_oid	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result ≡ (_alg_id const *)0
+src	x509-parser.c	2341	find_alg_by_oid	user assertion	Unknown	\valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2363	parse_x509_AlgorithmIdentifier	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2368	parse_x509_AlgorithmIdentifier	postcondition	Unknown	\result ≡ 0 ⇒ (∃ unsigned char x; *\old(alg) ≡ known_algs[x])
+src	x509-parser.c	2369	parse_x509_AlgorithmIdentifier	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	2370	parse_x509_AlgorithmIdentifier	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2393	parse_x509_AlgorithmIdentifier	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2403	parse_x509_AlgorithmIdentifier	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2410	parse_x509_AlgorithmIdentifier	precondition of find_alg_by_oid	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2419	parse_x509_AlgorithmIdentifier	unsigned_downcast	Unknown	0 ≤ (int)((int)data_len - (int)oid_len)
+src	x509-parser.c	2423	parse_x509_AlgorithmIdentifier	precondition of parse_algoid_params_ecPublicKey	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2423	parse_x509_AlgorithmIdentifier	precondition of parse_algoid_params_ecdsa_with	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2423	parse_x509_AlgorithmIdentifier	precondition of parse_algoid_params_generic	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2423	parse_x509_AlgorithmIdentifier	precondition of parse_algoid_params_rsa	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2430	parse_x509_AlgorithmIdentifier	unsigned_downcast	Unknown	(int)((int)hdr_len + (int)data_len) ≤ 65535
+src	x509-parser.c	2463	check_utf8_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2465	check_utf8_string	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2481	check_utf8_string	loop invariant	Unknown	\valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2486	check_utf8_string	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	2511	check_utf8_string	user assertion	Unknown	\valid_read(buf + (0 .. 1))
+src	x509-parser.c	2535	check_utf8_string	user assertion	Unknown	\valid_read(buf + (0 .. 2))
+src	x509-parser.c	2580	check_utf8_string	user assertion	Unknown	\valid_read(buf + (0 .. 3))
+src	x509-parser.c	2629	check_printable_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2648	check_printable_string	loop invariant	Unknown	0 ≤ rbytes ≤ len
+src	x509-parser.c	2653	check_printable_string	mem_access	Unknown	\valid_read(buf + rbytes)
+src	x509-parser.c	2695	check_visible_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2697	check_visible_string	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2718	check_visible_string	mem_access	Unknown	\valid_read(buf + rbytes)
+src	x509-parser.c	2780	check_teletex_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2795	check_universal_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2810	check_bmp_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2854	parse_directory_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2856	parse_directory_string	postcondition	Unknown	\result ≡ 0 ⇒ \old(len) ≥ 2 ∧ \old(lb) ≤ \old(len) - 2 ≤ \old(ub)
+src	x509-parser.c	2857	parse_directory_string	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2878	parse_directory_string	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	2881	parse_directory_string	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	2896	parse_directory_string	precondition of check_printable_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2902	parse_directory_string	precondition of check_utf8_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2914	parse_directory_string	precondition of check_teletex_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2920	parse_directory_string	precondition of check_universal_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2926	parse_directory_string	precondition of check_bmp_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2955	parse_printable_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	2957	parse_printable_string	postcondition	Unknown	\result ≡ 0 ⇒ \old(len) ≥ 2 ∧ \old(lb) ≤ \old(len) - 2 ≤ \old(ub)
+src	x509-parser.c	2958	parse_printable_string	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	2979	parse_printable_string	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	2987	parse_printable_string	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	3000	parse_printable_string	precondition of check_printable_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3014	check_ia5_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3016	check_ia5_string	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3032	check_ia5_string	loop invariant	Unknown	∀ ℤ x; 0 ≤ x < i ⇒ *(buf + x) ≤ 0x7f
+src	x509-parser.c	3038	check_ia5_string	mem_access	Unknown	\valid_read(buf + i)
+src	x509-parser.c	3057	parse_ia5_string	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3059	parse_ia5_string	postcondition	Unknown	\result ≡ 0 ⇒ \old(len) ≥ 2 ∧ \old(lb) ≤ \old(len) - 2 ≤ \old(ub)
+src	x509-parser.c	3089	parse_ia5_string	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	3102	parse_ia5_string	precondition of check_ia5_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3130	parse_rdn_val_cn	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3132	parse_rdn_val_cn	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3138	parse_rdn_val_cn	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3144	parse_rdn_val_x520name	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3146	parse_rdn_val_x520name	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3152	parse_rdn_val_x520name	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3158	parse_rdn_val_serial	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3160	parse_rdn_val_serial	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3166	parse_rdn_val_serial	precondition of parse_printable_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3172	parse_rdn_val_country	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3174	parse_rdn_val_country	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3180	parse_rdn_val_country	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3186	parse_rdn_val_locality	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3188	parse_rdn_val_locality	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3194	parse_rdn_val_locality	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3200	parse_rdn_val_state	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3202	parse_rdn_val_state	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3208	parse_rdn_val_state	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3214	parse_rdn_val_org	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3216	parse_rdn_val_org	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3222	parse_rdn_val_org	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3228	parse_rdn_val_org_unit	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3230	parse_rdn_val_org_unit	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3236	parse_rdn_val_org_unit	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3242	parse_rdn_val_title	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3244	parse_rdn_val_title	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3250	parse_rdn_val_title	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3255	parse_rdn_val_dn_qual	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3257	parse_rdn_val_dn_qual	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3267	parse_rdn_val_dn_qual	precondition of parse_printable_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3310	parse_rdn_val_dc	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3312	parse_rdn_val_dc	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3329	parse_rdn_val_dc	precondition of parse_ia5_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3336	parse_rdn_val_dc	unsigned_downcast	Unknown	0 ≤ (int)((int)len - 2)
+src	x509-parser.c	3339	parse_rdn_val_dc	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	3348	parse_rdn_val_dc	unsigned_downcast	Unknown	0 ≤ (int)((int)len - 1)
+src	x509-parser.c	3356	parse_rdn_val_dc	mem_access	Unknown	\valid_read(buf + (int)((int)len - 1))
+src	x509-parser.c	3369	parse_rdn_val_dc	loop invariant	Unknown	0 ≤ i ≤ len
+src	x509-parser.c	3374	parse_rdn_val_dc	mem_access	Unknown	\valid_read(buf + i)
+src	x509-parser.c	3392	parse_rdn_val_pseudo	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3394	parse_rdn_val_pseudo	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3400	parse_rdn_val_pseudo	precondition of parse_directory_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3481	find_dn_by_oid	precondition	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3482	find_dn_by_oid	postcondition	Unknown	\result ≢ (_name_oid const *)0 ⇒ (∃ ℤ i; 0 ≤ i < sizeof(known_dn_oids) / sizeof(known_dn_oids[0]) ∧ \result ≡ &known_dn_oids[i])
+src	x509-parser.c	3483	find_dn_by_oid	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result ≡ (_name_oid const *)0
+src	x509-parser.c	3513	find_dn_by_oid	user assertion	Unknown	\valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3536	parse_AttributeTypeAndValue	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3539	parse_AttributeTypeAndValue	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	3560	parse_AttributeTypeAndValue	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3568	parse_AttributeTypeAndValue	user assertion	Unknown	parsed ≤ len
+src	x509-parser.c	3571	parse_AttributeTypeAndValue	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)hdr_len)
+src	x509-parser.c	3574	parse_AttributeTypeAndValue	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3580	parse_AttributeTypeAndValue	precondition of find_dn_by_oid	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3587	parse_AttributeTypeAndValue	unsigned_downcast	Unknown	0 ≤ (int)((int)data_len - (int)oid_len)
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_cn	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_country	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_dc	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_dn_qual	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_locality	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_org	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_org_unit	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_pseudo	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_serial	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_state	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_title	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3602	parse_AttributeTypeAndValue	precondition of parse_rdn_val_x520name	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3609	parse_AttributeTypeAndValue	user assertion	Unknown	*eaten ≤ \at(len,Pre)
+src	x509-parser.c	3624	parse_RelativeDistinguishedName	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3628	parse_RelativeDistinguishedName	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	3647	parse_RelativeDistinguishedName	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3660	parse_RelativeDistinguishedName	loop invariant	Unknown	\valid_read(buf + (0 .. rdn_remain - 1))
+src	x509-parser.c	3666	parse_RelativeDistinguishedName	precondition of parse_AttributeTypeAndValue	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3677	parse_RelativeDistinguishedName	unsigned_downcast	Unknown	0 ≤ (int)((int)rdn_remain - (int)parsed)
+src	x509-parser.c	3757	parse_x509_Name	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3761	parse_x509_Name	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	3763	parse_x509_Name	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	3781	parse_x509_Name	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3793	parse_x509_Name	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	3799	parse_x509_Name	precondition of parse_RelativeDistinguishedName	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3806	parse_x509_Name	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	3820	compute_decimal	precondition	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3821	compute_decimal	precondition	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3833	parse_UTCTime	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	3844	parse_UTCTime	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	3846	parse_UTCTime	postcondition	Unknown	\old(len) < 15 ⇒ \result < 0
+src	x509-parser.c	3901	parse_UTCTime	loop invariant	Unknown	\valid_read(buf + i)
+src	x509-parser.c	3902	parse_UTCTime	loop invariant	Unknown	∀ ℤ x; 0 ≤ x < i ⇒ 0x30 ≤ *(buf + x) ≤ 0x39
+src	x509-parser.c	3918	parse_UTCTime	user assertion	Unknown	0 ≤ *(buf + i) - c_zero ≤ 9
+src	x509-parser.c	3927	parse_UTCTime	user assertion	Unknown	∀ ℤ x; 0 ≤ x < 12 ⇒ 0x30 ≤ *(buf + x) ≤ 0x39
+src	x509-parser.c	3928	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3928	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3935	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3935	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3936	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3936	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3937	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3937	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3938	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3938	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3939	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	3939	parse_UTCTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	3977	compute_year	precondition	Unknown	0x30 ≤ d1 ≤ 0x39
+src	x509-parser.c	3978	compute_year	precondition	Unknown	0x30 ≤ d2 ≤ 0x39
+src	x509-parser.c	3979	compute_year	precondition	Unknown	0x30 ≤ d3 ≤ 0x39
+src	x509-parser.c	3980	compute_year	precondition	Unknown	0x30 ≤ d4 ≤ 0x39
+src	x509-parser.c	4000	parse_generalizedTime	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4010	parse_generalizedTime	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4012	parse_generalizedTime	postcondition	Unknown	\old(len) < 17 ⇒ \result < 0
+src	x509-parser.c	4067	parse_generalizedTime	loop invariant	Unknown	\valid_read(buf + i)
+src	x509-parser.c	4068	parse_generalizedTime	loop invariant	Unknown	∀ ℤ x; 0 ≤ x < i ⇒ 0x30 ≤ *(buf + x) ≤ 0x39
+src	x509-parser.c	4092	parse_generalizedTime	user assertion	Unknown	∀ ℤ x; 0 ≤ x < 12 ⇒ 0x30 ≤ *(buf + x) ≤ 0x39
+src	x509-parser.c	4093	parse_generalizedTime	precondition of compute_year	Unknown	0x30 ≤ d1 ≤ 0x39
+src	x509-parser.c	4093	parse_generalizedTime	precondition of compute_year	Unknown	0x30 ≤ d2 ≤ 0x39
+src	x509-parser.c	4093	parse_generalizedTime	precondition of compute_year	Unknown	0x30 ≤ d3 ≤ 0x39
+src	x509-parser.c	4093	parse_generalizedTime	precondition of compute_year	Unknown	0x30 ≤ d4 ≤ 0x39
+src	x509-parser.c	4094	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	4094	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	4095	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	4095	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	4096	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	4096	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	4097	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	4097	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	4098	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ d ≤ 0x39
+src	x509-parser.c	4098	parse_generalizedTime	precondition of compute_decimal	Unknown	0x30 ≤ u ≤ 0x39
+src	x509-parser.c	4144	parse_Time	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4155	parse_Time	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4156	parse_Time	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	4178	parse_Time	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	4182	parse_Time	precondition of parse_UTCTime	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4189	parse_Time	precondition of parse_generalizedTime	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4250	parse_x509_Validity	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4254	parse_x509_Validity	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4255	parse_x509_Validity	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	4277	parse_x509_Validity	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4288	parse_x509_Validity	precondition of parse_Time	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4302	parse_x509_Validity	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)nb_len)
+src	x509-parser.c	4306	parse_x509_Validity	precondition of parse_Time	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4320	parse_x509_Validity	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)na_len)
+src	x509-parser.c	4378	parse_x509_subjectPublicKeyInfo	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4382	parse_x509_subjectPublicKeyInfo	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4383	parse_x509_subjectPublicKeyInfo	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	4401	parse_x509_subjectPublicKeyInfo	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4417	parse_x509_subjectPublicKeyInfo	precondition of parse_x509_AlgorithmIdentifier	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4424	parse_x509_subjectPublicKeyInfo	mem_access	Unknown	\valid_read(&alg->alg_type)
+src	x509-parser.c	4431	parse_x509_subjectPublicKeyInfo	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	4445	parse_x509_subjectPublicKeyInfo	precondition of parse_subjectpubkey_ec	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4445	parse_x509_subjectPublicKeyInfo	precondition of parse_subjectpubkey_rsa	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4571	parse_GeneralName	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4575	parse_GeneralName	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4576	parse_GeneralName	postcondition	Unknown	\result ≡ 0 ⇒ 0 ≤ *\old(empty) ≤ 1
+src	x509-parser.c	4577	parse_GeneralName	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	4605	parse_GeneralName	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	4619	parse_GeneralName	precondition of get_length	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4625	parse_GeneralName	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)grabbed)
+src	x509-parser.c	4633	parse_GeneralName	precondition of check_ia5_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4665	parse_GeneralName	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)name_len)
+src	x509-parser.c	4669	parse_GeneralName	user assertion	Unknown	*eaten > 1
+src	x509-parser.c	4676	parse_GeneralName	precondition of get_length	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4682	parse_GeneralName	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)grabbed)
+src	x509-parser.c	4692	parse_GeneralName	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)name_len)
+src	x509-parser.c	4696	parse_GeneralName	user assertion	Unknown	*eaten > 1
+src	x509-parser.c	4714	parse_GeneralName	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4724	parse_GeneralName	precondition of parse_x509_Name	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4731	parse_GeneralName	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)grabbed)
+src	x509-parser.c	4740	parse_GeneralName	user assertion	Unknown	*eaten > 1
+src	x509-parser.c	4774	parse_GeneralNames	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4778	parse_GeneralNames	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4779	parse_GeneralNames	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	4795	parse_GeneralNames	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4807	parse_GeneralNames	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	4811	parse_GeneralNames	precondition of parse_GeneralName	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4817	parse_GeneralNames	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	4831	parse_AccessDescription	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4834	parse_AccessDescription	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	4857	parse_AccessDescription	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4866	parse_AccessDescription	user assertion	Unknown	saved_ad_len ≤ len
+src	x509-parser.c	4867	parse_AccessDescription	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	4868	parse_AccessDescription	user assertion	Unknown	remain ≥ data_len
+src	x509-parser.c	4872	parse_AccessDescription	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4885	parse_AccessDescription	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	4889	parse_AccessDescription	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	4899	parse_AccessDescription	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)oid_len)
+src	x509-parser.c	4900	parse_AccessDescription	unsigned_downcast	Unknown	0 ≤ (int)((int)data_len - (int)oid_len)
+src	x509-parser.c	4901	parse_AccessDescription	user assertion	Unknown	remain ≥ data_len
+src	x509-parser.c	4904	parse_AccessDescription	precondition of parse_GeneralName	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4917	parse_AccessDescription	user assertion	Unknown	remain ≥ data_len ≥ al_len
+src	x509-parser.c	4918	parse_AccessDescription	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)al_len)
+src	x509-parser.c	4919	parse_AccessDescription	unsigned_downcast	Unknown	0 ≤ (int)((int)data_len - (int)al_len)
+src	x509-parser.c	4928	parse_AccessDescription	user assertion	Unknown	*eaten ≤ len
+src	x509-parser.c	4984	parse_ext_AIA	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	4988	parse_ext_AIA	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5017	parse_ext_AIA	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5025	parse_ext_AIA	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	5051	parse_ext_AIA	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	5057	parse_ext_AIA	precondition of parse_AccessDescription	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5064	parse_ext_AIA	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	5090	parse_ext_AKI	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5094	parse_ext_AKI	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5123	parse_ext_AKI	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5147	parse_ext_AKI	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5158	parse_ext_AKI	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)((int)key_id_hdr_len + (int)key_id_data_len))
+src	x509-parser.c	5167	parse_ext_AKI	precondition of parse_GeneralNames	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5173	parse_ext_AKI	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	5176	parse_ext_AKI	precondition of parse_CertificateSerialNumber	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5185	parse_ext_AKI	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)cert_serial_len)
+src	x509-parser.c	5210	parse_ext_SKI	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5214	parse_ext_SKI	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5242	parse_ext_SKI	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5262	parse_ext_SKI	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)((int)key_id_hdr_len + (int)key_id_data_len))
+src	x509-parser.c	5292	parse_nine_bit_named_bit_list	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5295	parse_nine_bit_named_bit_list	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5316	parse_nine_bit_named_bit_list	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	5362	parse_nine_bit_named_bit_list	mem_access	Unknown	\valid_read(buf + 1)
+src	x509-parser.c	5426	parse_nine_bit_named_bit_list	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	5497	parse_ext_keyUsage	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5501	parse_ext_keyUsage	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5526	parse_ext_keyUsage	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5540	parse_ext_keyUsage	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)hdr_len)
+src	x509-parser.c	5547	parse_ext_keyUsage	precondition of parse_nine_bit_named_bit_list	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5588	parse_CPSuri	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5592	parse_CPSuri	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	5593	parse_CPSuri	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5607	parse_CPSuri	precondition of parse_ia5_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5630	parse_DisplayText	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5634	parse_DisplayText	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	5635	parse_DisplayText	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5651	parse_DisplayText	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	5658	parse_DisplayText	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5669	parse_DisplayText	precondition of check_utf8_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5676	parse_DisplayText	precondition of check_ia5_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5683	parse_DisplayText	precondition of check_visible_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5690	parse_DisplayText	precondition of check_bmp_string	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5731	parse_NoticeReference	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5735	parse_NoticeReference	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	5736	parse_NoticeReference	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5754	parse_NoticeReference	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5769	parse_NoticeReference	precondition of parse_DisplayText	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5775	parse_NoticeReference	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	5782	parse_NoticeReference	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5789	parse_NoticeReference	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	5802	parse_NoticeReference	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	5807	parse_NoticeReference	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5815	parse_NoticeReference	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	5845	parse_UserNotice	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5849	parse_UserNotice	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	5850	parse_UserNotice	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	5868	parse_UserNotice	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5875	parse_UserNotice	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	5886	parse_UserNotice	precondition of parse_NoticeReference	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5888	parse_UserNotice	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	5893	parse_UserNotice	precondition of parse_DisplayText	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5895	parse_UserNotice	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	5928	parse_policyQualifierInfo	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5932	parse_policyQualifierInfo	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	5953	parse_policyQualifierInfo	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5967	parse_policyQualifierInfo	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5974	parse_policyQualifierInfo	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	5978	parse_policyQualifierInfo	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)oid_len)
+src	x509-parser.c	5980	parse_policyQualifierInfo	precondition of parse_CPSuri	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	5986	parse_policyQualifierInfo	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)cpsuri_len)
+src	x509-parser.c	5990	parse_policyQualifierInfo	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	5994	parse_policyQualifierInfo	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)oid_len)
+src	x509-parser.c	5996	parse_policyQualifierInfo	precondition of parse_UserNotice	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6002	parse_policyQualifierInfo	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)cpsunotice_len)
+src	x509-parser.c	6027	parse_PolicyInformation	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6031	parse_PolicyInformation	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	6047	parse_PolicyInformation	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6060	parse_PolicyInformation	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6066	parse_PolicyInformation	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)oid_len)
+src	x509-parser.c	6072	parse_PolicyInformation	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6080	parse_PolicyInformation	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	6096	parse_PolicyInformation	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	6102	parse_PolicyInformation	precondition of parse_policyQualifierInfo	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6108	parse_PolicyInformation	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)pqi_len)
+src	x509-parser.c	6178	parse_ext_certPolicies	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6182	parse_ext_certPolicies	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6215	parse_ext_certPolicies	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6234	parse_ext_certPolicies	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	6238	parse_ext_certPolicies	precondition of parse_PolicyInformation	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6244	parse_ext_certPolicies	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	6268	parse_ext_policyMapping	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6272	parse_ext_policyMapping	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6299	parse_ext_policyMapping	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6318	parse_ext_policyMapping	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	6322	parse_ext_policyMapping	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6331	parse_ext_policyMapping	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	6334	parse_ext_policyMapping	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6341	parse_ext_policyMapping	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	6342	parse_ext_policyMapping	unsigned_downcast	Unknown	0 ≤ (int)((int)data_len - (int)eaten)
+src	x509-parser.c	6345	parse_ext_policyMapping	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6351	parse_ext_policyMapping	unsigned_downcast	Unknown	0 ≤ (int)((int)data_len - (int)eaten)
+src	x509-parser.c	6363	parse_ext_policyMapping	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	6403	parse_ext_SAN	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6407	parse_ext_SAN	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6423	parse_ext_SAN	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6453	parse_ext_SAN	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	6458	parse_ext_SAN	precondition of parse_GeneralName	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6486	parse_ext_SAN	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	6500	parse_ext_SAN	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	6520	parse_ext_IAN	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6524	parse_ext_IAN	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6548	parse_ext_IAN	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6584	parse_ext_IAN	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	6588	parse_ext_IAN	precondition of parse_GeneralName	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6594	parse_ext_IAN	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	6624	parse_ext_subjectDirAttr	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6628	parse_ext_subjectDirAttr	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6655	parse_ext_subjectDirAttr	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6673	parse_ext_subjectDirAttr	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	6678	parse_ext_subjectDirAttr	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6687	parse_ext_subjectDirAttr	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	6690	parse_ext_subjectDirAttr	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6698	parse_ext_subjectDirAttr	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)data_len)
+src	x509-parser.c	6719	parse_ext_basicConstraints	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6723	parse_ext_basicConstraints	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6745	parse_ext_basicConstraints	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6784	parse_ext_basicConstraints	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	6793	parse_ext_basicConstraints	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	6806	parse_ext_basicConstraints	mem_access	Unknown	\valid_read(buf + 5)
+src	x509-parser.c	6839	parse_GeneralSubtrees	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6841	parse_GeneralSubtrees	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6856	parse_GeneralSubtrees	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6867	parse_GeneralSubtrees	precondition of parse_GeneralName	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6874	parse_GeneralSubtrees	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)grabbed)
+src	x509-parser.c	6887	parse_GeneralSubtrees	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6896	parse_GeneralSubtrees	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6920	parse_ext_nameConstraints	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6924	parse_ext_nameConstraints	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	6951	parse_ext_nameConstraints	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6971	parse_ext_nameConstraints	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6975	parse_ext_nameConstraints	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	6977	parse_ext_nameConstraints	precondition of parse_GeneralSubtrees	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6984	parse_ext_nameConstraints	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)data_len)
+src	x509-parser.c	6988	parse_ext_nameConstraints	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	6992	parse_ext_nameConstraints	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	6994	parse_ext_nameConstraints	precondition of parse_GeneralSubtrees	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7001	parse_ext_nameConstraints	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)data_len)
+src	x509-parser.c	7032	parse_ext_policyConstraints	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7036	parse_ext_policyConstraints	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	7063	parse_ext_policyConstraints	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7085	parse_ext_policyConstraints	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7100	parse_ext_policyConstraints	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	7104	parse_ext_policyConstraints	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7119	parse_ext_policyConstraints	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	7190	find_kp_by_oid	precondition	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7191	find_kp_by_oid	postcondition	Unknown	\result ≢ (_kp_oid const *)0 ⇒ (∃ ℤ i; 0 ≤ i < sizeof(known_kp_oids) / sizeof(known_kp_oids[0]) ∧ \result ≡ &known_kp_oids[i])
+src	x509-parser.c	7192	find_kp_by_oid	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result ≡ (_kp_oid const *)0
+src	x509-parser.c	7222	find_kp_by_oid	user assertion	Unknown	\valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7246	parse_ext_EKU	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7250	parse_ext_EKU	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	7267	parse_ext_EKU	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7287	parse_ext_EKU	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	7291	parse_ext_EKU	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7297	parse_ext_EKU	precondition of find_kp_by_oid	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7316	parse_ext_EKU	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)oid_len)
+src	x509-parser.c	7340	parse_crldp_reasons	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7344	parse_crldp_reasons	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	7345	parse_crldp_reasons	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	7360	parse_crldp_reasons	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7368	parse_crldp_reasons	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)hdr_len)
+src	x509-parser.c	7370	parse_crldp_reasons	precondition of parse_nine_bit_named_bit_list	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7407	parse_DistributionPoint	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7412	parse_DistributionPoint	postcondition	Unknown	\result ≡ 0 ⇒ 0 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	7432	parse_DistributionPoint	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7441	parse_DistributionPoint	user assertion	Unknown	total_len > 0
+src	x509-parser.c	7449	parse_DistributionPoint	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7456	parse_DistributionPoint	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)hdr_len)
+src	x509-parser.c	7464	parse_DistributionPoint	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	7472	parse_DistributionPoint	precondition of parse_GeneralNames	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7480	parse_DistributionPoint	unsigned_downcast	Unknown	0 ≤ (int)((int)dpn_remain - (int)dpn_eaten)
+src	x509-parser.c	7511	parse_DistributionPoint	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)data_len)
+src	x509-parser.c	7515	parse_DistributionPoint	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7518	parse_DistributionPoint	precondition of parse_crldp_reasons	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7525	parse_DistributionPoint	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	7536	parse_DistributionPoint	precondition of parse_GeneralNames	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7543	parse_DistributionPoint	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	7589	parse_ext_CRLDP	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7593	parse_ext_CRLDP	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	7617	parse_ext_CRLDP	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7640	parse_ext_CRLDP	loop invariant	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	7646	parse_ext_CRLDP	precondition of parse_DistributionPoint	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7652	parse_ext_CRLDP	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)eaten)
+src	x509-parser.c	7671	parse_ext_inhibitAnyPolicy	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7675	parse_ext_inhibitAnyPolicy	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	7702	parse_ext_inhibitAnyPolicy	precondition of parse_integer	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	7720	parse_ext_inhibitAnyPolicy	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	7761	parse_ext_bad_oid	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8061	find_ext_by_oid	precondition	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8062	find_ext_by_oid	postcondition	Unknown	\result ≢ (_ext_oid const *)0 ⇒ (∃ ℤ i; 0 ≤ i < sizeof(known_ext_oids) / sizeof(known_ext_oids[0]) ∧ \result ≡ &known_ext_oids[i])
+src	x509-parser.c	8063	find_ext_by_oid	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result ≡ (_ext_oid const *)0
+src	x509-parser.c	8093	find_ext_by_oid	user assertion	Unknown	\valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8171	parse_x509_Extension	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8177	parse_x509_Extension	postcondition	Unknown	\result ≡ 0 ⇒ 1 ≤ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	8198	parse_x509_Extension	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8207	parse_x509_Extension	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)ext_hdr_len)
+src	x509-parser.c	8216	parse_x509_Extension	precondition of parse_OID	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8224	parse_x509_Extension	precondition of find_ext_by_oid	Unknown	len > 0 ∧ buf ≢ (u8 const *)0 ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8259	parse_x509_Extension	unsigned_downcast	Unknown	0 ≤ (int)((int)ext_data_len - (int)oid_len)
+src	x509-parser.c	8268	parse_x509_Extension	precondition of parse_boolean	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8276	parse_x509_Extension	mem_access	Unknown	\valid_read(buf + 2)
+src	x509-parser.c	8289	parse_x509_Extension	unsigned_downcast	Unknown	0 ≤ (int)((int)ext_data_len - (int)parsed)
+src	x509-parser.c	8296	parse_x509_Extension	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8305	parse_x509_Extension	unsigned_downcast	Unknown	0 ≤ (int)((int)ext_data_len - (int)hdr_len)
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_AIA	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_AKI	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_CRLDP	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_EKU	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_IAN	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_SAN	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_SKI	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_bad_oid	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_basicConstraints	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_certPolicies	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_inhibitAnyPolicy	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_keyUsage	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_nameConstraints	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_policyConstraints	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_policyMapping	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8317	parse_x509_Extension	precondition of parse_ext_subjectDirAttr	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8348	parse_x509_Extensions	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8353	parse_x509_Extensions	postcondition	Unknown	\result ≡ 0 ⇒ 1 ≤ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	8378	parse_x509_Extensions	precondition of parse_explicit_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8388	parse_x509_Extensions	user assertion	Unknown	\valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	8390	parse_x509_Extensions	unsigned_downcast	Unknown	(int)((int)hdr_len + (int)data_len) ≤ 65535
+src	x509-parser.c	8391	parse_x509_Extensions	user assertion	Unknown	saved_len ≤ len
+src	x509-parser.c	8392	parse_x509_Extensions	user assertion	Unknown	data_len ≤ saved_len
+src	x509-parser.c	8415	parse_x509_Extensions	loop invariant	Unknown	remain ≢ 0 ⇒ \valid_read(buf + (0 .. remain - 1))
+src	x509-parser.c	8421	parse_x509_Extensions	precondition of parse_x509_Extension	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8428	parse_x509_Extensions	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)ext_len)
+src	x509-parser.c	8450	parse_x509_Extensions	user assertion	Unknown	1 ≤ saved_len ≤ len
+src	x509-parser.c	8485	parse_x509_tbsCertificate	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8489	parse_x509_tbsCertificate	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	8491	parse_x509_tbsCertificate	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	8541	parse_x509_tbsCertificate	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8557	parse_x509_tbsCertificate	precondition of parse_x509_Version	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8564	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8567	parse_x509_tbsCertificate	precondition of parse_CertificateSerialNumber	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8576	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8579	parse_x509_tbsCertificate	precondition of parse_x509_AlgorithmIdentifier	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8585	parse_x509_tbsCertificate	mem_access	Unknown	\valid_read(&alg->alg_type)
+src	x509-parser.c	8592	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8595	parse_x509_tbsCertificate	precondition of parse_x509_Name	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8616	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8619	parse_x509_tbsCertificate	precondition of parse_x509_Validity	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8626	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8629	parse_x509_tbsCertificate	precondition of parse_x509_Name	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8639	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8647	parse_x509_tbsCertificate	precondition of bufs_differ	Unknown	\valid_read(b1 + (0 .. n - 1))
+src	x509-parser.c	8647	parse_x509_tbsCertificate	precondition of bufs_differ	Unknown	\valid_read(b2 + (0 .. n - 1))
+src	x509-parser.c	8651	parse_x509_tbsCertificate	precondition of parse_x509_subjectPublicKeyInfo	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8658	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8690	parse_x509_tbsCertificate	precondition of parse_x509_Extensions	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8697	parse_x509_tbsCertificate	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)parsed)
+src	x509-parser.c	8803	parse_x509_tbsCertificate	user assertion	Unknown	1 < tbs_hdr_len + tbs_data_len ≤ len
+src	x509-parser.c	8804	parse_x509_tbsCertificate	unsigned_downcast	Unknown	(int)((int)tbs_hdr_len + (int)tbs_data_len) ≤ 65535
+src	x509-parser.c	8815	parse_x509_signatureAlgorithm	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8819	parse_x509_signatureAlgorithm	postcondition	Unknown	\result ≡ 0 ⇒ 1 < *\old(eaten) ≤ \old(len)
+src	x509-parser.c	8820	parse_x509_signatureAlgorithm	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	8839	parse_x509_signatureAlgorithm	precondition of parse_x509_AlgorithmIdentifier	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8845	parse_x509_signatureAlgorithm	mem_access	Unknown	\valid_read(&alg->alg_type)
+src	x509-parser.c	8852	parse_x509_signatureAlgorithm	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)parsed)
+src	x509-parser.c	8877	parse_sig_generic	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8881	parse_sig_generic	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	8891	parse_sig_generic	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8909	parse_sig_generic	unsigned_downcast	Unknown	(int)((int)bs_hdr_len + (int)bs_data_len) ≤ 65535
+src	x509-parser.c	8920	parse_sig_ecdsa	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8924	parse_sig_ecdsa	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	8941	parse_sig_ecdsa	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	8948	parse_sig_ecdsa	unsigned_downcast	Unknown	(int)((int)bs_hdr_len + (int)bs_data_len) ≤ 65535
+src	x509-parser.c	8949	parse_sig_ecdsa	user assertion	Unknown	saved_sig_len ≤ len
+src	x509-parser.c	8986	parse_sig_ecdsa	mem_access	Unknown	\valid_read(buf + 0)
+src	x509-parser.c	8998	parse_sig_ecdsa	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9006	parse_sig_ecdsa	unsigned_downcast	Unknown	0 ≤ (int)((int)sig_len - (int)hdr_len)
+src	x509-parser.c	9010	parse_sig_ecdsa	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9017	parse_sig_ecdsa	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)((int)hdr_len + (int)data_len))
+src	x509-parser.c	9021	parse_sig_ecdsa	precondition of parse_id_len	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9028	parse_sig_ecdsa	unsigned_downcast	Unknown	0 ≤ (int)((int)remain - (int)((int)hdr_len + (int)data_len))
+src	x509-parser.c	9053	parse_x509_signatureValue	precondition	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9057	parse_x509_signatureValue	postcondition	Unknown	\result ≡ 0 ⇒ *\old(eaten) ≤ \old(len)
+src	x509-parser.c	9058	parse_x509_signatureValue	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	9087	parse_x509_signatureValue	precondition of parse_sig_ecdsa	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9087	parse_x509_signatureValue	precondition of parse_sig_generic	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9103	parse_x509_cert	postcondition	Unknown	\old(len) ≡ 0 ⇒ \result < 0
+src	x509-parser.c	9130	parse_x509_cert	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)eaten)
+src	x509-parser.c	9144	parse_x509_cert	precondition of parse_x509_tbsCertificate	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9150	parse_x509_cert	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)eaten)
+src	x509-parser.c	9154	parse_x509_cert	precondition of parse_x509_signatureAlgorithm	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))
+src	x509-parser.c	9160	parse_x509_cert	unsigned_downcast	Unknown	0 ≤ (int)((int)len - (int)eaten)
+src	x509-parser.c	9164	parse_x509_cert	precondition of parse_x509_signatureValue	Unknown	len > 0 ∧ buf ≢ \null ⇒ \valid_read(buf + (0 .. len - 1))

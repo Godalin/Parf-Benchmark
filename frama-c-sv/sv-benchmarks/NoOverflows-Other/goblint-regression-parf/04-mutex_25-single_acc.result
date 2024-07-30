@@ -1,0 +1,24 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+Traceback (most recent call last):
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/./frama-c-sv.py", line 532, in <module>
+    property_ = Property.from_text(property_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/carolt/Abstract_Interpretation/Tools_Development/Frama-c-Plugin/src/demo_1/frama-c-sv/./frama-c-sv.py", line 162, in from_text
+    raise ValueError("unknown property %s" % property_text)
+ValueError: unknown property format_version: '2.0'
+
+input_files: '04-mutex_25-single_acc.i'
+
+properties:
+  - property_file: ../properties/no-data-race.prp
+    expected_verdict: false
+
+options:
+  language: C
+  data_model: ILP32
+
+
+real	0m0.264s
+user	0m0.900s
+sys	0m0.696s

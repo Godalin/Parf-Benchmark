@@ -1,0 +1,76 @@
+directory	file	line	function	property kind	status	property
+.	genann.c	115	genann_init	signed_overflow	Unknown	(int)((int)(inputs + 1) * hidden) + (int)((int)((int)(hidden_layers - 1) * (int)(hidden + 1)) * hidden) ≤ 2147483647
+.	genann.c	115	genann_init	signed_overflow	Unknown	(int)(inputs + 1) * hidden ≤ 2147483647
+.	genann.c	115	genann_init	signed_overflow	Unknown	inputs + 1 ≤ 2147483647
+.	genann.c	115	genann_init	signed_overflow	Unknown	(int)((int)(hidden_layers - 1) * (int)(hidden + 1)) * hidden ≤ 2147483647
+.	genann.c	115	genann_init	signed_overflow	Unknown	(int)(hidden_layers - 1) * (int)(hidden + 1) ≤ 2147483647
+.	genann.c	115	genann_init	signed_overflow	Unknown	hidden + 1 ≤ 2147483647
+.	genann.c	116	genann_init	signed_overflow	Unknown	tmp_0 * outputs ≤ 2147483647
+.	genann.c	116	genann_init	signed_overflow	Unknown	inputs + 1 ≤ 2147483647
+.	genann.c	117	genann_init	signed_overflow	Unknown	hidden_weights + output_weights ≤ 2147483647
+.	genann.c	119	genann_init	signed_overflow	Unknown	(int)(inputs + (int)(hidden * hidden_layers)) + outputs ≤ 2147483647
+.	genann.c	119	genann_init	signed_overflow	Unknown	inputs + (int)(hidden * hidden_layers) ≤ 2147483647
+.	genann.c	119	genann_init	signed_overflow	Unknown	hidden * hidden_layers ≤ 2147483647
+.	genann.c	122	genann_init	signed_overflow	Unknown	(int)(total_weights + total_neurons) + (int)(total_neurons - inputs) ≤ 2147483647
+.	genann.c	122	genann_init	signed_overflow	Unknown	total_weights + total_neurons ≤ 2147483647
+.	genann.c	126	genann_init	mem_access	Unknown	\valid(&ret->inputs)
+.	genann.c	127	genann_init	mem_access	Unknown	\valid(&ret->hidden_layers)
+.	genann.c	128	genann_init	mem_access	Unknown	\valid(&ret->hidden)
+.	genann.c	129	genann_init	mem_access	Unknown	\valid(&ret->outputs)
+.	genann.c	131	genann_init	mem_access	Unknown	\valid(&ret->total_weights)
+.	genann.c	132	genann_init	mem_access	Unknown	\valid(&ret->total_neurons)
+.	genann.c	135	genann_init	mem_access	Unknown	\valid(&ret->weight)
+.	genann.c	136	genann_init	mem_access	Unknown	\valid(&ret->output)
+.	genann.c	136	genann_init	mem_access	Unknown	\valid_read(&ret->total_weights)
+.	genann.c	136	genann_init	mem_access	Unknown	\valid_read(&ret->weight)
+.	genann.c	137	genann_init	mem_access	Unknown	\valid(&ret->delta)
+.	genann.c	137	genann_init	mem_access	Unknown	\valid_read(&ret->output)
+.	genann.c	137	genann_init	mem_access	Unknown	\valid_read(&ret->total_neurons)
+.	genann.c	141	genann_init	mem_access	Unknown	\valid(&ret->activation_hidden)
+.	genann.c	142	genann_init	mem_access	Unknown	\valid(&ret->activation_output)
+.	genann.c	164	genann_read	mem_access	Unknown	\valid_read(&ann->total_weights)
+.	genann.c	166	genann_read	mem_access	Unknown	\valid_read(&ann->weight)
+.	genann.c	166	genann_read	precondition of fscanf_va_2	Unknown	\valid(param0)
+.	genann.c	180	genann_copy	mem_access	Unknown	\valid_read(&ann->inputs)
+.	genann.c	180	genann_copy	mem_access	Unknown	\valid_read(&ann->total_neurons)
+.	genann.c	180	genann_copy	mem_access	Unknown	\valid_read(&ann->total_weights)
+.	genann.c	197	genann_randomize	mem_access	Unknown	\valid_read(&ann->total_weights)
+.	genann.c	200	genann_randomize	mem_access	Unknown	\valid(ann->weight + i)
+.	genann.c	200	genann_randomize	mem_access	Unknown	\valid_read(&ann->weight)
+.	genann.c	212	genann_run	mem_access	Unknown	\valid_read(&ann->weight)
+.	genann.c	397	genann_write	mem_access	Unknown	\valid_read(&ann->outputs)
+.	genann.c	401	genann_write	initialization	Unknown	\initialized(ann->weight + i)
+.	test.c	37	basic	mem_access	Unknown	\valid_read(&ann->total_weights)
+.	test.c	71	xor	mem_access	Unknown	\valid(&ann->activation_hidden)
+.	test.c	201	persist	precondition of fclose	Unknown	valid_stream: \valid(stream)
+.	test.c	206	persist	precondition of fclose	Unknown	valid_stream: \valid(stream)
+.	test.c	208	persist	mem_access	Unknown	\valid_read(&second->inputs)
+.	test.c	209	persist	mem_access	Unknown	\valid_read(&second->hidden_layers)
+.	test.c	210	persist	mem_access	Unknown	\valid_read(&second->hidden)
+.	test.c	211	persist	mem_access	Unknown	\valid_read(&second->outputs)
+.	test.c	212	persist	mem_access	Unknown	\valid_read(&second->total_weights)
+.	test.c	216	persist	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	216	persist	initialization	Unknown	\initialized(first->weight + i)
+.	test.c	216	persist	initialization	Unknown	\initialized(second->weight + i)
+.	test.c	216	persist	is_nan_or_infinite	Unknown	\is_finite(*(second->weight + i))
+.	test.c	216	persist	mem_access	Unknown	\valid_read(&second->weight)
+.	test.c	216	persist	mem_access	Unknown	\valid_read(second->weight + i)
+.	test.c	216	persist	signed_overflow	Unknown	lfails + 1 ≤ 2147483647
+.	test.c	229	copy	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	229	copy	mem_access	Unknown	\valid_read(&second->inputs)
+.	test.c	230	copy	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	231	copy	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	232	copy	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	233	copy	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	237	copy	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	237	copy	initialization	Unknown	\initialized(first->weight + i)
+.	test.c	237	copy	initialization	Unknown	\initialized(second->weight + i)
+.	test.c	237	copy	signed_overflow	Unknown	lfails + 1 ≤ 2147483647
+.	test.c	251	sigmoid	signed_overflow	Unknown	ltests + 1 ≤ 2147483647
+.	test.c	251	sigmoid	signed_overflow	Unknown	lfails + 1 ≤ 2147483647
+.	test.c	270	main	signed_overflow	Unknown	(int)(ltests - ts_6) - (int)(lfails - fs_6) ≤ 2147483647
+.	test.c	270	main	signed_overflow	Unknown	-2147483648 ≤ (int)(ltests - ts_6) - (int)(lfails - fs_6)
+.	test.c	271	main	signed_overflow	Unknown	(int)(ltests - ts_7) - (int)(lfails - fs_7) ≤ 2147483647
+.	test.c	271	main	signed_overflow	Unknown	-2147483648 ≤ (int)(ltests - ts_7) - (int)(lfails - fs_7)
+FRAMAC_SHARE/libc	stdio.h	120	fclose	precondition	Unknown	valid_stream: \valid(stream)
+FRAMAC_SHARE/libc	stdio.h	209	fscanf_va_2	precondition	Unknown	\valid(param0)

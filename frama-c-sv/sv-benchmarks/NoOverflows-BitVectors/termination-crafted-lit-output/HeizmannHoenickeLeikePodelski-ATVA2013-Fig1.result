@@ -1,0 +1,159 @@
+why3 config: unrecognized option '--detect'
+Try 'why3 config --help' for more information.
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/program.c /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /Users/carolt/Abstract_Interpretation/Tools_Development/frama-c-sv-2/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:19: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 800 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1000 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1100 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1200 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1300 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1400 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1500 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1600 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1700 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1800 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 1900 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2000 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2100 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2200 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2400 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2500 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2600 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2700 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2800 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 2900 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3000 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3100 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3200 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3300 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3400 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3500 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3600 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3700 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3800 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 3900 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4000 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4100 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4200 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4300 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4400 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4500 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4600 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4700 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4800 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 4900 states
+INFO:FRAMAC:[eva] output/program.c:17: Trace partitioning superposing up to 5000 states
+INFO:FRAMAC:[eva] output/program.c:17: starting to merge loop iterations
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  x ∈ [-2147483648..-1]
+INFO:FRAMAC:  y ∈ [23..2147483647]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  2 functions analyzed (out of 17): 11% coverage.
+INFO:FRAMAC:  In these functions, 12 statements reached (out of 12): 100% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  0 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     0 invalid      1 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:error
+
+real	12m39.418s
+user	11m26.550s
+sys	1m6.452s

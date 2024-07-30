@@ -1,0 +1,1186 @@
+[kernel] Parsing solitaire.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotbcf341.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  state ∈ {0}
+  verbose ∈ {0}
+  lastout ∈ {0}
+  cocount ∈ {0}
+  nondet ∈ [--..--]
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] using specification for function printf_va_3
+[eva] using specification for function strcmp
+[eva] FRAMAC_SHARE/libc/string.h:156: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva] using specification for function printf_va_4
+[eva] using specification for function exit
+[eva] using specification for function __FC_assert
+[eva] solitaire.c:128: starting to merge loop iterations
+[eva:alarm] solitaire.c:128: Warning: 
+  out of bounds write. assert \valid(tmp_15);
+                       (tmp_15 from d++)
+[eva] solitaire.c:131: starting to merge loop iterations
+[eva:alarm] solitaire.c:131: Warning: 
+  out of bounds write. assert \valid(tmp_17);
+                       (tmp_17 from d++)
+[eva] using specification for function putchar
+[eva:alarm] solitaire.c:191: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] solitaire.c:185: Trace partitioning superposing up to 100 states
+[eva:alarm] solitaire.c:191: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status invalid.
+[eva] using specification for function printf_va_1
+[eva] solitaire.c:213: starting to merge loop iterations
+[eva:alarm] solitaire.c:67: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] solitaire.c:68: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] solitaire.c:69: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] solitaire.c:93: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] solitaire.c:94: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva] solitaire.c:97: starting to merge loop iterations
+[eva:alarm] solitaire.c:97: Warning: 
+  out of bounds write. assert \valid(tmp);
+                       (tmp from d++)
+[eva] solitaire.c:100: starting to merge loop iterations
+[eva:alarm] solitaire.c:100: Warning: 
+  out of bounds write. assert \valid(tmp_1);
+                       (tmp_1 from d++)
+[eva:alarm] solitaire.c:107: Warning: 
+  out of bounds write. assert \valid(tmp_3);
+                       (tmp_3 from d++)
+[eva] solitaire.c:107: starting to merge loop iterations
+[eva] solitaire.c:111: starting to merge loop iterations
+[eva:alarm] solitaire.c:111: Warning: 
+  out of bounds write. assert \valid(tmp_6);
+                       (tmp_6 from d++)
+[eva] solitaire.c:114: starting to merge loop iterations
+[eva:alarm] solitaire.c:114: Warning: 
+  out of bounds write. assert \valid(tmp_8);
+                       (tmp_8 from d++)
+[eva] solitaire.c:117: starting to merge loop iterations
+[eva:alarm] solitaire.c:117: Warning: 
+  out of bounds write. assert \valid(tmp_10);
+                       (tmp_10 from d++)
+[eva:alarm] solitaire.c:124: Warning: 
+  out of bounds write. assert \valid(tmp_12);
+                       (tmp_12 from d++)
+[eva] solitaire.c:124: starting to merge loop iterations
+[eva:alarm] solitaire.c:128: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:134: starting to merge loop iterations
+[eva:alarm] solitaire.c:134: Warning: 
+  out of bounds write. assert \valid(tmp_19);
+                       (tmp_19 from d++)
+[eva:alarm] solitaire.c:146: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva:alarm] solitaire.c:146: Warning: 
+  out of bounds write. assert \valid(tmp_21);
+                       (tmp_21 from d++)
+[eva] solitaire.c:146: starting to merge loop iterations
+[eva] solitaire.c:149: starting to merge loop iterations
+[eva:alarm] solitaire.c:149: Warning: 
+  out of bounds write. assert \valid(tmp_23);
+                       (tmp_23 from d++)
+[eva:alarm] solitaire.c:153: Warning: 
+  out of bounds write. assert \valid(tmp_26);
+                       (tmp_26 from d++)
+[eva] solitaire.c:153: starting to merge loop iterations
+[eva] solitaire.c:156: starting to merge loop iterations
+[eva:alarm] solitaire.c:156: Warning: 
+  out of bounds write. assert \valid(tmp_28);
+                       (tmp_28 from d++)
+[eva] solitaire.c:219: starting to merge loop iterations
+[eva] solitaire.c:219: Trace partitioning superposing up to 100 states
+[eva:alarm] solitaire.c:68: Warning: 
+  out of bounds read. assert \valid_read(state.deck + state.a);
+[eva:alarm] solitaire.c:69: Warning: 
+  out of bounds read. assert \valid_read(state.deck + state.b);
+[eva] solitaire.c:71: 
+  Assigning imprecise value to *(source + state.a)
+  (pointing to state with offsets [0..1952],0%32).
+  The imprecision originates from Misaligned {solitaire.c:71}
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a + 1;
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert state.a + 1 ≤ 2147483647;
+[eva] solitaire.c:71: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned {solitaire.c:71}
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b - 1;
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert state.b - 1 ≤ 2147483647;
+[eva] solitaire.c:71: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned {solitaire.c:71}
+[eva:alarm] solitaire.c:72: Warning: 
+  out of bounds write. assert \valid(source + state.b);
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 1;
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert state.b + 1 ≤ 2147483647;
+[eva:alarm] solitaire.c:72: Warning: 
+  out of bounds read. assert \valid_read(source + (int)(state.b + 1));
+[eva] solitaire.c:72: 
+  Assigning imprecise value to *(source + state.b)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned {solitaire.c:71}
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 1;
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert state.b + 1 ≤ 2147483647;
+[eva] solitaire.c:72: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a + 1;
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert state.a + 1 ≤ 2147483647;
+[eva] solitaire.c:72: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned {solitaire.c:71}
+[eva] solitaire.c:72: 
+  Assigning imprecise value to *(source + 0)
+  (pointing to state with offsets {224; 256}).
+  The imprecision originates from Misaligned {solitaire.c:71}
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a - 1;
+[eva:alarm] solitaire.c:72: Warning: 
+  signed overflow. assert state.a - 1 ≤ 2147483647;
+[eva] solitaire.c:72: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:73: Warning: 
+  out of bounds write. assert \valid(source + state.b);
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 1;
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert state.b + 1 ≤ 2147483647;
+[eva:alarm] solitaire.c:73: Warning: 
+  out of bounds read. assert \valid_read(source + (int)(state.b + 1));
+[eva] solitaire.c:73: 
+  Assigning imprecise value to *(source + state.b)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 1;
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert state.b + 1 ≤ 2147483647;
+[eva] solitaire.c:73: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a + 1;
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert state.a + 1 ≤ 2147483647;
+[eva] solitaire.c:73: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:73: 
+  Assigning imprecise value to *(source + 0)
+  (pointing to state with offsets {192; 224; 256}).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a - 1;
+[eva:alarm] solitaire.c:73: Warning: 
+  signed overflow. assert state.a - 1 ≤ 2147483647;
+[eva] solitaire.c:73: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:74: Warning: 
+  out of bounds write. assert \valid(source + state.a);
+[eva:alarm] solitaire.c:75: Warning: 
+  out of bounds write. assert \valid(source + state.b);
+[eva] solitaire.c:77: 
+  Assigning imprecise value to lo.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:78: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 1;
+[eva:alarm] solitaire.c:78: Warning: 
+  signed overflow. assert state.b + 1 ≤ 2147483647;
+[eva] solitaire.c:78: 
+  Assigning imprecise value to hi.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:80: 
+  Assigning imprecise value to lo.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:81: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a + 1;
+[eva:alarm] solitaire.c:81: Warning: 
+  signed overflow. assert state.a + 1 ≤ 2147483647;
+[eva] solitaire.c:81: 
+  Assigning imprecise value to hi.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:83: Warning: 
+  signed overflow. assert -2147483648 ≤ 54 - hi;
+[eva:alarm] solitaire.c:83: Warning: 
+  signed overflow. assert 54 - hi ≤ 2147483647;
+[eva] solitaire.c:83: 
+  Assigning imprecise value to nlo.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:84: Warning: 
+  signed overflow. assert -2147483648 ≤ 54 - lo;
+[eva:alarm] solitaire.c:84: Warning: 
+  signed overflow. assert 54 - lo ≤ 2147483647;
+[eva] solitaire.c:84: 
+  Assigning imprecise value to nhi.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:87: Warning: 
+  signed overflow. assert -2147483648 ≤ lo - 1;
+[eva:alarm] solitaire.c:87: Warning: 
+  signed overflow. assert lo - 1 ≤ 2147483647;
+[eva:alarm] solitaire.c:87: Warning: 
+  out of bounds read. assert \valid_read(source + (int)(lo - 1));
+[eva] solitaire.c:87: 
+  Assigning imprecise value to nccut.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:95: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:97: 
+  Assigning imprecise value to tmp.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:97: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:97: 
+  Assigning imprecise value to *tmp
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:98: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:100: 
+  Assigning imprecise value to tmp_1.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:100: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:100: 
+  Assigning imprecise value to *tmp_1
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:105: Warning: 
+  signed overflow. assert -2147483648 ≤ nhi - nccut;
+[eva:alarm] solitaire.c:105: Warning: 
+  signed overflow. assert nhi - nccut ≤ 2147483647;
+[eva] solitaire.c:105: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:106: Warning: 
+  signed overflow. assert -2147483648 ≤ lo - 1;
+[eva:alarm] solitaire.c:106: Warning: 
+  signed overflow. assert lo - 1 ≤ 2147483647;
+[eva] solitaire.c:106: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:107: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:107: 
+  Assigning imprecise value to tmp_3.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:107: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:107: 
+  Assigning imprecise value to *tmp_3
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:107: Warning: 
+  out of bounds read. assert \valid_read(tmp_4);
+                      (tmp_4 from s++)
+[eva:alarm] solitaire.c:108: Warning: 
+  out of bounds write. assert \valid(state.spare + 53);
+[eva:alarm] solitaire.c:108: Warning: 
+  out of bounds read. assert \valid_read(tmp_5);
+                      (tmp_5 from s++)
+[eva] solitaire.c:108: 
+  Assigning imprecise value to *(state.spare + 53)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:109: Warning: 
+  signed overflow. assert -2147483648 ≤ nlo - nccut;
+[eva:alarm] solitaire.c:109: Warning: 
+  signed overflow. assert nlo - nccut ≤ 2147483647;
+[eva] solitaire.c:109: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:110: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:111: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:111: 
+  Assigning imprecise value to tmp_6.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:111: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:111: Warning: 
+  out of bounds read. assert \valid_read(tmp_7);
+                      (tmp_7 from s++)
+[eva] solitaire.c:111: 
+  Assigning imprecise value to *tmp_6
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:112: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:112: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva] solitaire.c:112: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:113: Warning: 
+  signed overflow. assert -2147483648 ≤ nccut + hi;
+[eva:alarm] solitaire.c:113: Warning: 
+  signed overflow. assert nccut + hi ≤ 2147483647;
+[eva] solitaire.c:113: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:114: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:114: 
+  Assigning imprecise value to tmp_8.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:114: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:114: Warning: 
+  out of bounds read. assert \valid_read(tmp_9);
+                      (tmp_9 from s++)
+[eva] solitaire.c:114: 
+  Assigning imprecise value to *tmp_8
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:115: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:117: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:117: 
+  Assigning imprecise value to tmp_10.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:117: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:117: 
+  Assigning imprecise value to *tmp_10
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:118: Warning: 
+  signed overflow. assert -2147483648 ≤ nlo - nccut;
+[eva:alarm] solitaire.c:118: Warning: 
+  signed overflow. assert nlo - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:118: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(nlo - nccut) - lo;
+[eva:alarm] solitaire.c:118: Warning: 
+  signed overflow. assert (int)(nlo - nccut) - lo ≤ 2147483647;
+[eva:alarm] solitaire.c:118: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ state.a + (int)((int)(nlo - nccut) - lo);
+[eva:alarm] solitaire.c:118: Warning: 
+  signed overflow.
+  assert state.a + (int)((int)(nlo - nccut) - lo) ≤ 2147483647;
+[eva] solitaire.c:118: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:119: Warning: 
+  signed overflow. assert -2147483648 ≤ nlo - nccut;
+[eva:alarm] solitaire.c:119: Warning: 
+  signed overflow. assert nlo - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:119: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(nlo - nccut) - lo;
+[eva:alarm] solitaire.c:119: Warning: 
+  signed overflow. assert (int)(nlo - nccut) - lo ≤ 2147483647;
+[eva:alarm] solitaire.c:119: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ state.b + (int)((int)(nlo - nccut) - lo);
+[eva:alarm] solitaire.c:119: Warning: 
+  signed overflow.
+  assert state.b + (int)((int)(nlo - nccut) - lo) ≤ 2147483647;
+[eva] solitaire.c:119: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:122: Warning: 
+  signed overflow. assert -2147483648 ≤ nhi - nccut;
+[eva:alarm] solitaire.c:122: Warning: 
+  signed overflow. assert nhi - nccut ≤ 2147483647;
+[eva] solitaire.c:122: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:123: Warning: 
+  signed overflow. assert -2147483648 ≤ lo - 1;
+[eva:alarm] solitaire.c:123: Warning: 
+  signed overflow. assert lo - 1 ≤ 2147483647;
+[eva] solitaire.c:123: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:124: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:124: 
+  Assigning imprecise value to tmp_12.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:124: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:124: 
+  Assigning imprecise value to *tmp_12
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:124: Warning: 
+  out of bounds read. assert \valid_read(tmp_13);
+                      (tmp_13 from s++)
+[eva:alarm] solitaire.c:125: Warning: 
+  out of bounds write. assert \valid(state.spare + 53);
+[eva:alarm] solitaire.c:125: Warning: 
+  out of bounds read. assert \valid_read(tmp_14);
+                      (tmp_14 from s++)
+[eva] solitaire.c:125: 
+  Assigning imprecise value to *(state.spare + 53)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:126: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:126: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:126: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nlo;
+[eva:alarm] solitaire.c:126: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nlo ≤ 2147483647;
+[eva] solitaire.c:126: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:127: Warning: 
+  signed overflow. assert -2147483648 ≤ nccut - nlo;
+[eva:alarm] solitaire.c:127: Warning: 
+  signed overflow. assert nccut - nlo ≤ 2147483647;
+[eva:alarm] solitaire.c:127: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(nccut - nlo) + lo;
+[eva:alarm] solitaire.c:127: Warning: 
+  signed overflow. assert (int)(nccut - nlo) + lo ≤ 2147483647;
+[eva] solitaire.c:127: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:128: 
+  Assigning imprecise value to tmp_15.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:128: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:128: Warning: 
+  out of bounds read. assert \valid_read(tmp_16);
+                      (tmp_16 from s++)
+[eva] solitaire.c:128: 
+  Assigning imprecise value to *tmp_15
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:129: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:130: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:131: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:131: 
+  Assigning imprecise value to tmp_17.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:131: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:131: Warning: 
+  out of bounds read. assert \valid_read(tmp_18);
+                      (tmp_18 from s++)
+[eva] solitaire.c:131: 
+  Assigning imprecise value to *tmp_17
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:132: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:132: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva] solitaire.c:132: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:134: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:134: 
+  Assigning imprecise value to tmp_19.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:134: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:134: 
+  Assigning imprecise value to *tmp_19
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:136: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:136: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:136: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nlo;
+[eva:alarm] solitaire.c:136: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nlo ≤ 2147483647;
+[eva] solitaire.c:136: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:137: Warning: 
+  signed overflow. assert -2147483648 ≤ nhi - nccut;
+[eva:alarm] solitaire.c:137: Warning: 
+  signed overflow. assert nhi - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:137: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(nhi - nccut) - 1;
+[eva:alarm] solitaire.c:137: Warning: 
+  signed overflow. assert (int)(nhi - nccut) - 1 ≤ 2147483647;
+[eva] solitaire.c:137: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:139: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:139: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:139: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nlo;
+[eva:alarm] solitaire.c:139: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nlo ≤ 2147483647;
+[eva] solitaire.c:139: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:140: Warning: 
+  signed overflow. assert -2147483648 ≤ nhi - nccut;
+[eva:alarm] solitaire.c:140: Warning: 
+  signed overflow. assert nhi - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:140: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(nhi - nccut) - 1;
+[eva:alarm] solitaire.c:140: Warning: 
+  signed overflow. assert (int)(nhi - nccut) - 1 ≤ 2147483647;
+[eva] solitaire.c:140: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:144: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:144: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:144: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nhi;
+[eva:alarm] solitaire.c:144: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nhi ≤ 2147483647;
+[eva] solitaire.c:144: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:145: Warning: 
+  signed overflow. assert -2147483648 ≤ nccut - nhi;
+[eva:alarm] solitaire.c:145: Warning: 
+  signed overflow. assert nccut - nhi ≤ 2147483647;
+[eva] solitaire.c:145: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:146: 
+  Assigning imprecise value to tmp_21.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:146: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:146: 
+  Assigning imprecise value to *tmp_21
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:146: Warning: 
+  out of bounds read. assert \valid_read(tmp_22);
+                      (tmp_22 from s++)
+[eva] solitaire.c:147: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:148: Warning: 
+  signed overflow. assert -2147483648 ≤ lo - 1;
+[eva:alarm] solitaire.c:148: Warning: 
+  signed overflow. assert lo - 1 ≤ 2147483647;
+[eva] solitaire.c:148: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:149: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:149: 
+  Assigning imprecise value to tmp_23.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:149: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:149: Warning: 
+  out of bounds read. assert \valid_read(tmp_24);
+                      (tmp_24 from s++)
+[eva] solitaire.c:149: 
+  Assigning imprecise value to *tmp_23
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:150: Warning: 
+  out of bounds write. assert \valid(state.spare + 53);
+[eva:alarm] solitaire.c:150: Warning: 
+  out of bounds read. assert \valid_read(tmp_25);
+                      (tmp_25 from s++)
+[eva] solitaire.c:150: 
+  Assigning imprecise value to *(state.spare + 53)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:151: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:151: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:151: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nlo;
+[eva:alarm] solitaire.c:151: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nlo ≤ 2147483647;
+[eva] solitaire.c:151: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:152: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:153: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:153: 
+  Assigning imprecise value to tmp_26.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:153: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:153: Warning: 
+  out of bounds read. assert \valid_read(tmp_27);
+                      (tmp_27 from s++)
+[eva] solitaire.c:153: 
+  Assigning imprecise value to *tmp_26
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:154: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:154: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva] solitaire.c:154: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:156: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:156: 
+  Assigning imprecise value to tmp_28.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:156: 
+  Assigning imprecise value to d.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:156: 
+  Assigning imprecise value to *tmp_28
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nlo;
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nlo ≤ 2147483647;
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)((int)(53 - nccut) + nlo) - lo;
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow. assert (int)((int)(53 - nccut) + nlo) - lo ≤ 2147483647;
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ state.a + (int)((int)((int)(53 - nccut) + nlo) - lo);
+[eva:alarm] solitaire.c:157: Warning: 
+  signed overflow.
+  assert state.a + (int)((int)((int)(53 - nccut) + nlo) - lo) ≤ 2147483647;
+[eva] solitaire.c:157: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow. assert -2147483648 ≤ 53 - nccut;
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow. assert 53 - nccut ≤ 2147483647;
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(53 - nccut) + nlo;
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow. assert (int)(53 - nccut) + nlo ≤ 2147483647;
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)((int)(53 - nccut) + nlo) - lo;
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow. assert (int)((int)(53 - nccut) + nlo) - lo ≤ 2147483647;
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ state.b + (int)((int)((int)(53 - nccut) + nlo) - lo);
+[eva:alarm] solitaire.c:158: Warning: 
+  signed overflow.
+  assert state.b + (int)((int)((int)(53 - nccut) + nlo) - lo) ≤ 2147483647;
+[eva] solitaire.c:158: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:160: 
+  Assigning imprecise value to source.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:161: 
+  Assigning imprecise value to state.deck.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:162: 
+  Assigning imprecise value to state.spare.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:163: Warning: 
+  out of bounds read. assert \valid_read(state.deck + 0);
+[eva:alarm] solitaire.c:163: Warning: 
+  out of bounds read. assert \valid_read(state.deck + *(state.deck + 0));
+[eva] solitaire.c:163: 
+  Assigning imprecise value to output.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:170: Warning: 
+  signed overflow. assert -2147483648 ≤ output - 26;
+[eva:alarm] solitaire.c:170: Warning: 
+  signed overflow. assert output - 26 ≤ 2147483647;
+[eva] solitaire.c:170: 
+  Assigning imprecise value to output.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:174: 
+  Assigning imprecise value to lastout.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:220: Warning: 
+  out of bounds write. assert \valid(state.spare + i);
+[eva:alarm] solitaire.c:220: Warning: 
+  out of bounds read.
+  assert \valid_read(state.deck + (int)((int)(i + kval) % 53));
+[eva] solitaire.c:220: 
+  Assigning imprecise value to *(state.spare + i)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:221: Warning: 
+  out of bounds write. assert \valid(state.spare + 53);
+[eva:alarm] solitaire.c:221: Warning: 
+  out of bounds read. assert \valid_read(state.deck + 53);
+[eva] solitaire.c:221: 
+  Assigning imprecise value to *(state.spare + 53)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:223: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a + 53;
+[eva:alarm] solitaire.c:223: Warning: 
+  signed overflow. assert state.a + 53 ≤ 2147483647;
+[eva:alarm] solitaire.c:223: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(state.a + 53) - kval;
+[eva:alarm] solitaire.c:223: Warning: 
+  signed overflow. assert (int)(state.a + 53) - kval ≤ 2147483647;
+[eva:alarm] solitaire.c:223: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ (int)((int)(state.a + 53) - kval) % 53;
+[eva:alarm] solitaire.c:223: Warning: 
+  signed overflow.
+  assert (int)((int)(state.a + 53) - kval) % 53 ≤ 2147483647;
+[eva] solitaire.c:223: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:225: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 53;
+[eva:alarm] solitaire.c:225: Warning: 
+  signed overflow. assert state.b + 53 ≤ 2147483647;
+[eva:alarm] solitaire.c:225: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)(state.b + 53) - kval;
+[eva:alarm] solitaire.c:225: Warning: 
+  signed overflow. assert (int)(state.b + 53) - kval ≤ 2147483647;
+[eva:alarm] solitaire.c:225: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ (int)((int)(state.b + 53) - kval) % 53;
+[eva:alarm] solitaire.c:225: Warning: 
+  signed overflow.
+  assert (int)((int)(state.b + 53) - kval) % 53 ≤ 2147483647;
+[eva] solitaire.c:225: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:226: 
+  Assigning imprecise value to tmp.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:227: 
+  Assigning imprecise value to state.deck.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:228: 
+  Assigning imprecise value to state.spare.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:186: Warning: 
+  out of bounds read. assert \valid_read(state.deck + i);
+[eva:alarm] solitaire.c:187: Warning: 
+  signed overflow. assert -2147483648 ≤ (int)' ' + *(state.deck + i);
+[eva:alarm] solitaire.c:187: Warning: 
+  signed overflow. assert (int)' ' + *(state.deck + i) ≤ 2147483647;
+[eva] solitaire.c:70: 
+  Assigning imprecise value to source.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:71: Warning: 
+  out of bounds write. assert \valid(source + state.a);
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert -2147483648 ≤ state.a + 1;
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert state.a + 1 ≤ 2147483647;
+[eva:alarm] solitaire.c:71: Warning: 
+  out of bounds read. assert \valid_read(source + (int)(state.a + 1));
+[eva] solitaire.c:71: 
+  Assigning imprecise value to *(source + state.a)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:71: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:71: 
+  Assigning imprecise value to source.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert -2147483648 ≤ state.b + 1;
+[eva:alarm] solitaire.c:71: Warning: 
+  signed overflow. assert state.b + 1 ≤ 2147483647;
+[eva] solitaire.c:71: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:71: Warning: 
+  out of bounds write. assert \valid(source + 0);
+[eva:alarm] solitaire.c:71: Warning: 
+  out of bounds read. assert \valid_read(source + 1);
+[eva] solitaire.c:71: 
+  Assigning imprecise value to *(source + 0)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:71: 
+  Assigning imprecise value to state.b.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:72: 
+  Assigning imprecise value to *(source + state.b)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:72: 
+  Assigning imprecise value to source.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:72: 
+  Assigning imprecise value to state.a.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:72: Warning: 
+  out of bounds write. assert \valid(source + 0);
+[eva:alarm] solitaire.c:72: Warning: 
+  out of bounds read. assert \valid_read(source + 1);
+[eva] solitaire.c:72: 
+  Assigning imprecise value to *(source + 0)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:73: 
+  Assigning imprecise value to source.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:73: Warning: 
+  out of bounds write. assert \valid(source + 0);
+[eva:alarm] solitaire.c:73: Warning: 
+  out of bounds read. assert \valid_read(source + 1);
+[eva] solitaire.c:73: 
+  Assigning imprecise value to *(source + 0)
+  (pointing to state with offsets [0..3808],0%8).
+  The imprecision originates from Misaligned
+[eva] solitaire.c:88: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:96: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:97: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:97: 
+  Assigning imprecise value to tmp_0.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:97: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:97: Warning: 
+  out of bounds read. assert \valid_read(tmp_0);
+                      (tmp_0 from s++)
+[eva] solitaire.c:99: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:100: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)s, (void *)sb);
+[eva] solitaire.c:100: 
+  Assigning imprecise value to tmp_2.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:100: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:100: Warning: 
+  out of bounds read. assert \valid_read(tmp_2);
+                      (tmp_2 from s++)
+[eva] solitaire.c:107: 
+  Assigning imprecise value to tmp_4.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:107: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:108: 
+  Assigning imprecise value to tmp_5.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:108: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:111: 
+  Assigning imprecise value to tmp_7.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:111: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:114: 
+  Assigning imprecise value to tmp_9.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:114: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:116: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:117: 
+  Assigning imprecise value to tmp_11.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:117: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:117: Warning: 
+  out of bounds read. assert \valid_read(tmp_11);
+                      (tmp_11 from s++)
+[eva] solitaire.c:124: 
+  Assigning imprecise value to tmp_13.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:124: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:125: 
+  Assigning imprecise value to tmp_14.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:125: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:128: 
+  Assigning imprecise value to tmp_16.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:128: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:131: 
+  Assigning imprecise value to tmp_18.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:131: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:133: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:134: 
+  Assigning imprecise value to tmp_20.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:134: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:134: Warning: 
+  out of bounds read. assert \valid_read(tmp_20);
+                      (tmp_20 from s++)
+[eva] solitaire.c:146: 
+  Assigning imprecise value to tmp_22.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:146: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:149: 
+  Assigning imprecise value to tmp_24.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:149: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:150: 
+  Assigning imprecise value to tmp_25.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:150: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:153: 
+  Assigning imprecise value to tmp_27.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:153: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:155: 
+  Assigning imprecise value to sb.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:156: 
+  Assigning imprecise value to tmp_29.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:156: 
+  Assigning imprecise value to s.
+  The imprecision originates from Misaligned
+[eva:alarm] solitaire.c:156: Warning: 
+  out of bounds read. assert \valid_read(tmp_29);
+                      (tmp_29 from s++)
+[eva] solitaire.c:219: Trace partitioning superposing up to 200 states
+[eva:alarm] solitaire.c:173: Warning: 
+  signed overflow.
+  assert cocount + (int)(lastout ≡ output? 1: 0) ≤ 2147483647;
+[eva] solitaire.c:219: Trace partitioning superposing up to 300 states
+[eva] using specification for function strtol
+[eva:alarm] solitaire.c:285: Warning: 
+  out of bounds read. assert \valid_read(tmp);
+[eva] solitaire.c:66: starting to merge loop iterations
+[eva:alarm] solitaire.c:248: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ (int)((int)char_in - (int)'A') + lastout;
+[eva:alarm] solitaire.c:248: Warning: 
+  signed overflow.
+  assert (int)((int)char_in - (int)'A') + lastout ≤ 2147483647;
+[eva:alarm] solitaire.c:248: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ (int)((int)((int)char_in - (int)'A') + lastout) % 26;
+[eva:alarm] solitaire.c:248: Warning: 
+  signed overflow.
+  assert (int)((int)((int)char_in - (int)'A') + lastout) % 26 ≤ 2147483647;
+[eva:alarm] solitaire.c:248: Warning: 
+  signed overflow.
+  assert
+  -2147483648 ≤
+  (int)'A' + (int)((int)((int)((int)char_in - (int)'A') + lastout) % 26);
+[eva:alarm] solitaire.c:248: Warning: 
+  signed overflow.
+  assert
+  (int)'A' + (int)((int)((int)((int)char_in - (int)'A') + lastout) % 26) ≤
+  2147483647;
+[eva] solitaire.c:248: 
+  Assigning imprecise value to char_out.
+  The imprecision originates from Misaligned
+[eva] using specification for function printf_va_2
+[eva] solitaire.c:253: 
+  Assigning imprecise value to \result<encrypt_char>.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:295: 
+  Assigning imprecise value to tmp_2.
+  The imprecision originates from Misaligned
+[eva] solitaire.c:291: Trace partitioning superposing up to 100 states
+[eva] solitaire.c:291: Trace partitioning superposing up to 200 states
+[eva] solitaire.c:291: Trace partitioning superposing up to 300 states
+[eva] solitaire.c:291: Trace partitioning superposing up to 400 states
+[eva] solitaire.c:291: Trace partitioning superposing up to 500 states
+[eva] solitaire.c:291: Trace partitioning superposing up to 600 states
+[eva] solitaire.c:291: Trace partitioning superposing up to 700 states
+[eva] solitaire.c:300: 
+  Assigning imprecise value to tmp_3.
+  The imprecision originates from Misaligned
+[eva] using specification for function printf_va_5
+[eva] solitaire.c:313: starting to merge loop iterations
+[eva:alarm] solitaire.c:313: Warning: 
+  signed overflow. assert i_0 + 1 ≤ 2147483647;
+[eva:alarm] solitaire.c:175: Warning: 
+  signed overflow. assert -2147483648 ≤ rounds - 1;
+[eva] using specification for function printf_va_6
+[eva] done for function eva_main
+[scope:rm_asserts] removing 40 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function cycle_deck:
+  state{.a; .b} ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+       .deck ∈ {{ &state + [0..476] }}
+       {.spare; .deck1[0..56]; .deck2[0..56]} ∈
+       {{ garbled mix of &{state} (origin: Misaligned) }}
+  lastout ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  cocount ∈ [0..2147483647]
+  rounds ∈ [-2147483648..0]
+  source ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  s ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  sb ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  d ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  lo ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  hi ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  nlo ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  nhi ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  nccut ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  output ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+[eva:final-states] Values at end of function print_deck:
+  i ∈ {54}
+  S___fc_stdout[0] ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+               [1] ∈ [--..--]
+[eva:final-states] Values at end of function encrypt_char:
+  state{.a; .b} ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+       .deck ∈ {{ &state + [0..476] }}
+       {.spare; .deck1[0..56]; .deck2[0..56]} ∈
+       {{ garbled mix of &{state} (origin: Misaligned) }}
+  lastout ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  cocount ∈ [0..2147483647]
+  char_out ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  S___fc_stdout[0] ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+               [1] ∈ [--..--]
+[eva:final-states] Values at end of function key_deck:
+  state ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  lastout ∈ {100}
+  cocount ∈ {0}
+  key ∈ {{ &argv1 + [0..255] ; &argv2 + [0..255] ; &argv3 + [0..255] }}
+  i ∈ {52; 53}
+  kval ∈ [-192..63] or UNINITIALIZED
+  tmp ∈ {{ garbled mix of &{state} (origin: Misaligned) }} or UNINITIALIZED
+  S___fc_stdout[0] ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+               [1] ∈ [--..--]
+[eva:final-states] Values at end of function main:
+  state ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  verbose ∈ {0; 1}
+  lastout ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  cocount ∈ [0..2147483647]
+  argc ∈ {-1; 0; 1; 2}
+  av ∈ {{ &argv{[1], [2], [3]} }}
+  tmp ∈ {{ &argv2 + [0..255] ; &argv3 + [0..255] ; &argv4 + [0..255] }}
+  slow_mode ∈ {0; 1}
+  rounds ∈ [--..--]
+  __retres ∈ {0}
+  S___fc_stdout[0] ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+               [1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  state ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  verbose ∈ {0; 1}
+  lastout ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+  cocount ∈ [0..2147483647]
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  S___fc_stdout[0] ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
+               [1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  6 functions analyzed (out of 6): 100% coverage.
+  In these functions, 396 statements reached (out of 396): 100% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  214 alarms generated by the analysis:
+     141 integer overflows
+      59 invalid memory accesses
+      14 others
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    17 valid     6 unknown     0 invalid     23 total
+  73% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.771s
+user	0m1.697s
+sys	0m0.038s

@@ -1,0 +1,578 @@
+[kernel] Parsing src/impls.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotc07b2d.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing src/roco.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot1dfe4c.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel:parser:decimal-float] src/roco_config.h:7: Warning: 
+  Floating-point constant 0.33 is not represented exactly. Will use 0x1.51eb851eb851fp-2.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[kernel] Parsing src/sim.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot94f4d6.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing src/main.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot72abdb.c:763:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[variadic] src/main.c:33: Warning: 
+  Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[variadic] src/main.c:41: Warning: 
+  Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 4.
+  option -eva-auto-loop-unroll set to 1024.
+  option -eva-widening-delay set to 6.
+  option -eva-partition-history set to 2.
+  option -eva-slevel set to 5000.
+  option -eva-ilevel set to 256.
+  option -eva-plevel set to 2000.
+  option -eva-subdivide-non-linear set to 220.
+  option -eva-remove-redundant-alarms set to true (default value).
+  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+  option -eva-split-return set to 'auto'.
+  option -eva-equality-through-calls set to 'formals' (default value).
+  option -eva-octagon-through-calls set to true.
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  Engine_maxVoltage_PARAM ∈ {24.}
+  Engine_minVoltage_PARAM ∈ {-24.}
+  Battery_voltage ∈ {0}
+  dT ∈ {0}
+  Engine_realVoltage ∈ {0}
+  Env_humidity ∈ {0}
+  Env_temperature ∈ {0}
+  Global_emergencyMode ∈ {0}
+  LegSensor_atMark ∈ {0}
+  LegSensor_signal ∈ {0}
+  RoCo_acceleration_CURVE.numPoints ∈ {4}
+                         {.x[0]; .[bits 16 to 63]} ∈ {0}
+                         .x[1] ∈ {0.33}
+                         .x[2] ∈ {0.67}
+                         .x[3] ∈ {1.}
+                         {.x[4..9]; .y[0]} ∈ {0}
+                         .y[1] ∈ {0.2}
+                         .y[2] ∈ {0.5}
+                         .y[3] ∈ {1.}
+                         .y[4..9] ∈ {0}
+  RoCo_accelerationFast_CURVE.numPoints ∈ {4}
+                             {.x[0]; .[bits 16 to 63]} ∈ {0}
+                             .x[1] ∈ {0.33}
+                             .x[2] ∈ {0.67}
+                             .x[3] ∈ {1.}
+                             {.x[4..9]; .y[0]} ∈ {0}
+                             .y[1] ∈ {2.}
+                             .y[2] ∈ {4.}
+                             .y[3] ∈ {5.}
+                             .y[4..9] ∈ {0}
+  RoCo_deceleration_CURVE.numPoints ∈ {4}
+                         {.x[0]; .[bits 16 to 63]} ∈ {0}
+                         .x[1] ∈ {0.33}
+                         .x[2] ∈ {0.67}
+                         .x[3] ∈ {1.}
+                         {.x[4..9]; .y[0]} ∈ {0}
+                         .y[1] ∈ {0.25}
+                         .y[2] ∈ {0.75}
+                         .y[3] ∈ {1.}
+                         .y[4..9] ∈ {0}
+  RoCo_decelerationFast_CURVE.numPoints ∈ {4}
+                             {.x[0]; .[bits 16 to 63]} ∈ {0}
+                             .x[1] ∈ {0.33}
+                             .x[2] ∈ {0.67}
+                             .x[3] ∈ {1.}
+                             {.x[4..9]; .y[0]} ∈ {0}
+                             .y[1] ∈ {2.}
+                             .y[2] ∈ {4.}
+                             .y[3] ∈ {5.}
+                             .y[4..9] ∈ {0}
+  RoCo_angleAtMark_PARAM ∈ {19.}
+  LegSensorSignalToAngle_CURVE.numPoints ∈ {4}
+                              .[bits 16 to 63] ∈ {0}
+                              .x[0] ∈ {-24.}
+                              .x[1] ∈ {-12.}
+                              .x[2] ∈ {12.}
+                              .x[3] ∈ {24.}
+                              .x[4..9] ∈ {0}
+                              .y[0] ∈ {-60.}
+                              .y[1] ∈ {-30.}
+                              .y[2] ∈ {30.}
+                              .y[3] ∈ {60.}
+                              .y[4..9] ∈ {0}
+  RoCo_angleReachedThreshold1_PARAM ∈ {5.}
+  RoCo_angleReachedThreshold2_PARAM ∈ {0.5}
+  RoCo_batteryLowLimit_PARAM ∈ {19.5}
+  RoCo_batteryLowDelay_PARAM ∈ {60.}
+  RoCo_checkBatteryVoltage_PARAM ∈ {1}
+  RoCo_humidityLimit_PARAM ∈ {0.8}
+  RoCo_checkHumidity_PARAM ∈ {0}
+  RoCo_envTempLowerLimit_PARAM ∈ {5.}
+  RoCo_envTempUpperLimit_PARAM ∈ {30.}
+  RoCo_TempFltT_PARAM ∈ {0.1}
+  RoCo_hasMinMaxAngles_PARAM ∈ {1}
+  RoCo_maxAngle_PARAM ∈ {120.}
+  RoCo_minAngle_PARAM ∈ {-120.}
+  RoCo_initMoveSpeed_PARAM ∈ {1.}
+  RoCo_initRampSlopeNeg_PARAM ∈ {1.}
+  RoCo_initRampSlopePos_PARAM ∈ {1.}
+  RoCo_idlePosition_PARAM ∈ {0}
+  RoCo_initTimeout_PARAM ∈ {20.}
+  RoCo_shutdownTimeout_PARAM ∈ {30.}
+  RoCo_stepSpeed_PARAM ∈ {2.}
+  RoCo_TimeSlopeNeg_PARAM ∈ {1.}
+  RoCo_TimeSlopePos_PARAM ∈ {0.5}
+  EngineSpeedToVoltage_CURVE.numPoints ∈ {5}
+                            .[bits 16 to 63] ∈ {0}
+                            .x[0] ∈ {-3.}
+                            .x[1] ∈ {-1.5}
+                            .x[2] ∈ {0}
+                            .x[3] ∈ {1.5}
+                            .x[4] ∈ {3.}
+                            .x[5..9] ∈ {0}
+                            .y[0] ∈ {-24.}
+                            .y[1] ∈ {-15.}
+                            .y[2] ∈ {0}
+                            .y[3] ∈ {15.}
+                            .y[4] ∈ {24.}
+                            .y[5..9] ∈ {0}
+  RoCo_voltageFilter_PARAM ∈ {0.1}
+  RoCo_activeDesired ∈ {0}
+  RoCo_commandMoveByAngle ∈ {0}
+  RoCo_desiredDeltaAngle ∈ {0}
+  RoCo_commandMoveToAngle ∈ {0}
+  RoCo_desiredTargetAngle ∈ {0}
+  RoCo_moveFast ∈ {0}
+  RoCo_commandShutOff ∈ {0}
+  RoCo_error ∈ {0}
+  RoCo_isActive ∈ {0}
+  RoCo_legAngle ∈ {0}
+  RoCo_legAngleValid ∈ {0}
+  RoCo_engineVoltage ∈ {0}
+  RoCo_adaptationActive ∈ {1}
+  RoCo_angleReachedThreshold1Fast_PARAM ∈ {10.}
+  RoCo_initStandstillTimeout_PARAM ∈ {2.}
+  RoCo_initialDeltaSearchRange_PARAM ∈ {2.}
+  RoCo_initialDeltaSearchTimeout_PARAM ∈ {2.}
+  RoCo_isAdapted ∈ {0}
+  buf1 ∈ {0}
+  buf2 ∈ {0}
+  buf3 ∈ {0}
+  buf4 ∈ {0}
+  buf5 ∈ {0}
+  internalPosition ∈ {22.5}
+  oldInternalPosition ∈ {0}
+  Sim_maxPos_PARAM ∈ {100.}
+  Sim_minPos_PARAM ∈ {-100.}
+  Srv_PT1 ∈ {0}
+  output_header ∈
+               {{ "time(ms)\tengineVoltage\tlegAngle\tlegAngleValid\tisActive\n" }}
+  output_row_fmt_string ∈ {{ "%d\t%f\t%f\t%d\t%d\n" }}
+  _t ∈ {0}
+  angleDiffRequest ∈ {0}
+  desiredEngineVoltage ∈ {0}
+  initBackwards ∈ {0}
+  limitationActive ∈ {0}
+  prevAngleSignal ∈ {0}
+  rampValue ∈ {0}
+  wasActive ∈ {0}
+  wasInit ∈ {0}
+  enabled ∈ {0}
+  rampTarget ∈ {0}
+  filteredEnvTemp ∈ {0}
+  direction ∈ {0}
+  targetAngle ∈ {0}
+  init ∈ {0}
+  final ∈ {0}
+  deltaSearchPhase ∈ {0}
+  initRamp ∈ {0}
+  initTimer ∈ {0}
+  moveTimeRamp ∈ {0}
+  envTempFilter ∈ {0}
+  shutdownTimer ∈ {0}
+  voltageFilter ∈ {0}
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ {0}
+  adaptation[0..1] ∈ {0}
+  rampHighReached ∈ {0}
+  wasRampEnded ∈ {0}
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_2
+[eva:loop-unroll:auto] src/impls.c:46: Automatic loop unrolling.
+[eva] using specification for function fabs
+[eva:loop-unroll:partial] src/main.c:47: loop not completely unrolled
+[eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 1900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 2900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
+[eva] src/main.c:35: starting to merge loop iterations
+[eva] src/roco.c:278: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 2900 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 1800 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 3700 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 3900 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 6200 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:237: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 2900 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 3400 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 6900 states
+[eva:alarm] src/impls.c:96: Warning: 
+  signed overflow. assert _t + delayMs ≤ 2147483647;
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 3100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 7400 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:203: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 8400 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 7300 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 4800 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 11700 states
+[eva] done for function main
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function Interpolate_from_curve:
+  result ∈ [-60. .. 60.]
+  i ∈ {0; 1; 2} or UNINITIALIZED
+[eva:final-states] Values at end of function Limiter_out:
+  result ∈ [-121. .. 121.]
+[eva:final-states] Values at end of function Ramp_getDir:
+  __retres ∈ {-1; 0; 1}
+[eva:final-states] Values at end of function Ramp_out:
+  initRamp.dir ∈ {-1; 0; 1}
+          .[bits 16 to 63] ∈ {0}
+          {.state; .target} ∈ [-1. .. 1.]
+  moveTimeRamp.dir ∈ {-1; 0; 1}
+              .[bits 16 to 63] ∈ {0}
+              .state ∈ [-0. .. 1.]
+              .target ∈ [0. .. 1.]
+  __retres ∈ [-1. .. 1.]
+[eva:final-states] Values at end of function RoCo_init:
+  RoCo_activeDesired ∈ {0}
+  RoCo_commandMoveByAngle ∈ {0}
+  RoCo_desiredDeltaAngle ∈ {0}
+  RoCo_commandMoveToAngle ∈ {0}
+  RoCo_desiredTargetAngle ∈ {0}
+  RoCo_moveFast ∈ {0}
+  RoCo_commandShutOff ∈ {0}
+  RoCo_error ∈ {0}
+  RoCo_isActive ∈ {0}
+  RoCo_legAngle ∈ {0}
+  RoCo_legAngleValid ∈ {0}
+  RoCo_engineVoltage ∈ {0}
+  RoCo_isAdapted ∈ {0}
+  angleDiffRequest ∈ {0}
+  desiredEngineVoltage ∈ {0}
+  initBackwards ∈ {0}
+  limitationActive ∈ {0}
+  prevAngleSignal ∈ {0}
+  rampValue ∈ {0}
+  wasActive ∈ {0}
+  wasInit ∈ {0}
+  enabled ∈ {0}
+  rampTarget ∈ {0}
+  filteredEnvTemp ∈ {0}
+  direction ∈ {0}
+  targetAngle ∈ {0}
+  init ∈ {0}
+  final ∈ {0}
+  deltaSearchPhase ∈ {0}
+  initTimer ∈ {0}
+  envTempFilter ∈ {0}
+  shutdownTimer ∈ {0}
+  voltageFilter ∈ {0}
+  batteryLowDelay ∈ {0}
+[eva:final-states] Values at end of function Sim_init:
+  Engine_realVoltage ∈ {0}
+  LegSensor_atMark ∈ {0}
+  LegSensor_signal ∈ {0}
+  buf1 ∈ {0}
+  buf2 ∈ {0}
+  buf3 ∈ {0}
+  buf4 ∈ {0}
+  buf5 ∈ {0}
+  internalPosition ∈ {20.}
+  oldInternalPosition ∈ {0}
+  Srv_PT1 ∈ {0}
+[eva:final-states] Values at end of function Sleep:
+  _t ∈ [20..2147483640],0%20
+[eva:final-states] Values at end of function Time:
+  
+[eva:final-states] Values at end of function Timer_elapsedTime:
+  __retres ∈ [0. .. 3.40282346639e+38]
+[eva:final-states] Values at end of function Timer_start:
+  initTimer ∈ [0. .. 86.32]
+  shutdownTimer ∈ [0. .. 100.46]
+[eva:final-states] Values at end of function Timer_tick:
+  initTimer ∈ [0. .. 3.40282346639e+38]
+  shutdownTimer ∈ [0. .. 3.40282346639e+38]
+[eva:final-states] Values at end of function Turn_on_delay:
+  result ∈ {0; 1}
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ [0. .. 10.]
+[eva:final-states] Values at end of function PT1_Filter:
+  __fc_errno ∈ [--..--]
+  Srv_PT1 ∈ [-10000000000. .. 10000000000.]
+  envTempFilter ∈ [0. .. 10000000000.]
+  voltageFilter ∈ [-10000000000. .. 10000000000.]
+  __retres ∈ [-10000000000. .. 10000000000.]
+[eva:final-states] Values at end of function Sim_process:
+  __fc_errno ∈ [--..--]
+  Engine_realVoltage ∈ [-9000000000. .. 9000000000.]
+  LegSensor_atMark ∈ {0; 1}
+  LegSensor_signal ∈ [-96.8 .. 4000000048.4]
+  buf1 ∈ [-10000000000. .. 10000000000.]
+  buf2 ∈ [-10000000000. .. 10000000000.]
+  buf3 ∈ [-10000000000. .. 10000000000.]
+  buf4 ∈ [-10000000000. .. 10000000000.]
+  buf5 ∈ [-10000000000. .. 10000000000.]
+  internalPosition ∈ [-121. .. 121.]
+  oldInternalPosition ∈ [-121. .. 121.]
+  Sim_maxPos_PARAM ∈ {121.}
+  Sim_minPos_PARAM ∈ {-121.}
+  Srv_PT1 ∈ [-10000000000. .. 10000000000.]
+  t1 ∈ [-10000000000. .. 10000000000.]
+  t2 ∈ [-9000000000. .. 9000000000.]
+  t3 ∈ {0; 1}
+  t4 ∈ [-242. .. 10000000121.]
+[eva:final-states] Values at end of function RoCo_process:
+  __fc_errno ∈ [--..--]
+  RoCo_activeDesired ∈ {0; 1}
+  RoCo_commandMoveToAngle ∈ {0; 1}
+  RoCo_commandShutOff ∈ {0; 1}
+  RoCo_error ∈ {0; 1}
+  RoCo_isActive ∈ {0; 1}
+  RoCo_legAngle ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  RoCo_legAngleValid ∈ {0; 1}
+  RoCo_engineVoltage ∈ [-10000000000. .. 10000000000.]
+  RoCo_isAdapted ∈ {0; 1}
+  t1 ∈ {21.3}
+  t2 ∈ {0.5}
+  t3 ∈ {20.}
+  t4 ∈ {0; 1}
+  t5 ∈ [-10000000000. .. 10000000000.]
+  t9 ∈ [-3.40282346639e+38 .. 3.40282346639e+38] or UNINITIALIZED
+  t10 ∈ [-3.40282346639e+38 .. 3.40282346639e+38] or UNINITIALIZED
+  t11 ∈ [5. .. 1e+80] or UNINITIALIZED
+  t12 ∈
+     {{ &RoCo_acceleration_CURVE ; &RoCo_deceleration_CURVE }} or UNINITIALIZED
+  t13 ∈ {0.1} or UNINITIALIZED
+  t14 ∈ {1} or UNINITIALIZED
+  t15 ∈ [-60. .. 60.] or UNINITIALIZED
+  angleDiffRequest ∈ [-1.08 .. 1.08]
+  desiredEngineVoltage ∈ [-10.8 .. 10.8]
+  initBackwards ∈ {0; 1}
+  limitationActive ∈ {0}
+  rampValue ∈ [-0. .. 1.]
+  wasActive ∈ {0; 1}
+  wasInit ∈ {0; 1}
+  enabled ∈ {0; 1}
+  rampTarget ∈ [-1. .. 1.]
+  filteredEnvTemp ∈ [0. .. 10000000000.]
+  direction ∈ {-1; 0; 1}
+  targetAngle ∈ [-55. .. 30.]
+  init ∈ {0; 1}
+  final ∈ {0; 1}
+  initRamp.dir ∈ {-1; 0; 1}
+          .[bits 16 to 63] ∈ {0}
+          {.state; .target} ∈ [-1. .. 1.]
+  initTimer ∈ [0. .. 3.40282346639e+38]
+  moveTimeRamp.dir ∈ {-1; 0; 1}
+              .[bits 16 to 63] ∈ {0}
+              .state ∈ [-0. .. 1.]
+              .target ∈ [0. .. 1.]
+  envTempFilter ∈ [0. .. 10000000000.]
+  shutdownTimer ∈ [0. .. 3.40282346639e+38]
+  voltageFilter ∈ [-10000000000. .. 10000000000.]
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ [0. .. 10.]
+  adaptation[0] ∈ [0. .. 1e+80]
+            [1] ∈ {0}
+  rampHighReached ∈ {0; 1}
+  wasRampEnded ∈ {0; 1}
+[eva:final-states] Values at end of function main:
+  __fc_errno ∈ [--..--]
+  Battery_voltage ∈ {21.3}
+  dT ∈ [0. .. 0.04]
+  Engine_realVoltage ∈ [-9000000000. .. 9000000000.]
+  Env_humidity ∈ {0.5}
+  Env_temperature ∈ {20.}
+  Global_emergencyMode ∈ {0}
+  LegSensor_atMark ∈ {0; 1}
+  LegSensor_signal ∈ [-10000000000. .. 10000000000.]
+  RoCo_activeDesired ∈ {0; 1}
+  RoCo_commandMoveByAngle ∈ {0}
+  RoCo_desiredDeltaAngle ∈ {0}
+  RoCo_commandMoveToAngle ∈ {0; 1}
+  RoCo_desiredTargetAngle ∈ [-5. .. 30.]
+  RoCo_moveFast ∈ {0}
+  RoCo_commandShutOff ∈ {0; 1}
+  RoCo_error ∈ {0; 1}
+  RoCo_isActive ∈ {0; 1}
+  RoCo_legAngle ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+  RoCo_legAngleValid ∈ {0; 1}
+  RoCo_engineVoltage ∈ [-10000000000. .. 10000000000.]
+  RoCo_isAdapted ∈ {1}
+  buf1 ∈ [-10000000000. .. 10000000000.]
+  buf2 ∈ [-10000000000. .. 10000000000.]
+  buf3 ∈ [-10000000000. .. 10000000000.]
+  buf4 ∈ [-10000000000. .. 10000000000.]
+  buf5 ∈ [-10000000000. .. 10000000000.]
+  internalPosition ∈ [-10000000000. .. 121.]
+  oldInternalPosition ∈ [-10000000000. .. 121.]
+  Sim_maxPos_PARAM ∈ {121.}
+  Sim_minPos_PARAM ∈ {-121.}
+  Srv_PT1 ∈ [-10000000000. .. 10000000000.]
+  lastTime ∈ [99980..2147483640],0%20
+  cnt ∈ {9000}
+  _t ∈ [100000..2147483640],0%20
+  angleDiffRequest ∈ [-1.08 .. 1.08]
+  desiredEngineVoltage ∈ [-10.8 .. 10.8]
+  initBackwards ∈ {0; 1}
+  limitationActive ∈ {0}
+  prevAngleSignal ∈ {0}
+  rampValue ∈ [-0. .. 1.]
+  wasActive ∈ {0; 1}
+  wasInit ∈ {0; 1}
+  enabled ∈ {0; 1}
+  rampTarget ∈ [-1. .. 1.]
+  filteredEnvTemp ∈ [10. .. 10000000000.]
+  direction ∈ {-1; 0; 1}
+  targetAngle ∈ [-55. .. 30.]
+  init ∈ {0; 1}
+  final ∈ {0; 1}
+  deltaSearchPhase ∈ {0}
+  initRamp.dir ∈ {-1; 0; 1}
+          .[bits 16 to 63] ∈ {0}
+          {.state; .target} ∈ [-1. .. 1.]
+  initTimer ∈ [0. .. 3.40282346639e+38]
+  moveTimeRamp.dir ∈ {-1; 0; 1}
+              .[bits 16 to 63] ∈ {0}
+              .state ∈ [-0. .. 1.]
+              .target ∈ [0. .. 1.]
+  envTempFilter ∈ [10. .. 10000000000.]
+  shutdownTimer ∈ [0. .. 3.40282346639e+38]
+  voltageFilter ∈ [-10000000000. .. 10000000000.]
+  batteryLowDelay ∈ {0}
+  standstillDelay ∈ [0. .. 10.]
+  adaptation[0] ∈ [1.80687344489 .. 1e+80]
+            [1] ∈ {0}
+  rampHighReached ∈ {0; 1}
+  wasRampEnded ∈ {0; 1}
+  __retres ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  16 functions analyzed (out of 18): 88% coverage.
+  In these functions, 403 statements reached (out of 424): 95% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 integer overflow
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    14 valid     0 unknown     0 invalid     14 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	7m46.560s
+user	7m45.661s
+sys	0m0.298s
