@@ -1,0 +1,82 @@
+Options:
+  ALARMS
+    -show-callstacks  display the call stacks when reporting alarms in text format (default: false)
+    -show-safe-checks  show safe checks when reporting alarms in text format (default: false)
+  C
+    -I  add the directory to the search path for include files in C analysis
+    -Wall  display compiler warnings. (default: unset)
+    -additional-stubs  additional stubs file
+    -c-check-float-division-by-zero  float divisions by 0 generate errors instead of infinities (default: false)
+    -c-check-float-invalid-operation  invalid float operations generate errors instead of silent NaN (default: false)
+    -c-check-float-overflow  float overflows generate errors (default: false)
+    -c-check-overflows-with-relational  check for overflows using the relational abstract domains too (more expensive but can be more precise) (default: true)
+    -c-check-unreachable-memory  check for unreachable allocated memory (default: main)
+    -c-entry  name of the entry function to be analyzed (default: main)
+    -c-ignore-translation-units  list of translation units ignored during linking.
+    -c-init-memset-threshold  Size threshold (in bytes) for using memset to initialize memory blocks instead of a sequence of assignments (default: 50)
+    -c-symbolic-args  set the number of symbolic arguments given to main (syntax: min[:max])
+    -c-symbolic-args-max-size  set the maximum allocated size of all symbolic arguments (default: 18446744073709551615)
+    -c-symbolic-args-min-size  set the maximum allocated size of all symbolic arguments (default: 1)
+    -ccopt  pass the option to the Clang frontend
+    -cell-deref-expand  maximal number of expanded cells when dereferencing a pointer (default: 1)
+    -cell-smash  activate the on-demand smashing when the expansion threshold is reached
+    -cell-smash-only-pointers  the on-demand smashing happens only on pointers
+    -disable-parser-cache  disable the cache of the Clang parser. (default: unset)
+    -error-is-builtin assume error function corresponds to the builtin (default: true)
+    -library-only  allow library-only targets in the .db files (used for multilanguage analysis) (default: false)
+    -make-target  binary target to analyze; used only when the Makefile builds multiple targets.
+    -target-triple  target architecture to analyze, as a triple (host if left empty).
+    -use-stub  list of functions for which the stub is used instead of the declaration.
+    -without-libc  disable stubs of the standard C library. (default: false)
+  CONFIGURATION
+    -cache  size of the analysis cache (default: 5)
+    -clean-cur-only  flag to apply cleaners on the current environment only
+    -config  path to the configuration file to use for the analysis
+    -hook  activate a hook
+    -share-dir  path to the share directory
+    -v  Mopsa version
+    -working-dir  set the working directory, used when resolving relative paths
+  COVERAGE
+    -c-show-line-coverage  turn on per-line coverage reporting
+  DEBUGGING
+    -debug  select active debug channels. (syntax: <c1>,<c2>,...,<cn> and '_' can be used as a wildcard) (default: print)
+    -engine={automatic,interactive,dap} selects analysis mode (default: automatic)
+    -no-color  deactivate colors in debug messages.
+    -no-warning  deactivate warning messages
+  GOTO
+    -goto-down  perform a down iteration after goto stabilization (default: false)
+  HEAP
+    -default-alloc-pol={all,range,callstack,range_callstack}  allocation policy used by default (default: range_callstack)
+    -hash-heap-address   format heap addresses with their hash (default: false)
+  HELP
+    --help  display the list of options
+    -h  display the list of options
+    -help  display the list of options
+    -list  list available domains/checks/hooks; if a configuration is specified, only used domains are listed
+  INTERPROCEDURAL ANALYSIS
+    -disable-var-renaming-recursive-call  disable renaming of local variables when detecting recursive calls
+  LOOPS
+    -loop-decr-it  enable decreasing iteration (default: disabled)
+    -loop-full-unrolling  unroll loops without applying widening (default: false)
+    -loop-full-unrolling-at  fully unroll loop at specific program location (syntax: [file.]line)
+    -loop-no-cache  do not use cache for loops (default: use cache)
+    -loop-unrolling  number of unrolling iterations before joining the environments (default: 1)
+    -loop-unrolling-at  number of unrolling iterations at specific program location (syntax: [file.]line:unrolling)
+    -widening-delay  number of iterations before applying a widening (default: 0)
+  NUMERIC
+    -float-rounding-mode={near,zero,up,down,rnd} rounding mode of floating-point computations. (default: near)
+  OUTPUT
+    -format={text,json}  selects the output format. (default: text)
+    -lflow  display the last output (default: false)
+    -output  redirect output to a file
+    -silent  do not return a non-zero value when detecting alarms (default: unset)
+    -tw  set the tab width (default: 4)
+  PROFILING
+    -flamegraph  path where flame graphs samples are saved
+    -flamegraph-resolution={s,ms,us,ns}  resolution of the flame graph samples (default: ms)
+  STUBS
+    -stub-ignore-case  list of stub cases to ignore
+    -stub-use-forall-loop-evaluation  use the fallback evaluation of universally quantified formulas with loops
+  UNIT TESTS
+    -unittest  activate unittest mode
+    -unittest-filter  list of test functions (separated by comma) to analyze

@@ -1,0 +1,240 @@
+[1;38;5;208mAnalysis terminated successfully (with assumptions)[0m
+Analysis time: 0.504s
+
+[1;38;5;208m⚠[0m Check #13:
+[1m../khash.c[0m: In function '[1mkh_del_32[0m':
+[1m../khash.c:3.0-1[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m3[0m: [1;38;5;208mK[0mHASH_MAP_INIT_INT(32, char)
+     [1;38;5;208m^[0m                           
+  Callstack:
+  	from ../khash.c:14.2-18: kh_del_32
+  	from ../khash.c:5.4-8: main
+  +2 other callstacks
+
+
+[1;38;5;208m⚠[0m Check #16:
+[1m../khash.c[0m: In function '[1mkh_resize_32[0m':
+[1m../khash.c:3.0-1[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m3[0m: [1;38;5;208mK[0mHASH_MAP_INIT_INT(32, char)
+     [1;38;5;208m^[0m                           
+  pointer '[1m&*(new_flags + i)[0m' may be null
+  accessing 1 byte at offsets [0,4294967294] of dynamically allocated block of size [4,4294967295] bytes
+  Callstack:
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #17:
+[1m../khash.c[0m: In function '[1mkh_put_32[0m':
+[1m../khash.c:3.0-1[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m3[0m: [1;38;5;208mK[0mHASH_MAP_INIT_INT(32, char)
+     [1;38;5;208m^[0m                           
+  pointer '[1m&*(unsigned int *) ((signed char *) h + 8)[0m' may be null
+  Callstack:
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #28:
+[1m../khash.c[0m: In function '[1mmain[0m':
+[1m../khash.c:10.2-3[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m10[0m:   [1;38;5;208mk[0mh_value(h, k) = 10;
+        [1;38;5;208m^[0m                   
+  pointer '[1m&*(signed char * *) ((signed char *) h + 32)[0m' may be null
+  Callstack:
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #37:
+[1m../khash.c[0m: In function '[1mmain[0m':
+[1m../khash.c:17.8-9[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m17[0m:     if ([1;38;5;208mk[0mh_exist(h, k)) kh_value(h, k) = 1;
+              [1;38;5;208m^[0m                                  
+  Callstack:
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #39:
+[1m../khash.c[0m: In function '[1mmain[0m':
+[1m../khash.c:17.24-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m17[0m:     if (kh_exist(h, k)) [1;38;5;208mk[0mh_value(h, k) = 1;
+                              [1;38;5;208m^[0m                  
+  Callstack:
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #104:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mrealloc[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:674.15-30[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m674[0m:  *   requires: [1;38;5;208m__ptr in Memory[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__ptr ∈ Memory[0m'
+  Callstack:
+  	from ../khash.c:3.0-1: realloc
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #105:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mrealloc[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:678.47-69[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m678[0m:  *             forall size_t i in [0, __size): [1;38;5;208m((unsigned char*)r)[i][0m == ((unsigned char*)__ptr)[i];
+                                                      [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m                               
+  accessing 1 byte at offsets [0,17179869179] of dynamically allocated block of size [4,17179869180] bytes
+  Callstack:
+  	from ../khash.c:3.0-1: realloc
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #107:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mrealloc[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:678.73-99[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m678[0m:  *             forall size_t i in [0, __size): ((unsigned char*)r)[i] == [1;38;5;208m((unsigned char*)__ptr)[i][0m;
+                                                                                [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../khash.c:3.0-1: realloc
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #109:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mrealloc[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:680.52-74[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m680[0m:  *             forall size_t i in [0, size(__ptr)): [1;38;5;208m((unsigned char*)r)[i][0m == ((unsigned char*)__ptr)[i];
+                                                           [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m                               
+  accessing 1 byte at offsets [0,18446744073709551614] of dynamically allocated block of size [4,17179869180] bytes
+  Callstack:
+  	from ../khash.c:3.0-1: realloc
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #111:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mrealloc[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:680.78-104[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m680[0m:  *             forall size_t i in [0, size(__ptr)): ((unsigned char*)r)[i] == [1;38;5;208m((unsigned char*)__ptr)[i][0m;
+                                                                                     [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../khash.c:3.0-1: realloc
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #113:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mfree[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:701.15-30[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m701[0m:  *   requires: [1;38;5;208m__ptr in Memory[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__ptr ∈ Memory[0m'
+  Callstack:
+  	from ../khash.c:3.0-1: free
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #114:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mfree[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:701.15-30[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m701[0m:  *   requires: [1;38;5;208m__ptr in Memory[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__ptr ∈ Memory[0m'
+  Callstack:
+  	from ../khash.c:3.0-1: free
+  	from ../khash.c:18.2-19: kh_destroy_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #115:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mfree[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:702.15-33[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m702[0m:  *   requires: [1;38;5;208moffset(__ptr) == 0[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m(offset(__ptr) == 0)[0m'
+  Callstack:
+  	from ../khash.c:3.0-1: free
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #116:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c[0m: In function '[1mfree[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:702.15-33[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m702[0m:  *   requires: [1;38;5;208moffset(__ptr) == 0[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m(offset(__ptr) == 0)[0m'
+  Callstack:
+  	from ../khash.c:3.0-1: free
+  	from ../khash.c:18.2-19: kh_destroy_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #119:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemset[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/string.c:97.13-47[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m97[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__dest, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Out-of-bound access
+  Callstack:
+  	from ../khash.c:3.0-1: memset
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #121:
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemset[0m':
+[1m/home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/string.c:99.43-73[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m99[0m:  * ensures: forall size_t i in [0, __len): [1;38;5;208m(((unsigned char*)__dest)[i])'[0m == __ch;
+                                                 [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m         
+  accessing 1 byte at offsets [0,4294967294] of variable '[1mprimed⦃@Memory:70eb659⦄[0m' of size [4,4294967295] bytes
+  Callstack:
+  	from ../khash.c:3.0-1: memset
+  	from ../khash.c:3.0-1: kh_resize_32
+  	from ../khash.c:9.6-28: kh_put_32
+  	from ../khash.c:5.4-8: main
+
+Checks summary: [1m176 total[0m, [1;38;5;40m✔ 157 safe[0m, [1;38;5;208m⚠ 19 warnings[0m (selectivity: 89.21%)
+  Stub condition: 15 total, [1;38;5;40m✔ 9 safe[0m, [1;38;5;208m⚠ 6 warnings[0m
+  Invalid memory access: 75 total, [1;38;5;40m✔ 62 safe[0m, [1;38;5;208m⚠ 13 warnings[0m
+  Integer overflow: 84 total, [1;38;5;40m✔ 84 safe[0m
+  Invalid shift: 2 total, [1;38;5;40m✔ 2 safe[0m
+
+11 assumptions:
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->flags[j][0m'
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->flags[i][0m'
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->keys[i][0m'
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->vals[i][0m'
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->flags[x][0m'
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->keys[x][0m'
+  ../khash.c:3.0-1: ignoring modification of blocks pointed by undetermined pointer '[1m&h->flags[x][0m'
+  ../khash.c:10.2-3: ignoring modification of blocks pointed by undetermined pointer '[1m&h->vals[k][0m'
+  ../khash.c:17.24-25: ignoring modification of blocks pointed by undetermined pointer '[1m&h->vals[k][0m'
+  /home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:681.5-21: ignoring modification of blocks pointed by undetermined pointer '[1m__ptr[0m'
+  /home/carolt/.opam/frama-c/share/mopsa/stubs/c/libc/stdlib.c:703.5-21: ignoring modification of blocks pointed by undetermined pointer '[1m__ptr[0m'
+
