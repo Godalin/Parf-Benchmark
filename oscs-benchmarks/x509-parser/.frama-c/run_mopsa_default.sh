@@ -23,8 +23,9 @@ kernelparams="-add-symbolic-path=..:. \
 mopsaparams="" 
 
 # Analysis Targets: source files
-target1="../src/x509-parser.c"
+target1="../src/x509-parser.c \
+  ../src/main.c"
 
 cmd1="mopsa-c $cppargs $mopsaparams $target1"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
+$cmd1 1> $logfile 2>&1

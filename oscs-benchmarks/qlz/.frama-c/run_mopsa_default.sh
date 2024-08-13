@@ -18,10 +18,10 @@ kernelparams="-add-symbolic-path=..:. \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-mopsaparams1="-eva" 
-mopsaparams2="-eva" 
-mopsaparams3="-eva" 
-mopsaparams4="-eva" 
+mopsaparams1="" 
+mopsaparams2="" 
+mopsaparams3="" 
+mopsaparams4="" 
 
 # Analysis Targets: source files
 target1="../compress_file.c \
@@ -42,7 +42,7 @@ cmd2="mopsa-c $cppargs2 $mopsaparams2 $target2"
 cmd3="mopsa-c $cppargs3 $mopsaparams3 $target3"
 cmd4="mopsa-c $cppargs4 $mopsaparams4 $target4"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
-timeout $timelimit $cmd2 1>> $logfile 2>&1
-timeout $timelimit $cmd3 1>> $logfile 2>&1
-timeout $timelimit $cmd4 1>> $logfile 2>&1
+$cmd1 1> $logfile 2>&1
+$cmd2 1>> $logfile 2>&1
+$cmd3 1>> $logfile 2>&1
+$cmd4 1>> $logfile 2>&1

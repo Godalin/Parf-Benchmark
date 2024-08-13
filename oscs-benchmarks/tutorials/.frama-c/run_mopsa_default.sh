@@ -19,4 +19,4 @@ target1="../2018_06_parser/parser_full.c"
 
 cmd1="mopsa-c $cppargs $mopsaparams $target1"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
+$cmd1 1> $logfile 2>&1

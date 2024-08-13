@@ -15,12 +15,12 @@ kernelparams="-main eva_main \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-mopsaparams1="-eva" 
-mopsaparams2="-eva" 
-mopsaparams3="-eva" 
-mopsaparams4="-eva" 
-mopsaparams5="-eva" 
-mopsaparams6="-eva" 
+mopsaparams1="" 
+mopsaparams2="" 
+mopsaparams3="" 
+mopsaparams4="" 
+mopsaparams5="" 
+mopsaparams6="" 
 
 # Analysis Targets: source files
 target1="stubs.c \
@@ -60,9 +60,9 @@ cmd4="mopsa-c $cppargs $mopsaparams4 $target4"
 cmd5="mopsa-c $cppargs $mopsaparams5 $target5"
 cmd6="mopsa-c $cppargs $mopsaparams6 $target6"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
-timeout $timelimit $cmd2 1>> $logfile 2>&1
-timeout $timelimit $cmd3 1>> $logfile 2>&1
-timeout $timelimit $cmd4 1>> $logfile 2>&1
-timeout $timelimit $cmd5 1>> $logfile 2>&1
-timeout $timelimit $cmd6 1>> $logfile 2>&1
+$cmd1 1> $logfile 2>&1
+$cmd2 1>> $logfile 2>&1
+$cmd3 1>> $logfile 2>&1
+$cmd4 1>> $logfile 2>&1
+$cmd5 1>> $logfile 2>&1
+$cmd6 1>> $logfile 2>&1

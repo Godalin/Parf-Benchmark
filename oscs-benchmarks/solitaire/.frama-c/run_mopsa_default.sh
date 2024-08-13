@@ -4,7 +4,8 @@ timelimit="20m"
 logfile="log_mopsa_default"
 
 # Preprocessing arguments for -cpp-extra-args
-cppargs="-CC"
+#cppargs="-CC"
+cppargs=""
 
 # General kernel parameters
 ## Please add kernel parameters here if necessary 
@@ -21,4 +22,4 @@ target1="../solitaire.c"
 
 cmd1="mopsa-c $cppargs $mopsaparams $target1"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
+$cmd1 1> $logfile 2>&1

@@ -1,328 +1,1688 @@
-Options:
-  ALARMS
-    -show-callstacks  display the call stacks when reporting alarms in text format (default: false)
-    -show-safe-checks  show safe checks when reporting alarms in text format (default: false)
-  C
-    -I  add the directory to the search path for include files in C analysis
-    -Wall  display compiler warnings. (default: unset)
-    -additional-stubs  additional stubs file
-    -c-check-float-division-by-zero  float divisions by 0 generate errors instead of infinities (default: false)
-    -c-check-float-invalid-operation  invalid float operations generate errors instead of silent NaN (default: false)
-    -c-check-float-overflow  float overflows generate errors (default: false)
-    -c-check-overflows-with-relational  check for overflows using the relational abstract domains too (more expensive but can be more precise) (default: true)
-    -c-check-unreachable-memory  check for unreachable allocated memory (default: main)
-    -c-entry  name of the entry function to be analyzed (default: main)
-    -c-ignore-translation-units  list of translation units ignored during linking.
-    -c-init-memset-threshold  Size threshold (in bytes) for using memset to initialize memory blocks instead of a sequence of assignments (default: 50)
-    -c-symbolic-args  set the number of symbolic arguments given to main (syntax: min[:max])
-    -c-symbolic-args-max-size  set the maximum allocated size of all symbolic arguments (default: 18446744073709551615)
-    -c-symbolic-args-min-size  set the maximum allocated size of all symbolic arguments (default: 1)
-    -ccopt  pass the option to the Clang frontend
-    -cell-deref-expand  maximal number of expanded cells when dereferencing a pointer (default: 1)
-    -cell-smash  activate the on-demand smashing when the expansion threshold is reached
-    -cell-smash-only-pointers  the on-demand smashing happens only on pointers
-    -disable-parser-cache  disable the cache of the Clang parser. (default: unset)
-    -error-is-builtin assume error function corresponds to the builtin (default: true)
-    -library-only  allow library-only targets in the .db files (used for multilanguage analysis) (default: false)
-    -make-target  binary target to analyze; used only when the Makefile builds multiple targets.
-    -target-triple  target architecture to analyze, as a triple (host if left empty).
-    -use-stub  list of functions for which the stub is used instead of the declaration.
-    -without-libc  disable stubs of the standard C library. (default: false)
-  CONFIGURATION
-    -cache  size of the analysis cache (default: 5)
-    -clean-cur-only  flag to apply cleaners on the current environment only
-    -config  path to the configuration file to use for the analysis
-    -hook  activate a hook
-    -share-dir  path to the share directory
-    -v  Mopsa version
-    -working-dir  set the working directory, used when resolving relative paths
-  COVERAGE
-    -c-show-line-coverage  turn on per-line coverage reporting
-  DEBUGGING
-    -debug  select active debug channels. (syntax: <c1>,<c2>,...,<cn> and '_' can be used as a wildcard) (default: print)
-    -engine={automatic,interactive,dap} selects analysis mode (default: automatic)
-    -no-color  deactivate colors in debug messages.
-    -no-warning  deactivate warning messages
-  GOTO
-    -goto-down  perform a down iteration after goto stabilization (default: false)
-  HEAP
-    -default-alloc-pol={all,range,callstack,range_callstack}  allocation policy used by default (default: range_callstack)
-    -hash-heap-address   format heap addresses with their hash (default: false)
-  HELP
-    --help  display the list of options
-    -h  display the list of options
-    -help  display the list of options
-    -list  list available domains/checks/hooks; if a configuration is specified, only used domains are listed
-  INTERPROCEDURAL ANALYSIS
-    -disable-var-renaming-recursive-call  disable renaming of local variables when detecting recursive calls
-  LOOPS
-    -loop-decr-it  enable decreasing iteration (default: disabled)
-    -loop-full-unrolling  unroll loops without applying widening (default: false)
-    -loop-full-unrolling-at  fully unroll loop at specific program location (syntax: [file.]line)
-    -loop-no-cache  do not use cache for loops (default: use cache)
-    -loop-unrolling  number of unrolling iterations before joining the environments (default: 1)
-    -loop-unrolling-at  number of unrolling iterations at specific program location (syntax: [file.]line:unrolling)
-    -widening-delay  number of iterations before applying a widening (default: 0)
-  NUMERIC
-    -float-rounding-mode={near,zero,up,down,rnd} rounding mode of floating-point computations. (default: near)
-  OUTPUT
-    -format={text,json}  selects the output format. (default: text)
-    -lflow  display the last output (default: false)
-    -output  redirect output to a file
-    -silent  do not return a non-zero value when detecting alarms (default: unset)
-    -tw  set the tab width (default: 4)
-  PROFILING
-    -flamegraph  path where flame graphs samples are saved
-    -flamegraph-resolution={s,ms,us,ns}  resolution of the flame graph samples (default: ms)
-  STUBS
-    -stub-ignore-case  list of stub cases to ignore
-    -stub-use-forall-loop-evaluation  use the fallback evaluation of universally quantified formulas with loops
-  UNIT TESTS
-    -unittest  activate unittest mode
-    -unittest-filter  list of test functions (separated by comma) to analyze
-Options:
-  ALARMS
-    -show-callstacks  display the call stacks when reporting alarms in text format (default: false)
-    -show-safe-checks  show safe checks when reporting alarms in text format (default: false)
-  C
-    -I  add the directory to the search path for include files in C analysis
-    -Wall  display compiler warnings. (default: unset)
-    -additional-stubs  additional stubs file
-    -c-check-float-division-by-zero  float divisions by 0 generate errors instead of infinities (default: false)
-    -c-check-float-invalid-operation  invalid float operations generate errors instead of silent NaN (default: false)
-    -c-check-float-overflow  float overflows generate errors (default: false)
-    -c-check-overflows-with-relational  check for overflows using the relational abstract domains too (more expensive but can be more precise) (default: true)
-    -c-check-unreachable-memory  check for unreachable allocated memory (default: main)
-    -c-entry  name of the entry function to be analyzed (default: main)
-    -c-ignore-translation-units  list of translation units ignored during linking.
-    -c-init-memset-threshold  Size threshold (in bytes) for using memset to initialize memory blocks instead of a sequence of assignments (default: 50)
-    -c-symbolic-args  set the number of symbolic arguments given to main (syntax: min[:max])
-    -c-symbolic-args-max-size  set the maximum allocated size of all symbolic arguments (default: 18446744073709551615)
-    -c-symbolic-args-min-size  set the maximum allocated size of all symbolic arguments (default: 1)
-    -ccopt  pass the option to the Clang frontend
-    -cell-deref-expand  maximal number of expanded cells when dereferencing a pointer (default: 1)
-    -cell-smash  activate the on-demand smashing when the expansion threshold is reached
-    -cell-smash-only-pointers  the on-demand smashing happens only on pointers
-    -disable-parser-cache  disable the cache of the Clang parser. (default: unset)
-    -error-is-builtin assume error function corresponds to the builtin (default: true)
-    -library-only  allow library-only targets in the .db files (used for multilanguage analysis) (default: false)
-    -make-target  binary target to analyze; used only when the Makefile builds multiple targets.
-    -target-triple  target architecture to analyze, as a triple (host if left empty).
-    -use-stub  list of functions for which the stub is used instead of the declaration.
-    -without-libc  disable stubs of the standard C library. (default: false)
-  CONFIGURATION
-    -cache  size of the analysis cache (default: 5)
-    -clean-cur-only  flag to apply cleaners on the current environment only
-    -config  path to the configuration file to use for the analysis
-    -hook  activate a hook
-    -share-dir  path to the share directory
-    -v  Mopsa version
-    -working-dir  set the working directory, used when resolving relative paths
-  COVERAGE
-    -c-show-line-coverage  turn on per-line coverage reporting
-  DEBUGGING
-    -debug  select active debug channels. (syntax: <c1>,<c2>,...,<cn> and '_' can be used as a wildcard) (default: print)
-    -engine={automatic,interactive,dap} selects analysis mode (default: automatic)
-    -no-color  deactivate colors in debug messages.
-    -no-warning  deactivate warning messages
-  GOTO
-    -goto-down  perform a down iteration after goto stabilization (default: false)
-  HEAP
-    -default-alloc-pol={all,range,callstack,range_callstack}  allocation policy used by default (default: range_callstack)
-    -hash-heap-address   format heap addresses with their hash (default: false)
-  HELP
-    --help  display the list of options
-    -h  display the list of options
-    -help  display the list of options
-    -list  list available domains/checks/hooks; if a configuration is specified, only used domains are listed
-  INTERPROCEDURAL ANALYSIS
-    -disable-var-renaming-recursive-call  disable renaming of local variables when detecting recursive calls
-  LOOPS
-    -loop-decr-it  enable decreasing iteration (default: disabled)
-    -loop-full-unrolling  unroll loops without applying widening (default: false)
-    -loop-full-unrolling-at  fully unroll loop at specific program location (syntax: [file.]line)
-    -loop-no-cache  do not use cache for loops (default: use cache)
-    -loop-unrolling  number of unrolling iterations before joining the environments (default: 1)
-    -loop-unrolling-at  number of unrolling iterations at specific program location (syntax: [file.]line:unrolling)
-    -widening-delay  number of iterations before applying a widening (default: 0)
-  NUMERIC
-    -float-rounding-mode={near,zero,up,down,rnd} rounding mode of floating-point computations. (default: near)
-  OUTPUT
-    -format={text,json}  selects the output format. (default: text)
-    -lflow  display the last output (default: false)
-    -output  redirect output to a file
-    -silent  do not return a non-zero value when detecting alarms (default: unset)
-    -tw  set the tab width (default: 4)
-  PROFILING
-    -flamegraph  path where flame graphs samples are saved
-    -flamegraph-resolution={s,ms,us,ns}  resolution of the flame graph samples (default: ms)
-  STUBS
-    -stub-ignore-case  list of stub cases to ignore
-    -stub-use-forall-loop-evaluation  use the fallback evaluation of universally quantified formulas with loops
-  UNIT TESTS
-    -unittest  activate unittest mode
-    -unittest-filter  list of test functions (separated by comma) to analyze
-Options:
-  ALARMS
-    -show-callstacks  display the call stacks when reporting alarms in text format (default: false)
-    -show-safe-checks  show safe checks when reporting alarms in text format (default: false)
-  C
-    -I  add the directory to the search path for include files in C analysis
-    -Wall  display compiler warnings. (default: unset)
-    -additional-stubs  additional stubs file
-    -c-check-float-division-by-zero  float divisions by 0 generate errors instead of infinities (default: false)
-    -c-check-float-invalid-operation  invalid float operations generate errors instead of silent NaN (default: false)
-    -c-check-float-overflow  float overflows generate errors (default: false)
-    -c-check-overflows-with-relational  check for overflows using the relational abstract domains too (more expensive but can be more precise) (default: true)
-    -c-check-unreachable-memory  check for unreachable allocated memory (default: main)
-    -c-entry  name of the entry function to be analyzed (default: main)
-    -c-ignore-translation-units  list of translation units ignored during linking.
-    -c-init-memset-threshold  Size threshold (in bytes) for using memset to initialize memory blocks instead of a sequence of assignments (default: 50)
-    -c-symbolic-args  set the number of symbolic arguments given to main (syntax: min[:max])
-    -c-symbolic-args-max-size  set the maximum allocated size of all symbolic arguments (default: 18446744073709551615)
-    -c-symbolic-args-min-size  set the maximum allocated size of all symbolic arguments (default: 1)
-    -ccopt  pass the option to the Clang frontend
-    -cell-deref-expand  maximal number of expanded cells when dereferencing a pointer (default: 1)
-    -cell-smash  activate the on-demand smashing when the expansion threshold is reached
-    -cell-smash-only-pointers  the on-demand smashing happens only on pointers
-    -disable-parser-cache  disable the cache of the Clang parser. (default: unset)
-    -error-is-builtin assume error function corresponds to the builtin (default: true)
-    -library-only  allow library-only targets in the .db files (used for multilanguage analysis) (default: false)
-    -make-target  binary target to analyze; used only when the Makefile builds multiple targets.
-    -target-triple  target architecture to analyze, as a triple (host if left empty).
-    -use-stub  list of functions for which the stub is used instead of the declaration.
-    -without-libc  disable stubs of the standard C library. (default: false)
-  CONFIGURATION
-    -cache  size of the analysis cache (default: 5)
-    -clean-cur-only  flag to apply cleaners on the current environment only
-    -config  path to the configuration file to use for the analysis
-    -hook  activate a hook
-    -share-dir  path to the share directory
-    -v  Mopsa version
-    -working-dir  set the working directory, used when resolving relative paths
-  COVERAGE
-    -c-show-line-coverage  turn on per-line coverage reporting
-  DEBUGGING
-    -debug  select active debug channels. (syntax: <c1>,<c2>,...,<cn> and '_' can be used as a wildcard) (default: print)
-    -engine={automatic,interactive,dap} selects analysis mode (default: automatic)
-    -no-color  deactivate colors in debug messages.
-    -no-warning  deactivate warning messages
-  GOTO
-    -goto-down  perform a down iteration after goto stabilization (default: false)
-  HEAP
-    -default-alloc-pol={all,range,callstack,range_callstack}  allocation policy used by default (default: range_callstack)
-    -hash-heap-address   format heap addresses with their hash (default: false)
-  HELP
-    --help  display the list of options
-    -h  display the list of options
-    -help  display the list of options
-    -list  list available domains/checks/hooks; if a configuration is specified, only used domains are listed
-  INTERPROCEDURAL ANALYSIS
-    -disable-var-renaming-recursive-call  disable renaming of local variables when detecting recursive calls
-  LOOPS
-    -loop-decr-it  enable decreasing iteration (default: disabled)
-    -loop-full-unrolling  unroll loops without applying widening (default: false)
-    -loop-full-unrolling-at  fully unroll loop at specific program location (syntax: [file.]line)
-    -loop-no-cache  do not use cache for loops (default: use cache)
-    -loop-unrolling  number of unrolling iterations before joining the environments (default: 1)
-    -loop-unrolling-at  number of unrolling iterations at specific program location (syntax: [file.]line:unrolling)
-    -widening-delay  number of iterations before applying a widening (default: 0)
-  NUMERIC
-    -float-rounding-mode={near,zero,up,down,rnd} rounding mode of floating-point computations. (default: near)
-  OUTPUT
-    -format={text,json}  selects the output format. (default: text)
-    -lflow  display the last output (default: false)
-    -output  redirect output to a file
-    -silent  do not return a non-zero value when detecting alarms (default: unset)
-    -tw  set the tab width (default: 4)
-  PROFILING
-    -flamegraph  path where flame graphs samples are saved
-    -flamegraph-resolution={s,ms,us,ns}  resolution of the flame graph samples (default: ms)
-  STUBS
-    -stub-ignore-case  list of stub cases to ignore
-    -stub-use-forall-loop-evaluation  use the fallback evaluation of universally quantified formulas with loops
-  UNIT TESTS
-    -unittest  activate unittest mode
-    -unittest-filter  list of test functions (separated by comma) to analyze
-Options:
-  ALARMS
-    -show-callstacks  display the call stacks when reporting alarms in text format (default: false)
-    -show-safe-checks  show safe checks when reporting alarms in text format (default: false)
-  C
-    -I  add the directory to the search path for include files in C analysis
-    -Wall  display compiler warnings. (default: unset)
-    -additional-stubs  additional stubs file
-    -c-check-float-division-by-zero  float divisions by 0 generate errors instead of infinities (default: false)
-    -c-check-float-invalid-operation  invalid float operations generate errors instead of silent NaN (default: false)
-    -c-check-float-overflow  float overflows generate errors (default: false)
-    -c-check-overflows-with-relational  check for overflows using the relational abstract domains too (more expensive but can be more precise) (default: true)
-    -c-check-unreachable-memory  check for unreachable allocated memory (default: main)
-    -c-entry  name of the entry function to be analyzed (default: main)
-    -c-ignore-translation-units  list of translation units ignored during linking.
-    -c-init-memset-threshold  Size threshold (in bytes) for using memset to initialize memory blocks instead of a sequence of assignments (default: 50)
-    -c-symbolic-args  set the number of symbolic arguments given to main (syntax: min[:max])
-    -c-symbolic-args-max-size  set the maximum allocated size of all symbolic arguments (default: 18446744073709551615)
-    -c-symbolic-args-min-size  set the maximum allocated size of all symbolic arguments (default: 1)
-    -ccopt  pass the option to the Clang frontend
-    -cell-deref-expand  maximal number of expanded cells when dereferencing a pointer (default: 1)
-    -cell-smash  activate the on-demand smashing when the expansion threshold is reached
-    -cell-smash-only-pointers  the on-demand smashing happens only on pointers
-    -disable-parser-cache  disable the cache of the Clang parser. (default: unset)
-    -error-is-builtin assume error function corresponds to the builtin (default: true)
-    -library-only  allow library-only targets in the .db files (used for multilanguage analysis) (default: false)
-    -make-target  binary target to analyze; used only when the Makefile builds multiple targets.
-    -target-triple  target architecture to analyze, as a triple (host if left empty).
-    -use-stub  list of functions for which the stub is used instead of the declaration.
-    -without-libc  disable stubs of the standard C library. (default: false)
-  CONFIGURATION
-    -cache  size of the analysis cache (default: 5)
-    -clean-cur-only  flag to apply cleaners on the current environment only
-    -config  path to the configuration file to use for the analysis
-    -hook  activate a hook
-    -share-dir  path to the share directory
-    -v  Mopsa version
-    -working-dir  set the working directory, used when resolving relative paths
-  COVERAGE
-    -c-show-line-coverage  turn on per-line coverage reporting
-  DEBUGGING
-    -debug  select active debug channels. (syntax: <c1>,<c2>,...,<cn> and '_' can be used as a wildcard) (default: print)
-    -engine={automatic,interactive,dap} selects analysis mode (default: automatic)
-    -no-color  deactivate colors in debug messages.
-    -no-warning  deactivate warning messages
-  GOTO
-    -goto-down  perform a down iteration after goto stabilization (default: false)
-  HEAP
-    -default-alloc-pol={all,range,callstack,range_callstack}  allocation policy used by default (default: range_callstack)
-    -hash-heap-address   format heap addresses with their hash (default: false)
-  HELP
-    --help  display the list of options
-    -h  display the list of options
-    -help  display the list of options
-    -list  list available domains/checks/hooks; if a configuration is specified, only used domains are listed
-  INTERPROCEDURAL ANALYSIS
-    -disable-var-renaming-recursive-call  disable renaming of local variables when detecting recursive calls
-  LOOPS
-    -loop-decr-it  enable decreasing iteration (default: disabled)
-    -loop-full-unrolling  unroll loops without applying widening (default: false)
-    -loop-full-unrolling-at  fully unroll loop at specific program location (syntax: [file.]line)
-    -loop-no-cache  do not use cache for loops (default: use cache)
-    -loop-unrolling  number of unrolling iterations before joining the environments (default: 1)
-    -loop-unrolling-at  number of unrolling iterations at specific program location (syntax: [file.]line:unrolling)
-    -widening-delay  number of iterations before applying a widening (default: 0)
-  NUMERIC
-    -float-rounding-mode={near,zero,up,down,rnd} rounding mode of floating-point computations. (default: near)
-  OUTPUT
-    -format={text,json}  selects the output format. (default: text)
-    -lflow  display the last output (default: false)
-    -output  redirect output to a file
-    -silent  do not return a non-zero value when detecting alarms (default: unset)
-    -tw  set the tab width (default: 4)
-  PROFILING
-    -flamegraph  path where flame graphs samples are saved
-    -flamegraph-resolution={s,ms,us,ns}  resolution of the flame graph samples (default: ms)
-  STUBS
-    -stub-ignore-case  list of stub cases to ignore
-    -stub-use-forall-loop-evaluation  use the fallback evaluation of universally quantified formulas with loops
-  UNIT TESTS
-    -unittest  activate unittest mode
-    -unittest-filter  list of test functions (separated by comma) to analyze
+[1;38;5;208mAnalysis terminated successfully (with assumptions)[0m
+Analysis time: 0.655s
+
+[1;38;5;208m⚠[0m Check #2:
+[1m../compress_file.c[0m: In function '[1mfopen[0m':
+[1m../compress_file.c:17.18-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m17[0m:     ofile = fopen([1;38;5;208margv[2][0m, "wb");
+                        [1;38;5;208m^^^^^^^[0m        
+  accessing 8 bytes at offset 16 of dynamically allocated block of size [16,262136] bytes
+  Callstack:
+  	from ../compress_file.c:17.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #4:
+[1m../compress_file.c[0m: In function '[1mmain[0m':
+[1m../compress_file.c:21.10-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m21[0m:     len = [1;38;5;208mftell(ifile)[0m;
+                [1;38;5;208m^^^^^^^^^^^^[0m 
+  '[1mret(stub ftell(ifile))[0m' has value [-1,9223372036854775807] that is larger than the range of '[1munsigned long[0m'
+  Callstack:
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #10:
+[1m../quicklz.c[0m: In function '[1msame[0m':
+[1m../quicklz.c:58.16-26[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m58[0m:     while(n > 0 && [1;38;5;208m*(src + n)[0m == *src)
+                         [1;38;5;208m^^^^^^^^^^[0m         
+  Callstack:
+  	from ../quicklz.c:299.129-145: same
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #12:
+[1m../quicklz.c[0m: In function '[1msame[0m':
+[1m../quicklz.c:58.30-34[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m58[0m:     while(n > 0 && *(src + n) == [1;38;5;208m*src[0m)
+                                       [1;38;5;208m^^^^[0m 
+  Callstack:
+  	from ../quicklz.c:299.129-145: same
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #17:
+[1m../quicklz.c[0m: In function '[1mreset_table_compress[0m':
+[1m../quicklz.c:70.2-23[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m70[0m:         [1;38;5;208mstate->hash[i].offset[0m = 0;
+              [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^[0m     
+  pointer '[1m&state->hash[i].offset[0m' may be null
+  Callstack:
+  	from ../quicklz.c:747.2-29: reset_table_compress
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #41:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../quicklz.c:284.11-28: fast_read
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+  +2 other callstacks
+
+
+[1;38;5;208m⚠[0m Check #44:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  accessing 4 bytes at offsets [1,18446744073709551615] of dynamically allocated block of size [1,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:360.12-29: fast_read
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #45:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  pointer '[1m&*(unsigned int *) src[0m' may be null
+  accessing 4 bytes at offset 0 of dynamically allocated block of size [0,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:269.10-27: fast_read
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #54:
+[1m../quicklz.c[0m: In function '[1mfast_write[0m':
+[1m../quicklz.c:161.3-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m161[0m:             [1;38;5;208m*((ui32*)dst)[0m = f;
+                   [1;38;5;208m^^^^^^^^^^^^^[0m     
+  Callstack:
+  	from ../quicklz.c:279.3-66: fast_write
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+  +2 other callstacks
+
+
+[1;38;5;208m⚠[0m Check #57:
+[1m../quicklz.c[0m: In function '[1mfast_write[0m':
+[1m../quicklz.c:161.3-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m161[0m:             [1;38;5;208m*((ui32*)dst)[0m = f;
+                   [1;38;5;208m^^^^^^^^^^^^^[0m     
+  accessing 4 bytes at offset 5 of dynamically allocated block of size [5,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:796.2-44: fast_write
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #58:
+[1m../quicklz.c[0m: In function '[1mfast_write[0m':
+[1m../quicklz.c:161.3-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m161[0m:             [1;38;5;208m*((ui32*)dst)[0m = f;
+                   [1;38;5;208m^^^^^^^^^^^^^[0m     
+  accessing 4 bytes at offset 1 of dynamically allocated block of size [1,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:795.2-41: fast_write
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #62:
+[1m../quicklz.c[0m: In function '[1mfast_write[0m':
+[1m../quicklz.c:164.3-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m164[0m:             [1;38;5;208m*((ui32*)dst)[0m = f;
+                   [1;38;5;208m^^^^^^^^^^^^^[0m     
+  Callstack:
+  	from ../quicklz.c:345.6-55: fast_write
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #65:
+[1m../quicklz.c[0m: In function '[1mfast_write[0m':
+[1m../quicklz.c:167.3-17[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m167[0m:             [1;38;5;208m*((ui16 *)dst)[0m = (ui16)f;
+                   [1;38;5;208m^^^^^^^^^^^^^^[0m           
+  Callstack:
+  	from ../quicklz.c:311.5-39: fast_write
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+  +1 other callstack
+
+
+[1;38;5;208m⚠[0m Check #87:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:268.4-26[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m268[0m:     if([1;38;5;208msrc <= last_matchstart[0m)
+              [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1msrc[0m' and '[1mlast_matchstart[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #89:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:271.7-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m271[0m:     while([1;38;5;208msrc <= last_matchstart[0m)
+                 [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1msrc[0m' and '[1mlast_matchstart[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #93:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:276.7-33[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m276[0m:             if ([1;38;5;208msrc > source + (size >> 1)[0m && dst - destination > src - source - ((src - source) >> 5))
+                       [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m                                                             
+  '[1msrc[0m' and '[1m(source + (size >> 1))[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #96:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:276.37-54[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m276[0m:             if (src > source + (size >> 1) && [1;38;5;208mdst - destination[0m > src - source - ((src - source) >> 5))
+                                                     [1;38;5;208m^^^^^^^^^^^^^^^^^[0m                                        
+  '[1mdst[0m' and '[1mdestination[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #97:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:276.57-69[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m276[0m:             if (src > source + (size >> 1) && dst - destination > [1;38;5;208msrc - source[0m - ((src - source) >> 5))
+                                                                         [1;38;5;208m^^^^^^^^^^^^[0m                         
+  '[1msrc[0m' and '[1msource[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #98:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:276.57-93[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m276[0m:             if (src > source + (size >> 1) && dst - destination > [1;38;5;208msrc - source - ((src - source) >> 5)[0m)
+                                                                         [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(((offset⦃src⦄ + 0) - (offset⦃source⦄ + 0)) - (((offset⦃src⦄ + 0) - (offset⦃source⦄ + 0)) >> 5))[0m' has value [-9223372036854775806,+∞] that is larger than the range of '[1msigned long[0m'
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #99:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:276.73-92[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m276[0m:             if (src > source + (size >> 1) && dst - destination > src - source - ([1;38;5;208m(src - source) >> 5[0m))
+                                                                                         [1;38;5;208m^^^^^^^^^^^^^^^^^^^[0m  
+  '[1m(((offset⦃src⦄ + 0) - (offset⦃source⦄ + 0)) >> 5)[0m' has value [0,+∞] that is larger than the range of '[1msigned long[0m'
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #101:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:276.74-86[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m276[0m:             if (src > source + (size >> 1) && dst - destination > src - source - (([1;38;5;208msrc - source[0m) >> 5))
+                                                                                          [1;38;5;208m^^^^^^^^^^^^[0m        
+  '[1msrc[0m' and '[1msource[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #113:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:292.20-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m292[0m:             cached = fetch ^ [1;38;5;208mstate->hash[hash].cache[0m;
+                                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  pointer '[1m&*(unsigned int *) ((signed char *) &state->hash[hash] + 0)[0m' may be null
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #118:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:296.35-52[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m296[0m:             state->hash[hash].offset = CAST([1;38;5;208msrc - OFFSET_BASE[0m);
+                                                   [1;38;5;208m^^^^^^^^^^^^^^^^^[0m  
+  '[1msrc[0m' and '[1msource[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #122:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:299.56-63[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m299[0m:             if ((cached & 0xffffff) == 0 && o != OFFSET_BASE && ([1;38;5;208msrc - o[0m > MINOFFSET || (src == o + 1 && lits >= 3 && src > source + 3 && same(src - 3, 6))))
+                                                                        [1;38;5;208m^^^^^^^[0m                                                                                     
+  '[1msrc[0m' and '[1mo[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #125:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:299.109-125[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m299[0m:             if ((cached & 0xffffff) == 0 && o != OFFSET_BASE && (src - o > MINOFFSET || (src == o + 1 && lits >= 3 && [1;38;5;208msrc > source + 3[0m && same(src - 3, 6))))
+                                                                                                                             [1;38;5;208m^^^^^^^^^^^^^^^^[0m                       
+  '[1msrc[0m' and '[1m(source + 3)[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #146:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:324.8-30[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m324[0m:                     if([1;38;5;208m*(o + (src - old_src))[0m == *src)
+                              [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m         
+  pointer '[1m&*(o + (src - old_src))[0m' may be null
+  accessing 1 byte at offsets [-∞,+∞] of dynamically allocated block of size [0,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #148:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:324.15-28[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m324[0m:                     if(*(o + ([1;38;5;208msrc - old_src[0m)) == *src)
+                                     [1;38;5;208m^^^^^^^^^^^^^[0m           
+  '[1msrc[0m' and '[1mold_src[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #149:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:324.34-38[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m324[0m:                     if(*(o + (src - old_src)) == [1;38;5;208m*src[0m)
+                                                        [1;38;5;208m^^^^[0m 
+  pointer '[1m&*src[0m' may be null
+  accessing 1 byte at offsets [-∞,+∞] of dynamically allocated block of size [0,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #151:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:327.9-31[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m327[0m:                         if([1;38;5;208m*(o + (src - old_src))[0m == *src)
+                                  [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m         
+  accessing 1 byte at offsets [-∞,+∞] of dynamically allocated block of size [1,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #153:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:327.16-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m327[0m:                         if(*(o + ([1;38;5;208msrc - old_src[0m)) == *src)
+                                         [1;38;5;208m^^^^^^^^^^^^^[0m           
+  '[1msrc[0m' and '[1mold_src[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #154:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:327.35-39[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m327[0m:                         if(*(o + (src - old_src)) == [1;38;5;208m*src[0m)
+                                                            [1;38;5;208m^^^^[0m 
+  accessing 1 byte at offsets [1,18446744073709551615] of dynamically allocated block of size [1,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #156:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:329.18-58[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m329[0m:                             size_t q = [1;38;5;208mlast_byte - UNCOMPRESSED_END - (src - 5)[0m + 1;
+                                              [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m     
+  '[1m(last_byte - 4)[0m' and '[1m(src - 5)[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #157:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:329.18-62[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m329[0m:                             size_t q = [1;38;5;208mlast_byte - UNCOMPRESSED_END - (src - 5) + 1[0m;
+                                              [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(((offset⦃last_byte⦄ + (0 - 4)) - (offset⦃src⦄ + (0 - 5))) + 1)[0m' has value [-∞,+∞] that is larger than the range of '[1msigned long[0m'
+  '[1m(((last_byte - 4) - (src - 5)) + 1)[0m' has value [-∞,+∞] that is larger than the range of '[1msigned long[0m'
+  '[1m(((last_byte - 4) - (src - 5)) + 1)[0m' has value [-9223372036854775808,9223372036854775807] that is larger than the range of '[1munsigned long[0m'
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #161:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:332.13-35[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m332[0m:                             while([1;38;5;208m*(o + (src - old_src))[0m == *src && (size_t)(src - old_src) < remaining)
+                                         [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^[0m                                                
+  accessing 1 byte at offsets [-∞,+∞] of dynamically allocated block of size [2,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #164:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:332.39-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m332[0m:                             while(*(o + (src - old_src)) == [1;38;5;208m*src[0m && (size_t)(src - old_src) < remaining)
+                                                                   [1;38;5;208m^^^^[0m                                        
+  accessing 1 byte at offsets [2,18446744073709551615] of dynamically allocated block of size [2,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #168:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:337.16-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m337[0m:                     matchlen = [1;38;5;208msrc - old_src[0m;
+                                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  '[1m((offset⦃src⦄ + 0) - (offset⦃old_src⦄ + 0))[0m' has value [-∞,+∞] that is larger than the range of '[1munsigned long[0m'
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #169:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:337.16-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m337[0m:                     matchlen = [1;38;5;208msrc - old_src[0m;
+                                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  '[1msrc[0m' and '[1mold_src[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #182:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:355.4-8[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m355[0m:                 [1;38;5;208m*dst[0m = *src;
+                       [1;38;5;208m^^^^[0m        
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #183:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:355.11-15[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m355[0m:                 *dst = [1;38;5;208m*src[0m;
+                              [1;38;5;208m^^^^[0m 
+  pointer '[1m&*src[0m' may be null
+  accessing 1 byte at offsets [-∞,+∞] of dynamically allocated block of size [0,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #189:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:508.8-24[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m508[0m:     while ([1;38;5;208msrc <= last_byte[0m)
+                  [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  '[1msrc[0m' and '[1mlast_byte[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #201:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:518.6-26[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m518[0m:         if ([1;38;5;208msrc <= last_byte - 3[0m)
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1msrc[0m' and '[1m(last_byte - 3)[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #203:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:524.3-27[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m524[0m:             [1;38;5;208mstate->hash[hash].offset[0m = CAST(src - OFFSET_BASE);
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^[0m                           
+  pointer '[1m&state->hash[hash].offset[0m' may be null
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #204:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:524.35-52[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m524[0m:             state->hash[hash].offset = CAST([1;38;5;208msrc - OFFSET_BASE[0m);
+                                                   [1;38;5;208m^^^^^^^^^^^^^^^^^[0m  
+  '[1msrc[0m' and '[1msource[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #206:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:537.2-6[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m537[0m:         [1;38;5;208m*dst[0m = *src;
+               [1;38;5;208m^^^^[0m        
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #207:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:537.9-13[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m537[0m:         *dst = [1;38;5;208m*src[0m;
+                      [1;38;5;208m^^^^[0m 
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #222:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:549.8-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m549[0m:     return [1;38;5;208mdst - destination[0m < 9 ? 9 : dst - destination;
+                  [1;38;5;208m^^^^^^^^^^^^^^^^^[0m                             
+  '[1mdst[0m' and '[1mdestination[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #223:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:549.8-53[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m549[0m:     return [1;38;5;208mdst - destination < 9 ? 9 : dst - destination[0m;
+                  [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m__SAST_tmp[0m' has value [-9223372036854775808,9223372036854775807] that is larger than the range of '[1munsigned long[0m'
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #226:
+[1m../quicklz.c[0m: In function '[1mqlz_compress_core[0m':
+[1m../quicklz.c:549.36-53[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer subtraction[0m
+  
+  [1m549[0m:     return dst - destination < 9 ? 9 : [1;38;5;208mdst - destination[0m;
+                                              [1;38;5;208m^^^^^^^^^^^^^^^^^[0m 
+  '[1mdst[0m' and '[1mdestination[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:748.13-110: qlz_compress_core
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #269:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:762.2-23[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m762[0m:         [1;38;5;208mstate->stream_counter[0m = 0;
+               [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^[0m     
+  pointer '[1m&state->stream_counter[0m' may be null
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #272:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:788.2-14[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m788[0m:         [1;38;5;208m*destination[0m = (unsigned char)(0 | compressed);
+               [1;38;5;208m^^^^^^^^^^^^[0m                                   
+  pointer '[1m&*destination[0m' may be null
+  accessing 1 byte at offset 0 of dynamically allocated block of size [0,18446744073709551615] bytes
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #276:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:789.2-20[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m789[0m:         [1;38;5;208m*(destination + 1)[0m = (unsigned char)r;
+               [1;38;5;208m^^^^^^^^^^^^^^^^^^[0m                    
+  accessing 1 byte at offset 1 of dynamically allocated block of size [1,18446744073709551615] bytes
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #277:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:789.23-39[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m789[0m:         *(destination + 1) = [1;38;5;208m(unsigned char)r[0m;
+                                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  '[1m(unsigned char) r[0m' has value [0,255] that is larger than the range of '[1msigned char[0m'
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #278:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:790.2-20[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m790[0m:         [1;38;5;208m*(destination + 2)[0m = (unsigned char)size;
+               [1;38;5;208m^^^^^^^^^^^^^^^^^^[0m                       
+  accessing 1 byte at offset 2 of dynamically allocated block of size [2,18446744073709551615] bytes
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #279:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:790.23-42[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m790[0m:         *(destination + 2) = [1;38;5;208m(unsigned char)size[0m;
+                                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(unsigned char) size[0m' has value [0,255] that is larger than the range of '[1msigned char[0m'
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #280:
+[1m../quicklz.c[0m: In function '[1mqlz_compress[0m':
+[1m../quicklz.c:794.2-14[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m794[0m:         [1;38;5;208m*destination[0m = (unsigned char)(2 | compressed);
+               [1;38;5;208m^^^^^^^^^^^^[0m                                   
+  pointer '[1m&*destination[0m' may be null
+  accessing 1 byte at offset 0 of dynamically allocated block of size [0,18446744073709551615] bytes
+  Callstack:
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #355:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfclose[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:220.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m220[0m:  * requires: [1;38;5;208m__stream in File[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:33.4-17: fclose
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #356:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfclose[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:220.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m220[0m:  * requires: [1;38;5;208m__stream in File[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:32.4-17: fclose
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #361:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Dangling pointer dereference
+  Invalid pointer dereference
+  NULL pointer dereference
+  Non-terminating string
+  Out-of-bound access
+  Use after free
+  Callstack:
+  	from ../compress_file.c:17.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #362:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Dangling pointer dereference
+  Invalid pointer dereference
+  NULL pointer dereference
+  Non-terminating string
+  Out-of-bound access
+  Use after free
+  Callstack:
+  	from ../compress_file.c:16.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #363:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../compress_file.c:16.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+  +1 other callstack
+
+
+[1;38;5;208m⚠[0m Check #365:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(⊤:unsigned long + 1)[0m' has value [1,18446744073709551616] that is larger than the range of '[1msigned long[0m'
+  Callstack:
+  	from ../compress_file.c:17.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #366:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(⊤:unsigned long + 1)[0m' has value [1,18446744073709551616] that is larger than the range of '[1msigned long[0m'
+  Callstack:
+  	from ../compress_file.c:16.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #367:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:269.13-42[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m269[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__modes)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Non-terminating string
+  Callstack:
+  	from ../compress_file.c:17.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #368:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:269.13-42[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m269[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__modes)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Non-terminating string
+  Callstack:
+  	from ../compress_file.c:16.12-32: fopen
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #373:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfread[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:664.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m664[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:24.4-29: fread
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #374:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfread[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:665.13-53[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m665[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__ptr, __size * __n)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  NULL pointer dereference
+  Out-of-bound access
+  Callstack:
+  	from ../compress_file.c:24.4-29: fread
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;9m✗[0m Check #376:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfread[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:666.13-27[0m: [1;38;5;9merror[0m: [1;38;5;9mInvalid memory access[0m
+  
+  [1m666[0m:  * assigns:  [1;38;5;9m((char*)__ptr)[0m[0, (__size * __n));
+                    [1;38;5;9m^^^^^^^^^^^^^^[0m                    
+  pointer '[1m(signed char *) __ptr[0m' may be null
+  Callstack:
+  	from ../compress_file.c:24.4-29: fread
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #378:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfwrite[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:673.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:31.4-31: fwrite
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #379:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfwrite[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:674.13-53[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m674[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__ptr, __size * __n)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  NULL pointer dereference
+  Out-of-bound access
+  Callstack:
+  	from ../compress_file.c:31.4-31: fwrite
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #381:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfseek[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:700.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m700[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:22.4-29: fseek
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #382:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfseek[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:700.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m700[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:20.4-29: fseek
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #387:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mftell[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:715.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m715[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../compress_file.c:21.10-22: ftell
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #396:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:40.13-52[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m40[0m:  * requires: [1;38;5;208mno_overlap(__src, __len, __dest, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m((unsigned char *) __dest >= ((unsigned char *) __src + __len))[0m'
+  invalid requirement '[1m((unsigned char *) __src >= ((unsigned char *) __dest + __len))[0m'
+  Callstack:
+  	from ../quicklz.c:754.3-43: memcpy
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #397:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:40.13-52[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m40[0m:  * requires: [1;38;5;208mno_overlap(__src, __len, __dest, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(unsigned char *) __dest[0m' and '[1m((unsigned char *) __src + __len)[0m' may point to different memory objects
+  '[1m(unsigned char *) __src[0m' and '[1m((unsigned char *) __dest + __len)[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:754.3-43: memcpy
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #398:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:41.13-46[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m41[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__src, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  NULL pointer dereference
+  Out-of-bound access
+  Callstack:
+  	from ../quicklz.c:754.3-43: memcpy
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #400:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:42.13-47[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m42[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__dest, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Dangling pointer dereference
+  Invalid pointer dereference
+  NULL pointer dereference
+  Out-of-bound access
+  Use after free
+  Callstack:
+  	from ../quicklz.c:754.3-43: memcpy
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #402:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:44.77-103[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m44[0m:  * ensures: forall size_t i in [0, __len): (((unsigned char*)__dest)[i])' == [1;38;5;208m((unsigned char*)__src)[i][0m;
+                                                                                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  accessing 1 byte at offsets [0,4294966894] of dynamically allocated block of size [1,18446744073709551615] bytes
+  Callstack:
+  	from ../quicklz.c:754.3-43: memcpy
+  	from ../compress_file.c:30.11-54: qlz_compress
+  	from ../compress_file.c:10.4-8: main
+
+Checks summary: [1m457 total[0m, [1;38;5;40m✔ 374 safe[0m, [1;38;5;9m✗ 1 error[0m, [1;38;5;208m⚠ 82 warnings[0m (selectivity: 81.84%)
+  Stub condition: 27 total, [1;38;5;40m✔ 11 safe[0m, [1;38;5;208m⚠ 16 warnings[0m
+  Invalid memory access: 123 total, [1;38;5;40m✔ 85 safe[0m, [1;38;5;9m✗ 1 error[0m, [1;38;5;208m⚠ 37 warnings[0m
+  Division by zero: 1 total, [1;38;5;40m✔ 1 safe[0m
+  Integer overflow: 259 total, [1;38;5;40m✔ 249 safe[0m, [1;38;5;208m⚠ 10 warnings[0m
+  Invalid shift: 26 total, [1;38;5;40m✔ 26 safe[0m
+  Invalid pointer comparison: 7 total, [1;38;5;208m⚠ 7 warnings[0m
+  Invalid pointer subtraction: 14 total, [1;38;5;40m✔ 2 safe[0m, [1;38;5;208m⚠ 12 warnings[0m
+
+6 assumptions:
+  ../quicklz.c:161.3-16: ignoring modification of blocks pointed by undetermined pointer '[1m&*(unsigned int *) dst[0m'
+  ../quicklz.c:164.3-16: ignoring modification of blocks pointed by undetermined pointer '[1m&*(unsigned int *) dst[0m'
+  ../quicklz.c:167.3-17: ignoring modification of blocks pointed by undetermined pointer '[1m&*(unsigned short *) dst[0m'
+  ../quicklz.c:355.4-8: ignoring modification of blocks pointed by undetermined pointer '[1m&*dst[0m'
+  ../quicklz.c:537.2-6: ignoring modification of blocks pointed by undetermined pointer '[1m&*dst[0m'
+  /home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:43.3-47: ignoring modification of blocks pointed by undetermined pointer '[1m(unsigned char *) __dest[0m'
+
+[1;38;5;208mAnalysis terminated successfully (with assumptions)[0m
+Analysis time: 0.653s
+
+[1;38;5;208m⚠[0m Check #2:
+[1m../decompress_file.c[0m: In function '[1mfopen[0m':
+[1m../decompress_file.c:18.17-24[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m18[0m:    ofile = fopen([1;38;5;208margv[2][0m, "wb");
+                       [1;38;5;208m^^^^^^^[0m        
+  accessing 8 bytes at offset 16 of dynamically allocated block of size [16,262136] bytes
+  Callstack:
+  	from ../decompress_file.c:18.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #4:
+[1m../decompress_file.c[0m: In function '[1mmain[0m':
+[1m../decompress_file.c:22.9-21[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m22[0m:    len = [1;38;5;208mftell(ifile)[0m;
+               [1;38;5;208m^^^^^^^^^^^^[0m 
+  '[1mret(stub ftell(ifile))[0m' has value [-1,9223372036854775807] that is larger than the range of '[1munsigned int[0m'
+  Callstack:
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #48:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../quicklz.c:126.9-26: fast_read
+  	from ../quicklz.c:228.8-17: hashat
+  	from ../quicklz.c:250.2-25: update_hash
+  	from ../quicklz.c:679.3-56: update_hash_upto
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+  +2 other callstacks
+
+
+[1;38;5;208m⚠[0m Check #51:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  accessing 4 bytes at offsets [7,+∞] of dynamically allocated block of size [7,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:587.10-27: fast_read
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #52:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  accessing 4 bytes at offsets [3,+∞] of dynamically allocated block of size [6,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:578.15-40: fast_read
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #53:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  accessing 4 bytes at offsets [2,5] of dynamically allocated block of size [6,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:181.5-33: fast_read
+  	from ../quicklz.c:811.15-44: qlz_size_decompressed
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #54:
+[1m../quicklz.c[0m: In function '[1mfast_read[0m':
+[1m../quicklz.c:117.9-22[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m117[0m:         return [1;38;5;208m*((ui32*)src)[0m;
+                      [1;38;5;208m^^^^^^^^^^^^^[0m 
+  accessing 4 bytes at offsets [2,5] of dynamically allocated block of size [1,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:181.5-33: fast_read
+  	from ../decompress_file.c:28.9-35: qlz_size_decompressed
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #65:
+[1m../quicklz.c[0m: In function '[1mqlz_size_decompressed[0m':
+[1m../quicklz.c:180.8-15[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m180[0m:     n = ((([1;38;5;208m*source[0m) & 2) == 2) ? 4 : 1;
+                  [1;38;5;208m^^^^^^^[0m                     
+  pointer '[1m&*source[0m' may be null
+  Callstack:
+  	from ../quicklz.c:811.15-44: qlz_size_decompressed
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #66:
+[1m../quicklz.c[0m: In function '[1mqlz_size_decompressed[0m':
+[1m../quicklz.c:180.8-15[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m180[0m:     n = ((([1;38;5;208m*source[0m) & 2) == 2) ? 4 : 1;
+                  [1;38;5;208m^^^^^^^[0m                     
+  pointer '[1m&*source[0m' may be null
+  accessing 1 byte at offset 0 of dynamically allocated block of size [0,4294967295] bytes
+  Callstack:
+  	from ../decompress_file.c:28.9-35: qlz_size_decompressed
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #106:
+[1m../quicklz.c[0m: In function '[1mmemcpy_up[0m':
+[1m../quicklz.c:217.2-20[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m217[0m:         [1;38;5;208m*(ui32 *)(dst + f)[0m = *(ui32 *)(src + f);
+               [1;38;5;208m^^^^^^^^^^^^^^^^^^[0m                      
+  pointer '[1m&*(unsigned int *) (dst + f)[0m' may be null
+  accessing 4 bytes at offsets [0,254] of dynamically allocated block of size [0,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:675.3-36: memcpy_up
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #107:
+[1m../quicklz.c[0m: In function '[1mmemcpy_up[0m':
+[1m../quicklz.c:217.23-41[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m217[0m:         *(ui32 *)(dst + f) = [1;38;5;208m*(ui32 *)(src + f)[0m;
+                                    [1;38;5;208m^^^^^^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../quicklz.c:675.3-36: memcpy_up
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #110:
+[1m../quicklz.c[0m: In function '[1mupdate_hash[0m':
+[1m../quicklz.c:229.1-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m229[0m:     [1;38;5;208mstate->hash[hash].offset[0m = s;
+           [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^[0m     
+  pointer '[1m&state->hash[hash].offset[0m' may be null
+  Callstack:
+  	from ../quicklz.c:250.2-25: update_hash
+  	from ../quicklz.c:720.4-68: update_hash_upto
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #111:
+[1m../quicklz.c[0m: In function '[1mupdate_hash[0m':
+[1m../quicklz.c:229.1-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m229[0m:     [1;38;5;208mstate->hash[hash].offset[0m = s;
+           [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^[0m     
+  pointer '[1m&state->hash[hash].offset[0m' may be null
+  Callstack:
+  	from ../quicklz.c:250.2-25: update_hash
+  	from ../quicklz.c:697.4-50: update_hash_upto
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #122:
+[1m../quicklz.c[0m: In function '[1mupdate_hash_upto[0m':
+[1m../quicklz.c:247.7-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m247[0m:     while([1;38;5;208m*lh < max[0m)
+                 [1;38;5;208m^^^^^^^^^[0m 
+  '[1m*(unsigned char * *) ((signed char *) &last_hashed + (offset⦃lh⦄ + 0))[0m' and '[1mmax[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:720.4-68: update_hash_upto
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #123:
+[1m../quicklz.c[0m: In function '[1mupdate_hash_upto[0m':
+[1m../quicklz.c:247.7-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m247[0m:     while([1;38;5;208m*lh < max[0m)
+                 [1;38;5;208m^^^^^^^^^[0m 
+  '[1m*(unsigned char * *) ((signed char *) &last_hashed + (offset⦃lh⦄ + 0))[0m' and '[1mmax[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:697.4-50: update_hash_upto
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #124:
+[1m../quicklz.c[0m: In function '[1mupdate_hash_upto[0m':
+[1m../quicklz.c:247.7-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m247[0m:     while([1;38;5;208m*lh < max[0m)
+                 [1;38;5;208m^^^^^^^^^[0m 
+  '[1m*(unsigned char * *) ((signed char *) &last_hashed + (offset⦃lh⦄ + 0))[0m' and '[1mmax[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:679.3-56: update_hash_upto
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #177:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:598.44-68[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m598[0m:             offset2 = (const unsigned char *)(size_t)[1;38;5;208mstate->hash[hash].offset[0m;
+                                                            [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  pointer '[1m&*(const unsigned char * *) ((signed char *) &state->hash[hash] + 0)[0m' may be null
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #185:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:607.15-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m607[0m:                 matchlen = [1;38;5;208m*(src + 2)[0m;
+                                  [1;38;5;208m^^^^^^^^^^[0m 
+  accessing 1 byte at offsets [9,+∞] of dynamically allocated block of size [11,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #187:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:685.7-28[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m685[0m:             if ([1;38;5;208mdst < last_matchstart[0m)
+                       [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1mdst[0m' and '[1mlast_matchstart[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #192:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:689.4-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m689[0m:                 [1;38;5;208m*(ui32 *)dst[0m = *(ui32 *)src;
+                       [1;38;5;208m^^^^^^^^^^^^[0m                
+  pointer '[1m&*(unsigned int *) dst[0m' may be null
+  accessing 4 bytes at offset 0 of dynamically allocated block of size [0,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #193:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:689.19-31[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m689[0m:                 *(ui32 *)dst = [1;38;5;208m*(ui32 *)src[0m;
+                                      [1;38;5;208m^^^^^^^^^^^^[0m 
+  accessing 4 bytes at offsets [7,+∞] of dynamically allocated block of size [11,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #195:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:693.16-30[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid shift[0m
+  
+  [1m693[0m:                 cword_val = [1;38;5;208mcword_val >> n[0m;
+                                   [1;38;5;208m^^^^^^^^^^^^^^[0m 
+  shift position '[1m(cword_val >> n)[0m' = [0,4294967295] ⊈
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #196:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:702.10-38[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid pointer comparison[0m
+  
+  [1m702[0m:                 while([1;38;5;208mdst <= last_destination_byte[0m)
+                             [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1mdst[0m' and '[1mlast_destination_byte[0m' may point to different memory objects
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #200:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:713.5-9[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m713[0m:                     [1;38;5;208m*dst[0m = *src;
+                           [1;38;5;208m^^^^[0m        
+  pointer '[1m&*dst[0m' may be null
+  accessing 1 byte at offsets [0,+∞] of dynamically allocated block of size [0,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #201:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress_core[0m':
+[1m../quicklz.c:713.12-16[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m713[0m:                     *dst = [1;38;5;208m*src[0m;
+                                  [1;38;5;208m^^^^[0m 
+  accessing 1 byte at offsets [7,+∞] of dynamically allocated block of size [11,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:820.10-139: qlz_decompress_core
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #205:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress[0m':
+[1m../quicklz.c:817.6-13[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m817[0m:         if(([1;38;5;208m*source[0m & 1) == 1)
+                   [1;38;5;208m^^^^^^^[0m           
+  pointer '[1m&*source[0m' may be null
+  Callstack:
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #208:
+[1m../quicklz.c[0m: In function '[1mqlz_decompress[0m':
+[1m../quicklz.c:826.2-23[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m826[0m:         [1;38;5;208mstate->stream_counter[0m = 0;
+               [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^[0m     
+  pointer '[1m&state->stream_counter[0m' may be null
+  Callstack:
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #266:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfclose[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:220.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m220[0m:  * requires: [1;38;5;208m__stream in File[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:35.3-16: fclose
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #267:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfclose[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:220.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m220[0m:  * requires: [1;38;5;208m__stream in File[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:34.3-16: fclose
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #272:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Dangling pointer dereference
+  Invalid pointer dereference
+  NULL pointer dereference
+  Non-terminating string
+  Out-of-bound access
+  Use after free
+  Callstack:
+  	from ../decompress_file.c:18.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #273:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Dangling pointer dereference
+  Invalid pointer dereference
+  NULL pointer dereference
+  Non-terminating string
+  Out-of-bound access
+  Use after free
+  Callstack:
+  	from ../decompress_file.c:17.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #274:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Callstack:
+  	from ../decompress_file.c:17.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+  +1 other callstack
+
+
+[1;38;5;208m⚠[0m Check #276:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(⊤:unsigned long + 1)[0m' has value [1,18446744073709551616] that is larger than the range of '[1msigned long[0m'
+  Callstack:
+  	from ../decompress_file.c:18.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #277:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:268.13-45[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m268[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__filename)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  '[1m(⊤:unsigned long + 1)[0m' has value [1,18446744073709551616] that is larger than the range of '[1msigned long[0m'
+  Callstack:
+  	from ../decompress_file.c:17.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #278:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:269.13-42[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m269[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__modes)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Non-terminating string
+  Callstack:
+  	from ../decompress_file.c:18.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #279:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfopen[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:269.13-42[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m269[0m:  * requires: [1;38;5;208mvalid_string_or_fail(__modes)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Non-terminating string
+  Callstack:
+  	from ../decompress_file.c:17.11-31: fopen
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #284:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfread[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:664.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m664[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:27.3-28: fread
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #285:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfread[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:665.13-53[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m665[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__ptr, __size * __n)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  NULL pointer dereference
+  Out-of-bound access
+  Callstack:
+  	from ../decompress_file.c:27.3-28: fread
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;9m✗[0m Check #287:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfread[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:666.13-27[0m: [1;38;5;9merror[0m: [1;38;5;9mInvalid memory access[0m
+  
+  [1m666[0m:  * assigns:  [1;38;5;9m((char*)__ptr)[0m[0, (__size * __n));
+                    [1;38;5;9m^^^^^^^^^^^^^^[0m                    
+  pointer '[1m(signed char *) __ptr[0m' may be null
+  Callstack:
+  	from ../decompress_file.c:27.3-28: fread
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #289:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfwrite[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:673.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:33.3-29: fwrite
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #290:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfwrite[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:674.13-53[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m674[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__ptr, __size * __n)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  NULL pointer dereference
+  Out-of-bound access
+  Callstack:
+  	from ../decompress_file.c:33.3-29: fwrite
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #292:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfseek[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:700.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m700[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:23.3-28: fseek
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #293:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mfseek[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:700.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m700[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:21.3-28: fseek
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #298:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c[0m: In function '[1mftell[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/stdio.c:715.13-43[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m715[0m:  * requires: [1;38;5;208malive_resource(__stream, File)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1m__stream ∈ File[0m'
+  Callstack:
+  	from ../decompress_file.c:22.9-21: ftell
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #308:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:41.13-46[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m41[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__src, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  Out-of-bound access
+  Callstack:
+  	from ../quicklz.c:824.3-62: memcpy
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #310:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:42.13-47[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m42[0m:  * requires: [1;38;5;208mvalid_bytes_or_fail(__dest, __len)[0m;
+                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  NULL pointer dereference
+  Out-of-bound access
+  Callstack:
+  	from ../quicklz.c:824.3-62: memcpy
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;9m✗[0m Check #312:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:43.12-36[0m: [1;38;5;9merror[0m: [1;38;5;9mInvalid memory access[0m
+  
+  [1m43[0m:  * assigns: [1;38;5;9m((unsigned char*)__dest)[0m[0, __len);
+                  [1;38;5;9m^^^^^^^^^^^^^^^^^^^^^^^^[0m           
+  pointer '[1m(unsigned char *) __dest[0m' may be null
+  Callstack:
+  	from ../quicklz.c:824.3-62: memcpy
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #313:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:44.43-73[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m44[0m:  * ensures: forall size_t i in [0, __len): [1;38;5;208m(((unsigned char*)__dest)[i])'[0m == ((unsigned char*)__src)[i];
+                                                 [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m                               
+  accessing 1 byte at offsets [0,4294967291] of variable '[1mprimed⦃@Memory:96b0a01⦄[0m' of size [0,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:824.3-62: memcpy
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #315:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c[0m: In function '[1mmemcpy[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/string.c:44.77-103[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInvalid memory access[0m
+  
+  [1m44[0m:  * ensures: forall size_t i in [0, __len): (((unsigned char*)__dest)[i])' == [1;38;5;208m((unsigned char*)__src)[i][0m;
+                                                                                   [1;38;5;208m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m 
+  accessing 1 byte at offsets [3,4294967300] of dynamically allocated block of size [6,4294967295] bytes
+  Callstack:
+  	from ../quicklz.c:824.3-62: memcpy
+  	from ../decompress_file.c:32.9-51: qlz_decompress
+  	from ../decompress_file.c:10.4-8: main
+
+Checks summary: [1m370 total[0m, [1;38;5;40m✔ 318 safe[0m, [1;38;5;9m✗ 2 errors[0m, [1;38;5;208m⚠ 50 warnings[0m (selectivity: 85.95%)
+  Stub condition: 27 total, [1;38;5;40m✔ 12 safe[0m, [1;38;5;208m⚠ 15 warnings[0m
+  Invalid memory access: 124 total, [1;38;5;40m✔ 96 safe[0m, [1;38;5;9m✗ 2 errors[0m, [1;38;5;208m⚠ 26 warnings[0m
+  Integer overflow: 203 total, [1;38;5;40m✔ 200 safe[0m, [1;38;5;208m⚠ 3 warnings[0m
+  Invalid shift: 11 total, [1;38;5;40m✔ 10 safe[0m, [1;38;5;208m⚠ 1 warning[0m
+  Invalid pointer comparison: 5 total, [1;38;5;208m⚠ 5 warnings[0m
+
+3 assumptions:
+  ../quicklz.c:217.2-20: ignoring modification of blocks pointed by undetermined pointer '[1m&*(unsigned int *) (dst + f)[0m'
+  ../quicklz.c:689.4-16: ignoring modification of blocks pointed by undetermined pointer '[1m&*(unsigned int *) dst[0m'
+  ../quicklz.c:713.5-9: ignoring modification of blocks pointed by undetermined pointer '[1m&*dst[0m'
+
+[1;38;5;9mAnalysis aborted[0m
+panic: Parsing error raised:
+../stream_compress.c:11:5: Define QLZ_STREAMING_BUFFER to a non-zero value for this demo
+[1;38;5;9mAnalysis aborted[0m
+panic: Parsing error raised:
+../stream_decompress.c:11:5: Define QLZ_STREAMING_BUFFER to a non-zero value for this demo
