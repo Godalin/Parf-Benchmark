@@ -1,8 +1,8 @@
 #!/bin/sh
 
 directory="../oscs-benchmarks"
-sourcefile="run_eva_default.sh"
-targetfile="run_mopsa_fast.sh"
+sourcefile="run_mopsa_default.sh"
+targetfile="run_mopsa_least.sh"
 
 for dir in "$directory"/*; do
     #echo "$dir"
@@ -11,8 +11,11 @@ for dir in "$directory"/*; do
         cd "$dir"/.frama-c
         echo $sourcefile $targetfile
         #eval "(time timeout $timelimit ./run_parf.sh) >& log"
-        # cp $sourcefile $targetfile
-        rm $targetfile
+
+        # this file should do what its name says!!!
+
+        cp $sourcefile $targetfile
+        # rm $targetfile
         cd -
     fi
 done
