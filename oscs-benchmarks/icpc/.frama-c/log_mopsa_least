@@ -1,0 +1,152 @@
+[1;38;5;40mAnalysis terminated successfully[0m
+Analysis time: 1.314s
+
+[1;38;5;208m⚠[0m Check #105:
+[1m../src/impls.c[0m: In function '[1mSleep[0m':
+[1m../src/impls.c:96.1-14[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m96[0m:     [1;38;5;208m_t += delayMs[0m;
+          [1;38;5;208m^^^^^^^^^^^^^[0m  
+  '[1m(_t + delayMs)[0m' has value [-2147483628,2147483667] that is larger than the range of '[1msigned int[0m'
+  '[1m(_t + delayMs)[0m' has value [-2147483628,2147483667] that is larger than the range of '[1msigned int[0m'
+  Callstack:
+  	from ../src/main.c:44.2-11: Sleep
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #160:
+[1m../src/main.c[0m: In function '[1mmain[0m':
+[1m../src/main.c:36.8-25[0m: [1;38;5;208mwarning[0m: [1;38;5;208mInteger overflow[0m
+  
+  [1m36[0m:         dT = ([1;38;5;208mTime() - lastTime[0m) / 1000.0;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^^[0m            
+  '[1m(ret(fun Time()) - lastTime)[0m' has value [-4294967295,4294967295] that is larger than the range of '[1msigned int[0m'
+  '[1m(Time() - lastTime)[0m' has value [-4294967295,4294967295] that is larger than the range of '[1msigned int[0m'
+  Callstack:
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #336:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:284.15-37: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #337:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:282.15-60: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #338:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:272.17-26: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #339:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:268.35-44: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #340:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:261.16-31: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #341:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:235.17-25: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #342:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:230.32-40: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #343:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:228.17-25: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+
+[1;38;5;208m⚠[0m Check #344:
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c[0m: In function '[1mfabs[0m':
+[1m/home/godalin/.opam/frama-c-5.1/share/mopsa/stubs/c/libc/math.c:673.13-29[0m: [1;38;5;208mwarning[0m: [1;38;5;208mStub condition[0m
+  
+  [1m673[0m:  * requires: [1;38;5;208mvalid_float(__x)[0m;
+                    [1;38;5;208m^^^^^^^^^^^^^^^^[0m 
+  invalid requirement '[1mvalid_float(__x)[0m'
+  Callstack:
+  	from ../src/roco.c:170.46-55: fabs
+  	from ../src/main.c:38.2-16: RoCo_process
+  	from ../src/main.c:16.4-8: main
+
+Checks summary: [1m429 total[0m, [1;38;5;40m✔ 418 safe[0m, [1;38;5;208m⚠ 11 warnings[0m (selectivity: 97.44%)
+  Stub condition: 18 total, [1;38;5;40m✔ 9 safe[0m, [1;38;5;208m⚠ 9 warnings[0m
+  Invalid memory access: 220 total, [1;38;5;40m✔ 220 safe[0m
+  Division by zero: 1 total, [1;38;5;40m✔ 1 safe[0m
+  Integer overflow: 187 total, [1;38;5;40m✔ 185 safe[0m, [1;38;5;208m⚠ 2 warnings[0m
+  Insufficient format arguments: 2 total, [1;38;5;40m✔ 2 safe[0m
+  Invalid type of format argument: 1 total, [1;38;5;40m✔ 1 safe[0m
+
