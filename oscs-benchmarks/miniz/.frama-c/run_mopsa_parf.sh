@@ -1,7 +1,7 @@
 #!/bin/bash
 
 timelimit="20m"
-logfile="log_mopsa_default"
+logfile="log_mopsa_parf.log"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs="-I .."
@@ -53,12 +53,12 @@ target6="stubs.c \
   ../miniz.c \
   ../miniz_tdef.c"
 
-cmd1="parfext \"mopsa-c $cppargs $mopsaparams1 $target1\""
-cmd2="parfext \"mopsa-c $cppargs $mopsaparams2 $target2\""
-cmd3="parfext \"mopsa-c $cppargs $mopsaparams3 $target3\""
-cmd4="parfext \"mopsa-c $cppargs $mopsaparams4 $target4\""
-cmd5="parfext \"mopsa-c $cppargs $mopsaparams5 $target5\""
-cmd6="parfext \"mopsa-c $cppargs $mopsaparams6 $target6\""
+cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd2=parfext"$cppargs $mopsaparams $target1"
+cmd3=parfext"$cppargs $mopsaparams $target1"
+cmd4=parfext"$cppargs $mopsaparams $target1"
+cmd5=parfext"$cppargs $mopsaparams $target1"
+cmd6=parfext"$cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1
 $cmd2 1>> $logfile 2>&1

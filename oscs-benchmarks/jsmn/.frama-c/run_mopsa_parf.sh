@@ -1,7 +1,7 @@
 #!/bin/bash
 
 timelimit="20m"
-logfile="log_mopsa_default"
+logfile="log_mopsa_parf.log"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs=""
@@ -21,8 +21,8 @@ target1="../test/tests.c"
 target2="../jsmn.c \
   ../example/simple.c"
 
-cmd1="parfext \"mopsa-c $cppargs $mopsaparams $target1\""
-cmd2="parfext \"mopsa-c $cppargs $mopsaparams $target2\""
+cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd2=parfext"$cppargs $mopsaparams $target1"
 
 timeout $timelimit $cmd1 1> $logfile 2>&1
 timeout $timelimit $cmd2 1>> $logfile 2>&1
