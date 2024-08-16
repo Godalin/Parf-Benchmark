@@ -22,4 +22,4 @@ target1="../src/impls.c \
 
 cmd1=parfext"$cppargs $mopsaparams $target1"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
+$cmd1 1> $logfile 2>&1
