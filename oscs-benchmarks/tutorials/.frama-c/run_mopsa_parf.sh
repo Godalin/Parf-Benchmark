@@ -17,6 +17,6 @@ mopsaparams=""
 # Analysis Targets: source files
 target1="../2018_06_parser/parser_full.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

@@ -19,6 +19,6 @@ mopsaparams=""
 # Analysis Targets: source files
 target1="../dummy.c ../tsvc.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

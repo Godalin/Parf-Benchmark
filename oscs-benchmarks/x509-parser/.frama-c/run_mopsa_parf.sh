@@ -26,6 +26,6 @@ mopsaparams=""
 target1="../src/x509-parser.c \
   ../src/main.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

@@ -24,6 +24,6 @@ mopsaparams=""
 target1="../sw/airborne/autopilot/*.c \
   ../sw/lib/c/pp_math.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

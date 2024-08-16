@@ -21,6 +21,6 @@ target1="../code/*.c \
   ../code/harness/harness.c \
   ../code/intel/linux/target.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

@@ -53,7 +53,7 @@ target6="stubs.c \
   ../miniz.c \
   ../miniz_tdef.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 cmd2=parfext"$cppargs $mopsaparams $target1"
 cmd3=parfext"$cppargs $mopsaparams $target1"
 cmd4=parfext"$cppargs $mopsaparams $target1"

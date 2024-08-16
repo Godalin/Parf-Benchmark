@@ -21,6 +21,6 @@ target1="../src/monocypher.c \
   ../src/optional/sha512.c \
   ../tests/test.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

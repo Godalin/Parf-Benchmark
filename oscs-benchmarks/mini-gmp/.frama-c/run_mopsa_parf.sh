@@ -24,6 +24,6 @@ target1="../tests/testutils.c \
   ../tests/mini-random.c \
   fc_stubs.h"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1

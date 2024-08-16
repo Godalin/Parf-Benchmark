@@ -24,6 +24,6 @@ target1="../sources/main.c \
   ../sources/eeprom_stubs.c \
   ../sources/avr_stubs.c"
 
-cmd1=parfext"$cppargs $mopsaparams $target1"
+cmd1=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1
