@@ -24,5 +24,5 @@ target2="../jsmn.c \
 cmd1="mopsa-c $cppargs $mopsaparams $target1"
 cmd2="mopsa-c $cppargs $mopsaparams $target2"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
-timeout $timelimit $cmd2 1>> $logfile 2>&1
+$cmd1 1> $logfile 2>&1
+$cmd2 1>> $logfile 2>&1

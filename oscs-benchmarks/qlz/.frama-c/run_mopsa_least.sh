@@ -1,7 +1,7 @@
 #!/bin/bash
 
 timelimit="20m"
-logfile="log_mopsa_default"
+logfile="log_mopsa_least"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs1=""
@@ -18,10 +18,10 @@ kernelparams="-add-symbolic-path=..:. \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-mopsaparams1="" 
-mopsaparams2="" 
-mopsaparams3="" 
-mopsaparams4="" 
+mopsaparams1="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams2="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams3="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams4="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
 
 # Analysis Targets: source files
 target1="../compress_file.c \
@@ -37,8 +37,7 @@ target4="../stream_decompress.c \
   ../quicklz.c \
   fc_stubs.c"
 
-logfile="log_mopsa_least"
-mopsaparams="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0"
+
 
 cmd1="mopsa-c $cppargs1 $mopsaparams1 $target1"
 cmd2="mopsa-c $cppargs2 $mopsaparams2 $target2"
