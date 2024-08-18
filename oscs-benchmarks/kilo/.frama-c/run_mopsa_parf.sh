@@ -16,8 +16,7 @@ kernelparams="-add-symbolic-path=..:. \
 mopsaparams="" 
 
 # Analysis Targets: source files
-target1="../kilo.c \
-  fc_stubs.c"
+target1="../kilo.c"
 
 cmd1=parfext" $cppargs $mopsaparams $target1"
 

@@ -38,9 +38,9 @@ target4="../stream_decompress.c \
   fc_stubs.c"
 
 cmd1=parfext" $cppargs $mopsaparams $target1"
-cmd2=parfext"$cppargs $mopsaparams $target1"
-cmd3=parfext"$cppargs $mopsaparams $target1"
-cmd4=parfext"$cppargs $mopsaparams $target1"
+cmd2=parfext" $cppargs $mopsaparams $target1"
+cmd3=parfext" $cppargs $mopsaparams $target1"
+cmd4=parfext" $cppargs $mopsaparams $target1"
 
 $cmd1 1> $logfile 2>&1
 $cmd2 1>> $logfile 2>&1
