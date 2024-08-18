@@ -26,5 +26,5 @@ target2="fc_stubs.c \
 cmd1=parfext" $cppargs $mopsaparams $target1"
 cmd2=parfext" $cppargs $mopsaparams $target1"
 
-$cmd1 1> $logfile 2>&1
-$cmd2 1>> $logfile 2>&1
+parfext "$cppargs $mopsaparams $target1" > $logfile
+parfext "$cppargs $mopsaparams $target2" >> $logfile

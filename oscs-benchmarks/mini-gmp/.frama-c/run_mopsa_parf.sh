@@ -26,4 +26,4 @@ target1="../tests/testutils.c \
 
 cmd1=parfext" $cppargs $mopsaparams $target1"
 
-$cmd1 1> $logfile 2>&1
+parfext "$cppargs $mopsaparams $target1" > $logfile

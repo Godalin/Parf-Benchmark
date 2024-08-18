@@ -42,7 +42,7 @@ cmd2=parfext" $cppargs $mopsaparams $target1"
 cmd3=parfext" $cppargs $mopsaparams $target1"
 cmd4=parfext" $cppargs $mopsaparams $target1"
 
-$cmd1 1> $logfile 2>&1
-$cmd2 1>> $logfile 2>&1
-$cmd3 1>> $logfile 2>&1
-$cmd4 1>> $logfile 2>&1
+parfext "$cppargs $mopsaparams $target1" > $logfile
+parfext "$cppargs $mopsaparams $target2" >> $logfile
+parfext "$cppargs $mopsaparams $target3" >> $logfile
+parfext "$cppargs $mopsaparams $target4" >> $logfile

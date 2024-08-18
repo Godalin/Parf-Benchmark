@@ -60,9 +60,9 @@ cmd4=parfext" $cppargs $mopsaparams $target1"
 cmd5=parfext" $cppargs $mopsaparams $target1"
 cmd6=parfext" $cppargs $mopsaparams $target1"
 
-$cmd1 1> $logfile 2>&1
-$cmd2 1>> $logfile 2>&1
-$cmd3 1>> $logfile 2>&1
-$cmd4 1>> $logfile 2>&1
-$cmd5 1>> $logfile 2>&1
-$cmd6 1>> $logfile 2>&1
+parfext "$cppargs $mopsaparams $target1" > $logfile
+parfext "$cppargs $mopsaparams $target2" >> $logfile
+parfext "$cppargs $mopsaparams $target3" >> $logfile
+parfext "$cppargs $mopsaparams $target4" >> $logfile
+parfext "$cppargs $mopsaparams $target5" >> $logfile
+parfext "$cppargs $mopsaparams $target6" >> $logfile
