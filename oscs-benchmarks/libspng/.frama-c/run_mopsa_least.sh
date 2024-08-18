@@ -1,7 +1,7 @@
 #!/bin/bash
 
 timelimit="20m"
-logfile="log_mopsa_default"
+logfile="log_mopsa_least"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs="-I .."
@@ -14,15 +14,14 @@ kernelparams="-add-symbolic-path=..:. \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-mopsaparams="" 
+mopsaparams="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0"
 
 # Analysis Targets: source files
 target1="fc_stubs.c \
   ../examples/example.c \
   ../spng.c"
 
-logfile="log_mopsa_least"
-mopsaparams="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0"
+
 
 cmd1="mopsa-c $cppargs $mopsaparams $target1"
 

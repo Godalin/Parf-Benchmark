@@ -1,7 +1,7 @@
 #!/bin/bash
 
 timelimit="20m"
-logfile="log_mopsa_default"
+logfile="log_mopsa_least"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs="-I .."
@@ -15,12 +15,12 @@ kernelparams="-main eva_main \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-mopsaparams1="" 
-mopsaparams2="" 
-mopsaparams3="" 
-mopsaparams4="" 
-mopsaparams5="" 
-mopsaparams6="" 
+mopsaparams1="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams2="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams3="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams4="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams5="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
+mopsaparams6="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0" 
 
 # Analysis Targets: source files
 target1="stubs.c \
@@ -53,8 +53,7 @@ target6="stubs.c \
   ../miniz.c \
   ../miniz_tdef.c"
 
-logfile="log_mopsa_least"
-mopsaparams="-max-set-size 1 -numeric lineq -loop-unrolling 1 -widening-delay 0"
+
 
 cmd1="mopsa-c $cppargs $mopsaparams1 $target1"
 cmd2="mopsa-c $cppargs $mopsaparams2 $target2"

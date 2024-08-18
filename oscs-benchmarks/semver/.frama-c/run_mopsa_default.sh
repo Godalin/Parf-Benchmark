@@ -22,4 +22,4 @@ target1="../semver.c \
 
 cmd1="mopsa-c $cppargs $mopsaparams $target1"
 
-timeout $timelimit $cmd1 1> $logfile 2>&1
+$cmd1 1> $logfile 2>&1
