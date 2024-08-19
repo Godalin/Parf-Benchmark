@@ -1,9 +1,11 @@
 set mopsa parameters:
 parameters: -widening-delay 0 -numeric lineq -max-set-size 1 -loop-unrolling 1 
-Run mopsa Init: start
-Run mopsa Init: finished
+Run mopsa a first run: start
+with parameters: mopsa-c -no-color -widening-delay 0 -numeric lineq -max-set-size 1 -loop-unrolling 1    ../dummy.c ../tsvc.cRun mopsa a first run: finished
+search alarms
+search alarm counts
 base: base00
-Analysis time for this epoch: 180
+Analysis time for this epoch: 60
 sample: base00-sample00
 set mopsa parameters:
 sample: base00-sample01
@@ -12,6 +14,14 @@ sample: base00-sample02
 set mopsa parameters:
 sample: base00-sample03
 set mopsa parameters:
+search alarms
+search alarm counts
+search alarms
+search alarm counts
+search alarms
+search alarm counts
+search alarms
+search alarm counts
 ============================================
 list of alarm sequences collected
 list length: 4
@@ -28,30 +38,34 @@ The runtime is: 0.
 
 
 =================================
+in analysis a first run
+params are:
+-widening-delay 0 -numeric lineq -max-set-size 1 -loop-unrolling 1 
+#alarm = -2, 0 reported by mopsa
+---------------------------------
 in analysis base00-sample00
 params are:
--widening-delay 2 -numeric octagon -max-set-size 2 -loop-unrolling 5 -loop-decr-it 
-#alarm = 0
+-widening-delay 1 -numeric lineq -max-set-size 3 -loop-unrolling 2 -loop-no-cache 
+#alarm = -2, 0 reported by mopsa
 ---------------------------------
 in analysis base00-sample01
 params are:
--widening-delay 0 -numeric lineq -max-set-size 2 -loop-unrolling 4 -loop-no-cache -loop-decr-it 
-#alarm = 0
+-widening-delay 1 -numeric polyhedra -max-set-size 2 -loop-unrolling 3 -loop-decr-it 
+#alarm = -2, 0 reported by mopsa
 ---------------------------------
 in analysis base00-sample02
 params are:
--widening-delay 0 -numeric lineq -max-set-size 3 -loop-unrolling 3 
-#alarm = 0
+-widening-delay 0 -numeric octagon -max-set-size 2 -loop-unrolling 3 -loop-decr-it 
+#alarm = -2, 0 reported by mopsa
 ---------------------------------
 in analysis base00-sample03
 params are:
--widening-delay 0 -numeric lineq -max-set-size 4 -loop-unrolling 2 
-#alarm = 0
+-widening-delay 0 -numeric octagon -max-set-size 2 -loop-unrolling 3 
+#alarm = -2, 0 reported by mopsa
 ---------------------------------
-**********************************
+*********************************
 best analysis:
-in analysis base00-sample00
+in analysis a first run
 params are:
--widening-delay 2 -numeric octagon -max-set-size 2 -loop-unrolling 5 -loop-decr-it 
-#alarm = 0
-Remove temp files ...
+-widening-delay 0 -numeric lineq -max-set-size 1 -loop-unrolling 1 
+#alarm = -2, 0 reported by mopsa
