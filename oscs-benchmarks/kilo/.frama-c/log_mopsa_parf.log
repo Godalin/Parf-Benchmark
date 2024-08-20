@@ -5,7 +5,7 @@ with parameters: mopsa-c -no-color -widening-delay 0 -numeric lineq -max-set-siz
 search alarms
 search alarm counts
 base: base00
-Analysis time for this epoch: 122
+Analysis time for this epoch: 180
 sample: base00-sample00
 set mopsa parameters:
 sample: base00-sample01
@@ -14,11 +14,14 @@ sample: base00-sample02
 set mopsa parameters:
 sample: base00-sample03
 set mopsa parameters:
+search alarms
+search alarm counts
 ============================================
 list of alarm sequences collected
-list length: 0
+list length: 1
+sample base00-sample01: subset of base? true
 base: base01
-Analysis time for this epoch: 305
+Analysis time for this epoch: 450
 sample: base01-sample00
 set mopsa parameters:
 sample: base01-sample01
@@ -43,7 +46,7 @@ sample base01-sample01: subset of base? true
 sample base01-sample02: subset of base? true
 sample base01-sample03: subset of base? true
 base: base02
-Analysis time for this epoch: 199
+Analysis time for this epoch: 675
 sample: base02-sample00
 set mopsa parameters:
 sample: base02-sample01
@@ -55,11 +58,36 @@ set mopsa parameters:
 ============================================
 list of alarm sequences collected
 list length: 0
+base: base03
+Analysis time for this epoch: 638
+sample: base03-sample00
+set mopsa parameters:
+sample: base03-sample01
+set mopsa parameters:
+sample: base03-sample02
+set mopsa parameters:
+sample: base03-sample03
+set mopsa parameters:
+search alarms
+search alarm counts
+search alarms
+search alarm counts
+search alarms
+search alarm counts
+search alarms
+search alarm counts
+============================================
+list of alarm sequences collected
+list length: 4
+sample base03-sample00: subset of base? true
+sample base03-sample01: subset of base? true
+sample base03-sample02: subset of base? true
+sample base03-sample03: subset of base? true
 The final parameters are: 
--widening-delay 0 -numeric lineq -max-set-size 2 -loop-unrolling 2 -loop-no-cache 
+-widening-delay 2 -numeric lineq -max-set-size 5 -loop-unrolling 7 -loop-no-cache 
 
 The number of alarms is: 3277
-The runtime is: 61.
+The runtime is: 57.
 
 
 
@@ -69,29 +97,54 @@ params are:
 -widening-delay 0 -numeric lineq -max-set-size 1 -loop-unrolling 1 
 #alarm = 5299, 3277 reported by mopsa
 ---------------------------------
+in analysis base00-sample01
+params are:
+-widening-delay 1 -numeric lineq -max-set-size 2 -loop-unrolling 3 -loop-no-cache 
+#alarm = 5290, 3331 reported by mopsa
+---------------------------------
 in analysis base01-sample00
 params are:
--widening-delay 0 -numeric lineq -max-set-size 2 -loop-unrolling 3 -loop-no-cache 
-#alarm = 5291, 3332 reported by mopsa
+-widening-delay 2 -numeric lineq -max-set-size 3 -loop-unrolling 4 -loop-no-cache -loop-decr-it 
+#alarm = 5290, 3331 reported by mopsa
 ---------------------------------
 in analysis base01-sample01
 params are:
--widening-delay 0 -numeric lineq -max-set-size 2 -loop-unrolling 3 -loop-no-cache 
-#alarm = 5291, 3332 reported by mopsa
+-widening-delay 1 -numeric lineq -max-set-size 4 -loop-unrolling 4 -loop-no-cache 
+#alarm = 5290, 3331 reported by mopsa
 ---------------------------------
 in analysis base01-sample02
 params are:
--widening-delay 1 -numeric octagon -max-set-size 2 -loop-unrolling 2 -loop-no-cache -loop-decr-it 
-#alarm = 5291, 3332 reported by mopsa
+-widening-delay 1 -numeric lineq -max-set-size 3 -loop-unrolling 4 -loop-no-cache 
+#alarm = 5290, 3331 reported by mopsa
 ---------------------------------
 in analysis base01-sample03
 params are:
--widening-delay 0 -numeric lineq -max-set-size 2 -loop-unrolling 2 -loop-no-cache -loop-decr-it 
-#alarm = 5291, 3332 reported by mopsa
+-widening-delay 1 -numeric lineq -max-set-size 4 -loop-unrolling 4 -loop-no-cache -loop-decr-it 
+#alarm = 5290, 3331 reported by mopsa
+---------------------------------
+in analysis base03-sample00
+params are:
+-widening-delay 2 -numeric lineq -max-set-size 5 -loop-unrolling 11 -loop-no-cache 
+#alarm = 5290, 3331 reported by mopsa
+---------------------------------
+in analysis base03-sample01
+params are:
+-widening-delay 2 -numeric polyhedra -max-set-size 8 -loop-unrolling 12 -loop-no-cache -loop-decr-it 
+#alarm = 5290, 3331 reported by mopsa
+---------------------------------
+in analysis base03-sample02
+params are:
+-widening-delay 2 -numeric polyhedra -max-set-size 6 -loop-unrolling 7 -loop-no-cache 
+#alarm = 5290, 3331 reported by mopsa
+---------------------------------
+in analysis base03-sample03
+params are:
+-widening-delay 2 -numeric lineq -max-set-size 8 -loop-unrolling 13 -loop-no-cache -loop-decr-it 
+#alarm = 5290, 3331 reported by mopsa
 ---------------------------------
 *********************************
 best analysis:
-in analysis base01-sample00
+in analysis base00-sample01
 params are:
--widening-delay 0 -numeric lineq -max-set-size 2 -loop-unrolling 3 -loop-no-cache 
-#alarm = 5291, 3332 reported by mopsa
+-widening-delay 1 -numeric lineq -max-set-size 2 -loop-unrolling 3 -loop-no-cache 
+#alarm = 5290, 3331 reported by mopsa
