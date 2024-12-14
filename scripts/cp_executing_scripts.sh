@@ -1,8 +1,8 @@
 #!/bin/sh
 
 directory="../oscs-benchmarks"
-sourcefile="run_mopsa_default.sh"
-targetfile="run_mopsa_least.sh"
+sourcefile="run_eva_default.sh"
+targetfile="run_eva.sh"
 
 for dir in "$directory"/*; do
     #echo "$dir"

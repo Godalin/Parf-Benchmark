@@ -1,15 +1,45 @@
 #!/bin/sh
 
-timelimit="62m"
-if [ "$#" -ne 5 ]; then  
-    echo "Usage: $0 timeBudget processCore sampleNum refineNum logFile"  
-    exit 1  
-fi
-timeBudget=$1  
-processCore=$2  
-sampleNum=$3  
-refineNum=$4  
-logFile=$5 
+timelimit="65m"
+# Default values for parameters (can be overridden by command-line arguments)
+default_timeBudget=3600
+default_processCore=4
+default_sampleNum=4
+default_refineNum=7
+default_logFile="log_parf"
+
+# Parse command-line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --timeBudget=*)
+            timeBudget="${1#*=}"
+            ;;
+        --processCore=*)
+            processCore="${1#*=}"
+            ;;
+        --sampleNum=*)
+            sampleNum="${1#*=}"
+            ;;
+        --refineNum=*)
+            refineNum="${1#*=}"
+            ;;
+        --logFile=*)
+            logFile="${1#*=}"
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# Set defaults if not provided
+timeBudget="${timeBudget:-$default_timeBudget}"
+processCore="${processCore:-$default_processCore}"
+sampleNum="${sampleNum:-$default_sampleNum}"
+refineNum="${refineNum:-$default_refineNum}"
+logFile="${logFile:-$default_logFile}"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs="-CC"
@@ -26,7 +56,7 @@ parfparams="-parf -parf-budget $timeBudget -parf-process $processCore -parf-samp
 # Analysis Targets: source files
 target1="../2048.c"
 
-cmd1="dune exec -- frama-c -cpp-extra-args=\"$cppargs\" $kernelparams $parfparams $target1"
+cmd1="frama-c -cpp-extra-args=\"$cppargs\" $kernelparams $parfparams $target1"
 
 eval "(time timeout $timelimit $cmd1) 1> $logFile 2>&1"
 #rm -rf parf_temp_files

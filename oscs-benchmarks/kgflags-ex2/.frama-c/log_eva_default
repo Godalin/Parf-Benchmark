@@ -1,0 +1,2858 @@
+[kernel] Parsing fc_stubs.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotfeff91.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing examples/simple.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot827fbb.c:769:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  _kgflags_g ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] using specification for function strncmp
+[eva] FRAMAC_SHARE/libc/string.h:163: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
+[eva] using specification for function strcmp
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:156: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva] kgflags.h:606: starting to merge loop iterations
+[eva] kgflags.h:360: starting to merge loop iterations
+[kernel] kgflags.h:657: too many locations to update in array. Approximating.
+[eva] kgflags.h:663: starting to merge loop iterations
+[eva] kgflags.h:385: starting to merge loop iterations
+[eva] using specification for function puts
+[eva:alarm] examples/simple.c:12: Warning: 
+  function puts: precondition 'valid_string_s' got status unknown.
+[eva:alarm] kgflags.h:402: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->kind);
+[eva:alarm] kgflags.h:404: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_1
+[eva:alarm] kgflags.h:404: Warning: 
+  function fprintf_va_1: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:408: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_2
+[eva:alarm] kgflags.h:408: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:412: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_3
+[eva:alarm] kgflags.h:412: Warning: 
+  function fprintf_va_3: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->arg);
+[eva:alarm] kgflags.h:416: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_4
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param2) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->arg);
+[eva:alarm] kgflags.h:420: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_5
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function fprintf_va_6
+[eva] using specification for function fprintf_va_7
+[eva:alarm] kgflags.h:432: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_8
+[eva:alarm] kgflags.h:432: Warning: 
+  function fprintf_va_8: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:436: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_9
+[eva:alarm] kgflags.h:436: Warning: 
+  function fprintf_va_9: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:440: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_10
+[eva:alarm] kgflags.h:440: Warning: 
+  function fprintf_va_10: precondition valid_read_string(param1) got status unknown.
+[eva] kgflags.h:400: starting to merge loop iterations
+[kernel] kgflags.h:404: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:402: more than 200(512) elements to enumerate. Approximating.
+[eva] using specification for function fprintf_va_11
+[eva] using specification for function fprintf_va_13
+[eva] using specification for function fprintf_va_14
+[eva] using specification for function fprintf_va_25
+[eva] using specification for function fprintf_va_26
+[eva] kgflags.h:457: starting to merge loop iterations
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {to_print} escaping the scope of main through _kgflags_g
+[eva] done for function eva_main
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function _kgflags_add_error:
+  err.flag_name ∈
+     {{ NULL ; &argv1[2] ; &argv2[2] ; &argv3[2] ; &argv4[2] ; "to-print" }}
+     .arg ∈ {0}
+     .kind ∈
+     {KGFLAGS_ERROR_KIND_MISSING_VALUE; KGFLAGS_ERROR_KIND_UNKNOWN_FLAG;
+      KGFLAGS_ERROR_KIND_UNASSIGNED_FLAG;
+      KGFLAGS_ERROR_KIND_TOO_MANY_NON_FLAG_ARGS;
+      KGFLAGS_ERROR_KIND_MULTIPLE_ASSIGNMENT}
+     .[bits 160 to 191] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [1..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+[eva:final-states] Values at end of function _kgflags_add_non_flag_arg:
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [1..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function _kgflags_assign_default_values:
+  i ∈ {1}
+[eva:final-states] Values at end of function _kgflags_consume_arg:
+  res ∈ {{ &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+[eva:final-states] Values at end of function _kgflags_parse_flag:
+  to_print ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+[eva:final-states] Values at end of function kgflags_print_errors:
+  i ∈ [0..512]
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function kgflags_print_usage:
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function _kgflags_get_flag:
+  prefix_no ∈ {0}
+  __retres ∈ {{ NULL ; &_kgflags_g.flags[0] }}
+[eva:final-states] Values at end of function _kgflags_add_flag:
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            {.flags[1..255]; .non_flag_count; .non_flag_args[0..511]; .errors_count; .errors[0..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description; .[bits 82016 to 82047]; .[bits 114848 to 114879]} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_string:
+  flag.name ∈ {{ "to-print" }}
+      .description ∈ {{ "String to print." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&to_print }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+  to_print ∈ {0}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            {.flags[1..255]; .non_flag_count; .non_flag_args[0..511]; .errors_count; .errors[0..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description; .[bits 82016 to 82047]; .[bits 114848 to 114879]} ∈
+            {0}
+[eva:final-states] Values at end of function _kgflags_get_flag_name:
+  prefix_len ∈ {2}
+  __retres ∈ {{ NULL ; &argv1[2] ; &argv2[2] ; &argv3[2] ; &argv4[2] }}
+[eva:final-states] Values at end of function _kgflags_is_flag:
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function kgflags_parse:
+  arg ∈ {0}
+  to_print ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function main:
+  to_print ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {0; 1}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result ∈ ESCAPINGADDR
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  15 functions analyzed (out of 34): 44% coverage.
+  In these functions, 240 statements reached (out of 474): 50% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    1 warning
+    by the Frama-C kernel:    0 errors    0 warnings
+  ----------------------------------------------------------------------------
+  11 alarms generated by the analysis:
+      11 accesses to uninitialized left-values
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    36 valid    12 unknown     0 invalid     48 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.136s
+user	0m1.071s
+sys	0m0.049s
+[kernel] Parsing fc_stubs.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannot23e066.c:759:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[kernel] Parsing examples/full_api.c (with preprocessing)
+/var/folders/b4/t2y_6vss0rggv3ydd4tbd36h0000gn/T/ppannotdbd372.c:769:8: warning: undefining builtin macro [-Wbuiltin-macro-redefined]
+#undef __FLT_EVAL_METHOD__
+       ^
+1 warning generated.
+[eva] Analyzing a complete application starting at eva_main
+[eva] Computing initial state
+[eva] Initial state computed
+[eva:initial-state] Values of globals at initialization
+  _kgflags_g ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] using specification for function strstr
+[eva] FRAMAC_SHARE/libc/string.h:243: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva] using specification for function strcmp
+[eva] FRAMAC_SHARE/libc/string.h:156: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva] kgflags.h:606: starting to merge loop iterations
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s2' got status unknown.
+[eva:alarm] kgflags.h:612: Warning: 
+  function strcmp: precondition 'valid_string_s2' got status unknown.
+[eva] using specification for function strncmp
+[eva] FRAMAC_SHARE/libc/string.h:163: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva:alarm] kgflags.h:611: Warning: 
+  function strstr: precondition 'valid_string_haystack' got status unknown.
+[eva:alarm] kgflags.h:612: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva:alarm] kgflags.h:735: Warning: 
+  out of bounds write. assert \valid(flag->result.bool_value);
+[eva] using specification for function strtol
+[eva:alarm] kgflags.h:627: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)end, (void *)str);
+[eva:alarm] kgflags.h:627: Warning: out of bounds read. assert \valid_read(end);
+[eva:alarm] kgflags.h:753: Warning: 
+  out of bounds write. assert \valid(flag->result.int_value);
+[eva] using specification for function strtod
+[eva:alarm] kgflags.h:640: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)end, (void *)str);
+[eva:alarm] kgflags.h:640: Warning: out of bounds read. assert \valid_read(end);
+[eva:alarm] kgflags.h:641: Warning: 
+  non-finite float value. assert \is_finite((float)INFINITY);
+[eva:alarm] kgflags.h:641: Warning: 
+  non-finite double value. assert \is_finite(res);
+[eva] kgflags.h:778: starting to merge loop iterations
+[eva:alarm] kgflags.h:784: Warning: 
+  signed overflow. assert count + 1 ≤ 2147483647;
+[eva:alarm] kgflags.h:787: Warning: 
+  out of bounds write. assert \valid(&arr->_items);
+[eva:alarm] kgflags.h:788: Warning: 
+  out of bounds write. assert \valid(&arr->_count);
+[eva] kgflags.h:796: starting to merge loop iterations
+[kernel] kgflags.h:657: too many locations to update in array. Approximating.
+[eva:alarm] kgflags.h:809: Warning: 
+  signed overflow. assert count_0 + 1 ≤ 2147483647;
+[eva:alarm] kgflags.h:813: Warning: 
+  out of bounds write. assert \valid(&arr_0->_items);
+[eva:alarm] kgflags.h:814: Warning: 
+  out of bounds write. assert \valid(&arr_0->_count);
+[eva] kgflags.h:823: starting to merge loop iterations
+[eva:alarm] kgflags.h:836: Warning: 
+  signed overflow. assert count_1 + 1 ≤ 2147483647;
+[eva:alarm] kgflags.h:840: Warning: 
+  out of bounds write. assert \valid(&arr_1->_items);
+[eva:alarm] kgflags.h:841: Warning: 
+  out of bounds write. assert \valid(&arr_1->_count);
+[eva] kgflags.h:360: starting to merge loop iterations
+[eva] kgflags.h:663: starting to merge loop iterations
+[eva:alarm] kgflags.h:675: Warning: 
+  out of bounds write. assert \valid(flag->result.bool_value);
+[eva:alarm] kgflags.h:680: Warning: 
+  out of bounds write. assert \valid(flag->result.int_value);
+[eva:alarm] kgflags.h:685: Warning: 
+  out of bounds write. assert \valid(flag->result.double_value);
+[eva] kgflags.h:385: starting to merge loop iterations
+[eva] using specification for function printf_va_1
+[eva:alarm] examples/full_api.c:34: Warning: 
+  function printf_va_1: precondition valid_read_string(param0) got status unknown.
+[eva] using specification for function printf_va_2
+[eva] using specification for function printf_va_3
+[eva:alarm] examples/full_api.c:37: Warning: 
+  non-finite double value. assert \is_finite(double_val);
+[eva] using specification for function printf_va_4
+[eva] using specification for function printf_va_5
+[eva:alarm] kgflags.h:522: Warning: 
+  out of bounds read. assert \valid_read(arr->_items + at);
+[eva] kgflags.h:522: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned {kgflags.h:522}
+[eva] kgflags.h:522: 
+  Assigning imprecise value to \result<kgflags_string_array_get_item>.
+  The imprecision originates from Misaligned {kgflags.h:522}
+[eva] examples/full_api.c:41: 
+  Assigning imprecise value to tmp_2.
+  The imprecision originates from Misaligned {kgflags.h:522}
+[eva] using specification for function printf_va_6
+[eva:alarm] examples/full_api.c:41: Warning: 
+  function printf_va_6: precondition valid_read_string(param1) got status unknown.
+[eva] examples/full_api.c:40: starting to merge loop iterations
+[eva] using specification for function printf_va_7
+[eva:alarm] kgflags.h:533: Warning: 
+  out of bounds read. assert \valid_read(arr->_items + at);
+[eva] kgflags.h:533: 
+  Assigning imprecise value to str.
+  The imprecision originates from Misaligned {kgflags.h:533}
+[eva:alarm] kgflags.h:626: Warning: 
+  function strtol: precondition 'valid_nptr' got status unknown.
+[eva] using specification for function printf_va_8
+[eva] examples/full_api.c:45: starting to merge loop iterations
+[eva] using specification for function printf_va_9
+[eva:alarm] kgflags.h:550: Warning: 
+  out of bounds read. assert \valid_read(arr->_items + at);
+[eva] kgflags.h:550: 
+  Assigning imprecise value to str.
+  The imprecision originates from Misaligned {kgflags.h:550}
+[eva:alarm] kgflags.h:639: Warning: 
+  function strtod: precondition 'valid_nptr' got status unknown.
+[eva] using specification for function printf_va_10
+[eva] examples/full_api.c:50: starting to merge loop iterations
+[eva] using specification for function printf_va_11
+[eva:alarm] examples/full_api.c:56: Warning: 
+  function printf_va_11: precondition valid_read_string(param1) got status unknown.
+[eva] examples/full_api.c:55: starting to merge loop iterations
+[eva:alarm] kgflags.h:402: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->kind);
+[eva:alarm] kgflags.h:404: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_1
+[eva:alarm] kgflags.h:404: Warning: 
+  function fprintf_va_1: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:408: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_2
+[eva:alarm] kgflags.h:408: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:412: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_3
+[eva:alarm] kgflags.h:412: Warning: 
+  function fprintf_va_3: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->arg);
+[eva:alarm] kgflags.h:416: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_4
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param2) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->arg);
+[eva:alarm] kgflags.h:420: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_5
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function fprintf_va_6
+[eva] using specification for function fprintf_va_7
+[eva:alarm] kgflags.h:432: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_8
+[eva:alarm] kgflags.h:432: Warning: 
+  function fprintf_va_8: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:436: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_9
+[eva:alarm] kgflags.h:436: Warning: 
+  function fprintf_va_9: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:440: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_10
+[eva:alarm] kgflags.h:440: Warning: 
+  function fprintf_va_10: precondition valid_read_string(param1) got status unknown.
+[eva] kgflags.h:400: starting to merge loop iterations
+[kernel] kgflags.h:404: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:402: more than 200(512) elements to enumerate. Approximating.
+[eva] using specification for function fprintf_va_12
+[eva] using specification for function fprintf_va_13
+[eva] using specification for function fprintf_va_14
+[eva] using specification for function fprintf_va_25
+[eva] using specification for function fprintf_va_26
+[eva] kgflags.h:457: starting to merge loop iterations
+[eva] using specification for function fprintf_va_16
+[eva:alarm] kgflags.h:467: Warning: 
+  function fprintf_va_16: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:467: Warning: 
+  function fprintf_va_16: precondition valid_read_string(param3) got status unknown.
+[eva] using specification for function fprintf_va_17
+[eva] using specification for function fprintf_va_18
+[eva:alarm] kgflags.h:475: Warning: 
+  function fprintf_va_18: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_19
+[eva] using specification for function fprintf_va_20
+[eva:alarm] kgflags.h:482: Warning: 
+  function fprintf_va_20: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_21
+[eva] using specification for function fprintf_va_22
+[eva:alarm] kgflags.h:489: Warning: 
+  function fprintf_va_22: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_23
+[eva:alarm] kgflags.h:493: Warning: 
+  function fprintf_va_23: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_24
+[eva:alarm] kgflags.h:497: Warning: 
+  function fprintf_va_24: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:504: Warning: 
+  function fprintf_va_25: precondition valid_read_string(param0) got status unknown.
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {string_val} escaping the scope of main through _kgflags_g
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {bool_val, int_val, double_val, string_arr, int_arr, double_arr} escaping the scope of main through _kgflags_g
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {int_val, double_val, string_arr, int_arr, double_arr} escaping the scope of main through _kgflags_g
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {double_val, string_arr, int_arr, double_arr} escaping the scope of main through _kgflags_g
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {string_arr, int_arr, double_arr} escaping the scope of main through _kgflags_g
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {int_arr, double_arr} escaping the scope of main through _kgflags_g
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {double_arr} escaping the scope of main through _kgflags_g
+[eva] done for function eva_main
+[eva] kgflags.h:641: 
+  assertion 'Eva,is_nan_or_infinite' got final status invalid.
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function _kgflags_add_error:
+  err.flag_name ∈
+     {{ NULL ; &argv1[1] ; &argv2[1] ; &argv3[1] ; &argv4[1] ; "string" ;
+        "bool" ; "int" ; "double" ; "string-array" ; "int-array" ;
+        "double-array" }}
+     .arg ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+     .kind ∈ [1..10]
+     .[bits 160 to 191] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [1..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ NULL ; "-" }}
+            .arg_cursor ∈ [0..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ NULL ; &argv[0] }}
+            .custom_description ∈ {{ NULL ; "Usage of fullapi [-FLAGS]:" }}
+[eva:final-states] Values at end of function _kgflags_add_non_flag_arg:
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [1..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function _kgflags_assign_default_values:
+  i ∈ [1..255]
+  bool_val ∈ {0; 1}
+  int_val ∈ [--..--]
+  double_val[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            [bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            [bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+  string_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  int_arr._items[bits 0 to 7] ∈
+         {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+         ._items[bits 8 to 31]# ∈
+         {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+         ._items[bits 32 to 63]# ∈
+         {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+         ._count ∈ [0..2147483647]
+         .[bits 96 to 127] ∈ UNINITIALIZED
+  double_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+[eva:final-states] Values at end of function _kgflags_consume_arg:
+  res ∈ {{ &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+  __retres ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+[eva:final-states] Values at end of function _kgflags_peek_arg:
+  __retres ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+[eva:final-states] Values at end of function kgflags_double_array_get_count:
+  __retres ∈ [0..2147483647]
+[eva:final-states] Values at end of function kgflags_get_non_flag_arg:
+  __retres ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+[eva:final-states] Values at end of function kgflags_get_non_flag_args_count:
+  __retres ∈ [0..512]
+[eva:final-states] Values at end of function kgflags_int_array_get_count:
+  __retres ∈ [0..2147483647]
+[eva:final-states] Values at end of function kgflags_print_errors:
+  i ∈ [0..512]
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function kgflags_print_usage:
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function kgflags_set_custom_description:
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error} ∈ {0}
+            .flags[4].required ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error} ∈ {0}
+            .flags[5].required ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error} ∈ {0}
+            .flags[6].required ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            {.flags[7..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3; 4; 5; 6}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[3].flag_name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .errors[3].arg ∈ {0}
+            .errors[3].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[3].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[4].flag_name ∈
+            {{ NULL ; "int-array" ; "double-array" }}
+            .errors[4].arg ∈ {0}
+            .errors[4].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[4].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[5].flag_name ∈ {{ NULL ; "double-array" }}
+            .errors[5].arg ∈ {0}
+            .errors[5].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[5].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[6..511]; .flag_prefix; .arg_cursor; .argc; .argv} ∈
+            {0}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+[eva:final-states] Values at end of function kgflags_set_prefix:
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error} ∈ {0}
+            .flags[4].required ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error} ∈ {0}
+            .flags[5].required ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error} ∈ {0}
+            .flags[6].required ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            {.flags[7..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3; 4; 5; 6}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[3].flag_name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .errors[3].arg ∈ {0}
+            .errors[3].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[3].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[4].flag_name ∈
+            {{ NULL ; "int-array" ; "double-array" }}
+            .errors[4].arg ∈ {0}
+            .errors[4].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[4].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[5].flag_name ∈ {{ NULL ; "double-array" }}
+            .errors[5].arg ∈ {0}
+            .errors[5].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[5].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[6..511] ∈ {0}
+            .flag_prefix ∈ {{ "-" }}
+            {.arg_cursor; .argc; .argv} ∈ {0}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+[eva:final-states] Values at end of function kgflags_string_array_get_count:
+  __retres ∈ [0..2147483647]
+[eva:final-states] Values at end of function kgflags_string_array_get_item:
+  __retres ∈
+          {{ garbled mix of &{argv0; argv1; argv2; argv3; argv4}
+           (origin: Misaligned {kgflags.h:522}) }}
+[eva:final-states] Values at end of function _kgflags_get_flag_name:
+  prefix_len ∈ {1}
+  __retres ∈ {{ NULL ; &argv1[1] ; &argv2[1] ; &argv3[1] ; &argv4[1] }}
+[eva:final-states] Values at end of function _kgflags_is_flag:
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function _kgflags_get_flag:
+  prefix_no ∈ {0; 1}
+  __retres ∈
+          {{ NULL ;
+             &_kgflags_g{.flags[0], .flags[1], .flags[2], .flags[3],
+                         .flags[4], .flags[5], .flags[6]} }}
+[eva:final-states] Values at end of function _kgflags_add_flag:
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error} ∈ {0}
+            .flags[4].required ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error} ∈ {0}
+            .flags[5].required ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error} ∈ {0}
+            .flags[6].required ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            {.flags[7..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3; 4; 5; 6}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[3].flag_name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .errors[3].arg ∈ {0}
+            .errors[3].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[3].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[4].flag_name ∈
+            {{ NULL ; "int-array" ; "double-array" }}
+            .errors[4].arg ∈ {0}
+            .errors[4].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[4].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[5].flag_name ∈ {{ NULL ; "double-array" }}
+            .errors[5].arg ∈ {0}
+            .errors[5].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[5].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[6..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_bool:
+  flag.name ∈ {{ "bool" }} or UNINITIALIZED
+      .description ∈ {{ "Boolean flag." }} or UNINITIALIZED
+      .default_value ∈ {0} or UNINITIALIZED
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&bool_val }} or UNINITIALIZED
+      {.assigned; .error} ∈ {0} or UNINITIALIZED
+      .required ∈ {1} or UNINITIALIZED
+      .[bits 280 to 287] ∈ {0} or UNINITIALIZED
+      .kind ∈ {KGFLAGS_FLAG_KIND_BOOL} or UNINITIALIZED
+  bool_val ∈ {0}
+  _kgflags_g.flags_count ∈ {1; 2}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈ {{ NULL ; "bool" }}
+            .flags[1].description ∈ {{ NULL ; "Boolean flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL}
+            {.flags[2..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈ {{ NULL ; "bool" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[1..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_double:
+  flag.name ∈ {{ "double" }}
+      .description ∈ {{ "Double flag." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&double_val }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_DOUBLE}
+  double_val ∈ {0}
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈ {{ NULL ; "bool" ; "int" ; "double" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE}
+            .flags[2].name ∈ {{ NULL ; "int" ; "double" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE}
+            .flags[3].name ∈ {{ NULL ; "double" }}
+            .flags[3].description ∈ {{ NULL ; "Double flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE}
+            {.flags[4..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈ {{ NULL ; "bool" ; "int" ; "double" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈ {{ NULL ; "int" ; "double" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈ {{ NULL ; "double" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[3..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_double_array:
+  flag.name ∈ {{ "double-array" }}
+      .description ∈ {{ "Double array flag." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&double_arr }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+  double_arr{._items; ._count} ∈ {0}
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error} ∈ {0}
+            .flags[4].required ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error} ∈ {0}
+            .flags[5].required ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error} ∈ {0}
+            .flags[6].required ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            {.flags[7..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3; 4; 5; 6}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[3].flag_name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .errors[3].arg ∈ {0}
+            .errors[3].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[3].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[4].flag_name ∈
+            {{ NULL ; "int-array" ; "double-array" }}
+            .errors[4].arg ∈ {0}
+            .errors[4].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[4].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[5].flag_name ∈ {{ NULL ; "double-array" }}
+            .errors[5].arg ∈ {0}
+            .errors[5].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[5].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[6..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_int:
+  flag.name ∈ {{ "int" }}
+      .description ∈ {{ "Integer flag." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&int_val }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_INT}
+  int_val ∈ {0}
+  _kgflags_g.flags_count ∈ {1; 2; 3}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈ {{ NULL ; "bool" ; "int" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT}
+            .flags[2].name ∈ {{ NULL ; "int" }}
+            .flags[2].description ∈ {{ NULL ; "Integer flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT}
+            {.flags[3..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈ {{ NULL ; "bool" ; "int" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈ {{ NULL ; "int" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[2..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_int_array:
+  flag.name ∈ {{ "int-array" }}
+      .description ∈ {{ "Int array flag." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&int_arr }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_INT_ARRAY}
+  int_arr{._items; ._count} ∈ {0}
+         .[bits 96 to 127] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY}
+            .flags[4].name ∈ {{ NULL ; "string-array" ; "int-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr }}
+            .flags[4]{.assigned; .error} ∈ {0}
+            .flags[4].required ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" }}
+            .flags[5].description ∈ {{ NULL ; "Int array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr }}
+            .flags[5]{.assigned; .error} ∈ {0}
+            .flags[5].required ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY}
+            {.flags[6..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3; 4; 5}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[3].flag_name ∈
+            {{ NULL ; "string-array" ; "int-array" }}
+            .errors[3].arg ∈ {0}
+            .errors[3].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[3].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[4].flag_name ∈ {{ NULL ; "int-array" }}
+            .errors[4].arg ∈ {0}
+            .errors[4].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[4].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[5..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_string:
+  flag.name ∈ {{ "string" }}
+      .description ∈ {{ "String flag." }}
+      .default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+      {{ "lorem" }}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&string_val }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+  string_val ∈ {0}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            {.flags[1..255]; .non_flag_count; .non_flag_args[0..511]; .errors_count; .errors[0..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description; .[bits 82016 to 82047]; .[bits 114848 to 114879]} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_string_array:
+  flag.name ∈ {{ "string-array" }}
+      .description ∈ {{ "String array flag." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&string_arr }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_STRING_ARRAY}
+  string_arr{._items; ._count} ∈ {0}
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr }}
+            .flags[1]{.assigned; .error} ∈ {0}
+            .flags[1].required ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY}
+            .flags[2].name ∈ {{ NULL ; "int" ; "double" ; "string-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr }}
+            .flags[2]{.assigned; .error} ∈ {0}
+            .flags[2].required ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY}
+            .flags[3].name ∈ {{ NULL ; "double" ; "string-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr }}
+            .flags[3]{.assigned; .error} ∈ {0}
+            .flags[3].required ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY}
+            .flags[4].name ∈ {{ NULL ; "string-array" }}
+            .flags[4].description ∈ {{ NULL ; "String array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr }}
+            .flags[4]{.assigned; .error} ∈ {0}
+            .flags[4].required ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY}
+            {.flags[5..255]; .non_flag_count; .non_flag_args[0..511]; .[bits 82016 to 82047]} ∈
+            {0}
+            .errors_count ∈ {0; 1; 2; 3; 4}
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0].flag_name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" }}
+            .errors[0].arg ∈ {0}
+            .errors[0].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG;
+             KGFLAGS_ERROR_KIND_PREFIX_NO}
+            .errors[0].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[1].flag_name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" }}
+            .errors[1].arg ∈ {0}
+            .errors[1].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[1].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[2].flag_name ∈ {{ NULL ; "double" ; "string-array" }}
+            .errors[2].arg ∈ {0}
+            .errors[2].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[2].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            .errors[3].flag_name ∈ {{ NULL ; "string-array" }}
+            .errors[3].arg ∈ {0}
+            .errors[3].kind ∈
+            {KGFLAGS_ERROR_KIND_NONE; KGFLAGS_ERROR_KIND_DUPLICATE_FLAG}
+            .errors[3].[bits 160 to 191] ∈ {0} or UNINITIALIZED
+            {.errors[4..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description} ∈
+            {0}
+[eva:final-states] Values at end of function _kgflags_parse_double:
+  ok ∈ {0}
+  end ∈
+     {{ &argv0 + [0..255] ; &argv1 + [0..255] ; &argv2 + [0..255] ;
+        &argv3 + [0..255] ; &argv4 + [0..255] }}
+  res ∈ [-inf .. inf] ∪ {NaN}
+  ok_0 ∈ {0}
+  ok_2 ∈ {0}
+  __retres ∈ {0}
+[eva:final-states] Values at end of function kgflags_double_array_get_item:
+  str ∈
+     {{ &argv0 + [0..255] ; &argv1 + [0..255] ; &argv2 + [0..255] ;
+        &argv3 + [0..255] ; &argv4 + [0..255] }}
+  ok ∈ {0}
+  res ∈ {0}
+  __retres ∈ {0}
+[eva:final-states] Values at end of function _kgflags_parse_int:
+  ok ∈ {0; 1}
+  end ∈
+     {{ &argv0 + [0..255] ; &argv1 + [0..255] ; &argv2 + [0..255] ;
+        &argv3 + [0..255] ; &argv4 + [0..255] }}
+  res_l ∈ [--..--]
+  ok ∈ {0; 1}
+  ok_1 ∈ {0; 1}
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function _kgflags_parse_flag:
+  string_val ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  bool_val ∈ {0; 1}
+  int_val ∈ [--..--]
+  double_val[bits 0 to 7] ∈ {{ garbled mix of &{argv} (origin: Merge) }}
+            [bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            [bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+  string_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  int_arr._items[bits 0 to 7] ∈
+         {{ garbled mix of &{argv} (origin: Merge) }}
+         ._items[bits 8 to 31]# ∈
+         {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+         ._items[bits 32 to 63]# ∈
+         {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+         ._count ∈ [0..2147483647]
+         .[bits 96 to 127] ∈ UNINITIALIZED
+  double_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+[eva:final-states] Values at end of function kgflags_int_array_get_item:
+  str ∈
+     {{ &argv0 + [0..255] ; &argv1 + [0..255] ; &argv2 + [0..255] ;
+        &argv3 + [0..255] ; &argv4 + [0..255] }}
+  ok ∈ {0; 1}
+  res ∈ [--..--]
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function kgflags_parse:
+  arg ∈ {0}
+  string_val ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  bool_val ∈ {0; 1}
+  int_val ∈ [--..--]
+  double_val[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            [bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            [bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+  string_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  int_arr._items[bits 0 to 7] ∈
+         {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+         ._items[bits 8 to 31]# ∈
+         {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+         ._items[bits 32 to 63]# ∈
+         {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+         ._count ∈ [0..2147483647]
+         .[bits 96 to 127] ∈ UNINITIALIZED
+  double_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [8..2040],0%8 }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [8..2040],0%8 }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function main:
+  string_val ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  bool_val ∈ {0; 1}
+  int_val ∈ [--..--]
+  double_val ∈
+            {{ garbled mix of &{argv}
+             (origin: Misaligned {examples/full_api.c:37}) }}
+  string_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [-17179869168..2040] }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [-17179869168..2040] }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  int_arr._items[bits 0 to 7] ∈
+         {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+         ._items[bits 8 to 31]# ∈
+         {{ NULL + [--..--] ; &argv + [-17179869168..2040] }}%64, bits 8 to 31 
+         ._items[bits 32 to 63]# ∈
+         {{ NULL ; &argv + [-17179869168..2040] }}%64, bits 32 to 63 
+         ._count ∈ [0..2147483647]
+         .[bits 96 to 127] ∈ UNINITIALIZED
+  double_arr._items[bits 0 to 7] ∈
+            {{ garbled mix of &{argv} (origin: Merge {kgflags.h:735}) }}
+            ._items[bits 8 to 31]# ∈
+            {{ NULL + [--..--] ; &argv + [-17179869168..2040] }}%64, bits 8 to 31 
+            ._items[bits 32 to 63]# ∈
+            {{ NULL ; &argv + [-17179869168..2040] }}%64, bits 32 to 63 
+            ._count ∈ [0..2147483647]
+            .[bits 96 to 127] ∈ UNINITIALIZED
+  non_flag_count ∈ [0..512]
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&string_val }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&bool_val ; (? *)&int_val ; (? *)&double_val ;
+               (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_val ; (? *)&double_val ; (? *)&string_arr ;
+               (? *)&int_arr ; (? *)&double_arr }}
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_val ; (? *)&string_arr ; (? *)&int_arr ;
+               (? *)&double_arr }}
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&string_arr ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&int_arr ; (? *)&double_arr }}
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ NULL ; (? *)&double_arr }}
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+  __retres ∈ {0; 1}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0].__fc_FILE_id ∈ [--..--]
+               [0].__fc_FILE_data ∈
+               {{ garbled mix of &{argv}
+                (origin: Misaligned {examples/full_api.c:37}) }}
+               [1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  _kgflags_g.flags_count ∈ {1; 2; 3; 4; 5; 6; 7}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "string" }}
+            .flags[0].description ∈ {{ "String flag." }}
+            .flags[0].default_value{.string_value; .bool_value[bits 0 to 63]; .int_value[bits 0 to 63]; .double_value} ∈
+            {{ "lorem" }}
+            .flags[0].result ∈ ESCAPINGADDR
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1].name ∈
+            {{ NULL ; "bool" ; "int" ; "double" ; "string-array" ;
+               "int-array" ; "double-array" }}
+            .flags[1].description ∈
+            {{ NULL ; "Boolean flag." ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[1].default_value ∈ {0}
+            .flags[1].result ∈ {0} or ESCAPINGADDR
+            .flags[1]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[1].[bits 280 to 287] ∈ {0}
+            .flags[1].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_BOOL;
+             KGFLAGS_FLAG_KIND_INT; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[2].name ∈
+            {{ NULL ; "int" ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[2].description ∈
+            {{ NULL ; "Integer flag." ; "Double flag." ;
+               "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[2].default_value ∈ {0}
+            .flags[2].result ∈ {0} or ESCAPINGADDR
+            .flags[2]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[2].[bits 280 to 287] ∈ {0}
+            .flags[2].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT;
+             KGFLAGS_FLAG_KIND_DOUBLE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[3].name ∈
+            {{ NULL ; "double" ; "string-array" ; "int-array" ;
+               "double-array" }}
+            .flags[3].description ∈
+            {{ NULL ; "Double flag." ; "String array flag." ;
+               "Int array flag." ; "Double array flag." }}
+            .flags[3].default_value ∈ {0}
+            .flags[3].result ∈ {0} or ESCAPINGADDR
+            .flags[3]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[3].[bits 280 to 287] ∈ {0}
+            .flags[3].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE;
+             KGFLAGS_FLAG_KIND_STRING_ARRAY; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[4].name ∈
+            {{ NULL ; "string-array" ; "int-array" ; "double-array" }}
+            .flags[4].description ∈
+            {{ NULL ; "String array flag." ; "Int array flag." ;
+               "Double array flag." }}
+            .flags[4].default_value ∈ {0}
+            .flags[4].result ∈ {0} or ESCAPINGADDR
+            .flags[4]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[4].[bits 280 to 287] ∈ {0}
+            .flags[4].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_STRING_ARRAY;
+             KGFLAGS_FLAG_KIND_INT_ARRAY; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[5].name ∈ {{ NULL ; "int-array" ; "double-array" }}
+            .flags[5].description ∈
+            {{ NULL ; "Int array flag." ; "Double array flag." }}
+            .flags[5].default_value ∈ {0}
+            .flags[5].result ∈ {0} or ESCAPINGADDR
+            .flags[5]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[5].[bits 280 to 287] ∈ {0}
+            .flags[5].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_INT_ARRAY;
+             KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[6].name ∈ {{ NULL ; "double-array" }}
+            .flags[6].description ∈ {{ NULL ; "Double array flag." }}
+            .flags[6].default_value ∈ {0}
+            .flags[6].result ∈ {0} or ESCAPINGADDR
+            .flags[6]{.assigned; .error; .required} ∈ {0; 1}
+            .flags[6].[bits 280 to 287] ∈ {0}
+            .flags[6].kind ∈
+            {KGFLAGS_FLAG_KIND_NONE; KGFLAGS_FLAG_KIND_DOUBLE_ARRAY}
+            .flags[7..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "string"; 
+                                "bool"; "int"; "double"; "string-array";
+                                "int-array"; "double-array"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "-" }}
+            .arg_cursor ∈ [1..255]
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {{ "Usage of fullapi [-FLAGS]:" }}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0].__fc_FILE_id ∈ [--..--]
+               [0].__fc_FILE_data ∈
+               {{ garbled mix of &{argv}
+                (origin: Misaligned {examples/full_api.c:37}) }}
+               [1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  34 functions analyzed (out of 34): 100% coverage.
+  In these functions, 707 statements reached (out of 736): 96% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    7 warnings
+    by the Frama-C kernel:    0 errors    0 warnings
+  ----------------------------------------------------------------------------
+  35 alarms generated by the analysis:
+      16 invalid memory accesses
+      11 accesses to uninitialized left-values
+       3 integer overflows
+       3 nan or infinite floating-point values
+       2 others
+  1 of them is a sure alarm (invalid status).
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    83 valid    28 unknown     0 invalid    111 total
+  74% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+real	0m1.346s
+user	0m1.289s
+sys	0m0.043s

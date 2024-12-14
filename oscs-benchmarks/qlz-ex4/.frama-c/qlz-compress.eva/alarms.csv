@@ -1,0 +1,67 @@
+directory	file	line	function	property kind	status	property
+.	compress_file.c	20	main	precondition of fseek	Unknown	valid_stream: \valid(stream)
+.	compress_file.c	24	main	precondition of fread	Unknown	valid_ptr_block: \valid((char *)ptr + (0 .. nmemb * size - 1))
+.	compress_file.c	31	main	precondition of fwrite	Unknown	valid_ptr_block: \valid_read((char *)ptr + (0 .. nmemb * size - 1))
+.	compress_file.c	31	main	precondition of fwrite	Unknown	valid_stream: \valid(stream)
+.	quicklz.c	58	same	initialization	Unknown	\initialized(src + n)
+.	quicklz.c	58	same	initialization	Unknown	\initialized(src)
+.	quicklz.c	58	same	mem_access	Unknown	\valid_read(src + n)
+.	quicklz.c	58	same	mem_access	Unknown	\valid_read(src)
+.	quicklz.c	117	fast_read	initialization	Unknown	\initialized((ui32 *)src)
+.	quicklz.c	117	fast_read	mem_access	Unknown	\valid_read((ui32 *)src)
+.	quicklz.c	161	fast_write	mem_access	Unknown	\valid((ui32 *)dst)
+.	quicklz.c	164	fast_write	mem_access	Unknown	\valid((ui32 *)dst)
+.	quicklz.c	167	fast_write	mem_access	Unknown	\valid((ui16 *)dst)
+.	quicklz.c	268	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)last_matchstart)
+.	quicklz.c	271	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)last_matchstart)
+.	quicklz.c	276	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)(source + (size_t)(size >> 1)))
+.	quicklz.c	276	qlz_compress_core	signed_overflow	Unknown	dst - destination ≤ 2147483647
+.	quicklz.c	276	qlz_compress_core	signed_overflow	Unknown	src - source ≤ 2147483647
+.	quicklz.c	292	qlz_compress_core	initialization	Unknown	\initialized(&state->hash[hash].cache)
+.	quicklz.c	295	qlz_compress_core	initialization	Unknown	\initialized(&state->hash[hash].offset)
+.	quicklz.c	296	qlz_compress_core	signed_overflow	Unknown	src - source ≤ 2147483647
+.	quicklz.c	299	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)o, (void *)source)
+.	quicklz.c	299	qlz_compress_core	signed_overflow	Unknown	-2147483648 ≤ src - o
+.	quicklz.c	299	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)(o + 1))
+.	quicklz.c	299	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)(source + 3))
+.	quicklz.c	324	qlz_compress_core	initialization	Unknown	\initialized(o + (int)(src - old_src))
+.	quicklz.c	324	qlz_compress_core	initialization	Unknown	\initialized(src)
+.	quicklz.c	324	qlz_compress_core	mem_access	Unknown	\valid_read(o + (int)(src - old_src))
+.	quicklz.c	324	qlz_compress_core	mem_access	Unknown	\valid_read(src)
+.	quicklz.c	327	qlz_compress_core	initialization	Unknown	\initialized(o + (int)(src - old_src))
+.	quicklz.c	327	qlz_compress_core	initialization	Unknown	\initialized(src)
+.	quicklz.c	327	qlz_compress_core	mem_access	Unknown	\valid_read(o + (int)(src - old_src))
+.	quicklz.c	327	qlz_compress_core	mem_access	Unknown	\valid_read(src)
+.	quicklz.c	327	qlz_compress_core	signed_overflow	Unknown	src - old_src ≤ 2147483647
+.	quicklz.c	329	qlz_compress_core	signed_overflow	Unknown	(int)((last_byte - 4) - (src - 5)) + 1 ≤ 2147483647
+.	quicklz.c	329	qlz_compress_core	signed_overflow	Unknown	(last_byte - 4) - (src - 5) ≤ 2147483647
+.	quicklz.c	329	qlz_compress_core	signed_overflow	Unknown	-2147483648 ≤ (last_byte - 4) - (src - 5)
+.	quicklz.c	332	qlz_compress_core	initialization	Unknown	\initialized(o + (int)(src - old_src))
+.	quicklz.c	332	qlz_compress_core	initialization	Unknown	\initialized(src)
+.	quicklz.c	332	qlz_compress_core	mem_access	Unknown	\valid_read(o + (int)(src - old_src))
+.	quicklz.c	332	qlz_compress_core	mem_access	Unknown	\valid_read(src)
+.	quicklz.c	332	qlz_compress_core	signed_overflow	Unknown	src - old_src ≤ 2147483647
+.	quicklz.c	337	qlz_compress_core	signed_overflow	Unknown	src - old_src ≤ 2147483647
+.	quicklz.c	355	qlz_compress_core	initialization	Unknown	\initialized(src)
+.	quicklz.c	355	qlz_compress_core	mem_access	Unknown	\valid(dst)
+.	quicklz.c	355	qlz_compress_core	mem_access	Unknown	\valid_read(src)
+.	quicklz.c	508	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)last_byte)
+.	quicklz.c	518	qlz_compress_core	ptr_comparison	Unknown	\pointer_comparable((void *)src, (void *)(last_byte - 3))
+.	quicklz.c	524	qlz_compress_core	signed_overflow	Unknown	src - source ≤ 2147483647
+.	quicklz.c	537	qlz_compress_core	initialization	Unknown	\initialized(src)
+.	quicklz.c	537	qlz_compress_core	mem_access	Unknown	\valid(dst)
+.	quicklz.c	537	qlz_compress_core	mem_access	Unknown	\valid_read(src)
+.	quicklz.c	549	qlz_compress_core	signed_overflow	Unknown	dst - destination ≤ 2147483647
+.	quicklz.c	754	qlz_compress	precondition of memcpy	Unknown	valid_dest: valid_or_empty(dest, n)
+.	quicklz.c	754	qlz_compress	precondition of memcpy	Unknown	valid_src: valid_read_or_empty(src, n)
+.	quicklz.c	788	qlz_compress	mem_access	Unknown	\valid(destination)
+.	quicklz.c	789	qlz_compress	mem_access	Unknown	\valid(destination + 1)
+.	quicklz.c	790	qlz_compress	mem_access	Unknown	\valid(destination + 2)
+.	quicklz.c	794	qlz_compress	mem_access	Unknown	\valid(destination)
+.	quicklz.c	799	qlz_compress	mem_access	Unknown	\valid(destination)
+FRAMAC_SHARE/libc	stdio.h	353	fread	precondition	Unknown	valid_ptr_block: \valid((char *)ptr + (0 .. nmemb * size - 1))
+FRAMAC_SHARE/libc	stdio.h	366	fwrite	precondition	Unknown	valid_ptr_block: \valid_read((char *)ptr + (0 .. nmemb * size - 1))
+FRAMAC_SHARE/libc	stdio.h	367	fwrite	precondition	Unknown	valid_stream: \valid(stream)
+FRAMAC_SHARE/libc	stdio.h	386	fseek	precondition	Unknown	valid_stream: \valid(stream)
+FRAMAC_SHARE/libc	string.h	95	memcpy	precondition	Unknown	valid_dest: valid_or_empty(dest, n)
+FRAMAC_SHARE/libc	string.h	96	memcpy	precondition	Unknown	valid_src: valid_read_or_empty(src, n)

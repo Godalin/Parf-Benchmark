@@ -1,7 +1,29 @@
 #!/bin/sh
 
-timelimit="60m"
-logfile="log_eva_expert"
+# Default values for parameters (can be overridden by command-line arguments)
+default_timelimit="60m"
+default_logfile="log_eva_expert"
+
+# Parse command-line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --timelimit=*)
+            timelimit="${1#*=}"
+            ;;
+        --logfile=*)
+            logfile="${1#*=}"
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# Set defaults if not provided
+timelimit="${timelimit:-$default_timelimit}"
+logfile="${logfile:-$default_logfile}"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs="-D__FRAMAC__EVA"
