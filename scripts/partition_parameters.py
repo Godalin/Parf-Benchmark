@@ -40,14 +40,28 @@ def parse_analysis_result(result):
     # Perform 13 splits
     splits = []
     for key in parameter_keys:
-        # Find the parameter section matching the key
-        match = re.search(rf'({key}[^-]*)', final_parameters)
-        if match:
-            param_part = match.group(1).strip()
-            remaining = final_parameters.replace(param_part, "", 1).strip()
-            splits.append((param_part, remaining))
+        if key == "-eva-domains":
+            # Special case for -eva-domains
+            if "-eva-domains" in final_parameters:
+                start_index = final_parameters.index("-eva-domains")
+                end_index = final_parameters.find(" -", start_index + 1)
+                if end_index == -1:  # Handle case where -eva-domains is the last parameter
+                    end_index = len(final_parameters)
+                param_part = final_parameters[start_index:end_index].strip()
+                remaining = final_parameters[:start_index] + final_parameters[end_index:]
+                remaining = remaining.strip()
+                splits.append((param_part, remaining))
+            else:
+                splits.append(("", final_parameters))
         else:
-            splits.append(("", final_parameters))
+            # Default matching logic for other parameters
+            match = re.search(rf'({key}[^-]*)', final_parameters)
+            if match:
+                param_part = match.group(1).strip()
+                remaining = final_parameters.replace(param_part, "", 1).strip()
+                splits.append((param_part, remaining))
+            else:
+                splits.append(("", final_parameters))
 
     return project_name, splits
 

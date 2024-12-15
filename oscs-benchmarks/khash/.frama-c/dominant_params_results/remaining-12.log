@@ -1,0 +1,146 @@
+[kernel] Parsing khash.c (with preprocessing)
+[kernel:parser:decimal-float] khash.h:194: Warning: 
+  Floating-point constant 0.77 is not represented exactly. Will use 0x1.8a3d70a3d70a4p-1.
+  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  __ac_HASH_UPPER ∈ {0.77}
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3
+[eva:alarm] khash.c:3: Warning: 
+  out of bounds read. assert \valid_read(&h->n_occupied);
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_0
+[eva:alarm] khash.c:3: Warning: 
+  out of bounds read. assert \valid_read(h->flags + i);
+[eva:alarm] khash.c:3: Warning: out of bounds write. assert \valid(h->keys + x);
+[eva:alarm] khash.c:10: Warning: 
+  out of bounds write. assert \valid(h->vals + k);
+[eva:alarm] khash.c:3: Warning: 
+  out of bounds read. assert \valid_read(h->flags + i);
+[eva:alarm] khash.c:3: Warning: 
+  accessing uninitialized left-value. assert \initialized(h->keys + i);
+[eva:alarm] khash.c:3: Warning: 
+  out of bounds read. assert \valid_read(h->keys + i);
+[eva:alarm] khash.c:3: Warning: 
+  out of bounds read. assert \valid_read(h->flags + x);
+[eva:alarm] khash.c:17: Warning: 
+  out of bounds read. assert \valid_read(h->flags + k);
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function kh_del_32:
+  __calloc_kh_init_32_l3.n_buckets ∈ {0; 32}
+                        .size ∈ {0; 1; 4294967295}
+                        .n_occupied ∈ {0; 1}
+                        .upper_bound ∈ {0; 25}
+                        .flags ∈ {{ NULL ; &__malloc_kh_resize_32_l3[0] }}
+                        .keys ∈ {{ NULL ; &__realloc_kh_resize_32_l3[0] }}
+                        .vals ∈ {{ &__realloc_kh_resize_32_l3_0[0] }}
+  __malloc_kh_resize_32_l3[0..4] ∈ {2}
+                          [5] ∈ {0; 1; 2}
+                          [6..31] ∈ {2}
+[eva:final-states] Values at end of function kh_destroy_32:
+  h ∈ ESCAPINGADDR
+  h ∈ ESCAPINGADDR
+[eva:final-states] Values at end of function kh_get_32:
+  __retres ∈ {0; 5; 32}
+[eva:final-states] Values at end of function kh_init_32:
+  __fc_heap_status ∈ [--..--]
+[eva:final-states] Values at end of function kh_resize_32:
+  __fc_heap_status ∈ [--..--]
+  new_n_buckets ∈ {32}
+  new_flags ∈ {{ NULL ; &__malloc_kh_resize_32_l3[0] }} or ESCAPINGADDR
+  j ∈ {0; 1}
+  __retres ∈ {-1; 0}
+  __calloc_kh_init_32_l3.n_buckets ∈ {0; 32}
+                        {.size; .n_occupied} ∈ {0}
+                        .upper_bound ∈ {0; 25}
+                        .flags ∈ {{ NULL ; &__malloc_kh_resize_32_l3[0] }}
+                        .keys ∈ {{ NULL ; &__realloc_kh_resize_32_l3[0] }}
+                        .vals ∈
+                        {{ NULL ; &__realloc_kh_resize_32_l3_0[0] }}
+  __malloc_kh_resize_32_l3[0..31] ∈ {2}
+[eva:final-states] Values at end of function kh_put_32:
+  __fc_heap_status ∈ [--..--]
+  x ∈ {5} or UNINITIALIZED
+  ret ∈ {-1; 1}
+  __retres ∈ {0; 5; 32}
+  __calloc_kh_init_32_l3.n_buckets ∈ {0; 32}
+                        {.size; .n_occupied} ∈ {0; 1}
+                        .upper_bound ∈ {0; 25}
+                        .flags ∈ {{ NULL ; &__malloc_kh_resize_32_l3[0] }}
+                        .keys ∈ {{ NULL ; &__realloc_kh_resize_32_l3[0] }}
+                        .vals ∈
+                        {{ NULL ; &__realloc_kh_resize_32_l3_0[0] }}
+  __malloc_kh_resize_32_l3[0..4] ∈ {2}
+                          [5] ∈ {0; 2}
+                          [6..31] ∈ {2}
+  __realloc_kh_resize_32_l3[0..4] ∈ UNINITIALIZED
+                           [5] ∈ {5} or UNINITIALIZED
+                           [6..31] ∈ UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  __fc_heap_status ∈ [--..--]
+  ret ∈ {-1; 1}
+  is_missing ∈ {0; 1}
+  k ∈ {0; 32}
+  h ∈ ESCAPINGADDR
+  __retres ∈ {0}
+  __malloc_kh_resize_32_l3[0..4] ∈ {2}
+                          [5] ∈ {0; 1; 2}
+                          [6..31] ∈ {2}
+  __realloc_kh_resize_32_l3[0..4] ∈ UNINITIALIZED
+                           [5] ∈ {5} or UNINITIALIZED
+                           [6..31] ∈ UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 126 statements reached (out of 206): 61% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  9 alarms generated by the analysis:
+       8 invalid memory accesses
+       1 access to uninitialized left-values
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+0.30user 0.09system 0:00.39elapsed 99%CPU (0avgtext+0avgdata 101896maxresident)k
+0inputs+1184outputs (0major+18718minor)pagefaults 0swaps

@@ -1,0 +1,320 @@
+[kernel] Parsing compress_file.c (with preprocessing)
+[kernel] Parsing quicklz.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  qlz_decompress_core_bitlut[0] ∈ {4}
+                            [1] ∈ {0}
+                            [2] ∈ {1}
+                            [3] ∈ {0}
+                            [4] ∈ {2}
+                            [5] ∈ {0}
+                            [6] ∈ {1}
+                            [7] ∈ {0}
+                            [8] ∈ {3}
+                            [9] ∈ {0}
+                            [10] ∈ {1}
+                            [11] ∈ {0}
+                            [12] ∈ {2}
+                            [13] ∈ {0}
+                            [14] ∈ {1}
+                            [15] ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] compress_file.c:14: allocating variable __malloc_main_l14
+[eva] using specification for function fopen
+[eva] using specification for function fseek
+[eva:alarm] compress_file.c:20: Warning: 
+  function fseek: precondition 'valid_stream' got status unknown.
+[eva] using specification for function ftell
+[eva] compress_file.c:23: allocating variable __malloc_main_l23
+[eva] using specification for function fread
+[eva:alarm] compress_file.c:24: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva] compress_file.c:27: allocating variable __malloc_main_l27
+[eva:alarm] quicklz.c:70: Warning: 
+  out of bounds write. assert \valid(&state->hash[i].offset);
+[eva] quicklz.c:67: starting to merge loop iterations
+[kernel] quicklz.c:70: 
+  more than 200(4096) locations to update in array. Approximating.
+[kernel] quicklz.c:70: more than 200(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:268: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva:alarm] quicklz.c:117: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)src);
+[eva:alarm] quicklz.c:271: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:292: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].cache);
+[eva:alarm] quicklz.c:292: Warning: 
+  out of bounds read. assert \valid_read(&state->hash[hash].cache);
+[kernel] quicklz.c:293: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:295: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].offset);
+[eva:alarm] quicklz.c:296: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[kernel] quicklz.c:296: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)o, (void *)source);
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)src, (void *)(o + 1));
+[eva:alarm] quicklz.c:355: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:355: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:355: Warning: out of bounds read. assert \valid_read(src);
+[eva] quicklz.c:271: starting to merge loop iterations
+[eva:alarm] quicklz.c:296: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)(source + 3));
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:58: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src + n);
+[eva:alarm] quicklz.c:58: Warning: 
+  out of bounds read. assert \valid_read(src + n);
+[eva] quicklz.c:58: starting to merge loop iterations
+[eva:alarm] quicklz.c:167: Warning: 
+  out of bounds write. assert \valid((ui16 *)dst);
+[eva:alarm] quicklz.c:324: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:324: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:324: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:324: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:324: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:327: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:327: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:327: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:327: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:327: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:329: Warning: 
+  pointer subtraction.
+  assert \base_addr(last_byte - 4) ≡ \base_addr(src - 5);
+[eva:alarm] quicklz.c:329: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - (src - 5);
+[eva:alarm] quicklz.c:332: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:332: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:332: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:332: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:332: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:332: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva] quicklz.c:332: starting to merge loop iterations
+[eva:alarm] quicklz.c:337: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:164: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva] quicklz.c:354: Trace partitioning superposing up to 100 states
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer comparison.
+  assert
+  \pointer_comparable((void *)src, (void *)(source + (size_t)(size >> 1)));
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:276: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow. assert dst - destination ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:276: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:161: Warning: 
+  out of bounds write. assert \valid((ui32 *)dst);
+[eva:alarm] quicklz.c:508: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_byte);
+[eva:alarm] quicklz.c:518: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)(last_byte - 3));
+[eva:alarm] quicklz.c:524: Warning: 
+  out of bounds write. assert \valid(&state->hash[hash_0].offset);
+[eva:alarm] quicklz.c:524: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
+[eva:alarm] quicklz.c:524: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[kernel] quicklz.c:524: 
+  more than 200(4096) locations to update in array. Approximating.
+[kernel] quicklz.c:525: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:537: Warning: out of bounds write. assert \valid(dst);
+[eva:alarm] quicklz.c:537: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:537: Warning: out of bounds read. assert \valid_read(src);
+[eva] quicklz.c:508: starting to merge loop iterations
+[eva:alarm] quicklz.c:549: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:549: Warning: 
+  signed overflow. assert dst - destination ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:549: Warning: 
+  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
+[eva:alarm] quicklz.c:549: Warning: 
+  signed overflow. assert dst - destination ≤ 9223372036854775807;
+[kernel] quicklz.c:292: 
+  more than 200(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:754: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] quicklz.c:754: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:101: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:alarm] quicklz.c:762: Warning: 
+  out of bounds write. assert \valid(&state->stream_counter);
+[eva:alarm] quicklz.c:788: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:789: Warning: 
+  out of bounds write. assert \valid(destination + 1);
+[eva:alarm] quicklz.c:790: Warning: 
+  out of bounds write. assert \valid(destination + 2);
+[eva:alarm] quicklz.c:794: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:799: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:800: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva:alarm] quicklz.c:801: Warning: 
+  out of bounds write. assert \valid(destination);
+[eva] using specification for function fwrite
+[eva:alarm] compress_file.c:31: Warning: 
+  function fwrite: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] compress_file.c:31: Warning: 
+  function fwrite: precondition 'valid_stream' got status unknown.
+[eva] using specification for function fclose
+[scope:rm_asserts] removing 5 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function fast_read:
+  __retres ∈ [--..--]
+[eva:final-states] Values at end of function fast_write:
+  __malloc_main_l27[0] ∈ {2; 3} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function hash_func:
+  __retres ∈ [0..4095]
+[eva:final-states] Values at end of function reset_table_compress:
+  i ∈ {4096}
+  __malloc_main_l14{.stream_counter; .hash[0].cache} ∈ UNINITIALIZED
+                   .hash{[0].offset; [1..4095]} ∈ {0} or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+[eva:final-states] Values at end of function same:
+  n ∈ {0; 1; 2; 3; 4; 5; 6}
+[eva:final-states] Values at end of function qlz_compress_core:
+  last_byte ∈
+           {{ NULL + [0..4294966894] ;
+              &__malloc_main_l23 + [0..4294966894] }}
+  src ∈ {{ NULL ; &__malloc_main_l23 + [0..18446744073709551615] }}
+  cword_ptr ∈
+           {{ NULL + {3; 7; 9; 13} ;
+              &__malloc_main_l27 + [3..18446744073709551615] }}
+  dst ∈
+     {{ NULL + {7; 13} ; &__malloc_main_l27 + [7..9223372036854775816] }}
+  cword_val ∈ [1..4294967295],1%2
+  last_matchstart ∈
+                 {{ NULL + [-10..4294966884] ;
+                    &__malloc_main_l23 + [-10..4294966884] }}
+  fetch ∈ [--..--]
+  lits ∈ [--..--]
+  __retres ∈ [0..9223372036854775807]
+  __malloc_main_l14.stream_counter ∈ UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l27[0..2] ∈ UNINITIALIZED
+                   [3..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function qlz_compress:
+  r ∈ [3..9223372036854775816] or UNINITIALIZED
+  compressed ∈ {0; 1} or UNINITIALIZED
+  base ∈ {3; 9} or UNINITIALIZED
+  __retres ∈ [0..9223372036854775816]
+  __malloc_main_l14.stream_counter ∈ {0} or UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l27[0] ∈ {68; 69; 70; 71} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function main:
+  __fc_errno ∈ [4..75]
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  ifile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  ofile ∈ {{ &__fc_fopen + [0..120],0%8 }}
+  src ∈ {{ NULL ; &__malloc_main_l23[0] }}
+  dst ∈ {{ NULL ; &__malloc_main_l27[0] }}
+  state_compress ∈ {{ NULL ; &__malloc_main_l14 }}
+  len ∈ [--..--]
+  len2 ∈ [0..9223372036854775816]
+  __retres ∈ {0}
+  __malloc_main_l14.stream_counter ∈ {0} or UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l23[0..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l27[0] ∈ {68; 69; 70; 71} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:final-states] Values at end of function eva_main:
+  __fc_errno ∈ [4..75]
+  __fc_fopen[0..15] ∈ [--..--]
+  __fc_heap_status ∈ [--..--]
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  __malloc_main_l14.stream_counter ∈ {0} or UNINITIALIZED
+                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash_counter[0..4095] ∈ UNINITIALIZED
+  __malloc_main_l23[0..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l27[0] ∈ {68; 69; 70; 71} or UNINITIALIZED
+                   [1..18446744073709551614] ∈ [--..--] or UNINITIALIZED
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  9 functions analyzed (out of 20): 45% coverage.
+  In these functions, 219 statements reached (out of 229): 95% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  68 alarms generated by the analysis:
+      27 invalid memory accesses
+      13 accesses to uninitialized left-values
+      12 integer overflows
+      16 others
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    14 valid     6 unknown     0 invalid     20 total
+  70% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+0.69user 0.13system 0:00.83elapsed 100%CPU (0avgtext+0avgdata 116384maxresident)k
+0inputs+2840outputs (0major+26460minor)pagefaults 0swaps

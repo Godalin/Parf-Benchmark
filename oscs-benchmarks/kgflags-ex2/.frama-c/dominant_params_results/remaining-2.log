@@ -1,0 +1,231 @@
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[kernel] Parsing examples/full_api.c (with preprocessing)
+[eva] Splitting return states on:
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(kgflags_parse) == 0 (auto)
+  \return(kgflags_string_array_get_item) == 0 (auto)
+  \return(kgflags_get_non_flag_arg) == 0 (auto)
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strcmp) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(strtol) == -9223372036854775808, 9223372036854775807 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(_kgflags_is_flag) == 0 (auto)
+  \return(_kgflags_get_flag_name) == 0 (auto)
+  \return(_kgflags_get_flag) == 0 (auto)
+  \return(_kgflags_consume_arg) == 0 (auto)
+  \return(_kgflags_peek_arg) == 0 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  _kgflags_g ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] using specification for function strstr
+[eva] FRAMAC_SHARE/libc/string.h:243: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva] using specification for function strcmp
+[eva] FRAMAC_SHARE/libc/string.h:156: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s2' got status unknown.
+[eva:alarm] kgflags.h:612: Warning: 
+  function strcmp: precondition 'valid_string_s2' got status unknown.
+[eva] using specification for function strncmp
+[eva] FRAMAC_SHARE/libc/string.h:163: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status invalid.
+[eva] using specification for function strtol
+[eva:alarm] kgflags.h:753: Warning: 
+  out of bounds write. assert \valid(flag->result.int_value);
+[eva] using specification for function strtod
+[eva:alarm] kgflags.h:641: Warning: 
+  non-finite float value. assert \is_finite((float)INFINITY);
+[eva:alarm] kgflags.h:641: Warning: 
+  non-finite double value. assert \is_finite(res);
+[eva:alarm] kgflags.h:787: Warning: 
+  out of bounds write. assert \valid(&arr->_items);
+[eva:alarm] kgflags.h:788: Warning: 
+  out of bounds write. assert \valid(&arr->_count);
+[eva:alarm] kgflags.h:813: Warning: 
+  out of bounds write. assert \valid(&arr_0->_items);
+[eva:alarm] kgflags.h:814: Warning: 
+  out of bounds write. assert \valid(&arr_0->_count);
+[eva:alarm] kgflags.h:840: Warning: 
+  out of bounds write. assert \valid(&arr_1->_items);
+[eva:alarm] kgflags.h:841: Warning: 
+  out of bounds write. assert \valid(&arr_1->_count);
+[eva:alarm] kgflags.h:735: Warning: 
+  out of bounds write. assert \valid(flag->result.bool_value);
+[eva] kgflags.h:360: Trace partitioning superposing up to 100 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 500 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 800 states
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva:alarm] kgflags.h:611: Warning: 
+  function strstr: precondition 'valid_string_haystack' got status unknown.
+[eva:alarm] kgflags.h:612: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status invalid.
+[eva] kgflags.h:360: Trace partitioning superposing up to 1400 states
+[eva:alarm] kgflags.h:675: Warning: 
+  out of bounds write. assert \valid(flag->result.bool_value);
+[eva:alarm] kgflags.h:680: Warning: 
+  out of bounds write. assert \valid(flag->result.int_value);
+[eva:alarm] kgflags.h:685: Warning: 
+  out of bounds write. assert \valid(flag->result.double_value);
+[eva] kgflags.h:663: Trace partitioning superposing up to 200 states
+[eva] kgflags.h:666: Trace partitioning superposing up to 100 states
+[eva] kgflags.h:663: Trace partitioning superposing up to 300 states
+[eva] kgflags.h:663: Trace partitioning superposing up to 100 states
+[eva] kgflags.h:666: Trace partitioning superposing up to 200 states
+[eva] kgflags.h:385: Trace partitioning superposing up to 4400 states
+[eva] using specification for function printf_va_1
+[eva:alarm] examples/full_api.c:34: Warning: 
+  function printf_va_1: precondition valid_read_string(param0) got status unknown.
+[eva] using specification for function printf_va_2
+[eva] using specification for function printf_va_3
+[eva:alarm] examples/full_api.c:37: Warning: 
+  non-finite double value. assert \is_finite(double_val);
+[eva] using specification for function printf_va_4
+[eva] using specification for function printf_va_5
+[eva:alarm] kgflags.h:522: Warning: 
+  out of bounds read. assert \valid_read(arr->_items + at);
+[eva:garbled-mix:write] kgflags.h:522: 
+  Assigning imprecise value to __retres.
+  The imprecision originates from Misaligned {kgflags.h:522}
+[eva:garbled-mix:write] kgflags.h:522: 
+  Assigning imprecise value to \result<kgflags_string_array_get_item>.
+  The imprecision originates from Misaligned {kgflags.h:522}
+[eva] kgflags.h:522: cannot properly split on \result == 0
+[eva:garbled-mix:write] examples/full_api.c:41: 
+  Assigning imprecise value to tmp_2.
+  The imprecision originates from Misaligned {kgflags.h:522}
+[eva] using specification for function printf_va_6
+[eva:alarm] examples/full_api.c:41: Warning: 
+  function printf_va_6: precondition valid_read_string(param1) got status invalid.
+[eva:alarm] examples/full_api.c:41: Warning: 
+  function printf_va_6: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function printf_va_7
+[eva:alarm] kgflags.h:533: Warning: 
+  out of bounds read. assert \valid_read(arr->_items + at);
+[eva:garbled-mix:write] kgflags.h:533: 
+  Assigning imprecise value to str.
+  The imprecision originates from Misaligned {kgflags.h:533}
+[eva:alarm] kgflags.h:626: Warning: 
+  function strtol: precondition 'valid_string_nptr' got status unknown.
+[eva:alarm] kgflags.h:627: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)end, (void *)str);
+[eva] using specification for function printf_va_8
+[eva] using specification for function printf_va_9
+[eva:alarm] kgflags.h:550: Warning: 
+  out of bounds read. assert \valid_read(arr->_items + at);
+[eva:garbled-mix:write] kgflags.h:550: 
+  Assigning imprecise value to str.
+  The imprecision originates from Misaligned {kgflags.h:550}
+[eva:alarm] kgflags.h:639: Warning: 
+  function strtod: precondition 'valid_string_nptr' got status unknown.
+[eva:alarm] kgflags.h:640: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)end, (void *)str);
+[eva] using specification for function printf_va_10
+[eva] kgflags.h:567: cannot properly split on \result == 0
+[eva] using specification for function printf_va_11
+[eva:alarm] examples/full_api.c:56: Warning: 
+  function printf_va_11: precondition valid_read_string(param1) got status invalid.
+[eva:alarm] examples/full_api.c:56: Warning: 
+  function printf_va_11: precondition valid_read_string(param1) got status unknown.
+[eva] examples/full_api.c:56: Trace partitioning superposing up to 100 states
+[eva] using specification for function fprintf_va_10
+[eva] using specification for function fprintf_va_9
+[eva:alarm] kgflags.h:436: Warning: 
+  function fprintf_va_9: precondition valid_read_string(param1) got status unknown.
+[eva] kgflags.h:400: Trace partitioning superposing up to 100 states
+[eva] using specification for function fprintf_va_1
+[eva:alarm] kgflags.h:404: Warning: 
+  function fprintf_va_1: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_2
+[eva:alarm] kgflags.h:408: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_3
+[eva:alarm] kgflags.h:412: Warning: 
+  function fprintf_va_3: precondition valid_read_string(param1) got status unknown.
+[eva] using specification for function fprintf_va_4
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function fprintf_va_5
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function fprintf_va_8
+[eva:alarm] kgflags.h:432: Warning: 
+  function fprintf_va_8: precondition valid_read_string(param1) got status unknown.
+[eva] kgflags.h:400: Trace partitioning superposing up to 500 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 4600 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 8700 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 12800 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 16400 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 19500 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 21500 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 22200 states
+[eva:loop-unroll:partial] kgflags.h:400: loop not completely unrolled
+[eva] kgflags.h:400: starting to merge loop iterations
+[eva] kgflags.h:400: Trace partitioning superposing up to 22500 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 300 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 400 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 2800 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 5200 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 7600 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 9600 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 11400 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 12400 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 12700 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 11100 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 11500 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 10800 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 11700 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 11900 states
+Command exited with non-zero status 124
+599.40user 0.62system 10:00.08elapsed 99%CPU (0avgtext+0avgdata 715396maxresident)k
+0inputs+2760outputs (0major+181818minor)pagefaults 0swaps

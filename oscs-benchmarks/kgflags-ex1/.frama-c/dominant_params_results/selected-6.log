@@ -1,0 +1,391 @@
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[kernel] Parsing examples/simple.c (with preprocessing)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  _kgflags_g ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] using specification for function strncmp
+[eva] FRAMAC_SHARE/libc/string.h:163: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
+[eva] using specification for function strcmp
+[eva:alarm] kgflags.h:608: Warning: 
+  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:156: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva] kgflags.h:606: starting to merge loop iterations
+[eva] kgflags.h:360: starting to merge loop iterations
+[kernel] kgflags.h:657: too many locations to update in array. Approximating.
+[eva] kgflags.h:663: starting to merge loop iterations
+[eva] kgflags.h:385: starting to merge loop iterations
+[eva] using specification for function puts
+[eva:alarm] examples/simple.c:12: Warning: 
+  function puts: precondition 'valid_string_s' got status unknown.
+[eva:alarm] kgflags.h:402: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->kind);
+[eva:alarm] kgflags.h:404: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_1
+[eva:alarm] kgflags.h:404: Warning: 
+  function fprintf_va_1: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:408: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_2
+[eva:alarm] kgflags.h:408: Warning: 
+  function fprintf_va_2: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:412: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_3
+[eva:alarm] kgflags.h:412: Warning: 
+  function fprintf_va_3: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->arg);
+[eva:alarm] kgflags.h:416: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_4
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:416: Warning: 
+  function fprintf_va_4: precondition valid_read_string(param2) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->arg);
+[eva:alarm] kgflags.h:420: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_5
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:420: Warning: 
+  function fprintf_va_5: precondition valid_read_string(param2) got status unknown.
+[eva] using specification for function fprintf_va_6
+[eva] using specification for function fprintf_va_7
+[eva:alarm] kgflags.h:432: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_8
+[eva:alarm] kgflags.h:432: Warning: 
+  function fprintf_va_8: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:436: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_9
+[eva:alarm] kgflags.h:436: Warning: 
+  function fprintf_va_9: precondition valid_read_string(param1) got status unknown.
+[eva:alarm] kgflags.h:440: Warning: 
+  accessing uninitialized left-value. assert \initialized(&err->flag_name);
+[eva] using specification for function fprintf_va_10
+[eva:alarm] kgflags.h:440: Warning: 
+  function fprintf_va_10: precondition valid_read_string(param1) got status unknown.
+[eva] kgflags.h:400: starting to merge loop iterations
+[kernel] kgflags.h:404: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:402: more than 200(512) elements to enumerate. Approximating.
+[eva] using specification for function fprintf_va_11
+[eva] using specification for function fprintf_va_13
+[eva] using specification for function fprintf_va_14
+[eva] using specification for function fprintf_va_25
+[eva] using specification for function fprintf_va_26
+[eva] kgflags.h:457: starting to merge loop iterations
+[eva:locals-escaping] fc_stubs.c:21: Warning: 
+  locals {to_print} escaping the scope of main through _kgflags_g
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function _kgflags_add_error:
+  err.flag_name ∈
+     {{ NULL ; &argv1[2] ; &argv2[2] ; &argv3[2] ; &argv4[2] ; "to-print" }}
+     .arg ∈ {0}
+     .kind ∈
+     {KGFLAGS_ERROR_KIND_MISSING_VALUE; KGFLAGS_ERROR_KIND_UNKNOWN_FLAG;
+      KGFLAGS_ERROR_KIND_UNASSIGNED_FLAG;
+      KGFLAGS_ERROR_KIND_TOO_MANY_NON_FLAG_ARGS;
+      KGFLAGS_ERROR_KIND_MULTIPLE_ASSIGNMENT}
+     .[bits 160 to 191] ∈ UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [1..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+[eva:final-states] Values at end of function _kgflags_add_non_flag_arg:
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [1..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function _kgflags_assign_default_values:
+  i ∈ {1}
+[eva:final-states] Values at end of function _kgflags_consume_arg:
+  res ∈
+     {{ &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }} or UNINITIALIZED
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+[eva:final-states] Values at end of function _kgflags_parse_flag:
+  to_print ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+[eva:final-states] Values at end of function kgflags_print_errors:
+  i ∈ [0..512]
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function kgflags_print_usage:
+  S___fc_stderr[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function _kgflags_get_flag:
+  prefix_no ∈ {0}
+  __retres ∈ {{ NULL ; &_kgflags_g.flags[0] }}
+[eva:final-states] Values at end of function _kgflags_add_flag:
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            {.flags[1..255]; .non_flag_count; .non_flag_args[0..511]; .errors_count; .errors[0..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description; .[bits 82016 to 82047]; .[bits 114848 to 114879]} ∈
+            {0}
+[eva:final-states] Values at end of function kgflags_string:
+  flag.name ∈ {{ "to-print" }}
+      .description ∈ {{ "String to print." }}
+      .default_value ∈ {0}
+      .result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+      {{ (? *)&to_print }}
+      {.assigned; .error} ∈ {0}
+      .required ∈ {1}
+      .[bits 280 to 287] ∈ {0}
+      .kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+  to_print ∈ {0}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            {.flags[1..255]; .non_flag_count; .non_flag_args[0..511]; .errors_count; .errors[0..511]; .flag_prefix; .arg_cursor; .argc; .argv; .custom_description; .[bits 82016 to 82047]; .[bits 114848 to 114879]} ∈
+            {0}
+[eva:final-states] Values at end of function _kgflags_get_flag_name:
+  prefix_len ∈ {2}
+  __retres ∈ {{ NULL ; &argv1[2] ; &argv2[2] ; &argv3[2] ; &argv4[2] }}
+[eva:final-states] Values at end of function _kgflags_is_flag:
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function kgflags_parse:
+  arg ∈ {0}
+  to_print ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {0; 1}
+[eva:final-states] Values at end of function main:
+  to_print ∈ {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result{.string_value; .bool_value; .int_value; .double_value; .string_array; .int_array; .double_array} ∈
+            {{ (? *)&to_print }}
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  __retres ∈ {0; 1}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:final-states] Values at end of function eva_main:
+  Frama_C_entropy_source ∈ [--..--]
+  argc ∈ {0; 1; 2; 3; 4; 5}
+  argv0[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv1[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv2[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv3[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv4[0..254] ∈ [--..--]
+       [255] ∈ {0}
+  argv[0] ∈ {{ &argv0[0] }}
+      [1] ∈ {{ &argv1[0] }}
+      [2] ∈ {{ &argv2[0] }}
+      [3] ∈ {{ &argv3[0] }}
+      [4] ∈ {{ &argv4[0] }}
+      [5] ∈ {0}
+  _kgflags_g.flags_count ∈ {1}
+            .[bits 32 to 63] ∈ {0}
+            .flags[0].name ∈ {{ "to-print" }}
+            .flags[0].description ∈ {{ "String to print." }}
+            .flags[0].default_value ∈ {0}
+            .flags[0].result ∈ ESCAPINGADDR
+            .flags[0]{.assigned; .error} ∈ {0; 1}
+            .flags[0].required ∈ {1}
+            .flags[0].[bits 280 to 287] ∈ {0}
+            .flags[0].kind ∈ {KGFLAGS_FLAG_KIND_STRING}
+            .flags[1..255] ∈ {0}
+            .non_flag_count ∈ [0..512]
+            .[bits 82016 to 82047] ∈ {0}
+            .non_flag_args[0..511] ∈
+            {{ NULL ; &argv1[0] ; &argv2[0] ; &argv3[0] ; &argv4[0] }}
+            .errors_count ∈ [0..512]
+            .[bits 114848 to 114879] ∈ {0}
+            .errors[0..511] ∈
+            {{ garbled mix of &{argv1; argv2; argv3; argv4; "to-print"}
+             (origin: Misaligned {kgflags.h:657}) }} or UNINITIALIZED
+            .flag_prefix ∈ {{ "--" }}
+            .arg_cursor ∈ {1; 2; 3; 4; 5}
+            .argc ∈ {0; 1; 2; 3; 4; 5}
+            .argv ∈ {{ &argv[0] }}
+            .custom_description ∈ {0}
+  S___fc_stderr[0..1] ∈ [--..--]
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  15 functions analyzed (out of 34): 44% coverage.
+  In these functions, 240 statements reached (out of 474): 50% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    1 warning
+    by the Frama-C kernel:    0 errors    0 warnings
+  ----------------------------------------------------------------------------
+  11 alarms generated by the analysis:
+      11 accesses to uninitialized left-values
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    36 valid    12 unknown     0 invalid     48 total
+  75% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+0.69user 0.07system 0:00.77elapsed 100%CPU (0avgtext+0avgdata 116724maxresident)k
+0inputs+2664outputs (0major+24526minor)pagefaults 0swaps

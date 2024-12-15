@@ -1,0 +1,179 @@
+[kernel] Parsing compress_file.c (with preprocessing)
+[kernel] Parsing quicklz.c (with preprocessing)
+[kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(same) == 0 (auto)
+  \return(fast_read) == 1 (auto)
+[eva] Analyzing a complete application starting at eva_main
+[eva:initial-state] Values of globals at initialization
+  qlz_decompress_core_bitlut[0] ∈ {4}
+                            [1] ∈ {0}
+                            [2] ∈ {1}
+                            [3] ∈ {0}
+                            [4] ∈ {2}
+                            [5] ∈ {0}
+                            [6] ∈ {1}
+                            [7] ∈ {0}
+                            [8] ∈ {3}
+                            [9] ∈ {0}
+                            [10] ∈ {1}
+                            [11] ∈ {0}
+                            [12] ∈ {2}
+                            [13] ∈ {0}
+                            [14] ∈ {1}
+                            [15] ∈ {0}
+[eva] using specification for function Frama_C_interval
+[eva] using specification for function Frama_C_make_unknown
+[eva] compress_file.c:14: allocating variable __malloc_main_l14
+[eva] using specification for function fopen
+[eva] using specification for function fseek
+[eva:alarm] compress_file.c:20: Warning: 
+  function fseek: precondition 'valid_stream' got status invalid.
+[eva] using specification for function ftell
+[eva] compress_file.c:23: allocating variable __malloc_main_l23
+[eva] using specification for function fread
+[eva:alarm] compress_file.c:24: Warning: 
+  function fread: precondition 'valid_ptr_block' got status unknown.
+[eva:alarm] compress_file.c:24: Warning: 
+  function fread: precondition 'valid_ptr_block' got status invalid.
+[eva:invalid-assigns] compress_file.c:24: 
+  Completely invalid destination
+  for assigns clause *((char *)ptr + (0 .. nmemb * size - 1)). Ignoring.
+[eva] compress_file.c:27: allocating variable __malloc_main_l27
+[eva] quicklz.c:67: Trace partitioning superposing up to 100 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 200 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 300 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 400 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 500 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 600 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 700 states
+[eva] quicklz.c:67: Trace partitioning superposing up to 800 states
+[eva] quicklz.c:67: starting to merge loop iterations
+[kernel] quicklz.c:70: 
+  more than 200(3290) locations to update in array. Approximating.
+[kernel] quicklz.c:70: more than 200(3290) elements to enumerate. Approximating.
+[kernel] quicklz.c:70: more than 200(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:268: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:117: Warning: 
+  accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva:alarm] quicklz.c:117: Warning: 
+  out of bounds read. assert \valid_read((ui32 *)src);
+[eva] quicklz.c:116: cannot properly split on \result == 1
+[eva:alarm] quicklz.c:271: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)last_matchstart);
+[eva:alarm] quicklz.c:292: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].cache);
+[kernel] quicklz.c:292: 
+  more than 200(4096) elements to enumerate. Approximating.
+[kernel] quicklz.c:293: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:295: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].offset);
+[kernel] quicklz.c:296: 
+  more than 200(4096) locations to update in array. Approximating.
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)o, (void *)source);
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)src, (void *)(o + 1));
+[eva:alarm] quicklz.c:355: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:299: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)src, (void *)(source + 3));
+[eva:loop-unroll:auto] quicklz.c:58: Automatic loop unrolling.
+[eva:alarm] quicklz.c:58: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:58: Warning: 
+  out of bounds read. assert \valid_read(src + n);
+[eva:alarm] quicklz.c:324: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:324: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:324: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:327: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:327: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:327: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:332: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:332: Warning: out of bounds read. assert \valid_read(src);
+[eva:alarm] quicklz.c:332: Warning: 
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
+[eva] quicklz.c:332: Trace partitioning superposing up to 100 states
+[eva] quicklz.c:332: Trace partitioning superposing up to 200 states
+[eva] quicklz.c:332: Trace partitioning superposing up to 300 states
+[eva] quicklz.c:332: Trace partitioning superposing up to 400 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 800 states
+[eva:alarm] quicklz.c:324: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:327: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva:alarm] quicklz.c:332: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(o + (long)(src - old_src));
+[eva] quicklz.c:332: starting to merge loop iterations
+[eva:alarm] quicklz.c:332: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva] quicklz.c:337: Trace partitioning superposing up to 1100 states
+[eva:alarm] quicklz.c:337: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:355: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva] quicklz.c:337: Trace partitioning superposing up to 1200 states
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src + n);
+[eva] quicklz.c:337: Trace partitioning superposing up to 1300 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1400 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1800 states
+Command exited with non-zero status 124
+599.45user 0.52system 10:00.05elapsed 99%CPU (0avgtext+0avgdata 464640maxresident)k
+0inputs+2896outputs (0major+134680minor)pagefaults 0swaps

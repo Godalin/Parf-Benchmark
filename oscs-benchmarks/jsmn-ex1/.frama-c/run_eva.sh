@@ -2,7 +2,8 @@
 
 # Default values for parameters (can be overridden by command-line arguments)
 default_timelimit="10m"
-default_logfile="log_eva_default"
+default_logfile="log_eva"
+default_parameters=""
 
 # Parse command-line arguments
 while [ $# -gt 0 ]; do
@@ -12,6 +13,9 @@ while [ $# -gt 0 ]; do
             ;;
         --logfile=*)
             logfile="${1#*=}"
+            ;;
+        --parameters=*)
+            parameters="${1#*=}"
             ;;
         *)
             echo "Unknown option: $1"
@@ -24,6 +28,7 @@ done
 # Set defaults if not provided
 timelimit="${timelimit:-$default_timelimit}"
 logfile="${logfile:-$default_logfile}"
+parameters="${parameters:-$default_parameters}"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs=""
@@ -36,7 +41,7 @@ kernelparams="-add-symbolic-path=..:. \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-evaparams="-eva" 
+evaparams="-eva $parameters" 
 
 # Analysis Targets: source files
 target1="../test/tests.c"

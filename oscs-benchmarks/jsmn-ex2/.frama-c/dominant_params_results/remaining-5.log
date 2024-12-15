@@ -1,0 +1,429 @@
+[kernel] Parsing jsmn.c (with preprocessing)
+[kernel] Parsing example/simple.c (with preprocessing)
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strncmp) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(jsmn_alloc_token) == 0 (auto)
+  \return(jsoneq) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva:initial-state] Values of globals at initialization
+  JSON_STRING ∈
+             {{ "{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  \"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}" }}
+[eva:loop-unroll:partial] jsmn.c:93: loop not completely unrolled
+[eva] jsmn.c:93: starting to merge loop iterations
+[eva:loop-unroll:partial] jsmn.c:158: loop not completely unrolled
+[eva] jsmn.c:158: starting to merge loop iterations
+[eva:loop-unroll:auto] jsmn.c:250: Automatic loop unrolling.
+[eva:alarm] jsmn.c:251: Warning: 
+  accessing uninitialized left-value. assert \initialized(&(tokens + i)->type);
+[eva] jsmn.c:250: starting to merge loop iterations
+[eva:alarm] jsmn.c:251: Warning: 
+  accessing uninitialized left-value. assert \initialized(&(tokens + i)->type);
+[eva:alarm] jsmn.c:236: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + parser->toksuper)->size);
+[eva:alarm] jsmn.c:245: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + parser->toksuper)->type);
+[eva:alarm] jsmn.c:246: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + parser->toksuper)->type);
+[eva:alarm] jsmn.c:165: Warning: 
+  signed overflow. assert count + 1 ≤ 2147483647;
+[kernel] jsmn.c:13: 
+  more than 107(126) locations to update in array. Approximating.
+[kernel] jsmn.c:13: more than 107(126) elements to enumerate. Approximating.
+[kernel] jsmn.c:14: 
+  more than 107(126) locations to update in array. Approximating.
+[kernel] jsmn.c:14: more than 107(126) elements to enumerate. Approximating.
+[eva:alarm] jsmn.c:173: Warning: 
+  out of bounds write. assert \valid(&(tokens + parser->toksuper)->size);
+[eva:alarm] jsmn.c:173: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + parser->toksuper)->size);
+[eva:alarm] jsmn.c:173: Warning: 
+  signed overflow. assert (tokens + parser->toksuper)->size + 1 ≤ 2147483647;
+[kernel] jsmn.c:173: 
+  more than 107(128) locations to update in array. Approximating.
+[kernel] jsmn.c:173: more than 107(128) elements to enumerate. Approximating.
+[kernel] jsmn.c:178: 
+  more than 107(126) locations to update in array. Approximating.
+[kernel] jsmn.c:178: more than 107(126) elements to enumerate. Approximating.
+[kernel] jsmn.c:179: 
+  more than 107(126) locations to update in array. Approximating.
+[eva:alarm] jsmn.c:211: Warning: 
+  accessing uninitialized left-value. assert \initialized(&token->start);
+[eva:alarm] jsmn.c:211: Warning: 
+  out of bounds read. assert \valid_read(&token->start);
+[kernel] jsmn.c:211: more than 107(127) elements to enumerate. Approximating.
+[eva:alarm] jsmn.c:211: Warning: 
+  accessing uninitialized left-value. assert \initialized(&token->end);
+[kernel] jsmn.c:211: more than 107(126) elements to enumerate. Approximating.
+[kernel] jsmn.c:211: more than 107(126) elements to enumerate. Approximating.
+[kernel] jsmn.c:211: more than 107(125) elements to enumerate. Approximating.
+[kernel] jsmn.c:211: more than 107(125) elements to enumerate. Approximating.
+[kernel] jsmn.c:211: more than 107(124) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] jsmn.c:209: loop not completely unrolled
+[eva] jsmn.c:209: starting to merge loop iterations
+[eva:alarm] jsmn.c:212: Warning: 
+  accessing uninitialized left-value. assert \initialized(&token->type);
+[kernel] jsmn.c:212: more than 107(126) elements to enumerate. Approximating.
+[eva:alarm] jsmn.c:224: Warning: 
+  accessing uninitialized left-value. assert \initialized(&token->start);
+[kernel] jsmn.c:224: more than 107(128) elements to enumerate. Approximating.
+[eva:alarm] jsmn.c:224: Warning: 
+  accessing uninitialized left-value. assert \initialized(&token->end);
+[kernel] jsmn.c:224: more than 107(127) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] jsmn.c:222: loop not completely unrolled
+[eva] jsmn.c:222: starting to merge loop iterations
+[kernel] jsmn.c:26: 
+  more than 107(126) locations to update in array. Approximating.
+[kernel] jsmn.c:27: 
+  more than 107(126) locations to update in array. Approximating.
+[kernel] jsmn.c:28: 
+  more than 107(126) locations to update in array. Approximating.
+[kernel] jsmn.c:29: 
+  more than 107(126) locations to update in array. Approximating.
+[eva:alarm] jsmn.c:234: Warning: 
+  signed overflow. assert count + 1 ≤ 2147483647;
+[eva:alarm] jsmn.c:236: Warning: 
+  out of bounds write. assert \valid(&(tokens + parser->toksuper)->size);
+[eva:alarm] jsmn.c:236: Warning: 
+  signed overflow. assert (tokens + parser->toksuper)->size + 1 ≤ 2147483647;
+[kernel] jsmn.c:236: 
+  more than 107(128) locations to update in array. Approximating.
+[eva:alarm] jsmn.c:245: Warning: 
+  out of bounds read. assert \valid_read(&(tokens + parser->toksuper)->type);
+[kernel] jsmn.c:245: more than 107(128) elements to enumerate. Approximating.
+[eva:alarm] jsmn.c:251: Warning: 
+  out of bounds read. assert \valid_read(&(tokens + i)->type);
+[kernel] jsmn.c:251: more than 107(127) elements to enumerate. Approximating.
+[kernel] jsmn.c:251: more than 107(125) elements to enumerate. Approximating.
+[kernel] jsmn.c:251: more than 107(123) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] jsmn.c:250: loop not completely unrolled
+[eva:loop-unroll:partial] jsmn.c:42: loop not completely unrolled
+[eva] jsmn.c:42: starting to merge loop iterations
+[eva:alarm] jsmn.c:280: Warning: 
+  signed overflow. assert count + 1 ≤ 2147483647;
+[eva:alarm] jsmn.c:282: Warning: 
+  out of bounds write. assert \valid(&(tokens + parser->toksuper)->size);
+[eva:alarm] jsmn.c:282: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + parser->toksuper)->size);
+[eva:alarm] jsmn.c:282: Warning: 
+  signed overflow. assert (tokens + parser->toksuper)->size + 1 ≤ 2147483647;
+[kernel] jsmn.c:282: 
+  more than 107(128) locations to update in array. Approximating.
+[kernel] jsmn.c:211: more than 107(127) elements to enumerate. Approximating.
+[kernel] jsmn.c:216: 
+  more than 107(128) locations to update in array. Approximating.
+[kernel] jsmn.c:216: more than 107(128) elements to enumerate. Approximating.
+[eva:alarm] jsmn.c:252: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + i)->start);
+[eva:alarm] jsmn.c:252: Warning: 
+  accessing uninitialized left-value. assert \initialized(&(tokens + i)->end);
+[eva:alarm] jsmn.c:296: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(tokens + i)->start);
+[eva:alarm] jsmn.c:296: Warning: 
+  out of bounds read. assert \valid_read(&(tokens + i)->start);
+[eva:alarm] jsmn.c:296: Warning: 
+  accessing uninitialized left-value. assert \initialized(&(tokens + i)->end);
+[eva:loop-unroll:partial] jsmn.c:294: loop not completely unrolled
+[eva] jsmn.c:294: starting to merge loop iterations
+[eva] using specification for function printf_va_1
+[eva] using specification for function printf_va_2
+[eva] using specification for function strncmp
+[eva:alarm] example/simple.c:17: Warning: 
+  function strncmp: precondition 'valid_string_s1' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:163: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
+[eva:alarm] example/simple.c:46: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].start);
+[eva:alarm] example/simple.c:46: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].end);
+[eva:alarm] example/simple.c:46: Warning: 
+  signed overflow.
+  assert t[(int)(i + 1)].end - t[(int)(i + 1)].start ≤ 2147483647;
+[eva] using specification for function printf_va_3
+[eva:alarm] example/simple.c:46: Warning: 
+  function printf_va_3: precondition valid_read_nstring(param1, param0) got status unknown.
+[eva:alarm] example/simple.c:51: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].start);
+[eva:alarm] example/simple.c:51: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].end);
+[eva:alarm] example/simple.c:51: Warning: 
+  signed overflow.
+  assert t[(int)(i + 1)].end - t[(int)(i + 1)].start ≤ 2147483647;
+[eva] using specification for function printf_va_4
+[eva:alarm] example/simple.c:51: Warning: 
+  function printf_va_4: precondition valid_read_nstring(param1, param0) got status unknown.
+[eva:alarm] example/simple.c:56: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].start);
+[eva:alarm] example/simple.c:56: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].end);
+[eva:alarm] example/simple.c:56: Warning: 
+  signed overflow.
+  assert t[(int)(i + 1)].end - t[(int)(i + 1)].start ≤ 2147483647;
+[eva] using specification for function printf_va_5
+[eva:alarm] example/simple.c:56: Warning: 
+  function printf_va_5: precondition valid_read_nstring(param1, param0) got status unknown.
+[eva] using specification for function printf_va_6
+[eva:alarm] example/simple.c:62: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].type);
+[eva:alarm] example/simple.c:65: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].size);
+[eva:alarm] example/simple.c:67: Warning: 
+  accessing uninitialized left-value. assert \initialized(&g->start);
+[eva:alarm] example/simple.c:67: Warning: 
+  accessing uninitialized left-value. assert \initialized(&g->end);
+[eva:alarm] example/simple.c:67: Warning: 
+  signed overflow. assert g->end - g->start ≤ 2147483647;
+[eva] using specification for function printf_va_7
+[eva:alarm] example/simple.c:67: Warning: 
+  function printf_va_7: precondition valid_read_nstring(param1, param0) got status unknown.
+[eva:loop-unroll:partial] example/simple.c:65: loop not completely unrolled
+[eva] example/simple.c:65: starting to merge loop iterations
+[eva:alarm] example/simple.c:66: Warning: 
+  signed overflow. assert (int)(i + j) + 2 ≤ 2147483647;
+[eva:alarm] example/simple.c:67: Warning: 
+  out of bounds read. assert \valid_read(&g->start);
+[kernel] example/simple.c:67: 
+  more than 107(122) elements to enumerate. Approximating.
+[eva:alarm] example/simple.c:69: Warning: 
+  signed overflow. assert t[(int)(i + 1)].size + 1 ≤ 2147483647;
+[eva:alarm] example/simple.c:69: Warning: 
+  signed overflow. assert i + (int)(t[(int)(i + 1)].size + 1) ≤ 2147483647;
+[eva] using specification for function printf_va_8
+[eva:alarm] example/simple.c:71: Warning: 
+  function printf_va_8: precondition valid_read_nstring(param1, param0) got status unknown.
+[eva:alarm] example/simple.c:43: Warning: 
+  signed overflow. assert i + 1 ≤ 2147483647;
+[eva:alarm] example/simple.c:16: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tok->type);
+[eva:alarm] example/simple.c:16: Warning: 
+  out of bounds read. assert \valid_read(&tok->type);
+[eva:alarm] example/simple.c:16: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tok->end);
+[eva:alarm] example/simple.c:16: Warning: 
+  accessing uninitialized left-value. assert \initialized(&tok->start);
+[eva:alarm] example/simple.c:16: Warning: 
+  signed overflow. assert tok->end - tok->start ≤ 2147483647;
+[eva:alarm] example/simple.c:46: Warning: 
+  accessing out of bounds index. assert (int)(i + 1) < 128;
+[eva:alarm] example/simple.c:46: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].start);
+[kernel] example/simple.c:46: 
+  more than 107(125) elements to enumerate. Approximating.
+[eva:alarm] example/simple.c:51: Warning: 
+  accessing out of bounds index. assert (int)(i + 1) < 128;
+[eva:alarm] example/simple.c:51: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].start);
+[eva:alarm] example/simple.c:56: Warning: 
+  accessing out of bounds index. assert (int)(i + 1) < 128;
+[eva:alarm] example/simple.c:56: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&t[(int)(i + 1)].start);
+[eva:alarm] example/simple.c:62: Warning: 
+  accessing out of bounds index. assert (int)(i + 1) < 128;
+[kernel] example/simple.c:62: 
+  more than 107(125) elements to enumerate. Approximating.
+[kernel] example/simple.c:65: 
+  more than 107(125) elements to enumerate. Approximating.
+[kernel] example/simple.c:67: 
+  more than 107(124) elements to enumerate. Approximating.
+[kernel] example/simple.c:67: 
+  more than 107(123) elements to enumerate. Approximating.
+[kernel] example/simple.c:67: 
+  more than 107(121) elements to enumerate. Approximating.
+[eva:alarm] example/simple.c:66: Warning: 
+  signed overflow. assert i + j ≤ 2147483647;
+[eva:alarm] example/simple.c:71: Warning: 
+  accessing out of bounds index. assert i < 128;
+[eva:alarm] example/simple.c:71: Warning: 
+  accessing uninitialized left-value. assert \initialized(&t[i].start);
+[eva:alarm] example/simple.c:71: Warning: 
+  accessing uninitialized left-value. assert \initialized(&t[i].end);
+[eva:alarm] example/simple.c:71: Warning: 
+  accessing uninitialized left-value. assert \initialized(&t[i].start);
+[eva:alarm] example/simple.c:71: Warning: 
+  signed overflow. assert t[i].end - t[i].start ≤ 2147483647;
+[kernel] example/simple.c:62: 
+  more than 107(124) elements to enumerate. Approximating.
+[kernel] example/simple.c:65: 
+  more than 107(124) elements to enumerate. Approximating.
+[kernel] example/simple.c:67: 
+  more than 107(120) elements to enumerate. Approximating.
+[kernel] example/simple.c:62: 
+  more than 107(123) elements to enumerate. Approximating.
+[kernel] example/simple.c:65: 
+  more than 107(123) elements to enumerate. Approximating.
+[kernel] example/simple.c:67: 
+  more than 107(119) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] example/simple.c:43: loop not completely unrolled
+[eva] example/simple.c:43: starting to merge loop iterations
+[scope:rm_asserts] removing 2 assertion(s)
+[eva] ====== VALUES COMPUTED ======
+[eva:final-states] Values at end of function jsmn_alloc_token:
+  tok ∈ {{ &t + [0..2032],0%16 }} or UNINITIALIZED
+  p.pos ∈ [0..97]
+   .toknext ∈ [1..2147483647]
+   .toksuper ∈ [-1..2147483647]
+  t[0].type ∈ {JSMN_OBJECT} or UNINITIALIZED
+   [0].start ∈ {-1; 0}
+   [0].end ∈ [-1..98]
+   [0].size ∈ [0..2147483647]
+   [1].type ∈ [0..2147483647] or UNINITIALIZED
+   [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
+   {[1].size; [2].type} ∈ [0..2147483647] or UNINITIALIZED
+   {[2]{.start; .end; .size}; [3..126]{.type; .start; .end; .size}; [127]{.type; .start; .end}} ∈
+   [-1..2147483647] or UNINITIALIZED
+   [127].size ∈ [0..2147483647] or UNINITIALIZED
+  __retres ∈ {{ NULL ; &t + [0..2032],0%16 }}
+[kernel] jsmn.c:29: more than 107(127) elements to enumerate. Approximating.
+[eva:final-states] Values at end of function jsmn_fill_token:
+  t[0].type ∈ {JSMN_OBJECT}
+   [0].start ∈ {0}
+   [0].end ∈ [-1..98]
+   {[0].size; [1]{.type; .start; .end; .size}} ∈ [0..2147483647]
+   [2].type ∈ [0..2147483647] or UNINITIALIZED
+   {[2]{.start; .end; .size}; [3..126]{.type; .start; .end; .size}; [127]{.type; .start; .end}} ∈
+   [-1..2147483647] or UNINITIALIZED
+   [127].size ∈ [0..2147483647] or UNINITIALIZED
+[eva:final-states] Values at end of function jsmn_init:
+  p{.pos; .toknext} ∈ {0}
+   .toksuper ∈ {-1}
+[eva:final-states] Values at end of function jsmn_parse_primitive:
+  token ∈ {{ NULL ; &t + [32..2032],0%16 }}
+  start ∈ [8..97]
+  p.pos ∈ [7..97]
+   .toknext ∈ [3..2147483647]
+   .toksuper ∈ [-1..2147483647]
+  t[0].type ∈ {JSMN_OBJECT}
+   [0].start ∈ {0}
+   [0].end ∈ [-1..98]
+   {[0].size; [1]{.type; .start; .end; .size}} ∈ [0..2147483647]
+   [2].type ∈ [0..2147483647] or UNINITIALIZED
+   {[2]{.start; .end; .size}; [3..126]{.type; .start; .end; .size}; [127]{.type; .start; .end}} ∈
+   [-1..2147483647] or UNINITIALIZED
+   [127].size ∈ [0..2147483647] or UNINITIALIZED
+  __retres ∈ {-1; 0}
+[eva:final-states] Values at end of function jsmn_parse_string:
+  token ∈ {{ NULL ; &t + [16..2032],0%16 }} or UNINITIALIZED
+  start ∈ [1..97]
+  p.pos ∈ [6..97]
+   .toknext ∈ [2..2147483647]
+   .toksuper ∈ [-1..2147483647]
+  t[0].type ∈ {JSMN_OBJECT}
+   [0].start ∈ {0}
+   [0].end ∈ [-1..98]
+   {[0].size; [1]{.type; .start; .end; .size}} ∈ [0..2147483647]
+   [2].type ∈ [0..2147483647] or UNINITIALIZED
+   {[2]{.start; .end; .size}; [3..126]{.type; .start; .end; .size}; [127]{.type; .start; .end}} ∈
+   [-1..2147483647] or UNINITIALIZED
+   [127].size ∈ [0..2147483647] or UNINITIALIZED
+  __retres ∈ {-3; -1; 0}
+[eva:final-states] Values at end of function jsmn_parse:
+  r ∈ {-3; -1; 0}
+  i ∈ [-1..127] or UNINITIALIZED
+  token ∈ {{ NULL ; &t + [0..2032],0%16 }}
+  count ∈ [2..2147483647]
+  p.pos ∈ [7..2147483647]
+   .toknext ∈ [2..2147483647]
+   .toksuper ∈ [-1..2147483647]
+  t[0].type ∈ {JSMN_OBJECT}
+   [0].start ∈ {0}
+   [0].end ∈ [-1..98]
+   {[0].size; [1]{.type; .start; .end; .size}} ∈ [0..2147483647]
+   [2].type ∈ [0..2147483647] or UNINITIALIZED
+   {[2]{.start; .end; .size}; [3..126]{.type; .start; .end; .size}; [127]{.type; .start; .end}} ∈
+   [-1..2147483647] or UNINITIALIZED
+   [127].size ∈ [0..2147483647] or UNINITIALIZED
+  __retres ∈ [-3..2147483647]
+[eva:final-states] Values at end of function jsoneq:
+  __retres ∈ {-1; 0}
+[eva:final-states] Values at end of function main:
+  i ∈ [1..2147483647] or UNINITIALIZED
+  r ∈ [-3..2147483647]
+  p.pos ∈ [7..2147483647]
+   .toknext ∈ [2..2147483647]
+   .toksuper ∈ [-1..2147483647]
+  t[0].type ∈ {JSMN_OBJECT}
+   [0].start ∈ {0}
+   [0].end ∈ [-1..98]
+   {[0].size; [1]{.type; .start; .end; .size}} ∈ [0..2147483647]
+   [2].type ∈ [0..2147483647] or UNINITIALIZED
+   {[2]{.start; .end; .size}; [3..126]{.type; .start; .end; .size}; [127]{.type; .start; .end}} ∈
+   [-1..2147483647] or UNINITIALIZED
+   [127].size ∈ [0..2147483647] or UNINITIALIZED
+  __retres ∈ {0; 1}
+  S___fc_stdout[0..1] ∈ [--..--]
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  8 functions analyzed (out of 8): 100% coverage.
+  In these functions, 254 statements reached (out of 311): 81% coverage.
+  ----------------------------------------------------------------------------
+  No errors or warnings raised during the analysis.
+  ----------------------------------------------------------------------------
+  66 alarms generated by the analysis:
+      35 accesses to uninitialized left-values
+      17 integer overflows
+       9 invalid memory accesses
+       5 accesses out of bounds index
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    11 valid     6 unknown     0 invalid     17 total
+  64% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+1.21user 0.11system 0:01.32elapsed 99%CPU (0avgtext+0avgdata 125540maxresident)k
+0inputs+1920outputs (0major+25712minor)pagefaults 0swaps
