@@ -7,6 +7,7 @@ default_processCore=4
 default_sampleNum=4
 default_refineNum=7
 default_logFile="log_parf"
+default_output=".parf_temp_files"
 
 # Parse command-line arguments
 while [ $# -gt 0 ]; do
@@ -26,6 +27,9 @@ while [ $# -gt 0 ]; do
         --logFile=*)
             logFile="${1#*=}"
             ;;
+        --output=*)
+            output="${1#*=}"
+            ;;
         *)
             echo "Unknown option: $1"
             exit 1
@@ -40,6 +44,7 @@ processCore="${processCore:-$default_processCore}"
 sampleNum="${sampleNum:-$default_sampleNum}"
 refineNum="${refineNum:-$default_refineNum}"
 logFile="${logFile:-$default_logFile}"
+output="${output:-$default_output}"
 
 # Preprocessing arguments for -cpp-extra-args
 cppargs="-I.."
@@ -54,7 +59,7 @@ kernelparams="-main eva_main \
 # Specific parf parameters
 
 
-parfparams3="-parf -parf-budget $timeBudget -parf-process $processCore -parf-sample-num $sampleNum -parf-refine-num $refineNum" 
+parfparams3="-parf -parf-budget $timeBudget -parf-process $processCore -parf-sample-num $sampleNum -parf-refine-num $refineNum -parf-output $output"  
 
 
 
@@ -77,7 +82,7 @@ cmd3="frama-c -cpp-extra-args=\"$cppargs\" $kernelparams $parfparams3 $target3"
 
 
 
-eval "(time timeout $timelimit $cmd3) 1> $logfile 2>&1"
+eval "(time timeout $timelimit $cmd3) 1> $logFile 2>&1"
 
 
 

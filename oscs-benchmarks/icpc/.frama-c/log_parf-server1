@@ -9,9 +9,9 @@
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
 [variadic] src/main.c:41: Warning: 
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
-rm: cannot remove '.parf_temp_files/*.sav': No such file or directory
-rm: cannot remove '.parf_temp_files/*.json': No such file or directory
-rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
+rm: cannot remove '.parf_log-server1/*.sav': No such file or directory
+rm: cannot remove '.parf_log-server1/*.json': No such file or directory
+rm: cannot remove '.parf_log-server1/*.txt': No such file or directory
 [parf] checkout project: project "default"
 [parf] init parameters: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0
 [parf] run eva: start
@@ -52,21 +52,25 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample: base00-sample02
 [parf] sample: base00-sample03
 [parf] run eva: start
-[parf] run eva: start
-[parf] run eva: start
 [parf] set eva options
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 26 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 11
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 10 -eva-plevel 30 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,equality -eva-auto-loop-unroll 8
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 14 -eva-remove-redundant-alarms -eva-plevel 29 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 8
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality -eva-auto-loop-unroll 8
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 28 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges -eva-auto-loop-unroll 11
-[parf] @default,cvalue,equality,gauges,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 9 -eva-plevel 28 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 7
 [parf] @default,cvalue,equality
-[parf] @default,cvalue,equality,gauges
+[parf] @default,cvalue,gauges,octagon
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 5 -eva-remove-redundant-alarms -eva-plevel 27 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 18
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 9 -eva-plevel 30 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue -eva-auto-loop-unroll 10
+[eva] using specification for function fprintf_va_1
+[eva] Analyzing a complete application starting at main
+[parf] @default,cvalue
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -79,31 +83,15 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(fmemopen) == 0 (auto)
   \return(Turn_on_delay) == 0 (auto)
   \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_2
+[eva] Analyzing a complete application starting at main
 [eva] using specification for function fprintf_va_2
-[eva] using specification for function fprintf_va_2
+[eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function fabs
+[eva] using specification for function fprintf_va_2
 [eva] using specification for function fabs
 [eva] using specification for function fabs
 [eva] using specification for function fabs
@@ -112,7 +100,26 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  16 functions analyzed (out of 18): 88% coverage.
+  In these functions, 405 statements reached (out of 424): 95% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  5 alarms generated by the analysis:
+       4 nan or infinite floating-point values
+       1 integer overflow
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    13 valid     1 unknown     0 invalid     14 total
+  92% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
@@ -154,7 +161,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   92% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
-[eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
@@ -174,26 +180,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   92% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
-[eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  16 functions analyzed (out of 18): 88% coverage.
-  In these functions, 405 statements reached (out of 424): 95% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    1 warning
-  ----------------------------------------------------------------------------
-  5 alarms generated by the analysis:
-       4 nan or infinite floating-point values
-       1 integer overflow
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    13 valid     1 unknown     0 invalid     14 total
-  92% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
-[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -203,7 +189,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base00-sample00: subset of base? true
 [parf] base: base01
 [parf] Analysis time for this epoch: 719
-[parf] base01 parameter setting: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 8 -eva-plevel 26 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,equality -eva-auto-loop-unroll 8
+[parf] base01 parameter setting: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 5 -eva-plevel 27 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 7
 [parf] sample: base01-sample00
 [parf] sample: base01-sample01
 [parf] sample: base01-sample02
@@ -211,19 +197,19 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] run eva: start
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 58 -eva-remove-redundant-alarms -eva-plevel 102 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 61 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 36
 [parf] set eva options
-[parf] run eva: start
-[parf] parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 47 -eva-remove-redundant-alarms -eva-plevel 132 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 45
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 9 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 44 -eva-remove-redundant-alarms -eva-plevel 122 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 58 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 37
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 40 -eva-remove-redundant-alarms -eva-plevel 108 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 27
+[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 41 -eva-plevel 129 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 55 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 29
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 3 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 52 -eva-remove-redundant-alarms -eva-plevel 117 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 27
-[parf] @default,cvalue,equality,gauges,octagon
+[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 37 -eva-remove-redundant-alarms -eva-plevel 145 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 56 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 26
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 9 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 34 -eva-remove-redundant-alarms -eva-plevel 129 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 32
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -288,23 +274,25 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] using specification for function fabs
 [eva] using specification for function fabs
 [eva] using specification for function fabs
-[eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 200 states
 [eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/impls.c:140: cannot properly split on \result == -1
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/main.c:35: Trace partitioning superposing up to 200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 200 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
-  In these functions, 405 statements reached (out of 424): 95% coverage.
+  In these functions, 403 statements reached (out of 424): 95% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
@@ -319,48 +307,40 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
-[eva] src/main.c:35: Trace partitioning superposing up to 100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:294: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
-  In these functions, 405 statements reached (out of 424): 95% coverage.
+  In these functions, 403 statements reached (out of 424): 95% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    1 warning
   ----------------------------------------------------------------------------
-  5 alarms generated by the analysis:
-       4 nan or infinite floating-point values
+  1 alarm generated by the analysis:
        1 integer overflow
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    13 valid     1 unknown     0 invalid     14 total
-  92% of the logical properties reached have been proven.
+    Preconditions    14 valid     0 unknown     0 invalid     14 total
+  100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
-  In these functions, 405 statements reached (out of 424): 95% coverage.
+  In these functions, 403 statements reached (out of 424): 95% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    1 warning
   ----------------------------------------------------------------------------
-  5 alarms generated by the analysis:
-       4 nan or infinite floating-point values
+  1 alarm generated by the analysis:
        1 integer overflow
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    13 valid     1 unknown     0 invalid     14 total
-  92% of the logical properties reached have been proven.
+    Preconditions    14 valid     0 unknown     0 invalid     14 total
+  100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
@@ -392,23 +372,23 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base01-sample00: subset of base? true
 [parf] base: base02
 [parf] Analysis time for this epoch: 1439
-[parf] base02 parameter setting: -eva-widening-delay 3 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 52 -eva-remove-redundant-alarms -eva-plevel 117 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 27
+[parf] base02 parameter setting: -eva-widening-delay 4 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 37 -eva-plevel 108 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 55 -eva-equality-through-calls formals -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 26
 [parf] sample: base02-sample00
 [parf] sample: base02-sample01
 [parf] sample: base02-sample02
 [parf] sample: base02-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] run eva: start
-[parf] parameters: -eva-widening-delay 14 -eva-subdivide-non-linear 27 -eva-split-return auto -eva-slevel 193 -eva-remove-redundant-alarms -eva-plevel 426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 243 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 94
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 9 -eva-subdivide-non-linear 21 -eva-split-return auto -eva-slevel 194 -eva-remove-redundant-alarms -eva-plevel 425 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 257 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 101
+[parf] parameters: -eva-widening-delay 15 -eva-subdivide-non-linear 40 -eva-split-return auto -eva-slevel 134 -eva-remove-redundant-alarms -eva-plevel 420 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 154 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 94
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 203 -eva-remove-redundant-alarms -eva-plevel 457 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 231 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 101
+[parf] parameters: -eva-widening-delay 9 -eva-subdivide-non-linear 29 -eva-split-return auto -eva-slevel 145 -eva-remove-redundant-alarms -eva-plevel 389 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 193 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 92
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 11 -eva-subdivide-non-linear 26 -eva-split-return auto -eva-slevel 198 -eva-remove-redundant-alarms -eva-plevel 448 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 233 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 99
+[parf] parameters: -eva-widening-delay 15 -eva-subdivide-non-linear 34 -eva-split-return auto -eva-slevel 142 -eva-remove-redundant-alarms -eva-plevel 406 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 221 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 93
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 13 -eva-subdivide-non-linear 31 -eva-split-return auto -eva-slevel 175 -eva-remove-redundant-alarms -eva-plevel 439 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 191 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 105
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
@@ -481,46 +461,60 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: Trace partitioning superposing up to 200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 200 states
-[eva] src/main.c:35: starting to merge loop iterations
+[eva] src/main.c:35: Trace partitioning superposing up to 200 states
 [eva] src/main.c:44: Trace partitioning superposing up to 200 states
-[eva] src/main.c:44: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 200 states
 [eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 200 states
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  16 functions analyzed (out of 18): 88% coverage.
+  In these functions, 403 statements reached (out of 424): 95% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
+  1 alarm generated by the analysis:
+       1 integer overflow
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    14 valid     0 unknown     0 invalid     14 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
@@ -557,24 +551,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
-[eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  16 functions analyzed (out of 18): 88% coverage.
-  In these functions, 403 statements reached (out of 424): 95% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    1 warning
-  ----------------------------------------------------------------------------
-  1 alarm generated by the analysis:
-       1 integer overflow
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    14 valid     0 unknown     0 invalid     14 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
+[eva] src/main.c:35: Trace partitioning superposing up to 400 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
@@ -603,27 +580,66 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base02-sample03: subset of base? true
 [parf] base: base03
 [parf] Analysis time for this epoch: 2879
-[parf] base03 parameter setting: -eva-widening-delay 6 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 193 -eva-remove-redundant-alarms -eva-plevel 425 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 231 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 94
+[parf] base03 parameter setting: -eva-widening-delay 9 -eva-subdivide-non-linear 29 -eva-split-return auto -eva-slevel 134 -eva-remove-redundant-alarms -eva-plevel 389 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 154 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 92
 [parf] sample: base03-sample00
 [parf] sample: base03-sample01
 [parf] sample: base03-sample02
 [parf] sample: base03-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 75 -eva-split-return auto -eva-slevel 694 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 350
+[parf] parameters: -eva-widening-delay 20 -eva-subdivide-non-linear 95 -eva-split-return auto -eva-slevel 491 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 344
 [parf] run eva: start
 [parf] set eva options
 [parf] run eva: start
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 61 -eva-split-return auto -eva-slevel 692 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 325
+[parf] parameters: -eva-widening-delay 20 -eva-subdivide-non-linear 109 -eva-split-return auto -eva-slevel 483 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 351
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 71 -eva-split-return auto -eva-slevel 667 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 352
+[parf] parameters: -eva-widening-delay 20 -eva-subdivide-non-linear 110 -eva-split-return auto -eva-slevel 506 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 310
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 89 -eva-split-return auto -eva-slevel 694 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 322
+[parf] parameters: -eva-widening-delay 20 -eva-subdivide-non-linear 93 -eva-split-return auto -eva-slevel 497 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 344
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -636,52 +652,13 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(fmemopen) == 0 (auto)
   \return(Turn_on_delay) == 0 (auto)
   \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
 [eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
+[eva] Analyzing a complete application starting at main
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function fprintf_va_2
+[eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function fabs
@@ -704,73 +681,94 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] src/main.c:35: Trace partitioning superposing up to 400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 400 states
+[eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: Trace partitioning superposing up to 500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 600 states
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: starting to merge loop iterations
-[eva] src/main.c:35: starting to merge loop iterations
-[eva] src/main.c:44: Trace partitioning superposing up to 700 states
-[eva] src/main.c:44: Trace partitioning superposing up to 700 states
-[eva] src/main.c:44: Trace partitioning superposing up to 700 states
-[eva] src/main.c:44: Trace partitioning superposing up to 700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:306: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:306: Trace partitioning superposing up to 100 states
 [eva] src/roco.c:272: Trace partitioning superposing up to 100 states
 [eva] src/roco.c:272: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 400 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:273: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:280: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:280: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 100 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 800 states
 [eva] src/roco.c:272: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 100 states
 [eva] src/roco.c:273: Trace partitioning superposing up to 500 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 600 states
+[eva] src/main.c:39: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
+[eva] src/main.c:39: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:233: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 1000 states
 [eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 600 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:240: Trace partitioning superposing up to 800 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
@@ -807,6 +805,16 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
+[eva] src/main.c:39: Trace partitioning superposing up to 700 states
+[eva] src/main.c:39: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 1100 states
+[eva] src/main.c:39: Trace partitioning superposing up to 800 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
@@ -852,27 +860,75 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base03-sample03: subset of base? true
 [parf] sample base03-sample00: subset of base? true
 [parf] base: base04
-[parf] Analysis time for this epoch: 3537
-[parf] base04 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 61 -eva-split-return auto -eva-slevel 667 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 322
+[parf] Analysis time for this epoch: 3520
+[parf] base04 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 93 -eva-split-return auto -eva-slevel 483 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 310
 [parf] sample: base04-sample00
 [parf] sample: base04-sample01
 [parf] sample: base04-sample02
 [parf] sample: base04-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 207 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
-[parf] run eva: start
-[parf] run eva: start
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 314 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] run eva: start
 [parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 314 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 206 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 297 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] Analyzing a complete application starting at main
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] using specification for function fprintf_va_1
+[eva] Analyzing a complete application starting at main
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function fabs
+[eva] using specification for function fabs
+[eva] using specification for function fabs
+[parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 218 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 208 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 314 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
@@ -886,57 +942,9 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(fmemopen) == 0 (auto)
   \return(Turn_on_delay) == 0 (auto)
   \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
 [eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
 [eva] using specification for function fprintf_va_2
-[eva] using specification for function fprintf_va_2
-[eva] using specification for function fprintf_va_2
-[eva] using specification for function fprintf_va_2
-[eva] using specification for function fabs
-[eva] using specification for function fabs
-[eva] using specification for function fabs
 [eva] using specification for function fabs
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
@@ -1077,263 +1085,383 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5500 states
-[eva] src/main.c:35: starting to merge loop iterations
-[eva] src/main.c:35: Trace partitioning superposing up to 5600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5600 states
-[eva] src/main.c:44: Trace partitioning superposing up to 5700 states
-[eva] src/main.c:35: starting to merge loop iterations
+[eva] src/main.c:35: Trace partitioning superposing up to 5300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
 [eva] src/main.c:35: starting to merge loop iterations
 [eva] src/main.c:35: Trace partitioning superposing up to 5400 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/main.c:44: Trace partitioning superposing up to 5700 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
-[eva] src/main.c:44: Trace partitioning superposing up to 5700 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5500 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:258: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5600 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 1200 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
+[eva] src/main.c:40: Trace partitioning superposing up to 5500 states
 [eva] src/main.c:35: starting to merge loop iterations
-[eva] src/roco.c:272: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 1200 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 1200 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 400 states
-[eva] src/main.c:44: Trace partitioning superposing up to 5700 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 1400 states
-[eva] src/impls.c:140: cannot properly split on \result == -1
-[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 200 states
+[eva] src/main.c:35: starting to merge loop iterations
+[eva] src/main.c:35: starting to merge loop iterations
+[eva] src/main.c:40: Trace partitioning superposing up to 5500 states
+[eva] src/main.c:40: Trace partitioning superposing up to 5500 states
+[eva] src/main.c:40: Trace partitioning superposing up to 5500 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5600 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5600 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5600 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5600 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5700 states
 [eva] src/roco.c:276: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 2600 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 3000 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 1200 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 2600 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 2600 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 3000 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 3000 states
 [eva] src/roco.c:240: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 400 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5700 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5700 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5700 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1300 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 500 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 2400 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1100 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 2600 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 3000 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 2400 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 2400 states
 [eva] src/roco.c:233: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 4300 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 800 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 5100 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 2400 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 4300 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 4300 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 5100 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 5100 states
-[eva] src/roco.c:276: Trace partitioning superposing up to 4300 states
-[eva] src/roco.c:278: Trace partitioning superposing up to 5100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 2600 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 2600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 2600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 2600 states
+[eva] src/roco.c:237: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:237: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:237: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:237: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 800 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2700 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2700 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2700 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 2700 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 3400 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 4500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 3400 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 3400 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 3400 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 4500 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 4500 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 4500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 1700 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:292: Trace partitioning superposing up to 1800 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1500 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 1700 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 1700 states
+[eva] src/roco.c:290: Trace partitioning superposing up to 1700 states
+[eva] src/roco.c:292: Trace partitioning superposing up to 1800 states
+[eva] src/roco.c:292: Trace partitioning superposing up to 1800 states
+[eva] src/roco.c:292: Trace partitioning superposing up to 1800 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5800 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5800 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5800 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5800 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 2500 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 3500 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2000 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2000 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
 [eva] src/roco.c:229: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 300 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 6500 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1000 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 6500 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 6500 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2000 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 6500 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 500 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 500 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 500 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2700 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2700 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2700 states
-[eva] src/roco.c:218: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 500 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1400 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 8400 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 2700 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 8400 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 8400 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 8400 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 3600 states
-[eva] src/roco.c:208: Trace partitioning superposing up to 100 states
-[eva] src/roco.c:229: Trace partitioning superposing up to 200 states
-[eva] src/roco.c:233: Trace partitioning superposing up to 700 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 3600 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 3600 states
-[eva] src/roco.c:264: Trace partitioning superposing up to 3600 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 11300 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 11300 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 11300 states
-[eva] src/roco.c:272: Trace partitioning superposing up to 11300 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1700 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1700 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1700 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 1800 states
-[eva] src/roco.c:240: Trace partitioning superposing up to 1700 states
-[eva] src/roco.c:258: Trace partitioning superposing up to 1800 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 1100 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 2500 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 2500 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 2500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 3500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 3500 states
+[eva] src/roco.c:259: Trace partitioning superposing up to 3500 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 3600 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 4600 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 8100 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 4600 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 4600 states
+[eva] src/roco.c:273: Trace partitioning superposing up to 4600 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 8100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 8100 states
+[eva] src/roco.c:276: Trace partitioning superposing up to 8100 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
+[eva] src/roco.c:278: Trace partitioning superposing up to 1400 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 200 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 5200 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 600 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 2000 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 10100 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:240: Trace partitioning superposing up to 5200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 5200 states
+[eva] src/roco.c:240: Trace partitioning superposing up to 5200 states
+[eva] src/roco.c:242: Trace partitioning superposing up to 10100 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:242: Trace partitioning superposing up to 10100 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:242: Trace partitioning superposing up to 10100 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:186: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:189: Trace partitioning superposing up to 300 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 400 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6000 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:203: Trace partitioning superposing up to 700 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:208: Trace partitioning superposing up to 900 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1200 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 1900 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6000 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6000 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6000 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5900 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5900 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5900 states
+[eva] src/main.c:39: Trace partitioning superposing up to 5900 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 2100 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6500 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:195: Trace partitioning superposing up to 500 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:218: Trace partitioning superposing up to 1300 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 2100 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 2100 states
+[eva] src/roco.c:229: Trace partitioning superposing up to 2100 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6500 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6500 states
+[eva] src/roco.c:233: Trace partitioning superposing up to 6500 states
+[eva] src/main.c:39: Trace partitioning superposing up to 6000 states
+[eva] src/main.c:39: Trace partitioning superposing up to 6000 states
+[eva] src/main.c:39: Trace partitioning superposing up to 6000 states
+[eva] src/main.c:39: Trace partitioning superposing up to 6000 states
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   16 functions analyzed (out of 18): 88% coverage.
@@ -1415,23 +1543,19 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base04-sample03: subset of base? true
 [parf] sample base04-sample01: subset of base? true
 [parf] base: base05
-[parf] Analysis time for this epoch: 1990
-[parf] base05 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 206 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1024
+[parf] Analysis time for this epoch: 2039
+[parf] base05 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 220 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1024
 [parf] sample: base05-sample00
 [parf] sample: base05-sample01
 [parf] sample: base05-sample02
 [parf] sample: base05-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 427 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 427 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 427 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
@@ -1457,25 +1581,14 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(fmemopen) == 0 (auto)
   \return(Turn_on_delay) == 0 (auto)
   \return(Ramp_getDir) == -1 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
+[eva] using specification for function fprintf_va_1
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 427 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[eva] Splitting return states on:
-  \return(tmpfile) == 0 (auto)
-  \return(tmpnam) == 0 (auto)
-  \return(fopen) == 0 (auto)
-  \return(fdopen) == 0 (auto)
-  \return(freopen) == 0 (auto)
-  \return(fgets) == 0 (auto)
-  \return(gets) == 0 (auto)
-  \return(popen) == 0 (auto)
-  \return(fmemopen) == 0 (auto)
-  \return(Turn_on_delay) == 0 (auto)
-  \return(Ramp_getDir) == -1 (auto)
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[eva] using specification for function fprintf_va_1
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -1488,19 +1601,34 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(fmemopen) == 0 (auto)
   \return(Turn_on_delay) == 0 (auto)
   \return(Ramp_getDir) == -1 (auto)
-[eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
-[eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function fprintf_va_2
 [eva] Analyzing a complete application starting at main
-[eva] using specification for function fprintf_va_2
-[eva] using specification for function fprintf_va_2
 [eva] using specification for function fprintf_va_1
+[eva] using specification for function fabs
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[eva] using specification for function fabs
 [eva] using specification for function fprintf_va_2
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(Turn_on_delay) == 0 (auto)
+  \return(Ramp_getDir) == -1 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] using specification for function fprintf_va_1
+[eva] using specification for function fabs
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function fabs
-[eva] using specification for function fabs
-[eva] using specification for function fabs
-[eva] using specification for function fabs
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
@@ -1636,11 +1764,11 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] src/main.c:35: Trace partitioning superposing up to 3400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 3500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 3500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 3600 states
@@ -1688,181 +1816,180 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] src/main.c:35: Trace partitioning superposing up to 4700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 4900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 4900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 5900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 5900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 5900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 6900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 6900 states
-[eva] src/main.c:35: Trace partitioning superposing up to 6900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7700 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 7800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 7900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8000 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8100 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8100 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8200 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8200 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8200 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8300 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8500 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8300 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8300 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8400 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8400 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8400 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8500 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8700 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8500 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8800 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8900 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 8600 states
+[eva] src/main.c:35: Trace partitioning superposing up to 9000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8700 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8800 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8800 states
-[eva] src/main.c:35: Trace partitioning superposing up to 8900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 8900 states
 [eva] src/main.c:35: Trace partitioning superposing up to 9000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 9000 states
 [eva] src/main.c:35: Trace partitioning superposing up to 9000 states
-[eva] src/main.c:35: Trace partitioning superposing up to 9000 states
-[parf] Final parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 206 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1024
-[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[parf] Final parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 220 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1024
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -1900,7 +2027,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  9): Is_nan_or_infinite((double)tmp * dT)
 [parf] ============================================================================
 [parf] ====== project "base00-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 26 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 11
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 9 -eva-plevel 28 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 7
 [parf] alarms:
 [parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
 [parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
@@ -1909,7 +2036,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
 [parf] ============================================================================
 [parf] ====== project "base00-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 14 -eva-remove-redundant-alarms -eva-plevel 29 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 8
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality -eva-auto-loop-unroll 8
 [parf] alarms:
 [parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
 [parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
@@ -1918,7 +2045,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
 [parf] ============================================================================
 [parf] ====== project "base00-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 10 -eva-plevel 30 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,equality -eva-auto-loop-unroll 8
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 5 -eva-remove-redundant-alarms -eva-plevel 27 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 18
 [parf] alarms:
 [parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
 [parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
@@ -1927,7 +2054,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
 [parf] ============================================================================
 [parf] ====== project "base00-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 28 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges -eva-auto-loop-unroll 11
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 9 -eva-plevel 30 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue -eva-auto-loop-unroll 10
 [parf] alarms:
 [parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
 [parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
@@ -1936,16 +2063,12 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
 [parf] ============================================================================
 [parf] ====== project "base01-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 10 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 47 -eva-remove-redundant-alarms -eva-plevel 132 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 45
+[parf] Parameter: -eva-widening-delay 4 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 40 -eva-remove-redundant-alarms -eva-plevel 108 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 27
 [parf] alarms:
-[parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
-[parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
-[parf] alarm (  3): Is_nan_or_infinite((double)(1.0 - c) * x)
-[parf] alarm (  4): Signed_overflow(_t + delayMs <= 2147483647)
-[parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
+[parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base01-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 9 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 44 -eva-remove-redundant-alarms -eva-plevel 122 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 58 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 37
+[parf] Parameter: -eva-widening-delay 9 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 34 -eva-remove-redundant-alarms -eva-plevel 129 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 32
 [parf] alarms:
 [parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
 [parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
@@ -1954,81 +2077,77 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
 [parf] ============================================================================
 [parf] ====== project "base01-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 58 -eva-remove-redundant-alarms -eva-plevel 102 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 61 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 36
+[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 37 -eva-remove-redundant-alarms -eva-plevel 145 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 56 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 26
 [parf] alarms:
-[parf] alarm (  1): Is_nan_or_infinite((double)c * *state)
-[parf] alarm (  2): Is_nan_or_infinite((double)(1.0 - c) * x + c * *state)
-[parf] alarm (  3): Is_nan_or_infinite((double)(1.0 - c) * x)
-[parf] alarm (  4): Signed_overflow(_t + delayMs <= 2147483647)
-[parf] alarm (  5): Is_nan_or_infinite((double)tmp * dT)
+[parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base01-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 3 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 52 -eva-remove-redundant-alarms -eva-plevel 117 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 27
+[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 41 -eva-plevel 129 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 55 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 29
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base02-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 9 -eva-subdivide-non-linear 21 -eva-split-return auto -eva-slevel 194 -eva-remove-redundant-alarms -eva-plevel 425 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 257 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 101
+[parf] Parameter: -eva-widening-delay 9 -eva-subdivide-non-linear 29 -eva-split-return auto -eva-slevel 145 -eva-remove-redundant-alarms -eva-plevel 389 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 193 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 92
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base02-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 14 -eva-subdivide-non-linear 27 -eva-split-return auto -eva-slevel 193 -eva-remove-redundant-alarms -eva-plevel 426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 243 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 94
+[parf] Parameter: -eva-widening-delay 13 -eva-subdivide-non-linear 31 -eva-split-return auto -eva-slevel 175 -eva-remove-redundant-alarms -eva-plevel 439 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 191 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 105
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base02-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 11 -eva-subdivide-non-linear 26 -eva-split-return auto -eva-slevel 198 -eva-remove-redundant-alarms -eva-plevel 448 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 233 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 99
+[parf] Parameter: -eva-widening-delay 15 -eva-subdivide-non-linear 40 -eva-split-return auto -eva-slevel 134 -eva-remove-redundant-alarms -eva-plevel 420 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 154 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 94
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base02-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 203 -eva-remove-redundant-alarms -eva-plevel 457 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 231 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 101
+[parf] Parameter: -eva-widening-delay 15 -eva-subdivide-non-linear 34 -eva-split-return auto -eva-slevel 142 -eva-remove-redundant-alarms -eva-plevel 406 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 221 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 93
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base03-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 61 -eva-split-return auto -eva-slevel 692 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 325
+[parf] Parameter: -eva-widening-delay 20 -eva-subdivide-non-linear 95 -eva-split-return auto -eva-slevel 491 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 344
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base03-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 71 -eva-split-return auto -eva-slevel 667 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 352
+[parf] Parameter: -eva-widening-delay 20 -eva-subdivide-non-linear 109 -eva-split-return auto -eva-slevel 483 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 351
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base03-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 75 -eva-split-return auto -eva-slevel 694 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 350
+[parf] Parameter: -eva-widening-delay 20 -eva-subdivide-non-linear 110 -eva-split-return auto -eva-slevel 506 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 310
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base03-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 89 -eva-split-return auto -eva-slevel 694 -eva-remove-redundant-alarms -eva-plevel 2426 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 488 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 322
+[parf] Parameter: -eva-widening-delay 20 -eva-subdivide-non-linear 93 -eva-split-return auto -eva-slevel 497 -eva-remove-redundant-alarms -eva-plevel 2390 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 411 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 344
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base04-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 207 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 314 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base04-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 206 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 314 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base04-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 218 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 297 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
 [parf] ====== project "base04-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 208 -eva-split-return auto -eva-slevel 5668 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1347
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 314 -eva-split-return auto -eva-slevel 5484 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 10 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1335
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
 [parf] ============================================================================
-[parf] Final parameter: -eva-widening-delay 3 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 52 -eva-remove-redundant-alarms -eva-plevel 117 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 67 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 27
+[parf] Final parameter: -eva-widening-delay 4 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 40 -eva-remove-redundant-alarms -eva-plevel 108 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 27
 [parf] alarms:
 [parf] alarm (  1): Signed_overflow(_t + delayMs <= 2147483647)
-13957.58user 263.53system 1:00:06elapsed 394%CPU (0avgtext+0avgdata 9766768maxresident)k
-0inputs+380464outputs (64major+19306119minor)pagefaults 0swaps
+14074.90user 207.07system 1:00:06elapsed 396%CPU (0avgtext+0avgdata 8770076maxresident)k
+104inputs+378728outputs (55major+19852869minor)pagefaults 0swaps

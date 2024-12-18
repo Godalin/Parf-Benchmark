@@ -2,7 +2,7 @@
 
 directory="../oscs-benchmarks"
 sourcefile="run_eva_default.sh"
-targetfile="run_eva.sh"
+targetfile="run_eva_precision0.sh"
 
 for dir in "$directory"/*; do
     #echo "$dir"

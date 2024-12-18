@@ -2,9 +2,9 @@
 [kernel:parser:decimal-float] khash.h:194: Warning: 
   Floating-point constant 0.77 is not represented exactly. Will use 0x1.8a3d70a3d70a4p-1.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
-rm: cannot remove '.parf_temp_files/*.sav': No such file or directory
-rm: cannot remove '.parf_temp_files/*.json': No such file or directory
-rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
+rm: cannot remove '.parf_log-server1/*.sav': No such file or directory
+rm: cannot remove '.parf_log-server1/*.json': No such file or directory
+rm: cannot remove '.parf_log-server1/*.txt': No such file or directory
 [parf] checkout project: project "default"
 [parf] init parameters: -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0
 [parf] run eva: start
@@ -46,20 +46,85 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample: base00-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 11 -eva-plevel 30 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 7
+[parf] parameters: -eva-widening-delay 3 -eva-subdivide-non-linear 4 -eva-slevel 14 -eva-remove-redundant-alarms -eva-plevel 32 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 9
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-split-return auto -eva-slevel 11 -eva-plevel 29 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 22 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 9
+[parf] @default,cvalue,equality,gauges,octagon
 [parf] run eva: start
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 11 -eva-remove-redundant-alarms -eva-plevel 27 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 11
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 10 -eva-plevel 32 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 9
-[parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 14 -eva-plevel 27 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 10
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 5 -eva-remove-redundant-alarms -eva-plevel 25 -eva-partition-history 3 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 5
+[parf] parameters: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 6 -eva-plevel 27 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 12
+[parf] @default,cvalue,equality,octagon,symbolic-locations
 [parf] @default,cvalue,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue
-[parf] @default,cvalue,equality,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -94,51 +159,23 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(kh_init_32) == 0 (auto)
 [eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] FRAMAC_SHARE/libc/string.h:134: 
@@ -146,35 +183,11 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
-[eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 126 statements reached (out of 206): 61% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    1 warning
-  ----------------------------------------------------------------------------
-  9 alarms generated by the analysis:
-       8 invalid memory accesses
-       1 access to uninitialized left-values
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -184,8 +197,8 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    2 warnings
   ----------------------------------------------------------------------------
-  3 alarms generated by the analysis:
-       3 invalid memory accesses
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
@@ -220,6 +233,25 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    1 warning
   ----------------------------------------------------------------------------
+  9 alarms generated by the analysis:
+       8 invalid memory accesses
+       1 access to uninitialized left-values
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 126 statements reached (out of 206): 61% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    1 warning
+  ----------------------------------------------------------------------------
   10 alarms generated by the analysis:
        9 invalid memory accesses
        1 access to uninitialized left-values
@@ -233,64 +265,33 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [parf] sample base00-sample03: subset of base? true
 [parf] sample base00-sample02: subset of base? true
 [parf] sample base00-sample01: subset of base? true
 [parf] sample base00-sample00: subset of base? true
 [parf] base: base01
 [parf] Analysis time for this epoch: 720
-[parf] base01 parameter setting: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 11 -eva-plevel 27 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 7
+[parf] base01 parameter setting: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 5 -eva-plevel 25 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 5
 [parf] sample: base01-sample00
 [parf] sample: base01-sample01
 [parf] sample: base01-sample02
 [parf] sample: base01-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 7 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 68 -eva-remove-redundant-alarms -eva-plevel 117 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 54 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 35
-[parf] @default,cvalue,equality,gauges,symbolic-locations
+[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 40 -eva-remove-redundant-alarms -eva-plevel 115 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 70 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 26
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 60 -eva-remove-redundant-alarms -eva-plevel 119 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 56 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 36
-[parf] @default,cvalue,equality,gauges,symbolic-locations
+[parf] parameters: -eva-widening-delay 13 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 45 -eva-remove-redundant-alarms -eva-plevel 122 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 57 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 26
+[parf] run eva: start
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 13 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 61 -eva-plevel 125 -eva-partition-history 7 -eva-min-loop-unroll 0 -eva-ilevel 64 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 30
-[parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 4 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 59 -eva-remove-redundant-alarms -eva-plevel 129 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 65 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 32
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
+[parf] parameters: -eva-widening-delay 5 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 29 -eva-remove-redundant-alarms -eva-plevel 107 -eva-partition-history 7 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 54 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 19
+[parf] parameters: -eva-widening-delay 9 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 31 -eva-plevel 112 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 64 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 31
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
@@ -324,9 +325,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
-[eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] Analyzing a complete application starting at main
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -391,33 +389,68 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
 [eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
 [kernel] khash.c:10: Warning: 
@@ -506,26 +539,26 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base01-sample00: subset of base? true
 [parf] base: base02
 [parf] Analysis time for this epoch: 1440
-[parf] base02 parameter setting: -eva-widening-delay 4 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 59 -eva-plevel 117 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 54 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 30
+[parf] base02 parameter setting: -eva-widening-delay 5 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 29 -eva-plevel 107 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 54 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 19
 [parf] sample: base02-sample00
 [parf] sample: base02-sample01
 [parf] sample: base02-sample02
 [parf] sample: base02-sample03
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 15 -eva-subdivide-non-linear 35 -eva-split-return auto -eva-slevel 222 -eva-remove-redundant-alarms -eva-plevel 455 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 196 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 129
+[parf] parameters: -eva-widening-delay 16 -eva-subdivide-non-linear 18 -eva-split-return auto -eva-slevel 129 -eva-remove-redundant-alarms -eva-plevel 396 -eva-partition-history 9 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 212 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 71
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 13 -eva-subdivide-non-linear 36 -eva-split-return auto -eva-slevel 214 -eva-remove-redundant-alarms -eva-plevel 434 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 187 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 107
+[parf] parameters: -eva-widening-delay 16 -eva-subdivide-non-linear 25 -eva-split-return auto -eva-slevel 112 -eva-remove-redundant-alarms -eva-plevel 383 -eva-partition-history 9 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 185 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 67
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 6 -eva-subdivide-non-linear 36 -eva-split-return auto -eva-slevel 240 -eva-remove-redundant-alarms -eva-plevel 430 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 181 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 133
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 15 -eva-subdivide-non-linear 27 -eva-split-return auto -eva-slevel 209 -eva-remove-redundant-alarms -eva-plevel 444 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 186 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 119
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 16 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 122 -eva-remove-redundant-alarms -eva-plevel 410 -eva-partition-history 9 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 195 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 78
+[parf] parameters: -eva-widening-delay 16 -eva-subdivide-non-linear 17 -eva-split-return auto -eva-slevel 123 -eva-remove-redundant-alarms -eva-plevel 397 -eva-partition-history 7 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 203 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 69
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
@@ -591,6 +624,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
+[eva] Analyzing a complete application starting at main
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -623,65 +657,64 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
+[eva] Analyzing a complete application starting at main
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] Analyzing a complete application starting at main
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
@@ -728,23 +761,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   ----------------------------------------------------------------------------
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 122 statements reached (out of 206): 59% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    2 warnings
-  ----------------------------------------------------------------------------
-  2 alarms generated by the analysis:
-       2 invalid memory accesses
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -762,6 +778,23 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
+  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------[parf] run eva: finished
+
 [parf] run eva: finished
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -773,7 +806,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base02-sample03: subset of base? true
 [parf] base: base03
 [parf] Analysis time for this epoch: 2880
-[parf] base03 parameter setting: -eva-widening-delay 6 -eva-subdivide-non-linear 27 -eva-split-return auto -eva-slevel 209 -eva-remove-redundant-alarms -eva-plevel 430 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 181 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 107
+[parf] base03 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 17 -eva-split-return auto -eva-slevel 112 -eva-remove-redundant-alarms -eva-plevel 383 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 185 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 67
 [parf] sample: base03-sample00
 [parf] sample: base03-sample01
 [parf] sample: base03-sample02
@@ -781,15 +814,15 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] run eva: start
 [parf] set eva options
 [parf] run eva: start
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 101 -eva-split-return auto -eva-slevel 758 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 391
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 69 -eva-split-return auto -eva-slevel 394 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 227
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 58 -eva-split-return auto -eva-slevel 425 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 235
+[parf] run eva: start
 [parf] run eva: start
 [parf] set eva options
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 97 -eva-split-return auto -eva-slevel 788 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 383
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 99 -eva-split-return auto -eva-slevel 768 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 402
-[parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 17 -eva-subdivide-non-linear 105 -eva-split-return auto -eva-slevel 745 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 413
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 59 -eva-split-return auto -eva-slevel 414 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 248
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 56 -eva-split-return auto -eva-slevel 414 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 230
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
@@ -924,30 +957,30 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(kh_init_32) == 0 (auto)
 [eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
@@ -958,8 +991,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   all target addresses were invalid. This path is assumed to be dead.
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
-[eva:summary] ====== ANALYSIS SUMMARY ======
-[eva:summary] ====== ANALYSIS SUMMARY ======
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -977,40 +1008,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 122 statements reached (out of 206): 59% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    2 warnings
-  ----------------------------------------------------------------------------
-  2 alarms generated by the analysis:
-       2 invalid memory accesses
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------[parf] run eva: finished
-
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 122 statements reached (out of 206): 59% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    2 warnings
-  ----------------------------------------------------------------------------
-  2 alarms generated by the analysis:
-       2 invalid memory accesses
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------[parf] run eva: finished
-
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
@@ -1029,6 +1026,42 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
+[parf] run eva: finished
+[eva:summary] ====== ANALYSIS SUMMARY ======
+[eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+[parf] run eva: finished
 [parf] run eva: finished
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -1040,61 +1073,27 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base03-sample00: subset of base? true
 [parf] base: base04
 [parf] Analysis time for this epoch: 3598
-[parf] base04 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 97 -eva-split-return auto -eva-slevel 745 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 383
+[parf] base04 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 56 -eva-split-return auto -eva-slevel 394 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 227
 [parf] sample: base04-sample00
 [parf] sample: base04-sample01
 [parf] sample: base04-sample02
 [parf] sample: base04-sample03
 [parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] run eva: start
+[parf] run eva: start
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
-[parf] run eva: start
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 184 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 814
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 197 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 838
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 192 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 800
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 215 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 793
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -1191,30 +1190,64 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
 [eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] Analyzing a complete application starting at main
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
@@ -1225,6 +1258,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   all target addresses were invalid. This path is assumed to be dead.
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
+[eva:summary] ====== ANALYSIS SUMMARY ======
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -1243,7 +1277,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
 [parf] run eva: finished
-[eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
   In these functions, 122 statements reached (out of 206): 59% coverage.
@@ -1262,23 +1295,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   ----------------------------------------------------------------------------
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 122 statements reached (out of 206): 59% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    2 warnings
-  ----------------------------------------------------------------------------
-  2 alarms generated by the analysis:
-       2 invalid memory accesses
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -1295,7 +1311,24 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
   ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+[parf] run eva: finished
 [parf] run eva: finished
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -1307,60 +1340,27 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base04-sample01: subset of base? true
 [parf] base: base05
 [parf] Analysis time for this epoch: 3597
-[parf] base05 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 220 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1024
+[parf] base05 parameter setting: -eva-widening-delay 10 -eva-subdivide-non-linear 184 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 793
 [parf] sample: base05-sample00
 [parf] sample: base05-sample01
 [parf] sample: base05-sample02
 [parf] sample: base05-sample03
 [parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
+[parf] run eva: start
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[eva] Analyzing a complete application starting at main
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -1393,7 +1393,70 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -1428,46 +1491,11 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(kh_init_32) == 0 (auto)
 [eva] Analyzing a complete application starting at main
 [eva] Analyzing a complete application starting at main
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] Analyzing a complete application starting at main
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
@@ -1477,12 +1505,17 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
@@ -1493,6 +1526,24 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
 [eva:summary] ====== ANALYSIS SUMMARY ======
+  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
+  ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------[eva:summary] ====== ANALYSIS SUMMARY ======
+
+[parf] run eva: finished
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
   In these functions, 122 statements reached (out of 206): 59% coverage.
@@ -1511,23 +1562,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   ----------------------------------------------------------------------------
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 122 statements reached (out of 206): 59% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    2 warnings
-  ----------------------------------------------------------------------------
-  2 alarms generated by the analysis:
-       2 invalid memory accesses
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -1544,10 +1578,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
-[eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
+  ----------------------------------------------------------------------------  ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
   In these functions, 122 statements reached (out of 206): 59% coverage.
   ----------------------------------------------------------------------------
@@ -1563,6 +1594,8 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
+
+[parf] run eva: finished
 [parf] run eva: finished
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -1580,86 +1613,21 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample: base06-sample02
 [parf] sample: base06-sample03
 [parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] run eva: start
 [parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] run eva: start
+[parf] run eva: start
+[parf] set eva options
+[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] set eva options
 [parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
-[parf] run eva: start
-[parf] set eva options
-[parf] parameters: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
-[eva] Splitting return states on:
-  \return(seed48) == 0 (auto)
-  \return(calloc) == 0 (auto)
-  \return(malloc) == 0 (auto)
-  \return(realloc) == 0 (auto)
-  \return(reallocarray) == 0 (auto)
-  \return(getenv) == 0 (auto)
-  \return(bsearch) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(kh_init_32) == 0 (auto)
 [parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
-[eva] Analyzing a complete application starting at main
+[parf] @default,cvalue,equality,gauges,octagon,symbolic-locations
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -1692,12 +1660,6 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] Analyzing a complete application starting at main
-[eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -1730,28 +1692,97 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   \return(strndup) == 0 (auto)
   \return(strsignal) == 0 (auto)
   \return(kh_init_32) == 0 (auto)
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
+[eva] Splitting return states on:
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(kh_init_32) == 0 (auto)
 [eva] Analyzing a complete application starting at main
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
+[eva] Analyzing a complete application starting at main
 [eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
-[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __calloc_kh_init_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
+[eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] khash.c:3: allocating variable __malloc_kh_resize_32_l3_0
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
-[kernel] khash.c:10: Warning: 
-  all target addresses were invalid. This path is assumed to be dead.
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_1
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
+[eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_2
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
@@ -1759,6 +1790,9 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
   all target addresses were invalid. This path is assumed to be dead.
 [kernel] khash.c:10: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
+[kernel] khash.c:10: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
+[eva:summary] ====== ANALYSIS SUMMARY ======
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -1775,26 +1809,26 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------  ----------------------------------------------------------------------------
+  7 functions analyzed (out of 10): 70% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
   ----------------------------------------------------------------------------
+  Some errors and warnings have been raised during the analysis:
+    by the Eva analyzer:      0 errors    0 warnings
+    by the Frama-C kernel:    0 errors    2 warnings
+  ----------------------------------------------------------------------------
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
+  ----------------------------------------------------------------------------
+  Evaluation of the logical properties reached by the analysis:
+    Assertions        0 valid     0 unknown     0 invalid      0 total
+    Preconditions    10 valid     0 unknown     0 invalid     10 total
+  100% of the logical properties reached have been proven.
+  ----------------------------------------------------------------------------
+
+[parf] run eva: finished
 [parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
-  7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 122 statements reached (out of 206): 59% coverage.
-  ----------------------------------------------------------------------------
-  Some errors and warnings have been raised during the analysis:
-    by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    2 warnings
-  ----------------------------------------------------------------------------
-  2 alarms generated by the analysis:
-       2 invalid memory accesses
-  ----------------------------------------------------------------------------
-  Evaluation of the logical properties reached by the analysis:
-    Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions    10 valid     0 unknown     0 invalid     10 total
-  100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
@@ -1811,10 +1845,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
-  ----------------------------------------------------------------------------
-[parf] run eva: finished
-[eva:summary] ====== ANALYSIS SUMMARY ======
-  ----------------------------------------------------------------------------
+  ----------------------------------------------------------------------------  ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
   In these functions, 122 statements reached (out of 206): 59% coverage.
   ----------------------------------------------------------------------------
@@ -1830,6 +1861,8 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
+
+[parf] run eva: finished
 [parf] run eva: finished
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -1840,6 +1873,7 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] sample base06-sample02: subset of base? true
 [parf] sample base06-sample03: subset of base? true
 [parf] Final parameters: -eva-widening-delay 10 -eva-subdivide-non-linear 220 -eva-split-return auto -eva-slevel 5000 -eva-remove-redundant-alarms -eva-plevel 2000 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 256 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1024
+[kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
 [kernel] Warning: 1 state in saved file ignored. It is invalid in this Frama-C configuration.
@@ -1887,33 +1921,19 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm ( 14): Uninitialized(*(h->flags + x))
 [parf] ============================================================================
 [parf] ====== project "base00-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 14 -eva-plevel 27 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 10
-[parf] alarms:
-[parf] alarm (  1): Memory_access(*(h->vals + k), write)
-[parf] alarm (  2): Memory_access(h->upper_bound, read)
-[parf] alarm (  3): Memory_access(h->n_occupied, read)
-[parf] ============================================================================
-[parf] ====== project "base00-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 11 -eva-remove-redundant-alarms -eva-plevel 27 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 11
-[parf] alarms:
-[parf] alarm (  1): Memory_access(*(h->vals + k), write)
-[parf] alarm (  2): Memory_access(*(h->flags + k), read)
-[parf] alarm (  3): Memory_access(h->n_occupied, read)
-[parf] alarm (  4): Memory_access(*(h->flags + i), read)
-[parf] alarm (  5): Memory_access(*(h->keys + i), read)
-[parf] alarm (  6): Uninitialized(*(h->keys + i))
-[parf] alarm (  7): Memory_access(*(h->flags + i), read)
-[parf] alarm (  8): Memory_access(*(h->keys + x), write)
-[parf] alarm (  9): Memory_access(*(h->flags + x), read)
-[parf] ============================================================================
-[parf] ====== project "base00-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 4 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 11 -eva-plevel 30 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 7
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 5 -eva-remove-redundant-alarms -eva-plevel 25 -eva-partition-history 3 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 5
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
-[parf] ====== project "base00-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 10 -eva-plevel 32 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 9
+[parf] ====== project "base00-sample01 2" ======
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-split-return auto -eva-slevel 11 -eva-plevel 29 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 22 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 9
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(h->vals + k), write)
+[parf] alarm (  2): Memory_access(h->n_occupied, read)
+[parf] ============================================================================
+[parf] ====== project "base00-sample02 2" ======
+[parf] Parameter: -eva-widening-delay 3 -eva-subdivide-non-linear 4 -eva-slevel 14 -eva-remove-redundant-alarms -eva-plevel 32 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 9
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(*(h->flags + k), read)
@@ -1926,134 +1946,147 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  9): Memory_access(*(h->keys + x), write)
 [parf] alarm ( 10): Memory_access(*(h->flags + x), read)
 [parf] ============================================================================
+[parf] ====== project "base00-sample03 2" ======
+[parf] Parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 6 -eva-plevel 27 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 12
+[parf] alarms:
+[parf] alarm (  1): Memory_access(*(h->vals + k), write)
+[parf] alarm (  2): Memory_access(*(h->flags + k), read)
+[parf] alarm (  3): Memory_access(h->n_occupied, read)
+[parf] alarm (  4): Memory_access(*(h->flags + i), read)
+[parf] alarm (  5): Memory_access(*(h->keys + i), read)
+[parf] alarm (  6): Uninitialized(*(h->keys + i))
+[parf] alarm (  7): Memory_access(*(h->flags + i), read)
+[parf] alarm (  8): Memory_access(*(h->keys + x), write)
+[parf] alarm (  9): Memory_access(*(h->flags + x), read)
+[parf] ============================================================================
 [parf] ====== project "base01-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 7 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 68 -eva-remove-redundant-alarms -eva-plevel 117 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 54 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 35
+[parf] Parameter: -eva-widening-delay 5 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 29 -eva-remove-redundant-alarms -eva-plevel 107 -eva-partition-history 7 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 54 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 19
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base01-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 4 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 60 -eva-remove-redundant-alarms -eva-plevel 119 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 56 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 36
+[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 40 -eva-remove-redundant-alarms -eva-plevel 115 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 70 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 26
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base01-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 13 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 61 -eva-plevel 125 -eva-partition-history 7 -eva-min-loop-unroll 0 -eva-ilevel 64 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 30
+[parf] Parameter: -eva-widening-delay 13 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 45 -eva-remove-redundant-alarms -eva-plevel 122 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 57 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 26
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base01-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 4 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 59 -eva-remove-redundant-alarms -eva-plevel 129 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 65 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 32
+[parf] Parameter: -eva-widening-delay 9 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 31 -eva-plevel 112 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 64 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 31
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base02-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 15 -eva-subdivide-non-linear 35 -eva-split-return auto -eva-slevel 222 -eva-remove-redundant-alarms -eva-plevel 455 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 196 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 129
+[parf] Parameter: -eva-widening-delay 16 -eva-subdivide-non-linear 17 -eva-split-return auto -eva-slevel 123 -eva-remove-redundant-alarms -eva-plevel 397 -eva-partition-history 7 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 203 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 69
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base02-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 13 -eva-subdivide-non-linear 36 -eva-split-return auto -eva-slevel 214 -eva-remove-redundant-alarms -eva-plevel 434 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 187 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 107
+[parf] Parameter: -eva-widening-delay 16 -eva-subdivide-non-linear 18 -eva-split-return auto -eva-slevel 129 -eva-remove-redundant-alarms -eva-plevel 396 -eva-partition-history 9 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 212 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 71
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base02-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 6 -eva-subdivide-non-linear 36 -eva-split-return auto -eva-slevel 240 -eva-remove-redundant-alarms -eva-plevel 430 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 181 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 133
+[parf] Parameter: -eva-widening-delay 16 -eva-subdivide-non-linear 25 -eva-split-return auto -eva-slevel 112 -eva-remove-redundant-alarms -eva-plevel 383 -eva-partition-history 9 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 185 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 67
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base02-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 15 -eva-subdivide-non-linear 27 -eva-split-return auto -eva-slevel 209 -eva-remove-redundant-alarms -eva-plevel 444 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 186 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 119
+[parf] Parameter: -eva-widening-delay 16 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 122 -eva-remove-redundant-alarms -eva-plevel 410 -eva-partition-history 9 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 195 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 78
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base03-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 105 -eva-split-return auto -eva-slevel 745 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 413
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 56 -eva-split-return auto -eva-slevel 414 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 230
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base03-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 99 -eva-split-return auto -eva-slevel 768 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 402
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 58 -eva-split-return auto -eva-slevel 425 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 235
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base03-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 101 -eva-split-return auto -eva-slevel 758 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 391
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 69 -eva-split-return auto -eva-slevel 394 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 227
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base03-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 17 -eva-subdivide-non-linear 97 -eva-split-return auto -eva-slevel 788 -eva-remove-redundant-alarms -eva-plevel 2431 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 438 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 383
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 59 -eva-split-return auto -eva-slevel 414 -eva-remove-redundant-alarms -eva-plevel 2384 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 442 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 248
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base04-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 197 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 838
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base04-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 192 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 800
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base04-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 184 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 814
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base04-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 318 -eva-split-return auto -eva-slevel 5746 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1408
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 215 -eva-split-return auto -eva-slevel 5395 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 793
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base05-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base05-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base05-sample02 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base05-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 405 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1818
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base06-sample00 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base06-sample01 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
@@ -2065,14 +2098,14 @@ rm: cannot remove '.parf_temp_files/*.txt': No such file or directory
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
 [parf] ====== project "base06-sample03 2" ======
-[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
+[parf] Parameter: -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 10001 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 11 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 2049
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
 [parf] ============================================================================
-[parf] Final parameter: -eva-widening-delay 4 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 11 -eva-plevel 30 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 7
+[parf] Final parameter: -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 5 -eva-remove-redundant-alarms -eva-plevel 25 -eva-partition-history 3 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 5
 [parf] alarms:
 [parf] alarm (  1): Memory_access(*(h->vals + k), write)
 [parf] alarm (  2): Memory_access(h->n_occupied, read)
-8.37user 2.55system 0:06.98elapsed 156%CPU (0avgtext+0avgdata 468924maxresident)k
-0inputs+121024outputs (177major+688431minor)pagefaults 0swaps
+8.44user 2.85system 0:07.02elapsed 160%CPU (0avgtext+0avgdata 471208maxresident)k
+56inputs+121352outputs (197major+691903minor)pagefaults 0swaps

@@ -47,8 +47,8 @@ def run_static_analysis(project_dir, splits):
     os.makedirs(results_dir, exist_ok=True)
 
     for i, (selected, remaining) in enumerate(splits, start=1):
-        if i < 13:
-            continue
+        # if i < 13:
+        #     continue
         try:
             # Run analysis for selected parameters
             selected_logfile = f"dominant_params_results/selected-{i}.log"

@@ -81,7 +81,8 @@ def analyze_logs(project_dir, output_dir):
 
     # Write the summary table to a CSV file
     os.makedirs(output_dir, exist_ok=True)
-    output_file = os.path.join(output_dir, "summary_table.csv")
+    # output_file = os.path.join(output_dir, "summary_table.csv")
+    output_file = os.path.join(output_dir, "summary_table_precision0.csv")
 
     try:
         with open(output_file, 'w', newline='') as csvfile:
