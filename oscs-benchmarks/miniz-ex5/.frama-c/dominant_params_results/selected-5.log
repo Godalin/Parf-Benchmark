@@ -9,6 +9,20 @@
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
 [variadic:typing] examples/example5.c:304: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 2 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   g_deflator ∈ {0}
@@ -602,16 +616,18 @@
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
 [eva] miniz_tdef.c:880: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:883: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tdef.c:883: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tdef.c:885: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva] miniz_tdef.c:909: starting to merge loop iterations
 [kernel] miniz_tdef.c:749: 
-  more than 200(39893) elements to enumerate. Approximating.
+  more than 10(39893) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:749: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [kernel] miniz_tdef.c:749: 
-  more than 200(39892) elements to enumerate. Approximating.
+  more than 10(39892) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:913: Warning: 
   out of bounds read. assert \valid_read((mz_uint8 const *)p);
 [eva:alarm] miniz_tdef.c:913: Warning: 
@@ -621,8 +637,6 @@
   assert p - (mz_uint16 const *)pCur_dict ≤ 9223372036854775807;
 [eva:alarm] miniz_tdef.c:929: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status invalid.
-[kernel] miniz_tdef.c:749: 
-  more than 200(39894) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:929: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:943: Warning: 
@@ -687,9 +701,9 @@
 [eva] miniz_tdef.c:262: starting to merge loop iterations
 [eva] miniz_tdef.c:236: starting to merge loop iterations
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing out of bounds index. assert num_used_syms < TDEFL_MAX_HUFF_SYMBOLS;
 [eva:alarm] miniz_tdef.c:110: Warning: 
@@ -723,7 +737,7 @@
 [eva:alarm] miniz_tdef.c:126: Warning: 
   invalid RHS operand for shift. assert 0 ≤ pass_shift < 32;
 [kernel] miniz_tdef.c:110: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + 0)->m_key);
 [eva:alarm] miniz_tdef.c:147: Warning: 
@@ -754,25 +768,25 @@
   (tmp_2 from leaf++)
 [eva] miniz_tdef.c:150: starting to merge loop iterations
 [kernel] miniz_tdef.c:154: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:158: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:161: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:165: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:152: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [eva:alarm] miniz_tdef.c:154: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:155: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:161: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:162: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:169: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + next)->m_key);
 [eva:alarm] miniz_tdef.c:169: Warning: 
@@ -781,17 +795,17 @@
 [eva:alarm] miniz_tdef.c:169: Warning: 
   out of bounds read. assert \valid_read(&(A + (A + next)->m_key)->m_key);
 [kernel] miniz_tdef.c:169: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:176: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + root)->m_key);
 [eva] miniz_tdef.c:176: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:178: Warning: 
   signed overflow. assert used + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:183: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva] miniz_tdef.c:181: starting to merge loop iterations
 [kernel] miniz_tdef.c:183: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:183: Warning: 
   out of bounds write. assert \valid(&(A + tmp_3)->m_key);
                        (tmp_3 from next--)
@@ -803,15 +817,15 @@
 [eva:alarm] miniz_tdef.c:187: Warning: 
   signed overflow. assert dpth + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:152: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&(pSyms + i)->m_key);
 [eva:alarm] miniz_tdef.c:247: Warning: 
@@ -847,9 +861,10 @@
   invalid LHS operand for left shift.
   assert 0 ≤ (int)(j + num_codes[(int)(i - 1)]);
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:351: starting to merge loop iterations
 [eva] miniz_tdef.c:354: starting to merge loop iterations
+[kernel] miniz_tdef.c:359: too many locations to update in array. Approximating.
 [eva] miniz_tdef.c:366: starting to merge loop iterations
 [eva] miniz_tdef.c:379: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:379: Warning: 
@@ -1350,7 +1365,7 @@
 [eva:alarm] miniz_tdef.c:1269: Warning: 
   pointer comparison. assert \pointer_comparable((void *)0, pOut_buf);
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:988: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:1297: Warning: 
   pointer comparison. assert \pointer_comparable((void *)0, pIn_buf);
@@ -1583,6 +1598,36 @@
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
 [eva] miniz_tinfl.c:304: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:311: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:312: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:313: Warning: 
+  accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
+[eva:alarm] miniz_tinfl.c:339: Warning: 
+  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
+[eva:alarm] miniz_tinfl.c:344: Warning: 
+  out of bounds read.
+  assert
+  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
+                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                     - 1)))]);
+[eva:alarm] miniz_tinfl.c:346: Warning: 
+  out of bounds write.
+  assert
+  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
+                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                - 1)))]);
+[eva:alarm] miniz_tinfl.c:354: Warning: 
+  out of bounds read.
+  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
+[eva:alarm] miniz_tinfl.c:364: Warning: 
+  out of bounds write.
+  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
@@ -2082,32 +2127,6 @@
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
-[eva:alarm] miniz_tinfl.c:311: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:312: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:313: Warning: 
-  accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
-[eva:alarm] miniz_tinfl.c:339: Warning: 
-  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
-[eva:alarm] miniz_tinfl.c:344: Warning: 
-  out of bounds read.
-  assert
-  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
-                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
-                                                                     - 1)))]);
-[eva:alarm] miniz_tinfl.c:346: Warning: 
-  out of bounds write.
-  assert
-  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
-                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
-                                                                - 1)))]);
-[eva:alarm] miniz_tinfl.c:354: Warning: 
-  out of bounds read.
-  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
-[eva:alarm] miniz_tinfl.c:364: Warning: 
-  out of bounds write.
-  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -2181,10 +2200,6 @@
 [eva:alarm] miniz_tinfl.c:612: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_cur - pIn_buf_next;
 [eva] examples/example5.c:247: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
-[eva:alarm] miniz_tinfl.c:328: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
 [eva] miniz_tinfl.c:584: starting to merge loop iterations
 [eva] using specification for function printf_va_23
 [eva] using specification for function printf_va_24
@@ -2202,9 +2217,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[kernel] miniz_tdef.c:158: 
-  more than 200(286) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 20 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈ [--..--]
@@ -2546,10 +2558,11 @@
   rle_repeat_count ∈ {0}
   packed_code_sizes_index ∈ [--..--]
   code_sizes_to_pack[0..256] ∈ [0..127]
-                    [257..315] ∈ [0..127] or UNINITIALIZED
+                    [257..287] ∈ [--..--] or UNINITIALIZED
+                    [288..315] ∈ [0..127] or UNINITIALIZED
                     [316..319] ∈ UNINITIALIZED
-  packed_code_sizes[0..319] ∈ [0..127] or UNINITIALIZED
-  prev_code_size ∈ [0..127]
+  packed_code_sizes[0..319] ∈ [--..--] or UNINITIALIZED
+  prev_code_size ∈ [--..--]
   s_outbuf[0..524287] ∈ [--..--]
 [eva:final-states] Values at end of function tdefl_start_static_block:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
@@ -2997,8 +3010,8 @@
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   106 valid    43 unknown     0 invalid    149 total
-  71% of the logical properties reached have been proven.
+    Preconditions   105 valid    44 unknown     0 invalid    149 total
+  70% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-28.90user 0.44system 0:29.35elapsed 99%CPU (0avgtext+0avgdata 377944maxresident)k
-0inputs+9696outputs (0major+97353minor)pagefaults 0swaps
+17.04user 0.33system 0:17.38elapsed 99%CPU (0avgtext+0avgdata 346472maxresident)k
+0inputs+9704outputs (0major+89489minor)pagefaults 0swaps

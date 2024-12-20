@@ -13,6 +13,20 @@
 [kernel] Parsing code/intel/linux/target.c (with preprocessing)
 [variadic:typing] code/harness/harness.c:496: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history already set to 8 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   s_w_reset ∈ {power_up_reset_e}
@@ -639,8 +653,6 @@
   out of bounds write. assert \valid(fill_pointer);
 [eva] code/telem.c:468: starting to merge loop iterations
 [eva] code/telem.c:464: starting to merge loop iterations
-[eva] code/class.c:283: starting to merge loop iterations
-[eva] code/health.c:417: starting to merge loop iterations
 [eva] using specification for function printf_va_60
 [eva] using specification for function printf_va_229
 [eva] using specification for function printf_va_6
@@ -653,7 +665,6 @@
 [eva] using specification for function printf_va_49
 [eva] using specification for function printf_va_37
 [eva] using specification for function printf_va_7
-[eva] code/health.c:1976: starting to merge loop iterations
 [eva] using specification for function printf_va_41
 [eva] using specification for function printf_va_45
 [eva] using specification for function printf_va_230
@@ -702,13 +713,12 @@
 [eva] using specification for function printf_va_99
 [eva] using specification for function printf_va_100
 [eva] code/harness/harness.c:1868: starting to merge loop iterations
+[eva] using specification for function printf_va_66
 [eva] using specification for function printf_va_234
 [eva] code/hw_if.c:569: starting to merge loop iterations
-[eva] using specification for function printf_va_66
 [eva] using specification for function printf_va_22
 [eva] using specification for function printf_va_23
 [eva] using specification for function printf_va_63
-[eva] code/tc_hand.c:1308: starting to merge loop iterations
 [eva:alarm] code/tc_hand.c:831: Warning: 
   accessing out of bounds index. assert SU_index < 4;
 [eva:alarm] code/tc_hand.c:840: Warning: 
@@ -729,26 +739,44 @@
   accessing out of bounds index. assert SU_index < 4;
 [eva:alarm] code/tc_hand.c:912: Warning: 
   accessing out of bounds index. assert SU_index < 4;
-[eva:alarm] code/tc_hand.c:1037: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&SU_setting.execution_result);
-[eva] code/tc_hand.c:662: starting to merge loop iterations
-[kernel] code/intel/linux/target.c:63: 
-  more than 200(772) locations to update in array. Approximating.
-[kernel] code/intel/linux/target.c:63: 
-  more than 200(772) elements to enumerate. Approximating.
-[kernel] code/intel/linux/target.c:69: 
-  more than 200(448) elements to enumerate. Approximating.
-[kernel] code/intel/linux/target.c:63: 
-  more than 200(448) locations to update in array. Approximating.
 [eva:alarm] code/measure.c:629: Warning: 
   accessing out of bounds index. assert SU < 4;
 [eva:alarm] code/hw_if.c:753: Warning: 
   accessing out of bounds index. assert (sensor_number_t)(SU_Number - 1) < 4;
+[kernel] code/hw_if.c:753: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
 [eva:alarm] code/measure.c:565: Warning: 
   accessing out of bounds index.
   assert (sensor_number_t)(SU_setting->SU_number - 1) < 4;
+[eva:alarm] code/tc_hand.c:1037: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&SU_setting.execution_result);
 [eva] using specification for function printf_va_101
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(255) locations to update in array. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(255) elements to enumerate. Approximating.
+[eva] code/tc_hand.c:662: starting to merge loop iterations
+[kernel] code/tc_hand.c:636: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] code/intel/linux/target.c:69: 
+  more than 10(112) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(112) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:636: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(1020) locations to update in array. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(1020) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:69: 
+  more than 10(448) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(448) locations to update in array. Approximating.
 [eva] using specification for function printf_va_102
 [eva] using specification for function printf_va_103
 [eva] using specification for function printf_va_104
@@ -800,7 +828,6 @@
 [eva] using specification for function printf_va_135
 [eva] using specification for function printf_va_35
 [eva] using specification for function printf_va_140
-[eva] code/harness/harness.c:933: starting to merge loop iterations
 [eva] using specification for function printf_va_136
 [eva] using specification for function printf_va_137
 [eva] code/health.c:1635: starting to merge loop iterations
@@ -808,19 +835,18 @@
 [eva] using specification for function printf_va_139
 [eva] using specification for function printf_va_40
 [eva] using specification for function printf_va_44
-[eva] code/harness/harness.c:2590: starting to merge loop iterations
 [eva] using specification for function printf_va_62
 [eva] using specification for function printf_va_5
-[eva] using specification for function printf_va_20
 [eva] using specification for function printf_va_61
+[eva] using specification for function printf_va_20
+[eva] code/harness/harness.c:2590: starting to merge loop iterations
 [eva] using specification for function printf_va_51
-[eva] using specification for function printf_va_42
-[eva] code/health.c:1198: starting to merge loop iterations
-[eva] using specification for function printf_va_38
 [eva] code/harness/harness.c:2611: starting to merge loop iterations
 [eva] using specification for function printf_va_141
 [eva] using specification for function printf_va_43
 [eva:loop-unroll:partial] code/health.c:2066: loop not completely unrolled
+[eva] using specification for function printf_va_42
+[eva] using specification for function printf_va_38
 [eva] code/health.c:2043: starting to merge loop iterations
 [eva] code/harness/harness.c:2628: starting to merge loop iterations
 [eva] using specification for function printf_va_142
@@ -830,17 +856,39 @@
 [eva] using specification for function printf_va_145
 [eva] using specification for function printf_va_34
 [eva] code/harness/harness.c:769: starting to merge loop iterations
+[kernel] code/harness/harness.c:771: 
+  more than 10(32) locations to update in array. Approximating.
+[kernel] code/harness/harness.c:772: 
+  more than 10(32) locations to update in array. Approximating.
+[kernel] code/harness/harness.c:771: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:772: 
+  more than 10(40) elements to enumerate. Approximating.
 [eva] code/harness/harness.c:2686: starting to merge loop iterations
 [eva] using specification for function printf_va_146
-[eva] code/harness/harness.c:2677: starting to merge loop iterations
-[eva] code/health.c:2324: starting to merge loop iterations
 [eva] using specification for function printf_va_50
 [eva] using specification for function printf_va_59
-[eva] code/health.c:1350: starting to merge loop iterations
+[eva] code/harness/harness.c:2677: starting to merge loop iterations
+[eva] code/harness/harness.c:2686: 
+  Trace partitioning superposing up to 100 states
 [eva] using specification for function printf_va_147
 [eva] using specification for function printf_va_39
-[eva] code/health.c:1731: Trace partitioning superposing up to 100 states
-[eva] code/health.c:1731: Trace partitioning superposing up to 200 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 100 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 200 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 300 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 400 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 500 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 600 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 700 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 800 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 900 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 1000 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 1100 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 1200 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 1300 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 1400 states
+[eva] code/health.c:1732: Trace partitioning superposing up to 1500 states
+[eva] code/health.c:2063: Trace partitioning superposing up to 100 states
 [eva] code/harness/harness.c:2721: starting to merge loop iterations
 [eva] using specification for function printf_va_148
 [eva] code/harness/harness.c:2712: starting to merge loop iterations
@@ -856,7 +904,6 @@
   out of bounds read. assert \valid_read(telemetry_pointer);
 [eva] using specification for function printf_va_153
 [eva] using specification for function printf_va_154
-[eva] code/harness/harness.c:2766: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:2769: Warning: 
   pointer comparison.
   assert
@@ -869,6 +916,15 @@
                      (void *)(&telemetry_data.time));
 [eva:alarm] code/telem.c:142: Warning: 
   out of bounds read. assert \valid_read(telemetry_pointer);
+[eva] code/harness/harness.c:2766: starting to merge loop iterations
+[kernel] code/telem.c:142: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(59) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(59) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_155
 [eva] using specification for function printf_va_156
 [eva] using specification for function printf_va_157
@@ -888,6 +944,8 @@
 [eva] using specification for function printf_va_166
 [eva] using specification for function printf_va_167
 [eva] code/harness/harness.c:2796: starting to merge loop iterations
+[eva] code/harness/harness.c:2803: 
+  Trace partitioning superposing up to 100 states
 [eva] using specification for function printf_va_168
 [eva:alarm] code/harness/harness.c:2840: Warning: 
   pointer comparison.
@@ -901,13 +959,61 @@
 [eva] using specification for function printf_va_174
 [eva] using specification for function printf_va_175
 [eva] using specification for function printf_va_176
+[kernel] code/telem.c:142: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(23) elements to enumerate. Approximating.
 [eva:loop-unroll:partial] code/harness/harness.c:2854: 
   loop not completely unrolled
 [eva] code/harness/harness.c:2838: starting to merge loop iterations
 [kernel] code/telem.c:142: 
-  more than 200(17675) elements to enumerate. Approximating.
+  more than 10(17675) elements to enumerate. Approximating.
 [kernel] code/telem.c:148: 
-  more than 200(17675) elements to enumerate. Approximating.
+  more than 10(17675) elements to enumerate. Approximating.
 [eva:alarm] code/harness/harness.c:2853: Warning: 
   signed overflow. assert octets + 2 ≤ 2147483647;
 [eva] using specification for function printf_va_177
@@ -925,34 +1031,61 @@
 [eva] using specification for function printf_va_192
 [eva:alarm] code/harness/harness.c:1020: Warning: 
   accessing out of bounds index. assert channel < 0x28;
+[kernel] code/harness/harness.c:1020: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(39) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(38) elements to enumerate. Approximating.
 [eva] code/measure.c:172: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:1089: Warning: 
   signed overflow. assert ad_conv_timer + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
+[eva] code/measure.c:253: Trace partitioning superposing up to 100 states
 [eva] code/measure.c:252: starting to merge loop iterations
+[eva] code/measure.c:253: Trace partitioning superposing up to 200 states
 [eva] code/measure.c:235: starting to merge loop iterations
+[eva] code/measure.c:253: Trace partitioning superposing up to 300 states
+[kernel] code/harness/harness.c:1020: 
+  more than 10(35) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(34) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(35) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(34) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1020: 
+  more than 10(36) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(35) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(36) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(35) elements to enumerate. Approximating.
+[eva] code/measure.c:253: Trace partitioning superposing up to 400 states
+[kernel] code/harness/harness.c:1020: 
+  more than 10(37) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(36) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(37) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(36) elements to enumerate. Approximating.
+[eva] code/measure.c:253: Trace partitioning superposing up to 500 states
+[eva] code/measure.c:253: Trace partitioning superposing up to 600 states
+[eva] code/measure.c:253: Trace partitioning superposing up to 700 states
 [eva] using specification for function printf_va_184
-[eva] code/harness/harness.c:2998: starting to merge loop iterations
+[eva] code/measure.c:245: Trace partitioning superposing up to 100 states
 [eva] using specification for function printf_va_193
-[eva] code/harness/harness.c:3013: starting to merge loop iterations
 [eva] using specification for function printf_va_194
-[eva] code/harness/harness.c:3034: starting to merge loop iterations
-[eva] code/harness/harness.c:3059: starting to merge loop iterations
 [eva] using specification for function printf_va_195
-[eva] code/harness/harness.c:3069: starting to merge loop iterations
 [eva] using specification for function printf_va_196
-[eva] code/harness/harness.c:3090: starting to merge loop iterations
 [eva] using specification for function printf_va_197
-[eva] code/harness/harness.c:946: starting to merge loop iterations
 [eva] code/harness/harness.c:3114: starting to merge loop iterations
 [eva] using specification for function printf_va_199
-[eva] code/harness/harness.c:3189: starting to merge loop iterations
-[eva] code/harness/harness.c:3211: starting to merge loop iterations
-[eva] code/harness/harness.c:3216: starting to merge loop iterations
 [eva] using specification for function printf_va_200
 [eva] using specification for function printf_va_201
-[eva] code/harness/harness.c:3239: starting to merge loop iterations
 [eva] using specification for function printf_va_202
 [eva] using specification for function printf_va_203
 [eva] using specification for function printf_va_204
@@ -963,22 +1096,46 @@
 [eva] using specification for function printf_va_53
 [eva] using specification for function printf_va_54
 [eva] using specification for function printf_va_55
+[eva] code/class.c:244: Trace partitioning superposing up to 200 states
 [eva] code/class.c:48: starting to merge loop iterations
+[eva] code/measure.c:479: Trace partitioning superposing up to 200 states
 [eva] code/measure.c:482: starting to merge loop iterations
 [eva:alarm] code/measure.c:484: Warning: 
   out of bounds read. assert \valid_read(checksum_pointer);
-[eva:alarm] code/hw_if.c:1009: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ (sensor_number_t)(unit - 1) < 32;
 [eva] using specification for function printf_va_187
 [eva] using specification for function printf_va_188
-[eva] code/harness/harness.c:3266: starting to merge loop iterations
+[eva] code/measure.c:479: Trace partitioning superposing up to 500 states
 [eva:alarm] code/telem.c:313: Warning: 
   accessing out of bounds index. assert sensor_unit < 4;
+[eva] code/measure.c:479: Trace partitioning superposing up to 700 states
+[eva] code/measure.c:479: Trace partitioning superposing up to 1000 states
+[eva] code/measure.c:479: Trace partitioning superposing up to 1200 states
+[eva] code/class.c:251: Trace partitioning superposing up to 400 states
+[eva] code/measure.c:479: Trace partitioning superposing up to 3000 states
+[eva] code/harness/harness.c:3266: starting to merge loop iterations
+[eva] code/measure.c:479: Trace partitioning superposing up to 1700 states
+[eva] code/measure.c:479: Trace partitioning superposing up to 10200 states
+[eva] code/measure.c:465: Trace partitioning superposing up to 100 states
+[eva] code/measure.c:479: Trace partitioning superposing up to 11500 states
+[eva] code/measure.c:479: Trace partitioning superposing up to 12800 states
 [kernel] code/telem.c:419: 
-  more than 200(1261) locations to update in array. Approximating.
+  more than 10(11) locations to update in array. Approximating.
 [kernel] code/telem.c:435: too many locations to update in array. Approximating.
 [kernel] code/telem.c:419: 
-  more than 200(1261) elements to enumerate. Approximating.
+  more than 10(11) elements to enumerate. Approximating.
+[eva] code/measure.c:479: Trace partitioning superposing up to 14000 states
+[kernel] code/telem.c:419: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(1261) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(1261) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_205
 [eva] using specification for function printf_va_198
 [eva] code/harness/harness.c:3152: starting to merge loop iterations
@@ -986,9 +1143,10 @@
 [eva] using specification for function printf_va_206
 [eva] code/telem.c:246: starting to merge loop iterations
 [kernel] code/telem.c:195: 
-  more than 200(1260) elements to enumerate. Approximating.
+  more than 10(1257) elements to enumerate. Approximating.
+[eva] code/telem.c:246: Trace partitioning superposing up to 100 states
 [kernel] code/telem.c:250: 
-  more than 200(1260) elements to enumerate. Approximating.
+  more than 10(1260) elements to enumerate. Approximating.
 [eva:alarm] code/telem.c:431: Warning: 
   accessing out of bounds index. assert record_index < 1261;
 [eva] using specification for function printf_va_207
@@ -1005,712 +1163,1066 @@
 [eva] using specification for function printf_va_213
 [eva] using specification for function printf_va_214
 [eva] using specification for function printf_va_215
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 1900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 2900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 3900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 4900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 5900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 6900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 7900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 8900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 9900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 10900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 11900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 12900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 13900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 14900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 15900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 16900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 17900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 18900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 19900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 20900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 21900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 22900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 23900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 24900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 25900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 26900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 27900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 28900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 29900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 30900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 31900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 32900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 33900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34300 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34400 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34500 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34600 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34700 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34800 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 34900 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 35000 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 35100 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 35200 states
-[eva] code/harness/harness.c:3338: 
+[eva] code/harness/harness.c:3329: 
   Trace partitioning superposing up to 35300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 35400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 35500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 35600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 35700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 35800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 35900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 36900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 37900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 38900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 39900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 40900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 41900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 42900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 43900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 44900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 45900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 46900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 47900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 48900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 49900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 50900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 51900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52000 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52100 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52200 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52300 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52400 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52500 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52600 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52700 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52800 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 52900 states
+[eva] code/harness/harness.c:3329: 
+  Trace partitioning superposing up to 53000 states
 [eva:loop-unroll:partial] code/harness/harness.c:3341: 
   loop not completely unrolled
 [eva] code/harness/harness.c:3323: starting to merge loop iterations
@@ -1719,26 +2231,19 @@
 [eva] using specification for function printf_va_216
 [eva] using specification for function printf_va_217
 [eva] using specification for function printf_va_218
-[eva] code/harness/harness.c:3402: starting to merge loop iterations
 [eva] using specification for function printf_va_219
-[eva] code/harness/harness.c:3409: starting to merge loop iterations
 [eva] using specification for function printf_va_220
-[eva] code/harness/harness.c:3430: starting to merge loop iterations
 [eva] using specification for function printf_va_47
-[eva] code/harness/harness.c:3452: starting to merge loop iterations
-[eva] code/harness/harness.c:3457: starting to merge loop iterations
 [eva] using specification for function printf_va_221
 [eva] using specification for function printf_va_222
 [eva] using specification for function printf_va_223
 [eva] using specification for function printf_va_224
 [eva] using specification for function printf_va_225
-[eva] code/harness/harness.c:3571: starting to merge loop iterations
+[kernel] code/harness/harness.c:1022: 
+  more than 10(40) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_226
-[eva] code/harness/harness.c:3597: starting to merge loop iterations
 [eva] using specification for function printf_va_227
-[eva] code/harness/harness.c:3624: starting to merge loop iterations
 [eva] using specification for function printf_va_228
-[eva] code/harness/harness.c:3649: starting to merge loop iterations
 [eva] using specification for function printf_va_232
 [eva] using specification for function exit
 [eva] ====== VALUES COMPUTED ======
@@ -1871,7 +2376,8 @@
                 .checksum_failures ∈ {0; 1; 9}
                 .SW_version ∈ {0; 24}
                 .isr_send_message_error ∈ {0; 255}
-                {.SU_status[0..3]; .SU_temperature[0..3][0..1]; .DPU_plus_5_digital} ∈
+                .SU_status[0..3] ∈ {0; 1; 2; 3}
+                {.SU_temperature[0..3][0..1]; .DPU_plus_5_digital} ∈
                 [--..--]
                 {.os_send_message_error; .os_create_task_error} ∈ {0; 255}
                 {.SU_plus_50; .SU_minus_50} ∈ [--..--]
@@ -1981,7 +2487,7 @@
   event_queue_length ∈ {0}
   free_slot_index ∈ [0..10]
   i ∈ [0..10]
-  j ∈ {10} or UNINITIALIZED
+  j ∈ {10}
 [eva:final-states] Values at end of function InitAcquisitionTask:
   ACQ_mail.mailbox_number ∈ {1}
           {.timeout; .[bits 16 to 63]} ∈ {0}
@@ -2075,7 +2581,7 @@
                 .sensor_unit_4.plasma_1_minus_to_piezo_max_time ∈ {0; 255}
                 {.failed_code_address; .failed_data_address; .SU_hits[0..3]; .time; .software_error; .hit_budget_exceedings; .[bits 848 to 863]} ∈
                 {0}
-                .coefficient[0..4] ∈ {0; 5}
+                .coefficient[0..4] ∈ {5}
                 .not_used ∈ {0}
 [eva:final-states] Values at end of function InitClassification:
   telemetry_data{.error_status; .mode_status; .TC_word; .TC_time_tag; .watchdog_failures; .checksum_failures; .SW_version} ∈
@@ -2132,18 +2638,18 @@
                 .sensor_unit_4.plasma_1_minus_to_piezo_max_time ∈ {255}
                 {.failed_code_address; .failed_data_address; .SU_hits[0..3]; .time; .software_error; .hit_budget_exceedings; .[bits 848 to 863]} ∈
                 {0}
-                .coefficient[0..4] ∈ {0; 5}
+                .coefficient[0..4] ∈ {5}
                 .not_used ∈ {0}
   i ∈ {5}
 [eva:final-states] Values at end of function Next:
-  ad_delay_rand ∈ [0..2147483647]
-  ad_rand_index ∈ [0..2147483644]
+  ad_delay_rand ∈ [0..2147483640]
+  ad_rand_index ∈ [0..318]
   ad_hit_rand_index ∈ [0..2147483647]
   ad_fail_index ∈ [0..2147483647]
   event_rand_index ∈ [0..318]
 [eva:final-states] Values at end of function Next_Rand:
-  ad_delay_rand ∈ [0..2147483647]
-  ad_rand_index ∈ [0..2147483644]
+  ad_delay_rand ∈ [0..2147483640]
+  ad_rand_index ∈ [0..318]
   ad_hit_rand_index ∈ [0..2147483647]
   ad_fail_index ∈ [0..2147483647]
   event_rand_index ∈ [0..318]
@@ -2153,7 +2659,7 @@
 [eva:final-states] Values at end of function Random_AD_Delay:
   i ∈ {6}
   ad_conv_delay[0..5] ∈ [0..34]
-  ad_delay_rand ∈ [0..2147483647]
+  ad_delay_rand ∈ [0..318]
 [eva:final-states] Values at end of function Random_Event:
   val ∈ [--..--]
   trigger_flag ∈ {0; 1}
@@ -2167,8 +2673,8 @@
   event_rand_index ∈ [0..318]
 [eva:final-states] Values at end of function ReadSensorUnit:
   __retres ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
 [eva:final-states] Values at end of function ResetDelayCounters:
   
 [eva:final-states] Values at end of function ResetEventQueueLength:
@@ -2300,7 +2806,7 @@
                 .not_used ∈ {0}
 [eva:final-states] Values at end of function Set_AD_Delay:
   i ∈ {6}
-  ad_conv_delay[0..5] ∈ [0..34]
+  ad_conv_delay[0..5] ∈ {2; 25}
 [eva:final-states] Values at end of function Set_SU_Error:
   telemetry_data.error_status ∈ [16..255]
                 .mode_status ∈ {1; 2; 5; 6; 17; 18; 21; 22}
@@ -2473,7 +2979,10 @@
             .[bits 104 to 127] ∈ UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
 [eva:final-states] Values at end of function UpdatePeriodCounter:
@@ -2522,9 +3031,9 @@
   hit_time ∈ [--..--]
 [eva:final-states] Values at end of function FindMinQualityRecord:
   min_quality_number ∈ [0..255]
-  min_quality_location ∈ [0..1260]
+  min_quality_location ∈ [0..2147483647]
   min_time ∈ [--..--]
-  time ∈ [--..--] or UNINITIALIZED
+  time ∈ [--..--]
   i ∈ {1261}
 [eva:final-states] Values at end of function RecordEvent:
   telemetry_data.error_status ∈ [--..--]
@@ -2567,7 +3076,7 @@
   val ∈ [--..--]
 [eva:final-states] Values at end of function CalculateQualityNumber:
   quality ∈ [0. .. 250.]
-  event_queue[0].quality_number ∈ [--..--]
+  event_queue[0].quality_number ∈ [0..250]
              [0].classification ∈ [0..9]
              [0].SU_number ∈ {0; 1; 2; 3; 4}
              [0].[bits 24 to 31] ∈ {0}
@@ -2576,7 +3085,7 @@
              [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
-             [1].quality_number ∈ [--..--]
+             [1].quality_number ∈ [0..250]
              [1].classification ∈ [0..9]
              [1].SU_number ∈ {0; 1; 2; 3; 4}
              [1].[bits 24 to 31] ∈ {0}
@@ -2585,7 +3094,7 @@
              [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
-             [2].quality_number ∈ [--..--]
+             [2].quality_number ∈ [0..250]
              [2].classification ∈ [0..9]
              [2].SU_number ∈ {0; 1; 2; 3; 4}
              [2].[bits 24 to 31] ∈ {0}
@@ -2594,7 +3103,7 @@
              [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
-             [3].quality_number ∈ [--..--]
+             [3].quality_number ∈ [0..250]
              [3].classification ∈ [0..9]
              [3].SU_number ∈ {0; 1; 2; 3; 4}
              [3].[bits 24 to 31] ∈ {0}
@@ -2603,7 +3112,7 @@
              [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
-             [4].quality_number ∈ [--..--]
+             [4].quality_number ∈ [0..250]
              [4].classification ∈ [0..9]
              [4].SU_number ∈ {0; 1; 2; 3; 4}
              [4].[bits 24 to 31] ∈ {0}
@@ -2612,7 +3121,7 @@
              [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
-             [5].quality_number ∈ [--..--]
+             [5].quality_number ∈ [0..250]
              [5].classification ∈ [0..9]
              [5].SU_number ∈ {0; 1; 2; 3; 4}
              [5].[bits 24 to 31] ∈ {0}
@@ -2621,7 +3130,7 @@
              [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
-             [6].quality_number ∈ [--..--]
+             [6].quality_number ∈ [0..250]
              [6].classification ∈ [0..9]
              [6].SU_number ∈ {0; 1; 2; 3; 4}
              [6].[bits 24 to 31] ∈ {0}
@@ -2630,7 +3139,7 @@
              [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
-             [7].quality_number ∈ [--..--]
+             [7].quality_number ∈ [0..250]
              [7].classification ∈ [0..9]
              [7].SU_number ∈ {0; 1; 2; 3; 4}
              [7].[bits 24 to 31] ∈ {0}
@@ -2639,7 +3148,7 @@
              [7]{.delay_2; .delay_3} ∈ [0..4095]
              [7].checksum ∈ [--..--]
              [7].[bits 216 to 223] ∈ {0}
-             [8].quality_number ∈ [--..--]
+             [8].quality_number ∈ [0..250]
              [8].classification ∈ [0..9]
              [8].SU_number ∈ {0; 1; 2; 3; 4}
              [8].[bits 24 to 31] ∈ {0}
@@ -2648,7 +3157,7 @@
              [8]{.delay_2; .delay_3} ∈ [0..4095]
              [8].checksum ∈ [--..--]
              [8].[bits 216 to 223] ∈ {0}
-             [9].quality_number ∈ [--..--]
+             [9].quality_number ∈ [0..250]
              [9].classification ∈ [0..9]
              [9].SU_number ∈ {0; 1; 2; 3; 4}
              [9].[bits 24 to 31] ∈ {0}
@@ -2662,7 +3171,7 @@
   limits ∈
         {{ &telemetry_data{.sensor_unit_1, .sensor_unit_2, .sensor_unit_3,
                            .sensor_unit_4} }}
-  event_queue[0].quality_number ∈ [--..--]
+  event_queue[0].quality_number ∈ [0..250]
              [0].classification ∈ [0..9]
              [0].SU_number ∈ {0; 1; 2; 3; 4}
              [0].[bits 24 to 31] ∈ {0}
@@ -2671,7 +3180,7 @@
              [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
-             [1].quality_number ∈ [--..--]
+             [1].quality_number ∈ [0..250]
              [1].classification ∈ [0..9]
              [1].SU_number ∈ {0; 1; 2; 3; 4}
              [1].[bits 24 to 31] ∈ {0}
@@ -2680,7 +3189,7 @@
              [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
-             [2].quality_number ∈ [--..--]
+             [2].quality_number ∈ [0..250]
              [2].classification ∈ [0..9]
              [2].SU_number ∈ {0; 1; 2; 3; 4}
              [2].[bits 24 to 31] ∈ {0}
@@ -2689,7 +3198,7 @@
              [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
-             [3].quality_number ∈ [--..--]
+             [3].quality_number ∈ [0..250]
              [3].classification ∈ [0..9]
              [3].SU_number ∈ {0; 1; 2; 3; 4}
              [3].[bits 24 to 31] ∈ {0}
@@ -2698,7 +3207,7 @@
              [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
-             [4].quality_number ∈ [--..--]
+             [4].quality_number ∈ [0..250]
              [4].classification ∈ [0..9]
              [4].SU_number ∈ {0; 1; 2; 3; 4}
              [4].[bits 24 to 31] ∈ {0}
@@ -2707,7 +3216,7 @@
              [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
-             [5].quality_number ∈ [--..--]
+             [5].quality_number ∈ [0..250]
              [5].classification ∈ [0..9]
              [5].SU_number ∈ {0; 1; 2; 3; 4}
              [5].[bits 24 to 31] ∈ {0}
@@ -2716,7 +3225,7 @@
              [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
-             [6].quality_number ∈ [--..--]
+             [6].quality_number ∈ [0..250]
              [6].classification ∈ [0..9]
              [6].SU_number ∈ {0; 1; 2; 3; 4}
              [6].[bits 24 to 31] ∈ {0}
@@ -2725,7 +3234,7 @@
              [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
-             [7].quality_number ∈ [--..--]
+             [7].quality_number ∈ [0..250]
              [7].classification ∈ [0..9]
              [7].SU_number ∈ {0; 1; 2; 3; 4}
              [7].[bits 24 to 31] ∈ {0}
@@ -2734,7 +3243,7 @@
              [7]{.delay_2; .delay_3} ∈ [0..4095]
              [7].checksum ∈ [--..--]
              [7].[bits 216 to 223] ∈ {0}
-             [8].quality_number ∈ [--..--]
+             [8].quality_number ∈ [0..250]
              [8].classification ∈ [0..9]
              [8].SU_number ∈ {0; 1; 2; 3; 4}
              [8].[bits 24 to 31] ∈ {0}
@@ -2743,7 +3252,7 @@
              [8]{.delay_2; .delay_3} ∈ [0..4095]
              [8].checksum ∈ [--..--]
              [8].[bits 216 to 223] ∈ {0}
-             [9].quality_number ∈ [--..--]
+             [9].quality_number ∈ [0..250]
              [9].classification ∈ [0..9]
              [9].SU_number ∈ {0; 1; 2; 3; 4}
              [9].[bits 24 to 31] ∈ {0}
@@ -2817,7 +3326,7 @@
           .message ∈ {{ &trigger_unit }}
           {.execution_result; .wait_result} ∈ {0; 1}
           {.event_selector; .[bits 152 to 191]} ∈ {0}
-  trigger_unit ∈ [0..255]
+  trigger_unit ∈ {0; 1; 2; 3; 4}
   TC_mail.mailbox_number ∈ {0}
          .timeout ∈ {0; 100}
          .[bits 16 to 63] ∈ {0}
@@ -2836,7 +3345,7 @@
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Report_Event_Histo:
   sen ∈ {4}
-  class ∈ {10} or UNINITIALIZED
+  class ∈ {10}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Check_Current:
   val ∈ {1; 4; 16; 64; 191; 239; 251; 254}
@@ -2905,7 +3414,7 @@
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function CopyProgramCode:
   i ∈ {32768}
-  code_byte ∈ {0} or UNINITIALIZED
+  code_byte ∈ {0}
   data_memory[0..65535] ∈ {0}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function SetTriggerLevel:
@@ -2996,7 +3505,7 @@
              [65489..65535] ∈ {0}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Switch_SU_Off:
-  SU_ctrl_register ∈ [15..255],15%16
+  SU_ctrl_register ∈ [15..239],15%16
   telemetry_data.error_status ∈ [--..--]
                 .mode_status ∈ [0..22]
                 .TC_word ∈ [0..57138]
@@ -3031,7 +3540,7 @@
   exec_result ∈ {1; 2; 3; 4}
   SU_setting.SU_number ∈ {0; 1; 2; 3; 4; 5; 6; 4294967295}
             {.SU_state; .expected_source_state} ∈ UNINITIALIZED
-            .execution_result ∈ {0; 1; 2; 3; 4}
+            .execution_result ∈ {1; 2; 3; 4}
             .[bits 104 to 127] ∈ UNINITIALIZED
   data_memory[0..65279] ∈ [--..--]
              [65280..65455] ∈ {0}
@@ -3043,7 +3552,7 @@
              [65489..65535] ∈ {0}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function SetSensorUnitOff:
-  SU_ctrl_register ∈ [15..255],15%16
+  SU_ctrl_register ∈ [15..239],15%16
   telemetry_data.error_status ∈ [--..--]
                 .mode_status ∈ [0..22]
                 .TC_word ∈ [0..57138]
@@ -3078,7 +3587,7 @@
            self_test_e; self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   execution_result ∈ {1}
-  exec_result ∈ {0; 1}
+  exec_result ∈ {1}
   exec_result ∈ {0; 1}
   SU_setting.SU_number ∈ {0; 1; 2; 3; 4; 5; 6; 4294967295}
             {.SU_state; .expected_source_state} ∈ UNINITIALIZED
@@ -3086,7 +3595,10 @@
             .[bits 104 to 127] ∈ UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3174,8 +3686,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   SU_setting.SU_number ∈ {0; 1; 2; 3; 4; 5; 6; 4294967295}
             {.SU_state; .expected_source_state} ∈ UNINITIALIZED
             .execution_result ∈ {0; 1; 2; 3; 4}
@@ -3227,7 +3739,10 @@
   exec_result ∈ {0; 1}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3271,8 +3786,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_timeout ∈ {0; 100}
@@ -3291,7 +3806,10 @@
   SU_index ∈ {0; 1; 2; 3; 4; 5; 4294967294; 4294967295}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3335,8 +3853,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈ {TC_handling_e; read_memory_e; write_memory_e}
@@ -3353,7 +3871,10 @@
   i ∈ {5} or UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3379,9 +3900,9 @@
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Check_RAM:
   start ∈ [32768..65535]
-  range ∈ [0..65279] or UNINITIALIZED
-  bytes ∈ [1..255] or UNINITIALIZED
-  bytes_left ∈ {0} or UNINITIALIZED
+  range ∈ [0..65024]
+  bytes ∈ [1..255]
+  bytes_left ∈ {0}
   __retres ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function InitCode_RAM:
@@ -3434,74 +3955,40 @@
           [4].min ∈ {0}
           [4].max ∈ {65535}
           [5].min ∈ {0}
-          [5].max ∈ {64255; 65535}
+          [5].max ∈ {65535}
           [6].min ∈ {0}
-          [6].max ∈ {62719; 65535}
+          [6].max ∈ {65535}
           [7].min ∈ {0}
           [7].max ∈ {65535}
           [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
-          [13].min ∈ {0}
-          [13].max ∈ {64255; 65535}
-          [14].min ∈ {0}
-          [14].max ∈ {62719; 65535}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
-          [16].min ∈ {0; 47616}
-          [16].max ∈ {58623; 65535}
-          [17].min ∈ {0; 47616}
-          [17].max ∈ {58623; 65535}
-          [18].min ∈ {0; 43008}
-          [18].max ∈ {58367; 65535}
-          [19].min ∈ {0; 47616}
-          [19].max ∈ {58623; 65535}
-          [20].min ∈ {0; 3328}
-          [20].max ∈ {8959; 65535}
-          [21].min ∈ {0; 3328}
-          [21].max ∈ {8959; 65535}
-          [22].min ∈ {0; 3584}
-          [22].max ∈ {11519; 65535}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
-          [29].min ∈ {0}
-          [29].max ∈ {64255; 65535}
-          [30].min ∈ {0}
-          [30].max ∈ {62719; 65535}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
-          [37].min ∈ {0}
-          [37].max ∈ {64255; 65535}
-          [38].min ∈ {0}
-          [38].max ∈ {62719; 65535}
-          [39].min ∈ {0}
+          {[8].max; [9..12]{.min; .max}; [13].min} ∈ {0; 65535}
+          [13].max ∈ {0; 64255; 65535}
+          [14].min ∈ {0; 65535}
+          [14].max ∈ {0; 62719; 65535}
+          [15]{.min; .max} ∈ {0; 65535}
+          [16].min ∈ {0; 47616; 65535}
+          [16].max ∈ {0; 58623; 65535}
+          [17].min ∈ {0; 47616; 65535}
+          [17].max ∈ {0; 58623; 65535}
+          [18].min ∈ {0; 43008; 65535}
+          [18].max ∈ {0; 58367; 65535}
+          [19].min ∈ {0; 47616; 65535}
+          [19].max ∈ {0; 58623; 65535}
+          [20].min ∈ {0; 3328; 65535}
+          [20].max ∈ {0; 8959; 65535}
+          [21].min ∈ {0; 3328; 65535}
+          [21].max ∈ {0; 8959; 65535}
+          [22].min ∈ {0; 3584; 65535}
+          [22].max ∈ {0; 11519; 65535}
+          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
+          [29].max ∈ {0; 64255; 65535}
+          [30].min ∈ {0; 65535}
+          [30].max ∈ {0; 62719; 65535}
+          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
+          [37].max ∈ {0; 64255; 65535}
+          [38].min ∈ {0; 65535}
+          [38].max ∈ {0; 62719; 65535}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Set_AD_Nominal:
@@ -3522,21 +4009,12 @@
           [7].min ∈ {0}
           [7].max ∈ {65535}
           [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          {[8].max; [9..12]{.min; .max}} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -3551,39 +4029,17 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Update_ADC_Channel_Reg:
@@ -3705,7 +4161,7 @@
   SU_self_test_channel ∈ [16..252]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function SelectSelfTestChannel:
-  SU_self_test_channel ∈ [0..248]
+  SU_self_test_channel ∈ [0..236]
   channel_selector_value[0] ∈ {0}
                         [1] ∈ {1}
                         [2] ∈ {2}
@@ -3798,7 +4254,7 @@
   event_queue_length ∈ {0}
   free_slot_index ∈ {0}
   execution_result ∈ {1}
-  fill_pointer ∈ {{ &telemetry_data + [0..120] }} or UNINITIALIZED
+  fill_pointer ∈ {{ &telemetry_data + [8..120] }} or UNINITIALIZED
   reset_class ∈ [--..--]
   i ∈ {120} or UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {4}
@@ -3852,10 +4308,13 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   i ∈ {4} or UNINITIALIZED
-  exec_result ∈ {0; 1} or UNINITIALIZED
+  exec_result ∈ {1} or UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   v_down_errors ∈ {0}
@@ -3908,17 +4367,15 @@
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
-  checksum_pointer ∈ {{ &event_queue + [0..280] }} or UNINITIALIZED
+  checksum_pointer ∈ {{ &event_queue + [8..280] }} or UNINITIALIZED
   event_checksum ∈ [--..--] or UNINITIALIZED
   i ∈ {28} or UNINITIALIZED
   event ∈ {{ &event_queue + [0..252],0%28 }} or UNINITIALIZED
   delay_counters{.FromPlasma1Plus; .FromPlasma1Minus} ∈
                 [0..4095] or UNINITIALIZED
   time_delay ∈ [-4095..4095] or UNINITIALIZED
-  state ∈
-       {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
-        self_test_trigger_e; acquisition_e}
-  event_queue[0].quality_number ∈ [--..--]
+  state ∈ {off_e; start_switching_e; on_e; self_test_mon_e; acquisition_e}
+  event_queue[0].quality_number ∈ [0..250]
              [0].classification ∈ [0..9]
              [0].SU_number ∈ {0; 1; 2; 3; 4}
              [0].[bits 24 to 31] ∈ {0}
@@ -3927,7 +4384,7 @@
              [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
-             [1].quality_number ∈ [--..--]
+             [1].quality_number ∈ [0..250]
              [1].classification ∈ [0..9]
              [1].SU_number ∈ {0; 1; 2; 3; 4}
              [1].[bits 24 to 31] ∈ {0}
@@ -3936,7 +4393,7 @@
              [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
-             [2].quality_number ∈ [--..--]
+             [2].quality_number ∈ [0..250]
              [2].classification ∈ [0..9]
              [2].SU_number ∈ {0; 1; 2; 3; 4}
              [2].[bits 24 to 31] ∈ {0}
@@ -3945,7 +4402,7 @@
              [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
-             [3].quality_number ∈ [--..--]
+             [3].quality_number ∈ [0..250]
              [3].classification ∈ [0..9]
              [3].SU_number ∈ {0; 1; 2; 3; 4}
              [3].[bits 24 to 31] ∈ {0}
@@ -3954,7 +4411,7 @@
              [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
-             [4].quality_number ∈ [--..--]
+             [4].quality_number ∈ [0..250]
              [4].classification ∈ [0..9]
              [4].SU_number ∈ {0; 1; 2; 3; 4}
              [4].[bits 24 to 31] ∈ {0}
@@ -3963,7 +4420,7 @@
              [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
-             [5].quality_number ∈ [--..--]
+             [5].quality_number ∈ [0..250]
              [5].classification ∈ [0..9]
              [5].SU_number ∈ {0; 1; 2; 3; 4}
              [5].[bits 24 to 31] ∈ {0}
@@ -3972,7 +4429,7 @@
              [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
-             [6].quality_number ∈ [--..--]
+             [6].quality_number ∈ [0..250]
              [6].classification ∈ [0..9]
              [6].SU_number ∈ {0; 1; 2; 3; 4}
              [6].[bits 24 to 31] ∈ {0}
@@ -3981,7 +4438,7 @@
              [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
-             [7].quality_number ∈ [--..--]
+             [7].quality_number ∈ [0..250]
              [7].classification ∈ [0..9]
              [7].SU_number ∈ {0; 1; 2; 3; 4}
              [7].[bits 24 to 31] ∈ {0}
@@ -3990,7 +4447,7 @@
              [7]{.delay_2; .delay_3} ∈ [0..4095]
              [7].checksum ∈ [--..--]
              [7].[bits 216 to 223] ∈ {0}
-             [8].quality_number ∈ [--..--]
+             [8].quality_number ∈ [0..250]
              [8].classification ∈ [0..9]
              [8].SU_number ∈ {0; 1; 2; 3; 4}
              [8].[bits 24 to 31] ∈ {0}
@@ -3999,7 +4456,7 @@
              [8]{.delay_2; .delay_3} ∈ [0..4095]
              [8].checksum ∈ [--..--]
              [8].[bits 216 to 223] ∈ {0}
-             [9].quality_number ∈ [--..--]
+             [9].quality_number ∈ [0..250]
              [9].classification ∈ [0..9]
              [9].SU_number ∈ {0; 1; 2; 3; 4}
              [9].[bits 24 to 31] ∈ {0}
@@ -4013,7 +4470,7 @@
           .message ∈ {{ &trigger_unit }}
           {.execution_result; .wait_result} ∈ {1}
           {.event_selector; .[bits 152 to 191]} ∈ {0}
-  trigger_unit ∈ {1; 2; 3; 4; 5; 6; 7}
+  trigger_unit ∈ {1; 2; 3; 4}
   mail_count[0] ∈ [0..2147483645]
             [1..7] ∈ {0}
   S___fc_stdout[0..1] ∈ [--..--]
@@ -4033,7 +4490,7 @@
   patch_function ∈ [4096..32736] or UNINITIALIZED
   old_checksum ∈ [--..--]
   new_checksum ∈ [--..--]
-  patch_value ∈ [--..--] or UNINITIALIZED
+  patch_value ∈ [--..--]
   temp_configuration ∈ {0; 1}
   i ∈ [32..2147483647]
   data_memory[0..65279] ∈ [--..--]
@@ -4139,8 +4596,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -4161,7 +4618,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -4292,11 +4752,11 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [128..254]
   ADC_result[0..4] ∈ [--..--]
   initial_delay ∈ {44}
   delay_limit ∈ {44}
@@ -4313,7 +4773,7 @@
   mail_count[0] ∈ [0..2147483645]
             [1] ∈ {0; 1}
             [2..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -4348,8 +4808,9 @@
                 .sensor_unit_3 ∈ [--..--]
                 .os_enable_isr_error ∈ {0; 255}
                 .sensor_unit_4 ∈ [--..--]
-                {.failed_code_address; .failed_data_address; .SU_hits[0..3]; .[bits 848 to 863]} ∈
-                {0}
+                {.failed_code_address; .failed_data_address} ∈ {0}
+                .SU_hits[0..3] ∈ [--..--]
+                .[bits 848 to 863] ∈ {0}
                 .time ∈ [--..--]
                 .software_error ∈ {0; 1}
                 .hit_budget_exceedings ∈ {0; 255}
@@ -4421,28 +4882,28 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
-  AD_temperature_parameters.ADC_channel ∈
-                           {5; 6; 13; 14; 29; 30; 37; 38} or UNINITIALIZED
-                           {.ADC_max_tries; .conversion_max_tries} ∈
-                           {255} or UNINITIALIZED
-                           .unsigned_ADC ∈ [0..2147483647] or UNINITIALIZED
-                           .signed_ADC ∈ [--..--] or UNINITIALIZED
-                           .AD_execution_result ∈
-                           {0; 1; 2} or UNINITIALIZED
+  ADC_channel_register ∈ {134; 142; 158; 166}
+  AD_temperature_parameters.ADC_channel ∈ {6; 14; 30; 38}
+                           {.ADC_max_tries; .conversion_max_tries} ∈ {255}
+                           .unsigned_ADC ∈ [0..65535]
+                           .signed_ADC ∈ [-32768..32767]
+                           .AD_execution_result ∈ {0; 1; 2}
                            {.sensor_unit; .[bits 168 to 191]} ∈
                            UNINITIALIZED
-  temp_limit_value ∈ {244; 250} or UNINITIALIZED
+  temp_limit_value ∈ {244}
   j ∈ {2}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..255]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ [0..20]
   ad_hit_rand_index ∈ [0..2147483647]
   total_adc_hits ∈ [--..--]
@@ -4751,18 +5212,21 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ {134; 142; 158; 166}
   i ∈ {7}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..255]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ [0..20]
   ad_hit_rand_index ∈ [0..2147483647]
   total_adc_hits ∈ [--..--]
@@ -4824,17 +5288,20 @@
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [128..254]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4; 5}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -4902,17 +5369,20 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [128..254]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4; 5}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -4980,17 +5450,20 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [128..254]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4; 5}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -5044,11 +5517,11 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [128..254]
   ADC_result[0..4] ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
@@ -5057,7 +5530,7 @@
   mail_count[0] ∈ [0..2147483645]
             [1] ∈ {0; 1}
             [2..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -5105,16 +5578,13 @@
               .event_counter[0..3][0..9] ∈ [--..--]
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
-  SU_state[0..3] ∈
-          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
-           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..11]
   confirm_hit_result ∈ {1}
-  ADC_channel_register ∈ [128..165]
+  ADC_channel_register ∈ [130..165]
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
   ADC_result[0..4] ∈ [--..--]
-  event_queue[0].quality_number ∈ [--..--]
+  event_queue[0].quality_number ∈ [0..250]
              [0].classification ∈ [0..9]
              [0].SU_number ∈ {0; 1; 2; 3; 4}
              [0].[bits 24 to 31] ∈ {0}
@@ -5123,7 +5593,7 @@
              [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
-             [1].quality_number ∈ [--..--]
+             [1].quality_number ∈ [0..250]
              [1].classification ∈ [0..9]
              [1].SU_number ∈ {0; 1; 2; 3; 4}
              [1].[bits 24 to 31] ∈ {0}
@@ -5132,7 +5602,7 @@
              [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
-             [2].quality_number ∈ [--..--]
+             [2].quality_number ∈ [0..250]
              [2].classification ∈ [0..9]
              [2].SU_number ∈ {0; 1; 2; 3; 4}
              [2].[bits 24 to 31] ∈ {0}
@@ -5141,7 +5611,7 @@
              [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
-             [3].quality_number ∈ [--..--]
+             [3].quality_number ∈ [0..250]
              [3].classification ∈ [0..9]
              [3].SU_number ∈ {0; 1; 2; 3; 4}
              [3].[bits 24 to 31] ∈ {0}
@@ -5150,7 +5620,7 @@
              [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
-             [4].quality_number ∈ [--..--]
+             [4].quality_number ∈ [0..250]
              [4].classification ∈ [0..9]
              [4].SU_number ∈ {0; 1; 2; 3; 4}
              [4].[bits 24 to 31] ∈ {0}
@@ -5159,7 +5629,7 @@
              [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
-             [5].quality_number ∈ [--..--]
+             [5].quality_number ∈ [0..250]
              [5].classification ∈ [0..9]
              [5].SU_number ∈ {0; 1; 2; 3; 4}
              [5].[bits 24 to 31] ∈ {0}
@@ -5168,7 +5638,7 @@
              [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
-             [6].quality_number ∈ [--..--]
+             [6].quality_number ∈ [0..250]
              [6].classification ∈ [0..9]
              [6].SU_number ∈ {0; 1; 2; 3; 4}
              [6].[bits 24 to 31] ∈ {0}
@@ -5177,7 +5647,7 @@
              [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
-             [7].quality_number ∈ [--..--]
+             [7].quality_number ∈ [0..250]
              [7].classification ∈ [0..9]
              [7].SU_number ∈ {0; 1; 2; 3; 4}
              [7].[bits 24 to 31] ∈ {0}
@@ -5186,7 +5656,7 @@
              [7]{.delay_2; .delay_3} ∈ [0..4095]
              [7].checksum ∈ [--..--]
              [7].[bits 216 to 223] ∈ {0}
-             [8].quality_number ∈ [--..--]
+             [8].quality_number ∈ [0..250]
              [8].classification ∈ [0..9]
              [8].SU_number ∈ {0; 1; 2; 3; 4}
              [8].[bits 24 to 31] ∈ {0}
@@ -5195,7 +5665,7 @@
              [8]{.delay_2; .delay_3} ∈ [0..4095]
              [8].checksum ∈ [--..--]
              [8].[bits 216 to 223] ∈ {0}
-             [9].quality_number ∈ [--..--]
+             [9].quality_number ∈ [0..250]
              [9].classification ∈ [0..9]
              [9].SU_number ∈ {0; 1; 2; 3; 4}
              [9].[bits 24 to 31] ∈ {0}
@@ -5209,20 +5679,20 @@
           .message ∈ {{ &trigger_unit }}
           {.execution_result; .wait_result} ∈ {1}
           {.event_selector; .[bits 152 to 191]} ∈ {0}
-  trigger_unit ∈ {1; 2; 3; 4; 5; 6; 7}
-  ad_converting ∈ {0; 1}
+  trigger_unit ∈ {1; 2; 3; 4}
+  ad_converting ∈ {0}
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [1..255]
+              [1] ∈ {1; 2; 3; 4}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483645]
             [1..7] ∈ {0}
-  ad_conv_timer ∈ [0..2147483647]
+  ad_conv_timer ∈ {2}
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..318]
   start_conversion_count ∈ [--..--]
-  ad_value ∈ [--..--]
-  end_of_adc_count ∈ [--..--]
-  hit_enabled ∈ {0; 1}
+  ad_value ∈ {0}
+  end_of_adc_count ∈ [0..4294967294],0%2
+  hit_enabled ∈ {0}
   checks ∈ [--..--]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Trigger_SU_Hit:
@@ -5256,11 +5726,11 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [128..254]
   ADC_result[0..4] ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
@@ -5269,7 +5739,7 @@
   mail_count[0] ∈ [0..2147483645]
             [1] ∈ {0; 1}
             [2..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -5314,26 +5784,24 @@
                 .hit_budget_exceedings ∈ {255}
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
-  SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+  SU_state[0..3] ∈ {off_e}
   self_test_SU_number ∈ {0}
   hit_budget_left ∈ {0}
-  confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  confirm_hit_result ∈ {1}
+  ADC_channel_register ∈ {129; 130; 131; 132; 133}
   ADC_result[0..4] ∈ [--..--]
-  su ∈ {0; 1; 2; 3}
+  su ∈ {3}
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [1026..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {1; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483645]
             [1..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_delay[0..5] ∈ [0..34]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_delay_rand ∈ [0..2147483647]
-  ad_rand_index ∈ [0..2147483644]
+  ad_delay_rand ∈ [0..2147483640]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ [0..20]
   ad_hit_rand_index ∈ [0..2147483647]
   total_adc_hits ∈ [--..--]
@@ -5343,14 +5811,14 @@
   ad_value ∈ [--..--]
   end_of_adc_count ∈ [--..--]
   hit_enabled ∈ {0}
-  trigger_source_0 ∈ {0; 1}
-  trigger_source_1 ∈ {0; 1}
+  trigger_source_0 ∈ {0}
+  trigger_source_1 ∈ {0}
   checks ∈ [--..--]
   check_errors ∈ [--..--]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function isr_send_message:
   mail_message[0] ∈ [--..--]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [1..2147483647]
             [1..7] ∈ {0}
@@ -5412,7 +5880,7 @@
   par1 ∈ {0; 1} or UNINITIALIZED
   tmp_error_status ∈ {0; 1; 2} or UNINITIALIZED
   mail_message[0] ∈ [--..--]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483647]
             [1..7] ∈ {0}
@@ -5468,7 +5936,7 @@
                           &data_memory + [272..61726] }}
   read_memory_checksum ∈ [--..--]
   mail_message[0] ∈ [--..--]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483647]
             [1..7] ∈ {0}
@@ -5525,7 +5993,7 @@
   read_memory_checksum ∈ [--..--]
   par ∈ {0; 1}
   mail_message[0] ∈ [--..--]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483647]
             [1..7] ∈ {0}
@@ -5625,7 +6093,7 @@
   read_memory_checksum ∈ [--..--]
   tm_byte ∈ [--..--] or UNINITIALIZED
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483647]
             [1..7] ∈ {0}
@@ -5748,8 +6216,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -5770,7 +6238,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -5833,8 +6304,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -5864,7 +6335,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -5877,7 +6351,7 @@
                   .TC_address ∈ [0..127]
                   .TC_code ∈ [--..--]
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483646]
             [1..7] ∈ {0}
@@ -5937,8 +6411,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -5959,7 +6433,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -5972,7 +6449,7 @@
                   .TC_address ∈ [0..127]
                   .TC_code ∈ [--..--]
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {0; 1; 2; 3; 4; 129}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483646]
             [1..7] ∈ {0}
@@ -6032,8 +6509,7 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
-           self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   hit_budget_left ∈ [0..12]
   health_mon_round ∈ [0..9]
@@ -6041,9 +6517,9 @@
   voltage_meas_count ∈ [0..17]
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
-  confirm_hit_result ∈ {0; 1}
+  confirm_hit_result ∈ {1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..165]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e; SC_TM_e}
@@ -6058,8 +6534,6 @@
                           &data_memory + [272..61726] }}
   free_slot_index ∈ [0..1261]
   read_memory_checksum ∈ [--..--]
-  self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
   memory_mode ∈ {PROM_e; SRAM_e}
   ADC_result[0..4] ∈ [--..--]
   previous_TC.TC_word ∈ [--..--]
@@ -6072,7 +6546,7 @@
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
   write_checksum ∈ [--..--]
-  event_queue[0].quality_number ∈ [--..--]
+  event_queue[0].quality_number ∈ [0..250]
              [0].classification ∈ [0..9]
              [0].SU_number ∈ {0; 1; 2; 3; 4}
              [0].[bits 24 to 31] ∈ {0}
@@ -6081,7 +6555,7 @@
              [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
-             [1].quality_number ∈ [--..--]
+             [1].quality_number ∈ [0..250]
              [1].classification ∈ [0..9]
              [1].SU_number ∈ {0; 1; 2; 3; 4}
              [1].[bits 24 to 31] ∈ {0}
@@ -6090,7 +6564,7 @@
              [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
-             [2].quality_number ∈ [--..--]
+             [2].quality_number ∈ [0..250]
              [2].classification ∈ [0..9]
              [2].SU_number ∈ {0; 1; 2; 3; 4}
              [2].[bits 24 to 31] ∈ {0}
@@ -6099,7 +6573,7 @@
              [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
-             [3].quality_number ∈ [--..--]
+             [3].quality_number ∈ [0..250]
              [3].classification ∈ [0..9]
              [3].SU_number ∈ {0; 1; 2; 3; 4}
              [3].[bits 24 to 31] ∈ {0}
@@ -6108,7 +6582,7 @@
              [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
-             [4].quality_number ∈ [--..--]
+             [4].quality_number ∈ [0..250]
              [4].classification ∈ [0..9]
              [4].SU_number ∈ {0; 1; 2; 3; 4}
              [4].[bits 24 to 31] ∈ {0}
@@ -6117,7 +6591,7 @@
              [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
-             [5].quality_number ∈ [--..--]
+             [5].quality_number ∈ [0..250]
              [5].classification ∈ [0..9]
              [5].SU_number ∈ {0; 1; 2; 3; 4}
              [5].[bits 24 to 31] ∈ {0}
@@ -6126,7 +6600,7 @@
              [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
-             [6].quality_number ∈ [--..--]
+             [6].quality_number ∈ [0..250]
              [6].classification ∈ [0..9]
              [6].SU_number ∈ {0; 1; 2; 3; 4}
              [6].[bits 24 to 31] ∈ {0}
@@ -6135,7 +6609,7 @@
              [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
-             [7].quality_number ∈ [--..--]
+             [7].quality_number ∈ [0..250]
              [7].classification ∈ [0..9]
              [7].SU_number ∈ {0; 1; 2; 3; 4}
              [7].[bits 24 to 31] ∈ {0}
@@ -6144,7 +6618,7 @@
              [7]{.delay_2; .delay_3} ∈ [0..4095]
              [7].checksum ∈ [--..--]
              [7].[bits 216 to 223] ∈ {0}
-             [8].quality_number ∈ [--..--]
+             [8].quality_number ∈ [0..250]
              [8].classification ∈ [0..9]
              [8].SU_number ∈ {0; 1; 2; 3; 4}
              [8].[bits 24 to 31] ∈ {0}
@@ -6153,7 +6627,7 @@
              [8]{.delay_2; .delay_3} ∈ [0..4095]
              [8].checksum ∈ [--..--]
              [8].[bits 216 to 223] ∈ {0}
-             [9].quality_number ∈ [--..--]
+             [9].quality_number ∈ [0..250]
              [9].classification ∈ [0..9]
              [9].SU_number ∈ {0; 1; 2; 3; 4}
              [9].[bits 24 to 31] ∈ {0}
@@ -6168,12 +6642,15 @@
   ACQ_mail.mailbox_number ∈ {1}
           {.timeout; .[bits 16 to 63]} ∈ {0}
           .message ∈ {{ &trigger_unit }}
-          {.execution_result; .wait_result} ∈ {0; 1}
+          {.execution_result; .wait_result} ∈ {1}
           {.event_selector; .[bits 152 to 191]} ∈ {0}
-  trigger_unit ∈ {0; 1; 2; 3; 4; 5; 6; 7}
+  trigger_unit ∈ {1; 2; 3; 4}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6185,17 +6662,17 @@
   received_command.TC_word ∈ [--..--]
                   .TC_address ∈ [0..127]
                   .TC_code ∈ [--..--]
-  ad_converting ∈ {0; 1}
+  ad_converting ∈ {0}
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {1; 2; 3; 4}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483644]
             [1..7] ∈ {0}
   mail_overflows ∈ [0..2147483647]
   check_current_errors ∈ {0}
-  tc_msb ∈ [4..161]
-  tc_lsb ∈ {2; 115}
-  tc_word ∈ [1026..41331]
+  tc_msb ∈ {161}
+  tc_lsb ∈ {115}
+  tc_word ∈ {41331}
   tm_msb ∈ [--..--]
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
@@ -6216,21 +6693,12 @@
           [7].min ∈ {0}
           [7].max ∈ {65535}
           [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          {[8].max; [9..12]{.min; .max}} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6245,50 +6713,28 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
-  ad_conv_timer ∈ [-5000..2147483647]
-  ad_conv_delay[0..5] ∈ [0..34]
+  ad_conv_timer ∈ {2}
+  ad_conv_delay[0..5] ∈ {2}
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ {0}
   ad_random_failures ∈ {0}
   start_conversion_count ∈ [--..--]
-  ad_value ∈ [--..--]
-  end_of_adc_count ∈ [--..--]
-  hit_enabled ∈ {0; 1}
+  ad_value ∈ {0}
+  end_of_adc_count ∈ [0..4294967294],0%2
+  hit_enabled ∈ {0}
   trigger_flag ∈ {0; 1}
   event_flag ∈ {0; 1}
   trigger_source_0 ∈ {0; 1}
@@ -6297,7 +6743,6 @@
   lsb1_counter ∈ [--..--]
   lsb2_counter ∈ [--..--]
   rise_time_counter ∈ [--..--]
-  self_test_pulse ∈ {0}
   event_rand_index ∈ [0..2147483645]
   v_down_errors ∈ {0}
   checks ∈ [--..--]
@@ -6343,8 +6788,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   hit_budget_left ∈ {20}
   health_mon_round ∈ [0..9]
@@ -6354,12 +6799,12 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [133..255]
+  ADC_channel_register ∈ [128..254]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e}
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   memory_mode ∈ {PROM_e; SRAM_e}
   previous_TC.TC_word ∈ [--..--]
              .TC_address ∈ [0..127]
@@ -6376,7 +6821,10 @@
   max_errors ∈ {20}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6412,77 +6860,43 @@
           [4].min ∈ {0}
           [4].max ∈ {65535}
           [5].min ∈ {0}
-          [5].max ∈ {64255; 65535}
+          [5].max ∈ {65535}
           [6].min ∈ {0}
-          [6].max ∈ {62719; 65535}
+          [6].max ∈ {65535}
           [7].min ∈ {0}
           [7].max ∈ {65535}
           [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
-          [13].min ∈ {0}
-          [13].max ∈ {64255; 65535}
-          [14].min ∈ {0}
-          [14].max ∈ {62719; 65535}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
-          [16].min ∈ {0; 47616}
-          [16].max ∈ {58623; 65535}
-          [17].min ∈ {0; 47616}
-          [17].max ∈ {58623; 65535}
-          [18].min ∈ {0; 43008}
-          [18].max ∈ {58367; 65535}
-          [19].min ∈ {0; 47616}
-          [19].max ∈ {58623; 65535}
-          [20].min ∈ {0; 3328}
-          [20].max ∈ {8959; 65535}
-          [21].min ∈ {0; 3328}
-          [21].max ∈ {8959; 65535}
-          [22].min ∈ {0; 3584}
-          [22].max ∈ {11519; 65535}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
-          [29].min ∈ {0}
-          [29].max ∈ {64255; 65535}
-          [30].min ∈ {0}
-          [30].max ∈ {62719; 65535}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
-          [37].min ∈ {0}
-          [37].max ∈ {64255; 65535}
-          [38].min ∈ {0}
-          [38].max ∈ {62719; 65535}
-          [39].min ∈ {0}
+          {[8].max; [9..12]{.min; .max}; [13].min} ∈ {0; 65535}
+          [13].max ∈ {0; 64255; 65535}
+          [14].min ∈ {0; 65535}
+          [14].max ∈ {0; 62719; 65535}
+          [15]{.min; .max} ∈ {0; 65535}
+          [16].min ∈ {0; 47616; 65535}
+          [16].max ∈ {0; 58623; 65535}
+          [17].min ∈ {0; 47616; 65535}
+          [17].max ∈ {0; 58623; 65535}
+          [18].min ∈ {0; 43008; 65535}
+          [18].max ∈ {0; 58367; 65535}
+          [19].min ∈ {0; 47616; 65535}
+          [19].max ∈ {0; 58623; 65535}
+          [20].min ∈ {0; 3328; 65535}
+          [20].max ∈ {0; 8959; 65535}
+          [21].min ∈ {0; 3328; 65535}
+          [21].max ∈ {0; 8959; 65535}
+          [22].min ∈ {0; 3584; 65535}
+          [22].max ∈ {0; 11519; 65535}
+          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
+          [29].max ∈ {0; 64255; 65535}
+          [30].min ∈ {0; 65535}
+          [30].max ∈ {0; 62719; 65535}
+          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
+          [37].max ∈ {0; 64255; 65535}
+          [38].min ∈ {0; 65535}
+          [38].max ∈ {0; 62719; 65535}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-4999..255]
-  ad_conv_delay[0..5] ∈ {0; 2}
+  ad_conv_delay[0..5] ∈ {2}
   ad_conv_num ∈ {0; 2; 4}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -6545,25 +6959,24 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
-           self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
-  hit_budget_left ∈ [0..15]
+  hit_budget_left ∈ {11}
   health_mon_round ∈ {5}
   temp_meas_count ∈ {0; 1; 2; 3; 4; 5}
   voltage_meas_count ∈ [0..17]
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
-  confirm_hit_result ∈ {0; 1}
+  confirm_hit_result ∈ {1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ {162; 163; 164; 165}
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e; SC_TM_e}
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   memory_mode ∈ {PROM_e; SRAM_e}
   ADC_result[0..4] ∈ [--..--]
   previous_TC.TC_word ∈ [--..--]
@@ -6579,7 +6992,10 @@
   sen ∈ {4}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6591,17 +7007,17 @@
   received_command.TC_word ∈ [--..--]
                   .TC_address ∈ [0..127]
                   .TC_code ∈ [--..--]
-  ad_converting ∈ {0; 1}
+  ad_converting ∈ {0}
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {4}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483644]
             [1..7] ∈ {0}
   mail_overflows ∈ [0..2147483647]
   check_current_errors ∈ {0}
-  tc_msb ∈ [6..161]
-  tc_lsb ∈ {3; 115}
-  tc_word ∈ [1539..41331],3%16
+  tc_msb ∈ {161}
+  tc_lsb ∈ {115}
+  tc_word ∈ {41331}
   tm_msb ∈ [--..--]
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
@@ -6622,21 +7038,12 @@
           [7].min ∈ {0}
           [7].max ∈ {65535}
           [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          {[8].max; [9..12]{.min; .max}} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6651,52 +7058,30 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
-  ad_conv_timer ∈ [-5000..2147483647]
-  ad_conv_delay[0..5] ∈ [0..34]
+  ad_conv_timer ∈ {2}
+  ad_conv_delay[0..5] ∈ {2}
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ {0}
   ad_random_failures ∈ {0}
   start_conversion_count ∈ [--..--]
-  ad_value ∈ [--..--]
-  end_of_adc_count ∈ [--..--]
+  ad_value ∈ {0}
+  end_of_adc_count ∈ [0..4294967294],0%2
   hit_enabled ∈ {0; 1}
-  trigger_source_0 ∈ {0; 1}
-  trigger_source_1 ∈ {0; 1}
+  trigger_source_0 ∈ {1}
+  trigger_source_1 ∈ {1}
   sim_self_test ∈ {0}
   self_test_pulse ∈ {0}
   v_down_errors ∈ {0}
@@ -6764,37 +7149,7 @@
   TC_timeout ∈ {0; 100}
   memory_type ∈ {code_e; data_e}
   memory_transfer_buffer[0] ∈ [0..222]
-                        [1] ∈ [--..--]
-                        [2] ∈ [0..222]
-                        [3] ∈ [--..--]
-                        [4] ∈ [0..222]
-                        [5] ∈ [--..--]
-                        [6] ∈ [0..222]
-                        [7] ∈ [--..--]
-                        [8] ∈ [0..222]
-                        [9] ∈ [--..--]
-                        [10] ∈ [0..222]
-                        [11] ∈ [--..--]
-                        [12] ∈ [0..222]
-                        [13] ∈ [--..--]
-                        [14] ∈ [0..222]
-                        [15] ∈ [--..--]
-                        [16] ∈ [0..222]
-                        [17] ∈ [--..--]
-                        [18] ∈ [0..222]
-                        [19] ∈ [--..--]
-                        [20] ∈ [0..222]
-                        [21] ∈ [--..--]
-                        [22] ∈ [0..222]
-                        [23] ∈ [--..--]
-                        [24] ∈ [0..222]
-                        [25] ∈ [--..--]
-                        [26] ∈ [0..222]
-                        [27] ∈ [--..--]
-                        [28] ∈ [0..222]
-                        [29] ∈ [--..--]
-                        [30] ∈ [0..222]
-                        [31] ∈ [--..--]
+                        [1..31] ∈ [--..--]
   address_MSB ∈ [--..--]
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
@@ -6820,9 +7175,9 @@
   mail_message[0] ∈ [0..57087]
               [1..7] ∈ {0}
   mail_count[0..7] ∈ {0}
-  tc_msb ∈ {0; 1; 2; 3; 222}
-  tc_lsb ∈ {0; 64; 128; 192; 255}
-  tc_word ∈ [0..57087]
+  tc_msb ∈ {1; 2; 3}
+  tc_lsb ∈ {0; 64; 128; 192}
+  tc_word ∈ [448..960],0%64
   tm_msb ∈ {0; 1; 2; 3}
   tm_lsb ∈ [1..127]
   tc_timer_overflow ∈ {0}
@@ -6888,37 +7243,7 @@
   TC_timeout ∈ {0; 100}
   memory_type ∈ {code_e; data_e}
   memory_transfer_buffer[0] ∈ [0..223]
-                        [1] ∈ [--..--]
-                        [2] ∈ [0..223]
-                        [3] ∈ [--..--]
-                        [4] ∈ [0..223]
-                        [5] ∈ [--..--]
-                        [6] ∈ [0..223]
-                        [7] ∈ [--..--]
-                        [8] ∈ [0..223]
-                        [9] ∈ [--..--]
-                        [10] ∈ [0..223]
-                        [11] ∈ [--..--]
-                        [12] ∈ [0..223]
-                        [13] ∈ [--..--]
-                        [14] ∈ [0..223]
-                        [15] ∈ [--..--]
-                        [16] ∈ [0..223]
-                        [17] ∈ [--..--]
-                        [18] ∈ [0..223]
-                        [19] ∈ [--..--]
-                        [20] ∈ [0..223]
-                        [21] ∈ [--..--]
-                        [22] ∈ [0..223]
-                        [23] ∈ [--..--]
-                        [24] ∈ [0..223]
-                        [25] ∈ [--..--]
-                        [26] ∈ [0..223]
-                        [27] ∈ [--..--]
-                        [28] ∈ [0..223]
-                        [29] ∈ [--..--]
-                        [30] ∈ [0..223]
-                        [31] ∈ [--..--]
+                        [1..31] ∈ [--..--]
   address_MSB ∈ [--..--]
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
@@ -6938,9 +7263,9 @@
   mail_message[0] ∈ [0..54512],0%16
               [1..7] ∈ {0}
   mail_count[0..7] ∈ {0}
-  tc_msb ∈ {0; 1; 2; 3; 212}
-  tc_lsb ∈ {0; 64; 128; 192; 240}
-  tc_word ∈ [0..54512],0%16
+  tc_msb ∈ {1; 2; 3}
+  tc_lsb ∈ {0; 64; 128; 192}
+  tc_word ∈ [448..960],0%64
   tm_msb ∈ {0; 1; 2; 3}
   tm_lsb ∈ [1..127]
   tc_timer_overflow ∈ {0}
@@ -6991,8 +7316,8 @@
               {.event_counter[0..3][0..9]; .not_used; .counter_checksum; .event[0..1260]} ∈
               {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -7022,7 +7347,10 @@
   octets ∈ [0..2147483646],0%2
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -7307,7 +7635,7 @@
                 .coefficient[4] ∈ {5}
                 .not_used ∈ {0}
   TC_state ∈ {TC_handling_e; memory_dump_e}
-  telemetry_pointer ∈ {{ &data_memory + [8259..65535],1%2 }}
+  telemetry_pointer ∈ {{ &data_memory + [8275..65535],1%2 }}
   telemetry_end_pointer ∈ {{ (unsigned char *)&data_memory[8289] }}
   read_memory_checksum ∈ [--..--]
   previous_TC.TC_word ∈ {0; 49217; 65535}
@@ -7441,17 +7769,16 @@
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   180 functions analyzed (out of 191): 94% coverage.
-  In these functions, 3212 statements reached (out of 3243): 99% coverage.
+  In these functions, 3209 statements reached (out of 3243): 98% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    1 warning
+    by the Frama-C kernel:    0 errors    2 warnings
   ----------------------------------------------------------------------------
-  33 alarms generated by the analysis:
+  32 alarms generated by the analysis:
       16 accesses out of bounds index
        5 integer overflows
        4 invalid memory accesses
-       1 invalid shift
        1 access to uninitialized left-values
        6 others
   ----------------------------------------------------------------------------
@@ -7460,5 +7787,5 @@
     Preconditions   373 valid     0 unknown     0 invalid    373 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-104.27user 1.55system 1:45.85elapsed 99%CPU (0avgtext+0avgdata 1105580maxresident)k
-0inputs+17608outputs (0major+290854minor)pagefaults 0swaps
+1725.99user 27.26system 29:13.57elapsed 99%CPU (0avgtext+0avgdata 11626440maxresident)k
+0inputs+17624outputs (0major+2960642minor)pagefaults 0swaps

@@ -18,6 +18,20 @@
   Incorrect type for argument 3. The argument will be cast from int to unsigned int.
 [variadic:typing] examples/example2.c:131: Warning: 
   Incorrect type for argument 5. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 2 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   s_pTest_str ∈
@@ -951,10 +965,10 @@
 [eva:alarm] miniz.c:152: Warning: 
   out of bounds read. assert \valid_read(pByte_buf + 0);
 [eva] miniz.c:150: starting to merge loop iterations
-[kernel] miniz.c:142: more than 200(512) elements to enumerate. Approximating.
-[kernel] miniz.c:143: more than 200(512) elements to enumerate. Approximating.
-[kernel] miniz.c:144: more than 200(512) elements to enumerate. Approximating.
-[kernel] miniz.c:145: more than 200(512) elements to enumerate. Approximating.
+[kernel] miniz.c:142: more than 10(512) elements to enumerate. Approximating.
+[kernel] miniz.c:143: more than 10(512) elements to enumerate. Approximating.
+[kernel] miniz.c:144: more than 10(512) elements to enumerate. Approximating.
+[kernel] miniz.c:145: more than 10(512) elements to enumerate. Approximating.
 [eva:alarm] miniz_zip.c:3234: Warning: 
   function strlen: precondition 'valid_string_s' got status unknown.
 [eva:alarm] miniz_zip.c:3241: Warning: 
@@ -1151,9 +1165,9 @@
 [eva] miniz_tdef.c:262: starting to merge loop iterations
 [eva] miniz_tdef.c:236: starting to merge loop iterations
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing out of bounds index. assert num_used_syms < TDEFL_MAX_HUFF_SYMBOLS;
 [eva:alarm] miniz_tdef.c:110: Warning: 
@@ -1188,7 +1202,7 @@
 [eva:alarm] miniz_tdef.c:126: Warning: 
   invalid RHS operand for shift. assert 0 ≤ pass_shift < 32;
 [kernel] miniz_tdef.c:110: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + 0)->m_key);
 [eva:alarm] miniz_tdef.c:147: Warning: 
@@ -1219,25 +1233,25 @@
   (tmp_2 from leaf++)
 [eva] miniz_tdef.c:150: starting to merge loop iterations
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:158: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:161: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:165: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:152: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [eva:alarm] miniz_tdef.c:154: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:155: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:161: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:162: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:169: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + next)->m_key);
 [eva:alarm] miniz_tdef.c:169: Warning: 
@@ -1246,17 +1260,17 @@
 [eva:alarm] miniz_tdef.c:169: Warning: 
   out of bounds read. assert \valid_read(&(A + (A + next)->m_key)->m_key);
 [kernel] miniz_tdef.c:169: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:176: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + root)->m_key);
 [eva] miniz_tdef.c:176: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:178: Warning: 
   signed overflow. assert used + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:183: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva] miniz_tdef.c:181: starting to merge loop iterations
 [kernel] miniz_tdef.c:183: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:183: Warning: 
   out of bounds write. assert \valid(&(A + tmp_3)->m_key);
                        (tmp_3 from next--)
@@ -1268,13 +1282,13 @@
 [eva:alarm] miniz_tdef.c:187: Warning: 
   signed overflow. assert dpth + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:152: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&(pSyms + i)->m_key);
 [eva:alarm] miniz_tdef.c:247: Warning: 
@@ -1313,7 +1327,7 @@
   accessing out of bounds index.
   assert code_size < (int)(TDEFL_MAX_SUPPORTED_HUFF_CODESIZE + 1);
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:351: starting to merge loop iterations
 [eva] miniz_tdef.c:354: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:383: Warning: 
@@ -1639,7 +1653,7 @@
 [eva] miniz_tdef.c:407: starting to merge loop iterations
 [eva] miniz_tdef.c:643: starting to merge loop iterations
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:671: Warning: 
   pointer comparison.
   assert
@@ -1688,7 +1702,6 @@
   assert ¬\dangling(&pArray->m_p);
 [eva:alarm] miniz_zip.c:355: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] miniz_zip.c:355: too many locations to update in array. Approximating.
 [eva] miniz.c:179: allocating variable __realloc_miniz_def_realloc_func_l179_4
 [eva] miniz.c:179: allocating variable __realloc_miniz_def_realloc_func_l179_5
 [eva:alarm] miniz_zip.c:355: Warning: 
@@ -22998,7 +23011,7 @@
 [eva:alarm] miniz_zip.c:482: Warning: 
   pointer comparison. assert \pointer_comparable((void *)pL, (void *)pE);
 [kernel] miniz_zip.c:517: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva:alarm] miniz_zip.c:518: Warning: 
   accessing uninitialized left-value. assert \initialized(pIndices + child);
 [eva:alarm] miniz_zip.c:518: Warning: 
@@ -23058,8 +23071,9 @@
   out of bounds read. assert \valid_read(pIndices + root_0);
 [eva:alarm] miniz_zip.c:540: Warning: 
   out of bounds write. assert \valid(pIndices + root_0);
+[kernel] miniz_zip.c:537: more than 10(15) elements to enumerate. Approximating.
 [kernel] miniz_zip.c:537: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [eva] miniz_zip.c:529: starting to merge loop iterations
 [eva] using specification for function printf_va_4
 [eva:alarm] miniz_zip.c:1083: Warning: 
@@ -23532,13 +23546,13 @@
 [eva:alarm] miniz.c:145: Warning: 
   out of bounds read. assert \valid_read(pByte_buf + 3);
 [kernel] miniz.c:142: 
-  more than 200(1073741824) elements to enumerate. Approximating.
+  more than 10(1073741824) elements to enumerate. Approximating.
 [kernel] miniz.c:143: 
-  more than 200(1073741824) elements to enumerate. Approximating.
+  more than 10(1073741824) elements to enumerate. Approximating.
 [kernel] miniz.c:144: 
-  more than 200(1073741824) elements to enumerate. Approximating.
+  more than 10(1073741824) elements to enumerate. Approximating.
 [kernel] miniz.c:145: 
-  more than 200(1073741823) elements to enumerate. Approximating.
+  more than 10(1073741823) elements to enumerate. Approximating.
 [eva:alarm] miniz_zip.c:1484: Warning: 
   accessing uninitialized left-value. assert \initialized(&file_stat.m_crc32);
 [eva:alarm] miniz_zip.c:1495: Warning: 
@@ -24663,7 +24677,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[scope:rm_asserts] removing 456 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈
@@ -27259,6 +27272,14 @@
      [13] ∈ {0; 3}
      [14] ∈ {0; 45}
      [15..255] ∈ {0}
+[kernel] miniz_zip.c:2597: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] miniz_zip.c:2598: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] miniz_zip.c:2599: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] miniz_zip.c:2600: 
+  more than 10(14) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function mz_write_le32:
   central_dir_header[0] ∈ {80}
                     [1] ∈ {75}
@@ -56895,32 +56916,44 @@
                                           [--..--] or UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_26[0..17179869179] ∈
                                           [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -68052,32 +68085,44 @@
                                           [--..--] or UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_26[0..17179869179] ∈
                                           [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -96022,32 +96067,44 @@
                                           [--..--] or UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_26[0..17179869179] ∈
                                           [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -97480,32 +97537,44 @@
                                           [--..--] or UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_26[0..17179869179] ∈
                                           [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -98984,32 +99053,44 @@
                                           [--..--] or UNINITIALIZED
   __malloc_w_mz_zip_reader_read_central_dir_l757_0[0..65534] ∈
                                                   [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -100343,32 +100424,44 @@
                                           [--..--] or UNINITIALIZED
   __malloc_w_mz_zip_reader_read_central_dir_l757_0[0..65534] ∈
                                                   [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -102080,32 +102173,44 @@
                                           [--..--] or UNINITIALIZED
   __malloc_w_mz_zip_reader_read_central_dir_l757_0[0..65534] ∈
                                                   [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -103475,32 +103580,44 @@
                                           [--..--] or UNINITIALIZED
   __malloc_w_mz_zip_reader_read_central_dir_l757_0[0..65534] ∈
                                                   [--..--] or UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_27[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_27[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_28[0..17179869183] ∈
                                           [--..--] or UNINITIALIZED
                                           [17179869184..34359738359] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_29[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_29[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_30[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_30[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_31[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_31[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_32[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_32[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
-  __realloc_miniz_def_realloc_func_l179_33[0..4294967372] ∈
+  __realloc_miniz_def_realloc_func_l179_33[0..4294967362] ∈
                                           [--..--] or UNINITIALIZED
+                                          [4294967363..4294967372] ∈
+                                          {32; 99; 101; 109; 110; 111; 116} or UNINITIALIZED
                                           [4294967373..9223372036854775806] ∈
                                           UNINITIALIZED
   __realloc_miniz_def_realloc_func_l179_34[0..17179869183] ∈
@@ -103613,5 +103730,5 @@
     Preconditions   107 valid    99 unknown     0 invalid    206 total
   51% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-29.64user 0.55system 0:30.20elapsed 99%CPU (0avgtext+0avgdata 388064maxresident)k
-0inputs+29952outputs (0major+102670minor)pagefaults 0swaps
+21.04user 0.45system 0:21.50elapsed 99%CPU (0avgtext+0avgdata 382664maxresident)k
+0inputs+29960outputs (0major+101224minor)pagefaults 0swaps

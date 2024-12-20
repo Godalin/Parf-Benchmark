@@ -214,7 +214,7 @@ if __name__ == "__main__":
   
     # if 'parf' in filename or 'refine' in filename or 'sample' in filename or 'log_a' in filename:
     #     generate_parf_summary(root_dir, filename)
-    if 'default' in filename or 'official' in filename or 'final' in filename:
+    if 'default' in filename or 'official' in filename or 'final' in filename or "precision" in filename:
         generate_single_eva_summary(root_dir, filename)
     elif 'parf' in filename or 'refine' in filename or 'sample' in filename or 'log_a' in filename:
         generate_parf_summary(root_dir, filename)

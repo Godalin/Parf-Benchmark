@@ -1,5 +1,19 @@
 [kernel] Parsing semver.c (with preprocessing)
 [kernel] Parsing semver_test.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 53 (not modified).
+  option -eva-widening-delay already set to 8 (not modified).
+  option -eva-partition-history already set to 3 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel already set to 63 (not modified).
+  option -eva-plevel already set to 157 (not modified).
+  option -eva-subdivide-non-linear already set to 14 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -136,7 +150,6 @@
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva] using specification for function printf_va_6
 [eva] using specification for function printf_va_7
-[eva] semver.c:74: starting to merge loop iterations
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146_2
 [eva] semver.c:116: allocating variable __calloc_parse_slice_l116_5
 [eva] semver.c:116: allocating variable __calloc_parse_slice_l116_6
@@ -263,6 +276,7 @@
   pointer subtraction. assert \base_addr(xptr) ≡ \base_addr(lastx);
 [eva:alarm] semver.c:240: Warning: 
   pointer subtraction. assert \base_addr(yptr) ≡ \base_addr(lasty);
+[eva] semver.c:231: Trace partitioning superposing up to 100 states
 [eva] using specification for function printf_va_14
 [eva] using specification for function printf_va_15
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146_7
@@ -271,9 +285,6 @@
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146_8
 [eva] semver.c:116: allocating variable __calloc_parse_slice_l116_17
 [eva] semver.c:116: allocating variable __calloc_parse_slice_l116_18
-[eva] semver_test.c:53: starting to merge loop iterations
-[eva:alarm] semver.c:75: Warning: 
-  out of bounds read. assert \valid_read(str + i);
 [eva] using specification for function printf_va_16
 [eva] using specification for function printf_va_17
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146_9
@@ -341,6 +352,8 @@
 [eva:alarm] semver_test.c:492: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva] semver_test.c:482: starting to merge loop iterations
+[eva:alarm] semver.c:75: Warning: 
+  out of bounds read. assert \valid_read(str + i);
 [eva] using specification for function printf_va_32
 [eva] using specification for function printf_va_33
 [eva] using specification for function sprintf_va_1
@@ -374,6 +387,7 @@
 [eva:alarm] semver.c:71: Warning: 
   function strlen: precondition 'valid_string_s' got status unknown.
 [eva:loop-unroll:auto] semver.c:63: Automatic loop unrolling.
+[eva] semver.c:74: starting to merge loop iterations
 [eva:alarm] semver.c:94: Warning: 
   function strtol: precondition 'valid_string_nptr' got status unknown.
 [eva] semver.c:97: cannot properly split on \result == -1
@@ -417,8 +431,6 @@
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva] using specification for function printf_va_44
 [eva] using specification for function printf_va_45
-[eva:alarm] semver_test.c:643: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] semver_test.c:646: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva] using specification for function printf_va_46
@@ -558,7 +570,9 @@
   str[0..9] ∈ [--..--]
   str2[0..21] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function char_to_int:
-  buf ∈ [0..541]
+  buf ∈
+     {0; 97; 98; 101; 116; 195; 198; 199; 213; 214; 217; 296; 311; 314; 315;
+      412; 477}
   i ∈ {4; 5; 9; 12}
   len ∈ {4; 5; 9; 12}
   mlen ∈ {65}
@@ -876,14 +890,14 @@
 [eva:final-states] Values at end of function semver_is_valid:
   
 [eva:final-states] Values at end of function strcut:
-  len ∈ [--..--]
+  len ∈ [-26..26]
   l ∈ [0..28]
   str[0] ∈ {49}
      [1..5] ∈ {0; 46; 49; 50; 51}
   str2[0..28] ∈
       {0; 32; 35; 43; 45; 46} ∪ [49..52]
        ∪ {64; 97; 98; 101; 104; 108; 112; 116} or UNINITIALIZED
-  __retres ∈ [--..--]
+  __retres ∈ [-26..26]
 [eva:final-states] Values at end of function semver_clean:
   i ∈ [0..9223372036854775807]
   len ∈ [0..27]
@@ -1019,7 +1033,7 @@
   buf[0..149] ∈ [--..--]
   __retres ∈ [--..--]
 [eva:final-states] Values at end of function semver_parse_version:
-  len ∈ [--..--]
+  len ∈ [0..29] ∪ [18446744073709551587..18446744073709551615]
   index_0 ∈ {1; 2; 3; 4; 5}
   value ∈ [--..--]
   slice ∈
@@ -1631,7 +1645,7 @@
   __retres ∈ {0; 1}
 [eva:final-states] Values at end of function suite_runner:
   __fc_heap_status ∈ [--..--]
-  i ∈ [7..2147483647]
+  i ∈ {7; 9; 11; 13; 15; 21}
   __calloc_w_semver_parse_l146_5[0..5] ∈ [--..--]
   __calloc_w_parse_slice_l116_11[0..4] ∈ [--..--]
                                 [5] ∈ {0}
@@ -3021,8 +3035,8 @@
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   126 valid    77 unknown     0 invalid    203 total
+    Preconditions   127 valid    76 unknown     0 invalid    203 total
   62% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-12.29user 0.24system 0:12.53elapsed 99%CPU (0avgtext+0avgdata 291236maxresident)k
-0inputs+3544outputs (0major+68363minor)pagefaults 0swaps
+24.43user 0.23system 0:24.66elapsed 99%CPU (0avgtext+0avgdata 302492maxresident)k
+0inputs+3552outputs (0major+71237minor)pagefaults 0swaps

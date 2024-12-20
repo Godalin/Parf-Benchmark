@@ -9,6 +9,20 @@
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
 [variadic] src/main.c:41: Warning: 
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   Engine_maxVoltage_PARAM ∈ {24.}
@@ -284,7 +298,7 @@
 [eva:final-states] Values at end of function Timer_elapsedTime:
   __retres ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
 [eva:final-states] Values at end of function Timer_start:
-  initTimer ∈ [-3.06 .. 3.4]
+  initTimer ∈ [-3.8 .. 4.18]
   shutdownTimer ∈ {0}
 [eva:final-states] Values at end of function Timer_tick:
   initTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
@@ -464,5 +478,5 @@
     Preconditions    13 valid     1 unknown     0 invalid     14 total
   92% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.37user 0.17system 0:01.54elapsed 100%CPU (0avgtext+0avgdata 155220maxresident)k
-0inputs+6296outputs (0major+38802minor)pagefaults 0swaps
+1.39user 0.17system 0:01.57elapsed 99%CPU (0avgtext+0avgdata 156048maxresident)k
+0inputs+6296outputs (0major+39085minor)pagefaults 0swaps

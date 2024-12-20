@@ -9,6 +9,20 @@
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
 [variadic:typing] examples/example5.c:304: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 3 (not modified).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 2 (not modified).
+  option -eva-ilevel already set to 16 (not modified).
+  option -eva-plevel already set to 20 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls already set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   g_deflator ∈ {0}
@@ -1420,21 +1434,20 @@
 [eva:alarm] miniz_tinfl.c:234: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_raw_header[3]);
 [eva:alarm] miniz_tinfl.c:260: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:255: Warning: 
-  pointer comparison.
-  assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva:alarm] miniz_tinfl.c:260: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[eva] miniz_tinfl.c:248: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:260: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:251: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
-[eva] miniz_tinfl.c:251: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:255: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva] miniz_tinfl.c:248: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:222: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva] miniz_tinfl.c:255: starting to merge loop iterations
+[eva] miniz_tinfl.c:251: starting to merge loop iterations
 [eva] miniz_tinfl.c:279: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:280: Warning: 
   out of bounds write. assert \valid(tmp_16);
@@ -1451,21 +1464,11 @@
   out of bounds write. assert \valid(tmp_19);
                        (tmp_19 from p++)
 [eva] miniz_tinfl.c:285: starting to merge loop iterations
-[eva] miniz_tinfl.c:290: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:293: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[counter]);
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:296: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[2]);
+[eva:loop-unroll:auto] miniz_tinfl.c:290: Automatic loop unrolling.
 [eva:loop-unroll:auto] miniz_tinfl.c:299: Automatic loop unrolling.
 [eva] miniz_tinfl.c:296: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:300: Warning: 
-  accessing out of bounds index. assert counter < 19;
 [eva:alarm] miniz_tinfl.c:313: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[r->m_type]);
@@ -1473,8 +1476,6 @@
   accessing uninitialized left-value.
   assert \initialized(&pTable->m_code_size[i_0]);
 [eva] miniz_tinfl.c:313: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  accessing out of bounds index. assert i_0 < TINFL_MAX_HUFF_SYMBOLS_0;
 [eva] miniz_tinfl.c:317: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:328: Warning: 
   accessing uninitialized left-value.
@@ -1515,9 +1516,6 @@
 [eva] miniz_tinfl.c:326: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:348: Warning: 
   signed overflow. assert -2147483648 ≤ tree_next - 2;
-[eva:alarm] miniz_tinfl.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[1]);
 [eva:loop-unroll:auto] miniz_tinfl.c:371: Automatic loop unrolling.
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   accessing uninitialized left-value.
@@ -1545,10 +1543,6 @@
                                                                       & 1))]);
   (tmp_23 from code_len++)
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:371: Warning: 
-  invalid RHS operand for shift.
-  assert 0 ≤ tmp_23 < 64;
-  (tmp_23 from code_len++)
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   accessing uninitialized left-value.
   assert
@@ -1585,6 +1579,10 @@
   out of bounds read.
   assert \valid_read("\002\003\a" + (mz_uint32)(dist - 16));
 [eva:loop-unroll:auto] miniz_tinfl.c:382: Automatic loop unrolling.
+[eva:alarm] miniz_tinfl.c:371: Warning: 
+  invalid RHS operand for shift.
+  assert 0 ≤ tmp_23 < 64;
+  (tmp_23 from code_len++)
 [eva:alarm] miniz_tinfl.c:384: Warning: 
   accessing out of bounds index.
   assert
@@ -1598,23 +1596,39 @@
 [eva] miniz_tinfl.c:382: starting to merge loop iterations
 [eva] miniz_tinfl.c:382: starting to merge loop iterations
 [eva] miniz_tinfl.c:368: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:384: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:374: Warning: 
-  accessing out of bounds index.
-  assert
-  tmp_26 <
-  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
-  (tmp_26 from counter++)
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'separation' got status unknown.
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
 [eva] miniz_tinfl.c:304: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:311: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:312: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:313: Warning: 
+  accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
+[eva:alarm] miniz_tinfl.c:339: Warning: 
+  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
+[eva:alarm] miniz_tinfl.c:344: Warning: 
+  out of bounds read.
+  assert
+  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
+                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                     - 1)))]);
+[eva:alarm] miniz_tinfl.c:346: Warning: 
+  out of bounds write.
+  assert
+  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
+                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                - 1)))]);
+[eva:alarm] miniz_tinfl.c:354: Warning: 
+  out of bounds read.
+  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
+[eva:alarm] miniz_tinfl.c:364: Warning: 
+  out of bounds write.
+  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
 [eva:loop-unroll:auto] miniz_tinfl.c:402: Automatic loop unrolling.
@@ -1767,17 +1781,16 @@
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
 [eva] miniz_tinfl.c:238: starting to merge loop iterations
+[eva] miniz_tinfl.c:255: starting to merge loop iterations
 [eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva] miniz_tinfl.c:290: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva:alarm] miniz_tinfl.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[0]);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -1786,12 +1799,6 @@
 [eva:alarm] miniz_tinfl.c:382: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'separation' got status unknown.
 [eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
@@ -1804,6 +1811,8 @@
 [eva] miniz_tinfl.c:230: starting to merge loop iterations
 [eva] miniz_tinfl.c:230: starting to merge loop iterations
 [eva] miniz_tinfl.c:241: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:loop-unroll:auto] miniz_tinfl.c:486: Automatic loop unrolling.
@@ -1946,8 +1955,8 @@
 [eva:alarm] miniz_tinfl.c:512: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
-[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 100 states
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 100 states
 [eva] miniz_tinfl.c:512: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:570: Warning: 
   pointer comparison.
@@ -1960,8 +1969,9 @@
 [eva:alarm] miniz_tinfl.c:586: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva] miniz_tinfl.c:580: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tinfl.c:587: Automatic loop unrolling.
 [eva] miniz_tinfl.c:586: starting to merge loop iterations
+[eva] miniz_tinfl.c:580: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:600: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
@@ -2093,17 +2103,22 @@
   out of bounds read. assert \valid_read("\005\005\004" + counter);
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   accessing out of bounds index. assert counter < TINFL_MAX_HUFF_TABLES;
+[eva:alarm] miniz_tinfl.c:296: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[2]);
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   out of bounds read. assert \valid_read(tmp_21);
                       (tmp_21 from pIn_buf_cur++)
+[eva:alarm] miniz_tinfl.c:300: Warning: 
+  accessing out of bounds index. assert counter < 19;
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
-[eva:alarm] miniz_tinfl.c:311: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:312: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:313: Warning: 
-  accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
+[eva:alarm] miniz_tinfl.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[0]);
+[eva:alarm] miniz_tinfl.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[1]);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -2113,12 +2128,22 @@
   out of bounds read. assert \valid_read(pIn_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   out of bounds read. assert \valid_read(pIn_buf_cur + 1);
+[eva:alarm] miniz_tinfl.c:374: Warning: 
+  accessing out of bounds index.
+  assert
+  tmp_26 <
+  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
+  (tmp_26 from counter++)
 [eva:alarm] miniz_tinfl.c:382: Warning: 
   out of bounds read. assert \valid_read(tmp_27);
                       (tmp_27 from pIn_buf_cur++)
 [eva:alarm] miniz_tinfl.c:383: Warning: 
   out of bounds read.
   assert \valid_read("\003\003\v" + (mz_uint32)(dist - 16));
+[eva:alarm] miniz_tinfl.c:384: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
 [eva:alarm] miniz_tinfl.c:486: Warning: 
@@ -2164,6 +2189,12 @@
 [eva:alarm] miniz_tinfl.c:188: Warning: 
   signed overflow.
   assert pOut_buf_next - pOut_buf_start ≤ 9223372036854775807;
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  accessing out of bounds index. assert i_0 < TINFL_MAX_HUFF_SYMBOLS_0;
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'separation' got status unknown.
 [eva:alarm] miniz_tinfl.c:612: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_cur - pIn_buf_next;
 [eva] using specification for function printf_va_23
@@ -2182,11 +2213,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[kernel] miniz_tdef.c:158: 
-  more than 20(286) elements to enumerate. Approximating.
-[kernel] miniz_tdef.c:159: 
-  more than 20(285) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 2 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈ [--..--]
@@ -2199,9 +2225,9 @@
   buf_len ∈ {0}
   i ∈ [0..2147483647] or UNINITIALIZED
   s1 ∈ [0..65535]
-  s2 ∈ [0..65520]
+  s2 ∈ [0..65535]
   block_len ∈ [0..5552]
-  __retres ∈ [0..4293984255]
+  __retres ∈ [0..4294967295]
 [eva:final-states] Values at end of function tdefl_calculate_minimum_redundancy:
   root ∈ [-1..286] or UNINITIALIZED
   leaf ∈ [2..290] or UNINITIALIZED
@@ -2215,12 +2241,12 @@
        [1..4294967295] or UNINITIALIZED%32, bits 16 to 31 
 [eva:final-states] Values at end of function tdefl_compress_lz_codes:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37546..319355] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319351] }}
             .m_pOutput_buf ∈
@@ -2280,12 +2306,12 @@
   cur_match_len ∈ [1..258]
 [eva:final-states] Values at end of function tdefl_flush_output_buffer:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37547..319351] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319354] }}
             .m_pOutput_buf ∈
@@ -2327,7 +2353,7 @@
            [16..32] ∈ [0..2147483647]
 [eva:final-states] Values at end of function tdefl_init:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
@@ -2355,12 +2381,12 @@
        [1..4294967295] or UNINITIALIZED repeated %32, bits 16 to 9215 
 [eva:final-states] Values at end of function tdefl_optimize_huffman_table:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37546..319355] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319351] }}
             .m_pOutput_buf ∈
@@ -2406,12 +2432,12 @@
            [4..32] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_record_literal:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37548..319353] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319352] }}
             .m_pOutput_buf ∈
@@ -2443,12 +2469,12 @@
             [--..--]
 [eva:final-states] Values at end of function tdefl_record_match:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37550..319353] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319352] }}
             .m_pOutput_buf ∈
@@ -2483,12 +2509,12 @@
   s1 ∈ {0} ∪ [18..29]
 [eva:final-states] Values at end of function tdefl_start_dynamic_block:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37546..319355] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319351] }}
             .m_pOutput_buf ∈
@@ -2551,12 +2577,12 @@
   s_outbuf[0..524287] ∈ [--..--]
 [eva:final-states] Values at end of function tdefl_start_static_block:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37546..319355] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319351] }}
             .m_pOutput_buf ∈
@@ -2596,12 +2622,12 @@
   s_outbuf[0..524287] ∈ [--..--]
 [eva:final-states] Values at end of function tdefl_compress_block:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37546..319355] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319351] }}
             .m_pOutput_buf ∈
@@ -2639,12 +2665,12 @@
   s_outbuf[0..524287] ∈ [--..--]
 [eva:final-states] Values at end of function tdefl_flush_block:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator.m_lz_code_buf[1] }}
             .m_pLZ_flags ∈ {{ &g_deflator.m_lz_code_buf[0] }}
             .m_pOutput_buf ∈
@@ -2696,8 +2722,8 @@
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37547..319351] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319354] }}
             .m_pOutput_buf ∈
@@ -2739,12 +2765,12 @@
   __retres ∈ {0; 1}
 [eva:final-states] Values at end of function tdefl_compress_normal:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37547..319351] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319354] }}
             .m_pOutput_buf ∈
@@ -2781,12 +2807,12 @@
   __retres ∈ {0; 1}
 [eva:final-states] Values at end of function tdefl_compress:
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [4097..544768]
+            .m_flags ∈ [4096..546268]
             .m_max_probes[0] ∈ [1..1366]
             .m_max_probes[1] ∈ [1..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ &g_deflator + [37547..319351] }}
             .m_pLZ_flags ∈ {{ &g_deflator + [37546..319354] }}
             .m_pOutput_buf ∈
@@ -2827,18 +2853,15 @@
           {.m_zhdr0; .m_zhdr1} ∈ [0..255] or UNINITIALIZED
           .m_z_adler32 ∈ [--..--] or UNINITIALIZED
           .m_final ∈ {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
-          .m_type ∈ [--..--] or UNINITIALIZED
-          .m_check_adler32 ∈ [0..4293984255] or UNINITIALIZED
+          {.m_type; .m_check_adler32} ∈ [--..--] or UNINITIALIZED
           {.m_dist; .m_counter} ∈ [--..--]
           .m_num_extra ∈ [0..13]
-          .m_table_sizes[0..2] ∈ [--..--] or UNINITIALIZED
+          .m_table_sizes[0] ∈ [0..288] or UNINITIALIZED
+          .m_table_sizes[1..2] ∈ [0..2147483647] or UNINITIALIZED
           .m_bit_buf ∈ [0..9223372036854775807]
           .m_dist_from_out_buf_start ∈ [--..--]
-          .m_tables[0].m_code_size[0..287] ∈ [0..15] or UNINITIALIZED
-          {.m_tables{[0]{.m_look_up[0..1023]; .m_tree[0..575]}; [1..2]}; .m_raw_header[0..3]} ∈
+          {.m_tables[0..2]; .m_raw_header[0..3]; .m_len_codes[0..456]; .[bits 87976 to 87999]} ∈
           [--..--] or UNINITIALIZED
-          {.m_len_codes[0..456]; .[bits 87976 to 87999]#} ∈
-          [0..15] or UNINITIALIZED repeated %8 
   in_bytes_0 ∈ [--..--]
   out_bytes_0 ∈ [--..--]
   status ∈
@@ -2853,8 +2876,8 @@
   bit_buf ∈ [--..--] or UNINITIALIZED
   pIn_buf_cur ∈ {{ &s_inbuf + [0..--] }}
   pIn_buf_end ∈ {{ &s_inbuf + [0..--] }}
-  pOut_buf_cur ∈ {{ &s_outbuf + [0..18446744073709551614] }}
-  pOut_buf_end ∈ {{ &s_outbuf + [1..46116860184273879037] }}
+  pOut_buf_cur ∈ {{ &s_outbuf + [0..--] }}
+  pOut_buf_end ∈ {{ &s_outbuf + [1..--] }}
   out_buf_size_mask ∈ [--..--]
   dist_from_out_buf_start ∈ [--..--] or UNINITIALIZED
   s_outbuf[0..524287] ∈ [--..--]
@@ -2867,12 +2890,12 @@
   __fc_errno ∈ [--..--]
   __fc_fopen[0..15] ∈ [--..--]
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [0..544768]
+            .m_flags ∈ [0..546268]
             .m_max_probes[0] ∈ [0..1366]
             .m_max_probes[1] ∈ [0..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ NULL ; &g_deflator + [37547..319351] }}
             .m_pLZ_flags ∈ {{ NULL ; &g_deflator + [37546..319354] }}
             .m_pOutput_buf ∈
@@ -2892,8 +2915,7 @@
             .m_finished ∈ {0; 1}
             .m_block_index ∈ [--..--]
             .m_wants_to_finish ∈ {0; 1}
-            .m_prev_return_status ∈
-            {TDEFL_STATUS_BAD_PARAM; TDEFL_STATUS_OKAY; TDEFL_STATUS_DONE}
+            .m_prev_return_status ∈ [-2147483648..1]
             .m_pIn_buf ∈ {{ NULL ; &s_inbuf + [0..--] }}
             .m_pOut_buf ∈ {{ NULL ; &s_outbuf + [0..--] }}
             {.m_pIn_buf_size; .m_pOut_buf_size} ∈ {0} or ESCAPINGADDR
@@ -2949,12 +2971,12 @@
   __fc_errno ∈ [--..--]
   __fc_fopen[0..15] ∈ [--..--]
   g_deflator{.m_pPut_buf_func; .m_pPut_buf_user} ∈ {0}
-            .m_flags ∈ [0..544768]
+            .m_flags ∈ [0..546268]
             .m_max_probes[0] ∈ [0..1366]
             .m_max_probes[1] ∈ [0..342]
             .m_greedy_parsing ∈ {0; 1}
-            .m_adler32 ∈ [0..4293984255]
-            {.m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈ [--..--]
+            {.m_adler32; .m_lookahead_pos; .m_lookahead_size; .m_dict_size} ∈
+            [--..--]
             .m_pLZ_code_buf ∈ {{ NULL ; &g_deflator + [37547..319351] }}
             .m_pLZ_flags ∈ {{ NULL ; &g_deflator + [37546..319354] }}
             .m_pOutput_buf ∈
@@ -2974,8 +2996,7 @@
             .m_finished ∈ {0; 1}
             .m_block_index ∈ [--..--]
             .m_wants_to_finish ∈ {0; 1}
-            .m_prev_return_status ∈
-            {TDEFL_STATUS_BAD_PARAM; TDEFL_STATUS_OKAY; TDEFL_STATUS_DONE}
+            .m_prev_return_status ∈ [-2147483648..1]
             .m_pIn_buf ∈ {{ NULL ; &s_inbuf + [0..--] }}
             .m_pOut_buf ∈ {{ NULL ; &s_outbuf + [0..--] }}
             {.m_pIn_buf_size; .m_pOut_buf_size} ∈ {0} or ESCAPINGADDR
@@ -2996,9 +3017,9 @@
     by the Eva analyzer:      0 errors    8 warnings
     by the Frama-C kernel:    0 errors    0 warnings
   ----------------------------------------------------------------------------
-  380 alarms generated by the analysis:
-     122 invalid memory accesses
-      63 accesses to uninitialized left-values
+  386 alarms generated by the analysis:
+     129 invalid memory accesses
+      62 accesses to uninitialized left-values
       61 accesses out of bounds index
       45 integer overflows
       24 invalid shifts
@@ -3006,8 +3027,8 @@
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   107 valid    42 unknown     0 invalid    149 total
-  71% of the logical properties reached have been proven.
+    Preconditions   110 valid    39 unknown     0 invalid    149 total
+  73% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-76.90user 0.94system 1:17.85elapsed 99%CPU (0avgtext+0avgdata 723628maxresident)k
-0inputs+9704outputs (0major+186171minor)pagefaults 0swaps
+43.54user 0.60system 0:44.14elapsed 99%CPU (0avgtext+0avgdata 605800maxresident)k
+0inputs+9704outputs (0major+154297minor)pagefaults 0swaps

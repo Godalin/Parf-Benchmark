@@ -417,6 +417,20 @@
   First declaration was at miniz_zip.h:383
   Current declaration is at miniz_zip.h:383
   Current declaration is unused, silently removing it
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 4 (not modified).
+  option -eva-auto-loop-unroll already set to 27 (not modified).
+  option -eva-widening-delay already set to 5 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 18 (not modified).
+  option -eva-ilevel already set to 36 (not modified).
+  option -eva-plevel already set to 71 (not modified).
+  option -eva-subdivide-non-linear already set to 10 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -938,129 +952,146 @@
   out of bounds write. assert \valid(color + 0);
 [kernel] examples/example6.c:118: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
+[eva:loop-unroll:partial] examples/example6.c:98: loop not completely unrolled
 [eva] examples/example6.c:110: starting to merge loop iterations
 [eva] examples/example6.c:98: starting to merge loop iterations
 [kernel] examples/example6.c:118: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4088) locations to update in array. Approximating.
 [kernel] examples/example6.c:119: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4088) locations to update in array. Approximating.
 [kernel] examples/example6.c:120: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4088) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(4092) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(4092) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(4092) locations to update in array. Approximating.
+[eva] examples/example6.c:110: Trace partitioning superposing up to 100 states
+[eva:loop-unroll:partial] examples/example6.c:92: loop not completely unrolled
+[kernel] examples/example6.c:118: 
+  more than 71(8188) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(8188) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(8188) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(12284) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(12284) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(12284) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(16380) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(16380) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(16380) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(20476) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(20476) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(20476) locations to update in array. Approximating.
+[eva] examples/example6.c:110: Trace partitioning superposing up to 200 states
+[kernel] examples/example6.c:118: 
+  more than 71(24572) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(24572) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(24572) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(28668) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(28668) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(28668) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(49148) locations to update in array. Approximating.
+[eva] examples/example6.c:110: Trace partitioning superposing up to 300 states
+[kernel] examples/example6.c:118: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(57340) locations to update in array. Approximating.
+[eva] examples/example6.c:92: starting to merge loop iterations
+[kernel] examples/example6.c:118: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(65532) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(65532) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(65532) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(69628) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(69628) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(69628) locations to update in array. Approximating.
+[kernel] examples/example6.c:118: 
+  more than 71(73724) locations to update in array. Approximating.
+[kernel] examples/example6.c:119: 
+  more than 71(73724) locations to update in array. Approximating.
+[kernel] examples/example6.c:120: 
+  more than 71(73724) locations to update in array. Approximating.
+[eva:loop-unroll:partial] examples/example6.c:110: loop not completely unrolled
+[eva] examples/example6.c:110: Trace partitioning superposing up to 400 states
 [eva:alarm] examples/example6.c:112: Warning: 
   non-finite double value.
   assert \is_finite(\mul_double(\mul_double((double)2, Zx), Zy));
 [eva:alarm] examples/example6.c:115: Warning: 
   non-finite double value. assert \is_finite(\mul_double(Zy, Zy));
 [kernel] examples/example6.c:118: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(16760828) locations to update in array. Approximating.
 [kernel] examples/example6.c:119: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(16760828) locations to update in array. Approximating.
 [kernel] examples/example6.c:120: 
-  more than 36(4095) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(8191) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(8191) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(8191) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(8192) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(8192) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(8192) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(12287) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(12287) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(12287) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(12288) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(12288) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(12288) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(16383) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(16383) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(16383) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(16384) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(16384) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(16384) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(20479) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(20479) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(20479) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(20480) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(20480) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(20480) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(24575) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(24575) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(24575) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(24576) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(24576) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(24576) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(28671) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(28671) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(28671) locations to update in array. Approximating.
-[eva] examples/example6.c:92: starting to merge loop iterations
-[kernel] examples/example6.c:118: 
-  more than 36(28672) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(28672) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(28672) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(32767) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(32767) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(32767) locations to update in array. Approximating.
-[eva] examples/example6.c:110: Trace partitioning superposing up to 100 states
-[kernel] examples/example6.c:118: 
-  more than 36(32768) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(32768) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(32768) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(36863) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(36863) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(36863) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(16773120) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(16773120) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(16773120) locations to update in array. Approximating.
-[kernel] examples/example6.c:118: 
-  more than 36(16777215) locations to update in array. Approximating.
-[kernel] examples/example6.c:119: 
-  more than 36(16777215) locations to update in array. Approximating.
-[kernel] examples/example6.c:120: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(16760828) locations to update in array. Approximating.
+[eva:loop-unroll:partial] examples/example6.c:131: loop not completely unrolled
+[eva:alarm] examples/example6.c:135: Warning: 
+  accessing uninitialized left-value. assert \initialized(color_0 + 0);
+[eva:alarm] examples/example6.c:135: Warning: 
+  accessing uninitialized left-value. assert \initialized(color_0 + 1);
 [eva:alarm] examples/example6.c:45: Warning: 
   overflow in conversion from floating-point to integer. assert -1 < X;
 [eva:alarm] examples/example6.c:46: Warning: 
@@ -1073,396 +1104,681 @@
   overflow in conversion from floating-point to integer. assert -1 < X;
 [eva:alarm] examples/example6.c:50: Warning: 
   overflow in conversion from floating-point to integer. assert -1 < X;
-[eva:alarm] examples/example6.c:135: Warning: 
-  accessing uninitialized left-value. assert \initialized(color_0 + 0);
-[eva:alarm] examples/example6.c:135: Warning: 
-  accessing uninitialized left-value. assert \initialized(color_0 + 1);
 [eva] examples/example6.c:131: starting to merge loop iterations
 [kernel] examples/example6.c:42: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(4094) locations to update in array. Approximating.
+  more than 71(4078) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4094) elements to enumerate. Approximating.
+  more than 71(4078) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4094) elements to enumerate. Approximating.
+  more than 71(4078) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(8191) locations to update in array. Approximating.
+  more than 71(4092) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(8191) elements to enumerate. Approximating.
+  more than 71(4092) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(8191) elements to enumerate. Approximating.
+  more than 71(4092) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] examples/example6.c:129: loop not completely unrolled
 [kernel] examples/example6.c:42: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(12287) locations to update in array. Approximating.
+  more than 71(8188) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(12287) elements to enumerate. Approximating.
+  more than 71(8188) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(12287) elements to enumerate. Approximating.
+  more than 71(8188) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(16383) locations to update in array. Approximating.
+  more than 71(12284) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16383) elements to enumerate. Approximating.
+  more than 71(12284) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16383) elements to enumerate. Approximating.
+  more than 71(12284) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(20479) locations to update in array. Approximating.
+  more than 71(16380) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(20479) elements to enumerate. Approximating.
+  more than 71(16380) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(20479) elements to enumerate. Approximating.
+  more than 71(16380) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(24575) locations to update in array. Approximating.
+  more than 71(20476) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(24575) elements to enumerate. Approximating.
+  more than 71(20476) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(24575) elements to enumerate. Approximating.
+  more than 71(20476) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(28671) locations to update in array. Approximating.
+  more than 71(24572) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(28671) elements to enumerate. Approximating.
+  more than 71(24572) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(28671) elements to enumerate. Approximating.
+  more than 71(24572) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(32767) locations to update in array. Approximating.
+  more than 71(28668) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(32767) elements to enumerate. Approximating.
+  more than 71(28668) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(32767) elements to enumerate. Approximating.
+  more than 71(28668) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(32764) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(32764) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(32764) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(36860) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(36860) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(36860) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(40956) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(40956) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(40956) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(45052) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(45052) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(45052) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(49148) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(49148) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(49148) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(53244) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(53244) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(53244) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(57340) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(57340) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(57340) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(61436) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(61436) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(61436) elements to enumerate. Approximating.
 [eva] examples/example6.c:129: starting to merge loop iterations
 [kernel] examples/example6.c:42: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(36863) locations to update in array. Approximating.
+  more than 71(65532) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(36863) elements to enumerate. Approximating.
+  more than 71(65532) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(36863) elements to enumerate. Approximating.
+  more than 71(65532) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(40959) locations to update in array. Approximating.
+  more than 71(69628) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(40959) elements to enumerate. Approximating.
+  more than 71(69628) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(40959) elements to enumerate. Approximating.
+  more than 71(69628) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(4095) locations to update in array. Approximating.
+  more than 71(73724) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4095) elements to enumerate. Approximating.
+  more than 71(73724) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(4095) elements to enumerate. Approximating.
+  more than 71(73724) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:45: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:46: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:47: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:48: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:49: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:50: 
-  more than 36(16777215) locations to update in array. Approximating.
+  more than 71(77820) locations to update in array. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16777215) elements to enumerate. Approximating.
+  more than 71(77820) elements to enumerate. Approximating.
 [kernel] examples/example6.c:42: 
-  more than 36(16777215) elements to enumerate. Approximating.
+  more than 71(77820) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:45: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:48: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:49: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:50: 
+  more than 71(16760828) locations to update in array. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(16760828) elements to enumerate. Approximating.
+[kernel] examples/example6.c:42: 
+  more than 71(16760828) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:1478: 
   allocating variable __malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478
 [eva] FRAMAC_SHARE/libc/string.h:134: 
@@ -1471,7 +1787,9 @@
   allocating variable __malloc_tdefl_write_image_to_png_file_in_memory_ex_l1488
 [eva] FRAMAC_SHARE/libc/string.h:101: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
+[eva:loop-unroll:partial] miniz_tdef.c:1494: loop not completely unrolled
 [eva] miniz_tdef.c:1494: starting to merge loop iterations
+[eva:loop-unroll:partial] miniz_tdef.c:1403: loop not completely unrolled
 [eva] miniz_tdef.c:1400: starting to merge loop iterations
 [eva] miniz_tdef.c:1404: 
   allocating variable __realloc_tdefl_output_buffer_putter_l1404
@@ -1483,11 +1801,12 @@
 [eva:loop-unroll:auto] miniz.c:58: Automatic loop unrolling.
 [eva:locals-escaping] miniz_tdef.c:1500: Warning: 
   locals {in_buf_size} escaping the scope of tdefl_compress_buffer through __malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478
+[eva:loop-unroll:partial] miniz_tdef.c:1123: loop not completely unrolled
+[eva] miniz_tdef.c:1115: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:1117: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp_1);
   (tmp_1 from pSrc++)
-[eva] miniz_tdef.c:1115: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:1117: Warning: 
   out of bounds read. assert \valid_read(tmp_1);
                       (tmp_1 from pSrc++)
@@ -1503,6 +1822,7 @@
 [eva:alarm] miniz_tdef.c:1102: Warning: 
   out of bounds read. assert \valid_read(tmp_0);
                       (tmp_0 from pSrc++)
+[eva:loop-unroll:partial] miniz_tdef.c:1110: loop not completely unrolled
 [eva] miniz_tdef.c:1100: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:779: Warning: 
   accessing uninitialized left-value.
@@ -1513,16 +1833,18 @@
 [eva:alarm] miniz_tdef.c:778: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_next[probe_pos]);
+[eva:loop-unroll:partial] miniz_tdef.c:780: loop not completely unrolled
 [eva] miniz_tdef.c:767: starting to merge loop iterations
+[eva:loop-unroll:partial] miniz_tdef.c:791: loop not completely unrolled
 [eva] miniz_tdef.c:789: starting to merge loop iterations
 [kernel] miniz_tdef.c:749: 
-  more than 36(39887) elements to enumerate. Approximating.
+  more than 71(39876) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:750: Warning: 
   accessing uninitialized left-value. assert \initialized(&ret);
 [eva:alarm] miniz_tdef.c:749: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [kernel] miniz_tdef.c:749: 
-  more than 36(39886) elements to enumerate. Approximating.
+  more than 71(39875) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:799: Warning: 
   signed overflow. assert p - s ≤ 9223372036854775807;
 [eva:alarm] miniz_tdef.c:799: Warning: 
@@ -1536,18 +1858,22 @@
 [eva:alarm] miniz_tdef.c:744: Warning: 
   accessing uninitialized left-value. assert \initialized(&ret);
 [kernel] miniz_tdef.c:749: 
-  more than 36(39893) elements to enumerate. Approximating.
+  more than 71(39890) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:749: 
-  more than 36(39892) elements to enumerate. Approximating.
+  more than 71(39889) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:799: 
-  more than 36(159575) elements to enumerate. Approximating.
+  more than 71(159575) elements to enumerate. Approximating.
+[kernel] miniz_tdef.c:799: 
+  more than 71(159574) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:1056: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status invalid.
-[eva] miniz_tdef.c:1088: starting to merge loop iterations
+[eva:loop-unroll:partial] miniz_tdef.c:1211: loop not completely unrolled
+[eva] miniz_tdef.c:1106: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tdef.c:1067: Warning: 
   accessing uninitialized left-value. assert \initialized(d->m_pLZ_flags);
 [eva:alarm] miniz_tdef.c:1043: Warning: 
   accessing uninitialized left-value. assert \initialized(d->m_pLZ_flags);
+[eva] miniz_tdef.c:1088: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:1060: Warning: 
   out of bounds write. assert \valid(d->m_pLZ_code_buf + 0);
 [eva:alarm] miniz_tdef.c:1063: Warning: 
@@ -1566,19 +1892,22 @@
   out of bounds write. assert \valid(d->m_pLZ_flags);
 [eva:alarm] miniz_tdef.c:618: Warning: 
   accessing uninitialized left-value. assert \initialized(d->m_pLZ_flags);
+[eva:loop-unroll:partial] miniz_tdef.c:236: loop not completely unrolled
 [eva] miniz_tdef.c:236: starting to merge loop iterations
 [kernel] miniz_tdef.c:239: 
-  more than 36(287) locations to update in array. Approximating.
+  more than 71(287) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 36(287) locations to update in array. Approximating.
+  more than 71(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing out of bounds index. assert num_used_syms < TDEFL_MAX_HUFF_SYMBOLS;
 [eva:alarm] miniz_tdef.c:110: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(pSyms0 + i)->m_key);
+[eva:loop-unroll:partial] miniz_tdef.c:108: loop not completely unrolled
 [eva] miniz_tdef.c:108: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tdef.c:114: Automatic loop unrolling.
 [eva:loop-unroll:auto] miniz_tdef.c:116: Automatic loop unrolling.
+[eva:loop-unroll:partial] miniz_tdef.c:120: loop not completely unrolled
 [eva] miniz_tdef.c:120: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:126: Warning: 
   accessing uninitialized left-value.
@@ -1598,12 +1927,13 @@
 [eva:alarm] miniz_tdef.c:126: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(pCur_syms + i)->m_key);
+[eva:loop-unroll:partial] miniz_tdef.c:125: loop not completely unrolled
 [eva] miniz_tdef.c:125: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:126: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(pCur_syms + i)->m_key);
 [kernel] miniz_tdef.c:110: 
-  more than 36(288) elements to enumerate. Approximating.
+  more than 71(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + 0)->m_key);
 [eva:alarm] miniz_tdef.c:147: Warning: 
@@ -1632,29 +1962,28 @@
   accessing uninitialized left-value.
   assert \initialized(&(A + tmp_2)->m_key);
   (tmp_2 from leaf++)
+[eva:loop-unroll:partial] miniz_tdef.c:150: loop not completely unrolled
 [eva] miniz_tdef.c:150: starting to merge loop iterations
 [kernel] miniz_tdef.c:154: 
-  more than 36(284) locations to update in array. Approximating.
+  more than 71(281) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:158: 
-  more than 36(284) locations to update in array. Approximating.
+  more than 71(281) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:161: 
-  more than 36(284) locations to update in array. Approximating.
+  more than 71(282) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:165: 
-  more than 36(284) locations to update in array. Approximating.
+  more than 71(282) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:152: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [eva:alarm] miniz_tdef.c:154: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:155: 
-  more than 36(288) locations to update in array. Approximating.
+  more than 71(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:161: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:162: 
-  more than 36(288) locations to update in array. Approximating.
-[kernel] miniz_tdef.c:162: 
-  more than 36(286) locations to update in array. Approximating.
+  more than 71(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 36(285) locations to update in array. Approximating.
+  more than 71(282) locations to update in array. Approximating.
 [eva:loop-unroll:auto] miniz_tdef.c:168: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:169: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + next)->m_key);
@@ -1664,58 +1993,72 @@
 [eva:alarm] miniz_tdef.c:169: Warning: 
   out of bounds read. assert \valid_read(&(A + (A + next)->m_key)->m_key);
 [kernel] miniz_tdef.c:169: 
-  more than 36(285) locations to update in array. Approximating.
+  more than 71(282) locations to update in array. Approximating.
+[eva:loop-unroll:partial] miniz_tdef.c:168: loop not completely unrolled
 [eva] miniz_tdef.c:168: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tdef.c:176: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:176: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + root)->m_key);
+[eva:loop-unroll:partial] miniz_tdef.c:179: loop not completely unrolled
 [eva] miniz_tdef.c:176: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:178: Warning: 
   signed overflow. assert used + 1 ≤ 2147483647;
 [eva:loop-unroll:auto] miniz_tdef.c:181: Automatic loop unrolling.
 [kernel] miniz_tdef.c:183: 
-  more than 36(287) locations to update in array. Approximating.
+  more than 71(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:186: Warning: 
   signed overflow. assert 2 * used ≤ 2147483647;
-[eva] miniz_tdef.c:181: starting to merge loop iterations
+[kernel] miniz_tdef.c:183: 
+  more than 71(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:183: Warning: 
   out of bounds write. assert \valid(&(A + tmp_3)->m_key);
                        (tmp_3 from next--)
+[kernel] miniz_tdef.c:183: 
+  more than 71(286) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:183: 
+  more than 71(285) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:183: 
+  more than 71(284) locations to update in array. Approximating.
+[eva:loop-unroll:partial] miniz_tdef.c:184: loop not completely unrolled
+[eva] miniz_tdef.c:181: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:183: Warning: 
   signed overflow. assert -2147483648 ≤ next - 1;
-[kernel] miniz_tdef.c:183: 
-  more than 36(288) locations to update in array. Approximating.
+[eva:loop-unroll:partial] miniz_tdef.c:188: loop not completely unrolled
+[eva] miniz_tdef.c:176: Trace partitioning superposing up to 100 states
 [eva] miniz_tdef.c:174: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:187: Warning: 
   signed overflow. assert dpth + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:152: 
-  more than 36(286) elements to enumerate. Approximating.
+  more than 71(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:154: 
-  more than 36(286) elements to enumerate. Approximating.
+  more than 71(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 36(285) elements to enumerate. Approximating.
+  more than 71(285) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 36(286) elements to enumerate. Approximating.
+  more than 71(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 36(287) elements to enumerate. Approximating.
-[eva:loop-unroll:auto] miniz_tdef.c:246: Automatic loop unrolling.
+  more than 71(287) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&(pSyms + i)->m_key);
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing out of bounds index.
   assert (pSyms + i)->m_key < (int)(1 + TDEFL_MAX_SUPPORTED_HUFF_CODESIZE);
+[eva:loop-unroll:partial] miniz_tdef.c:246: loop not completely unrolled
 [eva] miniz_tdef.c:246: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:247: Warning: 
   signed overflow. assert num_codes[(pSyms + i)->m_key] + 1 ≤ 2147483647;
+[eva:loop-unroll:auto] miniz_tdef.c:203: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:204: Warning: 
   signed overflow.
   assert *(pNum_codes + max_code_size) + *(pNum_codes + i) ≤ 2147483647;
-[eva] miniz_tdef.c:203: starting to merge loop iterations
-[eva] miniz_tdef.c:205: starting to merge loop iterations
-[eva] miniz_tdef.c:210: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tdef.c:205: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:210: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:214: Warning: 
   signed overflow. assert *(pNum_codes + (int)(i + 1)) + 2 ≤ 2147483647;
+[eva:loop-unroll:partial] miniz_tdef.c:217: loop not completely unrolled
 [eva] miniz_tdef.c:207: starting to merge loop iterations
+[eva] miniz_tdef.c:210: starting to merge loop iterations
+[eva] miniz_tdef.c:210: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tdef.c:209: Warning: 
   signed overflow. assert -2147483648 ≤ *(pNum_codes + max_code_size) - 1;
 [eva:alarm] miniz_tdef.c:213: Warning: 
@@ -1727,10 +2070,12 @@
 [eva:alarm] miniz_tdef.c:255: Warning: 
   accessing out of bounds index.
   assert (pSyms + j)->m_sym_index < TDEFL_MAX_HUFF_SYMBOLS;
-[eva] miniz_tdef.c:254: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:255: Warning: 
   out of bounds read. assert \valid_read(&(pSyms + j)->m_sym_index);
+[eva:loop-unroll:partial] miniz_tdef.c:253: loop not completely unrolled
 [eva] miniz_tdef.c:253: starting to merge loop iterations
+[eva] miniz_tdef.c:254: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tdef.c:259: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:260: Warning: 
   invalid LHS operand for left shift.
   assert 0 ≤ (int)(j + num_codes[(int)(i - 1)]);
@@ -1739,54 +2084,47 @@
   assert (int)(j + num_codes[(int)(i - 1)]) << 1 ≤ 2147483647;
 [eva:alarm] miniz_tdef.c:260: Warning: 
   signed overflow. assert j + num_codes[(int)(i - 1)] ≤ 2147483647;
-[eva] miniz_tdef.c:259: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:267: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&next_code[code_size]);
-[eva:alarm] miniz_tdef.c:267: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&next_code[code_size]);
-[eva] miniz_tdef.c:268: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tdef.c:268: Automatic loop unrolling.
+[eva:loop-unroll:partial] miniz_tdef.c:262: loop not completely unrolled
 [eva] miniz_tdef.c:262: starting to merge loop iterations
+[eva] miniz_tdef.c:268: starting to merge loop iterations
+[eva] miniz_tdef.c:268: Trace partitioning superposing up to 100 states
+[eva] miniz_tdef.c:268: Trace partitioning superposing up to 200 states
 [kernel] miniz_tdef.c:240: 
-  more than 36(288) elements to enumerate. Approximating.
+  more than 71(288) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:239: 
-  more than 36(288) locations to update in array. Approximating.
+  more than 71(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 36(288) locations to update in array. Approximating.
+  more than 71(288) locations to update in array. Approximating.
+[eva:loop-unroll:partial] miniz_tdef.c:351: loop not completely unrolled
 [eva] miniz_tdef.c:351: starting to merge loop iterations
+[eva:loop-unroll:partial] miniz_tdef.c:354: loop not completely unrolled
 [eva] miniz_tdef.c:354: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tdef.c:379: Automatic loop unrolling.
-[eva] miniz_tdef.c:366: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tdef.c:371: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:382: Automatic loop unrolling.
+[eva:loop-unroll:partial] miniz_tdef.c:371: loop not completely unrolled
+[eva] miniz_tdef.c:371: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:371: Warning: 
+  accessing out of bounds index.
+  assert tmp < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
+  (tmp from num_packed_code_sizes++)
+[eva:loop-unroll:partial] miniz_tdef.c:379: loop not completely unrolled
 [eva] miniz_tdef.c:379: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:379: Warning: 
   accessing out of bounds index.
   assert tmp_9 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_9 from num_packed_code_sizes++)
-[eva:loop-unroll:auto] miniz_tdef.c:382: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:382: Warning: 
   accessing out of bounds index.
   assert tmp_15 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_15 from num_packed_code_sizes++)
+[eva:loop-unroll:partial] miniz_tdef.c:382: loop not completely unrolled
+[eva] miniz_tdef.c:382: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:384: Warning: 
   accessing out of bounds index.
   assert tmp_19 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_19 from num_packed_code_sizes++)
-[eva:alarm] miniz_tdef.c:371: Warning: 
-  accessing out of bounds index.
-  assert tmp < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
-  (tmp from num_packed_code_sizes++)
-[eva] miniz_tdef.c:371: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:379: Warning: 
-  accessing out of bounds index.
-  assert tmp_11 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
-  (tmp_11 from num_packed_code_sizes++)
-[eva:alarm] miniz_tdef.c:379: Warning: 
-  accessing out of bounds index.
-  assert tmp_12 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
-  (tmp_12 from num_packed_code_sizes++)
-[eva] miniz_tdef.c:382: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:371: Warning: 
   accessing out of bounds index.
   assert tmp_1 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1795,6 +2133,14 @@
   accessing out of bounds index.
   assert tmp_2 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_2 from num_packed_code_sizes++)
+[eva:alarm] miniz_tdef.c:379: Warning: 
+  accessing out of bounds index.
+  assert tmp_11 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
+  (tmp_11 from num_packed_code_sizes++)
+[eva:alarm] miniz_tdef.c:379: Warning: 
+  accessing out of bounds index.
+  assert tmp_12 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
+  (tmp_12 from num_packed_code_sizes++)
 [eva:alarm] miniz_tdef.c:382: Warning: 
   accessing out of bounds index.
   assert tmp_17 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1803,9 +2149,8 @@
   accessing out of bounds index.
   assert tmp_18 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_18 from num_packed_code_sizes++)
-[eva:alarm] miniz_tdef.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&code_sizes_to_pack[i]);
+[eva:loop-unroll:partial] miniz_tdef.c:366: loop not completely unrolled
+[eva] miniz_tdef.c:366: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:388: Warning: 
   accessing out of bounds index.
   assert tmp_22 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1814,6 +2159,7 @@
   accessing out of bounds index.
   assert tmp_23 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_23 from num_packed_code_sizes++)
+[eva] miniz_tdef.c:379: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tdef.c:379: Warning: 
   accessing out of bounds index.
   assert tmp_13 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1822,6 +2168,9 @@
   accessing out of bounds index.
   assert tmp_14 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_14 from num_packed_code_sizes++)
+[eva:alarm] miniz_tdef.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&code_sizes_to_pack[i]);
 [eva:alarm] miniz_tdef.c:374: Warning: 
   accessing out of bounds index.
   assert tmp_7 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1834,6 +2183,7 @@
   accessing out of bounds index.
   assert tmp_24 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_24 from num_packed_code_sizes++)
+[eva:loop-unroll:partial] miniz_tdef.c:395: loop not completely unrolled
 [eva] miniz_tdef.c:395: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:395: Warning: 
   accessing out of bounds index.
@@ -1847,6 +2197,7 @@
   accessing out of bounds index.
   assert tmp_28 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_28 from num_packed_code_sizes++)
+[eva:loop-unroll:partial] miniz_tdef.c:399: loop not completely unrolled
 [eva] miniz_tdef.c:399: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:399: Warning: 
   accessing out of bounds index.
@@ -1864,11 +2215,14 @@
   accessing out of bounds index.
   assert tmp_33 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_33 from num_packed_code_sizes++)
-[eva:loop-unroll:auto] miniz_tdef.c:205: Automatic loop unrolling.
-[eva:loop-unroll:auto] miniz_tdef.c:210: Automatic loop unrolling.
-[eva:loop-unroll:auto] miniz_tdef.c:259: Automatic loop unrolling.
-[eva:loop-unroll:auto] miniz_tdef.c:268: Automatic loop unrolling.
-[eva] miniz_tdef.c:409: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tdef.c:236: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:108: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:125: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:150: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:246: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:262: Automatic loop unrolling.
+[eva:loop-unroll:auto] miniz_tdef.c:409: Automatic loop unrolling.
+[eva:loop-unroll:partial] miniz_tdef.c:414: loop not completely unrolled
 [eva] miniz_tdef.c:415: starting to merge loop iterations
 [eva] miniz_tdef.c:414: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:419: Warning: 
@@ -1885,9 +2239,11 @@
   (tmp_41 from packed_code_sizes_index++)
 [eva:alarm] miniz_tdef.c:423: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:loop-unroll:partial] miniz_tdef.c:423: loop not completely unrolled
+[eva:loop-unroll:partial] miniz_tdef.c:422: loop not completely unrolled
+[eva] miniz_tdef.c:417: starting to merge loop iterations
 [eva] miniz_tdef.c:421: starting to merge loop iterations
 [eva] miniz_tdef.c:423: starting to merge loop iterations
-[eva] miniz_tdef.c:417: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:419: Warning: 
   accessing out of bounds index.
   assert tmp_39 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1909,10 +2265,6 @@
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:498: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] miniz_tdef.c:504: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from pLZ_codes++)
 [eva:alarm] miniz_tdef.c:505: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:511: Warning: 
@@ -1927,21 +2279,27 @@
   accessing uninitialized left-value.
   assert \initialized(tmp_0);
   (tmp_0 from pLZ_codes++)
-[eva] miniz_tdef.c:468: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:504: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(tmp_1);
+  (tmp_1 from pLZ_codes++)
 [eva:alarm] miniz_tdef.c:471: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp);
   (tmp from pLZ_codes++)
+[eva:loop-unroll:partial] miniz_tdef.c:468: loop not completely unrolled
+[eva] miniz_tdef.c:518: Trace partitioning superposing up to 100 states
+[eva] miniz_tdef.c:468: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:536: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva] miniz_tdef.c:536: starting to merge loop iterations
-[eva] miniz_tdef.c:533: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:541: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva] miniz_tdef.c:600: cannot properly split on \result == 0
 [eva:loop-unroll:auto] miniz_tdef.c:648: Automatic loop unrolling.
+[eva:loop-unroll:partial] miniz_tdef.c:652: loop not completely unrolled
 [eva] miniz_tdef.c:654: starting to merge loop iterations
 [eva] miniz_tdef.c:652: starting to merge loop iterations
+[eva:loop-unroll:partial] miniz_tdef.c:432: loop not completely unrolled
 [eva] miniz_tdef.c:432: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:433: Warning: 
   out of bounds write. assert \valid(tmp);
@@ -1949,19 +2307,22 @@
 [eva:alarm] miniz_tdef.c:435: Warning: 
   out of bounds write. assert \valid(tmp_0);
                        (tmp_0 from p++)
+[eva:loop-unroll:partial] miniz_tdef.c:434: loop not completely unrolled
 [eva] miniz_tdef.c:434: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tdef.c:436: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:437: Warning: 
   out of bounds write. assert \valid(tmp_1);
                        (tmp_1 from p++)
-[eva] miniz_tdef.c:436: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tdef.c:438: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:439: Warning: 
   out of bounds write. assert \valid(tmp_2);
                        (tmp_2 from p++)
+[eva:loop-unroll:partial] miniz_tdef.c:228: loop not completely unrolled
 [eva] miniz_tdef.c:228: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:229: Warning: 
   signed overflow.
   assert num_codes[d->m_huff_code_sizes[table_num][i]] + 1 ≤ 2147483647;
+[eva] miniz_tdef.c:268: Trace partitioning superposing up to 300 states
 [eva:alarm] miniz_tdef.c:698: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:714: Warning: 
@@ -1977,7 +2338,6 @@
 [eva:alarm] miniz_tdef.c:265: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[table_num][i]);
-[eva] miniz_tdef.c:268: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tdef.c:468: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pLZ_codes, (void *)pLZ_code_buf_end);
@@ -2042,21 +2402,25 @@
 [eva:alarm] miniz_tdef.c:471: Warning: 
   out of bounds read. assert \valid_read(tmp);
                       (tmp from pLZ_codes++)
+[eva:loop-unroll:partial] miniz_tdef.c:538: loop not completely unrolled
+[eva] miniz_tdef.c:536: starting to merge loop iterations
+[eva] miniz_tdef.c:533: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:541: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_codes[0][256]);
 [eva:alarm] miniz_tdef.c:541: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][256]);
-[eva] miniz_tdef.c:1163: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tdef.c:1043: Warning: 
   out of bounds write. assert \valid(d->m_pLZ_flags);
-[eva] miniz_tdef.c:650: starting to merge loop iterations
 [kernel] miniz_tdef.c:239: 
-  more than 36(288) elements to enumerate. Approximating.
+  more than 71(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:1298: Warning: 
   signed overflow.
   assert d->m_pSrc - (mz_uint8 const *)pIn_buf ≤ 9223372036854775807;
+[eva:loop-unroll:partial] miniz.c:47: loop not completely unrolled
+[eva:alarm] miniz.c:55: Warning: 
+  accessing uninitialized left-value. assert \initialized(ptr + 6);
 [eva:alarm] miniz.c:56: Warning: 
   accessing uninitialized left-value. assert \initialized(ptr + 7);
 [eva:alarm] miniz.c:49: Warning: 
@@ -2071,8 +2435,6 @@
   accessing uninitialized left-value. assert \initialized(ptr + 4);
 [eva:alarm] miniz.c:54: Warning: 
   accessing uninitialized left-value. assert \initialized(ptr + 5);
-[eva:alarm] miniz.c:55: Warning: 
-  accessing uninitialized left-value. assert \initialized(ptr + 6);
 [eva] miniz.c:47: starting to merge loop iterations
 [eva:alarm] miniz.c:49: Warning: 
   out of bounds read. assert \valid_read(ptr + 0);
@@ -2083,6 +2445,7 @@
 [eva:alarm] miniz.c:59: Warning: 
   out of bounds read. assert \valid_read(tmp);
                       (tmp from ptr++)
+[eva:loop-unroll:partial] miniz.c:58: loop not completely unrolled
 [eva] miniz.c:58: starting to merge loop iterations
 [eva:alarm] miniz.c:50: Warning: 
   out of bounds read. assert \valid_read(ptr + 1);
@@ -2101,13 +2464,14 @@
 [eva:locals-escaping] miniz_tdef.c:1501: Warning: 
   locals {in_buf_size} escaping the scope of tdefl_compress_buffer through __malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478
 [kernel] miniz_tdef.c:1108: 
-  more than 36(1024) locations to update in array. Approximating.
+  more than 71(1024) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:1128: 
-  more than 36(1024) locations to update in array. Approximating.
+  more than 71(1024) locations to update in array. Approximating.
 [eva] miniz_tdef.c:1404: 
   allocating variable __realloc_tdefl_output_buffer_putter_l1404_1
 [kernel] miniz_tdef.c:1107: 
-  more than 36(1024) elements to enumerate. Approximating.
+  more than 71(1024) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] miniz_tdef.c:1498: loop not completely unrolled
 [eva] miniz_tdef.c:1498: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:1231: Warning: 
   signed overflow.
@@ -2134,6 +2498,7 @@
   accessing uninitialized left-value. assert \initialized(pByte_buf + 2);
 [eva:alarm] miniz.c:145: Warning: 
   accessing uninitialized left-value. assert \initialized(pByte_buf + 3);
+[eva:loop-unroll:partial] miniz.c:147: loop not completely unrolled
 [eva] miniz.c:140: starting to merge loop iterations
 [eva:alarm] miniz.c:142: Warning: 
   out of bounds read. assert \valid_read(pByte_buf + 0);
@@ -2148,25 +2513,25 @@
 [eva:alarm] miniz.c:152: Warning: 
   out of bounds read. assert \valid_read(pByte_buf + 0);
 [kernel] miniz.c:142: 
-  more than 36(12583941) elements to enumerate. Approximating.
+  more than 71(12583941) elements to enumerate. Approximating.
 [kernel] miniz.c:142: 
-  more than 36(4611686018427387895) elements to enumerate. Approximating.
+  more than 71(4611686018427387895) elements to enumerate. Approximating.
 [kernel] miniz.c:143: 
-  more than 36(12583941) elements to enumerate. Approximating.
+  more than 71(12583941) elements to enumerate. Approximating.
 [kernel] miniz.c:143: 
-  more than 36(4611686018427387895) elements to enumerate. Approximating.
+  more than 71(4611686018427387895) elements to enumerate. Approximating.
 [kernel] miniz.c:143: 
-  more than 36(4611686018427387894) elements to enumerate. Approximating.
+  more than 71(4611686018427387894) elements to enumerate. Approximating.
 [kernel] miniz.c:144: 
-  more than 36(12583941) elements to enumerate. Approximating.
+  more than 71(12583941) elements to enumerate. Approximating.
 [kernel] miniz.c:144: 
-  more than 36(4611686018427387895) elements to enumerate. Approximating.
+  more than 71(4611686018427387895) elements to enumerate. Approximating.
 [kernel] miniz.c:144: 
-  more than 36(4611686018427387894) elements to enumerate. Approximating.
+  more than 71(4611686018427387894) elements to enumerate. Approximating.
 [kernel] miniz.c:145: 
-  more than 36(12583941) elements to enumerate. Approximating.
+  more than 71(12583941) elements to enumerate. Approximating.
 [kernel] miniz.c:145: 
-  more than 36(4611686018427387894) elements to enumerate. Approximating.
+  more than 71(4611686018427387894) elements to enumerate. Approximating.
 [eva:loop-unroll:auto] miniz_tdef.c:1545: Automatic loop unrolling.
 [eva:alarm] miniz_tdef.c:1546: Warning: 
   out of bounds write.
@@ -2181,23 +2546,18 @@
 [eva] using specification for function fclose
 [eva] using specification for function printf_va_1
 [kernel] examples/example6.c:118: 
-  more than 36(16777216) elements to enumerate. Approximating.
+  more than 71(16777216) elements to enumerate. Approximating.
 [kernel] examples/example6.c:119: 
-  more than 36(16777216) elements to enumerate. Approximating.
+  more than 71(16777216) elements to enumerate. Approximating.
 [kernel] examples/example6.c:120: 
-  more than 36(16777216) elements to enumerate. Approximating.
-[kernel] examples/example6.c:46: 
-  more than 36(16777215) elements to enumerate. Approximating.
-[kernel] examples/example6.c:47: 
-  more than 36(16777215) elements to enumerate. Approximating.
-[kernel] miniz_tdef.c:169: 
-  more than 36(286) elements to enumerate. Approximating.
-[kernel] miniz_tdef.c:158: 
-  more than 36(286) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 8 assertion(s)
+  more than 71(16777216) elements to enumerate. Approximating.
 [eva] ====== VALUES COMPUTED ======
-[kernel] examples/example6.c:42: 
-  more than 36(16777216) elements to enumerate. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(16777208) elements to enumerate. Approximating.
+[kernel] examples/example6.c:46: 
+  more than 71(16777208) elements to enumerate. Approximating.
+[kernel] examples/example6.c:47: 
+  more than 71(16777208) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function hsv_to_rgb:
   max ∈ [2..2147483647]
   invert ∈ {0}
@@ -2208,8 +2568,48 @@
   X ∈ [-1. .. 255.]
   __malloc_main_l85[0] ∈ {255}
                    [1..2] ∈ {0}
-                   [3..5] ∈ [--..--]
-                   [6..50331647] ∈ [--..--] or UNINITIALIZED
+                   [3] ∈ {1; 255}
+                   [4..5] ∈ {0}
+                   [6] ∈ {1; 255}
+                   [7..8] ∈ {0}
+                   [9] ∈ {1; 255}
+                   [10..11] ∈ {0}
+                   [12] ∈ {1; 255}
+                   [13..14] ∈ {0}
+                   [15] ∈ {1; 255}
+                   [16..17] ∈ {0}
+                   [18] ∈ {1; 255}
+                   [19..20] ∈ {0}
+                   [21] ∈ {1; 255}
+                   [22..23] ∈ {0}
+                   [24..12287] ∈ [--..--] or UNINITIALIZED
+                   [12288] ∈ {1; 255}
+                   [12289..12290] ∈ {0}
+                   [12291] ∈ {1; 255}
+                   [12292..12293] ∈ {0}
+                   [12294] ∈ {1; 255}
+                   [12295..12296] ∈ {0}
+                   [12297] ∈ {1; 255}
+                   [12298..12299] ∈ {0}
+                   [12300..24575] ∈ [--..--] or UNINITIALIZED
+                   [24576] ∈ {1; 255}
+                   [24577..24578] ∈ {0}
+                   [24579] ∈ {1; 255}
+                   [24580..24581] ∈ {0}
+                   [24582] ∈ {1; 255}
+                   [24583..24584] ∈ {0}
+                   [24585] ∈ {1; 255}
+                   [24586..24587] ∈ {0}
+                   [24588..36863] ∈ [--..--] or UNINITIALIZED
+                   [36864] ∈ {1; 255}
+                   [36865..36866] ∈ {0}
+                   [36867] ∈ {1; 255}
+                   [36868..36869] ∈ {0}
+                   [36870] ∈ {1; 255}
+                   [36871..36872] ∈ {0}
+                   [36873] ∈ {1; 255}
+                   [36874..36875] ∈ {0}
+                   [36876..50331647] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD2:
@@ -2261,6 +2661,8 @@
       (void *)&__realloc_w_tdefl_output_buffer_putter_l1404_2 ;
       (void *)&__realloc_tdefl_output_buffer_putter_l1404_3 ;
       (void *)&__realloc_tdefl_output_buffer_putter_l1404_4 }} or ESCAPINGADDR
+[kernel] miniz_tdef.c:169: 
+  more than 71(286) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function tdefl_calculate_minimum_redundancy:
   root ∈ [-1..286] or UNINITIALIZED
   leaf ∈ [2..2147483647] or UNINITIALIZED
@@ -2354,7 +2756,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [8..--] }}
+                                                              [22..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -2381,21 +2783,29 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes[0][0..287] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383]
+                                                           .m_huff_codes[0][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[0][4..287] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][0] ∈
-                                                           [--..--]
-                                                           .m_huff_codes[1][1..31] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           [0..16383]
+                                                           .m_huff_codes[1][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[1][4..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_code_sizes[0][0..6] ∈
+                                                           .m_huff_code_sizes[0][0..17] ∈
                                                            [0..15]
-                                                           .m_huff_code_sizes[0][7..287] ∈
+                                                           .m_huff_code_sizes[0][18..287] ∈
                                                            [0..15] or UNINITIALIZED
                                                            .m_huff_code_sizes[1][0..31] ∈
                                                            [0..15]
@@ -2407,9 +2817,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -2529,12 +2939,14 @@
   syms0[0..287] ∈ [--..--] or UNINITIALIZED
   syms1[0..287] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_optimize_huffman_table:
-  i ∈ [19..32] ∪ {288}
+  i ∈ {19; 32; 288}
   j ∈ [0..2147483646],0%2
   l ∈ [-2147483648..0]
   num_codes[0..1] ∈ [0..2147483647]
            [2..6] ∈ [-2147483646..2147483647]
-           [7..15] ∈ [--..--]
+           [7] ∈ [--..--]
+           [8..14] ∈ [-2147483646..2147483647]
+           [15] ∈ [--..--]
            [16..32] ∈ [0..2147483647]
   next_code[0] ∈ UNINITIALIZED
            [1..7] ∈ [--..--]
@@ -2613,7 +3025,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [8..--] }}
+                                                              [22..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -2640,17 +3052,27 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383]
+                                                           .m_huff_codes[0][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[0][4..287] ∈
+                                                           [0..32767] or UNINITIALIZED
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_code_sizes[0][0..6] ∈
+                                                           .m_huff_code_sizes[0][0..17] ∈
                                                            [0..15]
-                                                           .m_huff_code_sizes{[0][7..287]; [1][0..287]} ∈
+                                                           .m_huff_code_sizes{[0][18..287]; [1][0..287]} ∈
                                                            [0..15] or UNINITIALIZED
                                                            .m_huff_code_sizes[2][0..287] ∈
                                                            [0..9] or UNINITIALIZED
@@ -2658,9 +3080,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -2770,11 +3192,19 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[0][1..287] ∈
+                                                           [0..32767] or UNINITIALIZED
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
@@ -2786,9 +3216,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -2901,11 +3331,19 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[0][1..287] ∈
+                                                           [0..32767] or UNINITIALIZED
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
@@ -2917,9 +3355,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -2936,8 +3374,7 @@
   rle_repeat_count ∈ {0}
   packed_code_sizes_index ∈ [--..--]
   code_sizes_to_pack[0..256] ∈ [0..15]
-                    [257..314] ∈ [0..15] or UNINITIALIZED
-                    [315] ∈ [1..15] or UNINITIALIZED
+                    [257..315] ∈ [0..15] or UNINITIALIZED
                     [316..319] ∈ UNINITIALIZED
   packed_code_sizes[0..319] ∈ [0..127] or UNINITIALIZED
   prev_code_size ∈ [0..15]
@@ -2965,13 +3402,15 @@
                                                               [37546..319351] }}
                                                            .m_pOutput_buf ∈
                                                            {{ &__malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478 +
-                                                              [234155..319351] }}
+                                                              [234156..319351] }}
                                                            .m_pOutput_buf_end ∈
                                                            {{ &__malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478.m_output_buf[85180] }}
                                                            .m_num_flags_left ∈
                                                            {1; 2; 3; 4; 5; 6;
                                                             7; 8}
-                                                           {.m_total_lz_bytes; .m_lz_code_buf_dict_pos} ∈
+                                                           .m_total_lz_bytes ∈
+                                                           [48..4294967295]
+                                                           .m_lz_code_buf_dict_pos ∈
                                                            [--..--]
                                                            .m_bits_in ∈
                                                            {0; 1; 2; 3; 4; 5;
@@ -3011,7 +3450,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [8..--] }}
+                                                              [22..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3038,11 +3477,19 @@
                                                            [--..--]
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--]
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383]
+                                                           .m_huff_codes[0][1..287] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383]
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767]
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0}
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63]
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127]
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0}
@@ -3055,19 +3502,19 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_hash[0..32767] ∈
+                                                           {.m_hash[0..32767]; .m_output_buf[0]} ∈
                                                            [--..--]
-                                                           {.m_output_buf[0..85195]; .[bits 2554800 to 2554815]} ∈
+                                                           {.m_output_buf[1..85195]; .[bits 2554800 to 2554815]} ∈
                                                            [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_start_static_block:
   i ∈ {288}
   p ∈
    {{ &__malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478 +
-      [36711..--] }}
+      [36750..--] }}
   __malloc_tdefl_write_image_to_png_file_in_memory_ex_l1478.m_pPut_buf_func ∈
                                                            {{ &tdefl_output_buffer_putter }}
                                                            .m_pPut_buf_user ∈
@@ -3142,7 +3589,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [8..--] }}
+                                                              [22..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3169,21 +3616,37 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes[0][0..287] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..127]
+                                                           .m_huff_codes[0][1] ∈
+                                                           [128..255]
+                                                           .m_huff_codes[0][2] ∈
+                                                           [0..127]
+                                                           .m_huff_codes[0][3] ∈
+                                                           [128..255]
+                                                           .m_huff_codes[0][4..287] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][0] ∈
                                                            {0}
-                                                           .m_huff_codes[1][1..31] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[1][1] ∈
+                                                           {16}
+                                                           .m_huff_codes[1][2] ∈
+                                                           {8}
+                                                           .m_huff_codes[1][3] ∈
+                                                           {24}
+                                                           .m_huff_codes[1][4..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_code_sizes[0][0..6] ∈
+                                                           .m_huff_code_sizes[0][0..17] ∈
                                                            {8}
-                                                           .m_huff_code_sizes[0][7..287] ∈
+                                                           .m_huff_code_sizes[0][18..287] ∈
                                                            [0..15] or UNINITIALIZED
                                                            .m_huff_code_sizes[1][0..31] ∈
                                                            {5}
@@ -3195,9 +3658,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -3274,7 +3737,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [8..--] }}
+                                                              [22..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3301,21 +3764,29 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes[0][0..287] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383]
+                                                           .m_huff_codes[0][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[0][4..287] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][0] ∈
-                                                           [--..--]
-                                                           .m_huff_codes[1][1..31] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           [0..16383]
+                                                           .m_huff_codes[1][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[1][4..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_code_sizes[0][0..6] ∈
+                                                           .m_huff_code_sizes[0][0..17] ∈
                                                            [0..15]
-                                                           .m_huff_code_sizes[0][7..287] ∈
+                                                           .m_huff_code_sizes[0][18..287] ∈
                                                            [0..15] or UNINITIALIZED
                                                            .m_huff_code_sizes[1][0..31] ∈
                                                            [0..15]
@@ -3327,9 +3798,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -3429,7 +3900,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [8..--] }}
+                                                              [22..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3446,21 +3917,29 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes[0][0..287] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383]
+                                                           .m_huff_codes[0][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[0][4..287] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][0] ∈
-                                                           [--..--]
-                                                           .m_huff_codes[1][1..31] ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           [0..16383]
+                                                           .m_huff_codes[1][1..3] ∈
+                                                           [0..32767]
+                                                           .m_huff_codes[1][4..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_code_sizes[0][0..6] ∈
+                                                           .m_huff_code_sizes[0][0..17] ∈
                                                            [0..15]
-                                                           .m_huff_code_sizes[0][7..287] ∈
+                                                           .m_huff_code_sizes[0][18..287] ∈
                                                            [0..15] or UNINITIALIZED
                                                            .m_huff_code_sizes[1][0..31] ∈
                                                            [0..15]
@@ -3472,9 +3951,9 @@
                                                            [--..--]
                                                            .m_lz_code_buf[1..65535] ∈
                                                            [--..--] or UNINITIALIZED
-                                                           .m_next[0..5] ∈
+                                                           .m_next[0..16] ∈
                                                            [--..--]
-                                                           .m_next[6..32767] ∈
+                                                           .m_next[17..32767] ∈
                                                            [--..--] or UNINITIALIZED
                                                            .m_hash[0..32767] ∈
                                                            [--..--]
@@ -3493,7 +3972,7 @@
   __realloc_tdefl_output_buffer_putter_l1404_3[0..18446744073709551613] ∈
                                               [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_compress_normal:
-  pSrc ∈ {{ NULL ; &z + {1} ; &__malloc_main_l85 + [7..--] }}
+  pSrc ∈ {{ NULL ; &z + {1} ; &__malloc_main_l85 + [18..--] }}
   src_buf_left ∈ [--..--]
   flush ∈ {TDEFL_NO_FLUSH; TDEFL_FINISH}
   in_buf_size ∈ [--..--]
@@ -3580,7 +4059,7 @@
                                                            {{ NULL ;
                                                               &z + {1} ;
                                                               &__malloc_main_l85 +
-                                                              [7..--] }}
+                                                              [18..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3607,11 +4086,19 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[0][1..287] ∈
+                                                           [0..32767] or UNINITIALIZED
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
@@ -3729,7 +4216,7 @@
                                                            {{ NULL ;
                                                               &z + {0; 1} ;
                                                               &__malloc_main_l85 +
-                                                              [7..--] }}
+                                                              [18..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3756,11 +4243,19 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[0][1..287] ∈
+                                                           [0..32767] or UNINITIALIZED
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
@@ -3877,7 +4372,7 @@
                                                            {{ NULL ;
                                                               &z + {0; 1} ;
                                                               &__malloc_main_l85 +
-                                                              [7..--] }}
+                                                              [18..--] }}
                                                            .m_src_buf_left ∈
                                                            [--..--]
                                                            .m_out_buf_ofs ∈
@@ -3904,11 +4399,19 @@
                                                            [--..--] or UNINITIALIZED
                                                            .m_huff_count[2][19..287] ∈
                                                            UNINITIALIZED
-                                                           .m_huff_codes{[0][0..287]; [1][0..31]} ∈
-                                                           [--..--] or UNINITIALIZED
+                                                           .m_huff_codes[0][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[0][1..287] ∈
+                                                           [0..32767] or UNINITIALIZED
+                                                           .m_huff_codes[1][0] ∈
+                                                           [0..16383] or UNINITIALIZED
+                                                           .m_huff_codes[1][1..31] ∈
+                                                           [0..32767] or UNINITIALIZED
                                                            .m_huff_codes[1][32..287] ∈
                                                            {0} or UNINITIALIZED
-                                                           .m_huff_codes[2][0..18] ∈
+                                                           .m_huff_codes[2][0] ∈
+                                                           [0..63] or UNINITIALIZED
+                                                           .m_huff_codes[2][1..18] ∈
                                                            [0..127] or UNINITIALIZED
                                                            .m_huff_codes[2][19..287] ∈
                                                            {0} or UNINITIALIZED
@@ -3995,7 +4498,7 @@
   CyMax ∈ {2.}
   PixelWidth ∈ {0.0009765625}
   PixelHeight ∈ {0.0009765625}
-  Zx ∈ [-6.5 .. 5.4990234375]
+  Zx ∈ [-10. .. 10.]
   Zy ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
   Zx2 ∈ [0. .. 10000000000.]
   Zy2 ∈ [0. .. 1.79769313486e+308]
@@ -4004,8 +4507,8 @@
   EscapeRadius ∈ {2.}
   ER2 ∈ {4.}
   pImage ∈ ESCAPINGADDR
-  Cx ∈ [-2.5 .. 1.4990234375]
-  Cy ∈ [-2. .. 1.9990234375]
+  Cx ∈ [-2.4970703125 .. 1.4990234375]
+  Cy ∈ [-1.99609375 .. 1.9990234375]
   MinIter ∈ {1}
   MaxIter ∈ [1..2147483647]
   __retres ∈ {0}
@@ -4071,8 +4574,8 @@
     by the Eva analyzer:      0 errors    3 warnings
     by the Frama-C kernel:    0 errors   18 warnings
   ----------------------------------------------------------------------------
-  182 alarms generated by the analysis:
-      78 accesses to uninitialized left-values
+  180 alarms generated by the analysis:
+      76 accesses to uninitialized left-values
       43 invalid memory accesses
       31 accesses out of bounds index
       16 integer overflows
@@ -4086,5 +4589,5 @@
     Preconditions    67 valid    18 unknown     0 invalid     85 total
   78% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-172.32user 1.23system 2:53.57elapsed 99%CPU (0avgtext+0avgdata 539512maxresident)k
-0inputs+8160outputs (0major+135256minor)pagefaults 0swaps
+909.85user 5.52system 15:15.45elapsed 99%CPU (0avgtext+0avgdata 1877996maxresident)k
+0inputs+8192outputs (0major+481544minor)pagefaults 0swaps

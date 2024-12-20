@@ -1,6 +1,20 @@
 [kernel] Parsing stream_decompress.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -59,7 +73,6 @@
   accessing uninitialized left-value. assert \initialized((ui32 *)(src + f));
 [eva:alarm] quicklz.c:217: Warning: 
   out of bounds read. assert \valid_read((ui32 *)(src + f));
-[eva:loop-unroll:partial] quicklz.c:220: loop not completely unrolled
 [eva] quicklz.c:215: starting to merge loop iterations
 [eva:alarm] quicklz.c:217: Warning: 
   out of bounds write. assert \valid((ui32 *)(dst + f));
@@ -68,7 +81,6 @@
   assert \pointer_comparable((void *)dst, (void *)last_matchstart);
 [eva:alarm] quicklz.c:689: Warning: 
   accessing uninitialized left-value. assert \initialized((ui32 *)src);
-[eva:loop-unroll:partial] quicklz.c:589: loop not completely unrolled
 [eva] quicklz.c:568: starting to merge loop iterations
 [eva:alarm] quicklz.c:117: Warning: 
   out of bounds read. assert \valid_read((ui32 *)src);
@@ -80,6 +92,7 @@
 [eva:alarm] quicklz.c:713: Warning: out of bounds write. assert \valid(dst);
 [eva:alarm] quicklz.c:713: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
+[eva] quicklz.c:702: starting to merge loop iterations
 [eva:alarm] quicklz.c:713: Warning: out of bounds read. assert \valid_read(src);
 [eva:alarm] quicklz.c:839: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
@@ -95,6 +108,7 @@
   function fwrite: precondition 'valid_ptr_block' got status unknown.
 [eva:alarm] stream_decompress.c:45: Warning: 
   function fwrite: precondition 'valid_stream' got status unknown.
+[eva] stream_decompress.c:39: starting to merge loop iterations
 [eva] using specification for function fclose
 [eva:alarm] stream_decompress.c:48: Warning: 
   function fclose: precondition 'valid_stream' got status unknown.
@@ -117,7 +131,7 @@
 [eva:final-states] Values at end of function qlz_size_header:
   n ∈ {3; 9}
 [eva:final-states] Values at end of function qlz_decompress_core:
-  src ∈ {{ &__malloc_main_l27 + [7..10400] }}
+  src ∈ {{ &__malloc_main_l27 + [3..10400] }}
   dst ∈ {{ &__malloc_main_l19 + [0..18446744073709551615] }}
   last_destination_byte ∈
                        {{ &__malloc_main_l19 + [-1..18446744073709551614] }}
@@ -193,5 +207,5 @@
     Preconditions    12 valid    13 unknown     0 invalid     25 total
   48% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.58user 0.10system 0:00.69elapsed 99%CPU (0avgtext+0avgdata 116056maxresident)k
-0inputs+2832outputs (0major+26389minor)pagefaults 0swaps
+0.48user 0.11system 0:00.60elapsed 99%CPU (0avgtext+0avgdata 109672maxresident)k
+72inputs+2832outputs (0major+24779minor)pagefaults 0swaps

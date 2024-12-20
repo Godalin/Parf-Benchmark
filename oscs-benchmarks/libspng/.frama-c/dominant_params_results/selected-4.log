@@ -10,6 +10,20 @@
   Floating-point constant 2.2f is not represented exactly. Will use 0x1.19999a0000000p1.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
 [kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history already set to 1 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   png_u32max ∈ {2147483647}
@@ -197,39 +211,39 @@
 [eva:alarm] spng.c:1090: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva] spng.c:1086: starting to merge loop iterations
-[kernel] spng.c:1088: more than 200(256) elements to enumerate. Approximating.
+[kernel] spng.c:1088: more than 10(255) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(256) locations to update in array. Approximating.
-[kernel] spng.c:1089: more than 200(256) elements to enumerate. Approximating.
+  more than 10(255) locations to update in array. Approximating.
+[kernel] spng.c:1089: more than 10(255) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(256) locations to update in array. Approximating.
-[kernel] spng.c:1090: more than 200(256) elements to enumerate. Approximating.
+  more than 10(255) locations to update in array. Approximating.
+[kernel] spng.c:1090: more than 10(255) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(256) locations to update in array. Approximating.
-[kernel] spng.c:1088: more than 200(257) elements to enumerate. Approximating.
+  more than 10(255) locations to update in array. Approximating.
+[kernel] spng.c:1088: more than 10(256) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(257) locations to update in array. Approximating.
-[kernel] spng.c:1089: more than 200(257) elements to enumerate. Approximating.
+  more than 10(256) locations to update in array. Approximating.
+[kernel] spng.c:1089: more than 10(256) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(257) locations to update in array. Approximating.
-[kernel] spng.c:1090: more than 200(257) elements to enumerate. Approximating.
+  more than 10(256) locations to update in array. Approximating.
+[kernel] spng.c:1090: more than 10(256) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(257) locations to update in array. Approximating.
+  more than 10(256) locations to update in array. Approximating.
 [eva:alarm] spng.c:1088: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1088: more than 200(641) elements to enumerate. Approximating.
+[kernel] spng.c:1088: more than 10(640) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(641) locations to update in array. Approximating.
+  more than 10(640) locations to update in array. Approximating.
 [eva:alarm] spng.c:1089: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1089: more than 200(641) elements to enumerate. Approximating.
+[kernel] spng.c:1089: more than 10(640) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(641) locations to update in array. Approximating.
+  more than 10(640) locations to update in array. Approximating.
 [eva:alarm] spng.c:1090: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1090: more than 200(641) elements to enumerate. Approximating.
+[kernel] spng.c:1090: more than 10(640) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(641) locations to update in array. Approximating.
+  more than 10(640) locations to update in array. Approximating.
 [eva:alarm] spng.c:220: Warning: 
   pointer to function with incompatible type.
   assert \valid_function(ctx->alloc.malloc_fn);
@@ -278,9 +292,9 @@
   function strstr: precondition 'valid_string_haystack' got status unknown.
 [eva] FRAMAC_SHARE/libc/string.h:243: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
-[eva] spng.c:946: starting to merge loop iterations
 [eva:alarm] spng.c:950: Warning: 
   accessing uninitialized left-value. assert \initialized(&c);
+[eva] spng.c:946: starting to merge loop iterations
 [eva:alarm] spng.c:948: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] spng.c:946: Warning: 
@@ -301,7 +315,6 @@
   out of bounds read. assert \valid_read(data + 0);
 [eva:alarm] spng.c:259: Warning: 
   out of bounds read. assert \valid_read(data + 1);
-[eva] spng.c:1417: starting to merge loop iterations
 [eva:alarm] spng.c:1419: Warning: 
   out of bounds write.
   assert \valid(&((ctx->splt_list + i_0)->entries + k_1)->red);
@@ -317,16 +330,17 @@
 [eva:alarm] spng.c:1423: Warning: 
   out of bounds write.
   assert \valid(&((ctx->splt_list + i_0)->entries + k_1)->frequency);
+[eva] spng.c:1417: starting to merge loop iterations
 [kernel] spng.c:1419: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1420: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1421: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1422: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1423: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [eva:alarm] spng.c:1431: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] spng.c:1432: Warning: 
@@ -343,7 +357,6 @@
   accessing uninitialized left-value. assert \initialized(&blue);
 [eva:alarm] spng.c:1440: Warning: 
   accessing uninitialized left-value. assert \initialized(&alpha);
-[eva] spng.c:1428: starting to merge loop iterations
 [eva:alarm] spng.c:1435: Warning: 
   out of bounds write.
   assert \valid(&((ctx->splt_list + i_0)->entries + k_1)->frequency);
@@ -359,16 +372,17 @@
 [eva:alarm] spng.c:1440: Warning: 
   out of bounds write.
   assert \valid(&((ctx->splt_list + i_0)->entries + k_1)->alpha);
+[eva] spng.c:1428: starting to merge loop iterations
 [kernel] spng.c:1435: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1437: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1438: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1439: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [kernel] spng.c:1440: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967294) locations to update in array. Approximating.
 [eva:alarm] spng.c:275: Warning: 
   accessing uninitialized left-value. assert \initialized(data + 0);
 [eva:alarm] spng.c:275: Warning: 
@@ -455,11 +469,6 @@
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] spng.c:1178: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] spng.c:826: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&sbit->grayscale_bits);
-[eva:alarm] spng.c:827: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ihdr->bit_depth);
 [eva:alarm] spng.c:831: Warning: 
   accessing uninitialized left-value. assert \initialized(&sbit->red_bits);
 [eva:alarm] spng.c:832: Warning: 
@@ -485,7 +494,11 @@
   accessing uninitialized left-value. assert \initialized(&sbit->alpha_bits);
 [eva:alarm] spng.c:858: Warning: 
   accessing uninitialized left-value. assert \initialized(&ihdr->bit_depth);
-[eva] spng.c:1046: starting to merge loop iterations
+[eva:alarm] spng.c:826: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&sbit->grayscale_bits);
+[eva:alarm] spng.c:827: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ihdr->bit_depth);
 [eva:alarm] spng.c:1359: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->n_splt);
 [eva:alarm] spng.c:1363: Warning: 
@@ -503,9 +516,9 @@
 [eva:alarm] spng.c:1375: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [kernel] spng.c:1375: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [kernel] spng.c:1375: 
-  more than 200(4294967295) elements to enumerate. Approximating.
+  more than 10(4294967295) elements to enumerate. Approximating.
 [eva:alarm] spng.c:936: Warning: 
   pointer comparison. assert \pointer_comparable((void *)str, (void *)0);
 [eva:alarm] spng.c:937: Warning: 
@@ -526,12 +539,14 @@
   pointer comparison.
   assert \pointer_comparable((void *)tmp_0, (void *)0);
   (tmp_0 from strstr(str, "  "))
+[kernel] spng.c:948: 
+  more than 10(4294967295) elements to enumerate. Approximating.
 [eva:alarm] spng.c:1383: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [kernel] spng.c:1383: 
-  more than 200(4294967295) elements to enumerate. Approximating.
+  more than 10(4294967295) elements to enumerate. Approximating.
 [kernel] spng.c:1383: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva] using specification for function strcmp
 [eva:alarm] spng.c:1390: Warning: 
   function strcmp: precondition 'valid_string_s1' got status unknown.
@@ -546,7 +561,7 @@
 [eva:alarm] spng.c:1397: Warning: 
   out of bounds write. assert \valid(&(ctx->splt_list + i_0)->n_entries);
 [kernel] spng.c:1397: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1399: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->sample_depth);
@@ -556,7 +571,7 @@
 [eva:alarm] spng.c:1402: Warning: 
   out of bounds write. assert \valid(&(ctx->splt_list + i_0)->n_entries);
 [kernel] spng.c:1402: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1406: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->n_entries);
@@ -576,11 +591,11 @@
 [eva:alarm] spng.c:1409: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->n_entries);
 [kernel] spng.c:1409: 
-  more than 200(4294967295) elements to enumerate. Approximating.
+  more than 10(4294967295) elements to enumerate. Approximating.
 [eva:alarm] spng.c:1409: Warning: 
   out of bounds write. assert \valid(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1409: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1410: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
@@ -671,48 +686,49 @@
 [eva:alarm] spng.c:1228: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&ctx->bkgd.plte_index);
+[eva] spng.c:1046: starting to merge loop iterations
 [kernel] spng.c:1419: 
-  more than 200(1844674407370955162) locations to update in array. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1420: 
-  more than 200(1844674407370955162) locations to update in array. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1421: 
-  more than 200(1844674407370955162) locations to update in array. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1422: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
+  more than 10(1844674407370955160) locations to update in array. Approximating.
 [kernel] spng.c:1423: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
+  more than 10(1844674407370955160) locations to update in array. Approximating.
 [kernel] spng.c:1435: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
+  more than 10(1844674407370955160) locations to update in array. Approximating.
 [kernel] spng.c:1437: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
+  more than 10(1844674407370955160) locations to update in array. Approximating.
 [kernel] spng.c:1438: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
+  more than 10(1844674407370955160) locations to update in array. Approximating.
 [kernel] spng.c:1439: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
+  more than 10(1844674407370955160) locations to update in array. Approximating.
 [kernel] spng.c:1440: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[eva] spng.c:1046: Trace partitioning superposing up to 100 states
+  more than 10(1844674407370955160) locations to update in array. Approximating.
+[eva] spng.c:1181: Trace partitioning superposing up to 100 states
 [eva:alarm] spng.c:235: Warning: 
   pointer to function with incompatible type.
   assert \valid_function(ctx->alloc.free_fn);
 [kernel] spng.c:1397: 
-  more than 200(4294967295) elements to enumerate. Approximating.
+  more than 10(4294967295) elements to enumerate. Approximating.
 [kernel] spng.c:1419: 
-  more than 200(1844674407370955162) elements to enumerate. Approximating.
+  more than 10(1844674407370955162) elements to enumerate. Approximating.
 [kernel] spng.c:1420: 
-  more than 200(1844674407370955162) elements to enumerate. Approximating.
+  more than 10(1844674407370955162) elements to enumerate. Approximating.
 [kernel] spng.c:1421: 
-  more than 200(1844674407370955162) elements to enumerate. Approximating.
+  more than 10(1844674407370955162) elements to enumerate. Approximating.
 [kernel] spng.c:1422: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
 [kernel] spng.c:1423: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
 [kernel] spng.c:1437: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
 [kernel] spng.c:1438: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
 [kernel] spng.c:1439: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_8
 [eva:alarm] examples/example.c:80: Warning: 
   accessing uninitialized left-value. assert \initialized(&ihdr.color_type);
@@ -741,6 +757,7 @@
   assert ¬\dangling(&ctx->splt_list);
 [eva] spng.c:230: allocating variable __realloc_spng__realloc_l230_0
 [eva] spng.c:220: allocating variable __malloc_spng__malloc_l220_2
+[eva] spng.c:1483: Trace partitioning superposing up to 100 states
 [eva:alarm] spng.c:2449: Warning: 
   division by zero. assert (unsigned long)ctx->ihdr.width ≢ 0;
 [eva:alarm] spng.c:2452: Warning: 
@@ -783,11 +800,11 @@
 [eva:alarm] spng.c:636: Warning: 
   invalid RHS operand for shift.
   assert 0 ≤ (unsigned int)(bit_depth - sbits) < 32;
-[eva] spng.c:646: starting to merge loop iterations
 [eva:alarm] spng.c:648: Warning: 
   invalid RHS operand for shift. assert 0 ≤ (int)shift_amount < 32;
 [eva:alarm] spng.c:648: Warning: 
   signed overflow. assert (int)sample_bits << (int)shift_amount ≤ 2147483647;
+[eva] spng.c:646: starting to merge loop iterations
 [eva] using specification for function abs
 [eva:alarm] spng.c:654: Warning: 
   invalid RHS operand for shift.
@@ -799,8 +816,13 @@
 [eva:alarm] spng.c:1931: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&ctx->plte.entries[i].blue);
-[eva] spng.c:1922: Trace partitioning superposing up to 100 states
-[eva] spng.c:1922: Trace partitioning superposing up to 200 states
+[eva] spng.c:1930: Trace partitioning superposing up to 100 states
+[eva] spng.c:1930: Trace partitioning superposing up to 200 states
+[eva] spng.c:1930: Trace partitioning superposing up to 300 states
+[eva] spng.c:1930: Trace partitioning superposing up to 400 states
+[eva] spng.c:1930: Trace partitioning superposing up to 500 states
+[eva] spng.c:1930: Trace partitioning superposing up to 600 states
+[eva] spng.c:1930: Trace partitioning superposing up to 700 states
 [eva:alarm] spng.c:1975: Warning: 
   function memset: precondition 'valid_s' got status unknown.
 [eva:alarm] spng.c:442: Warning: 
@@ -832,12 +854,16 @@
 [eva:alarm] spng.c:1570: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva] spng.c:1500: starting to merge loop iterations
-[kernel] spng.c:1927: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1929: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1930: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1931: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1932: more than 200(256) elements to enumerate. Approximating.
+[kernel] spng.c:1927: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1929: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1930: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1931: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1932: more than 10(256) elements to enumerate. Approximating.
+[eva] examples/example.c:113: Trace partitioning superposing up to 100 states
 [eva] using specification for function printf_va_11
+[eva:alarm] spng.c:2325: Warning: 
+  pointer to function with incompatible type.
+  assert \valid_function(free_func);
 [eva:alarm] spng.c:2293: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->exif.data);
 [eva:alarm] spng.c:2293: Warning: 
@@ -866,7 +892,6 @@
 [eva:alarm] spng.c:2304: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i)->entries);
-[eva] spng.c:2302: starting to merge loop iterations
 [eva:alarm] spng.c:2304: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&(ctx->splt_list + i)->entries);
@@ -875,24 +900,23 @@
 [eva:alarm] spng.c:2304: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&(ctx->splt_list + i)->entries);
+[eva] spng.c:2302: starting to merge loop iterations
 [kernel] spng.c:2304: 
-  more than 200(2147483648) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] spng.c:2304: 
-  more than 200(2147483649) elements to enumerate. Approximating.
+  more than 10(2147483648) elements to enumerate. Approximating.
+[kernel] spng.c:2304: 
+  more than 10(4294967294) elements to enumerate. Approximating.
 [eva:alarm] spng.c:2309: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->text_list);
 [eva:alarm] spng.c:2312: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->n_text);
 [eva:alarm] spng.c:2314: Warning: 
   out of bounds read. assert \valid_read(&(ctx->text_list + i_0)->text);
-[eva:alarm] spng.c:2325: Warning: 
-  pointer to function with incompatible type.
-  assert \valid_function(free_func);
 [eva:alarm] examples/example.c:120: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&out);
 [eva] spng.c:2314: assertion 'Eva,mem_access' got final status invalid.
-[scope:rm_asserts] removing 35 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function buffer_read_fn:
   __retres ∈ {-1; 0}
@@ -962,7 +986,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1088,7 +1115,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1206,7 +1236,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1295,7 +1328,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1384,7 +1420,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1483,7 +1522,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1577,7 +1619,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1667,7 +1712,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1766,7 +1814,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -1889,14 +1940,17 @@
                               {0; 18446744073709551615}
                               .chunk_cache_usage ∈ [--..--]
                               {.crc_action_critical; .crc_action_ancillary} ∈
-                              {0; 2}
+                              {2}
                               .ihdr{.width; .height} ∈ [--..--]
                               .ihdr{.bit_depth; .color_type; .compression_method; .filter_method; .interlace_method} ∈
                               [--..--] or UNINITIALIZED
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -2072,7 +2126,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -2166,7 +2223,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .n_splt ∈ [1..4294967295]
                               .splt_list ∈
@@ -2188,95 +2248,9 @@
                               [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function spng_ctx_free:
   __fc_heap_status ∈ [--..--]
-  ctx ∈ {{ NULL ; &__calloc_spng_ctx_new2_l2274 }} or ESCAPINGADDR
+  ctx ∈ {0} or ESCAPINGADDR
   ctx ∈ {0} or ESCAPINGADDR
   free_func ∈ {{ &free }} or UNINITIALIZED
-  __calloc_spng_ctx_new2_l2274.data_size ∈ [0..9223372036854775807]
-                              .bytes_read ∈ [--..--]
-                              .stream_buf ∈ {0}
-                              .data ∈
-                              {{ NULL + [0..18446744078004518910] ;
-                                 &__malloc_main_l34 + [0..--] }}
-                              .read_fn ∈ {{ NULL ; &buffer_read_fn }}
-                              .read_user_ptr ∈ {0}
-                              .png_buf ∈
-                              {{ NULL ;
-                                 (unsigned char const *)&__malloc_main_l34 }}
-                              .bytes_left ∈ [--..--]
-                              .last_read_size ∈ [0..4294967295]
-                              .current_chunk.offset ∈ [--..--]
-                              .current_chunk.length ∈ [0..2147483647]
-                              .current_chunk.type[0..3] ∈
-                              [--..--] or UNINITIALIZED
-                              .current_chunk.crc ∈ [--..--]
-                              .current_chunk.[bits 160 to 191] ∈ {0}
-                              .cur_chunk_bytes_left ∈ [--..--]
-                              .cur_actual_crc ∈ {0; 4; 17}
-                              .alloc.malloc_fn ∈ {{ NULL ; &malloc }}
-                              .alloc.realloc_fn ∈ {{ NULL ; &realloc }}
-                              .alloc.calloc_fn ∈ {{ NULL ; &calloc }}
-                              .alloc.free_fn ∈ {{ NULL ; &free }}
-                              .valid_state ∈ [--..--]
-                              {.streaming; .encode_only; .have_first_idat; .have_last_idat; .[bits 1093 to 1119]} ∈
-                              {0}
-                              .file{.ihdr; .plte; .chrm} ∈ [--..--]
-                              .file.iccp ∈ {0}
-                              .file{.gama; .sbit; .srgb; .text; .bkgd; .hist; .trns; .phys; .splt; .time; .offs; .exif} ∈
-                              [--..--]
-                              {.file.[bits 16 to 31]; .user} ∈ {0}
-                              .stored.ihdr ∈ [--..--]
-                              .stored.plte ∈ {0}
-                              .stored.chrm ∈ [--..--]
-                              .stored.iccp ∈ {0}
-                              .stored{.gama; .sbit; .srgb} ∈ [--..--]
-                              .stored.text ∈ {0}
-                              .stored{.bkgd; .hist; .trns; .phys; .splt; .time; .offs; .exif} ∈
-                              [--..--]
-                              .stored.[bits 16 to 31] ∈ {0}
-                              .first_idat.offset ∈ [--..--]
-                              .first_idat.length ∈ [0..2147483647]
-                              .first_idat{.type[0..3]; .crc} ∈ [--..--]
-                              .first_idat.[bits 160 to 191] ∈ {0}
-                              .last_idat.offset ∈ [--..--]
-                              .last_idat.length ∈ [0..2147483647]
-                              .last_idat.type[0..3] ∈
-                              [--..--] or UNINITIALIZED
-                              .last_idat.crc ∈ [--..--]
-                              .last_idat.[bits 160 to 191] ∈ {0}
-                              {.max_width; .max_height; .max_chunk_size} ∈
-                              {0; 2147483647}
-                              .[bits 1696 to 1727] ∈ {0}
-                              .chunk_cache_limit ∈
-                              {0; 18446744073709551615}
-                              .chunk_cache_usage ∈ [--..--]
-                              {.crc_action_critical; .crc_action_ancillary} ∈
-                              {0; 2}
-                              .ihdr{.width; .height} ∈ [--..--]
-                              .ihdr{.bit_depth; .color_type; .compression_method; .filter_method; .interlace_method} ∈
-                              [--..--] or UNINITIALIZED
-                              .ihdr.[bits 104 to 127] ∈ {0}
-                              .plte_offset ∈ [--..--]
-                              .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
-                              [--..--] or UNINITIALIZED
-                              .splt_list ∈
-                              {{ NULL + [--..--] ;
-                                 (struct spng_splt *)&__calloc_w_spng__calloc_l225 ;
-                                 (struct spng_splt *)&__realloc_w_spng__realloc_l230 ;
-                                 (struct spng_splt *)&__calloc_w_spng__calloc_l225_0 ;
-                                 (struct spng_splt *)&__realloc_w_spng__realloc_l230_0 ;
-                                 (struct spng_splt *)&__calloc_w_spng__calloc_l225_1 ;
-                                 (struct spng_splt *)&__realloc_w_spng__realloc_l230_1 }} or UNINITIALIZED or ESCAPINGADDR
-                              {.time; .offs; .exif.length; .[bits 18400 to 18431]} ∈
-                              [--..--] or UNINITIALIZED
-                              .exif.data ∈
-                              {{ NULL + [--..--] ;
-                                 &__malloc_w_spng__malloc_l220[0] ;
-                                 &__malloc_w_spng__malloc_l220_1[0] ;
-                                 &__malloc_w_spng__malloc_l220_3[0] ;
-                                 &__malloc_w_spng__malloc_l220_8[0] }} or UNINITIALIZED or ESCAPINGADDR
-                              .gamma_lut8[0..255] ∈
-                              [--..--] or UNINITIALIZED
   __calloc_w_spng__calloc_l225[0..87] ∈ [--..--] or UNINITIALIZED
                               [bits 704 to 767] ∈
                               {{ NULL + [--..--] ;
@@ -2580,7 +2554,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -2734,7 +2711,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -2892,7 +2872,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -3108,7 +3091,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0; 255}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -3229,7 +3215,10 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
@@ -3268,9 +3257,9 @@
   __fc_fopen[0..15] ∈ [--..--]
   r ∈ [-1..70]
   png ∈ {{ NULL ; &__fc_fopen + [0..120],0%8 }} or UNINITIALIZED
-  pngbuf ∈ {{ NULL ; &__malloc_main_l34[0] }} or ESCAPINGADDR
-  ctx ∈ {{ NULL ; &__calloc_spng_ctx_new2_l2274 }} or ESCAPINGADDR
-  out ∈ {{ NULL ; &__malloc_main_l106[0] }} or ESCAPINGADDR
+  pngbuf ∈ {0} or ESCAPINGADDR
+  ctx ∈ {0} or ESCAPINGADDR
+  out ∈ {0} or ESCAPINGADDR
   siz_pngbuf ∈ [-1..9223372036854775807] or UNINITIALIZED
   ihdr{.width; .height; .bit_depth; .color_type; .compression_method; .filter_method; .interlace_method} ∈
       [--..--] or UNINITIALIZED
@@ -3281,20 +3270,16 @@
   out_size ∈ [0..18446744052234715140],0%4 or UNINITIALIZED
   __fc_initial_stdout.__fc_FILE_id ∈ {1}
                      .__fc_FILE_data ∈ [--..--]
-  __malloc_main_l34[0..9223372036854775806] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l34[0..9223372036854775806] ∈ UNINITIALIZED
   __calloc_spng_ctx_new2_l2274.data_size ∈ [0..9223372036854775807]
                               .bytes_read ∈ [--..--]
                               .stream_buf ∈ {0}
-                              .data ∈
-                              {{ NULL + [0..18446744078004518910] ;
-                                 &__malloc_main_l34 + [0..--] }} or ESCAPINGADDR
+                              .data ∈ {0} or ESCAPINGADDR
                               .read_fn ∈ {{ NULL ; &buffer_read_fn }}
                               .read_user_ptr ∈ {0}
-                              .png_buf ∈
-                              {{ NULL ;
-                                 (unsigned char const *)&__malloc_main_l34 }} or ESCAPINGADDR
+                              .png_buf ∈ {0} or ESCAPINGADDR
                               .bytes_left ∈ [--..--]
-                              .last_read_size ∈ [0..4294967295]
+                              .last_read_size ∈ [0..2147483647]
                               .current_chunk.offset ∈ [--..--]
                               .current_chunk.length ∈ [0..2147483647]
                               .current_chunk.type[0..3] ∈
@@ -3327,13 +3312,8 @@
                               .first_idat.offset ∈ [--..--]
                               .first_idat.length ∈ [0..2147483647]
                               .first_idat{.type[0..3]; .crc} ∈ [--..--]
-                              .first_idat.[bits 160 to 191] ∈ {0}
-                              .last_idat.offset ∈ [--..--]
-                              .last_idat.length ∈ [0..2147483647]
-                              .last_idat.type[0..3] ∈
-                              [--..--] or UNINITIALIZED
-                              .last_idat.crc ∈ [--..--]
-                              .last_idat.[bits 160 to 191] ∈ {0}
+                              {.first_idat.[bits 160 to 191]; .last_idat} ∈
+                              {0}
                               {.max_width; .max_height; .max_chunk_size} ∈
                               {0; 2147483647}
                               .[bits 1696 to 1727] ∈ {0}
@@ -3348,24 +3328,23 @@
                               .ihdr.[bits 104 to 127] ∈ {0}
                               .plte_offset ∈ [--..--]
                               .plte.n_entries ∈ [0..715827882]
-                              {.plte.entries[0..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
+                              .plte.entries[0]{.red; .green; .blue} ∈
+                              [--..--] or UNINITIALIZED
+                              .plte.entries[0].alpha ∈ {0}
+                              {.plte.entries[1..255]; .chrm_int; .iccp; .gama; .gamma_lut; .sbit; .srgb_rendering_intent; .n_text; .text_list; .bkgd; .hist; .trns; .phys; .n_splt; .[bits 10592 to 10623]; .[bits 11424 to 11455]; .[bits 11568 to 11583]; .[bits 11616 to 11647]; .[bits 15888 to 15903]} ∈
                               [--..--] or UNINITIALIZED
                               .splt_list ∈
                               {{ NULL + [--..--] ;
                                  (struct spng_splt *)&__calloc_w_spng__calloc_l225 ;
                                  (struct spng_splt *)&__realloc_w_spng__realloc_l230 ;
                                  (struct spng_splt *)&__calloc_w_spng__calloc_l225_0 ;
-                                 (struct spng_splt *)&__realloc_w_spng__realloc_l230_0 ;
-                                 (struct spng_splt *)&__calloc_w_spng__calloc_l225_1 ;
-                                 (struct spng_splt *)&__realloc_w_spng__realloc_l230_1 }} or UNINITIALIZED or ESCAPINGADDR
+                                 (struct spng_splt *)&__realloc_w_spng__realloc_l230_0 }} or UNINITIALIZED or ESCAPINGADDR
                               {.time; .offs; .exif.length; .[bits 18400 to 18431]} ∈
                               [--..--] or UNINITIALIZED
                               .exif.data ∈
                               {{ NULL + [--..--] ;
                                  &__malloc_w_spng__malloc_l220[0] ;
-                                 &__malloc_w_spng__malloc_l220_1[0] ;
-                                 &__malloc_w_spng__malloc_l220_3[0] ;
-                                 &__malloc_w_spng__malloc_l220_8[0] }} or UNINITIALIZED or ESCAPINGADDR
+                                 &__malloc_w_spng__malloc_l220_1[0] }} or UNINITIALIZED or ESCAPINGADDR
                               .gamma_lut8[0..255] ∈
                               [--..--] or UNINITIALIZED
   __malloc_w_spng__malloc_l220[0..2147483646] ∈ [--..--] or UNINITIALIZED
@@ -3467,5 +3446,5 @@
     Preconditions   413 valid    84 unknown     0 invalid    497 total
   83% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.02user 0.21system 0:04.24elapsed 99%CPU (0avgtext+0avgdata 217116maxresident)k
-0inputs+6008outputs (0major+54183minor)pagefaults 0swaps
+5.60user 0.22system 0:05.82elapsed 99%CPU (0avgtext+0avgdata 254400maxresident)k
+0inputs+5992outputs (0major+63498minor)pagefaults 0swaps

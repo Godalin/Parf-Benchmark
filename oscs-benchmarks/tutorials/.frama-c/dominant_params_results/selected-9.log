@@ -1,6 +1,20 @@
 [kernel] Parsing /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c (with preprocessing)
 [variadic:typing] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:109: Warning: 
   Incorrect type for argument 2. The argument will be cast from uint64_t to int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -34,6 +48,20 @@
   function parse: postcondition got status unknown.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:35: Warning: 
   out of bounds read. assert \valid_read(buf + *offset);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:125: 
+  more than 10(49) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:35: 
+  more than 10(50) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:39: 
+  more than 10(50) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:50: 
+  more than 10(50) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:48: 
+  more than 10(50) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:56: 
+  more than 10(50) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:35: 
+  more than 10(50) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:134: Warning: 
   function print_diff_child_age: precondition valid_person(p_id) got status unknown.
 [eva] using specification for function printf_va_1
@@ -100,5 +128,5 @@
     Preconditions     7 valid     1 unknown     0 invalid      8 total
   53% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.33user 0.08system 0:00.42elapsed 100%CPU (0avgtext+0avgdata 102452maxresident)k
-0inputs+1152outputs (0major+18784minor)pagefaults 0swaps
+0.30user 0.07system 0:00.38elapsed 99%CPU (0avgtext+0avgdata 100380maxresident)k
+0inputs+1152outputs (0major+18292minor)pagefaults 0swaps

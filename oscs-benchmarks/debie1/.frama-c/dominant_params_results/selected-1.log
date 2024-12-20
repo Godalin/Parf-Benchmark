@@ -13,6 +13,20 @@
 [kernel] Parsing code/intel/linux/target.c (with preprocessing)
 [variadic:typing] code/harness/harness.c:496: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 2 (not modified).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   s_w_reset ∈ {power_up_reset_e}
@@ -630,22 +644,30 @@
 [eva] using specification for function printf_va_24
 [eva] using specification for function printf_va_26
 [eva] using specification for function printf_va_25
+[eva:loop-unroll:partial] code/hw_if.c:179: loop not completely unrolled
 [eva] code/hw_if.c:148: starting to merge loop iterations
 [eva] using specification for function printf_va_233
+[eva:loop-unroll:partial] code/hw_if.c:428: loop not completely unrolled
 [eva] code/hw_if.c:428: starting to merge loop iterations
 [eva] using specification for function printf_va_36
+[eva:loop-unroll:partial] code/health.c:674: loop not completely unrolled
 [eva] code/health.c:674: starting to merge loop iterations
 [eva:alarm] code/health.c:676: Warning: 
   out of bounds write. assert \valid(fill_pointer);
+[eva:loop-unroll:partial] code/telem.c:468: loop not completely unrolled
 [eva] code/telem.c:468: starting to merge loop iterations
+[eva:loop-unroll:partial] code/telem.c:464: loop not completely unrolled
 [eva] code/telem.c:464: starting to merge loop iterations
+[eva:loop-unroll:partial] code/class.c:283: loop not completely unrolled
 [eva] code/class.c:283: starting to merge loop iterations
+[eva:loop-unroll:partial] code/health.c:417: loop not completely unrolled
 [eva] code/health.c:417: starting to merge loop iterations
 [eva] using specification for function printf_va_60
 [eva] using specification for function printf_va_229
 [eva] using specification for function printf_va_6
 [eva] using specification for function printf_va_4
 [eva] using specification for function printf_va_2
+[eva:loop-unroll:partial] code/tc_hand.c:138: loop not completely unrolled
 [eva] code/tc_hand.c:138: starting to merge loop iterations
 [eva] using specification for function printf_va_11
 [eva] using specification for function printf_va_10
@@ -653,6 +675,7 @@
 [eva] using specification for function printf_va_49
 [eva] using specification for function printf_va_37
 [eva] using specification for function printf_va_7
+[eva:loop-unroll:partial] code/health.c:1979: loop not completely unrolled
 [eva] code/health.c:1976: starting to merge loop iterations
 [eva] using specification for function printf_va_41
 [eva] using specification for function printf_va_45
@@ -701,14 +724,26 @@
 [eva] using specification for function printf_va_98
 [eva] using specification for function printf_va_99
 [eva] using specification for function printf_va_100
+[eva:loop-unroll:partial] code/harness/harness.c:1868: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:1868: starting to merge loop iterations
+[kernel] code/tc_hand.c:636: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:636: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(14) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_234
+[eva:loop-unroll:partial] code/hw_if.c:569: loop not completely unrolled
 [eva] code/hw_if.c:569: starting to merge loop iterations
 [eva] using specification for function printf_va_66
+[eva:loop-unroll:partial] code/tc_hand.c:1308: loop not completely unrolled
+[eva] code/tc_hand.c:1308: starting to merge loop iterations
 [eva] using specification for function printf_va_22
 [eva] using specification for function printf_va_23
 [eva] using specification for function printf_va_63
-[eva] code/tc_hand.c:1308: starting to merge loop iterations
 [eva:alarm] code/tc_hand.c:831: Warning: 
   accessing out of bounds index. assert SU_index < 4;
 [eva:alarm] code/tc_hand.c:840: Warning: 
@@ -729,18 +764,6 @@
   accessing out of bounds index. assert SU_index < 4;
 [eva:alarm] code/tc_hand.c:912: Warning: 
   accessing out of bounds index. assert SU_index < 4;
-[eva:alarm] code/tc_hand.c:1037: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&SU_setting.execution_result);
-[eva] code/tc_hand.c:662: starting to merge loop iterations
-[kernel] code/intel/linux/target.c:63: 
-  more than 200(772) locations to update in array. Approximating.
-[kernel] code/intel/linux/target.c:63: 
-  more than 200(772) elements to enumerate. Approximating.
-[kernel] code/intel/linux/target.c:69: 
-  more than 200(448) elements to enumerate. Approximating.
-[kernel] code/intel/linux/target.c:63: 
-  more than 200(448) locations to update in array. Approximating.
 [eva:alarm] code/measure.c:629: Warning: 
   accessing out of bounds index. assert SU < 4;
 [eva:alarm] code/hw_if.c:753: Warning: 
@@ -748,7 +771,36 @@
 [eva:alarm] code/measure.c:565: Warning: 
   accessing out of bounds index.
   assert (sensor_number_t)(SU_setting->SU_number - 1) < 4;
+[eva:alarm] code/tc_hand.c:1037: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&SU_setting.execution_result);
 [eva] using specification for function printf_va_101
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(255) locations to update in array. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(255) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] code/tc_hand.c:662: loop not completely unrolled
+[eva] code/tc_hand.c:662: starting to merge loop iterations
+[kernel] code/tc_hand.c:636: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] code/intel/linux/target.c:69: 
+  more than 10(112) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(112) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:636: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(1020) locations to update in array. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(1020) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:69: 
+  more than 10(448) elements to enumerate. Approximating.
+[kernel] code/intel/linux/target.c:63: 
+  more than 10(448) locations to update in array. Approximating.
 [eva] using specification for function printf_va_102
 [eva] using specification for function printf_va_103
 [eva] using specification for function printf_va_104
@@ -757,6 +809,8 @@
 [eva] using specification for function printf_va_107
 [eva] using specification for function printf_va_108
 [eva] using specification for function printf_va_109
+[eva:loop-unroll:partial] code/harness/harness.c:1910: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:1910: starting to merge loop iterations
 [eva] using specification for function printf_va_110
 [eva] using specification for function printf_va_111
@@ -777,7 +831,13 @@
 [eva] using specification for function printf_va_89
 [eva] using specification for function printf_va_90
 [eva] using specification for function printf_va_91
+[eva:loop-unroll:partial] code/harness/harness.c:1943: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:1943: starting to merge loop iterations
+[kernel] code/telem.c:142: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(14) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_16
 [eva:alarm] code/harness/harness.c:378: Warning: 
   signed overflow. assert mail_overflows + 1 ≤ 2147483647;
@@ -800,49 +860,79 @@
 [eva] using specification for function printf_va_135
 [eva] using specification for function printf_va_35
 [eva] using specification for function printf_va_140
+[eva:loop-unroll:partial] code/harness/harness.c:933: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:933: starting to merge loop iterations
 [eva] using specification for function printf_va_136
 [eva] using specification for function printf_va_137
+[eva:loop-unroll:partial] code/health.c:1635: loop not completely unrolled
 [eva] code/health.c:1635: starting to merge loop iterations
 [eva] using specification for function printf_va_138
 [eva] using specification for function printf_va_139
 [eva] using specification for function printf_va_40
 [eva] using specification for function printf_va_44
-[eva] code/harness/harness.c:2590: starting to merge loop iterations
 [eva] using specification for function printf_va_62
 [eva] using specification for function printf_va_5
-[eva] using specification for function printf_va_20
+[eva:loop-unroll:partial] code/harness/harness.c:2590: 
+  loop not completely unrolled
+[eva] code/harness/harness.c:2590: starting to merge loop iterations
 [eva] using specification for function printf_va_61
+[eva] using specification for function printf_va_20
 [eva] using specification for function printf_va_51
 [eva] using specification for function printf_va_42
-[eva] code/health.c:1198: starting to merge loop iterations
 [eva] using specification for function printf_va_38
+[eva:loop-unroll:partial] code/harness/harness.c:2611: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2611: starting to merge loop iterations
 [eva] using specification for function printf_va_141
 [eva] using specification for function printf_va_43
 [eva:loop-unroll:partial] code/health.c:2066: loop not completely unrolled
 [eva] code/health.c:2043: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:2628: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2628: starting to merge loop iterations
 [eva] using specification for function printf_va_142
 [eva] using specification for function printf_va_143
+[eva:loop-unroll:partial] code/harness/harness.c:2651: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2651: starting to merge loop iterations
 [eva] using specification for function printf_va_144
 [eva] using specification for function printf_va_145
 [eva] using specification for function printf_va_34
+[eva:loop-unroll:partial] code/harness/harness.c:769: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:769: starting to merge loop iterations
+[kernel] code/harness/harness.c:771: 
+  more than 10(38) locations to update in array. Approximating.
+[kernel] code/harness/harness.c:772: 
+  more than 10(38) locations to update in array. Approximating.
+[kernel] code/harness/harness.c:771: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:772: 
+  more than 10(40) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] code/harness/harness.c:2686: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2686: starting to merge loop iterations
 [eva] using specification for function printf_va_146
-[eva] code/harness/harness.c:2677: starting to merge loop iterations
+[eva:loop-unroll:partial] code/health.c:2324: loop not completely unrolled
 [eva] code/health.c:2324: starting to merge loop iterations
 [eva] using specification for function printf_va_50
 [eva] using specification for function printf_va_59
+[eva:loop-unroll:partial] code/harness/harness.c:2702: 
+  loop not completely unrolled
+[eva] code/harness/harness.c:2677: starting to merge loop iterations
+[eva:loop-unroll:partial] code/health.c:1350: loop not completely unrolled
 [eva] code/health.c:1350: starting to merge loop iterations
 [eva] using specification for function printf_va_147
 [eva] using specification for function printf_va_39
 [eva] code/health.c:1731: Trace partitioning superposing up to 100 states
 [eva] code/health.c:1731: Trace partitioning superposing up to 200 states
+[eva:loop-unroll:partial] code/harness/harness.c:2721: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2721: starting to merge loop iterations
 [eva] using specification for function printf_va_148
+[eva:loop-unroll:partial] code/harness/harness.c:2739: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2712: starting to merge loop iterations
 [eva] using specification for function printf_va_149
 [eva] using specification for function printf_va_150
@@ -856,7 +946,6 @@
   out of bounds read. assert \valid_read(telemetry_pointer);
 [eva] using specification for function printf_va_153
 [eva] using specification for function printf_va_154
-[eva] code/harness/harness.c:2766: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:2769: Warning: 
   pointer comparison.
   assert
@@ -869,6 +958,13 @@
                      (void *)(&telemetry_data.time));
 [eva:alarm] code/telem.c:142: Warning: 
   out of bounds read. assert \valid_read(telemetry_pointer);
+[eva:loop-unroll:partial] code/harness/harness.c:2766: 
+  loop not completely unrolled
+[eva] code/harness/harness.c:2766: starting to merge loop iterations
+[kernel] code/telem.c:142: 
+  more than 10(59) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(59) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_155
 [eva] using specification for function printf_va_156
 [eva] using specification for function printf_va_157
@@ -887,6 +983,8 @@
 [eva] using specification for function printf_va_165
 [eva] using specification for function printf_va_166
 [eva] using specification for function printf_va_167
+[eva:loop-unroll:partial] code/harness/harness.c:2796: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2796: starting to merge loop iterations
 [eva] using specification for function printf_va_168
 [eva:alarm] code/harness/harness.c:2840: Warning: 
@@ -901,13 +999,61 @@
 [eva] using specification for function printf_va_174
 [eva] using specification for function printf_va_175
 [eva] using specification for function printf_va_176
+[kernel] code/telem.c:142: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(23) elements to enumerate. Approximating.
 [eva:loop-unroll:partial] code/harness/harness.c:2854: 
   loop not completely unrolled
 [eva] code/harness/harness.c:2838: starting to merge loop iterations
 [kernel] code/telem.c:142: 
-  more than 200(17675) elements to enumerate. Approximating.
+  more than 10(17675) elements to enumerate. Approximating.
 [kernel] code/telem.c:148: 
-  more than 200(17675) elements to enumerate. Approximating.
+  more than 10(17675) elements to enumerate. Approximating.
 [eva:alarm] code/harness/harness.c:2853: Warning: 
   signed overflow. assert octets + 2 ≤ 2147483647;
 [eva] using specification for function printf_va_177
@@ -925,33 +1071,84 @@
 [eva] using specification for function printf_va_192
 [eva:alarm] code/harness/harness.c:1020: Warning: 
   accessing out of bounds index. assert channel < 0x28;
+[kernel] code/harness/harness.c:1020: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(39) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(38) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] code/measure.c:175: loop not completely unrolled
 [eva] code/measure.c:172: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:1089: Warning: 
   signed overflow. assert ad_conv_timer + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
+[eva:loop-unroll:partial] code/measure.c:255: loop not completely unrolled
 [eva] code/measure.c:252: starting to merge loop iterations
+[eva:loop-unroll:partial] code/measure.c:235: loop not completely unrolled
 [eva] code/measure.c:235: starting to merge loop iterations
+[kernel] code/harness/harness.c:1020: 
+  more than 10(35) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(34) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(35) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1020: 
+  more than 10(36) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(35) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(36) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_184
+[eva:loop-unroll:partial] code/harness/harness.c:2998: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:2998: starting to merge loop iterations
 [eva] using specification for function printf_va_193
+[eva:loop-unroll:partial] code/harness/harness.c:3013: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3013: starting to merge loop iterations
 [eva] using specification for function printf_va_194
+[eva:loop-unroll:partial] code/harness/harness.c:3034: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3034: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:3059: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3059: starting to merge loop iterations
 [eva] using specification for function printf_va_195
+[eva:loop-unroll:partial] code/harness/harness.c:3069: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3069: starting to merge loop iterations
+[kernel] code/harness/harness.c:1020: 
+  more than 10(28) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(28) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_196
+[eva:loop-unroll:partial] code/harness/harness.c:3090: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3090: starting to merge loop iterations
 [eva] using specification for function printf_va_197
+[eva:loop-unroll:partial] code/harness/harness.c:946: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:946: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:3128: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3114: starting to merge loop iterations
+[kernel] code/harness/harness.c:1021: 
+  more than 10(27) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_199
+[eva:loop-unroll:partial] code/harness/harness.c:3189: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3189: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:3211: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3211: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:3216: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3216: starting to merge loop iterations
 [eva] using specification for function printf_va_200
 [eva] using specification for function printf_va_201
+[eva:loop-unroll:partial] code/harness/harness.c:3239: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3239: starting to merge loop iterations
 [eva] using specification for function printf_va_202
 [eva] using specification for function printf_va_203
@@ -963,7 +1160,9 @@
 [eva] using specification for function printf_va_53
 [eva] using specification for function printf_va_54
 [eva] using specification for function printf_va_55
+[eva:loop-unroll:partial] code/class.c:51: loop not completely unrolled
 [eva] code/class.c:48: starting to merge loop iterations
+[eva:loop-unroll:partial] code/measure.c:482: loop not completely unrolled
 [eva] code/measure.c:482: starting to merge loop iterations
 [eva:alarm] code/measure.c:484: Warning: 
   out of bounds read. assert \valid_read(checksum_pointer);
@@ -971,27 +1170,47 @@
   invalid RHS operand for shift. assert 0 ≤ (sensor_number_t)(unit - 1) < 32;
 [eva] using specification for function printf_va_187
 [eva] using specification for function printf_va_188
-[eva] code/harness/harness.c:3266: starting to merge loop iterations
 [eva:alarm] code/telem.c:313: Warning: 
   accessing out of bounds index. assert sensor_unit < 4;
+[eva:loop-unroll:partial] code/harness/harness.c:3274: 
+  loop not completely unrolled
+[eva] code/harness/harness.c:3266: starting to merge loop iterations
 [kernel] code/telem.c:419: 
-  more than 200(1261) locations to update in array. Approximating.
+  more than 10(11) locations to update in array. Approximating.
 [kernel] code/telem.c:435: too many locations to update in array. Approximating.
 [kernel] code/telem.c:419: 
-  more than 200(1261) elements to enumerate. Approximating.
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(1261) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(1261) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_205
 [eva] using specification for function printf_va_198
+[eva:loop-unroll:partial] code/harness/harness.c:3152: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3152: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:3151: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3151: starting to merge loop iterations
 [eva] using specification for function printf_va_206
+[eva:loop-unroll:partial] code/telem.c:246: loop not completely unrolled
 [eva] code/telem.c:246: starting to merge loop iterations
 [kernel] code/telem.c:195: 
-  more than 200(1260) elements to enumerate. Approximating.
+  more than 10(1258) elements to enumerate. Approximating.
 [kernel] code/telem.c:250: 
-  more than 200(1260) elements to enumerate. Approximating.
+  more than 10(1260) elements to enumerate. Approximating.
 [eva:alarm] code/telem.c:431: Warning: 
   accessing out of bounds index. assert record_index < 1261;
 [eva] using specification for function printf_va_207
+[eva:loop-unroll:partial] code/telem.c:475: loop not completely unrolled
 [eva] code/telem.c:475: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:3325: Warning: 
   pointer comparison.
@@ -1719,25 +1938,45 @@
 [eva] using specification for function printf_va_216
 [eva] using specification for function printf_va_217
 [eva] using specification for function printf_va_218
+[eva:loop-unroll:partial] code/harness/harness.c:3402: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3402: starting to merge loop iterations
 [eva] using specification for function printf_va_219
+[eva:loop-unroll:partial] code/harness/harness.c:3409: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3409: starting to merge loop iterations
 [eva] using specification for function printf_va_220
+[eva:loop-unroll:partial] code/harness/harness.c:3430: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3430: starting to merge loop iterations
 [eva] using specification for function printf_va_47
+[eva:loop-unroll:partial] code/harness/harness.c:3452: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3452: starting to merge loop iterations
+[eva:loop-unroll:partial] code/harness/harness.c:3457: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3457: starting to merge loop iterations
 [eva] using specification for function printf_va_221
 [eva] using specification for function printf_va_222
 [eva] using specification for function printf_va_223
 [eva] using specification for function printf_va_224
 [eva] using specification for function printf_va_225
+[kernel] code/harness/harness.c:1022: 
+  more than 10(40) elements to enumerate. Approximating.
+[eva:loop-unroll:partial] code/harness/harness.c:3571: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3571: starting to merge loop iterations
 [eva] using specification for function printf_va_226
+[eva:loop-unroll:partial] code/harness/harness.c:3597: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3597: starting to merge loop iterations
 [eva] using specification for function printf_va_227
+[eva:loop-unroll:partial] code/harness/harness.c:3624: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3624: starting to merge loop iterations
 [eva] using specification for function printf_va_228
+[eva:loop-unroll:partial] code/harness/harness.c:3649: 
+  loop not completely unrolled
 [eva] code/harness/harness.c:3649: starting to merge loop iterations
 [eva] using specification for function printf_va_232
 [eva] using specification for function exit
@@ -1871,7 +2110,8 @@
                 .checksum_failures ∈ {0; 1; 9}
                 .SW_version ∈ {0; 24}
                 .isr_send_message_error ∈ {0; 255}
-                {.SU_status[0..3]; .SU_temperature[0..3][0..1]; .DPU_plus_5_digital} ∈
+                .SU_status[0..1] ∈ {0; 1; 2; 3}
+                {.SU_status[2..3]; .SU_temperature[0..3][0..1]; .DPU_plus_5_digital} ∈
                 [--..--]
                 {.os_send_message_error; .os_create_task_error} ∈ {0; 255}
                 {.SU_plus_50; .SU_minus_50} ∈ [--..--]
@@ -1981,7 +2221,7 @@
   event_queue_length ∈ {0}
   free_slot_index ∈ [0..10]
   i ∈ [0..10]
-  j ∈ {10} or UNINITIALIZED
+  j ∈ {10}
 [eva:final-states] Values at end of function InitAcquisitionTask:
   ACQ_mail.mailbox_number ∈ {1}
           {.timeout; .[bits 16 to 63]} ∈ {0}
@@ -2075,7 +2315,8 @@
                 .sensor_unit_4.plasma_1_minus_to_piezo_max_time ∈ {0; 255}
                 {.failed_code_address; .failed_data_address; .SU_hits[0..3]; .time; .software_error; .hit_budget_exceedings; .[bits 848 to 863]} ∈
                 {0}
-                .coefficient[0..4] ∈ {0; 5}
+                .coefficient[0..1] ∈ {5}
+                .coefficient[2..4] ∈ {0; 5}
                 .not_used ∈ {0}
 [eva:final-states] Values at end of function InitClassification:
   telemetry_data{.error_status; .mode_status; .TC_word; .TC_time_tag; .watchdog_failures; .checksum_failures; .SW_version} ∈
@@ -2132,18 +2373,19 @@
                 .sensor_unit_4.plasma_1_minus_to_piezo_max_time ∈ {255}
                 {.failed_code_address; .failed_data_address; .SU_hits[0..3]; .time; .software_error; .hit_budget_exceedings; .[bits 848 to 863]} ∈
                 {0}
-                .coefficient[0..4] ∈ {0; 5}
+                .coefficient[0..1] ∈ {5}
+                .coefficient[2..4] ∈ {0; 5}
                 .not_used ∈ {0}
   i ∈ {5}
 [eva:final-states] Values at end of function Next:
-  ad_delay_rand ∈ [0..2147483647]
-  ad_rand_index ∈ [0..2147483644]
+  ad_delay_rand ∈ [0..318]
+  ad_rand_index ∈ [0..318]
   ad_hit_rand_index ∈ [0..2147483647]
   ad_fail_index ∈ [0..2147483647]
   event_rand_index ∈ [0..318]
 [eva:final-states] Values at end of function Next_Rand:
-  ad_delay_rand ∈ [0..2147483647]
-  ad_rand_index ∈ [0..2147483644]
+  ad_delay_rand ∈ [0..318]
+  ad_rand_index ∈ [0..318]
   ad_hit_rand_index ∈ [0..2147483647]
   ad_fail_index ∈ [0..2147483647]
   event_rand_index ∈ [0..318]
@@ -2167,8 +2409,8 @@
   event_rand_index ∈ [0..318]
 [eva:final-states] Values at end of function ReadSensorUnit:
   __retres ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
 [eva:final-states] Values at end of function ResetDelayCounters:
   
 [eva:final-states] Values at end of function ResetEventQueueLength:
@@ -2300,7 +2542,8 @@
                 .not_used ∈ {0}
 [eva:final-states] Values at end of function Set_AD_Delay:
   i ∈ {6}
-  ad_conv_delay[0..5] ∈ [0..34]
+  ad_conv_delay[0..1] ∈ {2; 25}
+               [2..5] ∈ [0..34]
 [eva:final-states] Values at end of function Set_SU_Error:
   telemetry_data.error_status ∈ [16..255]
                 .mode_status ∈ {1; 2; 5; 6; 17; 18; 21; 22}
@@ -2473,7 +2716,10 @@
             .[bits 104 to 127] ∈ UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
 [eva:final-states] Values at end of function UpdatePeriodCounter:
@@ -2524,7 +2770,7 @@
   min_quality_number ∈ [0..255]
   min_quality_location ∈ [0..1260]
   min_time ∈ [--..--]
-  time ∈ [--..--] or UNINITIALIZED
+  time ∈ [--..--]
   i ∈ {1261}
 [eva:final-states] Values at end of function RecordEvent:
   telemetry_data.error_status ∈ [--..--]
@@ -2836,7 +3082,7 @@
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Report_Event_Histo:
   sen ∈ {4}
-  class ∈ {10} or UNINITIALIZED
+  class ∈ {10}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Check_Current:
   val ∈ {1; 4; 16; 64; 191; 239; 251; 254}
@@ -2905,7 +3151,7 @@
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function CopyProgramCode:
   i ∈ {32768}
-  code_byte ∈ {0} or UNINITIALIZED
+  code_byte ∈ {0}
   data_memory[0..65535] ∈ {0}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function SetTriggerLevel:
@@ -3086,7 +3332,10 @@
             .[bits 104 to 127] ∈ UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3174,8 +3423,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   SU_setting.SU_number ∈ {0; 1; 2; 3; 4; 5; 6; 4294967295}
             {.SU_state; .expected_source_state} ∈ UNINITIALIZED
             .execution_result ∈ {0; 1; 2; 3; 4}
@@ -3227,7 +3476,10 @@
   exec_result ∈ {0; 1}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3271,8 +3523,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_timeout ∈ {0; 100}
@@ -3291,7 +3543,10 @@
   SU_index ∈ {0; 1; 2; 3; 4; 5; 4294967294; 4294967295}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3335,8 +3590,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈ {TC_handling_e; read_memory_e; write_memory_e}
@@ -3353,7 +3608,10 @@
   i ∈ {5} or UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   data_memory[0..65279] ∈ [--..--]
@@ -3379,9 +3637,9 @@
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Check_RAM:
   start ∈ [32768..65535]
-  range ∈ [0..65279] or UNINITIALIZED
-  bytes ∈ [1..255] or UNINITIALIZED
-  bytes_left ∈ {0} or UNINITIALIZED
+  range ∈ [0..65024]
+  bytes ∈ [1..255]
+  bytes_left ∈ {0}
   __retres ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function InitCode_RAM:
@@ -3428,80 +3686,38 @@
           [1].min ∈ {0}
           [1].max ∈ {65535}
           [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
-          [5].min ∈ {0}
-          [5].max ∈ {64255; 65535}
-          [6].min ∈ {0}
-          [6].max ∈ {62719; 65535}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
-          [13].min ∈ {0}
-          [13].max ∈ {64255; 65535}
-          [14].min ∈ {0}
-          [14].max ∈ {62719; 65535}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
-          [16].min ∈ {0; 47616}
-          [16].max ∈ {58623; 65535}
-          [17].min ∈ {0; 47616}
-          [17].max ∈ {58623; 65535}
-          [18].min ∈ {0; 43008}
-          [18].max ∈ {58367; 65535}
-          [19].min ∈ {0; 47616}
-          [19].max ∈ {58623; 65535}
-          [20].min ∈ {0; 3328}
-          [20].max ∈ {8959; 65535}
-          [21].min ∈ {0; 3328}
-          [21].max ∈ {8959; 65535}
-          [22].min ∈ {0; 3584}
-          [22].max ∈ {11519; 65535}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
-          [29].min ∈ {0}
-          [29].max ∈ {64255; 65535}
-          [30].min ∈ {0}
-          [30].max ∈ {62719; 65535}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
-          [37].min ∈ {0}
-          [37].max ∈ {64255; 65535}
-          [38].min ∈ {0}
-          [38].max ∈ {62719; 65535}
-          [39].min ∈ {0}
+          {[2].max; [3..4]{.min; .max}; [5].min} ∈ {0; 65535}
+          [5].max ∈ {0; 64255; 65535}
+          [6].min ∈ {0; 65535}
+          [6].max ∈ {0; 62719; 65535}
+          {[7..12]{.min; .max}; [13].min} ∈ {0; 65535}
+          [13].max ∈ {0; 64255; 65535}
+          [14].min ∈ {0; 65535}
+          [14].max ∈ {0; 62719; 65535}
+          [15]{.min; .max} ∈ {0; 65535}
+          [16].min ∈ {0; 47616; 65535}
+          [16].max ∈ {0; 58623; 65535}
+          [17].min ∈ {0; 47616; 65535}
+          [17].max ∈ {0; 58623; 65535}
+          [18].min ∈ {0; 43008; 65535}
+          [18].max ∈ {0; 58367; 65535}
+          [19].min ∈ {0; 47616; 65535}
+          [19].max ∈ {0; 58623; 65535}
+          [20].min ∈ {0; 3328; 65535}
+          [20].max ∈ {0; 8959; 65535}
+          [21].min ∈ {0; 3328; 65535}
+          [21].max ∈ {0; 8959; 65535}
+          [22].min ∈ {0; 3584; 65535}
+          [22].max ∈ {0; 11519; 65535}
+          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
+          [29].max ∈ {0; 64255; 65535}
+          [30].min ∈ {0; 65535}
+          [30].max ∈ {0; 62719; 65535}
+          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
+          [37].max ∈ {0; 64255; 65535}
+          [38].min ∈ {0; 65535}
+          [38].max ∈ {0; 62719; 65535}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Set_AD_Nominal:
@@ -3510,33 +3726,17 @@
           [1].min ∈ {0}
           [1].max ∈ {65535}
           [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
+          {[2].max; [3..4]{.min; .max}} ∈ {0; 65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          [7..12]{.min; .max} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -3551,39 +3751,17 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Update_ADC_Channel_Reg:
@@ -3705,7 +3883,7 @@
   SU_self_test_channel ∈ [16..252]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function SelectSelfTestChannel:
-  SU_self_test_channel ∈ [0..248]
+  SU_self_test_channel ∈ [0..236]
   channel_selector_value[0] ∈ {0}
                         [1] ∈ {1}
                         [2] ∈ {2}
@@ -3798,7 +3976,7 @@
   event_queue_length ∈ {0}
   free_slot_index ∈ {0}
   execution_result ∈ {1}
-  fill_pointer ∈ {{ &telemetry_data + [0..120] }} or UNINITIALIZED
+  fill_pointer ∈ {{ &telemetry_data + [2..120] }} or UNINITIALIZED
   reset_class ∈ [--..--]
   i ∈ {120} or UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {4}
@@ -3855,7 +4033,10 @@
   exec_result ∈ {0; 1} or UNINITIALIZED
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   v_down_errors ∈ {0}
@@ -3908,7 +4089,7 @@
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
-  checksum_pointer ∈ {{ &event_queue + [0..280] }} or UNINITIALIZED
+  checksum_pointer ∈ {{ &event_queue + [2..280] }} or UNINITIALIZED
   event_checksum ∈ [--..--] or UNINITIALIZED
   i ∈ {28} or UNINITIALIZED
   event ∈ {{ &event_queue + [0..252],0%28 }} or UNINITIALIZED
@@ -4033,7 +4214,7 @@
   patch_function ∈ [4096..32736] or UNINITIALIZED
   old_checksum ∈ [--..--]
   new_checksum ∈ [--..--]
-  patch_value ∈ [--..--] or UNINITIALIZED
+  patch_value ∈ [--..--]
   temp_configuration ∈ {0; 1}
   i ∈ [32..2147483647]
   data_memory[0..65279] ∈ [--..--]
@@ -4139,8 +4320,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -4161,7 +4342,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -4292,11 +4476,11 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..254]
   ADC_result[0..4] ∈ [--..--]
   initial_delay ∈ {44}
   delay_limit ∈ {44}
@@ -4313,7 +4497,7 @@
   mail_count[0] ∈ [0..2147483645]
             [1] ∈ {0; 1}
             [2..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -4348,8 +4532,9 @@
                 .sensor_unit_3 ∈ [--..--]
                 .os_enable_isr_error ∈ {0; 255}
                 .sensor_unit_4 ∈ [--..--]
-                {.failed_code_address; .failed_data_address; .SU_hits[0..3]; .[bits 848 to 863]} ∈
-                {0}
+                {.failed_code_address; .failed_data_address} ∈ {0}
+                .SU_hits[0..3] ∈ [--..--]
+                .[bits 848 to 863] ∈ {0}
                 .time ∈ [--..--]
                 .software_error ∈ {0; 1}
                 .hit_budget_exceedings ∈ {0; 255}
@@ -4421,28 +4606,28 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
-  AD_temperature_parameters.ADC_channel ∈
-                           {5; 6; 13; 14; 29; 30; 37; 38} or UNINITIALIZED
-                           {.ADC_max_tries; .conversion_max_tries} ∈
-                           {255} or UNINITIALIZED
-                           .unsigned_ADC ∈ [0..2147483647] or UNINITIALIZED
-                           .signed_ADC ∈ [--..--] or UNINITIALIZED
-                           .AD_execution_result ∈
-                           {0; 1; 2} or UNINITIALIZED
+  ADC_channel_register ∈ {134; 142; 158; 166}
+  AD_temperature_parameters.ADC_channel ∈ {6; 14; 30; 38}
+                           {.ADC_max_tries; .conversion_max_tries} ∈ {255}
+                           .unsigned_ADC ∈ [0..65535]
+                           .signed_ADC ∈ [-32768..32767]
+                           .AD_execution_result ∈ {0; 1; 2}
                            {.sensor_unit; .[bits 168 to 191]} ∈
                            UNINITIALIZED
-  temp_limit_value ∈ {244; 250} or UNINITIALIZED
+  temp_limit_value ∈ {244}
   j ∈ {2}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..255]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ [0..20]
   ad_hit_rand_index ∈ [0..2147483647]
   total_adc_hits ∈ [--..--]
@@ -4751,18 +4936,21 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ {134; 142; 158; 166}
   i ∈ {7}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..255]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ [0..20]
   ad_hit_rand_index ∈ [0..2147483647]
   total_adc_hits ∈ [--..--]
@@ -4824,17 +5012,20 @@
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..254]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4; 5}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -4902,17 +5093,20 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..254]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4; 5}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -4980,17 +5174,20 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..254]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   ad_converting ∈ {0; 1}
   check_current_errors ∈ {0; 1; 2; 3; 4; 5}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -5044,11 +5241,11 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..254]
   ADC_result[0..4] ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
@@ -5057,7 +5254,7 @@
   mail_count[0] ∈ [0..2147483645]
             [1] ∈ {0; 1}
             [2..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -5105,12 +5302,14 @@
               .event_counter[0..3][0..9] ∈ [--..--]
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
-  SU_state[0..3] ∈
+  SU_state[0..1] ∈
+          {off_e; start_switching_e; on_e; self_test_mon_e; acquisition_e}
+          [2..3] ∈
           {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
            self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..11]
   confirm_hit_result ∈ {1}
-  ADC_channel_register ∈ [128..165]
+  ADC_channel_register ∈ [130..165]
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
   ADC_result[0..4] ∈ [--..--]
@@ -5216,7 +5415,7 @@
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483645]
             [1..7] ∈ {0}
-  ad_conv_timer ∈ [0..2147483647]
+  ad_conv_timer ∈ [1..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..318]
   start_conversion_count ∈ [--..--]
@@ -5256,11 +5455,11 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..254]
   ADC_result[0..4] ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
@@ -5269,7 +5468,7 @@
   mail_count[0] ∈ [0..2147483645]
             [1] ∈ {0; 1}
             [2..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -5314,26 +5513,27 @@
                 .hit_budget_exceedings ∈ {255}
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
-  SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+  SU_state[0..1] ∈ {off_e}
+          [2..3] ∈
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0}
   hit_budget_left ∈ {0}
-  confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  confirm_hit_result ∈ {1}
+  ADC_channel_register ∈ [130..165]
   ADC_result[0..4] ∈ [--..--]
   su ∈ {0; 1; 2; 3}
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [1026..65535]
-              [1] ∈ [0..255]
+              [1] ∈ {1; 2; 3; 4; 129; 130; 131; 132}
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483645]
             [1..7] ∈ {0}
-  ad_conv_timer ∈ [-5000..2147483647]
+  ad_conv_timer ∈ [-4999..2147483647]
   ad_conv_delay[0..5] ∈ [0..34]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_delay_rand ∈ [0..2147483647]
-  ad_rand_index ∈ [0..2147483644]
+  ad_delay_rand ∈ [0..318]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ [0..20]
   ad_hit_rand_index ∈ [0..2147483647]
   total_adc_hits ∈ [--..--]
@@ -5748,8 +5948,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -5770,7 +5970,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -5833,8 +6036,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -5864,7 +6067,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -5937,8 +6143,8 @@
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -5959,7 +6165,10 @@
   write_checksum ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6031,7 +6240,9 @@
               .event_counter[0..3][0..9] ∈ [--..--]
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
-  SU_state[0..3] ∈
+  SU_state[0..1] ∈
+          {off_e; start_switching_e; on_e; self_test_mon_e; acquisition_e}
+          [2..3] ∈
           {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
@@ -6041,9 +6252,9 @@
   voltage_meas_count ∈ [0..17]
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
-  confirm_hit_result ∈ {0; 1}
+  confirm_hit_result ∈ {1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [130..165]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e; SC_TM_e}
@@ -6059,7 +6270,7 @@
   free_slot_index ∈ [0..1261]
   read_memory_checksum ∈ [--..--]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   memory_mode ∈ {PROM_e; SRAM_e}
   ADC_result[0..4] ∈ [--..--]
   previous_TC.TC_word ∈ [--..--]
@@ -6168,12 +6379,15 @@
   ACQ_mail.mailbox_number ∈ {1}
           {.timeout; .[bits 16 to 63]} ∈ {0}
           .message ∈ {{ &trigger_unit }}
-          {.execution_result; .wait_result} ∈ {0; 1}
+          {.execution_result; .wait_result} ∈ {1}
           {.event_selector; .[bits 152 to 191]} ∈ {0}
-  trigger_unit ∈ {0; 1; 2; 3; 4; 5; 6; 7}
+  trigger_unit ∈ {1; 2; 3; 4; 5; 6; 7}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6187,15 +6401,15 @@
                   .TC_code ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ [1..255]
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483644]
             [1..7] ∈ {0}
   mail_overflows ∈ [0..2147483647]
   check_current_errors ∈ {0}
-  tc_msb ∈ [4..161]
-  tc_lsb ∈ {2; 115}
-  tc_word ∈ [1026..41331]
+  tc_msb ∈ {97; 128; 129; 160; 161}
+  tc_lsb ∈ {115}
+  tc_word ∈ {24947; 32883; 33139; 41075; 41331}
   tm_msb ∈ [--..--]
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
@@ -6204,33 +6418,17 @@
           [1].min ∈ {0}
           [1].max ∈ {65535}
           [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
+          {[2].max; [3..4]{.min; .max}} ∈ {0; 65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          [7..12]{.min; .max} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6245,44 +6443,23 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
-  ad_conv_timer ∈ [-5000..2147483647]
-  ad_conv_delay[0..5] ∈ [0..34]
+  ad_conv_timer ∈ [1..2147483647]
+  ad_conv_delay[0..1] ∈ {2}
+               [2..5] ∈ [0..34]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ {0}
   ad_random_failures ∈ {0}
   start_conversion_count ∈ [--..--]
@@ -6343,8 +6520,8 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   hit_budget_left ∈ {20}
   health_mon_round ∈ [0..9]
@@ -6354,12 +6531,12 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [133..255]
+  ADC_channel_register ∈ [134..254]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e}
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   memory_mode ∈ {PROM_e; SRAM_e}
   previous_TC.TC_word ∈ [--..--]
              .TC_address ∈ [0..127]
@@ -6376,7 +6553,10 @@
   max_errors ∈ {20}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6406,83 +6586,42 @@
           [1].min ∈ {0}
           [1].max ∈ {65535}
           [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
-          [5].min ∈ {0}
-          [5].max ∈ {64255; 65535}
-          [6].min ∈ {0}
-          [6].max ∈ {62719; 65535}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
-          [13].min ∈ {0}
-          [13].max ∈ {64255; 65535}
-          [14].min ∈ {0}
-          [14].max ∈ {62719; 65535}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
-          [16].min ∈ {0; 47616}
-          [16].max ∈ {58623; 65535}
-          [17].min ∈ {0; 47616}
-          [17].max ∈ {58623; 65535}
-          [18].min ∈ {0; 43008}
-          [18].max ∈ {58367; 65535}
-          [19].min ∈ {0; 47616}
-          [19].max ∈ {58623; 65535}
-          [20].min ∈ {0; 3328}
-          [20].max ∈ {8959; 65535}
-          [21].min ∈ {0; 3328}
-          [21].max ∈ {8959; 65535}
-          [22].min ∈ {0; 3584}
-          [22].max ∈ {11519; 65535}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
-          [29].min ∈ {0}
-          [29].max ∈ {64255; 65535}
-          [30].min ∈ {0}
-          [30].max ∈ {62719; 65535}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
-          [37].min ∈ {0}
-          [37].max ∈ {64255; 65535}
-          [38].min ∈ {0}
-          [38].max ∈ {62719; 65535}
-          [39].min ∈ {0}
+          {[2].max; [3..4]{.min; .max}; [5].min} ∈ {0; 65535}
+          [5].max ∈ {0; 64255; 65535}
+          [6].min ∈ {0; 65535}
+          [6].max ∈ {0; 62719; 65535}
+          {[7..12]{.min; .max}; [13].min} ∈ {0; 65535}
+          [13].max ∈ {0; 64255; 65535}
+          [14].min ∈ {0; 65535}
+          [14].max ∈ {0; 62719; 65535}
+          [15]{.min; .max} ∈ {0; 65535}
+          [16].min ∈ {0; 47616; 65535}
+          [16].max ∈ {0; 58623; 65535}
+          [17].min ∈ {0; 47616; 65535}
+          [17].max ∈ {0; 58623; 65535}
+          [18].min ∈ {0; 43008; 65535}
+          [18].max ∈ {0; 58367; 65535}
+          [19].min ∈ {0; 47616; 65535}
+          [19].max ∈ {0; 58623; 65535}
+          [20].min ∈ {0; 3328; 65535}
+          [20].max ∈ {0; 8959; 65535}
+          [21].min ∈ {0; 3328; 65535}
+          [21].max ∈ {0; 8959; 65535}
+          [22].min ∈ {0; 3584; 65535}
+          [22].max ∈ {0; 11519; 65535}
+          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
+          [29].max ∈ {0; 64255; 65535}
+          [30].min ∈ {0; 65535}
+          [30].max ∈ {0; 62719; 65535}
+          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
+          [37].max ∈ {0; 64255; 65535}
+          [38].min ∈ {0; 65535}
+          [38].max ∈ {0; 62719; 65535}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-4999..255]
-  ad_conv_delay[0..5] ∈ {0; 2}
+  ad_conv_delay[0..1] ∈ {2}
+               [2..5] ∈ {0; 2}
   ad_conv_num ∈ {0; 2; 4}
   ad_rand_index ∈ [0..2147483644]
   max_adc_hits ∈ [0..20]
@@ -6544,26 +6683,28 @@
               .event_counter[0..3][0..9] ∈ [--..--]
               .not_used ∈ {0}
               {.counter_checksum; .event[0..1260]} ∈ [--..--]
-  SU_state[0..3] ∈
+  SU_state[0..1] ∈
+          {off_e; start_switching_e; on_e; self_test_mon_e; acquisition_e}
+          [2..3] ∈
           {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
-  hit_budget_left ∈ [0..15]
+  hit_budget_left ∈ [0..13]
   health_mon_round ∈ {5}
   temp_meas_count ∈ {0; 1; 2; 3; 4; 5}
   voltage_meas_count ∈ [0..17]
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
-  confirm_hit_result ∈ {0; 1}
+  confirm_hit_result ∈ {1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [138..165]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e; SC_TM_e}
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
   self_test_flag ∈ {0; 1}
-  SU_self_test_channel ∈ [--..--]
+  SU_self_test_channel ∈ [0..235]
   memory_mode ∈ {PROM_e; SRAM_e}
   ADC_result[0..4] ∈ [--..--]
   previous_TC.TC_word ∈ [--..--]
@@ -6579,7 +6720,10 @@
   sen ∈ {4}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -6593,15 +6737,15 @@
                   .TC_code ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
-              [1] ∈ [0..255]
+              [1] ∈ [2..196]
               [2..7] ∈ {0}
   mail_count[0] ∈ [0..2147483644]
             [1..7] ∈ {0}
   mail_overflows ∈ [0..2147483647]
   check_current_errors ∈ {0}
-  tc_msb ∈ [6..161]
-  tc_lsb ∈ {3; 115}
-  tc_word ∈ [1539..41331],3%16
+  tc_msb ∈ {97; 128; 129; 160; 161}
+  tc_lsb ∈ {115}
+  tc_word ∈ {24947; 32883; 33139; 41075; 41331}
   tm_msb ∈ [--..--]
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
@@ -6610,33 +6754,17 @@
           [1].min ∈ {0}
           [1].max ∈ {65535}
           [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
+          {[2].max; [3..4]{.min; .max}} ∈ {0; 65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          [7..12]{.min; .max} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6651,44 +6779,23 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
-  ad_conv_timer ∈ [-5000..2147483647]
-  ad_conv_delay[0..5] ∈ [0..34]
+  ad_conv_timer ∈ [1..2147483647]
+  ad_conv_delay[0..1] ∈ {2}
+               [2..5] ∈ [0..34]
   ad_conv_num ∈ {0; 1; 2; 3; 4; 5}
-  ad_rand_index ∈ [0..2147483644]
+  ad_rand_index ∈ [0..318]
   max_adc_hits ∈ {0}
   ad_random_failures ∈ {0}
   start_conversion_count ∈ [--..--]
@@ -6764,37 +6871,7 @@
   TC_timeout ∈ {0; 100}
   memory_type ∈ {code_e; data_e}
   memory_transfer_buffer[0] ∈ [0..222]
-                        [1] ∈ [--..--]
-                        [2] ∈ [0..222]
-                        [3] ∈ [--..--]
-                        [4] ∈ [0..222]
-                        [5] ∈ [--..--]
-                        [6] ∈ [0..222]
-                        [7] ∈ [--..--]
-                        [8] ∈ [0..222]
-                        [9] ∈ [--..--]
-                        [10] ∈ [0..222]
-                        [11] ∈ [--..--]
-                        [12] ∈ [0..222]
-                        [13] ∈ [--..--]
-                        [14] ∈ [0..222]
-                        [15] ∈ [--..--]
-                        [16] ∈ [0..222]
-                        [17] ∈ [--..--]
-                        [18] ∈ [0..222]
-                        [19] ∈ [--..--]
-                        [20] ∈ [0..222]
-                        [21] ∈ [--..--]
-                        [22] ∈ [0..222]
-                        [23] ∈ [--..--]
-                        [24] ∈ [0..222]
-                        [25] ∈ [--..--]
-                        [26] ∈ [0..222]
-                        [27] ∈ [--..--]
-                        [28] ∈ [0..222]
-                        [29] ∈ [--..--]
-                        [30] ∈ [0..222]
-                        [31] ∈ [--..--]
+                        [1..31] ∈ [--..--]
   address_MSB ∈ [--..--]
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
@@ -6820,9 +6897,9 @@
   mail_message[0] ∈ [0..57087]
               [1..7] ∈ {0}
   mail_count[0..7] ∈ {0}
-  tc_msb ∈ {0; 1; 2; 3; 222}
-  tc_lsb ∈ {0; 64; 128; 192; 255}
-  tc_word ∈ [0..57087]
+  tc_msb ∈ {0; 1; 2; 3}
+  tc_lsb ∈ {0; 64; 128; 192}
+  tc_word ∈ [0..960],0%64
   tm_msb ∈ {0; 1; 2; 3}
   tm_lsb ∈ [1..127]
   tc_timer_overflow ∈ {0}
@@ -6888,37 +6965,7 @@
   TC_timeout ∈ {0; 100}
   memory_type ∈ {code_e; data_e}
   memory_transfer_buffer[0] ∈ [0..223]
-                        [1] ∈ [--..--]
-                        [2] ∈ [0..223]
-                        [3] ∈ [--..--]
-                        [4] ∈ [0..223]
-                        [5] ∈ [--..--]
-                        [6] ∈ [0..223]
-                        [7] ∈ [--..--]
-                        [8] ∈ [0..223]
-                        [9] ∈ [--..--]
-                        [10] ∈ [0..223]
-                        [11] ∈ [--..--]
-                        [12] ∈ [0..223]
-                        [13] ∈ [--..--]
-                        [14] ∈ [0..223]
-                        [15] ∈ [--..--]
-                        [16] ∈ [0..223]
-                        [17] ∈ [--..--]
-                        [18] ∈ [0..223]
-                        [19] ∈ [--..--]
-                        [20] ∈ [0..223]
-                        [21] ∈ [--..--]
-                        [22] ∈ [0..223]
-                        [23] ∈ [--..--]
-                        [24] ∈ [0..223]
-                        [25] ∈ [--..--]
-                        [26] ∈ [0..223]
-                        [27] ∈ [--..--]
-                        [28] ∈ [0..223]
-                        [29] ∈ [--..--]
-                        [30] ∈ [0..223]
-                        [31] ∈ [--..--]
+                        [1..31] ∈ [--..--]
   address_MSB ∈ [--..--]
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
@@ -6938,9 +6985,9 @@
   mail_message[0] ∈ [0..54512],0%16
               [1..7] ∈ {0}
   mail_count[0..7] ∈ {0}
-  tc_msb ∈ {0; 1; 2; 3; 212}
-  tc_lsb ∈ {0; 64; 128; 192; 240}
-  tc_word ∈ [0..54512],0%16
+  tc_msb ∈ {0; 1; 2; 3}
+  tc_lsb ∈ {0; 64; 128; 192}
+  tc_word ∈ [0..960],0%64
   tm_msb ∈ {0; 1; 2; 3}
   tm_lsb ∈ [1..127]
   tc_timer_overflow ∈ {0}
@@ -6991,8 +7038,8 @@
               {.event_counter[0..3][0..9]; .not_used; .counter_checksum; .event[0..1260]} ∈
               {0}
   SU_state[0..3] ∈
-          {off_e; start_switching_e; switching_e; on_e; self_test_mon_e;
-           self_test_e; self_test_trigger_e; acquisition_e}
+          {off_e; start_switching_e; on_e; self_test_mon_e; self_test_e;
+           self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   internal_time ∈ [--..--]
   TC_state ∈
@@ -7022,7 +7069,10 @@
   octets ∈ [0..2147483646],0%2
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
-                             .expected_source_state ∈ [0..2147483647]
+                             .expected_source_state ∈
+                             {off_e; start_switching_e; switching_e; on_e;
+                              self_test_mon_e; self_test_e;
+                              self_test_trigger_e; acquisition_e}
                              .execution_result ∈ {0; 1}
                              .[bits 104 to 127] ∈ {0}
   TC_mail.mailbox_number ∈ {0}
@@ -7307,7 +7357,7 @@
                 .coefficient[4] ∈ {5}
                 .not_used ∈ {0}
   TC_state ∈ {TC_handling_e; memory_dump_e}
-  telemetry_pointer ∈ {{ &data_memory + [8259..65535],1%2 }}
+  telemetry_pointer ∈ {{ &data_memory + [8263..65535],1%2 }}
   telemetry_end_pointer ∈ {{ (unsigned char *)&data_memory[8289] }}
   read_memory_checksum ∈ [--..--]
   previous_TC.TC_word ∈ {0; 49217; 65535}
@@ -7460,5 +7510,5 @@
     Preconditions   373 valid     0 unknown     0 invalid    373 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-104.06user 1.36system 1:45.43elapsed 99%CPU (0avgtext+0avgdata 1104856maxresident)k
-0inputs+17584outputs (0major+290661minor)pagefaults 0swaps
+178.17user 5.54system 3:03.76elapsed 99%CPU (0avgtext+0avgdata 5111508maxresident)k
+1104inputs+17536outputs (0major+1293437minor)pagefaults 0swaps

@@ -1,4 +1,18 @@
 [kernel] Parsing solitaire.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   state ∈ {0}
@@ -952,7 +966,6 @@
 [eva:alarm] solitaire.c:284: Warning: 
   out of bounds read. assert \valid_read(av + 1);
 [eva] solitaire.c:284: assertion 'Eva,mem_access' got final status invalid.
-[scope:rm_asserts] removing 12 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function cycle_deck:
   state{.a; .b} ∈ {{ garbled mix of &{state} (origin: Misaligned) }}
@@ -1006,5 +1019,5 @@
     Preconditions     5 valid     9 unknown     0 invalid     14 total
   35% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.49user 0.10system 0:01.59elapsed 100%CPU (0avgtext+0avgdata 131764maxresident)k
-0inputs+1816outputs (0major+26174minor)pagefaults 0swaps
+1.17user 0.12system 0:01.30elapsed 99%CPU (0avgtext+0avgdata 128932maxresident)k
+0inputs+1808outputs (0major+25584minor)pagefaults 0swaps

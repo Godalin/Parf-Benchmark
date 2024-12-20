@@ -1,6 +1,65 @@
 [kernel] Parsing stream_decompress.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 37 (not modified).
+  option -eva-widening-delay already set to 7 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 49 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 136 (not modified).
+  option -eva-subdivide-non-linear already set to 7 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(gets) == 0 (auto)
+  \return(fread) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(qlz_size_compressed) == 0 (auto)
+  \return(Frama_C_nondet_ptr) == 0 (auto)
+  \return(Frama_C_malloc_fresh) == 0 (auto)
+  \return(fast_read) == 1 (auto)
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -38,6 +97,8 @@
   accessing uninitialized left-value. assert \initialized(source);
 [eva:alarm] quicklz.c:117: Warning: 
   accessing uninitialized left-value. assert \initialized((ui32 *)src);
+[eva] quicklz.c:116: cannot properly split on \result == 1
+[eva] quicklz.c:192: cannot properly split on \result == 0
 [eva:alarm] stream_decompress.c:42: Warning: 
   function fread: precondition 'valid_ptr_block' got status unknown.
 [eva:alarm] quicklz.c:81: Warning: 
@@ -54,7 +115,6 @@
 [eva:loop-unroll:auto] quicklz.c:215: Automatic loop unrolling.
 [eva:alarm] quicklz.c:217: Warning: 
   out of bounds read. assert \valid_read((ui32 *)(src + f));
-[eva:loop-unroll:partial] quicklz.c:220: loop not completely unrolled
 [eva] quicklz.c:215: starting to merge loop iterations
 [eva:alarm] quicklz.c:217: Warning: 
   out of bounds write. assert \valid((ui32 *)(dst + f));
@@ -65,7 +125,6 @@
   accessing uninitialized left-value. assert \initialized((ui32 *)src);
 [eva] quicklz.c:664: Trace partitioning superposing up to 100 states
 [eva] quicklz.c:664: Trace partitioning superposing up to 200 states
-[eva:loop-unroll:partial] quicklz.c:589: loop not completely unrolled
 [eva] quicklz.c:568: starting to merge loop iterations
 [eva:alarm] quicklz.c:117: Warning: 
   out of bounds read. assert \valid_read((ui32 *)src);
@@ -77,9 +136,8 @@
 [eva:alarm] quicklz.c:713: Warning: out of bounds write. assert \valid(dst);
 [eva:alarm] quicklz.c:713: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
-[eva:alarm] quicklz.c:713: Warning: out of bounds read. assert \valid_read(src);
-[eva:loop-unroll:partial] quicklz.c:716: loop not completely unrolled
 [eva] quicklz.c:702: starting to merge loop iterations
+[eva:alarm] quicklz.c:713: Warning: out of bounds read. assert \valid_read(src);
 [eva:alarm] quicklz.c:839: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] quicklz.c:839: Warning: 
@@ -97,7 +155,6 @@
   function fwrite: precondition 'valid_ptr_block' got status unknown.
 [eva:alarm] stream_decompress.c:45: Warning: 
   function fwrite: precondition 'valid_stream' got status invalid.
-[eva:loop-unroll:partial] stream_decompress.c:45: loop not completely unrolled
 [eva] stream_decompress.c:39: starting to merge loop iterations
 [eva] using specification for function fclose
 [eva:alarm] stream_decompress.c:48: Warning: 
@@ -194,5 +251,5 @@
     Preconditions    12 valid    13 unknown     0 invalid     25 total
   48% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.75user 0.11system 0:01.86elapsed 99%CPU (0avgtext+0avgdata 149780maxresident)k
-0inputs+2832outputs (0major+34864minor)pagefaults 0swaps
+1.63user 0.13system 0:01.77elapsed 100%CPU (0avgtext+0avgdata 144972maxresident)k
+0inputs+2832outputs (0major+33615minor)pagefaults 0swaps

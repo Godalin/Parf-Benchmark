@@ -5,6 +5,20 @@
 [kernel:parser:decimal-float] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:44: Warning: 
   Floating-point constant 0.001 is not represented exactly. Will use 0x1.0624dd2f1a9fcp-10.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   sigmoid_dom_min ∈ {-15.}
@@ -538,6 +552,10 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:397: Warning: 
   out of bounds read. assert \valid_read(&ann->outputs);
 [eva] using specification for function fprintf_va_1
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:397: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:397: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->total_weights);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: Warning: 
@@ -545,12 +563,16 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: Warning: 
   accessing uninitialized left-value. assert \initialized(ann->weight + i);
 [eva] using specification for function fprintf_va_2
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: 
+  more than 10(16) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: 
   starting to merge loop iterations
 [eva] using specification for function fclose
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:201: Warning: 
   function fclose: precondition 'valid_stream' got status unknown.
 [eva] using specification for function fscanf_va_1
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:155: 
+  more than 10(16) locations to update in array. Approximating.
 [eva] using specification for function perror
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
   signed overflow. assert inputs + 1 ≤ 2147483647;
@@ -676,6 +698,8 @@
 [eva] using specification for function fscanf_va_2
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:166: Warning: 
   function fscanf_va_2: precondition \valid(param0) got status unknown.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:166: 
+  more than 10(16) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:164: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:206: Warning: 
@@ -827,7 +851,6 @@
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
 [eva] using specification for function printf_va_59
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function genann_act_sigmoid:
   __fc_errno ∈ [--..--]
@@ -861,37 +884,7 @@
   i ∈ {4096}
 [eva:final-states] Values at end of function genann_write:
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   i ∈ [60760..2147483647]
 [eva:final-states] Values at end of function genann_copy:
   __fc_heap_status ∈ [--..--]
@@ -1540,37 +1533,7 @@
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
@@ -1611,37 +1574,7 @@
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
@@ -1758,37 +1691,7 @@
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
@@ -1837,5 +1740,5 @@
     Preconditions   143 valid     6 unknown     0 invalid    149 total
   95% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.52user 0.15system 0:02.68elapsed 99%CPU (0avgtext+0avgdata 174764maxresident)k
-0inputs+4664outputs (0major+39575minor)pagefaults 0swaps
+2.33user 0.14system 0:02.48elapsed 99%CPU (0avgtext+0avgdata 171212maxresident)k
+0inputs+4664outputs (0major+38662minor)pagefaults 0swaps

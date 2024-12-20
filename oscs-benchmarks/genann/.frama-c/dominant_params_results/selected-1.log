@@ -5,6 +5,20 @@
 [kernel:parser:decimal-float] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:44: Warning: 
   Floating-point constant 0.001 is not represented exactly. Will use 0x1.0624dd2f1a9fcp-10.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 3 (not modified).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   sigmoid_dom_min ∈ {-15.}
@@ -20,8 +34,8 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123
 [eva] using specification for function rand
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: 
-  starting to merge loop iterations
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:81: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:81: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:37: Warning: 
@@ -40,35 +54,11 @@
   accessing uninitialized left-value. assert \initialized(&ann->hidden_layers);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:224: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->outputs);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:226: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:227: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_0);
-  (tmp_0 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:227: Warning: 
-  out of bounds read. assert \valid_read(tmp_0);
-                      (tmp_0 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:50: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&ann->activation_output);
 [eva] using specification for function __fc_fpclassify
 [eva] using specification for function __FC_assert
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:224: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:225: Warning: 
-  accessing uninitialized left-value. assert \initialized(tmp);
-                                      (tmp from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:225: Warning: 
-  out of bounds read. assert \valid_read(tmp);
-                      (tmp from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:229: Warning: 
-  out of bounds write. assert \valid(tmp_1);
-                       (tmp_1 from o++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:44: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(& a)))
 [eva] using specification for function fabs
 [eva] using specification for function printf_va_2
 [eva] using specification for function printf_va_3
@@ -80,6 +70,10 @@
 [eva] using specification for function printf_va_42
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123_0
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: 
+  loop not completely unrolled
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: 
+  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:71: Warning: 
   out of bounds write. assert \valid(&ann->activation_hidden);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:74: Warning: 
@@ -88,130 +82,10 @@
   accessing uninitialized left-value. assert \initialized(&ann->weight);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:236: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->hidden);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:238: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_3);
-  (tmp_3 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
-  out of bounds read. assert \valid_read(tmp_3);
-                      (tmp_3 from w++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:236: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:237: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_2);
-  (tmp_2 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:237: Warning: 
-  out of bounds read. assert \valid_read(tmp_2);
-                      (tmp_2 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:241: Warning: 
-  out of bounds write. assert \valid(tmp_4);
-                       (tmp_4 from o++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:262: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->outputs);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:263: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_8);
-  (tmp_8 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:263: Warning: 
-  out of bounds read. assert \valid_read(tmp_8);
-                      (tmp_8 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_9);
-  (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  out of bounds read. assert \valid_read(tmp_9);
-                      (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  accessing uninitialized left-value. assert \initialized(i + k);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:264: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:267: Warning: 
-  out of bounds write. assert \valid(tmp_10);
-                       (tmp_10 from o++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:262: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
-  signed overflow. assert w - ann->weight ≤ 9223372036854775807;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:272: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->total_neurons);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:272: Warning: 
-  signed overflow. assert o - ann->output ≤ 9223372036854775807;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:272: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:95: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:95: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:95: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:95: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva] using specification for function printf_va_9
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva] using specification for function printf_va_10
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva] using specification for function printf_va_11
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva] using specification for function printf_va_12
 [eva] using specification for function printf_va_43
 [eva] using specification for function printf_va_44
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
@@ -220,101 +94,32 @@
   accessing uninitialized left-value. assert \initialized(&ann->weight);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:212: Warning: 
   out of bounds read. assert \valid_read(&ann->weight);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:111: Warning: 
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:225: Warning: 
+  accessing uninitialized left-value. assert \initialized(tmp);
+                                      (tmp from w++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:227: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(& input)))
+  (tmp_0 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:286: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->hidden);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:287: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->delta);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:293: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&ann->activation_output);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:298: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  out of bounds write. assert \valid(tmp_2);
-                       (tmp_2 from d++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  accessing uninitialized left-value. assert \initialized(o);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  out of bounds read. assert \valid_read(t);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  out of bounds read. assert \valid_read(o);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_6);
-  (tmp_6 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  accessing uninitialized left-value. assert \initialized(d_1);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_7);
-  (tmp_7 from w++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:355: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  out of bounds write. assert \valid(tmp_7);
-                       (tmp_7 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(*d_1, learning_rate), *(i + (int)(k - 1))));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_7,
-                        \mul_double(\mul_double(*d_1, learning_rate),
-                                   *(i + (int)(k - 1)))));
-  (tmp_7 from w++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:353: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  out of bounds write. assert \valid(tmp_6);
-                       (tmp_6 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  out of bounds read. assert \valid_read(d_1);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_6,
-                        \mul_double(\mul_double(*d_1, learning_rate),
-                                   \neg_double(1.0))));
-  (tmp_6 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:362: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->total_weights);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:362: Warning: 
-  signed overflow. assert w - ann->weight ≤ 9223372036854775807;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:362: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:227: Warning: 
-  non-finite double value.
-  assert \is_finite(\add_double(sum, \mul_double(*tmp_0, *(i + k))));
-  (tmp_0 from w++)
 [eva] using specification for function printf_va_13
 [eva] using specification for function printf_va_45
 [eva] using specification for function printf_va_46
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123_2
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(\sub_double(*t, *o), *o));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(\sub_double(*t, *o), *o),
-                        \sub_double((double)1.0, *o)));
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
   starting to merge loop iterations
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:128: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:128: 
   starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:134: Warning: 
-  out of bounds write. assert \valid(&ann->activation_output);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:135: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
 [eva] using specification for function printf_va_14
 [eva] using specification for function printf_va_15
 [eva] using specification for function printf_va_16
@@ -329,14 +134,14 @@
   out of bounds read. assert \valid_read(&ann->total_weights);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:200: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->weight);
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
   starting to merge loop iterations
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:153: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:153: 
   starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:160: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
 [eva] using specification for function printf_va_18
 [eva] using specification for function printf_va_19
 [eva] using specification for function printf_va_20
@@ -345,182 +150,38 @@
 [eva] using specification for function printf_va_50
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123_4
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:237: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(tmp_2);
+  (tmp_2 from w++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(tmp_3);
+  (tmp_3 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:46: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&ann->activation_hidden);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ann->total_weights);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:325: Warning: 
-  accessing uninitialized left-value. assert \initialized(dd + k);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:327: Warning: 
-  accessing uninitialized left-value. assert \initialized(ww + windex);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:324: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:328: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(delta, \mul_double(forward_delta, forward_weight)));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  accessing uninitialized left-value. assert \initialized(o_0);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:320: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  out of bounds write. assert \valid(d_0);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(*o_0, \sub_double((double)1.0, *o_0)));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(*o_0, \sub_double((double)1.0, *o_0)),
-                        delta));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  out of bounds read. assert \valid_read(o_0);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:308: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_1, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  accessing uninitialized left-value. assert \initialized(i + (int)(k - 1));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_1, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:263: Warning: 
   accessing uninitialized left-value.
-  assert \initialized(tmp_11);
-  (tmp_11 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  accessing uninitialized left-value. assert \initialized(d_2);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_2, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_12);
-  (tmp_12 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_2, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(*d_2, learning_rate),
-                        *(i_0 + (int)(k - 1))));
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:385: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_12,
-                        \mul_double(\mul_double(*d_2, learning_rate),
-                                   *(i_0 + (int)(k - 1)))));
-  (tmp_12 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  out of bounds write. assert \valid(tmp_12);
-                       (tmp_12 from w_0++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:383: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  out of bounds write. assert \valid(tmp_11);
-                       (tmp_11 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_11,
-                        \mul_double(\mul_double(*d_2, learning_rate),
-                                   \neg_double(1.0))));
-  (tmp_11 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  accessing uninitialized left-value. assert \initialized(d_2);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  out of bounds read. assert \valid_read(d_2);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:367: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
-  non-finite double value.
-  assert \is_finite(\add_double(sum_0, \mul_double(*tmp_3, *(i + k))));
-  (tmp_3 from w++)
+  assert \initialized(tmp_8);
+  (tmp_8 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(*tmp_9, *(i + k)));
-  (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  non-finite double value.
-  assert \is_finite(\add_double(sum_2, \mul_double(*tmp_9, *(i + k))));
-  (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:328: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(forward_delta, forward_weight));
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:185: Warning: 
-  out of bounds write. assert \valid(&ann->activation_output);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva] using specification for function printf_va_22
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva] using specification for function printf_va_23
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva] using specification for function printf_va_24
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
+  (tmp_9 from w++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ann->total_weights);
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
+  loop not completely unrolled
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
+  starting to merge loop iterations
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
+  loop not completely unrolled
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
+  starting to merge loop iterations
+[eva] using specification for function printf_va_22
+[eva] using specification for function printf_va_23
+[eva] using specification for function printf_va_24
 [eva] using specification for function printf_va_25
 [eva] using specification for function printf_va_51
 [eva] using specification for function printf_va_52
@@ -538,6 +199,10 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:397: Warning: 
   out of bounds read. assert \valid_read(&ann->outputs);
 [eva] using specification for function fprintf_va_1
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:397: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:397: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->total_weights);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: Warning: 
@@ -545,12 +210,18 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: Warning: 
   accessing uninitialized left-value. assert \initialized(ann->weight + i);
 [eva] using specification for function fprintf_va_2
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: 
+  more than 10(16) locations to update in array. Approximating.
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: 
   starting to merge loop iterations
 [eva] using specification for function fclose
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:201: Warning: 
   function fclose: precondition 'valid_stream' got status unknown.
 [eva] using specification for function fscanf_va_1
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:155: 
+  more than 10(16) locations to update in array. Approximating.
 [eva] using specification for function perror
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
   signed overflow. assert inputs + 1 ≤ 2147483647;
@@ -676,6 +347,10 @@
 [eva] using specification for function fscanf_va_2
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:166: Warning: 
   function fscanf_va_2: precondition \valid(param0) got status unknown.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:166: 
+  more than 10(16) locations to update in array. Approximating.
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:164: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:164: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:206: Warning: 
@@ -715,13 +390,9 @@
   out of bounds read. assert \valid_read(&second->total_weights);
 [eva] using specification for function printf_va_30
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
-  accessing uninitialized left-value. assert \initialized(&first->weight);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   accessing uninitialized left-value. assert \initialized(&second->weight);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   out of bounds read. assert \valid_read(&second->weight);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
-  accessing uninitialized left-value. assert \initialized(first->weight + i);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   accessing uninitialized left-value. assert \initialized(second->weight + i);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
@@ -729,6 +400,10 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   non-finite double value. assert \is_finite(*(second->weight + i));
 [eva] using specification for function printf_va_31
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
+  accessing uninitialized left-value. assert \initialized(first->weight + i);
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:215: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:215: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
@@ -797,6 +472,8 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:237: Warning: 
   signed overflow. assert lfails + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_37
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:236: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:236: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:237: Warning: 
@@ -813,11 +490,13 @@
 [eva] using specification for function printf_va_56
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:251: Warning: 
   signed overflow. assert ltests + 1 ≤ 2147483647;
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:252: 
+  loop not completely unrolled
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:250: 
+  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:251: Warning: 
   signed overflow. assert lfails + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_38
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:250: 
-  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:271: Warning: 
   signed overflow.
   assert -2147483648 ≤ (int)(ltests - ts_7) - (int)(lfails - fs_7);
@@ -827,7 +506,6 @@
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
 [eva] using specification for function printf_va_59
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function genann_act_sigmoid:
   __fc_errno ∈ [--..--]
@@ -856,42 +534,15 @@
 [eva:final-states] Values at end of function genann_init_sigmoid_lookup:
   __fc_errno ∈ [--..--]
   interval ∈ {136.533333333}
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ {3.05902226926e-07}
+        [1] ∈ {3.08150946064e-07}
+        [2] ∈ {3.10416195766e-07}
+        [3..4095] ∈ [0. .. 0.999999691849]
   f ∈ {0.00732421875}
   i ∈ {4096}
 [eva:final-states] Values at end of function genann_write:
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   i ∈ [60760..2147483647]
 [eva:final-states] Values at end of function genann_copy:
   __fc_heap_status ∈ [--..--]
@@ -917,18 +568,18 @@
                            [7596..7785] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function genann_run:
   w ∈
-   {{ &__malloc_genann_init_l123 + [64..--],0%8 ;
+   {{ (double const *)&__malloc_genann_init_l123[80] ;
       (double const *)&__malloc_genann_init_l123_0[136] ;
-      &__malloc_genann_init_l123_1 + [64..--],0%8 ;
-      &__malloc_genann_init_l123_2 + [64..--],0%8 ;
-      &__malloc_genann_init_l123_3 + [64..--],0%8 ;
+      (double const *)&__malloc_genann_init_l123_1[80] ;
+      (double const *)&__malloc_genann_init_l123_2[88] ;
+      (double const *)&__malloc_genann_init_l123_3[88] ;
       (double const *)&__malloc_genann_init_l123_4[136] }}
   o ∈
-   {{ &__malloc_genann_init_l123 + [88..--],0%8 ;
+   {{ (double *)&__malloc_genann_init_l123[96] ;
       (double *)&__malloc_genann_init_l123_0[176] ;
-      &__malloc_genann_init_l123_1 + [88..--],0%8 ;
-      &__malloc_genann_init_l123_2 + [104..--],0%8 ;
-      &__malloc_genann_init_l123_3 + [104..--],0%8 ;
+      (double *)&__malloc_genann_init_l123_1[96] ;
+      (double *)&__malloc_genann_init_l123_2[112] ;
+      (double *)&__malloc_genann_init_l123_3[112] ;
       (double *)&__malloc_genann_init_l123_4[176] }}
   i ∈
    {{ (double const *)&__malloc_genann_init_l123[80] ;
@@ -939,23 +590,25 @@
       (double const *)&__malloc_genann_init_l123_4[152] }}
   h ∈ {1} or UNINITIALIZED
   j ∈ {1}
-  k ∈ {1; 2} or UNINITIALIZED
+  k ∈ {1; 2}
   ret_0 ∈
-       {{ &__malloc_genann_init_l123_0 + [152..--],0%8 ;
-          &__malloc_genann_init_l123_4 + [152..--],0%8 }} or UNINITIALIZED
+       {{ (double const *)&__malloc_genann_init_l123_0[168] ;
+          (double const *)&__malloc_genann_init_l123_4[168] }} or UNINITIALIZED
   __retres ∈
           {{ (double const *)&__malloc_genann_init_l123[88] ;
-             &__malloc_genann_init_l123_0 + [152..--],0%8 ;
+             (double const *)&__malloc_genann_init_l123_0[168] ;
              (double const *)&__malloc_genann_init_l123_1[88] ;
              (double const *)&__malloc_genann_init_l123_2[104] ;
              (double const *)&__malloc_genann_init_l123_3[104] ;
-             &__malloc_genann_init_l123_4 + [152..--],0%8 }}
+             (double const *)&__malloc_genann_init_l123_4[168] }}
   __malloc_genann_init_l123[bits 0 to 31] ∈ {1}
                            [4..7] ∈ {0}
                            [8..11] ∈ {0} or UNINITIALIZED
                            [bits 96 to 127] ∈ {1}
-                           [bits 128 to 255]# ∈
-                           {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
+                           [bits 128 to 191] ∈
+                           {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
+                           [bits 192 to 255] ∈
+                           {{ (? *)&genann_act_sigmoid_cached }}
                            [bits 256 to 287] ∈ {2}
                            [bits 288 to 319] ∈ {2} or UNINITIALIZED
                            [bits 320 to 383] ∈
@@ -966,8 +619,8 @@
                            {{ (? *)&__malloc_genann_init_l123[96] }} or UNINITIALIZED
                            [bits 512 to 639]# ∈ [0. .. 1.] repeated %64 
                            [bits 640 to 703] ∈ [-10. .. 11.]
-                           [bits 704 to 831]# ∈
-                           [0. .. 0.999999691849] or UNINITIALIZED repeated %64 
+                           [bits 704 to 767] ∈ [0. .. 0.999999691849]
+                           [96..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -987,16 +640,17 @@
                              [bits 896 to 959] ∈ {0.5}
                              [bits 960 to 1023] ∈ {1.}
                              [bits 1024 to 1087] ∈ {-1.}
-                             [bits 1088 to 1215]# ∈
+                             [bits 1088 to 1407]# ∈
                              [0. .. 1.] repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [0. .. 1.] or UNINITIALIZED repeated %64 
+                             [176..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..7] ∈ {0}
                              [8..11] ∈ {0} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
+                             [bits 128 to 191] ∈
+                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
+                             [bits 192 to 255] ∈
+                             {{ (? *)&genann_act_sigmoid_cached }}
                              [bits 256 to 319]# ∈
                              {2} or UNINITIALIZED repeated %32 
                              [bits 320 to 383] ∈
@@ -1005,11 +659,12 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }} or UNINITIALIZED
-                             [bits 512 to 639]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 575] ∈ [-0.999999845925 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.749999922962]
                              [bits 640 to 703] ∈ {0.5}
-                             [bits 704 to 831]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 704 to 767] ∈ [0. .. 0.999999691849]
+                             [bits 768 to 831] ∈
+                             [0. .. 0.999999691849] or UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..7] ∈ {0}
                              [8..11] ∈ {0} or UNINITIALIZED
@@ -1018,7 +673,7 @@
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
                              [bits 192 to 255] ∈
                              {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                                (? *)&genann_act_threshold }}
                              [bits 256 to 319]# ∈
                              {3} or UNINITIALIZED repeated %32 
                              [bits 320 to 383] ∈
@@ -1028,10 +683,10 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }} or UNINITIALIZED
                              [bits 512 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈ [0. .. 1.] repeated %64 
-                             [bits 832 to 959]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
+                             [bits 896 to 959] ∈
+                             [-0.999999383698 .. 0.999999691849] or UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..7] ∈ {0}
                              [8..11] ∈ {0} or UNINITIALIZED
@@ -1040,7 +695,7 @@
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
                              [bits 192 to 255] ∈
                              {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                                (? *)&genann_act_threshold }}
                              [bits 256 to 287] ∈ {3}
                              [bits 288 to 319] ∈ {3} or UNINITIALIZED
                              [bits 320 to 383] ∈
@@ -1049,20 +704,22 @@
                              {{ (? *)&__malloc_genann_init_l123_3[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }} or UNINITIALIZED
-                             [bits 512 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈ [0. .. 1.] repeated %64 
-                             [bits 832 to 959]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 575] ∈
+                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [bits 576 to 703]# ∈
+                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
+                             [bits 896 to 959] ∈
+                             [-0.999999383698 .. 0.999999691849] or UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
                              [bits 96 to 127] ∈ {1}
                              [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
+                             {{ (? *)&genann_act_sigmoid_cached }}
                              [bits 192 to 255] ∈
                              {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                                (? *)&genann_act_threshold }}
                              [bits 256 to 287] ∈ {9}
                              [bits 288 to 319] ∈ {5}
                              [bits 320 to 383] ∈
@@ -1071,16 +728,23 @@
                              {{ (? *)&__malloc_genann_init_l123_4[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }} or UNINITIALIZED
-                             [bits 512 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 895]# ∈
+                             [-1e+80 .. 1e+80] repeated %64 
+                             [bits 896 to 1087]# ∈
+                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
                              [bits 1088 to 1215]# ∈
                              [0. .. 1.] repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 1216 to 1343]# ∈
+                             [0. .. 0.999999691849] repeated %64 
+                             [bits 1344 to 1407] ∈ [0. .. 1.]
+                             [bits 1408 to 1535]# ∈
+                             [-3.40282136922e+38 .. 3.40282136922e+38] or UNINITIALIZED repeated %64 
+                             [bits 1536 to 1599] ∈
+                             [-0.999999383698 .. 0.999999691849] or UNINITIALIZED
 [eva:final-states] Values at end of function genann_train:
   h ∈ {-1}
   j ∈ {1; 2}
-  k ∈ {1; 2; 3} or UNINITIALIZED
+  k ∈ {2; 3}
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1096,12 +760,11 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 639]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 640 to 767]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 768 to 831] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 575] ∈ [-0.999999845925 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.749999922962]
+                             [bits 640 to 703] ∈ {0.5}
+                             [bits 704 to 831]# ∈
+                             [0. .. 0.999999691849] repeated %64 
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1118,11 +781,11 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
                              [bits 512 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 832 to 959]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 704 to 831]# ∈ [0. .. 1.] repeated %64 
+                             [bits 832 to 895] ∈ [0. .. 0.999999691849]
+                             [bits 896 to 959] ∈
+                             [-0.999999383698 .. 0.999999691849]
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1138,20 +801,20 @@
                              {{ (? *)&__malloc_genann_init_l123_3[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
-                             [bits 512 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 832 to 959]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 575] ∈
+                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [bits 576 to 703]# ∈
+                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [bits 704 to 831]# ∈ [0. .. 1.] repeated %64 
+                             [bits 832 to 895] ∈ [0. .. 0.999999691849]
+                             [bits 896 to 959] ∈
+                             [-0.999999383698 .. 0.999999691849]
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }}
+                             [bits 128 to 255]# ∈
+                             {{ (? *)&genann_act_sigmoid_cached }} repeated %64 
                              [bits 256 to 287] ∈ {9}
                              [bits 288 to 319] ∈ {5}
                              [bits 320 to 383] ∈
@@ -1160,12 +823,18 @@
                              {{ (? *)&__malloc_genann_init_l123_4[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }}
-                             [bits 512 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 895]# ∈
+                             [-1e+80 .. 1e+80] repeated %64 
+                             [bits 896 to 1087]# ∈
+                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
                              [bits 1088 to 1215]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [0. .. 1.] repeated %64 
+                             [bits 1216 to 1407]# ∈
+                             [0. .. 0.999999691849] repeated %64 
+                             [bits 1408 to 1535]# ∈
+                             [-3.40282136922e+38 .. 3.40282136922e+38] repeated %64 
+                             [bits 1536 to 1599] ∈
+                             [-0.999999383698 .. 0.999999691849]
 [eva:final-states] Values at end of function genann_randomize:
   __fc_random_counter ∈ [--..--]
   i ∈ [0..2147483647]
@@ -1180,8 +849,7 @@
                            {{ (? *)&__malloc_genann_init_l123[80] }}
                            [bits 448 to 511] ∈
                            {{ (? *)&__malloc_genann_init_l123[96] }}
-                           [bits 512 to 639]# ∈
-                           [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                           [bits 512 to 639]# ∈ [-0.5 .. 0.5] repeated %64 
                            [80..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
@@ -1196,7 +864,9 @@
                              {{ (? *)&__malloc_genann_init_l123_0[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_0[176] }}
-                             [bits 512 to 1087]# ∈
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [bits 704 to 1087]# ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
@@ -1211,7 +881,7 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
                              [bits 512 to 639]# ∈
-                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [-0.5 .. 0.5] repeated %64 
                              [80..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
@@ -1225,7 +895,7 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
                              [bits 512 to 703]# ∈
-                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [-0.5 .. 0.5] repeated %64 
                              [88..119] ∈ UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2} or UNINITIALIZED
                              [4..11] ∈ {0} or UNINITIALIZED
@@ -1235,13 +905,13 @@
                              [bits 256 to 287] ∈ {3}
                              [bits 288 to 319] ∈ {3} or UNINITIALIZED
                              [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[64] }} or UNINITIALIZED
+                             {{ (? *)&__malloc_genann_init_l123_3[64] }}
                              [bits 384 to 447] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[88] }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }} or UNINITIALIZED
                              [bits 512 to 703]# ∈
-                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [-0.5 .. 0.5] repeated %64 
                              [88..119] ∈ UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
@@ -1256,7 +926,9 @@
                              {{ (? *)&__malloc_genann_init_l123_4[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }}
-                             [bits 512 to 1087]# ∈
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [bits 704 to 1087]# ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_5[0].inputs ∈ {1000}
@@ -1268,12 +940,14 @@
                              [0].total_weights ∈ {60760}
                              [0].total_neurons ∈ {1260} or UNINITIALIZED
                              [0].weight ∈
-                             {{ (double *)&__malloc_genann_init_l123_5[1] }} or UNINITIALIZED
+                             {{ (double *)&__malloc_genann_init_l123_5[1] }}
                              [0].output ∈
                              {{ (double *)&__malloc_genann_init_l123_5[7596] }} or UNINITIALIZED
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_5[7753].total_weights }} or UNINITIALIZED
-                             [1..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             [1]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden} ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             {[1]{.activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [2..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
   __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483647]
@@ -1286,14 +960,16 @@
                              [bits 288 to 319] ∈
                              [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_6[64] }} or UNINITIALIZED
+                             {{ (? *)&__malloc_genann_init_l123_6[64] }}
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-34359738288..34359738416],0%8 }} or UNINITIALIZED
-                             [64..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
                              [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
   __malloc_genann_init_l123_7[0].inputs ∈ {1000}
@@ -1310,7 +986,9 @@
                              {{ (double *)&__malloc_genann_init_l123_7[7596] }}
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_7[7753].total_weights }}
-                             [1..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             [1]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden} ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             {[1]{.activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [2..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function genann_init:
@@ -1318,7 +996,10 @@
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   hidden_weights ∈ [--..--] or UNINITIALIZED
   output_weights ∈ [--..--] or UNINITIALIZED
   total_weights ∈ [--..--] or UNINITIALIZED
@@ -1479,7 +1160,9 @@
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-34359738288..34359738416],0%8 }} or UNINITIALIZED
-                             [64..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
                              [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
   __malloc_genann_init_l123_7[0].inputs ∈ {1000} or UNINITIALIZED
@@ -1504,21 +1187,27 @@
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   input ∈ {0.5}
   output ∈ {1.}
   first_try ∈ [0. .. 0.999999691849]
-  second_try ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
+  second_try ∈ [0. .. 0.999999691849]
   ltests ∈ {13}
-  lfails ∈ [0..11]
+  lfails ∈ {0; 1; 2; 3; 4; 5; 6; 7}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function basic:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   a ∈ {-10.}
   ltests ∈ {7}
@@ -1529,52 +1218,28 @@
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   first ∈ ESCAPINGADDR
   second ∈ ESCAPINGADDR
   i ∈ [60760..2147483647]
-  ltests ∈ [35..2147483647]
+  ltests ∈ [41..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function genann_read:
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   inputs ∈ [--..--]
   hidden_layers ∈ [--..--]
   hidden ∈ [--..--]
@@ -1611,47 +1276,20 @@
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   first ∈ ESCAPINGADDR
   out ∈ {{ &__fc_fopen + [0..120],0%8 }}
   in ∈ {{ &__fc_fopen + [0..120],0%8 }}
   second ∈ {{ (genann *)&__malloc_genann_init_l123_6 }}
   i ∈ [60760..2147483647]
-  ltests ∈ [30..2147483647]
+  ltests ∈ [33..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
   __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483647]
@@ -1664,14 +1302,16 @@
                              [bits 288 to 319] ∈
                              [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_6[64] }} or UNINITIALIZED
+                             {{ (? *)&__malloc_genann_init_l123_6[64] }}
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-34359738288..34359738416],0%8 }} or UNINITIALIZED
-                             [64..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
                              [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:final-states] Values at end of function sigmoid:
@@ -1679,7 +1319,7 @@
   i ∈ [20. .. 10000000000.]
   max ∈ {20.}
   d ∈ {0.0001}
-  ltests ∈ [35..2147483647]
+  ltests ∈ [44..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function train_and:
@@ -1687,7 +1327,10 @@
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1696,16 +1339,19 @@
         [3] ∈ {1.}
   ann ∈ ESCAPINGADDR
   i ∈ {50}
-  j ∈ {4} or UNINITIALIZED
+  j ∈ {4}
   ltests ∈ {17}
-  lfails ∈ [0..15]
+  lfails ∈ [0..11]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function train_or:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1714,16 +1360,19 @@
         [1..3] ∈ {1.}
   ann ∈ ESCAPINGADDR
   i ∈ {50}
-  j ∈ {4} or UNINITIALIZED
+  j ∈ {4}
   ltests ∈ {21}
-  lfails ∈ [0..19]
+  lfails ∈ [0..15]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function train_xor:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1733,16 +1382,19 @@
         [3] ∈ {0}
   ann ∈ ESCAPINGADDR
   i ∈ {500}
-  j ∈ {4} or UNINITIALIZED
+  j ∈ {4}
   ltests ∈ {25}
-  lfails ∈ [0..23]
+  lfails ∈ [0..19]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function xor:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
@@ -1752,48 +1404,19 @@
         [1..2] ∈ {1.}
         [3] ∈ {0}
   ltests ∈ {12}
-  lfails ∈ [0..10]
-  S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function main:
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
   __fc_fopen[0].__fc_FILE_id ∈ {0}
-            [0].__fc_FILE_data ∈ [--..--]
-            [1].__fc_FILE_id ∈ {0}
-            [1].__fc_FILE_data ∈ [--..--]
-            [2].__fc_FILE_id ∈ {0}
-            [2].__fc_FILE_data ∈ [--..--]
-            [3].__fc_FILE_id ∈ {0}
-            [3].__fc_FILE_data ∈ [--..--]
-            [4].__fc_FILE_id ∈ {0}
-            [4].__fc_FILE_data ∈ [--..--]
-            [5].__fc_FILE_id ∈ {0}
-            [5].__fc_FILE_data ∈ [--..--]
-            [6].__fc_FILE_id ∈ {0}
-            [6].__fc_FILE_data ∈ [--..--]
-            [7].__fc_FILE_id ∈ {0}
-            [7].__fc_FILE_data ∈ [--..--]
-            [8].__fc_FILE_id ∈ {0}
-            [8].__fc_FILE_data ∈ [--..--]
-            [9].__fc_FILE_id ∈ {0}
-            [9].__fc_FILE_data ∈ [--..--]
-            [10].__fc_FILE_id ∈ {0}
-            [10].__fc_FILE_data ∈ [--..--]
-            [11].__fc_FILE_id ∈ {0}
-            [11].__fc_FILE_data ∈ [--..--]
-            [12].__fc_FILE_id ∈ {0}
-            [12].__fc_FILE_data ∈ [--..--]
-            [13].__fc_FILE_id ∈ {0}
-            [13].__fc_FILE_data ∈ [--..--]
-            [14].__fc_FILE_id ∈ {0}
-            [14].__fc_FILE_data ∈ [--..--]
-            [15].__fc_FILE_id ∈ {0}
-            [15].__fc_FILE_data ∈ [--..--]
+            {[0].__fc_FILE_data; [1..15]} ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
-  lookup[0..4095] ∈ [0. .. 0.999999691849]
-  ltests ∈ [35..2147483647]
+  lookup[0] ∈ [0. .. 3.05902226926e-07]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
+  ltests ∈ [44..2147483647]
   lfails ∈ [0..2147483647]
   __retres ∈ {0; 1}
   S___fc_stdout[0..1] ∈ [--..--]
@@ -1807,35 +1430,37 @@
                              [bits 288 to 319] ∈
                              [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_6[64] }} or UNINITIALIZED
+                             {{ (? *)&__malloc_genann_init_l123_6[64] }}
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [-34359738288..34359738416],0%8 }} or UNINITIALIZED
-                             [64..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
                              [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   24 functions analyzed (out of 25): 96% coverage.
-  In these functions, 971 statements reached (out of 1042): 93% coverage.
+  In these functions, 947 statements reached (out of 1042): 90% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    2 warnings
   ----------------------------------------------------------------------------
-  236 alarms generated by the analysis:
-      94 accesses to uninitialized left-values
-      78 invalid memory accesses
-      43 integer overflows
-      21 nan or infinite floating-point values
+  140 alarms generated by the analysis:
+      59 accesses to uninitialized left-values
+      40 invalid memory accesses
+      40 integer overflows
+       1 nan or infinite floating-point value
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   143 valid     6 unknown     0 invalid    149 total
-  95% of the logical properties reached have been proven.
+    Preconditions   138 valid     3 unknown     0 invalid    141 total
+  97% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.29user 0.17system 0:02.47elapsed 100%CPU (0avgtext+0avgdata 172200maxresident)k
-0inputs+4672outputs (0major+38868minor)pagefaults 0swaps
+4.36user 0.18system 0:04.54elapsed 99%CPU (0avgtext+0avgdata 206576maxresident)k
+56inputs+4632outputs (0major+47429minor)pagefaults 0swaps

@@ -3,6 +3,20 @@
 [kernel] Parsing randombytes.c (with preprocessing)
 [variadic:typing] main.c:21: Warning: 
   Incorrect type for argument 2. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 439 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   _0[0..15] ∈ {0}
@@ -621,7 +635,6 @@
 [eva] using specification for function printf_va_12
 [eva:alarm] main.c:77: Warning: 
   function printf_va_12: precondition valid_read_string(param0) got status unknown.
-[scope:rm_asserts] removing 3 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function A:
   i ∈ {16}
@@ -999,5 +1012,5 @@
     Preconditions    32 valid     3 unknown     0 invalid     35 total
   91% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.13user 0.13system 0:02.27elapsed 99%CPU (0avgtext+0avgdata 161336maxresident)k
-0inputs+3344outputs (0major+37830minor)pagefaults 0swaps
+2.08user 0.15system 0:02.23elapsed 99%CPU (0avgtext+0avgdata 160884maxresident)k
+0inputs+3352outputs (0major+37712minor)pagefaults 0swaps

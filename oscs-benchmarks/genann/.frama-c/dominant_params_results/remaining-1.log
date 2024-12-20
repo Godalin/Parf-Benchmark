@@ -5,6 +5,20 @@
 [kernel:parser:decimal-float] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:44: Warning: 
   Floating-point constant 0.001 is not represented exactly. Will use 0x1.0624dd2f1a9fcp-10.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 78 (not modified).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 71 (not modified).
+  option -eva-ilevel already set to 66 (not modified).
+  option -eva-plevel already set to 116 (not modified).
+  option -eva-subdivide-non-linear already set to 18 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -117,14 +131,14 @@
 [eva] using specification for function printf_va_46
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123_2
+[eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:128: 
+  Automatic loop unrolling.
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
   Automatic loop unrolling.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
   Trace partitioning superposing up to 100 states
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:128: 
-  starting to merge loop iterations
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
+  Trace partitioning superposing up to 200 states
 [eva] using specification for function printf_va_14
 [eva] using specification for function printf_va_15
 [eva] using specification for function printf_va_16
@@ -135,14 +149,14 @@
   allocating variable __malloc_genann_init_l123_3
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: Warning: 
   out of bounds read. assert \valid_read(&ann->total_weights);
+[eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:153: 
+  Automatic loop unrolling.
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
   Automatic loop unrolling.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
   Trace partitioning superposing up to 100 states
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:153: 
-  starting to merge loop iterations
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
+  Trace partitioning superposing up to 200 states
 [eva] using specification for function printf_va_18
 [eva] using specification for function printf_va_19
 [eva] using specification for function printf_va_20
@@ -157,8 +171,14 @@
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
   Trace partitioning superposing up to 100 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
+  Trace partitioning superposing up to 200 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
+  Trace partitioning superposing up to 300 states
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
   starting to merge loop iterations
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
+  Trace partitioning superposing up to 400 states
 [eva] using specification for function printf_va_22
 [eva] using specification for function printf_va_23
 [eva] using specification for function printf_va_24
@@ -317,10 +337,12 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   non-finite double value. assert \is_finite(*(second->weight + i));
 [eva] using specification for function printf_va_31
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:215: 
+  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   accessing uninitialized left-value. assert \initialized(second->weight + i);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:215: 
-  starting to merge loop iterations
+  Trace partitioning superposing up to 100 states
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   accessing uninitialized left-value. assert \initialized(first->weight + i);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
@@ -353,6 +375,8 @@
   signed overflow. assert lfails + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_37
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:236: 
+  Trace partitioning superposing up to 100 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:236: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:237: Warning: 
   accessing uninitialized left-value. assert \initialized(first->weight + i);
@@ -370,7 +394,6 @@
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
 [eva] using specification for function printf_va_59
-[scope:rm_asserts] removing 5 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function genann_act_sigmoid:
   __fc_errno ∈ [--..--]
@@ -423,7 +446,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   f ∈ {0.00732421875}
   i ∈ {4096}
 [eva:final-states] Values at end of function genann_write:
@@ -479,9 +549,9 @@
                            {{ (double *)&__malloc_genann_copy_l181[7596] }}
                            [0].delta ∈
                            {{ (double *)&__malloc_genann_copy_l181[7753].total_weights }}
-                           [1..3]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                           {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
                            [-0.5 .. 0.5] repeated %64 
-                           [4..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                           {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                            [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                            [7596..7785] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function genann_run:
@@ -569,12 +639,12 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈ [-0.5 .. 0.570312492778]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5}
                              [bits 704 to 767] ∈ [0. .. 0.999999691849]
                              [bits 768 to 831] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -590,11 +660,13 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 703]# ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 512 to 575] ∈
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
                              [bits 896 to 959] ∈
-                             [-0.281249913333 .. 0.281249971111] or UNINITIALIZED
+                             [-0.15820307625 .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -611,12 +683,12 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
                              [bits 896 to 959] ∈
-                             [-0.281249913333 .. 0.281249971111] or UNINITIALIZED
+                             [-0.15820307625 .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -644,9 +716,9 @@
                              [0. .. 0.999999691849] repeated %64 
                              [bits 1344 to 1407] ∈ [0. .. 1.]
                              [bits 1408 to 1535]# ∈
-                             [-3.58891426878e+37 .. 3.58891426878e+37] or UNINITIALIZED repeated %64 
+                             [-1.36490043858e+37 .. 1.36490043858e+37] or UNINITIALIZED repeated %64 
                              [bits 1536 to 1599] ∈
-                             [-0.281249913333 .. 0.281249971111] or UNINITIALIZED
+                             [-0.15820307625 .. 0.15820310875] or UNINITIALIZED
 [eva:final-states] Values at end of function genann_train:
   h ∈ {-1}
   j ∈ {1; 2}
@@ -663,11 +735,11 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈ [-0.5 .. 0.570312492778]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5}
                              [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                             [bits 768 to 831] ∈ [0. .. 0.281249971111]
+                             [bits 768 to 831] ∈ [0. .. 0.15820310875]
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -683,11 +755,13 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 703]# ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 512 to 575] ∈
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
                              [bits 896 to 959] ∈
-                             [-0.281249913333 .. 0.281249971111]
+                             [-0.15820307625 .. 0.15820310875]
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -704,12 +778,12 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
                              [bits 896 to 959] ∈
-                             [-0.281249913333 .. 0.281249971111]
+                             [-0.15820307625 .. 0.15820310875]
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -733,9 +807,9 @@
                              [bits 1216 to 1407]# ∈
                              [0. .. 0.999999691849] repeated %64 
                              [bits 1408 to 1535]# ∈
-                             [-3.58891426878e+37 .. 3.58891426878e+37] repeated %64 
+                             [-1.36490043858e+37 .. 1.36490043858e+37] repeated %64 
                              [bits 1536 to 1599] ∈
-                             [-0.281249913333 .. 0.281249971111]
+                             [-0.15820307625 .. 0.15820310875]
 [eva:final-states] Values at end of function genann_randomize:
   __fc_random_counter ∈ [--..--]
   i ∈ [2..2147483647]
@@ -760,8 +834,7 @@
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_threshold }} or UNINITIALIZED repeated %64 
+                             [16..31] ∈ UNINITIALIZED
                              [bits 256 to 287] ∈ {9}
                              [bits 288 to 319] ∈ {5}
                              [bits 320 to 383] ∈
@@ -770,16 +843,9 @@
                              {{ (? *)&__malloc_genann_init_l123_0[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_0[176] }}
-                             [bits 512 to 575] ∈ [-0.5 .. 0.5]
-                             [bits 576 to 895]# ∈
-                             [-0.5 .. 1.] repeated %64 
-                             [bits 896 to 959] ∈ [-0.5 .. 0.5]
-                             [bits 960 to 1023] ∈ [-0.5 .. 1.]
-                             [bits 1024 to 1087] ∈ [-1. .. 0.5]
-                             [bits 1088 to 1343]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [168..175] ∈ {0} or UNINITIALIZED
-                             [176..199] ∈ UNINITIALIZED
+                             [bits 512 to 1087]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -792,13 +858,13 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈ [-0.5 .. 0.570312492778]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5} or UNINITIALIZED
                              [bits 704 to 767] ∈
                              [0. .. 0.999999691849] or UNINITIALIZED
                              [bits 768 to 831] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -813,14 +879,16 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 703]# ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 512 to 575] ∈
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 831]# ∈
                              {1.} or UNINITIALIZED repeated %64 
                              [bits 832 to 895] ∈
                              [0. .. 1.] or UNINITIALIZED
                              [bits 896 to 959] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -837,15 +905,15 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 831]# ∈
                              {1.} or UNINITIALIZED repeated %64 
                              [bits 832 to 895] ∈
                              [0. .. 1.] or UNINITIALIZED
                              [bits 896 to 959] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -873,9 +941,9 @@
                              [bits 1344 to 1407] ∈
                              [0. .. 1.] or UNINITIALIZED
                              [bits 1408 to 1535]# ∈
-                             [-3.58891353149e+37 .. 3.58891353149e+37] or UNINITIALIZED repeated %64 
+                             [-1.36490015818e+37 .. 1.36490015818e+37] or UNINITIALIZED repeated %64 
                              [bits 1536 to 1599] ∈
-                             [-0.281249913333 .. 0.] or UNINITIALIZED
+                             [-0.15820307625 .. 0.] or UNINITIALIZED
   __malloc_genann_init_l123_5[0].inputs ∈ {1000}
                              [0].hidden_layers ∈ {5}
                              [0].hidden ∈ {50}
@@ -890,9 +958,9 @@
                              {{ (double *)&__malloc_genann_init_l123_5[7596] }}
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_5[7753].total_weights }}
-                             [1..3]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
                              [-0.5 .. 0.5] repeated %64 
-                             [4..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
   __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
@@ -911,11 +979,10 @@
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [96..34359738384],0%8 }}
-                             [bits 512 to 639]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 640 to 703] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [88..17179869223] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 575] ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308]
+                             [72..79] ∈ [--..--]
+                             [80..17179869223] ∈ [--..--] or UNINITIALIZED
                              [17179869224..18446744073709551607] ∈
                              UNINITIALIZED
   __malloc_genann_init_l123_7[0].inputs ∈ {1000}
@@ -932,9 +999,9 @@
                              {{ (double *)&__malloc_genann_init_l123_7[7596] }}
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_7[7753].total_weights }}
-                             [1..3]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
                              [-0.5 .. 0.5] repeated %64 
-                             [4..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function genann_init:
@@ -966,7 +1033,54 @@
         [21] ∈ [0. .. 3.56763848439e-07]
         [22] ∈ [0. .. 3.59386456522e-07]
         [23] ∈ [0. .. 3.62028343661e-07]
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ [0. .. 3.64689651581e-07]
+        [25] ∈ [0. .. 3.67370523044e-07]
+        [26] ∈ [0. .. 3.70071101864e-07]
+        [27] ∈ [0. .. 3.72791532911e-07]
+        [28] ∈ [0. .. 3.75531962122e-07]
+        [29] ∈ [0. .. 3.78292536504e-07]
+        [30] ∈ [0. .. 3.81073404147e-07]
+        [31] ∈ [0. .. 3.83874714228e-07]
+        [32] ∈ [0. .. 3.86696617023e-07]
+        [33] ∈ [0. .. 3.89539263909e-07]
+        [34] ∈ [0. .. 3.92402807378e-07]
+        [35] ∈ [0. .. 3.95287401044e-07]
+        [36] ∈ [0. .. 3.98193199647e-07]
+        [37] ∈ [0. .. 4.01120359069e-07]
+        [38] ∈ [0. .. 4.04069036334e-07]
+        [39] ∈ [0. .. 4.07039389622e-07]
+        [40] ∈ [0. .. 4.10031578275e-07]
+        [41] ∈ [0. .. 4.13045762807e-07]
+        [42] ∈ [0. .. 4.16082104912e-07]
+        [43] ∈ [0. .. 4.19140767473e-07]
+        [44] ∈ [0. .. 4.22221914568e-07]
+        [45] ∈ [0. .. 4.25325711485e-07]
+        [46] ∈ [0. .. 4.28452324724e-07]
+        [47] ∈ [0. .. 4.3160192201e-07]
+        [48] ∈ [0. .. 4.34774672301e-07]
+        [49] ∈ [0. .. 4.37970745796e-07]
+        [50] ∈ [0. .. 4.41190313947e-07]
+        [51] ∈ [0. .. 4.44433549466e-07]
+        [52] ∈ [0. .. 4.47700626332e-07]
+        [53] ∈ [0. .. 4.50991719807e-07]
+        [54] ∈ [0. .. 4.54307006439e-07]
+        [55] ∈ [0. .. 4.57646664073e-07]
+        [56] ∈ [0. .. 4.61010871863e-07]
+        [57] ∈ [0. .. 4.6439981028e-07]
+        [58] ∈ [0. .. 4.67813661121e-07]
+        [59] ∈ [0. .. 4.71252607519e-07]
+        [60] ∈ [0. .. 4.74716833954e-07]
+        [61] ∈ [0. .. 4.78206526263e-07]
+        [62] ∈ [0. .. 4.81721871646e-07]
+        [63] ∈ [0. .. 4.85263058682e-07]
+        [64] ∈ [0. .. 4.88830277336e-07]
+        [65] ∈ [0. .. 4.92423718968e-07]
+        [66] ∈ [0. .. 4.96043576346e-07]
+        [67] ∈ [0. .. 4.99690043655e-07]
+        [68] ∈ [0. .. 5.03363316506e-07]
+        [69] ∈ [0. .. 5.07063591949e-07]
+        [70] ∈ [0. .. 5.10791068483e-07]
+        [71..4095] ∈ [0. .. 0.999999691849]
   hidden_weights ∈ [0..2147483642] or UNINITIALIZED
   output_weights ∈ [2..2147483645] or UNINITIALIZED
   total_weights ∈ [2..2147483645] or UNINITIALIZED
@@ -1014,8 +1128,7 @@
                              [bits 64 to 95] ∈ {2}
                              [bits 96 to 127] ∈ {1}
                              [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} repeated %64 
+                             {{ (? *)&genann_act_sigmoid_cached }} repeated %64 
                              [bits 256 to 287] ∈ {9}
                              [bits 288 to 319] ∈ {5}
                              [bits 320 to 383] ∈
@@ -1024,16 +1137,9 @@
                              {{ (? *)&__malloc_genann_init_l123_0[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_0[176] }}
-                             [bits 512 to 575] ∈ [-0.5 .. 0.5]
-                             [bits 576 to 895]# ∈
-                             [-0.5 .. 1.] repeated %64 
-                             [bits 896 to 959] ∈ [-0.5 .. 0.5]
-                             [bits 960 to 1023] ∈ [-0.5 .. 1.]
-                             [bits 1024 to 1087] ∈ [-1. .. 0.5]
-                             [bits 1088 to 1343]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [168..175] ∈ {0} or UNINITIALIZED
-                             [176..199] ∈ UNINITIALIZED
+                             [bits 512 to 1087]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1046,13 +1152,13 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈ [-0.5 .. 0.570312492778]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5} or UNINITIALIZED
                              [bits 704 to 767] ∈
                              [0. .. 0.999999691849] or UNINITIALIZED
                              [bits 768 to 831] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1068,14 +1174,16 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 703]# ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 512 to 575] ∈
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 831]# ∈
                              {1.} or UNINITIALIZED repeated %64 
                              [bits 832 to 895] ∈
                              [0. .. 1.] or UNINITIALIZED
                              [bits 896 to 959] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1092,15 +1200,15 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 831]# ∈
                              {1.} or UNINITIALIZED repeated %64 
                              [bits 832 to 895] ∈
                              [0. .. 1.] or UNINITIALIZED
                              [bits 896 to 959] ∈
-                             [0. .. 0.281249971111] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -1129,9 +1237,9 @@
                              [bits 1344 to 1407] ∈
                              [0. .. 1.] or UNINITIALIZED
                              [bits 1408 to 1535]# ∈
-                             [-3.58891353149e+37 .. 3.58891353149e+37] or UNINITIALIZED repeated %64 
+                             [-1.36490015818e+37 .. 1.36490015818e+37] or UNINITIALIZED repeated %64 
                              [bits 1536 to 1599] ∈
-                             [-0.281249913333 .. 0.] or UNINITIALIZED
+                             [-0.15820307625 .. 0.] or UNINITIALIZED
   __malloc_genann_init_l123_5[0].inputs ∈ {1000}
                              [0].hidden_layers ∈ {5}
                              [0].hidden ∈ {50}
@@ -1146,9 +1254,9 @@
                              {{ (double *)&__malloc_genann_init_l123_5[7596] }}
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_5[7753].total_weights }}
-                             [1..3]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
                              [-0.5 .. 0.5] repeated %64 
-                             [4..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
   __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
@@ -1167,11 +1275,10 @@
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [96..34359738384],0%8 }}
-                             [bits 512 to 639]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 640 to 703] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [88..17179869223] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 575] ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308]
+                             [72..79] ∈ [--..--]
+                             [80..17179869223] ∈ [--..--] or UNINITIALIZED
                              [17179869224..18446744073709551607] ∈
                              UNINITIALIZED
   __malloc_genann_init_l123_7[0].inputs ∈ {1000}
@@ -1188,9 +1295,9 @@
                              {{ (double *)&__malloc_genann_init_l123_7[7596] }}
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_7[7753].total_weights }}
-                             [1..3]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
                              [-0.5 .. 0.5] repeated %64 
-                             [4..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta} ∈
+                             {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function backprop:
@@ -1222,7 +1329,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   input ∈ {0.5}
   output ∈ {1.}
@@ -1243,11 +1397,11 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈ [-0.5 .. 0.570312492778]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5}
                              [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                             [bits 768 to 831] ∈ [0. .. 0.281249971111]
+                             [bits 768 to 831] ∈ [0. .. 0.15820310875]
 [eva:final-states] Values at end of function basic:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
@@ -1277,7 +1431,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   a ∈ {-10.}
   ltests ∈ {7}
@@ -1328,11 +1529,58 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   first ∈ ESCAPINGADDR
   second ∈ ESCAPINGADDR
   i ∈ [60760..2147483647]
-  ltests ∈ [43..2147483647]
+  ltests ∈ [44..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function genann_read:
@@ -1397,7 +1645,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   inputs ∈ [--..--]
   hidden_layers ∈ [--..--]
   hidden ∈ [--..--]
@@ -1489,7 +1784,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   first ∈ ESCAPINGADDR
   out ∈
      {{ &__fc_fopen{[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
@@ -1499,9 +1841,28 @@
                    [11], [12], [13], [14], [15]} }}
   second ∈ {{ (genann *)&__malloc_genann_init_l123_6 }}
   i ∈ [60760..2147483647]
-  ltests ∈ [33..2147483647]
+  ltests ∈ [31..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
+  __malloc_genann_init_l123_5[0].inputs ∈ {1000}
+                             [0].hidden_layers ∈ {5}
+                             [0].hidden ∈ {50}
+                             [0].outputs ∈ {10}
+                             [0]{.activation_hidden; .activation_output} ∈
+                             {{ &genann_act_sigmoid_cached }}
+                             [0].total_weights ∈ {60760}
+                             [0].total_neurons ∈ {1260}
+                             [0].weight ∈
+                             {{ (double *)&__malloc_genann_init_l123_5[1] }}
+                             [0].output ∈
+                             {{ (double *)&__malloc_genann_init_l123_5[7596] }}
+                             [0].delta ∈
+                             {{ (double *)&__malloc_genann_init_l123_5[7753].total_weights }}
+                             {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [7596..7785] ∈ UNINITIALIZED
   __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
                              [bits 32 to 63] ∈ [0..2147483647]
                              [8..11] ∈ [--..--]
@@ -1518,9 +1879,10 @@
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [96..34359738384],0%8 }}
-                             [bits 512 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [88..17179869223] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 575] ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308]
+                             [72..79] ∈ [--..--]
+                             [80..17179869223] ∈ [--..--] or UNINITIALIZED
                              [17179869224..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:final-states] Values at end of function sigmoid:
@@ -1528,7 +1890,7 @@
   i ∈ [20. .. 10000000000.]
   max ∈ {20.}
   d ∈ {0.0001}
-  ltests ∈ [67..2147483647]
+  ltests ∈ [115..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function train_and:
@@ -1560,7 +1922,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1587,11 +1996,13 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 703]# ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 512 to 575] ∈
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 831]# ∈ {1.} repeated %64 
                              [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈ [0. .. 0.281249971111]
+                             [bits 896 to 959] ∈ [0. .. 0.15820310875]
 [eva:final-states] Values at end of function train_or:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
@@ -1621,7 +2032,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1649,12 +2107,12 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 831]# ∈ {1.} repeated %64 
                              [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈ [0. .. 0.281249971111]
+                             [bits 896 to 959] ∈ [0. .. 0.15820310875]
 [eva:final-states] Values at end of function train_xor:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
@@ -1684,7 +2142,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1723,8 +2228,8 @@
                              [0. .. 0.999999691849] repeated %64 
                              [bits 1344 to 1407] ∈ [0. .. 1.]
                              [bits 1408 to 1535]# ∈
-                             [-3.58891353149e+37 .. 3.58891353149e+37] repeated %64 
-                             [bits 1536 to 1599] ∈ [-0.281249913333 .. 0.]
+                             [-1.36490015818e+37 .. 1.36490015818e+37] repeated %64 
+                             [bits 1536 to 1599] ∈ [-0.15820307625 .. 0.]
 [eva:final-states] Values at end of function xor:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
@@ -1754,7 +2259,54 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
@@ -1764,28 +2316,6 @@
         [1..2] ∈ {1.}
         [3] ∈ {0}
   ltests ∈ {12}
-  __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
-                             [bits 32 to 63] ∈ {1}
-                             [bits 64 to 95] ∈ {2}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_threshold }} repeated %64 
-                             [bits 256 to 287] ∈ {9}
-                             [bits 288 to 319] ∈ {5}
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[136] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[176] }}
-                             [bits 512 to 575] ∈ {0.5}
-                             [bits 576 to 895]# ∈ {1.} repeated %64 
-                             [bits 896 to 959] ∈ {0.5}
-                             [bits 960 to 1023] ∈ {1.}
-                             [bits 1024 to 1087] ∈ {-1.}
-                             [bits 1088 to 1343]# ∈ {1.} repeated %64 
-                             [168..175] ∈ {0}
-                             [176..199] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function main:
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL ; &S___fc_stdout[0] }}
@@ -1848,8 +2378,55 @@
         [21] ∈ {3.56763848439e-07}
         [22] ∈ {3.59386456522e-07}
         [23] ∈ {3.62028343661e-07}
-        [24..4095] ∈ [0. .. 0.999999691849]
-  ltests ∈ [67..2147483647]
+        [24] ∈ {3.64689651581e-07}
+        [25] ∈ {3.67370523044e-07}
+        [26] ∈ {3.70071101864e-07}
+        [27] ∈ {3.72791532911e-07}
+        [28] ∈ {3.75531962122e-07}
+        [29] ∈ {3.78292536504e-07}
+        [30] ∈ {3.81073404147e-07}
+        [31] ∈ {3.83874714228e-07}
+        [32] ∈ {3.86696617023e-07}
+        [33] ∈ {3.89539263909e-07}
+        [34] ∈ {3.92402807378e-07}
+        [35] ∈ {3.95287401044e-07}
+        [36] ∈ {3.98193199647e-07}
+        [37] ∈ {4.01120359069e-07}
+        [38] ∈ {4.04069036334e-07}
+        [39] ∈ {4.07039389622e-07}
+        [40] ∈ {4.10031578275e-07}
+        [41] ∈ {4.13045762807e-07}
+        [42] ∈ {4.16082104912e-07}
+        [43] ∈ {4.19140767473e-07}
+        [44] ∈ {4.22221914568e-07}
+        [45] ∈ {4.25325711485e-07}
+        [46] ∈ {4.28452324724e-07}
+        [47] ∈ {4.3160192201e-07}
+        [48] ∈ {4.34774672301e-07}
+        [49] ∈ {4.37970745796e-07}
+        [50] ∈ {4.41190313947e-07}
+        [51] ∈ {4.44433549466e-07}
+        [52] ∈ {4.47700626332e-07}
+        [53] ∈ {4.50991719807e-07}
+        [54] ∈ {4.54307006439e-07}
+        [55] ∈ {4.57646664073e-07}
+        [56] ∈ {4.61010871863e-07}
+        [57] ∈ {4.6439981028e-07}
+        [58] ∈ {4.67813661121e-07}
+        [59] ∈ {4.71252607519e-07}
+        [60] ∈ {4.74716833954e-07}
+        [61] ∈ {4.78206526263e-07}
+        [62] ∈ {4.81721871646e-07}
+        [63] ∈ {4.85263058682e-07}
+        [64] ∈ {4.88830277336e-07}
+        [65] ∈ {4.92423718968e-07}
+        [66] ∈ {4.96043576346e-07}
+        [67] ∈ {4.99690043655e-07}
+        [68] ∈ {5.03363316506e-07}
+        [69] ∈ {5.07063591949e-07}
+        [70] ∈ {5.10791068483e-07}
+        [71..4095] ∈ [0. .. 0.999999691849]
+  ltests ∈ [115..2147483647]
   lfails ∈ [0..2147483647]
   __retres ∈ {0; 1}
   S___fc_stdout[0..1] ∈ [--..--]
@@ -1869,28 +2446,6 @@
                            [bits 640 to 703] ∈ {-10.}
                            [bits 704 to 767] ∈ [0. .. 0.999999691849]
                            [96..103] ∈ UNINITIALIZED
-  __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
-                             [bits 32 to 63] ∈ {1}
-                             [bits 64 to 95] ∈ {2}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_threshold }} repeated %64 
-                             [bits 256 to 287] ∈ {9}
-                             [bits 288 to 319] ∈ {5}
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[136] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[176] }}
-                             [bits 512 to 575] ∈ {0.5}
-                             [bits 576 to 895]# ∈ {1.} repeated %64 
-                             [bits 896 to 959] ∈ {0.5}
-                             [bits 960 to 1023] ∈ {1.}
-                             [bits 1024 to 1087] ∈ {-1.}
-                             [bits 1088 to 1343]# ∈ {1.} repeated %64 
-                             [168..175] ∈ {0}
-                             [176..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1903,11 +2458,11 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈ [-0.5 .. 0.570312492778]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5}
                              [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                             [bits 768 to 831] ∈ [0. .. 0.281249971111]
+                             [bits 768 to 831] ∈ [0. .. 0.15820310875]
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1922,11 +2477,13 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 703]# ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 512 to 575] ∈
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 831]# ∈ {1.} repeated %64 
                              [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈ [0. .. 0.281249971111]
+                             [bits 896 to 959] ∈ [0. .. 0.15820310875]
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
@@ -1942,12 +2499,12 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-0.5 .. 3.40282346639e+38] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 831]# ∈ {1.} repeated %64 
                              [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈ [0. .. 0.281249971111]
+                             [bits 896 to 959] ∈ [0. .. 0.15820310875]
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -1973,8 +2530,27 @@
                              [0. .. 0.999999691849] repeated %64 
                              [bits 1344 to 1407] ∈ [0. .. 1.]
                              [bits 1408 to 1535]# ∈
-                             [-3.58891353149e+37 .. 3.58891353149e+37] repeated %64 
-                             [bits 1536 to 1599] ∈ [-0.281249913333 .. 0.]
+                             [-1.36490015818e+37 .. 1.36490015818e+37] repeated %64 
+                             [bits 1536 to 1599] ∈ [-0.15820307625 .. 0.]
+  __malloc_genann_init_l123_5[0].inputs ∈ {1000}
+                             [0].hidden_layers ∈ {5}
+                             [0].hidden ∈ {50}
+                             [0].outputs ∈ {10}
+                             [0]{.activation_hidden; .activation_output} ∈
+                             {{ &genann_act_sigmoid_cached }}
+                             [0].total_weights ∈ {60760}
+                             [0].total_neurons ∈ {1260}
+                             [0].weight ∈
+                             {{ (double *)&__malloc_genann_init_l123_5[1] }}
+                             [0].output ∈
+                             {{ (double *)&__malloc_genann_init_l123_5[7596] }}
+                             [0].delta ∈
+                             {{ (double *)&__malloc_genann_init_l123_5[7753].total_weights }}
+                             {[1..8]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [9]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output}} ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             {[9].delta; [10..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [7596..7785] ∈ UNINITIALIZED
   __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
                              [bits 32 to 63] ∈ [0..2147483647]
                              [8..11] ∈ [--..--]
@@ -1991,9 +2567,10 @@
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
                                 [96..34359738384],0%8 }}
-                             [bits 512 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [88..17179869223] ∈ [--..--] or UNINITIALIZED
+                             [bits 512 to 575] ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308]
+                             [72..79] ∈ [--..--]
+                             [80..17179869223] ∈ [--..--] or UNINITIALIZED
                              [17179869224..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:summary] ====== ANALYSIS SUMMARY ======
@@ -2016,5 +2593,5 @@
     Preconditions   138 valid     3 unknown     0 invalid    141 total
   97% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-20.13user 0.22system 0:20.36elapsed 99%CPU (0avgtext+0avgdata 335452maxresident)k
-0inputs+4704outputs (0major+79719minor)pagefaults 0swaps
+34.09user 0.45system 0:34.55elapsed 99%CPU (0avgtext+0avgdata 422864maxresident)k
+0inputs+4712outputs (0major+101594minor)pagefaults 0swaps

@@ -1,4 +1,18 @@
 [kernel] Parsing solitaire.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 2 (not modified).
+  option -eva-auto-loop-unroll already set to 48 (not modified).
+  option -eva-widening-delay already set to 5 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 82 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 120 (not modified).
+  option -eva-subdivide-non-linear already set to 14 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(memchr) == 0 (auto)
   \return(memcpy) == 0 (auto)
@@ -74,6 +88,7 @@
 [eva:alarm] solitaire.c:213: Warning: 
   out of bounds read. assert \valid_read(key);
 [eva] using specification for function __FC_assert
+[eva:loop-unroll:partial] solitaire.c:131: loop not completely unrolled
 [eva:alarm] solitaire.c:214: Warning: 
   out of bounds read. assert \valid_read(key);
 [eva:alarm] solitaire.c:214: Warning: 
@@ -84,36 +99,53 @@
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] solitaire.c:69: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva] solitaire.c:107: starting to merge loop iterations
+[eva:loop-unroll:partial] solitaire.c:107: loop not completely unrolled
 [eva:alarm] solitaire.c:107: Warning: 
   out of bounds write. assert \valid(tmp_3);
                        (tmp_3 from d++)
-[eva] solitaire.c:114: starting to merge loop iterations
+[eva] solitaire.c:107: starting to merge loop iterations
+[eva] solitaire.c:109: 
+  The evaluation of the expression state.spare + (nlo - nccut)
+  led to bottom without alarms:
+  at this point the product of states has no possible concretization.
+[eva:loop-unroll:partial] solitaire.c:111: loop not completely unrolled
+[eva] solitaire.c:111: starting to merge loop iterations
+[eva] solitaire.c:114: Trace partitioning superposing up to 100 states
 [eva:alarm] solitaire.c:114: Warning: 
   out of bounds write. assert \valid(tmp_8);
                        (tmp_8 from d++)
+[eva:loop-unroll:partial] solitaire.c:114: loop not completely unrolled
+[eva] solitaire.c:114: starting to merge loop iterations
+[eva:loop-unroll:partial] solitaire.c:117: loop not completely unrolled
 [eva] solitaire.c:117: starting to merge loop iterations
-[eva] solitaire.c:124: starting to merge loop iterations
+[eva:loop-unroll:partial] solitaire.c:124: loop not completely unrolled
 [eva:alarm] solitaire.c:124: Warning: 
   out of bounds write. assert \valid(tmp_12);
                        (tmp_12 from d++)
+[eva] solitaire.c:124: starting to merge loop iterations
 [eva:alarm] solitaire.c:128: Warning: 
   out of bounds write. assert \valid(tmp_15);
                        (tmp_15 from d++)
+[eva:loop-unroll:partial] solitaire.c:128: loop not completely unrolled
+[eva] solitaire.c:128: starting to merge loop iterations
 [eva] solitaire.c:131: starting to merge loop iterations
 [eva:alarm] solitaire.c:134: Warning: 
   out of bounds write. assert \valid(tmp_19);
                        (tmp_19 from d++)
+[eva:loop-unroll:partial] solitaire.c:134: loop not completely unrolled
 [eva] solitaire.c:134: starting to merge loop iterations
 [eva:alarm] solitaire.c:146: Warning: 
   out of bounds write. assert \valid(tmp_21);
                        (tmp_21 from d++)
+[eva:loop-unroll:partial] solitaire.c:146: loop not completely unrolled
 [eva] solitaire.c:146: starting to merge loop iterations
-[eva] solitaire.c:153: Trace partitioning superposing up to 100 states
-[eva] solitaire.c:153: starting to merge loop iterations
+[eva:loop-unroll:partial] solitaire.c:149: loop not completely unrolled
 [eva:alarm] solitaire.c:153: Warning: 
   out of bounds write. assert \valid(tmp_26);
                        (tmp_26 from d++)
+[eva:loop-unroll:partial] solitaire.c:153: loop not completely unrolled
+[eva] solitaire.c:153: starting to merge loop iterations
+[eva:loop-unroll:partial] solitaire.c:156: loop not completely unrolled
 [eva:alarm] solitaire.c:156: Warning: 
   out of bounds write. assert \valid(tmp_28);
                        (tmp_28 from d++)
@@ -124,7 +156,6 @@
 [eva:alarm] solitaire.c:284: Warning: 
   out of bounds read. assert \valid_read(av + 1);
 [eva] solitaire.c:284: assertion 'Eva,mem_access' got final status invalid.
-[scope:rm_asserts] removing 5 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function cycle_deck:
   state.a ∈ [0..76]
@@ -292,5 +323,5 @@
     Preconditions     4 valid     6 unknown     0 invalid     10 total
   40% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.51user 0.12system 0:01.64elapsed 100%CPU (0avgtext+0avgdata 152720maxresident)k
-0inputs+1736outputs (0major+31521minor)pagefaults 0swaps
+2.28user 0.13system 0:02.42elapsed 100%CPU (0avgtext+0avgdata 177740maxresident)k
+0inputs+1744outputs (0major+37722minor)pagefaults 0swaps

@@ -1,6 +1,20 @@
 [kernel] Parsing compress_file.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear already set to 441 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -36,8 +50,8 @@
   out of bounds write. assert \valid(&state->hash[i].offset);
 [eva] quicklz.c:67: starting to merge loop iterations
 [kernel] quicklz.c:70: 
-  more than 200(4096) locations to update in array. Approximating.
-[kernel] quicklz.c:70: more than 200(4096) elements to enumerate. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
+[kernel] quicklz.c:70: more than 10(4096) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:268: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)src, (void *)last_matchstart);
@@ -54,14 +68,14 @@
 [eva:alarm] quicklz.c:292: Warning: 
   out of bounds read. assert \valid_read(&state->hash[hash].cache);
 [kernel] quicklz.c:293: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:295: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&state->hash[hash].offset);
 [eva:alarm] quicklz.c:296: Warning: 
   pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
 [kernel] quicklz.c:296: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:299: Warning: 
   pointer comparison. assert \pointer_comparable((void *)o, (void *)source);
 [eva:alarm] quicklz.c:299: Warning: 
@@ -158,9 +172,9 @@
 [eva:alarm] quicklz.c:524: Warning: 
   signed overflow. assert src - source ≤ 9223372036854775807;
 [kernel] quicklz.c:524: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [kernel] quicklz.c:525: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:537: Warning: out of bounds write. assert \valid(dst);
 [eva:alarm] quicklz.c:537: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
@@ -174,8 +188,7 @@
   pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
 [eva:alarm] quicklz.c:549: Warning: 
   signed overflow. assert dst - destination ≤ 9223372036854775807;
-[kernel] quicklz.c:292: 
-  more than 200(4096) elements to enumerate. Approximating.
+[kernel] quicklz.c:292: more than 10(4096) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:754: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] quicklz.c:754: Warning: 
@@ -204,7 +217,6 @@
 [eva:alarm] compress_file.c:31: Warning: 
   function fwrite: precondition 'valid_stream' got status unknown.
 [eva] using specification for function fclose
-[scope:rm_asserts] removing 5 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fast_read:
   __retres ∈ [--..--]
@@ -224,7 +236,7 @@
   last_byte ∈
            {{ NULL + [0..4294966894] ;
               &__malloc_main_l23 + [0..4294966894] }}
-  src ∈ {{ NULL ; &__malloc_main_l23 + [0..18446744073709551615] }}
+  src ∈ {{ NULL ; &__malloc_main_l23 + [0..--] }}
   cword_ptr ∈
            {{ NULL + {3; 7; 9; 13} ;
               &__malloc_main_l27 + [3..18446744073709551615] }}
@@ -316,5 +328,5 @@
     Preconditions    14 valid     6 unknown     0 invalid     20 total
   70% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.73user 0.09system 0:00.82elapsed 99%CPU (0avgtext+0avgdata 116332maxresident)k
-0inputs+2840outputs (0major+26474minor)pagefaults 0swaps
+0.67user 0.11system 0:00.79elapsed 99%CPU (0avgtext+0avgdata 116132maxresident)k
+0inputs+2840outputs (0major+26416minor)pagefaults 0swaps

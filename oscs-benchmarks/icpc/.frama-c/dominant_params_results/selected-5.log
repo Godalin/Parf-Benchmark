@@ -9,6 +9,20 @@
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
 [variadic] src/main.c:41: Warning: 
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 40 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   Engine_maxVoltage_PARAM ∈ {24.}
@@ -174,7 +188,9 @@
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function fabs
 [eva] src/main.c:35: starting to merge loop iterations
+[eva] src/roco.c:233: Trace partitioning superposing up to 100 states
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
+[eva] src/roco.c:272: Trace partitioning superposing up to 100 states
 [eva:alarm] src/impls.c:26: Warning: 
   function exp: precondition 'not_overflow' got status unknown.
 [eva:alarm] src/impls.c:27: Warning: 
@@ -265,7 +281,7 @@
 [eva:final-states] Values at end of function Timer_elapsedTime:
   __retres ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
 [eva:final-states] Values at end of function Timer_start:
-  initTimer ∈ [-3.36 .. 4.36]
+  initTimer ∈ [-3.36 .. 4.96]
   shutdownTimer ∈ {0}
 [eva:final-states] Values at end of function Timer_tick:
   initTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
@@ -273,7 +289,7 @@
 [eva:final-states] Values at end of function Turn_on_delay:
   result ∈ {0; 1}
   batteryLowDelay ∈ {0}
-  standstillDelay ∈ [-3.40282346639e+38 .. 2147485.46]
+  standstillDelay ∈ [-3.40282346639e+38 .. 2147484.86]
 [eva:final-states] Values at end of function PT1_Filter:
   __fc_errno ∈ [--..--]
   Srv_PT1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
@@ -350,7 +366,7 @@
   shutdownTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
   voltageFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
   batteryLowDelay ∈ {0}
-  standstillDelay ∈ [-3.40282346639e+38 .. 2147485.46]
+  standstillDelay ∈ [-3.40282346639e+38 .. 2147484.86]
   adaptation[0] ∈ [0. .. 1e+80]
             [1] ∈ {0}
   rampHighReached ∈ {0; 1}
@@ -358,7 +374,7 @@
 [eva:final-states] Values at end of function main:
   __fc_errno ∈ [--..--]
   Battery_voltage ∈ {21.3}
-  dT ∈ [-2147483.44 .. 2147483.46]
+  dT ∈ [-2147482.84 .. 2147482.86]
   Engine_realVoltage ∈ [-1.61792382138e+308 .. 1.61792382138e+308]
   Env_humidity ∈ {0.5}
   Env_temperature ∈ {20.}
@@ -388,9 +404,9 @@
   Sim_maxPos_PARAM ∈ {121.}
   Sim_minPos_PARAM ∈ {-121.}
   Srv_PT1 ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
-  lastTime ∈ [180..2147483640],0%20
+  lastTime ∈ [780..2147483640],0%20
   cnt ∈ {9000}
-  _t ∈ [200..2147483640],0%20
+  _t ∈ [800..2147483640],0%20
   angleDiffRequest ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
   desiredEngineVoltage ∈ [-24. .. 24.]
   initBackwards ∈ {0; 1}
@@ -420,7 +436,7 @@
   shutdownTimer ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
   voltageFilter ∈ [-1.79769313486e+308 .. 1.79769313486e+308]
   batteryLowDelay ∈ {0}
-  standstillDelay ∈ [-3.40282346639e+38 .. 2147485.46]
+  standstillDelay ∈ [-3.40282346639e+38 .. 2147484.86]
   adaptation[0] ∈ [0. .. 1e+80]
             [1] ∈ {0}
   rampHighReached ∈ {0; 1}
@@ -445,5 +461,5 @@
     Preconditions    13 valid     1 unknown     0 invalid     14 total
   92% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.25user 0.18system 0:02.44elapsed 99%CPU (0avgtext+0avgdata 182036maxresident)k
-0inputs+6296outputs (0major+45581minor)pagefaults 0swaps
+3.67user 0.24system 0:03.91elapsed 99%CPU (0avgtext+0avgdata 202300maxresident)k
+0inputs+6296outputs (0major+50626minor)pagefaults 0swaps

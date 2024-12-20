@@ -2,6 +2,20 @@
 [kernel] Parsing test.c (with preprocessing)
 [kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
 [kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history already set to 1 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   b ∈ {0}
@@ -16,8 +30,8 @@
 [eva] FRAMAC_SHARE/libc/stdio.c:73: allocating variable __malloc_getline_l73
 [eva] using specification for function Frama_C_interval
 [eva] using specification for function Frama_C_unsigned_char_interval
-[eva] FRAMAC_SHARE/libc/stdio.c:83: starting to merge loop iterations
 [eva] FRAMAC_SHARE/libc/stdio.c:104: allocating variable __realloc_getline_l104
+[eva] FRAMAC_SHARE/libc/stdio.c:83: starting to merge loop iterations
 [eva] FRAMAC_SHARE/libc/stdio.c:82: starting to merge loop iterations
 [eva:alarm] FRAMAC_SHARE/libc/stdio.c:90: Warning: 
   out of bounds write. assert \valid(*lineptr + tmp_2);
@@ -79,7 +93,6 @@
   out of bounds read. assert \valid_read(b + (int)(k - 1));
 [eva:alarm] stmr.c:66: Warning: 
   accessing uninitialized left-value. assert \initialized(b + index_0);
-[eva] stmr.c:99: starting to merge loop iterations
 [eva:alarm] stmr.c:66: Warning: 
   out of bounds read. assert \valid_read(b + index_0);
 [eva:recursion] stmr.c:74: detected recursive call of function isConsonant.
@@ -88,9 +101,10 @@
   Analysis of function isConsonant is thus incomplete and its soundness
   relies on the written specification.
 [eva] using specification for function isConsonant
-[eva] stmr.c:113: starting to merge loop iterations
+[eva] stmr.c:99: starting to merge loop iterations
 [eva] stmr.c:114: starting to merge loop iterations
 [eva] stmr.c:129: starting to merge loop iterations
+[eva] stmr.c:113: starting to merge loop iterations
 [eva:alarm] stmr.c:127: Warning: 
   signed overflow. assert position + 1 ≤ 2147483647;
 [eva] stmr.c:152: starting to merge loop iterations
@@ -165,13 +179,13 @@
   accessing uninitialized left-value. assert \initialized(s2 + i);
 [eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
   out of bounds read. assert \valid_read(s1 + i);
-[eva] FRAMAC_SHARE/libc/string.c:146: starting to merge loop iterations
 [eva:alarm] FRAMAC_SHARE/libc/string.c:146: Warning: 
   out of bounds read. assert \valid_read(s2 + i);
 [eva:alarm] FRAMAC_SHARE/libc/string.c:147: Warning: 
-  accessing uninitialized left-value. assert \initialized(s1 + i);
-[eva:alarm] FRAMAC_SHARE/libc/string.c:147: Warning: 
   out of bounds read. assert \valid_read(s1 + i);
+[eva] FRAMAC_SHARE/libc/string.c:146: starting to merge loop iterations
+[eva:alarm] FRAMAC_SHARE/libc/string.c:147: Warning: 
+  accessing uninitialized left-value. assert \initialized(s1 + i);
 [eva:alarm] FRAMAC_SHARE/libc/string.c:149: Warning: 
   accessing uninitialized left-value.
   assert \initialized((unsigned char *)s1 + i);
@@ -214,7 +228,6 @@
 [eva] using specification for function printf_va_8
 [eva] using specification for function printf_va_9
 [eva] using specification for function printf_va_10
-[scope:rm_asserts] removing 6 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fgetc:
   __fc_errno ∈ [--..--]
@@ -287,7 +300,7 @@
                         [5] ∈ {110} or UNINITIALIZED
                         [6] ∈ {97} or UNINITIALIZED
                         [7] ∈ {108} or UNINITIALIZED
-                        [8] ∈ {105} or UNINITIALIZED
+                        [8] ∈ {105}
                         [9] ∈ {122} or UNINITIALIZED
                         [10] ∈ {101}
                         [11] ∈ {116} or UNINITIALIZED
@@ -425,7 +438,7 @@
                         [5] ∈ {110} or UNINITIALIZED
                         [6] ∈ {97} or UNINITIALIZED
                         [7] ∈ {108} or UNINITIALIZED
-                        [8] ∈ {105} or UNINITIALIZED
+                        [8] ∈ {105}
                         [9] ∈ {122} or UNINITIALIZED
                         [10] ∈ {97; 101} or UNINITIALIZED
                         [11] ∈ {116} or UNINITIALIZED
@@ -439,7 +452,7 @@
                         [3] ∈ {105} or UNINITIALIZED
                         [4] ∈ {111} or UNINITIALIZED
                         [5] ∈ {110} or UNINITIALIZED
-                        [6] ∈ {97} or UNINITIALIZED
+                        [6] ∈ {97}
                         [7] ∈ {108} or UNINITIALIZED
                         [8] ∈ {105} or UNINITIALIZED
                         [9] ∈ {115}
@@ -458,7 +471,7 @@
                         [5] ∈ {110} or UNINITIALIZED
                         [6] ∈ {97} or UNINITIALIZED
                         [7] ∈ {108} or UNINITIALIZED
-                        [8] ∈ {105} or UNINITIALIZED
+                        [8] ∈ {105}
                         [9] ∈ {122} or UNINITIALIZED
                         [10] ∈ {97; 101} or UNINITIALIZED
                         [11] ∈ {116} or UNINITIALIZED
@@ -472,7 +485,7 @@
                         [3] ∈ {105} or UNINITIALIZED
                         [4] ∈ {111} or UNINITIALIZED
                         [5] ∈ {110} or UNINITIALIZED
-                        [6] ∈ {97} or UNINITIALIZED
+                        [6] ∈ {97}
                         [7] ∈ {108} or UNINITIALIZED
                         [8] ∈ {105} or UNINITIALIZED
                         [9] ∈ {115}
@@ -491,7 +504,7 @@
                         [5] ∈ {110} or UNINITIALIZED
                         [6] ∈ {97} or UNINITIALIZED
                         [7] ∈ {108} or UNINITIALIZED
-                        [8] ∈ {105} or UNINITIALIZED
+                        [8] ∈ {105}
                         [9] ∈ {122} or UNINITIALIZED
                         [10] ∈ {97; 101} or UNINITIALIZED
                         [11] ∈ {116} or UNINITIALIZED
@@ -537,7 +550,7 @@
                         [5] ∈ {110} or UNINITIALIZED
                         [6] ∈ {97} or UNINITIALIZED
                         [7] ∈ {108} or UNINITIALIZED
-                        [8] ∈ {105} or UNINITIALIZED
+                        [8] ∈ {105}
                         [9] ∈ {122} or UNINITIALIZED
                         [10] ∈ {97; 101} or UNINITIALIZED
                         [11] ∈ {116} or UNINITIALIZED
@@ -551,7 +564,7 @@
                         [3] ∈ {105} or UNINITIALIZED
                         [4] ∈ {111} or UNINITIALIZED
                         [5] ∈ {110} or UNINITIALIZED
-                        [6] ∈ {97} or UNINITIALIZED
+                        [6] ∈ {97}
                         [7] ∈ {108} or UNINITIALIZED
                         [8] ∈ {105} or UNINITIALIZED
                         [9] ∈ {115}
@@ -690,5 +703,5 @@
     Preconditions    32 valid    10 unknown     0 invalid     42 total
   76% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.54user 0.20system 0:01.75elapsed 100%CPU (0avgtext+0avgdata 155856maxresident)k
-0inputs+5392outputs (0major+38827minor)pagefaults 0swaps
+1.78user 0.15system 0:01.94elapsed 99%CPU (0avgtext+0avgdata 162468maxresident)k
+0inputs+5392outputs (0major+40466minor)pagefaults 0swaps

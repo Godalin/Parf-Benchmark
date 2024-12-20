@@ -2,6 +2,20 @@
 [kernel] Parsing examples/example4.c (with preprocessing)
 [kernel] Parsing miniz.c (with preprocessing)
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 53 (not modified).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   mz_crc32_s_crc_table[0] ∈ {0}
@@ -845,7 +859,6 @@
 [eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
-[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tinfl.c:230: Automatic loop unrolling.
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   pointer comparison.
@@ -888,6 +901,7 @@
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
+[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:loop-unroll:auto] miniz_tinfl.c:486: Automatic loop unrolling.
@@ -1306,6 +1320,10 @@
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
 [eva:alarm] miniz_tinfl.c:391: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] miniz_tinfl.c:391: Warning: 
@@ -1358,10 +1376,6 @@
   accessing uninitialized left-value. assert \initialized(&r->m_z_adler32);
 [eva:alarm] miniz_tinfl.c:612: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_cur - pIn_buf_next;
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
-[eva:alarm] miniz_tinfl.c:328: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
 [eva] using specification for function printf_va_11
 [eva] using specification for function fclose
 [eva] using specification for function printf_va_12
@@ -1374,7 +1388,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[scope:rm_asserts] removing 9 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function tinfl_decompress:
   status ∈
@@ -1504,5 +1517,5 @@
     Preconditions    36 valid    17 unknown     0 invalid     53 total
   67% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.99user 0.25system 0:05.24elapsed 99%CPU (0avgtext+0avgdata 251600maxresident)k
-0inputs+7456outputs (0major+63320minor)pagefaults 0swaps
+3.01user 0.25system 0:03.26elapsed 99%CPU (0avgtext+0avgdata 223004maxresident)k
+0inputs+7448outputs (0major+72205minor)pagefaults 0swaps

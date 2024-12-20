@@ -3,6 +3,20 @@
 [kernel] Parsing randombytes.c (with preprocessing)
 [variadic:typing] main.c:21: Warning: 
   Incorrect type for argument 2. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 2 (not modified).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 10 (not modified).
+  option -eva-partition-history already set to 11 (not modified).
+  option -eva-slevel already set to 152 (not modified).
+  option -eva-ilevel already set to 250 (not modified).
+  option -eva-plevel already set to 439 (not modified).
+  option -eva-subdivide-non-linear already set to 61 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -321,9 +335,30 @@
 [eva:loop-unroll:partial] tweetnacl.c:352: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:358: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:359: loop not completely unrolled
-[eva] tweetnacl.c:359: starting to merge loop iterations
-[eva] tweetnacl.c:359: Trace partitioning superposing up to 100 states
 [eva:loop-unroll:partial] tweetnacl.c:359: loop not completely unrolled
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:359: starting to merge loop iterations
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 200 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 300 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 400 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 500 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 600 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 700 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 800 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 900 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1000 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1100 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1200 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1300 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1400 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1500 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1600 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1700 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1800 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 1900 states
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 2000 states
+[eva] tweetnacl.c:359: starting to merge loop iterations
+[eva] tweetnacl.c:359: Trace partitioning superposing up to 2100 states
 [eva:loop-unroll:partial] tweetnacl.c:360: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:361: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:278: loop not completely unrolled
@@ -335,7 +370,6 @@
 [eva:alarm] tweetnacl.c:359: Warning: 
   signed overflow.
   assert t[(i64)(i + j)] + (i64)(*(a + i) * *(b + j)) ≤ 9223372036854775807;
-[eva] tweetnacl.c:359: Trace partitioning superposing up to 200 states
 [eva:alarm] tweetnacl.c:360: Warning: 
   signed overflow. assert -9223372036854775808 ≤ 38 * t[(i64)(i + 16)];
 [eva:alarm] tweetnacl.c:360: Warning: 
@@ -378,10 +412,12 @@
 [eva:alarm] tweetnacl.c:352: Warning: 
   signed overflow. assert *(a + i) - *(b + i) ≤ 9223372036854775807;
 [eva:loop-unroll:partial] tweetnacl.c:409: loop not completely unrolled
+[eva] tweetnacl.c:409: Trace partitioning superposing up to 100 states
 [eva] tweetnacl.c:409: starting to merge loop iterations
 [eva:loop-unroll:partial] tweetnacl.c:434: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:375: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:376: loop not completely unrolled
+[eva] tweetnacl.c:376: Trace partitioning superposing up to 100 states
 [eva] tweetnacl.c:376: starting to merge loop iterations
 [eva:loop-unroll:partial] tweetnacl.c:380: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:300: loop not completely unrolled
@@ -420,18 +456,52 @@
   out of bounds write. assert \valid(decryptedmessage + padded_mlen);
 [kernel] main.c:64: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
+[eva:loop-unroll:partial] tweetnacl.c:76: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:83: loop not completely unrolled
+[eva:loop-unroll:partial] tweetnacl.c:87: loop not completely unrolled
+[eva:loop-unroll:partial] tweetnacl.c:92: loop not completely unrolled
+[eva:loop-unroll:partial] tweetnacl.c:86: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:94: loop not completely unrolled
-[eva] tweetnacl.c:94: starting to merge loop iterations
-[eva] tweetnacl.c:87: Trace partitioning superposing up to 100 states
 [eva:loop-unroll:partial] tweetnacl.c:85: loop not completely unrolled
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 100 states
 [eva] tweetnacl.c:87: starting to merge loop iterations
 [eva] tweetnacl.c:92: starting to merge loop iterations
 [eva] tweetnacl.c:87: Trace partitioning superposing up to 200 states
-[eva] tweetnacl.c:86: starting to merge loop iterations
 [eva] tweetnacl.c:87: Trace partitioning superposing up to 300 states
 [eva] tweetnacl.c:87: Trace partitioning superposing up to 400 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 500 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 600 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 700 states
+[eva] tweetnacl.c:86: starting to merge loop iterations
+[eva] tweetnacl.c:94: starting to merge loop iterations
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 800 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 900 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1000 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1100 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1200 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1300 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1400 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1500 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1600 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1700 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1800 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 1900 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2000 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2100 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2200 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2300 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2400 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2500 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2600 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2700 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2800 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 2900 states
+[eva] tweetnacl.c:85: starting to merge loop iterations
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 3000 states
 [eva:loop-unroll:partial] tweetnacl.c:98: loop not completely unrolled
+[eva:loop-unroll:partial] tweetnacl.c:99: loop not completely unrolled
+[eva:loop-unroll:partial] tweetnacl.c:45: loop not completely unrolled
+[eva:loop-unroll:partial] tweetnacl.c:103: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:130: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:131: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:108: loop not completely unrolled
@@ -444,32 +514,29 @@
 [eva:loop-unroll:partial] tweetnacl.c:202: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:174: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:208: loop not completely unrolled
-[eva] tweetnacl.c:208: starting to merge loop iterations
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 100 states
 [eva:loop-unroll:partial] tweetnacl.c:206: loop not completely unrolled
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 100 states
+[eva] tweetnacl.c:208: starting to merge loop iterations
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 200 states
 [eva:alarm] tweetnacl.c:208: Warning: 
   accessing uninitialized left-value. assert \initialized(&x[i]);
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 200 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 300 states
 [eva:loop-unroll:partial] tweetnacl.c:210: loop not completely unrolled
 [eva:alarm] tweetnacl.c:210: Warning: 
   accessing uninitialized left-value. assert \initialized(&x[i]);
 [eva:loop-unroll:partial] tweetnacl.c:212: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:219: loop not completely unrolled
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 300 states
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 400 states
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 500 states
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 600 states
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 700 states
-[eva] tweetnacl.c:201: starting to merge loop iterations
-[eva] tweetnacl.c:202: starting to merge loop iterations
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 800 states
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 900 states
-[eva] tweetnacl.c:206: starting to merge loop iterations
-[eva] tweetnacl.c:210: starting to merge loop iterations
-[eva] tweetnacl.c:212: starting to merge loop iterations
-[eva] tweetnacl.c:219: starting to merge loop iterations
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 1000 states
 [eva] tweetnacl.c:208: Trace partitioning superposing up to 1100 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1200 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1300 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 1400 states
 [eva:loop-unroll:partial] tweetnacl.c:227: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:230: loop not completely unrolled
 [eva:loop-unroll:partial] tweetnacl.c:232: loop not completely unrolled
@@ -504,8 +571,9 @@
   c[0..15] ∈ [--..--]
 [eva:final-states] Values at end of function add1305:
   j ∈ {17}
-  u ∈ [0..562949953421312]
-  h[0..16] ∈ [0..255]
+  u ∈ {0; 1}
+  h[0..15] ∈ [0..255]
+   [16] ∈ [0..8] ∪ [248..255]
 [eva:final-states] Values at end of function car25519:
   i ∈ {16}
   c ∈ [0..140737488355327]
@@ -543,7 +611,7 @@
   s ∈ {0; 18446744073709551615}
   i ∈ {17}
   j ∈ {16}
-  u ∈ [0..72057594037927938]
+  u ∈ {0; 1; 2; 3; 4}
   x[0..16] ∈ [--..--]
   r[0..2] ∈ [0..255]
    [3] ∈ [0..15]
@@ -572,12 +640,12 @@
    [13..14] ∈ [0..255]
    [15] ∈ [0..15]
    [16] ∈ {0}
-  h[0..16] ∈ [0..255]
+  h[0..15] ∈ [0..255]
+   [16] ∈ [0..8] ∪ [248..255]
   c[0..15] ∈ [0..255]
    [16] ∈ {0}
-  g[0..5] ∈ [0..255]
-   [6..15] ∈ [--..--]
-   [16] ∈ [0..72057594037927938]
+  g[0..15] ∈ [0..255]
+   [16] ∈ {0; 1; 2; 3; 4}
   x[0..15] ∈ [--..--]
   __retres ∈ {0}
   __malloc_main_l60[0..104] ∈ [--..--]
@@ -816,5 +884,5 @@
     Preconditions    34 valid     1 unknown     0 invalid     35 total
   97% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-34.36user 0.28system 0:34.65elapsed 99%CPU (0avgtext+0avgdata 328624maxresident)k
-0inputs+3344outputs (0major+79639minor)pagefaults 0swaps
+271.24user 0.64system 4:31.92elapsed 99%CPU (0avgtext+0avgdata 428880maxresident)k
+0inputs+3400outputs (0major+158836minor)pagefaults 0swaps

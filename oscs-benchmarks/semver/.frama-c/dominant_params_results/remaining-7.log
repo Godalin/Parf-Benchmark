@@ -1,5 +1,19 @@
 [kernel] Parsing semver.c (with preprocessing)
 [kernel] Parsing semver_test.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 53 (not modified).
+  option -eva-widening-delay already set to 8 (not modified).
+  option -eva-partition-history already set to 3 (not modified).
+  option -eva-slevel already set to 76 (not modified).
+  option -eva-ilevel already set to 63 (not modified).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear already set to 14 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -61,7 +75,6 @@
   MAX_SAFE_INT ∈ {2147483647}
 [eva] using specification for function printf_va_1
 [eva:loop-unroll:auto] semver.c:74: Automatic loop unrolling.
-[eva] semver.c:63: starting to merge loop iterations
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146
 [eva] using specification for function strcpy
 [eva] FRAMAC_SHARE/libc/string.h:373: 
@@ -221,8 +234,6 @@
   function strncmp: precondition 'valid_string_s1' got status unknown.
 [eva:alarm] semver.c:242: Warning: 
   function strncmp: precondition 'valid_string_s2' got status unknown.
-[eva:alarm] semver.c:221: Warning: 
-  function strchr: precondition 'valid_string_s' got status invalid.
 [eva] semver.c:302: cannot properly split on \result == -1
 [eva:alarm] semver_test.c:44: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
@@ -253,9 +264,15 @@
   pointer subtraction. assert \base_addr(xptr) ≡ \base_addr(lastx);
 [eva:alarm] semver.c:240: Warning: 
   pointer subtraction. assert \base_addr(yptr) ≡ \base_addr(lasty);
-[eva] semver.c:228: Trace partitioning superposing up to 100 states
+[eva] semver.c:231: Trace partitioning superposing up to 100 states
+[eva] semver.c:231: Trace partitioning superposing up to 200 states
+[eva] semver.c:231: Trace partitioning superposing up to 300 states
+[eva] semver.c:231: Trace partitioning superposing up to 400 states
+[eva] semver.c:231: Trace partitioning superposing up to 500 states
 [eva] semver.c:220: starting to merge loop iterations
-[eva] semver.c:226: Trace partitioning superposing up to 100 states
+[eva] semver.c:231: Trace partitioning superposing up to 600 states
+[eva] semver.c:228: Trace partitioning superposing up to 100 states
+[eva] semver.c:228: Trace partitioning superposing up to 200 states
 [eva] using specification for function printf_va_14
 [eva] using specification for function printf_va_15
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146_7
@@ -282,7 +299,6 @@
 [eva] semver.c:116: allocating variable __calloc_parse_slice_l116_26
 [eva:alarm] semver.c:223: Warning: 
   function strchr: precondition 'valid_string_s' got status invalid.
-[eva] semver.c:231: Trace partitioning superposing up to 100 states
 [eva] using specification for function printf_va_20
 [eva] using specification for function printf_va_21
 [eva] semver.c:146: allocating variable __calloc_semver_parse_l146_13
@@ -333,8 +349,11 @@
 [eva] semver.c:116: allocating variable __calloc_parse_slice_l116_50
 [eva:alarm] semver_test.c:492: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva] semver_test.c:489: Trace partitioning superposing up to 100 states
+[eva] semver_test.c:482: Trace partitioning superposing up to 100 states
+[eva] semver_test.c:496: Trace partitioning superposing up to 200 states
+[eva] semver_test.c:496: Trace partitioning superposing up to 300 states
 [eva] semver_test.c:482: starting to merge loop iterations
+[eva] semver_test.c:496: Trace partitioning superposing up to 400 states
 [eva] using specification for function printf_va_32
 [eva] using specification for function printf_va_33
 [eva] using specification for function sprintf_va_1
@@ -368,6 +387,8 @@
 [eva:alarm] semver.c:71: Warning: 
   function strlen: precondition 'valid_string_s' got status unknown.
 [eva:loop-unroll:auto] semver.c:63: Automatic loop unrolling.
+[eva] semver.c:75: Trace partitioning superposing up to 100 states
+[eva] semver.c:75: Trace partitioning superposing up to 200 states
 [eva] semver.c:74: starting to merge loop iterations
 [eva:alarm] semver.c:94: Warning: 
   function strtol: precondition 'valid_string_nptr' got status unknown.
@@ -422,30 +443,18 @@
 [eva] using specification for function printf_va_45
 [eva] using specification for function printf_va_46
 [eva] using specification for function printf_va_47
-[eva] FRAMAC_SHARE/libc/string.h:124: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
 [eva:alarm] semver_test.c:665: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] semver.c:55: Warning: 
-  function memmove: precondition 'valid_dest' got status unknown.
-[eva:alarm] semver.c:55: Warning: 
-  function memmove: precondition 'valid_src' got status unknown.
-[eva:alarm] semver.c:49: Warning: 
-  function strlen: precondition 'valid_string_s' got status unknown.
-[eva] semver.c:57: cannot properly split on \result == -1
-[eva] semver.c:569: starting to merge loop iterations
-[eva:alarm] semver_test.c:670: Warning: 
-  function strcmp: precondition 'valid_string_s1' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:124: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
 [eva:alarm] semver_test.c:670: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] semver_test.c:671: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status invalid.
 [eva] using specification for function printf_va_48
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function binary_comparison:
   __retres ∈ {-1; 0; 1}
 [eva:final-states] Values at end of function contains:
-  x ∈ [0..9223372036854775807]
+  x ∈ [0..12] ∪ {14; 15; 17; 21; 25; 27; 28; 29; 33} ∪ [62..65]
   __retres ∈ {0; 1}
 [eva:final-states] Values at end of function semver_bump:
   ver.major ∈ {2}
@@ -871,41 +880,61 @@
 [eva:final-states] Values at end of function semver_is_valid:
   
 [eva:final-states] Values at end of function strcut:
-  len ∈ [--..--]
-  l ∈ [4..28]
-  str[0] ∈ {49}
-     [1] ∈ {46; 50}
-     [2] ∈ {46; 50; 51}
-     [3] ∈ {0; 46; 51}
-     [4] ∈ {0; 51}
-     [5] ∈ {0}
-  str2[0] ∈ {49} or UNINITIALIZED
-      [1] ∈ {46; 50; 64} or UNINITIALIZED
-      [2] ∈ {46; 50; 51; 64} or UNINITIALIZED
-      [3] ∈ {45; 46; 50; 51; 98} or UNINITIALIZED
-      [4..28] ∈
-      {0; 32; 35; 43; 45; 46} ∪ [49..52]
-       ∪ {64; 97; 98; 101; 104; 108; 112; 116} or UNINITIALIZED
-  __retres ∈ [--..--]
+  l ∈ {22; 23; 24; 25; 26; 27; 28}
+  str2[0] ∈ {49}
+      [1] ∈ {46}
+      [2] ∈ {50; 64}
+      [3] ∈ {46; 50}
+      [4] ∈ {46; 51}
+      [5] ∈ {45; 51}
+      [6] ∈ {45; 98}
+      [7] ∈ {98; 101}
+      [8] ∈ {101; 116}
+      [9] ∈ {97; 116}
+      [10..11] ∈ {32; 35; 46; 97}
+      [12] ∈ {35; 46; 97; 108}
+      [13] ∈ {46; 97; 108; 112}
+      [14..15] ∈ {97; 104; 108; 112}
+      [16] ∈ {43; 97; 104; 112}
+      [17] ∈ {43; 49; 97; 104}
+      [18] ∈ {43; 49; 50; 97}
+      [19] ∈ {43; 49; 50; 51; 64}
+      [20] ∈ {49; 50; 51; 52; 64}
+      [21] ∈ {0; 32; 50; 51; 52; 64}
+      [22] ∈ {0; 32; 51; 52; 64}
+      [23] ∈ {0; 32; 51; 52}
+      [24] ∈ {0; 32; 52}
+      [25..26] ∈ {0; 32}
+      [27..28] ∈ {0}
+  __retres ∈ {1}
 [eva:final-states] Values at end of function semver_clean:
-  i ∈ [3..9223372036854775807]
-  len ∈ [1..26]
+  i ∈ {5; 21}
+  len ∈ {5; 21}
   mlen ∈ {65}
-  res ∈ [--..--] or UNINITIALIZED
-  str[0] ∈ {49}
-     [1] ∈ {46; 50}
-     [2] ∈ {46; 50; 51}
-     [3] ∈ {0; 46; 51}
-     [4] ∈ {0; 51}
-     [5] ∈ {0}
+  res ∈ {1} or UNINITIALIZED
   str2[0] ∈ {49} or UNINITIALIZED
-      [1] ∈ {46; 50} or UNINITIALIZED
-      [2] ∈ {46; 50; 51} or UNINITIALIZED
-      [3] ∈ {45; 46; 51; 98} or UNINITIALIZED
-      [4..28] ∈
-      {0; 32; 35; 43; 45; 46} ∪ [49..52]
-       ∪ {64; 97; 98; 101; 104; 108; 112; 116} or UNINITIALIZED
-  __retres ∈ {-1; 0}
+      [1] ∈ {46} or UNINITIALIZED
+      [2] ∈ {50} or UNINITIALIZED
+      [3] ∈ {46} or UNINITIALIZED
+      [4] ∈ {51} or UNINITIALIZED
+      [5] ∈ {45} or UNINITIALIZED
+      [6] ∈ {98} or UNINITIALIZED
+      [7] ∈ {101} or UNINITIALIZED
+      [8] ∈ {116} or UNINITIALIZED
+      [9] ∈ {97} or UNINITIALIZED
+      [10] ∈ {46} or UNINITIALIZED
+      [11] ∈ {97} or UNINITIALIZED
+      [12] ∈ {108} or UNINITIALIZED
+      [13] ∈ {112} or UNINITIALIZED
+      [14] ∈ {104} or UNINITIALIZED
+      [15] ∈ {97} or UNINITIALIZED
+      [16] ∈ {43} or UNINITIALIZED
+      [17] ∈ {49} or UNINITIALIZED
+      [18] ∈ {50} or UNINITIALIZED
+      [19] ∈ {51} or UNINITIALIZED
+      [20] ∈ {52} or UNINITIALIZED
+      [21..28] ∈ {0} or UNINITIALIZED
+  __retres ∈ {0}
 [eva:final-states] Values at end of function compare_prerelease:
   lastx ∈
        {{ &__calloc_w_parse_slice_l116_12{[0], [1], [2], [3], [4], [5], [6]} ;
@@ -1030,7 +1059,7 @@
   buf[0..149] ∈ [--..--]
   __retres ∈ [--..--]
 [eva:final-states] Values at end of function semver_parse_version:
-  len ∈ [--..--]
+  len ∈ [0..29] ∪ [18446744073709551587..18446744073709551615]
   index_0 ∈ {1; 2; 3; 4; 5}
   value ∈ [--..--]
   slice ∈
@@ -1679,18 +1708,33 @@
 [eva:final-states] Values at end of function test_clean:
   error ∈ {0}
   str[0] ∈ {49}
-     [1] ∈ {46; 50}
-     [2] ∈ {46; 50; 51}
-     [3] ∈ {0; 46; 51}
-     [4] ∈ {0; 51}
+     [1] ∈ {46}
+     [2] ∈ {50}
+     [3] ∈ {46}
+     [4] ∈ {51}
      [5] ∈ {0}
   str2[0] ∈ {49}
-      [1] ∈ {46; 50}
-      [2] ∈ {46; 50; 51}
-      [3] ∈ {45; 46; 51; 98}
-      [4..28] ∈
-      {0; 32; 35; 43; 45; 46} ∪ [49..52]
-       ∪ {64; 97; 98; 101; 104; 108; 112; 116}
+      [1] ∈ {46}
+      [2] ∈ {50}
+      [3] ∈ {46}
+      [4] ∈ {51}
+      [5] ∈ {45}
+      [6] ∈ {98}
+      [7] ∈ {101}
+      [8] ∈ {116}
+      [9] ∈ {97}
+      [10] ∈ {46}
+      [11] ∈ {97}
+      [12] ∈ {108}
+      [13] ∈ {112}
+      [14] ∈ {104}
+      [15] ∈ {97}
+      [16] ∈ {43}
+      [17] ∈ {49}
+      [18] ∈ {50}
+      [19] ∈ {51}
+      [20] ∈ {52}
+      [21..28] ∈ {0}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function test_compare:
   __fc_heap_status ∈ [--..--]
@@ -2891,7 +2935,7 @@
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   60 functions analyzed (out of 60): 100% coverage.
-  In these functions, 712 statements reached (out of 728): 97% coverage.
+  In these functions, 708 statements reached (out of 728): 97% coverage.
   ----------------------------------------------------------------------------
   No errors or warnings raised during the analysis.
   ----------------------------------------------------------------------------
@@ -2903,8 +2947,8 @@
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   130 valid    73 unknown     0 invalid    203 total
-  64% of the logical properties reached have been proven.
+    Preconditions   135 valid    68 unknown     0 invalid    203 total
+  66% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-51.96user 0.24system 0:52.20elapsed 99%CPU (0avgtext+0avgdata 355332maxresident)k
-0inputs+3600outputs (0major+84398minor)pagefaults 0swaps
+107.52user 0.28system 1:47.81elapsed 99%CPU (0avgtext+0avgdata 400364maxresident)k
+0inputs+3624outputs (0major+95699minor)pagefaults 0swaps

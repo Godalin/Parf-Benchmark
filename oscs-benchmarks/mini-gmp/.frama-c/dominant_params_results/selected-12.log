@@ -6,6 +6,20 @@
   __builtin_constant_p is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
 [kernel] Parsing tests/mini-random.c (with preprocessing)
 [kernel] Parsing fc_stubs.h (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls already set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at testmain
 [eva:initial-state] Values of globals at initialization
   mp_bits_per_limb ∈ {64}
@@ -267,7 +281,6 @@
 [eva] tests/t-add.c:39: starting to merge loop iterations
 [eva:alarm] mini-gmp.c:1398: Warning: 
   signed overflow. assert -r->_mp_size ≤ 2147483647;
-[scope:rm_asserts] removing 26 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function gmp_default_free:
   p ∈
@@ -954,5 +967,5 @@
     Preconditions    19 valid    13 unknown     0 invalid     32 total
   59% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.09user 0.19system 0:02.29elapsed 99%CPU (0avgtext+0avgdata 167068maxresident)k
-0inputs+9992outputs (0major+46621minor)pagefaults 0swaps
+2.04user 0.22system 0:02.27elapsed 99%CPU (0avgtext+0avgdata 166220maxresident)k
+0inputs+9992outputs (0major+46490minor)pagefaults 0swaps

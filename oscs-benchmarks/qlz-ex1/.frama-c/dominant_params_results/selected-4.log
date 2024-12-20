@@ -1,6 +1,20 @@
 [kernel] Parsing compress_file.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history already set to 7 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -36,8 +50,8 @@
   out of bounds write. assert \valid(&state->hash[i].offset);
 [eva] quicklz.c:67: starting to merge loop iterations
 [kernel] quicklz.c:70: 
-  more than 200(4096) locations to update in array. Approximating.
-[kernel] quicklz.c:70: more than 200(4096) elements to enumerate. Approximating.
+  more than 10(4089) locations to update in array. Approximating.
+[kernel] quicklz.c:70: more than 10(4096) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:268: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)src, (void *)last_matchstart);
@@ -51,17 +65,15 @@
 [eva:alarm] quicklz.c:292: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&state->hash[hash].cache);
-[eva:alarm] quicklz.c:292: Warning: 
-  out of bounds read. assert \valid_read(&state->hash[hash].cache);
 [kernel] quicklz.c:293: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:295: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&state->hash[hash].offset);
 [eva:alarm] quicklz.c:296: Warning: 
   pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
 [kernel] quicklz.c:296: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:299: Warning: 
   pointer comparison. assert \pointer_comparable((void *)o, (void *)source);
 [eva:alarm] quicklz.c:299: Warning: 
@@ -69,68 +81,90 @@
 [eva:alarm] quicklz.c:299: Warning: 
   pointer comparison. assert \pointer_comparable((void *)src, (void *)(o + 1));
 [eva:alarm] quicklz.c:355: Warning: out of bounds write. assert \valid(dst);
-[eva:alarm] quicklz.c:355: Warning: 
-  accessing uninitialized left-value. assert \initialized(src);
 [eva:alarm] quicklz.c:355: Warning: out of bounds read. assert \valid_read(src);
-[eva] quicklz.c:271: starting to merge loop iterations
-[eva:alarm] quicklz.c:296: Warning: 
-  signed overflow. assert src - source ≤ 9223372036854775807;
 [eva:alarm] quicklz.c:299: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)src, (void *)(source + 3));
-[eva:alarm] quicklz.c:58: Warning: 
-  accessing uninitialized left-value. assert \initialized(src);
 [eva:alarm] quicklz.c:58: Warning: out of bounds read. assert \valid_read(src);
 [eva:alarm] quicklz.c:58: Warning: 
   accessing uninitialized left-value. assert \initialized(src + n);
 [eva:alarm] quicklz.c:58: Warning: 
   out of bounds read. assert \valid_read(src + n);
-[eva] quicklz.c:58: starting to merge loop iterations
 [eva:alarm] quicklz.c:167: Warning: 
   out of bounds write. assert \valid((ui16 *)dst);
 [eva:alarm] quicklz.c:324: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
 [eva:alarm] quicklz.c:324: Warning: out of bounds read. assert \valid_read(src);
 [eva:alarm] quicklz.c:324: Warning: 
-  signed overflow. assert src - old_src ≤ 9223372036854775807;
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
 [eva:alarm] quicklz.c:324: Warning: 
   accessing uninitialized left-value.
   assert \initialized(o + (long)(src - old_src));
-[eva:alarm] quicklz.c:324: Warning: 
-  out of bounds read. assert \valid_read(o + (long)(src - old_src));
 [eva:alarm] quicklz.c:327: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
 [eva:alarm] quicklz.c:327: Warning: out of bounds read. assert \valid_read(src);
 [eva:alarm] quicklz.c:327: Warning: 
-  signed overflow. assert src - old_src ≤ 9223372036854775807;
+  out of bounds read. assert \valid_read(o + (long)(src - old_src));
 [eva:alarm] quicklz.c:327: Warning: 
   accessing uninitialized left-value.
   assert \initialized(o + (long)(src - old_src));
-[eva:alarm] quicklz.c:327: Warning: 
-  out of bounds read. assert \valid_read(o + (long)(src - old_src));
 [eva:alarm] quicklz.c:329: Warning: 
   pointer subtraction.
   assert \base_addr(last_byte - 4) ≡ \base_addr(src - 5);
-[eva:alarm] quicklz.c:329: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - (src - 5);
 [eva:alarm] quicklz.c:332: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
 [eva:alarm] quicklz.c:332: Warning: out of bounds read. assert \valid_read(src);
 [eva:alarm] quicklz.c:332: Warning: 
-  signed overflow. assert src - old_src ≤ 9223372036854775807;
-[eva:alarm] quicklz.c:332: Warning: 
   accessing uninitialized left-value.
   assert \initialized(o + (long)(src - old_src));
 [eva:alarm] quicklz.c:332: Warning: 
   out of bounds read. assert \valid_read(o + (long)(src - old_src));
-[eva:alarm] quicklz.c:332: Warning: 
-  signed overflow. assert src - old_src ≤ 9223372036854775807;
 [eva] quicklz.c:332: starting to merge loop iterations
-[eva:alarm] quicklz.c:337: Warning: 
+[eva:alarm] quicklz.c:332: Warning: 
   signed overflow. assert src - old_src ≤ 9223372036854775807;
 [eva:alarm] quicklz.c:164: Warning: 
   out of bounds write. assert \valid((ui32 *)dst);
-[eva] quicklz.c:354: Trace partitioning superposing up to 100 states
+[eva] quicklz.c:271: starting to merge loop iterations
+[eva:alarm] quicklz.c:296: Warning: 
+  signed overflow. assert src - source ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:332: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:337: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:355: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:58: Warning: 
+  accessing uninitialized left-value. assert \initialized(src);
+[eva:alarm] quicklz.c:324: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva:alarm] quicklz.c:327: Warning: 
+  signed overflow. assert src - old_src ≤ 9223372036854775807;
+[eva] quicklz.c:332: Trace partitioning superposing up to 100 states
+[eva] quicklz.c:332: Trace partitioning superposing up to 200 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 300 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 500 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 600 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 700 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 800 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 900 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1000 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1100 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1200 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1400 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1500 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1600 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1700 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1800 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1900 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2000 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2100 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2200 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2400 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2500 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2600 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2700 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2800 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2900 states
 [eva:alarm] quicklz.c:276: Warning: 
   pointer comparison.
   assert
@@ -145,6 +179,10 @@
   signed overflow. assert src - source ≤ 9223372036854775807;
 [eva:alarm] quicklz.c:161: Warning: 
   out of bounds write. assert \valid((ui32 *)dst);
+[eva] quicklz.c:337: Trace partitioning superposing up to 3000 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 3100 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 3200 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 3300 states
 [eva:alarm] quicklz.c:508: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)src, (void *)last_byte);
@@ -152,38 +190,37 @@
   pointer comparison.
   assert \pointer_comparable((void *)src, (void *)(last_byte - 3));
 [eva:alarm] quicklz.c:524: Warning: 
-  out of bounds write. assert \valid(&state->hash[hash_0].offset);
-[eva:alarm] quicklz.c:524: Warning: 
   pointer subtraction. assert \base_addr(src) ≡ \base_addr(source);
 [eva:alarm] quicklz.c:524: Warning: 
   signed overflow. assert src - source ≤ 9223372036854775807;
 [kernel] quicklz.c:524: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [kernel] quicklz.c:525: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:537: Warning: out of bounds write. assert \valid(dst);
 [eva:alarm] quicklz.c:537: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
 [eva:alarm] quicklz.c:537: Warning: out of bounds read. assert \valid_read(src);
 [eva] quicklz.c:508: starting to merge loop iterations
+[eva] quicklz.c:543: starting to merge loop iterations
 [eva:alarm] quicklz.c:549: Warning: 
   pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
 [eva:alarm] quicklz.c:549: Warning: 
   signed overflow. assert dst - destination ≤ 9223372036854775807;
-[eva:alarm] quicklz.c:549: Warning: 
-  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
-[eva:alarm] quicklz.c:549: Warning: 
-  signed overflow. assert dst - destination ≤ 9223372036854775807;
-[kernel] quicklz.c:292: 
-  more than 200(4096) elements to enumerate. Approximating.
+[kernel] quicklz.c:292: more than 10(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:329: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - (src - 5);
+[eva] quicklz.c:337: Trace partitioning superposing up to 100 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 200 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 400 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 1300 states
+[eva] quicklz.c:337: Trace partitioning superposing up to 2300 states
 [eva:alarm] quicklz.c:754: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] quicklz.c:754: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva] FRAMAC_SHARE/libc/string.h:101: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
-[eva:alarm] quicklz.c:762: Warning: 
-  out of bounds write. assert \valid(&state->stream_counter);
 [eva:alarm] quicklz.c:788: Warning: 
   out of bounds write. assert \valid(destination);
 [eva:alarm] quicklz.c:789: Warning: 
@@ -204,7 +241,6 @@
 [eva:alarm] compress_file.c:31: Warning: 
   function fwrite: precondition 'valid_stream' got status unknown.
 [eva] using specification for function fclose
-[scope:rm_asserts] removing 5 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fast_read:
   __retres ∈ [--..--]
@@ -216,34 +252,61 @@
 [eva:final-states] Values at end of function reset_table_compress:
   i ∈ {4096}
   __malloc_main_l14{.stream_counter; .hash[0].cache} ∈ UNINITIALIZED
-                   .hash{[0].offset; [1..4095]} ∈ {0} or UNINITIALIZED
+                   .hash[0].offset ∈ {0}
+                   .hash[1].cache ∈ UNINITIALIZED
+                   .hash[1].offset ∈ {0}
+                   .hash[2].cache ∈ UNINITIALIZED
+                   .hash[2].offset ∈ {0}
+                   .hash[3].cache ∈ UNINITIALIZED
+                   .hash[3].offset ∈ {0}
+                   .hash[4].cache ∈ UNINITIALIZED
+                   .hash[4].offset ∈ {0}
+                   .hash[5].cache ∈ UNINITIALIZED
+                   .hash[5].offset ∈ {0}
+                   .hash[6].cache ∈ UNINITIALIZED
+                   .hash[6].offset ∈ {0}
+                   .hash[7].cache ∈ UNINITIALIZED
+                   .hash{[7].offset; [8..4095]} ∈ {0} or UNINITIALIZED
                    .hash_counter[0..4095] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function same:
   n ∈ {0; 1; 2; 3; 4; 5; 6}
+[kernel] quicklz.c:293: more than 10(4096) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function qlz_compress_core:
   last_byte ∈
            {{ NULL + [0..4294966894] ;
-              &__malloc_main_l23 + [0..4294966894] }}
+              &__malloc_main_l23 + [0..18446744073709551614] }}
   src ∈ {{ NULL ; &__malloc_main_l23 + [0..18446744073709551615] }}
-  cword_ptr ∈
-           {{ NULL + {3; 7; 9; 13} ;
-              &__malloc_main_l27 + [3..18446744073709551615] }}
+  cword_ptr ∈ {{ NULL + {3; 9} ; &__malloc_main_l27 + [3..--] }}
   dst ∈
      {{ NULL + {7; 13} ; &__malloc_main_l27 + [7..9223372036854775816] }}
   cword_val ∈ [1..4294967295],1%2
   last_matchstart ∈
-                 {{ NULL + [-10..4294966884] ;
+                 {{ NULL + [-10..18446744073709551615] ;
                     &__malloc_main_l23 + [-10..4294966884] }}
   fetch ∈ [--..--]
   lits ∈ [--..--]
   __retres ∈ [0..9223372036854775807]
   __malloc_main_l14.stream_counter ∈ UNINITIALIZED
-                   .hash[0..4095] ∈ [--..--] or UNINITIALIZED
+                   .hash[0].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[0].offset ∈ [--..--]
+                   .hash[1].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[1].offset ∈ [--..--]
+                   .hash[2].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[2].offset ∈ [--..--]
+                   .hash[3].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[3].offset ∈ [--..--]
+                   .hash[4].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[4].offset ∈ [--..--]
+                   .hash[5].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[5].offset ∈ [--..--]
+                   .hash[6].cache ∈ [--..--] or UNINITIALIZED
+                   .hash[6].offset ∈ [--..--]
+                   .hash[7..4095] ∈ [--..--] or UNINITIALIZED
                    .hash_counter[0..4095] ∈ UNINITIALIZED
   __malloc_main_l27[0..2] ∈ UNINITIALIZED
                    [3..18446744073709551614] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function qlz_compress:
-  r ∈ [3..9223372036854775816] or UNINITIALIZED
+  r ∈ [4..9223372036854775816] or UNINITIALIZED
   compressed ∈ {0; 1} or UNINITIALIZED
   base ∈ {3; 9} or UNINITIALIZED
   __retres ∈ [0..9223372036854775816]
@@ -305,16 +368,16 @@
   ----------------------------------------------------------------------------
   No errors or warnings raised during the analysis.
   ----------------------------------------------------------------------------
-  68 alarms generated by the analysis:
-      27 invalid memory accesses
+  63 alarms generated by the analysis:
+      24 invalid memory accesses
       13 accesses to uninitialized left-values
-      12 integer overflows
-      16 others
+      11 integer overflows
+      15 others
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    14 valid     6 unknown     0 invalid     20 total
   70% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.69user 0.13system 0:00.83elapsed 100%CPU (0avgtext+0avgdata 116384maxresident)k
-0inputs+2840outputs (0major+26460minor)pagefaults 0swaps
+22.25user 0.20system 0:22.46elapsed 99%CPU (0avgtext+0avgdata 263040maxresident)k
+0inputs+2848outputs (0major+63109minor)pagefaults 0swaps

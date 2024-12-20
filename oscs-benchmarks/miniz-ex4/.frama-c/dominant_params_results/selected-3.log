@@ -2,6 +2,20 @@
 [kernel] Parsing examples/example4.c (with preprocessing)
 [kernel] Parsing miniz.c (with preprocessing)
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 10 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   mz_crc32_s_crc_table[0] ∈ {0}
@@ -879,6 +893,8 @@
   (tmp_34 from code_len_1++)
 [eva:alarm] miniz_tinfl.c:464: Warning: 
   invalid RHS operand for shift. assert 0 ≤ code_len_1 < 64;
+[eva] miniz_tinfl.c:398: starting to merge loop iterations
+[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -909,12 +925,10 @@
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva] miniz_tinfl.c:395: starting to merge loop iterations
-[eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
-[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:alarm] miniz_tinfl.c:486: Warning: 
@@ -1098,6 +1112,7 @@
   (tmp_41 from dist_from_out_buf_start++)
 [eva] miniz_tinfl.c:510: starting to merge loop iterations
 [eva] miniz_tinfl.c:512: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tinfl.c:570: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
@@ -1345,7 +1360,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[scope:rm_asserts] removing 10 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function tinfl_decompress:
   status ∈
@@ -1475,5 +1489,5 @@
     Preconditions    36 valid    17 unknown     0 invalid     53 total
   67% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.41user 0.25system 0:04.67elapsed 99%CPU (0avgtext+0avgdata 197756maxresident)k
-0inputs+7456outputs (0major+49857minor)pagefaults 0swaps
+6.79user 0.36system 0:07.16elapsed 99%CPU (0avgtext+0avgdata 233848maxresident)k
+0inputs+7448outputs (0major+93427minor)pagefaults 0swaps

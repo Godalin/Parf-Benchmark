@@ -1,6 +1,20 @@
 [kernel] Parsing stream_compress.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 55 (not modified).
+  option -eva-widening-delay already set to 8 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel already set to 69 (not modified).
+  option -eva-plevel already set to 115 (not modified).
+  option -eva-subdivide-non-linear already set to 7 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -103,13 +117,14 @@
 [eva:alarm] quicklz.c:381: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&state->hash[hash].offset[0]);
-[kernel] quicklz.c:381: more than 28(4096) elements to enumerate. Approximating.
+[kernel] quicklz.c:381: 
+  more than 115(4096) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:382: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)offset2, (void *)(src - 2));
 [eva:loop-unroll:auto] quicklz.c:394: Automatic loop unrolling.
 [kernel] quicklz.c:419: 
-  more than 28(4096) locations to update in array. Approximating.
+  more than 115(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:472: Warning: out of bounds write. assert \valid(dst);
 [eva] quicklz.c:271: starting to merge loop iterations
 [eva:alarm] quicklz.c:117: Warning: 
@@ -117,8 +132,13 @@
 [eva] quicklz.c:394: starting to merge loop iterations
 [eva:alarm] quicklz.c:472: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
-[eva:alarm] quicklz.c:385: Warning: 
-  accessing uninitialized left-value. assert \initialized(offset2 + matchlen);
+[eva:alarm] quicklz.c:396: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&state->hash[hash].offset[k]);
+[kernel] quicklz.c:396: 
+  more than 115(4096) elements to enumerate. Approximating.
+[eva:alarm] quicklz.c:398: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)o, (void *)(src - 2));
 [eva:alarm] quicklz.c:385: Warning: 
   accessing uninitialized left-value. assert \initialized(src + matchlen);
 [eva:alarm] quicklz.c:388: Warning: 
@@ -130,12 +150,6 @@
   out of bounds read. assert \valid_read(offset2 + matchlen);
 [eva:alarm] quicklz.c:388: Warning: 
   out of bounds read. assert \valid_read(src + matchlen);
-[eva:alarm] quicklz.c:396: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&state->hash[hash].offset[k]);
-[kernel] quicklz.c:396: more than 28(4096) elements to enumerate. Approximating.
-[eva:alarm] quicklz.c:398: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)o, (void *)(src - 2));
 [eva:alarm] quicklz.c:404: Warning: 
   accessing uninitialized left-value. assert \initialized(o + m);
 [eva:alarm] quicklz.c:404: Warning: 
@@ -148,8 +162,6 @@
 [eva:alarm] quicklz.c:407: Warning: 
   pointer comparison. assert \pointer_comparable((void *)o, (void *)offset2);
 [eva:alarm] quicklz.c:424: Warning: 
-  pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
-[eva:alarm] quicklz.c:427: Warning: 
   pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
 [eva:alarm] quicklz.c:432: Warning: 
   accessing uninitialized left-value.
@@ -284,6 +296,8 @@
 [eva:garbled-mix:write] quicklz.c:382: 
   Assigning imprecise value to tmp_0_0.
   The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:385: Warning: 
+  accessing uninitialized left-value. assert \initialized(offset2 + matchlen);
 [eva:alarm] quicklz.c:396: Warning: 
   accessing out of bounds index. assert 0 ≤ hash;
 [eva:alarm] quicklz.c:396: Warning: 
@@ -296,6 +310,7 @@
 [eva:garbled-mix:write] quicklz.c:398: 
   Assigning imprecise value to tmp_1.
   The imprecision originates from Misaligned
+[eva] quicklz.c:404: Trace partitioning superposing up to 100 states
 [eva:garbled-mix:write] quicklz.c:418: 
   Assigning imprecise value to o.
   The imprecision originates from Misaligned
@@ -331,17 +346,14 @@
   signed overflow. assert -9223372036854775808 ≤ src - o;
 [eva:alarm] quicklz.c:424: Warning: 
   signed overflow. assert src - o ≤ 9223372036854775807;
-[eva:alarm] quicklz.c:427: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ src - o;
-[eva:alarm] quicklz.c:427: Warning: 
-  signed overflow. assert src - o ≤ 9223372036854775807;
 [eva:garbled-mix:write] quicklz.c:427: 
   Assigning imprecise value to offset.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] quicklz.c:441: 
   Assigning imprecise value to *dst
   (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152}).
+                                               112; 120; 128; 136; 144; 152;
+                                               160}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] quicklz.c:446: 
   Assigning imprecise value to f.
@@ -349,7 +361,8 @@
 [eva:garbled-mix:write] quicklz.c:167: 
   Assigning imprecise value to *((ui16 *)dst)
   (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152}).
+                                               112; 120; 128; 136; 144; 152;
+                                               160}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] quicklz.c:452: 
   Assigning imprecise value to f_0.
@@ -360,7 +373,8 @@
 [eva:garbled-mix:write] quicklz.c:164: 
   Assigning imprecise value to *((ui32 *)dst)
   (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152}).
+                                               112; 120; 128; 136; 144; 152;
+                                               160}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] quicklz.c:465: 
   Assigning imprecise value to f_2.
@@ -368,12 +382,121 @@
 [eva:garbled-mix:write] quicklz.c:161: 
   Assigning imprecise value to *((ui32 *)dst)
   (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152}).
+                                               112; 120; 128; 136; 144; 152;
+                                               160}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] quicklz.c:472: 
   Assigning imprecise value to *dst
   (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152}).
+                                               112; 120; 128; 136; 144; 152;
+                                               160}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:404: Trace partitioning superposing up to 200 states
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:394: Trace partitioning superposing up to 300 states
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] quicklz.c:441: 
   Assigning imprecise value to *dst
@@ -395,12 +518,29 @@
   Assigning imprecise value to *dst
   (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
   The imprecision originates from Misaligned
-[eva] quicklz.c:271: Trace partitioning superposing up to 100 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 400 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 500 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 600 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 700 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 800 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 900 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1000 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1100 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1200 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1300 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1400 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1500 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1600 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1700 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1800 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 1900 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 2000 states
 [eva:alarm] quicklz.c:276: Warning: 
   pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
 [eva:garbled-mix:write] quicklz.c:284: 
   Assigning imprecise value to fetch.
   The imprecision originates from Misaligned
+[eva] quicklz.c:394: Trace partitioning superposing up to 2100 states
 [eva:alarm] quicklz.c:508: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)src, (void *)last_byte);
@@ -415,9 +555,8 @@
 [eva] quicklz.c:543: starting to merge loop iterations
 [eva:alarm] quicklz.c:549: Warning: 
   pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
-[eva:alarm] quicklz.c:549: Warning: 
-  pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
-[kernel] quicklz.c:381: more than 28(4206) elements to enumerate. Approximating.
+[kernel] quicklz.c:381: 
+  more than 115(4206) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:774: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva] quicklz.c:67: starting to merge loop iterations
@@ -436,8 +575,6 @@
 [eva:alarm] stream_compress.c:42: Warning: 
   function fwrite: precondition 'valid_stream' got status unknown.
 [eva] stream_compress.c:35: starting to merge loop iterations
-[eva:alarm] quicklz.c:371: Warning: 
-  pointer subtraction. assert \base_addr(last_byte - 4) ≡ \base_addr(src);
 [eva:alarm] quicklz.c:371: Warning: 
   pointer subtraction. assert \base_addr(last_byte - 4) ≡ \base_addr(src);
 [eva:garbled-mix:write] quicklz.c:421: 
@@ -490,6 +627,51 @@
   The imprecision originates from Misaligned {quicklz.c:419}
 [eva:garbled-mix:write] quicklz.c:537: 
   Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 104; 112;
+                                               120; 128; 136}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192}).
+  The imprecision originates from Misaligned {quicklz.c:419}
+[eva:garbled-mix:write] quicklz.c:537: 
+  Assigning imprecise value to *dst
   (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
   The imprecision originates from Misaligned {quicklz.c:419}
 [eva:garbled-mix:write] quicklz.c:767: 
@@ -523,10 +705,6 @@
 [eva:alarm] quicklz.c:371: Warning: 
   signed overflow.
   assert (long)((last_byte - 4) - src) + 1 ≤ 9223372036854775807;
-[eva:alarm] quicklz.c:371: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ (last_byte - 4) - src;
-[eva:alarm] quicklz.c:371: Warning: 
-  signed overflow. assert (last_byte - 4) - src ≤ 9223372036854775807;
 [eva:alarm] quicklz.c:371: Warning: 
   signed overflow.
   assert -9223372036854775808 ≤ (long)((last_byte - 4) - src) + 1;
@@ -584,7 +762,228 @@
   (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 104; 112;
                                                120; 128; 136}).
   The imprecision originates from Misaligned
-[eva] quicklz.c:394: Trace partitioning superposing up to 100 states
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296;
+                                               304; 312; 320; 328}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296;
+                                               304; 312; 320; 328}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296;
+                                               304; 312; 320; 328}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296;
+                                               304; 312; 320; 328}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
+                                               112; 120; 128; 136; 144; 152;
+                                               160; 168; 176; 184; 192; 200;
+                                               208; 216; 224; 232; 240; 248;
+                                               256; 264; 272; 280; 288; 296;
+                                               304; 312; 320; 328}).
+  The imprecision originates from Misaligned
+[eva] quicklz.c:394: Trace partitioning superposing up to 2200 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 2300 states
 [eva:alarm] quicklz.c:276: Warning: 
   pointer comparison.
   assert
@@ -605,7 +1004,7 @@
   assert
   (long)(src - source) - (long)((long)(src - source) >> 5) ≤
   9223372036854775807;
-[eva] quicklz.c:271: Trace partitioning superposing up to 200 states
+[eva] quicklz.c:394: Trace partitioning superposing up to 2400 states
 [eva:alarm] quicklz.c:774: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:garbled-mix:write] quicklz.c:269: 
@@ -629,56 +1028,12 @@
   (pointing to __malloc_main_l19 with offsets [0..4307128];
   __malloc_main_l24 with offsets [0..79992]).
   The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:441: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152;
-                                               160; 168}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:167: 
-  Assigning imprecise value to *((ui16 *)dst)
-  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152;
-                                               160; 168}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:164: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152;
-                                               160; 168}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:161: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152;
-                                               160; 168}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:472: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets {56; 64; 72; 80; 88; 96; 104;
-                                               112; 120; 128; 136; 144; 152;
-                                               160; 168}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:441: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..200],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:167: 
-  Assigning imprecise value to *((ui16 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..200],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:164: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..200],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:161: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..200],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:472: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..200],0%8).
-  The imprecision originates from Misaligned
+[eva:alarm] quicklz.c:427: Warning: 
+  pointer subtraction. assert \base_addr(src) ≡ \base_addr(o);
+[eva:alarm] quicklz.c:427: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ src - o;
+[eva:alarm] quicklz.c:427: Warning: 
+  signed overflow. assert src - o ≤ 9223372036854775807;
 [eva:alarm] quicklz.c:754: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] quicklz.c:754: Warning: 
@@ -688,7 +1043,6 @@
 [eva] using specification for function fclose
 [eva:alarm] stream_compress.c:45: Warning: 
   function fclose: precondition 'valid_stream' got status unknown.
-[scope:rm_asserts] removing 21 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fast_read:
   __retres ∈
@@ -850,17 +1204,17 @@
   ----------------------------------------------------------------------------
   No errors or warnings raised during the analysis.
   ----------------------------------------------------------------------------
-  92 alarms generated by the analysis:
+  88 alarms generated by the analysis:
       23 invalid memory accesses
       20 accesses out of bounds index
-      20 integer overflows
+      18 integer overflows
       14 accesses to uninitialized left-values
-      15 others
+      13 others
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    10 valid    13 unknown     0 invalid     23 total
   43% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-5.95user 0.15system 0:06.10elapsed 99%CPU (0avgtext+0avgdata 201868maxresident)k
-0inputs+2904outputs (0major+47834minor)pagefaults 0swaps
+15.59user 0.19system 0:15.79elapsed 99%CPU (0avgtext+0avgdata 254408maxresident)k
+0inputs+2936outputs (0major+60998minor)pagefaults 0swaps

@@ -1,6 +1,20 @@
 [kernel] Parsing stream_compress.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -62,7 +76,7 @@
   pointer comparison.
   assert \pointer_comparable((void *)offset2, (void *)(src - 2));
 [kernel] quicklz.c:419: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] quicklz.c:472: Warning: out of bounds write. assert \valid(dst);
 [eva] quicklz.c:271: starting to merge loop iterations
 [eva:alarm] quicklz.c:117: Warning: 
@@ -365,8 +379,7 @@
   pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
 [eva:alarm] quicklz.c:549: Warning: 
   pointer subtraction. assert \base_addr(dst) ≡ \base_addr(destination);
-[kernel] quicklz.c:381: 
-  more than 200(4206) elements to enumerate. Approximating.
+[kernel] quicklz.c:381: more than 10(4206) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:774: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva] quicklz.c:67: starting to merge loop iterations
@@ -444,18 +457,9 @@
   The imprecision originates from Misaligned {quicklz.c:419}
 [eva:garbled-mix:write] quicklz.c:537: 
   Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..144],0%8).
-  The imprecision originates from Misaligned {quicklz.c:419}
-[eva:garbled-mix:write] quicklz.c:537: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..152],0%8).
-  The imprecision originates from Misaligned {quicklz.c:419}
-[eva:garbled-mix:write] quicklz.c:537: 
-  Assigning imprecise value to *dst
   (pointing to __malloc_main_l28 with offsets [56..83192],0%8).
   The imprecision originates from Misaligned {quicklz.c:419}
-[kernel] quicklz.c:381: 
-  more than 200(4096) elements to enumerate. Approximating.
+[kernel] quicklz.c:381: more than 10(4096) elements to enumerate. Approximating.
 [eva:alarm] quicklz.c:754: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] quicklz.c:754: Warning: 
@@ -527,46 +531,6 @@
   Assigning imprecise value to *dst
   (pointing to __malloc_main_l28 with offsets {56; 104}).
   The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:441: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:167: 
-  Assigning imprecise value to *((ui16 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:164: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:161: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:472: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:441: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:167: 
-  Assigning imprecise value to *((ui16 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:164: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:161: 
-  Assigning imprecise value to *((ui32 *)dst)
-  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] quicklz.c:472: 
-  Assigning imprecise value to *dst
-  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
-  The imprecision originates from Misaligned
 [eva] quicklz.c:394: Trace partitioning superposing up to 100 states
 [eva:alarm] quicklz.c:276: Warning: 
   pointer comparison.
@@ -614,12 +578,51 @@
   (pointing to __malloc_main_l19 with offsets [0..4307128];
   __malloc_main_l24 with offsets [0..79992]).
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..136],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:441: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:167: 
+  Assigning imprecise value to *((ui16 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:164: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:161: 
+  Assigning imprecise value to *((ui32 *)dst)
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] quicklz.c:472: 
+  Assigning imprecise value to *dst
+  (pointing to __malloc_main_l28 with offsets [56..168],0%8).
+  The imprecision originates from Misaligned
 [kernel] quicklz.c:769: 
   writing somewhere in {NULL; __malloc_main_l19; __malloc_main_l24} because of Misaligned.
 [eva] using specification for function fclose
 [eva:alarm] stream_compress.c:45: Warning: 
   function fclose: precondition 'valid_stream' got status unknown.
-[scope:rm_asserts] removing 22 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fast_read:
   __retres ∈
@@ -775,5 +778,5 @@
     Preconditions    10 valid    13 unknown     0 invalid     23 total
   43% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.35user 0.16system 0:02.52elapsed 99%CPU (0avgtext+0avgdata 167524maxresident)k
-0inputs+2880outputs (0major+39314minor)pagefaults 0swaps
+2.28user 0.15system 0:02.43elapsed 100%CPU (0avgtext+0avgdata 167920maxresident)k
+0inputs+2888outputs (0major+39334minor)pagefaults 0swaps

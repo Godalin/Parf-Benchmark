@@ -2,6 +2,20 @@
 [kernel] Parsing test.c (with preprocessing)
 [kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
 [kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 46 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   b ∈ {0}
@@ -21,6 +35,8 @@
   out of bounds write. assert \valid(*lineptr + tmp_2);
                        (tmp_2 from cur++)
 [eva] FRAMAC_SHARE/libc/stdio.c:83: starting to merge loop iterations
+[eva] FRAMAC_SHARE/libc/stdio.c:91: 
+  Trace partitioning superposing up to 100 states
 [eva] FRAMAC_SHARE/libc/stdio.c:82: starting to merge loop iterations
 [eva:alarm] FRAMAC_SHARE/libc/stdio.c:93: Warning: 
   out of bounds write. assert \valid(*lineptr + cur);
@@ -213,7 +229,6 @@
 [eva] using specification for function printf_va_8
 [eva] using specification for function printf_va_9
 [eva] using specification for function printf_va_10
-[scope:rm_asserts] removing 6 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fgetc:
   __fc_errno ∈ [--..--]
@@ -689,5 +704,5 @@
     Preconditions    32 valid    10 unknown     0 invalid     42 total
   76% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.40user 0.16system 0:04.56elapsed 99%CPU (0avgtext+0avgdata 199324maxresident)k
-0inputs+5392outputs (0major+49681minor)pagefaults 0swaps
+7.93user 0.20system 0:08.13elapsed 99%CPU (0avgtext+0avgdata 234172maxresident)k
+0inputs+5400outputs (0major+58441minor)pagefaults 0swaps

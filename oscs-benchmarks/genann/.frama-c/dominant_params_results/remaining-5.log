@@ -5,6 +5,20 @@
 [kernel:parser:decimal-float] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:44: Warning: 
   Floating-point constant 0.001 is not represented exactly. Will use 0x1.0624dd2f1a9fcp-10.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 3 (not modified).
+  option -eva-auto-loop-unroll already set to 78 (not modified).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel already set to 66 (not modified).
+  option -eva-plevel already set to 116 (not modified).
+  option -eva-subdivide-non-linear already set to 18 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -73,8 +87,8 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123
 [eva] using specification for function rand
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: 
-  starting to merge loop iterations
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:81: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:81: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:37: Warning: 
@@ -111,6 +125,10 @@
 [eva] using specification for function printf_va_42
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123_0
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: 
+  loop not completely unrolled
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:197: 
+  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:71: Warning: 
   out of bounds write. assert \valid(&ann->activation_hidden);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:74: Warning: 
@@ -121,119 +139,12 @@
   accessing uninitialized left-value. assert \initialized(&ann->hidden);
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:238: 
   Automatic loop unrolling.
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:238: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:236: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_3);
-  (tmp_3 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:237: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_2);
-  (tmp_2 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
-  out of bounds read. assert \valid_read(tmp_3);
-                      (tmp_3 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:237: Warning: 
-  out of bounds read. assert \valid_read(tmp_2);
-                      (tmp_2 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:241: Warning: 
-  out of bounds write. assert \valid(tmp_4);
-                       (tmp_4 from o++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:262: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->outputs);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:263: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_8);
-  (tmp_8 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:263: Warning: 
-  out of bounds read. assert \valid_read(tmp_8);
-                      (tmp_8 from w++)
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:264: 
   Automatic loop unrolling.
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_9);
-  (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  out of bounds read. assert \valid_read(tmp_9);
-                      (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  accessing uninitialized left-value. assert \initialized(i + k);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:267: Warning: 
-  out of bounds write. assert \valid(tmp_10);
-                       (tmp_10 from o++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
-  signed overflow. assert w - ann->weight ≤ 9223372036854775807;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:272: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->total_neurons);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:272: Warning: 
-  signed overflow. assert o - ann->output ≤ 9223372036854775807;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:272: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:95: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:95: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:96: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva] using specification for function printf_va_10
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:97: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva] using specification for function printf_va_11
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:98: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva] using specification for function printf_va_12
 [eva] using specification for function printf_va_43
 [eva] using specification for function printf_va_44
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
@@ -255,28 +166,8 @@
   accessing uninitialized left-value. assert \initialized(&ann->delta);
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:308: 
   Automatic loop unrolling.
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:355: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  out of bounds write. assert \valid(tmp_7);
-                       (tmp_7 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(*d_1, learning_rate), *(i + (int)(k - 1))));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_7,
-                        \mul_double(\mul_double(*d_1, learning_rate),
-                                   *(i + (int)(k - 1)))));
-  (tmp_7 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:362: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->total_weights);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:362: Warning: 
-  signed overflow. assert w - ann->weight ≤ 9223372036854775807;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:362: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:367: 
   Automatic loop unrolling.
 [eva] using specification for function printf_va_13
@@ -284,16 +175,14 @@
 [eva] using specification for function printf_va_46
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:123: 
   allocating variable __malloc_genann_init_l123_2
+[eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:128: 
+  Automatic loop unrolling.
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
   Automatic loop unrolling.
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:227: Warning: 
-  non-finite double value.
-  assert \is_finite(\add_double(sum, \mul_double(*tmp_0, *(i + k))));
-  (tmp_0 from w++)
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:128: 
-  starting to merge loop iterations
+  Trace partitioning superposing up to 100 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:129: 
+  Trace partitioning superposing up to 200 states
 [eva] using specification for function printf_va_14
 [eva] using specification for function printf_va_15
 [eva] using specification for function printf_va_16
@@ -308,12 +197,14 @@
   out of bounds read. assert \valid_read(&ann->total_weights);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:200: Warning: 
   accessing uninitialized left-value. assert \initialized(&ann->weight);
+[eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:153: 
+  Automatic loop unrolling.
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
   Automatic loop unrolling.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:153: 
-  starting to merge loop iterations
+  Trace partitioning superposing up to 100 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:154: 
+  Trace partitioning superposing up to 200 states
 [eva] using specification for function printf_va_18
 [eva] using specification for function printf_va_19
 [eva] using specification for function printf_va_20
@@ -324,197 +215,36 @@
   allocating variable __malloc_genann_init_l123_4
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
   Automatic loop unrolling.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:237: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(tmp_2);
+  (tmp_2 from w++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(tmp_3);
+  (tmp_3 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:46: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&ann->activation_hidden);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ann->total_weights);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  accessing uninitialized left-value. assert \initialized(o);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:327: Warning: 
-  accessing uninitialized left-value. assert \initialized(ww + windex);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:324: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:320: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  out of bounds write. assert \valid(d_0);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  accessing uninitialized left-value. assert \initialized(o_0);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(*o_0, \sub_double((double)1.0, *o_0)));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(*o_0, \sub_double((double)1.0, *o_0)),
-                        delta));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:328: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(delta, \mul_double(forward_delta, forward_weight)));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:331: Warning: 
-  out of bounds read. assert \valid_read(o_0);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:263: Warning: 
   accessing uninitialized left-value.
-  assert \initialized(tmp_6);
-  (tmp_6 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_1, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_7);
-  (tmp_7 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:356: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_1, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  accessing uninitialized left-value. assert \initialized(d_2);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_2, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_12);
-  (tmp_12 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  non-finite double value. assert \is_finite(\mul_double(*d_2, learning_rate));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(*d_2, learning_rate),
-                        *(i_0 + (int)(k - 1))));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_12,
-                        \mul_double(\mul_double(*d_2, learning_rate),
-                                   *(i_0 + (int)(k - 1)))));
-  (tmp_12 from w_0++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:385: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  out of bounds write. assert \valid(tmp_12);
-                       (tmp_12 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  out of bounds write. assert \valid(tmp_11);
-                       (tmp_11 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_11);
-  (tmp_11 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_11,
-                        \mul_double(\mul_double(*d_2, learning_rate),
-                                   \neg_double(1.0))));
-  (tmp_11 from w_0++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:386: Warning: 
-  accessing uninitialized left-value. assert \initialized(d_2);
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:383: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:384: Warning: 
-  out of bounds read. assert \valid_read(d_2);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:239: Warning: 
-  non-finite double value.
-  assert \is_finite(\add_double(sum_0, \mul_double(*tmp_3, *(i + k))));
-  (tmp_3 from w++)
+  assert \initialized(tmp_8);
+  (tmp_8 from w++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(*tmp_9, *(i + k)));
-  (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:265: Warning: 
-  non-finite double value.
-  assert \is_finite(\add_double(sum_2, \mul_double(*tmp_9, *(i + k))));
-  (tmp_9 from w++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(\sub_double(*t, *o), *o));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:299: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\mul_double(\mul_double(\sub_double(*t, *o), *o),
-                        \sub_double((double)1.0, *o)));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:328: Warning: 
-  non-finite double value.
-  assert \is_finite(\mul_double(forward_delta, forward_weight));
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:354: Warning: 
-  non-finite double value.
-  assert
-  \is_finite(\add_double(*tmp_6,
-                        \mul_double(\mul_double(*d_1, learning_rate),
-                                   \neg_double(1.0))));
-  (tmp_6 from w++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
-  starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_1);
-  (tmp_1 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:186: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_0);
-  (tmp_0 from genann_run((genann const *)ann, (double const *)(input[0])))
-[eva] using specification for function printf_va_22
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_4);
-  (tmp_4 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:187: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_3);
-  (tmp_3 from genann_run((genann const *)ann, (double const *)(input[1])))
-[eva] using specification for function printf_va_23
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_7);
-  (tmp_7 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:188: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_6);
-  (tmp_6 from genann_run((genann const *)ann, (double const *)(input[2])))
-[eva] using specification for function printf_va_24
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_10);
-  (tmp_10 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:189: Warning: 
-  out of bounds read.
-  assert \valid_read(tmp_9);
-  (tmp_9 from genann_run((genann const *)ann, (double const *)(input[3])))
+  (tmp_9 from w++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:271: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ann->total_weights);
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
+  loop not completely unrolled
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:178: 
+  starting to merge loop iterations
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:179: 
+  starting to merge loop iterations
+[eva] using specification for function printf_va_22
+[eva] using specification for function printf_va_23
+[eva] using specification for function printf_va_24
 [eva] using specification for function printf_va_25
 [eva] using specification for function printf_va_51
 [eva] using specification for function printf_va_52
@@ -539,6 +269,8 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:401: Warning: 
   accessing uninitialized left-value. assert \initialized(ann->weight + i);
 [eva] using specification for function fprintf_va_2
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:400: 
   starting to merge loop iterations
 [eva] using specification for function fclose
@@ -549,9 +281,12 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
   signed overflow. assert inputs + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
-  signed overflow. assert hidden + 1 ≤ 2147483647;
+  signed overflow. assert -2147483648 ≤ (int)(inputs + 1) * hidden;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
   signed overflow. assert (int)(inputs + 1) * hidden ≤ 2147483647;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ (int)(hidden_layers - 1) * (int)(hidden + 1);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:115: Warning: 
   signed overflow.
   assert (int)(hidden_layers - 1) * (int)(hidden + 1) ≤ 2147483647;
@@ -566,24 +301,41 @@
   (int)((int)((int)(hidden_layers - 1) * (int)(hidden + 1)) * hidden) ≤
   2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:116: Warning: 
+  signed overflow. assert hidden + 1 ≤ 2147483647;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:116: Warning: 
   signed overflow. assert inputs + 1 ≤ 2147483647;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:116: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ tmp_0 * outputs;
+  (tmp_0 from hidden_layers?hidden + 1:inputs + 1)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:116: Warning: 
   signed overflow.
   assert tmp_0 * outputs ≤ 2147483647;
   (tmp_0 from hidden_layers?hidden + 1:inputs + 1)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:117: Warning: 
+  signed overflow. assert -2147483648 ≤ hidden_weights + output_weights;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:117: Warning: 
   signed overflow. assert hidden_weights + output_weights ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:119: Warning: 
-  signed overflow.
-  assert
-  (int)(inputs + (int)(hidden * hidden_layers)) + outputs ≤ 2147483647;
+  signed overflow. assert -2147483648 ≤ hidden * hidden_layers;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:119: Warning: 
   signed overflow. assert hidden * hidden_layers ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:119: Warning: 
   signed overflow.
   assert inputs + (int)(hidden * hidden_layers) ≤ 2147483647;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:119: Warning: 
+  signed overflow.
+  assert
+  (int)(inputs + (int)(hidden * hidden_layers)) + outputs ≤ 2147483647;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:122: Warning: 
+  signed overflow. assert -2147483648 ≤ total_weights + total_neurons;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:122: Warning: 
   signed overflow. assert total_weights + total_neurons ≤ 2147483647;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:122: Warning: 
+  signed overflow.
+  assert
+  -2147483648 ≤
+  (int)(total_weights + total_neurons) + (int)(total_neurons - inputs);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:122: Warning: 
   signed overflow.
   assert
@@ -636,6 +388,8 @@
 [eva] using specification for function fscanf_va_2
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:166: Warning: 
   function fscanf_va_2: precondition \valid(param0) got status unknown.
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:164: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/genann.c:164: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:206: Warning: 
@@ -675,7 +429,11 @@
   out of bounds read. assert \valid_read(&second->total_weights);
 [eva] using specification for function printf_va_30
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
+  accessing uninitialized left-value. assert \initialized(&second->weight);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   out of bounds read. assert \valid_read(&second->weight);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
+  accessing uninitialized left-value. assert \initialized(second->weight + i);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   out of bounds read. assert \valid_read(second->weight + i);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
@@ -683,8 +441,8 @@
 [eva] using specification for function printf_va_31
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
   accessing uninitialized left-value. assert \initialized(first->weight + i);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
-  accessing uninitialized left-value. assert \initialized(second->weight + i);
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:215: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:215: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:216: Warning: 
@@ -753,6 +511,8 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:237: Warning: 
   signed overflow. assert lfails + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_37
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:236: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:236: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:237: Warning: 
@@ -763,6 +523,8 @@
 [eva] using specification for function printf_va_56
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:251: Warning: 
   signed overflow. assert ltests + 1 ≤ 2147483647;
+[eva:loop-unroll:partial] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:252: 
+  loop not completely unrolled
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:250: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:251: Warning: 
@@ -771,7 +533,6 @@
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
 [eva] using specification for function printf_va_59
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function genann_act_sigmoid:
   __fc_errno ∈ [--..--]
@@ -801,7 +562,9 @@
   __fc_errno ∈ [--..--]
   interval ∈ {136.533333333}
   lookup[0] ∈ {3.05902226926e-07}
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ {3.08150946064e-07}
+        [2] ∈ {3.10416195766e-07}
+        [3..4095] ∈ [0. .. 0.999999691849]
   f ∈ {0.00732421875}
   i ∈ {4096}
 [eva:final-states] Values at end of function genann_write:
@@ -886,15 +649,15 @@
   j ∈ {1}
   k ∈ {1; 2}
   ret_0 ∈
-       {{ &__malloc_genann_init_l123_0 + [160..--],0%8 ;
-          &__malloc_genann_init_l123_4 + [160..--],0%8 }} or UNINITIALIZED
+       {{ (double const *)&__malloc_genann_init_l123_0[168] ;
+          (double const *)&__malloc_genann_init_l123_4[168] }} or UNINITIALIZED
   __retres ∈
           {{ (double const *)&__malloc_genann_init_l123[88] ;
-             &__malloc_genann_init_l123_0 + [160..--],0%8 ;
+             (double const *)&__malloc_genann_init_l123_0[168] ;
              (double const *)&__malloc_genann_init_l123_1[88] ;
              (double const *)&__malloc_genann_init_l123_2[104] ;
              (double const *)&__malloc_genann_init_l123_3[104] ;
-             &__malloc_genann_init_l123_4 + [160..--],0%8 }}
+             (double const *)&__malloc_genann_init_l123_4[168] }}
   __malloc_genann_init_l123[bits 0 to 31] ∈ {1}
                            [4..7] ∈ {0}
                            [8..11] ∈ {0} or UNINITIALIZED
@@ -934,10 +697,9 @@
                              [bits 896 to 959] ∈ {0.5}
                              [bits 960 to 1023] ∈ {1.}
                              [bits 1024 to 1087] ∈ {-1.}
-                             [bits 1088 to 1343]# ∈
+                             [bits 1088 to 1407]# ∈
                              [0. .. 1.] repeated %64 
-                             [bits 1344 to 1599]# ∈
-                             [0. .. 1.] or UNINITIALIZED repeated %64 
+                             [176..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..7] ∈ {0}
                              [8..11] ∈ {0} or UNINITIALIZED
@@ -954,13 +716,12 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
                              [bits 640 to 703] ∈ {0.5}
                              [bits 704 to 767] ∈ [0. .. 0.999999691849]
                              [bits 768 to 831] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [0. .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..7] ∈ {0}
                              [8..11] ∈ {0} or UNINITIALIZED
@@ -979,12 +740,12 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }} or UNINITIALIZED
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-6.82812434999 .. 19.4843691499]
                              [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
                              [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
                              [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [-0.15820307625 .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..7] ∈ {0}
                              [8..11] ∈ {0} or UNINITIALIZED
@@ -1003,12 +764,12 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }} or UNINITIALIZED
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
+                             [-19.48437305 .. 6.82812304998]
                              [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [-0.5 .. 13.1562487] repeated %64 
                              [bits 704 to 895]# ∈ [0. .. 1.] repeated %64 
                              [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [-0.15820307625 .. 0.15820310875] or UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -1026,16 +787,19 @@
                              {{ (? *)&__malloc_genann_init_l123_4[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 576 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 895]# ∈
+                             [-1e+80 .. 1e+80] repeated %64 
+                             [bits 896 to 1087]# ∈
+                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
                              [bits 1088 to 1215]# ∈
                              [0. .. 1.] repeated %64 
                              [bits 1216 to 1343]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 1344 to 1599]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [0. .. 0.999999691849] repeated %64 
+                             [bits 1344 to 1407] ∈ [0. .. 1.]
+                             [bits 1408 to 1535]# ∈
+                             [-1.36490043858e+37 .. 1.36490043858e+37] or UNINITIALIZED repeated %64 
+                             [bits 1536 to 1599] ∈
+                             [-0.15820307625 .. 0.15820310875] or UNINITIALIZED
 [eva:final-states] Values at end of function genann_train:
   h ∈ {-1}
   j ∈ {1; 2}
@@ -1055,17 +819,18 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 831]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [bits 512 to 575] ∈ [-0.579101554375 .. 0.5]
+                             [bits 576 to 639] ∈ [-0.5 .. 0.539550777187]
+                             [bits 640 to 703] ∈ {0.5}
+                             [bits 704 to 767] ∈ [0. .. 0.999999691849]
+                             [bits 768 to 831] ∈ [0. .. 0.15820310875]
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
                              [bits 128 to 191] ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
                              [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }}
+                             {{ (? *)&genann_act_sigmoid_cached }}
                              [bits 256 to 287] ∈ {3}
                              [bits 288 to 319] ∈ {3} or UNINITIALIZED
                              [bits 320 to 383] ∈
@@ -1075,17 +840,20 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 959]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [-6.82812434999 .. 19.4843691499]
+                             [bits 576 to 703]# ∈
+                             [-6.82812304998 .. 6.82812434999] repeated %64 
+                             [bits 704 to 831]# ∈ [0. .. 1.] repeated %64 
+                             [bits 832 to 895] ∈ [0. .. 0.999999691849]
+                             [bits 896 to 959] ∈
+                             [-0.15820307625 .. 0.15820310875]
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
                              [bits 128 to 191] ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
                              [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }}
+                             {{ (? *)&genann_act_sigmoid_cached }}
                              [bits 256 to 287] ∈ {3}
                              [bits 288 to 319] ∈ {3} or UNINITIALIZED
                              [bits 320 to 383] ∈
@@ -1095,9 +863,13 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }}
                              [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 959]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [-19.48437305 .. 6.82812304998]
+                             [bits 576 to 703]# ∈
+                             [-0.5 .. 13.1562487] repeated %64 
+                             [bits 704 to 831]# ∈ [0. .. 1.] repeated %64 
+                             [bits 832 to 895] ∈ [0. .. 0.999999691849]
+                             [bits 896 to 959] ∈
+                             [-0.15820307625 .. 0.15820310875]
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
@@ -1112,50 +884,39 @@
                              {{ (? *)&__malloc_genann_init_l123_4[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }}
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 576 to 895]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 960 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 1088 to 1471]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 1472 to 1535] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 895]# ∈
+                             [-1e+80 .. 1e+80] repeated %64 
+                             [bits 896 to 1087]# ∈
+                             [-3.40282346639e+38 .. 3.40282346639e+38] repeated %64 
+                             [bits 1088 to 1215]# ∈
+                             [0. .. 1.] repeated %64 
+                             [bits 1216 to 1407]# ∈
+                             [0. .. 0.999999691849] repeated %64 
+                             [bits 1408 to 1535]# ∈
+                             [-1.36490043858e+37 .. 1.36490043858e+37] repeated %64 
                              [bits 1536 to 1599] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
+                             [-0.15820307625 .. 0.15820310875]
 [eva:final-states] Values at end of function genann_randomize:
   __fc_random_counter ∈ [--..--]
-  i ∈ [2..2147483647]
+  i ∈ [0..2147483647]
   __malloc_genann_init_l123[bits 0 to 31] ∈ {1}
-                           [4..7] ∈ {0}
-                           [8..11] ∈ {0} or UNINITIALIZED
+                           [4..11] ∈ {0}
                            [bits 96 to 127] ∈ {1}
-                           [bits 128 to 255]# ∈
-                           {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                           [bits 256 to 287] ∈ {2}
-                           [bits 288 to 319] ∈ {2} or UNINITIALIZED
+                           [16..31] ∈ UNINITIALIZED
+                           [bits 256 to 319]# ∈ {2} repeated %32 
                            [bits 320 to 383] ∈
                            {{ (? *)&__malloc_genann_init_l123[64] }}
                            [bits 384 to 447] ∈
                            {{ (? *)&__malloc_genann_init_l123[80] }}
                            [bits 448 to 511] ∈
-                           {{ (? *)&__malloc_genann_init_l123[96] }} or UNINITIALIZED
-                           [bits 512 to 575] ∈ [-0.5 .. 1.]
-                           [bits 576 to 639] ∈
-                           [-0.5 .. 1.] or UNINITIALIZED
-                           [bits 640 to 703] ∈ {-10.} or UNINITIALIZED
-                           [bits 704 to 767] ∈
-                           [0. .. 0.999999691849] or UNINITIALIZED
-                           [96..103] ∈ UNINITIALIZED
+                           {{ (? *)&__malloc_genann_init_l123[96] }}
+                           [bits 512 to 639]# ∈ [-0.5 .. 0.5] repeated %64 
+                           [80..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_threshold }} or UNINITIALIZED repeated %64 
+                             [16..31] ∈ UNINITIALIZED
                              [bits 256 to 287] ∈ {9}
                              [bits 288 to 319] ∈ {5}
                              [bits 320 to 383] ∈
@@ -1163,74 +924,45 @@
                              [bits 384 to 447] ∈
                              {{ (? *)&__malloc_genann_init_l123_0[136] }}
                              [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[176] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈ [-0.5 .. 0.5]
-                             [bits 576 to 895]# ∈
-                             [-0.5 .. 1.] or UNINITIALIZED repeated %64 
-                             [bits 896 to 959] ∈
-                             [-0.5 .. 0.5] or UNINITIALIZED
-                             [bits 960 to 1023] ∈
-                             [-0.5 .. 1.] or UNINITIALIZED
-                             [bits 1024 to 1087] ∈
-                             [-1. .. 0.5] or UNINITIALIZED
-                             [bits 1088 to 1215]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [0. .. 1.] or UNINITIALIZED repeated %64 
+                             {{ (? *)&__malloc_genann_init_l123_0[176] }}
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [bits 704 to 1087]# ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                             [bits 256 to 287] ∈ {2}
-                             [bits 288 to 319] ∈ {2} or UNINITIALIZED
+                             [16..31] ∈ UNINITIALIZED
+                             [bits 256 to 319]# ∈ {2} repeated %32 
                              [bits 320 to 383] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[64] }}
                              [bits 384 to 447] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[80] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [bits 640 to 703] ∈ {0.5} or UNINITIALIZED
-                             [bits 704 to 767] ∈
-                             [0. .. 0.999999691849] or UNINITIALIZED
-                             [bits 768 to 831] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 639]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [80..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
                              [4..11] ∈ {0}
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }} or UNINITIALIZED
-                             [bits 256 to 287] ∈ {3}
-                             [bits 288 to 319] ∈ {3} or UNINITIALIZED
+                             [16..31] ∈ UNINITIALIZED
+                             [bits 256 to 319]# ∈ {3} repeated %32 
                              [bits 320 to 383] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[64] }}
                              [bits 384 to 447] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[88] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 832 to 895] ∈
-                             [0. .. 1.] or UNINITIALIZED
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [88..119] ∈ UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2} or UNINITIALIZED
                              [4..11] ∈ {0} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1} or UNINITIALIZED
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                             [bits 128 to 255]# ∈
+                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
                              [bits 256 to 287] ∈ {3}
                              [bits 288 to 319] ∈ {3} or UNINITIALIZED
                              [bits 320 to 383] ∈
@@ -1239,24 +971,14 @@
                              {{ (? *)&__malloc_genann_init_l123_3[88] }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 832 to 895] ∈
-                             [0. .. 1.] or UNINITIALIZED
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [88..119] ∈ UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
                              [bits 32 to 63] ∈ {1}
                              [bits 64 to 95] ∈ {2}
                              [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }} or UNINITIALIZED
+                             [16..31] ∈ UNINITIALIZED
                              [bits 256 to 287] ∈ {9}
                              [bits 288 to 319] ∈ {5}
                              [bits 320 to 383] ∈
@@ -1265,14 +987,11 @@
                              {{ (? *)&__malloc_genann_init_l123_4[136] }}
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }}
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 576 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 1088 to 1215]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             [bits 704 to 1087]# ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_5[0].inputs ∈ {1000}
                              [0].hidden_layers ∈ {5}
                              [0].hidden ∈ {50}
@@ -1287,31 +1006,32 @@
                              {{ (double *)&__malloc_genann_init_l123_5[7596] }} or UNINITIALIZED
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_5[7753].total_weights }} or UNINITIALIZED
-                             [1]{.inputs#; .hidden_layers#} ∈ [-0.5 .. 0.5]
-                             {[1]{.hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [2..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
+                             [1]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden} ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             {[1]{.activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [2..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
-  __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
+  __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483647]
                              [bits 32 to 63] ∈ [0..2147483647]
                              [8..11] ∈ [--..--]
-                             [bits 96 to 127] ∈ [1..2147483644]
+                             [bits 96 to 127] ∈ [1..2147483647]
                              [bits 128 to 255]# ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                             [bits 256 to 287] ∈ [2..2147483645]
+                             [32..35] ∈ [--..--]
                              [bits 288 to 319] ∈
-                             [2..2147483645] or UNINITIALIZED
+                             [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
                              {{ (? *)&__malloc_genann_init_l123_6[64] }}
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [80..17179869224],0%8 }} or UNINITIALIZED
+                                [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [96..34359738384],0%8 }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [72..17179869223] ∈ [--..--] or UNINITIALIZED
-                             [17179869224..18446744073709551607] ∈
+                                [-34359738288..34359738416],0%8 }} or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
   __malloc_genann_init_l123_7[0].inputs ∈ {1000}
                              [0].hidden_layers ∈ {5}
@@ -1327,8 +1047,9 @@
                              {{ (double *)&__malloc_genann_init_l123_7[7596] }}
                              [0].delta ∈
                              {{ (double *)&__malloc_genann_init_l123_7[7753].total_weights }}
-                             [1]{.inputs#; .hidden_layers#} ∈ [-0.5 .. 0.5]
-                             {[1]{.hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [2..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
+                             [1]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden} ∈
+                             [-0.5 .. 0.5] repeated %64 
+                             {[1]{.activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}; [2..7595]{.inputs#; .hidden_layers#; .hidden#; .outputs#; .activation_hidden; .activation_output; .total_weights#; .total_neurons#; .weight; .output; .delta}} ∈
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function genann_init:
@@ -1337,11 +1058,13 @@
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
-  hidden_weights ∈ [0..2147483642] or UNINITIALIZED
-  output_weights ∈ [2..2147483645] or UNINITIALIZED
-  total_weights ∈ [2..2147483645] or UNINITIALIZED
-  total_neurons ∈ [2..2147483645] or UNINITIALIZED
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
+  hidden_weights ∈ [--..--] or UNINITIALIZED
+  output_weights ∈ [--..--] or UNINITIALIZED
+  total_weights ∈ [--..--] or UNINITIALIZED
+  total_neurons ∈ [-2147483646..2147483647] or UNINITIALIZED
   size ∈ [-2147483648..2147483640],0%8 or UNINITIALIZED
   ret ∈
      {{ NULL ; (genann *)&__malloc_genann_init_l123 ;
@@ -1377,18 +1100,14 @@
                            [bits 448 to 511] ∈
                            {{ (? *)&__malloc_genann_init_l123[96] }} or UNINITIALIZED
                            [bits 512 to 639]# ∈
-                           [-0.5 .. 1.] or UNINITIALIZED repeated %64 
-                           [bits 640 to 703] ∈ {-10.} or UNINITIALIZED
-                           [bits 704 to 767] ∈
-                           [0. .. 0.999999691849] or UNINITIALIZED
-                           [96..103] ∈ UNINITIALIZED
+                           [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                           [80..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2} or UNINITIALIZED
                              [bits 32 to 63] ∈ {1} or UNINITIALIZED
                              [bits 64 to 95] ∈ {2} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1} or UNINITIALIZED
                              [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED repeated %64 
+                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
                              [bits 256 to 287] ∈ {9} or UNINITIALIZED
                              [bits 288 to 319] ∈ {5} or UNINITIALIZED
                              [bits 320 to 383] ∈
@@ -1397,20 +1116,9 @@
                              {{ (? *)&__malloc_genann_init_l123_0[136] }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_0[176] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-0.5 .. 0.5] or UNINITIALIZED
-                             [bits 576 to 895]# ∈
-                             [-0.5 .. 1.] or UNINITIALIZED repeated %64 
-                             [bits 896 to 959] ∈
-                             [-0.5 .. 0.5] or UNINITIALIZED
-                             [bits 960 to 1023] ∈
-                             [-0.5 .. 1.] or UNINITIALIZED
-                             [bits 1024 to 1087] ∈
-                             [-1. .. 0.5] or UNINITIALIZED
-                             [bits 1088 to 1215]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [0. .. 1.] or UNINITIALIZED repeated %64 
+                             [bits 512 to 1087]# ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1} or UNINITIALIZED
                              [4..11] ∈ {0} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1} or UNINITIALIZED
@@ -1424,23 +1132,14 @@
                              {{ (? *)&__malloc_genann_init_l123_1[80] }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_1[96] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-0.640624985555 .. 0.5] or UNINITIALIZED
-                             [bits 576 to 639] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [bits 640 to 703] ∈ {0.5} or UNINITIALIZED
-                             [bits 704 to 767] ∈
-                             [0. .. 0.999999691849] or UNINITIALIZED
-                             [bits 768 to 831] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 639]# ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [80..103] ∈ UNINITIALIZED
   __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2} or UNINITIALIZED
                              [4..11] ∈ {0} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1} or UNINITIALIZED
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                             [bits 128 to 255]# ∈
+                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
                              [bits 256 to 319]# ∈
                              {3} or UNINITIALIZED repeated %32 
                              [bits 320 to 383] ∈
@@ -1449,24 +1148,14 @@
                              {{ (? *)&__malloc_genann_init_l123_2[88] }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_2[112] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] or UNINITIALIZED
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 832 to 895] ∈
-                             [0. .. 1.] or UNINITIALIZED
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [88..119] ∈ UNINITIALIZED
   __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2} or UNINITIALIZED
                              [4..11] ∈ {0} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1} or UNINITIALIZED
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                             [bits 128 to 255]# ∈
+                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
                              [bits 256 to 319]# ∈
                              {3} or UNINITIALIZED repeated %32 
                              [bits 320 to 383] ∈
@@ -1475,25 +1164,15 @@
                              {{ (? *)&__malloc_genann_init_l123_3[88] }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_3[112] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38] or UNINITIALIZED
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 704 to 831]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 832 to 895] ∈
-                             [0. .. 1.] or UNINITIALIZED
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [88..119] ∈ UNINITIALIZED
   __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2} or UNINITIALIZED
                              [bits 32 to 63] ∈ {1} or UNINITIALIZED
                              [bits 64 to 95] ∈ {2} or UNINITIALIZED
                              [bits 96 to 127] ∈ {1} or UNINITIALIZED
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached ;
-                                (? *)&genann_act_threshold }} or UNINITIALIZED
+                             [bits 128 to 255]# ∈
+                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
                              [bits 256 to 287] ∈ {9} or UNINITIALIZED
                              [bits 288 to 319] ∈ {5} or UNINITIALIZED
                              [bits 320 to 383] ∈
@@ -1503,11 +1182,8 @@
                              [bits 448 to 511] ∈
                              {{ (? *)&__malloc_genann_init_l123_4[176] }} or UNINITIALIZED
                              [bits 512 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 1088 to 1215]# ∈
-                             {1.} or UNINITIALIZED repeated %64 
-                             [bits 1216 to 1599]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
+                             [136..199] ∈ UNINITIALIZED
   __malloc_genann_init_l123_5[0].inputs ∈ {1000} or UNINITIALIZED
                              [0].hidden_layers ∈ {5} or UNINITIALIZED
                              [0].hidden ∈ {50} or UNINITIALIZED
@@ -1526,28 +1202,29 @@
                              [-0.5 .. 0.5] or UNINITIALIZED repeated %64 
                              [7596..7785] ∈ UNINITIALIZED
   __malloc_genann_init_l123_6[bits 0 to 31] ∈
-                             [1..2147483644] or UNINITIALIZED
+                             [1..2147483647] or UNINITIALIZED
                              [bits 32 to 63] ∈
                              [0..2147483647] or UNINITIALIZED
                              [8..11] ∈ [--..--] or UNINITIALIZED
                              [bits 96 to 127] ∈
-                             [1..2147483644] or UNINITIALIZED
+                             [1..2147483647] or UNINITIALIZED
                              [bits 128 to 255]# ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                             [bits 256 to 319]# ∈
-                             [2..2147483645] or UNINITIALIZED repeated %32 
+                             [32..35] ∈ [--..--] or UNINITIALIZED
+                             [bits 288 to 319] ∈
+                             [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
                              {{ (? *)&__malloc_genann_init_l123_6[64] }} or UNINITIALIZED
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [80..17179869224],0%8 }} or UNINITIALIZED
+                                [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [96..34359738384],0%8 }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [72..17179869223] ∈ [--..--] or UNINITIALIZED
-                             [17179869224..18446744073709551607] ∈
+                                [-34359738288..34359738416],0%8 }} or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
   __malloc_genann_init_l123_7[0].inputs ∈ {1000} or UNINITIALIZED
                              [0].hidden_layers ∈ {5} or UNINITIALIZED
@@ -1572,80 +1249,44 @@
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   input ∈ {0.5}
   output ∈ {1.}
   first_try ∈ [0. .. 0.999999691849]
   second_try ∈ [0. .. 0.999999691849]
   ltests ∈ {13}
-  lfails ∈ [0..10]
+  lfails ∈ {0; 1; 2; 3; 4; 5; 6; 7}
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
-                             [4..11] ∈ {0}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }}
-                             [bits 256 to 287] ∈ {2}
-                             [bits 288 to 319] ∈ {2} or UNINITIALIZED
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_1[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_1[80] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 640 to 703] ∈ {0.5}
-                             [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                             [bits 768 to 831] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
 [eva:final-states] Values at end of function basic:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   a ∈ {-10.}
   ltests ∈ {7}
   lfails ∈ {0; 1; 2; 3; 4; 5; 6}
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123[bits 0 to 31] ∈ {1}
-                           [4..7] ∈ {0}
-                           [8..11] ∈ {0} or UNINITIALIZED
-                           [bits 96 to 127] ∈ {1}
-                           [bits 128 to 191] ∈
-                           {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                           [bits 192 to 255] ∈
-                           {{ (? *)&genann_act_sigmoid_cached }}
-                           [bits 256 to 287] ∈ {2}
-                           [bits 288 to 319] ∈ {2} or UNINITIALIZED
-                           [bits 320 to 383] ∈
-                           {{ (? *)&__malloc_genann_init_l123[64] }}
-                           [bits 384 to 447] ∈
-                           {{ (? *)&__malloc_genann_init_l123[80] }}
-                           [bits 448 to 511] ∈
-                           {{ (? *)&__malloc_genann_init_l123[96] }} or UNINITIALIZED
-                           [bits 512 to 639]# ∈ {1.} repeated %64 
-                           [bits 640 to 703] ∈ {-10.}
-                           [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                           [96..103] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function copy:
   __fc_errno ∈ {0}
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   first ∈ ESCAPINGADDR
   second ∈ ESCAPINGADDR
   i ∈ [60760..2147483647]
-  ltests ∈ [37..2147483647]
+  ltests ∈ [41..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function genann_read:
@@ -1687,7 +1328,9 @@
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   inputs ∈ [--..--]
   hidden_layers ∈ [--..--]
   hidden ∈ [--..--]
@@ -1698,28 +1341,27 @@
   i ∈ [0..2147483647] or UNINITIALIZED
   __retres ∈ {{ NULL ; (genann *)&__malloc_genann_init_l123_6 }}
   __malloc_genann_init_l123_6[bits 0 to 31] ∈
-                             [1..2147483644] or UNINITIALIZED
+                             [1..2147483647] or UNINITIALIZED
                              [bits 32 to 63] ∈
                              [0..2147483647] or UNINITIALIZED
                              [8..11] ∈ [--..--] or UNINITIALIZED
                              [bits 96 to 127] ∈
-                             [1..2147483644] or UNINITIALIZED
+                             [1..2147483647] or UNINITIALIZED
                              [bits 128 to 255]# ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                             [bits 256 to 287] ∈ [2..2147483645]
+                             [32..35] ∈ [--..--]
                              [bits 288 to 319] ∈
-                             [2..2147483645] or UNINITIALIZED
+                             [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_6[64] }}
+                             {{ (? *)&__malloc_genann_init_l123_6[64] }} or UNINITIALIZED
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [80..17179869224],0%8 }} or UNINITIALIZED
+                                [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [96..34359738384],0%8 }} or UNINITIALIZED
-                             [64..71] ∈ [--..--]
-                             [72..17179869223] ∈ [--..--] or UNINITIALIZED
-                             [17179869224..18446744073709551607] ∈
+                                [-34359738288..34359738416],0%8 }} or UNINITIALIZED
+                             [64..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:final-states] Values at end of function persist:
   __fc_errno ∈ {0}
@@ -1760,7 +1402,9 @@
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   first ∈ ESCAPINGADDR
   out ∈
      {{ &__fc_fopen{[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10],
@@ -1770,37 +1414,37 @@
                    [11], [12], [13], [14], [15]} }}
   second ∈ {{ (genann *)&__malloc_genann_init_l123_6 }}
   i ∈ [60760..2147483647]
-  ltests ∈ [31..2147483647]
+  ltests ∈ [33..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
+  __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483647]
                              [bits 32 to 63] ∈ [0..2147483647]
                              [8..11] ∈ [--..--]
-                             [bits 96 to 127] ∈ [1..2147483644]
+                             [bits 96 to 127] ∈ [1..2147483647]
                              [bits 128 to 255]# ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                             [bits 256 to 287] ∈ [2..2147483645]
+                             [32..35] ∈ [--..--]
                              [bits 288 to 319] ∈
-                             [2..2147483645] or UNINITIALIZED
+                             [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
                              {{ (? *)&__malloc_genann_init_l123_6[64] }}
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [80..17179869224],0%8 }} or UNINITIALIZED
+                                [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [96..34359738384],0%8 }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [72..17179869223] ∈ [--..--] or UNINITIALIZED
-                             [17179869224..18446744073709551607] ∈
+                                [-34359738288..34359738416],0%8 }} or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:final-states] Values at end of function sigmoid:
   __fc_errno ∈ {0}
   i ∈ [20. .. 10000000000.]
   max ∈ {20.}
   d ∈ {0.0001}
-  ltests ∈ [38..2147483647]
+  ltests ∈ [44..2147483647]
   lfails ∈ [0..2147483647]
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function train_and:
@@ -1809,7 +1453,9 @@
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1820,38 +1466,17 @@
   i ∈ {50}
   j ∈ {4}
   ltests ∈ {17}
-  lfails ∈ [0..14]
+  lfails ∈ [0..11]
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
-                             [4..11] ∈ {0}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }}
-                             [bits 256 to 287] ∈ {3}
-                             [bits 288 to 319] ∈ {3} or UNINITIALIZED
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_2[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_2[88] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 704 to 831]# ∈ {1.} repeated %64 
-                             [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
 [eva:final-states] Values at end of function train_or:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1862,38 +1487,17 @@
   i ∈ {50}
   j ∈ {4}
   ltests ∈ {21}
-  lfails ∈ [0..18]
+  lfails ∈ [0..15]
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
-                             [4..11] ∈ {0}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }}
-                             [bits 256 to 287] ∈ {3}
-                             [bits 288 to 319] ∈ {3} or UNINITIALIZED
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[88] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[112] }}
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 704 to 831]# ∈ {1.} repeated %64 
-                             [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
 [eva:final-states] Values at end of function train_xor:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
        [2][1] ∈ {0}
@@ -1905,46 +1509,17 @@
   i ∈ {500}
   j ∈ {4}
   ltests ∈ {25}
-  lfails ∈ [0..22]
+  lfails ∈ [0..19]
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
-                             [bits 32 to 63] ∈ {1}
-                             [bits 64 to 95] ∈ {2}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }}
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }}
-                             [bits 256 to 287] ∈ {9}
-                             [bits 288 to 319] ∈ {5}
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_4[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_4[136] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_4[176] }}
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 576 to 895]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 960 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 1088 to 1215]# ∈ {1.} repeated %64 
-                             [bits 1216 to 1471]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 1472 to 1535] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [bits 1536 to 1599] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
 [eva:final-states] Values at end of function xor:
   __fc_errno ∈ [--..--]
   __fc_heap_status ∈ [--..--]
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
   ann ∈ ESCAPINGADDR
   input{[0][0..1]; [1][0]} ∈ {0}
        {[1][1]; [2][0]} ∈ {1.}
@@ -1954,32 +1529,6 @@
         [1..2] ∈ {1.}
         [3] ∈ {0}
   ltests ∈ {12}
-  lfails ∈ [0..9]
-  S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
-                             [bits 32 to 63] ∈ {1}
-                             [bits 64 to 95] ∈ {2}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_threshold }} repeated %64 
-                             [bits 256 to 287] ∈ {9}
-                             [bits 288 to 319] ∈ {5}
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[136] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[176] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈ {0.5}
-                             [bits 576 to 895]# ∈ {1.} repeated %64 
-                             [bits 896 to 959] ∈ {0.5}
-                             [bits 960 to 1023] ∈ {1.}
-                             [bits 1024 to 1087] ∈ {-1.}
-                             [bits 1088 to 1215]# ∈ {1.} repeated %64 
-                             [bits 1216 to 1343]# ∈
-                             [0. .. 1.] repeated %64 
-                             [bits 1344 to 1599]# ∈
-                             [0. .. 1.] or UNINITIALIZED repeated %64 
 [eva:final-states] Values at end of function main:
   __fc_errno ∈ {0}
   __fc_stdout ∈ {{ NULL + [--..--] ; &S___fc_stdout[0] }}
@@ -2019,195 +1568,54 @@
   __fc_random_counter ∈ [--..--]
   interval ∈ [0. .. 136.533333333]
   lookup[0] ∈ [0. .. 3.05902226926e-07]
-        [1..4095] ∈ [0. .. 0.999999691849]
-  ltests ∈ [38..2147483647]
+        [1] ∈ [0. .. 3.08150946064e-07]
+        [2] ∈ [0. .. 3.10416195766e-07]
+        [3..4095] ∈ [0. .. 0.999999691849]
+  ltests ∈ [44..2147483647]
   lfails ∈ [0..2147483647]
   __retres ∈ {0; 1}
   S___fc_stdout[0..1] ∈ [--..--]
-  __malloc_genann_init_l123[bits 0 to 31] ∈ {1}
-                           [4..7] ∈ {0}
-                           [8..11] ∈ {0} or UNINITIALIZED
-                           [bits 96 to 127] ∈ {1}
-                           [bits 128 to 191] ∈
-                           {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                           [bits 192 to 255] ∈
-                           {{ (? *)&genann_act_sigmoid_cached }}
-                           [bits 256 to 287] ∈ {2}
-                           [bits 288 to 319] ∈ {2} or UNINITIALIZED
-                           [bits 320 to 383] ∈
-                           {{ (? *)&__malloc_genann_init_l123[64] }}
-                           [bits 384 to 447] ∈
-                           {{ (? *)&__malloc_genann_init_l123[80] }}
-                           [bits 448 to 511] ∈
-                           {{ (? *)&__malloc_genann_init_l123[96] }} or UNINITIALIZED
-                           [bits 512 to 639]# ∈ {1.} repeated %64 
-                           [bits 640 to 703] ∈ {-10.}
-                           [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                           [96..103] ∈ UNINITIALIZED
-  __malloc_genann_init_l123_0[bits 0 to 31] ∈ {2}
-                             [bits 32 to 63] ∈ {1}
-                             [bits 64 to 95] ∈ {2}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 255]# ∈
-                             {{ (? *)&genann_act_threshold }} repeated %64 
-                             [bits 256 to 287] ∈ {9}
-                             [bits 288 to 319] ∈ {5}
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[136] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_0[176] }} or UNINITIALIZED
-                             [bits 512 to 575] ∈ {0.5}
-                             [bits 576 to 895]# ∈ {1.} repeated %64 
-                             [bits 896 to 959] ∈ {0.5}
-                             [bits 960 to 1023] ∈ {1.}
-                             [bits 1024 to 1087] ∈ {-1.}
-                             [bits 1088 to 1215]# ∈ {1.} repeated %64 
-                             [bits 1216 to 1343]# ∈
-                             [0. .. 1.] repeated %64 
-                             [bits 1344 to 1599]# ∈
-                             [0. .. 1.] or UNINITIALIZED repeated %64 
-  __malloc_genann_init_l123_1[bits 0 to 31] ∈ {1}
-                             [4..11] ∈ {0}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }}
-                             [bits 256 to 287] ∈ {2}
-                             [bits 288 to 319] ∈ {2} or UNINITIALIZED
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_1[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_1[80] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_1[96] }}
-                             [bits 512 to 575] ∈ [-0.640624985555 .. 0.5]
-                             [bits 576 to 639] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 640 to 703] ∈ {0.5}
-                             [bits 704 to 767] ∈ [0. .. 0.999999691849]
-                             [bits 768 to 831] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-  __malloc_genann_init_l123_2[bits 0 to 31] ∈ {2}
-                             [4..11] ∈ {0}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }}
-                             [bits 256 to 287] ∈ {3}
-                             [bits 288 to 319] ∈ {3} or UNINITIALIZED
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_2[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_2[88] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_2[112] }}
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 704 to 831]# ∈ {1.} repeated %64 
-                             [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-  __malloc_genann_init_l123_3[bits 0 to 31] ∈ {2}
-                             [4..11] ∈ {0}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }}
-                             [bits 256 to 287] ∈ {3}
-                             [bits 288 to 319] ∈ {3} or UNINITIALIZED
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[88] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_3[112] }}
-                             [bits 512 to 575] ∈
-                             [-3.40282346639e+38 .. 3.40282346639e+38]
-                             [bits 576 to 703]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 704 to 831]# ∈ {1.} repeated %64 
-                             [bits 832 to 895] ∈ [0. .. 1.]
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-  __malloc_genann_init_l123_4[bits 0 to 31] ∈ {2}
-                             [bits 32 to 63] ∈ {1}
-                             [bits 64 to 95] ∈ {2}
-                             [bits 96 to 127] ∈ {1}
-                             [bits 128 to 191] ∈
-                             {{ (? *)&genann_act_sigmoid_cached }}
-                             [bits 192 to 255] ∈
-                             {{ (? *)&genann_act_threshold }}
-                             [bits 256 to 287] ∈ {9}
-                             [bits 288 to 319] ∈ {5}
-                             [bits 320 to 383] ∈
-                             {{ (? *)&__malloc_genann_init_l123_4[64] }}
-                             [bits 384 to 447] ∈
-                             {{ (? *)&__malloc_genann_init_l123_4[136] }}
-                             [bits 448 to 511] ∈
-                             {{ (? *)&__malloc_genann_init_l123_4[176] }}
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 576 to 895]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 896 to 959] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [bits 960 to 1087]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED repeated %64 
-                             [bits 1088 to 1215]# ∈ {1.} repeated %64 
-                             [bits 1216 to 1471]# ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
-                             [bits 1472 to 1535] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308] or UNINITIALIZED
-                             [bits 1536 to 1599] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-  __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483644]
+  __malloc_genann_init_l123_6[bits 0 to 31] ∈ [1..2147483647]
                              [bits 32 to 63] ∈ [0..2147483647]
                              [8..11] ∈ [--..--]
-                             [bits 96 to 127] ∈ [1..2147483644]
+                             [bits 96 to 127] ∈ [1..2147483647]
                              [bits 128 to 255]# ∈
                              {{ (? *)&genann_act_sigmoid_cached }} or UNINITIALIZED repeated %64 
-                             [bits 256 to 287] ∈ [2..2147483645]
+                             [32..35] ∈ [--..--]
                              [bits 288 to 319] ∈
-                             [2..2147483645] or UNINITIALIZED
+                             [-2147483646..2147483647] or UNINITIALIZED
                              [bits 320 to 383] ∈
                              {{ (? *)&__malloc_genann_init_l123_6[64] }}
                              [bits 384 to 447] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [80..17179869224],0%8 }} or UNINITIALIZED
+                                [-17179869120..17179869240],0%8 }} or UNINITIALIZED
                              [bits 448 to 511] ∈
                              {{ &__malloc_genann_init_l123_6 +
-                                [96..34359738384],0%8 }} or UNINITIALIZED
-                             [bits 512 to 575] ∈
-                             [-1.79769313486e+308 .. 1.79769313486e+308]
-                             [72..17179869223] ∈ [--..--] or UNINITIALIZED
-                             [17179869224..18446744073709551607] ∈
+                                [-34359738288..34359738416],0%8 }} or UNINITIALIZED
+                             [bits 512 to 703]# ∈
+                             [-1.79769313486e+308 .. 1.79769313486e+308] repeated %64 
+                             [88..17179869239] ∈ [--..--] or UNINITIALIZED
+                             [17179869240..18446744073709551607] ∈
                              UNINITIALIZED
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   24 functions analyzed (out of 25): 96% coverage.
-  In these functions, 965 statements reached (out of 1042): 92% coverage.
+  In these functions, 947 statements reached (out of 1042): 90% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    2 warnings
   ----------------------------------------------------------------------------
-  199 alarms generated by the analysis:
-      83 accesses to uninitialized left-values
-      67 invalid memory accesses
-      28 integer overflows
-      21 nan or infinite floating-point values
+  132 alarms generated by the analysis:
+      59 accesses to uninitialized left-values
+      40 invalid memory accesses
+      32 integer overflows
+       1 nan or infinite floating-point value
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   141 valid     6 unknown     0 invalid    147 total
-  95% of the logical properties reached have been proven.
+    Preconditions   138 valid     3 unknown     0 invalid    141 total
+  97% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-5.12user 0.14system 0:05.26elapsed 99%CPU (0avgtext+0avgdata 212396maxresident)k
-0inputs+4712outputs (0major+48907minor)pagefaults 0swaps
+13.72user 0.26system 0:13.99elapsed 99%CPU (0avgtext+0avgdata 289380maxresident)k
+0inputs+4640outputs (0major+68204minor)pagefaults 0swaps

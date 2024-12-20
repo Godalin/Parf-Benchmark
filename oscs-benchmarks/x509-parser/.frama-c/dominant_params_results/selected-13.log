@@ -1,6 +1,20 @@
 [kernel] Parsing src/x509-parser.c (with preprocessing)
 [kernel:typing:incompatible-types-call] src/x509-parser.c:9242: Warning: 
   expected 'char *' but got argument of type 'u8 *': buf
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   _ecdsa_sha1_name[0] ∈ {101}
@@ -2573,6 +2587,10 @@
 [eva:alarm] src/x509-parser.c:820: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)rbytes);
 [eva] src/x509-parser.c:795: starting to merge loop iterations
+[eva:alarm] src/x509-parser.c:713: Warning: 
+  out of bounds read. assert \valid_read(buf + rbytes);
+[eva:alarm] src/x509-parser.c:719: Warning: 
+  out of bounds read. assert \valid_read(buf + rbytes);
 [eva:alarm] src/x509-parser.c:752: Warning: 
   function parse_OID: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:753: Warning: 
@@ -2635,10 +2653,6 @@
   out of bounds read. assert \valid_read(buf + 1);
 [eva:alarm] src/x509-parser.c:410: Warning: 
   out of bounds read. assert \valid_read(buf + 2);
-[eva:alarm] src/x509-parser.c:713: Warning: 
-  out of bounds read. assert \valid_read(buf + rbytes);
-[eva:alarm] src/x509-parser.c:719: Warning: 
-  out of bounds read. assert \valid_read(buf + rbytes);
 [eva:alarm] src/x509-parser.c:1936: Warning: 
   function find_curve_by_oid: precondition len > 0 ∧ buf ≢ (u8 const *)0 ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -2731,8 +2745,14 @@
   function find_dn_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:3483: Warning: 
   function find_dn_by_oid: postcondition got status unknown.
+[kernel] src/x509-parser.c:3509: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/x509-parser.c:3514: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:3587: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)oid_len);
+[kernel] src/x509-parser.c:3594: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:3602: Warning: 
   function parse_rdn_val_pseudo: precondition len > 0 ∧ buf ≢ \null ⇒
                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3046,8 +3066,6 @@
                                     \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:4320: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)na_len);
-[eva:alarm] src/x509-parser.c:4361: Warning: 
-  unsigned downcast. assert (int)((int)hdr_len + (int)data_len) ≤ 65535;
 [eva:alarm] src/x509-parser.c:4254: Warning: 
   function parse_x509_Validity: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4255: Warning: 
@@ -3188,6 +3206,10 @@
   function find_ext_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8063: Warning: 
   function find_ext_by_oid: postcondition got status unknown.
+[kernel] src/x509-parser.c:8089: 
+  more than 10(29) elements to enumerate. Approximating.
+[kernel] src/x509-parser.c:8094: 
+  more than 10(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8259: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)oid_len);
 [eva:alarm] src/x509-parser.c:8268: Warning: 
@@ -3214,6 +3236,8 @@
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:8305: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)hdr_len);
+[kernel] src/x509-parser.c:8315: 
+  more than 10(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_bad_oid: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3278,16 +3302,12 @@
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
 [eva:alarm] src/x509-parser.c:3016: Warning: 
   function check_ia5_string: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:4665: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)name_len);
 [eva:alarm] src/x509-parser.c:4669: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:4676: Warning: 
   function get_length: precondition len > 0 ∧ buf ≢ \null ⇒
                                     \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:4682: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)grabbed);
-[eva:alarm] src/x509-parser.c:4692: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)name_len);
 [eva:alarm] src/x509-parser.c:4696: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:4714: Warning: 
   function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
@@ -3739,8 +3759,6 @@
 [eva:alarm] src/x509-parser.c:5526: Warning: 
   function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:5540: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)len - (int)hdr_len);
 [eva:alarm] src/x509-parser.c:5547: Warning: 
   function parse_nine_bit_named_bit_list: precondition len > 0 ∧
                                                        buf ≢ \null ⇒
@@ -3957,7 +3975,6 @@
   function parse_x509_signatureValue: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:9103: Warning: 
   function parse_x509_cert: postcondition got status unknown.
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function _extract_complex_tag:
   len ∈ {0; 1; 2; 3; 4}
@@ -4430,7 +4447,7 @@
   parsed ∈ [--..--]
   ret ∈ [-1120..0]
   cert_serial_len ∈ [0..22]
-  parsed ∈ [0..65528]
+  parsed ∈ [0..65527]
 [eva:final-states] Values at end of function parse_NoticeReference:
   buf ∈ {{ &buf + [10..--] }}
   remain ∈ [0..65500] or UNINITIALIZED
@@ -4576,7 +4593,7 @@
   ret ∈ [-3582..0]
   parsed ∈ [0..65534]
 [eva:final-states] Values at end of function parse_sig_ecdsa:
-  buf ∈ {{ &buf + [0..196619] }}
+  buf ∈ {{ &buf + [0..196601] }}
   bs_hdr_len ∈ [0..12]
   bs_data_len ∈ [0..65528]
   sig_len ∈ [0..65527]
@@ -4592,7 +4609,7 @@
   ret ∈ [-8904..0]
   eaten ∈ [--..--]
 [eva:final-states] Values at end of function parse_subjectpubkey_ec:
-  buf ∈ {{ &buf + [0..327760] }}
+  buf ∈ {{ &buf + [0..327753] }}
   remain ∈ [0..65520] or UNINITIALIZED
   hdr_len ∈ [0..12]
   data_len ∈ [0..65522]
@@ -4600,14 +4617,14 @@
   ret ∈ [-2085..0]
   pc ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_subjectpubkey_rsa:
-  buf ∈ {{ &buf + [0..327760] }}
+  buf ∈ {{ &buf + [0..327753] }}
   remain ∈ [0..65522] or UNINITIALIZED
   hdr_len ∈ [0..12]
   data_len ∈ [0..65522]
   eaten ∈ [0..65531]
   ret ∈ [-2294..0]
 [eva:final-states] Values at end of function parse_x509_AlgorithmIdentifier:
-  buf ∈ {{ &buf + [0..327769] }}
+  buf ∈ {{ &buf + [0..327762] }}
   talg ∈
       {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ; &_ecdsa_sha256_alg ;
          &_ecdsa_sha384_alg ; &_ecdsa_sha512_alg ; &_ecpublickey_alg ;
@@ -4891,7 +4908,7 @@
   nb_min ∈ [0..99]
   nb_sec ∈ [0..99]
   t_type ∈ [--..--]
-  parsed ∈ [--..--]
+  parsed ∈ [0..65528]
 [eva:final-states] Values at end of function parse_x509_Version:
   buf ∈ {{ &buf + [0..48] }}
   data_len ∈ [0..65525]
@@ -4923,7 +4940,7 @@
   ret ∈ [-9074..0]
   eaten ∈ [--..--]
 [eva:final-states] Values at end of function parse_x509_subjectPublicKeyInfo:
-  buf ∈ {{ &buf + [0..327760] }}
+  buf ∈ {{ &buf + [0..327753] }}
   hdr_len ∈ [0..12]
   data_len ∈ [0..65525]
   parsed ∈ [0..65534]
@@ -4946,12 +4963,12 @@
   ret ∈ [-4425..0]
   parsed ∈ [--..--]
 [eva:final-states] Values at end of function parse_x509_tbsCertificate:
-  buf ∈ {{ &buf + [0..393277] }}
+  buf ∈ {{ &buf + [0..393270] }}
   tbs_data_len ∈ [0..65528]
   tbs_hdr_len ∈ [0..12]
   remain ∈ [0..65528]
   parsed ∈ [--..--]
-  subject_ptr ∈ {{ &buf + [0..196679] }} or UNINITIALIZED
+  subject_ptr ∈ {{ &buf + [0..196672] }} or UNINITIALIZED
   issuer_ptr ∈ {{ &buf + [0..65609] }} or UNINITIALIZED
   subject_len ∈ [0..65528] or UNINITIALIZED
   issuer_len ∈ [0..65528] or UNINITIALIZED
@@ -5009,14 +5026,14 @@
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   98 functions analyzed (out of 99): 98% coverage.
-  In these functions, 2963 statements reached (out of 3112): 95% coverage.
+  In these functions, 2962 statements reached (out of 3112): 95% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    1 warning
   ----------------------------------------------------------------------------
-  208 alarms generated by the analysis:
-     104 integer overflows
+  204 alarms generated by the analysis:
+     100 integer overflows
       51 invalid memory accesses
       53 others
   ----------------------------------------------------------------------------
@@ -5025,5 +5042,5 @@
     Preconditions   614 valid   231 unknown     0 invalid    845 total
   68% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-6.65user 0.18system 0:06.84elapsed 99%CPU (0avgtext+0avgdata 247540maxresident)k
-0inputs+3024outputs (0major+55394minor)pagefaults 0swaps
+7.46user 0.22system 0:07.68elapsed 99%CPU (0avgtext+0avgdata 255612maxresident)k
+0inputs+3024outputs (0major+57293minor)pagefaults 0swaps

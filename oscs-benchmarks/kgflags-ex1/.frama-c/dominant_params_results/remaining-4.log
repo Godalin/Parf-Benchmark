@@ -1,5 +1,19 @@
 [kernel] Parsing fc_stubs.c (with preprocessing)
 [kernel] Parsing examples/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 5 (not modified).
+  option -eva-auto-loop-unroll already set to 109 (not modified).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 157 (not modified).
+  option -eva-ilevel already set to 95 (not modified).
+  option -eva-plevel already set to 224 (not modified).
+  option -eva-subdivide-non-linear already set to 38 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -68,9 +82,6 @@
   function strcmp: precondition 'valid_string_s1' got status invalid.
 [eva] FRAMAC_SHARE/libc/string.h:156: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
-[eva:loop-unroll:partial] kgflags.h:369: loop not completely unrolled
-[eva:loop-unroll:partial] kgflags.h:373: loop not completely unrolled
-[eva:loop-unroll:partial] kgflags.h:380: loop not completely unrolled
 [eva] kgflags.h:360: Trace partitioning superposing up to 100 states
 [eva:loop-unroll:auto] kgflags.h:663: Automatic loop unrolling.
 [eva] using specification for function puts
@@ -88,8 +99,10 @@
 [eva] using specification for function fprintf_va_8
 [eva:alarm] kgflags.h:432: Warning: 
   function fprintf_va_8: precondition valid_read_string(param1) got status unknown.
-[eva:loop-unroll:partial] kgflags.h:400: loop not completely unrolled
 [eva] kgflags.h:400: Trace partitioning superposing up to 100 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 700 states
+[eva:loop-unroll:partial] kgflags.h:400: loop not completely unrolled
+[eva] kgflags.h:400: starting to merge loop iterations
 [eva] using specification for function fprintf_va_11
 [eva] using specification for function fprintf_va_13
 [eva] using specification for function fprintf_va_14
@@ -755,5 +768,5 @@
     Preconditions    26 valid     6 unknown     0 invalid     32 total
   81% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.55user 0.12system 0:01.67elapsed 99%CPU (0avgtext+0avgdata 147924maxresident)k
-0inputs+2704outputs (0major+32409minor)pagefaults 0swaps
+2.60user 0.21system 0:02.81elapsed 99%CPU (0avgtext+0avgdata 166304maxresident)k
+0inputs+2704outputs (0major+54923minor)pagefaults 0swaps

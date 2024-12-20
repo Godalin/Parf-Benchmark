@@ -1,9 +1,25 @@
 [kernel] Parsing jsmn.c (with preprocessing)
 [kernel] Parsing example/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 53 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   JSON_STRING ∈
              {{ "{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  \"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}" }}
+[kernel] jsmn.c:211: more than 10(13) elements to enumerate. Approximating.
+[kernel] jsmn.c:211: more than 10(13) elements to enumerate. Approximating.
 [eva] using specification for function strncmp
 [eva] FRAMAC_SHARE/libc/string.h:163: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
@@ -16,7 +32,10 @@
 [eva:alarm] example/simple.c:51: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&t[(int)(i + 1)].start);
+[kernel] example/simple.c:71: 
+  more than 10(12) elements to enumerate. Approximating.
 [eva] ====== VALUES COMPUTED ======
+[kernel] jsmn.c:14: more than 10(13) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function jsmn_alloc_token:
   tok ∈ {{ &t + [0..192],0%16 }}
   p.pos ∈ [0..95]
@@ -75,6 +94,8 @@
    [12].size ∈ {0} or UNINITIALIZED
    [13..127] ∈ UNINITIALIZED
   __retres ∈ {{ &t + [0..192],0%16 }}
+[kernel] jsmn.c:26: more than 10(12) elements to enumerate. Approximating.
+[kernel] jsmn.c:29: more than 10(12) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function jsmn_fill_token:
   t[0].type ∈ {JSMN_OBJECT}
    [0].start ∈ {0}
@@ -368,5 +389,5 @@
     Preconditions    15 valid     0 unknown     0 invalid     15 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.54user 0.10system 0:00.64elapsed 99%CPU (0avgtext+0avgdata 112264maxresident)k
-0inputs+1904outputs (0major+22348minor)pagefaults 0swaps
+0.52user 0.08system 0:00.60elapsed 99%CPU (0avgtext+0avgdata 112148maxresident)k
+0inputs+1904outputs (0major+22331minor)pagefaults 0swaps

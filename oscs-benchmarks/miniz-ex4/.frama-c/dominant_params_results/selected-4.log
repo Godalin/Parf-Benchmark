@@ -2,6 +2,20 @@
 [kernel] Parsing examples/example4.c (with preprocessing)
 [kernel] Parsing miniz.c (with preprocessing)
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history already set to 4 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   mz_crc32_s_crc_table[0] ∈ {0}
@@ -455,8 +469,8 @@
 [eva:alarm] miniz_tinfl.c:232: Warning: 
   out of bounds read. assert \valid_read(tmp_11);
                       (tmp_11 from pIn_buf_cur++)
-[eva] miniz_tinfl.c:227: starting to merge loop iterations
 [eva] miniz_tinfl.c:232: starting to merge loop iterations
+[eva] miniz_tinfl.c:227: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:234: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_raw_header[1]);
 [eva:alarm] miniz_tinfl.c:234: Warning: 
@@ -475,12 +489,12 @@
 [eva:alarm] miniz_tinfl.c:251: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
-[eva] miniz_tinfl.c:255: starting to merge loop iterations
 [eva] miniz_tinfl.c:248: starting to merge loop iterations
 [eva] miniz_tinfl.c:251: starting to merge loop iterations
-[eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva] miniz_tinfl.c:238: starting to merge loop iterations
+[eva] miniz_tinfl.c:255: starting to merge loop iterations
 [eva] miniz_tinfl.c:220: starting to merge loop iterations
+[eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
@@ -510,12 +524,12 @@
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   out of bounds read. assert \valid_read(tmp_20);
                       (tmp_20 from pIn_buf_cur++)
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:293: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[counter]);
 [eva] miniz_tinfl.c:290: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:296: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[2]);
@@ -529,8 +543,8 @@
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   out of bounds read. assert \valid_read(tmp_21);
                       (tmp_21 from pIn_buf_cur++)
-[eva] miniz_tinfl.c:299: starting to merge loop iterations
 [eva] miniz_tinfl.c:296: starting to merge loop iterations
+[eva] miniz_tinfl.c:299: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:300: Warning: 
   accessing out of bounds index. assert counter < 19;
@@ -557,6 +571,8 @@
   accessing uninitialized left-value.
   assert \initialized(&next_code[code_size]);
 [eva] miniz_tinfl.c:332: starting to merge loop iterations
+[kernel] miniz_tinfl.c:339: 
+  more than 10(1128) locations to update in array. Approximating.
 [eva:alarm] miniz_tinfl.c:331: Warning: 
   accessing out of bounds index. assert code_size < 17;
 [eva] miniz_tinfl.c:337: starting to merge loop iterations
@@ -592,6 +608,8 @@
 [eva] miniz_tinfl.c:326: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:348: Warning: 
   signed overflow. assert -2147483648 ≤ tree_next - 2;
+[kernel] miniz_tinfl.c:356: 
+  more than 10(1160) locations to update in array. Approximating.
 [eva:alarm] miniz_tinfl.c:328: Warning: 
   accessing out of bounds index. assert sym_index < TINFL_MAX_HUFF_SYMBOLS_0;
 [eva:alarm] miniz_tinfl.c:368: Warning: 
@@ -632,9 +650,6 @@
                                                                       >> tmp_23)
                                                                       & 1))]);
   (tmp_23 from code_len++)
-[eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva] miniz_tinfl.c:371: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   accessing uninitialized left-value. assert \initialized(pIn_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -688,17 +703,16 @@
 [eva:alarm] miniz_tinfl.c:382: Warning: 
   out of bounds read. assert \valid_read(tmp_27);
                       (tmp_27 from pIn_buf_cur++)
+[eva] miniz_tinfl.c:371: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: starting to merge loop iterations
 [eva] miniz_tinfl.c:382: starting to merge loop iterations
 [eva] miniz_tinfl.c:382: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:384: Warning: 
-  accessing out of bounds index.
-  assert
-  (mz_uint32)(counter - 1) <
-  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
 [eva:alarm] miniz_tinfl.c:384: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_len_codes[(mz_uint32)(counter - 1)]);
 [eva] miniz_tinfl.c:368: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tinfl.c:384: Warning: 
   function memset: precondition 'valid_s' got status unknown.
 [eva:alarm] miniz_tinfl.c:374: Warning: 
@@ -707,15 +721,26 @@
   tmp_26 <
   (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
   (tmp_26 from counter++)
+[eva:alarm] miniz_tinfl.c:384: Warning: 
+  accessing out of bounds index.
+  assert
+  (mz_uint32)(counter - 1) <
+  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 200 states
 [eva:alarm] miniz_tinfl.c:392: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] miniz_tinfl.c:392: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:392: Warning: 
   function memcpy: precondition 'separation' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_dest' got status invalid.
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
+[kernel] miniz_tinfl.c:356: 
+  more than 10(2032) locations to update in array. Approximating.
 [eva] miniz_tinfl.c:304: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 300 states
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
@@ -743,7 +768,6 @@
                                                                       >> tmp_29)
                                                                       & 1))]);
   (tmp_29 from code_len_0++)
-[eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -754,6 +778,7 @@
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   out of bounds read. assert \valid_read(tmp_30);
                       (tmp_30 from pIn_buf_cur++)
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   accessing uninitialized left-value. assert \initialized(pIn_buf_cur + 0);
@@ -867,9 +892,6 @@
   (tmp_34 from code_len_1++)
 [eva:alarm] miniz_tinfl.c:464: Warning: 
   invalid RHS operand for shift. assert 0 ≤ code_len_1 < 64;
-[eva] miniz_tinfl.c:402: starting to merge loop iterations
-[eva] miniz_tinfl.c:405: starting to merge loop iterations
-[eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -882,8 +904,6 @@
                       (tmp_10 from pIn_buf_cur++)
 [eva] miniz_tinfl.c:230: starting to merge loop iterations
 [eva] miniz_tinfl.c:230: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:234: Warning: 
-  accessing uninitialized left-value. assert \initialized(&r->m_raw_header[0]);
 [eva:alarm] miniz_tinfl.c:240: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -899,24 +919,10 @@
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
 [eva] miniz_tinfl.c:240: starting to merge loop iterations
 [eva] miniz_tinfl.c:240: starting to merge loop iterations
-[eva] miniz_tinfl.c:241: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[0]);
-[eva:alarm] miniz_tinfl.c:371: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
-[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 100 states
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'separation' got status unknown.
 [eva] miniz_tinfl.c:395: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:400: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
-[eva:alarm] miniz_tinfl.c:402: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
+[eva] miniz_tinfl.c:398: starting to merge loop iterations
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
+[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:alarm] miniz_tinfl.c:486: Warning: 
@@ -929,8 +935,6 @@
 [eva:alarm] miniz_tinfl.c:486: Warning: 
   out of bounds read. assert \valid_read(tmp_35);
                       (tmp_35 from pIn_buf_cur++)
-[eva:alarm] miniz_tinfl.c:490: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   accessing uninitialized left-value.
   assert
@@ -956,7 +960,6 @@
                                                                       >> tmp_36)
                                                                       & 1))]);
   (tmp_36 from code_len_2++)
-[eva] miniz_tinfl.c:490: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -967,6 +970,7 @@
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   out of bounds read. assert \valid_read(tmp_37);
                       (tmp_37 from pIn_buf_cur++)
+[eva] miniz_tinfl.c:490: starting to merge loop iterations
 [eva] miniz_tinfl.c:490: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   accessing uninitialized left-value. assert \initialized(pIn_buf_cur + 0);
@@ -1053,9 +1057,9 @@
 [eva:alarm] miniz_tinfl.c:540: Warning: 
   out of bounds read. assert \valid_read(pSrc + 1);
 [eva:alarm] miniz_tinfl.c:549: Warning: 
-  out of bounds write. assert \valid(pOut_buf_cur + 0);
-[eva:alarm] miniz_tinfl.c:549: Warning: 
   accessing uninitialized left-value. assert \initialized(pSrc + 0);
+[eva:alarm] miniz_tinfl.c:549: Warning: 
+  out of bounds write. assert \valid(pOut_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:549: Warning: 
   out of bounds read. assert \valid_read(pSrc + 0);
 [eva:alarm] miniz_tinfl.c:550: Warning: 
@@ -1082,6 +1086,8 @@
   accessing uninitialized left-value. assert \initialized(pSrc + 1);
 [eva:alarm] miniz_tinfl.c:560: Warning: 
   out of bounds read. assert \valid_read(pSrc + 1);
+[eva] miniz_tinfl.c:241: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 400 states
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:490: starting to merge loop iterations
@@ -1098,11 +1104,11 @@
                                out_buf_size_mask));
   (tmp_41 from dist_from_out_buf_start++)
 [eva] miniz_tinfl.c:510: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 500 states
 [eva] miniz_tinfl.c:512: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:570: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
-[eva] miniz_tinfl.c:570: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:575: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva] using specification for function __FC_assert
@@ -1118,12 +1124,11 @@
 [eva:alarm] miniz_tinfl.c:586: Warning: 
   out of bounds read. assert \valid_read(tmp_46);
                       (tmp_46 from pIn_buf_cur++)
-[eva] miniz_tinfl.c:580: starting to merge loop iterations
 [eva] miniz_tinfl.c:586: starting to merge loop iterations
+[eva] miniz_tinfl.c:580: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:600: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
-[eva] miniz_tinfl.c:600: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:607: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:612: Warning: 
@@ -1181,6 +1186,11 @@
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:400: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
+[eva:alarm] miniz_tinfl.c:402: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
+[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tinfl.c:565: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_final);
 [eva:alarm] miniz_tinfl.c:222: Warning: 
@@ -1203,6 +1213,8 @@
   accessing out of bounds index. assert counter < 4;
 [eva:alarm] miniz_tinfl.c:232: Warning: 
   accessing out of bounds index. assert counter < 4;
+[eva:alarm] miniz_tinfl.c:234: Warning: 
+  accessing uninitialized left-value. assert \initialized(&r->m_raw_header[0]);
 [eva:alarm] miniz_tinfl.c:240: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:259: Warning: 
@@ -1214,13 +1226,13 @@
 [eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:259: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
-[eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
+[eva:alarm] miniz_tinfl.c:259: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:292: Warning: 
@@ -1239,6 +1251,8 @@
   accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
 [eva:alarm] miniz_tinfl.c:339: Warning: 
   out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
+[kernel] miniz_tinfl.c:339: 
+  more than 10(2659) locations to update in array. Approximating.
 [eva:alarm] miniz_tinfl.c:344: Warning: 
   out of bounds read.
   assert
@@ -1257,6 +1271,11 @@
 [eva:alarm] miniz_tinfl.c:364: Warning: 
   out of bounds write.
   assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
+[eva:alarm] miniz_tinfl.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[0]);
+[eva:alarm] miniz_tinfl.c:371: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -1266,10 +1285,18 @@
 [eva:alarm] miniz_tinfl.c:383: Warning: 
   out of bounds read.
   assert \valid_read("\003\003\v" + (mz_uint32)(dist - 16));
+[eva:alarm] miniz_tinfl.c:391: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:391: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] miniz_tinfl.c:391: Warning: 
+  function memcpy: precondition 'separation' got status unknown.
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
 [eva:alarm] miniz_tinfl.c:486: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:490: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:490: Warning: 
@@ -1288,6 +1315,8 @@
                       (tmp_44 from pIn_buf_cur++)
 [eva:alarm] miniz_tinfl.c:569: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:576: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status invalid.
 [eva:alarm] miniz_tinfl.c:584: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -1322,9 +1351,9 @@
 [eva:alarm] miniz_tinfl.c:516: Warning: 
   out of bounds write. assert \valid(tmp_40);
                        (tmp_40 from pOut_buf_cur++)
-[eva] miniz_tinfl.c:703: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:612: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_cur - pIn_buf_next;
+[eva] miniz_tinfl.c:703: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
 [eva:alarm] miniz_tinfl.c:328: Warning: 
@@ -1341,7 +1370,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[scope:rm_asserts] removing 10 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function tinfl_decompress:
   status ∈
@@ -1354,7 +1382,7 @@
   num_extra ∈ [0..13] or UNINITIALIZED
   bit_buf ∈ [--..--] or UNINITIALIZED
   pIn_buf_cur ∈ {{ &__malloc_main_l59 + [0..27670116110564327422] }}
-  pIn_buf_end ∈ {{ &__malloc_main_l59 + [0..36893488147419103230] }}
+  pIn_buf_end ∈ {{ &__malloc_main_l59 + [0..--] }}
   pOut_buf_cur ∈
               {{ &__malloc_tinfl_decompress_mem_to_callback_l698 +
                  [0..9223372036854808574] }}
@@ -1471,5 +1499,5 @@
     Preconditions    36 valid    17 unknown     0 invalid     53 total
   67% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-6.82user 0.22system 0:07.04elapsed 99%CPU (0avgtext+0avgdata 235844maxresident)k
-0inputs+7456outputs (0major+59389minor)pagefaults 0swaps
+7.74user 0.29system 0:08.03elapsed 99%CPU (0avgtext+0avgdata 260196maxresident)k
+0inputs+7448outputs (0major+81391minor)pagefaults 0swaps

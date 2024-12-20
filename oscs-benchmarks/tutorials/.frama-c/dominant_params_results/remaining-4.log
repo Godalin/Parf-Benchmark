@@ -1,6 +1,20 @@
 [kernel] Parsing /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c (with preprocessing)
 [variadic:typing] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:109: Warning: 
   Incorrect type for argument 2. The argument will be cast from uint64_t to int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 1651 (not modified).
+  option -eva-widening-delay already set to 21 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 5866 (not modified).
+  option -eva-ilevel already set to 513 (not modified).
+  option -eva-plevel already set to 4001 (not modified).
+  option -eva-subdivide-non-linear already set to 391 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -29,10 +43,34 @@
 [eva] using specification for function printf_va_1
 [eva] using specification for function printf_va_3
 [eva] using specification for function printf_va_2
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:134: Warning: 
-  function print_diff_child_age: precondition valid_person(p_id) got status unknown.
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:72: Warning: 
-  accessing out of bounds index. assert p[p_id].children[i] < 50;
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 200 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 300 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 400 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 500 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 600 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 700 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 800 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 900 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 1000 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 1100 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 1200 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:133: 
+  Trace partitioning superposing up to 1300 states
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:89: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function sum_age
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:89: Warning: 
+  function compute_sum_age: postcondition got status unknown.
 [eva:loop-unroll:auto] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:105: 
   Automatic loop unrolling.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:102: 
@@ -40,10 +78,6 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:102: Warning: 
   loop invariant got status unknown.
 [eva] using specification for function printf_va_4
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:89: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function sum_age
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/tutorials/2018_06_parser/parser_full.c:89: Warning: 
-  function compute_sum_age: postcondition got status unknown.
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function parse:
   p[0]{.age; .children_len; .children[0]} ∈ [--..--]
@@ -370,13 +404,12 @@
   ----------------------------------------------------------------------------
   No errors or warnings raised during the analysis.
   ----------------------------------------------------------------------------
-  1 alarm generated by the analysis:
-       1 access out of bounds index
+  0 alarms generated by the analysis.
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        3 valid     2 unknown     0 invalid      5 total
-    Preconditions     7 valid     1 unknown     0 invalid      8 total
-  76% of the logical properties reached have been proven.
+    Preconditions     8 valid     0 unknown     0 invalid      8 total
+  84% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.70user 0.12system 0:04.82elapsed 99%CPU (0avgtext+0avgdata 181044maxresident)k
-0inputs+1184outputs (0major+38503minor)pagefaults 0swaps
+217.97user 0.31system 3:38.32elapsed 99%CPU (0avgtext+0avgdata 265432maxresident)k
+0inputs+1216outputs (0major+59512minor)pagefaults 0swaps

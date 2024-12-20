@@ -1,5 +1,19 @@
 [kernel] Parsing kilo.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history already set to 1 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   C_HL_extensions[0] ∈ {{ ".c" }}
@@ -75,14 +89,13 @@
   out of bounds read. assert \valid_read(argv + 1);
 [eva:alarm] FRAMAC_SHARE/libc/string.c:290: Warning: 
   out of bounds read. assert \valid_read(haystack + i);
-[eva] FRAMAC_SHARE/libc/string.c:292: starting to merge loop iterations
 [eva:alarm] FRAMAC_SHARE/libc/string.c:292: Warning: 
   out of bounds read. assert \valid_read(haystack + (size_t)(i + j));
 [eva:alarm] FRAMAC_SHARE/libc/string.c:293: Warning: 
   out of bounds read. assert \valid_read(haystack + (size_t)(i + j));
+[eva] FRAMAC_SHARE/libc/string.c:292: starting to merge loop iterations
 [eva] FRAMAC_SHARE/libc/string.c:290: starting to merge loop iterations
 [eva] kilo.c:529: starting to merge loop iterations
-[eva] kilo.c:526: starting to merge loop iterations
 [eva:alarm] kilo.c:1267: Warning: 
   out of bounds read. assert \valid_read(argv + 1);
 [eva:alarm] FRAMAC_SHARE/libc/string.c:318: Warning: 
@@ -102,8 +115,8 @@
 [eva] FRAMAC_SHARE/libc/stdio.c:73: allocating variable __malloc_getline_l73
 [eva] using specification for function Frama_C_interval
 [eva] using specification for function Frama_C_unsigned_char_interval
-[eva] FRAMAC_SHARE/libc/stdio.c:83: starting to merge loop iterations
 [eva] FRAMAC_SHARE/libc/stdio.c:104: allocating variable __realloc_getline_l104
+[eva] FRAMAC_SHARE/libc/stdio.c:83: starting to merge loop iterations
 [eva] FRAMAC_SHARE/libc/stdio.c:82: starting to merge loop iterations
 [eva:alarm] FRAMAC_SHARE/libc/stdio.c:90: Warning: 
   out of bounds write. assert \valid(*lineptr + tmp_2);
@@ -132,6 +145,14 @@
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] kilo.c:583: Warning: 
   function memcpy: precondition 'separation' got status unknown.
+[eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555
+[eva:alarm] kilo.c:566: Warning: 
+  out of bounds write. assert \valid(row->render + idx);
+[eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370
+[eva:alarm] kilo.c:371: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva] FRAMAC_SHARE/libc/string.h:134: 
+  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva:alarm] kilo.c:553: Warning: 
   accessing uninitialized left-value. assert \initialized(row->chars + j);
 [eva:alarm] kilo.c:553: Warning: 
@@ -148,7 +169,6 @@
   assert
   (int)((int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9)) + 1 ≤
   2147483647;
-[eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555
 [eva:alarm] kilo.c:558: Warning: 
   accessing uninitialized left-value. assert \initialized(row->chars + j);
 [eva:alarm] kilo.c:558: Warning: 
@@ -164,21 +184,17 @@
 [eva:alarm] kilo.c:562: Warning: 
   out of bounds write. assert \valid(row->render + tmp_1);
                        (tmp_1 from idx++)
+[kernel] kilo.c:559: 
+  more than 10(1073741820) locations to update in array. Approximating.
+[eva:alarm] kilo.c:562: Warning: 
+  out of bounds read. assert \valid_read(row->chars + j);
+[kernel] kilo.c:562: 
+  more than 10(1073741820) locations to update in array. Approximating.
 [eva] kilo.c:557: starting to merge loop iterations
 [eva:alarm] kilo.c:562: Warning: 
   accessing uninitialized left-value. assert \initialized(row->chars + j);
-[eva:alarm] kilo.c:562: Warning: 
-  out of bounds read. assert \valid_read(row->chars + j);
 [eva:alarm] kilo.c:559: Warning: signed overflow. assert idx + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:562: Warning: signed overflow. assert idx + 1 ≤ 2147483647;
-[eva:alarm] kilo.c:566: Warning: 
-  out of bounds write. assert \valid(row->render + idx);
-[eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370
-[eva:alarm] kilo.c:371: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva] FRAMAC_SHARE/libc/string.h:134: 
-  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] kilo.c:798: starting to merge loop iterations
 [eva:alarm] kilo.c:578: Warning: 
   function memmove: precondition 'valid_dest' got status unknown.
 [eva:alarm] kilo.c:578: Warning: 
@@ -189,9 +205,14 @@
   out of bounds write. assert \valid(&(E.row + j)->idx);
 [eva:alarm] kilo.c:579: Warning: 
   accessing uninitialized left-value. assert \initialized(&(E.row + j)->idx);
-[eva] kilo.c:579: starting to merge loop iterations
+[eva:alarm] kilo.c:579: Warning: 
+  signed overflow. assert -2147483648 ≤ (E.row + j)->idx + 1;
 [eva:alarm] kilo.c:579: Warning: 
   signed overflow. assert (E.row + j)->idx + 1 ≤ 2147483647;
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets {384}).
+  The imprecision originates from Misaligned {kilo.c:578}
 [eva:alarm] kilo.c:582: Warning: 
   out of bounds write. assert \valid(&(E.row + at)->chars);
 [eva:alarm] kilo.c:583: Warning: 
@@ -199,6 +220,11 @@
   assert \initialized(&(E.row + at)->chars);
 [eva:alarm] kilo.c:583: Warning: 
   out of bounds read. assert \valid_read(&(E.row + at)->chars);
+[kernel] kilo.c:583: 
+  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
+                        __malloc_editorUpdateRow_l555;
+                        __realloc_editorUpdateSyntax_l370} because of Misaligned
+                                                          {kilo.c:578}.
 [eva:alarm] kilo.c:584: Warning: 
   out of bounds write. assert \valid(&(E.row + at)->hl);
 [eva:alarm] kilo.c:585: Warning: 
@@ -213,133 +239,27 @@
   accessing uninitialized left-value. assert \initialized(&row->render);
 [eva:alarm] kilo.c:551: Warning: 
   out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:552: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->size);
-[eva:alarm] kilo.c:552: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:553: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:553: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:555: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->size);
-[eva:alarm] kilo.c:555: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:555: Warning: 
-  out of bounds write. assert \valid(&row->render);
-[eva:alarm] kilo.c:557: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->size);
-[eva:alarm] kilo.c:557: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:558: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:558: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:559: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:559: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:559: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:560: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:560: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:560: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:562: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:565: Warning: 
-  out of bounds write. assert \valid(&row->rsize);
-[eva:alarm] kilo.c:566: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:566: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:566: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:370: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->rsize);
-[eva:alarm] kilo.c:370: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->hl);
-[eva:alarm] kilo.c:370: Warning: 
-  out of bounds read. assert \valid_read(&row->rsize);
-[eva:alarm] kilo.c:370: Warning: 
-  out of bounds read. assert \valid_read(&row->hl);
-[eva:alarm] kilo.c:370: Warning: out of bounds write. assert \valid(&row->hl);
-[eva:alarm] kilo.c:371: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->rsize);
-[eva:alarm] kilo.c:371: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->hl);
-[eva:alarm] kilo.c:371: Warning: 
-  out of bounds read. assert \valid_read(&row->rsize);
-[eva:alarm] kilo.c:371: Warning: 
-  out of bounds read. assert \valid_read(&row->hl);
-[eva:alarm] kilo.c:371: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->hl);
-[eva:alarm] kilo.c:551: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:370: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->hl);
-[eva:alarm] kilo.c:576: Warning: 
-  signed overflow. assert E.numrows + 1 ≤ 2147483647;
-[eva:alarm] kilo.c:579: Warning: signed overflow. assert at + 1 ≤ 2147483647;
-[eva:alarm] kilo.c:579: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&(E.row + j)->idx);
-[eva:alarm] kilo.c:579: Warning: 
-  signed overflow. assert -2147483648 ≤ (E.row + j)->idx + 1;
-[eva:garbled-mix:write] kilo.c:579: 
-  Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [384..824633720064],0%384).
-  The imprecision originates from Misaligned {kilo.c:578}
-[kernel] kilo.c:579: 
-  more than 200(2147483646) locations to update in array. Approximating.
-[kernel] kilo.c:581: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:582: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[eva:alarm] kilo.c:583: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&(E.row + at)->chars);
-[kernel] kilo.c:583: 
-  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
-                        __malloc_w_editorUpdateRow_l555;
-                        __realloc_w_editorUpdateSyntax_l370} because of Misaligned
-                                                            {kilo.c:578}.
-[kernel] kilo.c:584: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:585: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:586: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:587: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:588: 
-  more than 200(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:551: Warning: 
   function free: precondition 'freeable' got status unknown.
+[eva:alarm] kilo.c:552: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->size);
+[eva:alarm] kilo.c:552: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:552: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
 [eva:alarm] kilo.c:553: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->chars);
+[eva:alarm] kilo.c:553: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
+[eva:alarm] kilo.c:553: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
 [eva:alarm] kilo.c:552: Warning: signed overflow. assert j + 1 ≤ 2147483647;
+[eva:alarm] kilo.c:555: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->size);
+[eva:alarm] kilo.c:555: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:555: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
@@ -358,46 +278,159 @@
   assert
   -2147483648 ≤
   (int)((int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9)) + 1;
-[kernel] kilo.c:555: 
-  more than 200(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:555: Warning: 
+  out of bounds write. assert \valid(&row->render);
+[eva:alarm] kilo.c:557: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->size);
+[eva:alarm] kilo.c:557: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:557: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
 [eva:alarm] kilo.c:558: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->chars);
+[eva:alarm] kilo.c:558: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
+[eva:alarm] kilo.c:558: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
+[eva:alarm] kilo.c:559: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:559: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:559: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:560: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:560: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:560: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->chars);
+[eva:alarm] kilo.c:562: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
 [eva:alarm] kilo.c:562: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
 [eva:alarm] kilo.c:557: Warning: signed overflow. assert j + 1 ≤ 2147483647;
-[kernel] kilo.c:565: 
-  more than 200(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:565: Warning: 
+  out of bounds write. assert \valid(&row->rsize);
+[eva:alarm] kilo.c:566: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:566: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:566: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:370: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->rsize);
+[eva:alarm] kilo.c:370: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->hl);
+[eva:alarm] kilo.c:370: Warning: 
+  out of bounds read. assert \valid_read(&row->rsize);
+[eva:alarm] kilo.c:370: Warning: 
+  out of bounds read. assert \valid_read(&row->hl);
 [eva:alarm] kilo.c:370: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->rsize);
 [eva:alarm] kilo.c:370: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->hl);
+[eva:alarm] kilo.c:370: Warning: 
   function realloc: precondition 'freeable' got status unknown.
-[kernel] kilo.c:370: 
-  more than 200(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:370: Warning: out of bounds write. assert \valid(&row->hl);
+[eva:alarm] kilo.c:371: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->rsize);
+[eva:alarm] kilo.c:371: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->hl);
+[eva:alarm] kilo.c:371: Warning: 
+  out of bounds read. assert \valid_read(&row->rsize);
+[eva:alarm] kilo.c:371: Warning: 
+  out of bounds read. assert \valid_read(&row->hl);
 [eva:alarm] kilo.c:371: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->rsize);
+[eva:alarm] kilo.c:371: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->hl);
+[kernel] kilo.c:583: 
+  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
+                        __malloc_w_editorUpdateRow_l555;
+                        __realloc_w_editorUpdateSyntax_l370} because of Misaligned
+                                                            {kilo.c:578}.
+[eva] kilo.c:798: starting to merge loop iterations
+[eva:alarm] kilo.c:579: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&(E.row + j)->idx);
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets {384; 768}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:583: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&(E.row + at)->chars);
+[eva:alarm] kilo.c:551: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets {384; 768; 1152}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:576: Warning: 
+  signed overflow. assert E.numrows + 1 ≤ 2147483647;
+[eva:alarm] kilo.c:579: Warning: signed overflow. assert at + 1 ≤ 2147483647;
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [384..824633720064],0%384).
+  The imprecision originates from Misaligned {kilo.c:578}
+[kernel] kilo.c:579: 
+  more than 10(2147483646) locations to update in array. Approximating.
+[kernel] kilo.c:581: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:582: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:584: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:585: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:586: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:587: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:588: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:555: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:565: 
+  more than 10(2147483647) locations to update in array. Approximating.
 [kernel] kilo.c:370: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:370: 
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:551: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:552: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:553: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:591: Warning: 
   signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [kernel] kilo.c:579: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [kernel] kilo.c:585: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:588: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva] using specification for function fclose
 [eva] using specification for function isatty
 [eva] using specification for function atexit
@@ -464,6 +497,7 @@
 [eva:alarm] kilo.c:905: Warning: out of bounds read. assert \valid_read(c + j);
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_6
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_7
+[kernel] kilo.c:851: too many locations to update in array. Approximating.
 [eva:alarm] kilo.c:910: Warning: 
   accessing uninitialized left-value. assert \initialized(hl + j);
 [eva:alarm] kilo.c:910: Warning: out of bounds read. assert \valid_read(hl + j);
@@ -474,17 +508,15 @@
 [eva] using specification for function snprintf_va_3
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_9
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_10
-[eva] kilo.c:900: starting to merge loop iterations
-[kernel] kilo.c:851: too many locations to update in array. Approximating.
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_11
 [eva:alarm] kilo.c:848: Warning: 
   signed overflow. assert -2147483648 ≤ ab->len + len;
 [eva:alarm] kilo.c:853: Warning: 
   signed overflow. assert -2147483648 ≤ ab->len + len;
+[eva] kilo.c:900: starting to merge loop iterations
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_12
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_13
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_14
-[eva] kilo.c:870: starting to merge loop iterations
 [eva:alarm] kilo.c:893: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&r->rsize);
@@ -505,6 +537,7 @@
   Assigning imprecise value to hl.
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:alarm] kilo.c:900: Warning: signed overflow. assert j + 1 ≤ 2147483647;
+[eva] kilo.c:870: starting to merge loop iterations
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_15
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_16
 [eva] using specification for function snprintf_va_4
@@ -517,7 +550,6 @@
 [eva:alarm] kilo.c:944: Warning: 
   signed overflow. assert E.screencols - len_0 ≤ 2147483647;
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_18
-[eva] kilo.c:943: starting to merge loop iterations
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_19
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_20
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_21
@@ -543,12 +575,11 @@
 [eva:alarm] kilo.c:976: Warning: 
   function write: precondition 'buf_has_room' got status unknown.
 [kernel] kilo.c:893: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [kernel] kilo.c:897: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [kernel] kilo.c:898: 
-  more than 200(2147483645) elements to enumerate. Approximating.
-[eva] kilo.c:243: starting to merge loop iterations
+  more than 10(2147483645) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&c);
 [eva:alarm] kilo.c:254: Warning: 
@@ -559,7 +590,6 @@
   accessing uninitialized left-value. assert \initialized(&seq[2]);
 [eva:alarm] kilo.c:279: Warning: 
   accessing uninitialized left-value. assert \initialized(&seq[1]);
-[eva] kilo.c:246: starting to merge loop iterations
 [eva] kilo.c:576: allocating variable __realloc_editorInsertRow_l576_0
 [eva] kilo.c:582: allocating variable __malloc_editorInsertRow_l582_0
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_0
@@ -575,16 +605,23 @@
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_editorInsertRow_l576_1 with offsets {384; 768}).
+  (pointing to __realloc_editorInsertRow_l576_1 with offsets {768}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva] kilo.c:579: starting to merge loop iterations
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_editorInsertRow_l576_1 with offsets {768; 1152}).
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_editorInsertRow_l576_1 with offsets {384; 768; 1152}).
+  (pointing to __realloc_editorInsertRow_l576_1 with offsets {768; 1152; 1536}).
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_editorInsertRow_l576_1 with offsets [384..824633720064],0%384).
+  (pointing to __realloc_editorInsertRow_l576_1 with offsets [768..824633720064],0%384).
   The imprecision originates from Misaligned {kilo.c:578}
+[kernel] kilo.c:579: 
+  more than 10(2147483645) locations to update in array. Approximating.
 [eva] kilo.c:582: allocating variable __malloc_editorInsertRow_l582_1
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_1
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_1
@@ -606,27 +643,29 @@
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_editorInsertRow_l576_2 with offsets {768; 1152}).
+  (pointing to __realloc_editorInsertRow_l576_2 with offsets {1152}).
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_editorInsertRow_l576_2 with offsets {768; 1152; 1536}).
+  (pointing to __realloc_editorInsertRow_l576_2 with offsets {1152; 1536}).
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_editorInsertRow_l576_2 with offsets [768..824633720064],0%384).
+  (pointing to __realloc_editorInsertRow_l576_2 with offsets {1152; 1536; 1920}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_editorInsertRow_l576_2 with offsets [1152..824633720064],0%384).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:579: 
-  more than 200(2147483645) locations to update in array. Approximating.
+  more than 10(2147483644) locations to update in array. Approximating.
 [eva] kilo.c:582: allocating variable __malloc_editorInsertRow_l582_2
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_2
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_2
 [kernel] kilo.c:579: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:728: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:728: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
 [eva:alarm] kilo.c:728: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
@@ -642,7 +681,6 @@
   out of bounds read. assert \valid_read(&(E.row + j)->size);
 [eva:alarm] kilo.c:626: Warning: 
   signed overflow. assert (E.row + j)->size + 1 ≤ 2147483647;
-[eva] kilo.c:625: starting to merge loop iterations
 [eva:alarm] kilo.c:626: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&(E.row + j)->size);
@@ -656,6 +694,7 @@
 [eva:garbled-mix:write] kilo.c:626: 
   Assigning imprecise value to totlen.
   The imprecision originates from Misaligned {kilo.c:578}
+[eva] kilo.c:625: starting to merge loop iterations
 [eva:garbled-mix:write] kilo.c:627: 
   Assigning imprecise value to *buflen (pointing to len).
   The imprecision originates from Misaligned {kilo.c:578}
@@ -685,7 +724,6 @@
 [eva:alarm] kilo.c:633: Warning: 
   accessing uninitialized left-value. assert \initialized(&(E.row + j)->size);
 [eva:alarm] kilo.c:634: Warning: out of bounds write. assert \valid(p);
-[eva] kilo.c:631: starting to merge loop iterations
 [eva:alarm] kilo.c:632: Warning: 
   out of bounds read. assert \valid_read(&(E.row + j)->chars);
 [eva:alarm] kilo.c:632: Warning: 
@@ -699,9 +737,10 @@
 [eva:garbled-mix:write] kilo.c:633: 
   Assigning imprecise value to p.
   The imprecision originates from Misaligned {kilo.c:578}
+[eva] kilo.c:631: starting to merge loop iterations
 [eva:alarm] kilo.c:637: Warning: out of bounds write. assert \valid(p);
 [kernel] kilo.c:632: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva] using specification for function __va_open_mode_t
 [eva:alarm] kilo.c:813: Warning: 
   function __va_open_mode_t: precondition 'valid_filename' got status unknown.
@@ -785,7 +824,6 @@
   The imprecision originates from Merge {kilo.c:588}
 [eva:alarm] kilo.c:1054: Warning: 
   pointer comparison. assert \pointer_comparable((void *)0, (void *)match);
-[eva] kilo.c:1049: starting to merge loop iterations
 [eva:garbled-mix:write] FRAMAC_SHARE/libc/string.c:289: 
   Assigning imprecise value to __retres.
   The imprecision originates from Misaligned {kilo.c:578}
@@ -795,8 +833,11 @@
 [eva:garbled-mix:write] kilo.c:1053: 
   Assigning imprecise value to match.
   The imprecision originates from Misaligned {kilo.c:578}
+[eva] kilo.c:1049: starting to merge loop iterations
 [eva:alarm] kilo.c:1050: Warning: 
   signed overflow. assert current + find_next ≤ 2147483647;
+[kernel] kilo.c:1053: 
+  more than 10(2147483648) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:1055: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(E.row + current)->render);
@@ -889,7 +930,6 @@
 [eva:garbled-mix:write] kilo.c:1081: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned {kilo.c:578}
-[eva] kilo.c:1013: starting to merge loop iterations
 [eva:alarm] kilo.c:871: Warning: 
   signed overflow. assert E.rowoff + y ≤ 2147483647;
 [eva:alarm] kilo.c:939: Warning: 
@@ -932,7 +972,7 @@
   signed overflow. assert cx + (int)(7 - (int)(cx % 8)) ≤ 2147483647;
 [eva:alarm] kilo.c:970: Warning: signed overflow. assert cx + 1 ≤ 2147483647;
 [kernel] kilo.c:969: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:1062: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(E.row + saved_hl_line)->rsize);
@@ -953,6 +993,7 @@
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] kilo.c:1062: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
+[eva] kilo.c:1013: starting to merge loop iterations
 [eva:alarm] kilo.c:1027: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(E.row + saved_hl_line)->rsize);
@@ -975,12 +1016,12 @@
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:locals-escaping] kilo.c:1028: Warning: 
   locals {__va_args_25} escaping the scope of a block of editorFind through E
+[kernel] kilo.c:1062: 
+  more than 10(2147483648) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:1206: Warning: 
   signed overflow. assert -2147483648 ≤ E.screenrows - 1;
 [eva:alarm] kilo.c:1210: Warning: 
   signed overflow. assert -2147483648 ≤ times - 1;
-[eva:alarm] kilo.c:1137: Warning: 
-  signed overflow. assert -2147483648 ≤ E.cy - 1;
 [eva:alarm] kilo.c:1142: Warning: 
   signed overflow. assert -2147483648 ≤ E.screenrows - 1;
 [eva:alarm] kilo.c:1154: Warning: 
@@ -1013,7 +1054,10 @@
 [eva:garbled-mix:write] kilo.c:1158: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned {kilo.c:578}
-[eva] kilo.c:1210: starting to merge loop iterations
+[eva:alarm] kilo.c:1137: Warning: 
+  signed overflow. assert -2147483648 ≤ E.cy - 1;
+[kernel] kilo.c:1154: 
+  more than 10(2147483644) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:1093: Warning: 
   signed overflow. assert -2147483648 ≤ E.coloff + E.cx;
 [eva:alarm] kilo.c:1093: Warning: 
@@ -1030,6 +1074,9 @@
 [eva:garbled-mix:write] kilo.c:1152: 
   Assigning imprecise value to filecol.
   The imprecision originates from Misaligned {kilo.c:578}
+[kernel] kilo.c:1154: 
+  more than 10(2147483646) elements to enumerate. Approximating.
+[eva] kilo.c:1210: starting to merge loop iterations
 [eva:alarm] kilo.c:1092: Warning: 
   signed overflow. assert E.rowoff + E.cy ≤ 2147483647;
 [eva:alarm] kilo.c:1143: Warning: 
@@ -1048,11 +1095,6 @@
 [eva] kilo.c:582: allocating variable __malloc_editorInsertRow_l582_3
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_4
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_4
-[eva] kilo.c:693: starting to merge loop iterations
-[kernel] kilo.c:583: 
-  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
-                        __malloc_w_editorInsertRow_l582_3} because of Merge
-                                                          {kilo.c:588}.
 [eva:alarm] kilo.c:644: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->size);
 [eva:alarm] kilo.c:644: Warning: 
@@ -1148,13 +1190,8 @@
   out of bounds write. assert \valid(row->chars + at);
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_5
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_5
-[eva:alarm] kilo.c:662: Warning: 
-  signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:698: Warning: 
   signed overflow. assert -2147483648 ≤ E.screencols - 1;
-[eva:alarm] kilo.c:702: Warning: 
-  signed overflow. assert E.dirty + 1 ≤ 2147483647;
-[eva] kilo.c:1271: starting to merge loop iterations
 [eva:alarm] kilo.c:939: Warning: 
   signed overflow. assert -2147483648 ≤ E.rowoff + E.cy;
 [eva:alarm] kilo.c:939: Warning: 
@@ -1197,9 +1234,32 @@
                         __realloc_editorUpdateSyntax_l370_2;
                         __malloc_editorUpdateRow_l555_3;
                         __realloc_editorUpdateSyntax_l370_3;
-                        __malloc_w_editorInsertRow_l582_3;
-                        __malloc_w_editorUpdateRow_l555_4;
-                        __realloc_w_editorUpdateSyntax_l370_4;
+                        __malloc_editorInsertRow_l582_3;
+                        __malloc_editorUpdateRow_l555_4;
+                        __realloc_editorUpdateSyntax_l370_4;
+                        __realloc_editorRowInsertChar_l649;
+                        __realloc_editorRowInsertChar_l656;
+                        __malloc_editorUpdateRow_l555_5;
+                        __realloc_editorUpdateSyntax_l370_5} because of Misaligned
+                                                            {kilo.c:578}.
+[kernel] kilo.c:583: 
+  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
+                        __malloc_w_editorUpdateRow_l555;
+                        __realloc_w_editorUpdateSyntax_l370;
+                        __malloc_w_editorInsertRow_l582_0;
+                        __malloc_w_editorUpdateRow_l555_0;
+                        __realloc_w_editorUpdateSyntax_l370_0;
+                        __malloc_editorInsertRow_l582_1;
+                        __malloc_editorUpdateRow_l555_1;
+                        __realloc_editorUpdateSyntax_l370_1;
+                        __malloc_editorInsertRow_l582_2;
+                        __malloc_editorUpdateRow_l555_2;
+                        __realloc_editorUpdateSyntax_l370_2;
+                        __malloc_editorUpdateRow_l555_3;
+                        __realloc_editorUpdateSyntax_l370_3;
+                        __malloc_editorInsertRow_l582_3;
+                        __malloc_editorUpdateRow_l555_4;
+                        __realloc_editorUpdateSyntax_l370_4;
                         __realloc_editorRowInsertChar_l649;
                         __realloc_editorRowInsertChar_l656;
                         __malloc_editorUpdateRow_l555_5;
@@ -1225,7 +1285,7 @@
   (pointing to __realloc_w_editorInsertRow_l576_1 with offsets [0..824633720064],0%384).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:579: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [kernel] kilo.c:583: 
   writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
                         __malloc_w_editorUpdateRow_l555;
@@ -1241,9 +1301,9 @@
                         __realloc_editorUpdateSyntax_l370_2;
                         __malloc_editorUpdateRow_l555_3;
                         __realloc_editorUpdateSyntax_l370_3;
-                        __malloc_w_editorInsertRow_l582_3;
-                        __malloc_w_editorUpdateRow_l555_4;
-                        __realloc_w_editorUpdateSyntax_l370_4;
+                        __malloc_editorInsertRow_l582_3;
+                        __malloc_editorUpdateRow_l555_4;
+                        __realloc_editorUpdateSyntax_l370_4;
                         __realloc_editorRowInsertChar_l649;
                         __realloc_editorRowInsertChar_l656;
                         __malloc_editorUpdateRow_l555_5;
@@ -1253,8 +1313,6 @@
   out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:726: Warning: 
   out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:726: Warning: 
-  signed overflow. assert filerow + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:726: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
@@ -1269,6 +1327,8 @@
 [eva:alarm] kilo.c:728: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&filecol);
+[eva:alarm] kilo.c:728: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
 [eva:alarm] kilo.c:729: Warning: out of bounds write. assert \valid(&row->size);
 [eva:garbled-mix:write] kilo.c:729: 
   Assigning imprecise value to row->size
@@ -1276,10 +1336,10 @@
    __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets {32}).
+  __realloc_editorInsertRow_l576_3 with offsets {32}).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:729: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:734: Warning: 
   signed overflow. assert E.rowoff + 1 ≤ 2147483647;
 [eva:locals-escaping] kilo.c:1184: Warning: 
@@ -1356,7 +1416,7 @@
 [eva:alarm] kilo.c:667: Warning: 
   out of bounds write. assert \valid(&row->chars);
 [kernel] kilo.c:667: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483646) locations to update in array. Approximating.
 [eva:alarm] kilo.c:668: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&s);
@@ -1391,14 +1451,14 @@
   assert ¬\dangling(&row->size);
 [eva:garbled-mix:write] kilo.c:669: 
   Assigning imprecise value to row->size
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720096],32%384;
-   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets {32}).
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633719712],32%384;
+   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633719712],32%384;
+  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633719712],32%384;
+  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633719712],32%384;
+  __realloc_editorInsertRow_l576_3 with offsets {32}).
   The imprecision originates from Misaligned
 [kernel] kilo.c:669: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483646) locations to update in array. Approximating.
 [eva:alarm] kilo.c:670: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->chars);
 [eva:alarm] kilo.c:670: Warning: 
@@ -1416,9 +1476,19 @@
 [eva:alarm] kilo.c:670: Warning: 
   out of bounds write. assert \valid(row->chars + row->size);
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_6
+[kernel] kilo.c:555: 
+  more than 10(2147483646) locations to update in array. Approximating.
+[kernel] kilo.c:565: 
+  more than 10(2147483646) locations to update in array. Approximating.
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_6
-[eva:alarm] kilo.c:672: Warning: 
-  signed overflow. assert E.dirty + 1 ≤ 2147483647;
+[kernel] kilo.c:370: 
+  more than 10(2147483646) locations to update in array. Approximating.
+[kernel] kilo.c:370: 
+  more than 10(2147483646) elements to enumerate. Approximating.
+[kernel] kilo.c:551: 
+  more than 10(2147483646) elements to enumerate. Approximating.
+[kernel] kilo.c:553: 
+  more than 10(2147483646) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:596: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->render);
 [eva:alarm] kilo.c:596: Warning: 
@@ -1447,11 +1517,11 @@
 [eva:alarm] kilo.c:598: Warning: 
   function free: precondition 'freeable' got status unknown.
 [kernel] kilo.c:596: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [kernel] kilo.c:597: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [kernel] kilo.c:598: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:609: Warning: 
   function memmove: precondition 'valid_dest' got status unknown.
 [eva:alarm] kilo.c:609: Warning: 
@@ -1475,11 +1545,9 @@
   __realloc_w_editorInsertRow_l576_2 with offsets [384..824633719680],0%384).
   The imprecision originates from Misaligned
 [kernel] kilo.c:610: 
-  more than 200(2147483645) locations to update in array. Approximating.
-[eva:alarm] kilo.c:612: Warning: 
-  signed overflow. assert E.dirty + 1 ≤ 2147483647;
+  more than 10(2147483645) locations to update in array. Approximating.
 [kernel] kilo.c:610: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:759: Warning: 
   signed overflow. assert -2147483648 ≤ E.cy - 1;
 [eva:alarm] kilo.c:760: Warning: 
@@ -1567,12 +1635,10 @@
    __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets {32}).
+  __realloc_editorInsertRow_l576_3 with offsets {32}).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:680: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[eva:alarm] kilo.c:681: Warning: 
-  signed overflow. assert E.dirty + 1 ≤ 2147483647;
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:768: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&E.cx);
@@ -1601,14 +1667,44 @@
   pointer comparison. assert \pointer_comparable((void *)0, (void *)row);
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_8
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_8
-[eva:alarm] kilo.c:774: Warning: 
-  signed overflow. assert E.dirty + 1 ≤ 2147483647;
+[kernel] kilo.c:752: 
+  more than 10(2147483648) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:1092: Warning: 
   signed overflow. assert -2147483648 ≤ E.rowoff + E.cy;
 [eva:alarm] kilo.c:1151: Warning: 
   signed overflow. assert -2147483648 ≤ E.rowoff + E.cy;
 [eva:alarm] kilo.c:1135: Warning: 
   signed overflow. assert -2147483648 ≤ E.rowoff - 1;
+[eva:alarm] kilo.c:1117: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)0, (void *)row);
+[eva:alarm] kilo.c:1117: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
+[eva:alarm] kilo.c:1117: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->size);
+[eva:alarm] kilo.c:1119: Warning: 
+  signed overflow. assert -2147483648 ≤ E.coloff + 1;
+[eva:alarm] kilo.c:1119: Warning: 
+  signed overflow. assert E.coloff + 1 ≤ 2147483647;
+[eva:garbled-mix:write] kilo.c:1119: 
+  Assigning imprecise value to E.coloff.
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:1121: Warning: 
+  signed overflow. assert -2147483648 ≤ E.cx + 1;
+[eva:alarm] kilo.c:1121: Warning: 
+  signed overflow. assert E.cx + 1 ≤ 2147483647;
+[eva:garbled-mix:write] kilo.c:1121: 
+  Assigning imprecise value to E.cx.
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:1123: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)0, (void *)row);
+[eva:alarm] kilo.c:1123: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
+[eva:alarm] kilo.c:1123: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->size);
+[eva:alarm] kilo.c:1127: Warning: 
+  signed overflow. assert E.rowoff + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:1101: Warning: 
   signed overflow. assert -2147483648 ≤ E.coloff - 1;
 [eva:alarm] kilo.c:1101: Warning: 
@@ -1649,36 +1745,6 @@
 [eva:garbled-mix:write] kilo.c:1113: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned {kilo.c:578}
-[eva:alarm] kilo.c:1117: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)0, (void *)row);
-[eva:alarm] kilo.c:1117: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:1117: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->size);
-[eva:alarm] kilo.c:1119: Warning: 
-  signed overflow. assert -2147483648 ≤ E.coloff + 1;
-[eva:alarm] kilo.c:1119: Warning: 
-  signed overflow. assert E.coloff + 1 ≤ 2147483647;
-[eva:garbled-mix:write] kilo.c:1119: 
-  Assigning imprecise value to E.coloff.
-  The imprecision originates from Misaligned {kilo.c:578}
-[eva:alarm] kilo.c:1121: Warning: 
-  signed overflow. assert -2147483648 ≤ E.cx + 1;
-[eva:alarm] kilo.c:1121: Warning: 
-  signed overflow. assert E.cx + 1 ≤ 2147483647;
-[eva:garbled-mix:write] kilo.c:1121: 
-  Assigning imprecise value to E.cx.
-  The imprecision originates from Misaligned {kilo.c:578}
-[eva:alarm] kilo.c:1123: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)0, (void *)row);
-[eva:alarm] kilo.c:1123: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:1123: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->size);
-[eva:alarm] kilo.c:1127: Warning: 
-  signed overflow. assert E.rowoff + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:686: Warning: 
   signed overflow. assert -2147483648 ≤ E.rowoff + E.cy;
 [eva:alarm] kilo.c:686: Warning: 
@@ -1712,6 +1778,29 @@
                         __malloc_w_editorUpdateRow_l555_3;
                         __realloc_w_editorUpdateSyntax_l370_3;
                         __malloc_w_editorInsertRow_l582_3;
+                        __malloc_editorUpdateRow_l555_4;
+                        __realloc_editorUpdateSyntax_l370_4;
+                        __realloc_editorRowInsertChar_l649;
+                        __realloc_editorRowInsertChar_l656;
+                        __malloc_editorUpdateRow_l555_5;
+                        __realloc_editorUpdateSyntax_l370_5} because of Misaligned
+                                                            {kilo.c:578}.
+[kernel] kilo.c:583: 
+  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
+                        __malloc_w_editorUpdateRow_l555;
+                        __realloc_w_editorUpdateSyntax_l370;
+                        __malloc_w_editorInsertRow_l582_0;
+                        __malloc_w_editorUpdateRow_l555_0;
+                        __realloc_w_editorUpdateSyntax_l370_0;
+                        __malloc_w_editorInsertRow_l582_1;
+                        __malloc_w_editorUpdateRow_l555_1;
+                        __realloc_w_editorUpdateSyntax_l370_1;
+                        __malloc_w_editorInsertRow_l582_2;
+                        __malloc_w_editorUpdateRow_l555_2;
+                        __realloc_w_editorUpdateSyntax_l370_2;
+                        __malloc_w_editorUpdateRow_l555_3;
+                        __realloc_w_editorUpdateSyntax_l370_3;
+                        __malloc_w_editorInsertRow_l582_3;
                         __malloc_w_editorUpdateRow_l555_4;
                         __realloc_w_editorUpdateSyntax_l370_4;
                         __realloc_editorRowInsertChar_l649;
@@ -1719,6 +1808,7 @@
                         __malloc_editorUpdateRow_l555_5;
                         __realloc_editorUpdateSyntax_l370_5} because of Misaligned
                                                             {kilo.c:578}.
+[eva] kilo.c:693: starting to merge loop iterations
 [eva:alarm] kilo.c:697: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&filecol);
@@ -1747,7 +1837,7 @@
 [eva:alarm] kilo.c:649: Warning: 
   out of bounds write. assert \valid(&row->chars);
 [kernel] kilo.c:649: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:650: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&padlen);
@@ -1782,7 +1872,7 @@
   __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
   The imprecision originates from Misaligned
 [kernel] kilo.c:652: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:656: Warning: 
   out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:656: Warning: 
@@ -1795,7 +1885,7 @@
 [eva:alarm] kilo.c:656: Warning: 
   out of bounds write. assert \valid(&row->chars);
 [kernel] kilo.c:656: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:657: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&at);
@@ -1827,12 +1917,14 @@
   __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
   The imprecision originates from Misaligned
 [kernel] kilo.c:658: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:660: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
 [eva:alarm] kilo.c:660: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&at);
-[eva:alarm] kilo.c:660: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
+[eva:alarm] kilo.c:662: Warning: 
+  signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:698: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&E.cx);
@@ -1853,6 +1945,9 @@
 [eva:garbled-mix:write] kilo.c:701: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:702: Warning: 
+  signed overflow. assert E.dirty + 1 ≤ 2147483647;
+[eva] kilo.c:1271: starting to merge loop iterations
 [eva:alarm] kilo.c:893: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&E.coloff);
@@ -1932,6 +2027,14 @@
   __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:garbled-mix:write] kilo.c:729: 
+  Assigning imprecise value to row->size
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720096],32%384;
+   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:626: 
   Assigning imprecise value to totlen.
@@ -1998,12 +2101,14 @@
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:669: 
   Assigning imprecise value to row->size
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720096],32%384;
-   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633719712],32%384;
+   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633719712],32%384;
+  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633719712],32%384;
+  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633719712],32%384;
+  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633719712],32%384).
   The imprecision originates from Misaligned
+[eva:alarm] kilo.c:672: Warning: 
+  signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [eva:garbled-mix:write] kilo.c:610: 
   Assigning imprecise value to (E.row + j)->idx
   (pointing to __realloc_w_editorInsertRow_l576 with offsets [384..824633719680],0%384;
@@ -2012,6 +2117,8 @@
   __realloc_w_editorInsertRow_l576_2 with offsets [384..824633719680],0%384;
   __realloc_w_editorInsertRow_l576_3 with offsets [384..824633719680],0%384).
   The imprecision originates from Misaligned
+[eva:alarm] kilo.c:612: Warning: 
+  signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:757: Warning: 
   signed overflow. assert -2147483648 ≤ E.rowoff - 1;
 [eva:garbled-mix:write] kilo.c:760: 
@@ -2034,6 +2141,10 @@
   __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
   __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
   The imprecision originates from Misaligned
+[eva:alarm] kilo.c:681: Warning: 
+  signed overflow. assert E.dirty + 1 ≤ 2147483647;
+[eva:alarm] kilo.c:774: Warning: 
+  signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:1093: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&E.cx);
@@ -2112,16 +2223,12 @@
 [eva:garbled-mix:write] kilo.c:1011: 
   Assigning imprecise value to saved_coloff.
   The imprecision originates from Misaligned
-[kernel] kilo.c:1053: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:1024: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:1025: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned
-[kernel] kilo.c:1062: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:745: 
   Assigning imprecise value to filecol.
   The imprecision originates from Misaligned
@@ -2131,62 +2238,27 @@
 [eva:garbled-mix:write] kilo.c:771: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
-[kernel] kilo.c:752: 
-  more than 200(2147483648) elements to enumerate. Approximating.
-[eva:garbled-mix:write] kilo.c:1101: 
-  Assigning imprecise value to E.coloff.
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] kilo.c:1113: 
-  Assigning imprecise value to E.cx.
-  The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:1119: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:1121: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] kilo.c:1101: 
+  Assigning imprecise value to E.coloff.
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] kilo.c:1113: 
+  Assigning imprecise value to E.cx.
+  The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:687: 
   Assigning imprecise value to filecol.
   The imprecision originates from Misaligned
-[kernel] kilo.c:649: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[eva:garbled-mix:write] kilo.c:652: 
-  Assigning imprecise value to row->size
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720480],32%384;
-   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720480],32%384).
-  The imprecision originates from Misaligned
-[kernel] kilo.c:652: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:656: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[eva:garbled-mix:write] kilo.c:658: 
-  Assigning imprecise value to row->size
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720480],32%384;
-   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720480],32%384).
-  The imprecision originates from Misaligned
-[kernel] kilo.c:658: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:555: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:565: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:370: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:553: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:699: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:701: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
-[scope:rm_asserts] removing 85 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function editorMoveCursor:
   filerow ∈ [--..--]
@@ -2638,8 +2710,10 @@
    {{ &__malloc_w_editorInsertRow_l582 + [1..9223372036854775806] ;
       &__malloc_w_editorUpdateRow_l555 + [1..18446744073709551615] ;
       &__realloc_w_editorUpdateSyntax_l370 + [1..18446744073709551615] ;
+      &__malloc_w_editorInsertRow_l582_0 + [1..18446744073709551615] ;
       &__malloc_w_editorUpdateRow_l555_0 + [1..18446744073709551615] ;
       &__realloc_w_editorUpdateSyntax_l370_0 + [1..18446744073709551615] ;
+      &__malloc_w_editorInsertRow_l582_1 + [1..18446744073709551615] ;
       &__malloc_w_editorUpdateRow_l555_1 + [1..18446744073709551615] ;
       &__realloc_w_editorUpdateSyntax_l370_1 + [1..18446744073709551615] ;
       &__malloc_w_editorInsertRow_l582_2 + [1..18446744073709551615] ;
@@ -2728,12 +2802,14 @@
                                  [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370[0..18446744073709551615] ∈
                                      [--..--] or UNINITIALIZED
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -2878,7 +2954,7 @@
     (origin: Misaligned) }} or ESCAPINGADDR
    .screenrows ∈ [-2147483648..2147483645]
    .screencols ∈ [--..--]
-   .numrows ∈ [0..2147483647]
+   .numrows ∈ [0..2147483646]
    .rawmode ∈ {0; 1}
    .row ∈
    {{ &__realloc_w_editorInsertRow_l576[0] ;
@@ -3653,7 +3729,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -3688,7 +3765,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -4213,7 +4291,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -4248,7 +4327,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -4625,7 +4705,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -4660,7 +4741,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -4946,7 +5028,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -4981,7 +5064,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -5321,7 +5405,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -5356,7 +5441,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -5666,7 +5752,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -5701,7 +5788,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -5994,7 +6082,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -6029,7 +6118,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -6339,7 +6429,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -6374,7 +6465,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -6478,7 +6570,7 @@
                                        [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function editorInsertChar:
   __fc_heap_status ∈ [--..--]
-  filerow ∈ [--..--]
+  filerow ∈ [-2147483648..2147483646]
   filecol ∈
          {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                              __malloc_w_editorUpdateRow_l555;
@@ -6510,11 +6602,11 @@
                              __realloc_w_editorUpdateSyntax_l370_8}
           (origin: Misaligned) }} or ESCAPINGADDR
   row ∈
-     {{ &__realloc_w_editorInsertRow_l576 + [0..103079215056],0%48 ;
-        &__realloc_w_editorInsertRow_l576_0 + [0..103079215056],0%48 ;
-        &__realloc_w_editorInsertRow_l576_1 + [0..103079215056],0%48 ;
-        &__realloc_w_editorInsertRow_l576_2 + [0..103079215056],0%48 ;
-        &__realloc_w_editorInsertRow_l576_3 + [0..103079215056],0%48 }}
+     {{ &__realloc_w_editorInsertRow_l576 + [0..103079215008],0%48 ;
+        &__realloc_w_editorInsertRow_l576_0 + [0..103079215008],0%48 ;
+        &__realloc_w_editorInsertRow_l576_1 + [0..103079215008],0%48 ;
+        &__realloc_w_editorInsertRow_l576_2 + [0..103079215008],0%48 ;
+        &__realloc_w_editorInsertRow_l576_3 + [0..103079215008],0%48 }}
   E.cx ∈
    {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                        __malloc_w_editorUpdateRow_l555;
@@ -6661,7 +6753,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -6696,7 +6789,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -6865,7 +6959,7 @@
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370}
                                    (origin: Merge {kilo.c:588}) }} or UNINITIALIZED or ESCAPINGADDR
-                                  [1..2147483646] ∈
+                                  {[1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370}
@@ -7380,12 +7474,14 @@
                                  [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370[0..18446744073709551615] ∈
                                      [--..--] or UNINITIALIZED
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -7616,12 +7712,14 @@
                                  [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370[0..18446744073709551615] ∈
                                      [--..--] or UNINITIALIZED
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -7819,7 +7917,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_0 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_0[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_0[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
@@ -7854,7 +7953,8 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_editorInsertRow_l582_1 ∈ [--..--] or UNINITIALIZED
+  __malloc_w_editorInsertRow_l582_1[0..18446744073709551615] ∈
+                                   [--..--] or UNINITIALIZED
   __malloc_w_editorUpdateRow_l555_1[0..18446744073709551615] ∈
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
@@ -8062,8 +8162,8 @@
     by the Eva analyzer:      0 errors    6 warnings
     by the Frama-C kernel:    0 errors    1 warning
   ----------------------------------------------------------------------------
-  523 alarms generated by the analysis:
-     175 integer overflows
+  522 alarms generated by the analysis:
+     174 integer overflows
      124 invalid memory accesses
      107 escaping addresses
      105 accesses to uninitialized left-values
@@ -8074,5 +8174,5 @@
     Preconditions    68 valid    50 unknown     0 invalid    118 total
   57% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-12.43user 0.20system 0:12.64elapsed 99%CPU (0avgtext+0avgdata 241804maxresident)k
-0inputs+6192outputs (0major+56555minor)pagefaults 0swaps
+19.32user 0.29system 0:19.62elapsed 99%CPU (0avgtext+0avgdata 281028maxresident)k
+0inputs+6192outputs (0major+66328minor)pagefaults 0swaps

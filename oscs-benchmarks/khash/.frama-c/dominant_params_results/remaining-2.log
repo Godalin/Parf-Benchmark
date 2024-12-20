@@ -2,6 +2,20 @@
 [kernel:parser:decimal-float] khash.h:194: Warning: 
   Floating-point constant 0.77 is not represented exactly. Will use 0x1.8a3d70a3d70a4p-1.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 2 (not modified).
+  option -eva-partition-history already set to 3 (not modified).
+  option -eva-slevel already set to 5 (not modified).
+  option -eva-ilevel already set to 16 (not modified).
+  option -eva-plevel already set to 25 (not modified).
+  option -eva-subdivide-non-linear already set to 1 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls already set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Splitting return states on:
   \return(seed48) == 0 (auto)
   \return(calloc) == 0 (auto)
@@ -45,38 +59,27 @@
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3
 [eva] khash.c:3: allocating variable __realloc_kh_resize_32_l3_0
-[eva:alarm] khash.c:3: Warning: 
-  out of bounds read. assert \valid_read(h->flags + i);
-[eva:alarm] khash.c:3: Warning: out of bounds write. assert \valid(h->keys + x);
 [eva:alarm] khash.c:10: Warning: 
   out of bounds write. assert \valid(h->vals + k);
-[eva:alarm] khash.c:3: Warning: 
-  out of bounds read. assert \valid_read(h->flags + i);
-[eva:alarm] khash.c:3: Warning: 
-  accessing uninitialized left-value. assert \initialized(h->keys + i);
-[eva:alarm] khash.c:3: Warning: 
-  out of bounds read. assert \valid_read(h->keys + i);
-[eva:alarm] khash.c:3: Warning: 
-  out of bounds read. assert \valid_read(h->flags + x);
-[eva:alarm] khash.c:17: Warning: 
-  out of bounds read. assert \valid_read(h->flags + k);
+[kernel] khash.c:10: Warning: 
+  all target addresses were invalid. This path is assumed to be dead.
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function kh_del_32:
-  __calloc_kh_init_32_l3.n_buckets ∈ {0; 32}
-                        .size ∈ {0; 1; 4294967295}
-                        .n_occupied ∈ {0; 1}
-                        .upper_bound ∈ {0; 25}
-                        .flags ∈ {{ NULL ; &__malloc_kh_resize_32_l3[0] }}
-                        .keys ∈ {{ NULL ; &__realloc_kh_resize_32_l3[0] }}
+  __calloc_kh_init_32_l3.n_buckets ∈ {32}
+                        .size ∈ {0}
+                        .n_occupied ∈ {1}
+                        .upper_bound ∈ {25}
+                        .flags ∈ {{ &__malloc_kh_resize_32_l3[0] }}
+                        .keys ∈ {{ &__realloc_kh_resize_32_l3[0] }}
                         .vals ∈ {{ &__realloc_kh_resize_32_l3_0[0] }}
   __malloc_kh_resize_32_l3[0..4] ∈ {2}
-                          [5] ∈ {0; 1; 2}
+                          [5] ∈ {1}
                           [6..31] ∈ {2}
 [eva:final-states] Values at end of function kh_destroy_32:
   h ∈ ESCAPINGADDR
   h ∈ ESCAPINGADDR
 [eva:final-states] Values at end of function kh_get_32:
-  __retres ∈ {0; 5; 32}
+  __retres ∈ {5; 32}
 [eva:final-states] Values at end of function kh_init_32:
   __fc_heap_status ∈ [--..--]
 [eva:final-states] Values at end of function kh_resize_32:
@@ -97,7 +100,7 @@
   __fc_heap_status ∈ [--..--]
   x ∈ {5} or UNINITIALIZED
   ret ∈ {-1; 1}
-  __retres ∈ {0; 5; 32}
+  __retres ∈ {0; 5}
   __calloc_kh_init_32_l3.n_buckets ∈ {0; 32}
                         {.size; .n_occupied} ∈ {0; 1}
                         .upper_bound ∈ {0; 25}
@@ -106,41 +109,34 @@
                         .vals ∈
                         {{ NULL ; &__realloc_kh_resize_32_l3_0[0] }}
   __malloc_kh_resize_32_l3[0..4] ∈ {2}
-                          [5] ∈ {0; 2}
+                          [5] ∈ {0}
                           [6..31] ∈ {2}
   __realloc_kh_resize_32_l3[0..4] ∈ UNINITIALIZED
                            [5] ∈ {5} or UNINITIALIZED
                            [6..31] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function main:
   __fc_heap_status ∈ [--..--]
-  ret ∈ {-1; 1}
-  is_missing ∈ {0; 1}
-  k ∈ {0; 32}
+  ret ∈ {1}
+  is_missing ∈ {1}
+  k ∈ {32}
   h ∈ ESCAPINGADDR
   __retres ∈ {0}
-  __malloc_kh_resize_32_l3[0..4] ∈ {2}
-                          [5] ∈ {0; 1; 2}
-                          [6..31] ∈ {2}
-  __realloc_kh_resize_32_l3[0..4] ∈ UNINITIALIZED
-                           [5] ∈ {5} or UNINITIALIZED
-                           [6..31] ∈ UNINITIALIZED
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   7 functions analyzed (out of 10): 70% coverage.
-  In these functions, 126 statements reached (out of 206): 61% coverage.
+  In these functions, 122 statements reached (out of 206): 59% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
-    by the Frama-C kernel:    0 errors    1 warning
+    by the Frama-C kernel:    0 errors    2 warnings
   ----------------------------------------------------------------------------
-  9 alarms generated by the analysis:
-       8 invalid memory accesses
-       1 access to uninitialized left-values
+  2 alarms generated by the analysis:
+       2 invalid memory accesses
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
     Preconditions    10 valid     0 unknown     0 invalid     10 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.31user 0.09system 0:00.41elapsed 99%CPU (0avgtext+0avgdata 101892maxresident)k
-0inputs+1184outputs (0major+18711minor)pagefaults 0swaps
+0.33user 0.07system 0:00.41elapsed 99%CPU (0avgtext+0avgdata 102328maxresident)k
+0inputs+1184outputs (0major+18850minor)pagefaults 0swaps

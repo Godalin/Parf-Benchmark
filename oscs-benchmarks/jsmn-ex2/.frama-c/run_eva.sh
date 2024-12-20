@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Default values for parameters (can be overridden by command-line arguments)
-default_timelimit="10m"
+default_timelimit="30m"
 default_logfile="log_eva"
 default_parameters=""
 
@@ -41,7 +41,7 @@ kernelparams="-add-symbolic-path=..:. \
 
 # Specific eva parameters
 ## Please add high-precision eva parameters here
-evaparams="-eva $parameters" 
+evaparams="-eva -eva-precision 0 $parameters" 
 
 # Analysis Targets: source files
 target2="../jsmn.c \

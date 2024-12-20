@@ -13,6 +13,20 @@
 [kernel] Parsing code/intel/linux/target.c (with preprocessing)
 [variadic:typing] code/harness/harness.c:496: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 9 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   s_w_reset ∈ {power_up_reset_e}
@@ -702,6 +716,22 @@
 [eva] using specification for function printf_va_99
 [eva] using specification for function printf_va_100
 [eva] code/harness/harness.c:1868: starting to merge loop iterations
+[kernel] code/tc_hand.c:636: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:636: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/tc_hand.c:636: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] code/tc_hand.c:636: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/tc_hand.c:638: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_234
 [eva] code/hw_if.c:569: starting to merge loop iterations
 [eva] using specification for function printf_va_66
@@ -734,13 +764,13 @@
   assert \initialized(&SU_setting.execution_result);
 [eva] code/tc_hand.c:662: starting to merge loop iterations
 [kernel] code/intel/linux/target.c:63: 
-  more than 200(772) locations to update in array. Approximating.
+  more than 10(772) locations to update in array. Approximating.
 [kernel] code/intel/linux/target.c:63: 
-  more than 200(772) elements to enumerate. Approximating.
+  more than 10(772) elements to enumerate. Approximating.
 [kernel] code/intel/linux/target.c:69: 
-  more than 200(448) elements to enumerate. Approximating.
+  more than 10(448) elements to enumerate. Approximating.
 [kernel] code/intel/linux/target.c:63: 
-  more than 200(448) locations to update in array. Approximating.
+  more than 10(448) locations to update in array. Approximating.
 [eva:alarm] code/measure.c:629: Warning: 
   accessing out of bounds index. assert SU < 4;
 [eva:alarm] code/hw_if.c:753: Warning: 
@@ -778,6 +808,14 @@
 [eva] using specification for function printf_va_90
 [eva] using specification for function printf_va_91
 [eva] code/harness/harness.c:1943: starting to merge loop iterations
+[kernel] code/telem.c:142: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_16
 [eva:alarm] code/harness/harness.c:378: Warning: 
   signed overflow. assert mail_overflows + 1 ≤ 2147483647;
@@ -817,6 +855,16 @@
 [eva] using specification for function printf_va_42
 [eva] code/health.c:1198: starting to merge loop iterations
 [eva] using specification for function printf_va_38
+[eva:alarm] code/harness/harness.c:1020: Warning: 
+  accessing out of bounds index. assert channel < 0x28;
+[kernel] code/harness/harness.c:1020: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(38) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1022: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(38) elements to enumerate. Approximating.
 [eva] code/harness/harness.c:2611: starting to merge loop iterations
 [eva] using specification for function printf_va_141
 [eva] using specification for function printf_va_43
@@ -830,6 +878,14 @@
 [eva] using specification for function printf_va_145
 [eva] using specification for function printf_va_34
 [eva] code/harness/harness.c:769: starting to merge loop iterations
+[kernel] code/harness/harness.c:771: 
+  more than 10(40) locations to update in array. Approximating.
+[kernel] code/harness/harness.c:772: 
+  more than 10(40) locations to update in array. Approximating.
+[kernel] code/harness/harness.c:1021: 
+  more than 10(39) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:1023: 
+  more than 10(39) elements to enumerate. Approximating.
 [eva] code/harness/harness.c:2686: starting to merge loop iterations
 [eva] using specification for function printf_va_146
 [eva] code/harness/harness.c:2677: starting to merge loop iterations
@@ -869,6 +925,18 @@
                      (void *)(&telemetry_data.time));
 [eva:alarm] code/telem.c:142: Warning: 
   out of bounds read. assert \valid_read(telemetry_pointer);
+[kernel] code/telem.c:142: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(59) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(59) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_155
 [eva] using specification for function printf_va_156
 [eva] using specification for function printf_va_157
@@ -901,13 +969,81 @@
 [eva] using specification for function printf_va_174
 [eva] using specification for function printf_va_175
 [eva] using specification for function printf_va_176
+[kernel] code/telem.c:142: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(23) elements to enumerate. Approximating.
 [eva:loop-unroll:partial] code/harness/harness.c:2854: 
   loop not completely unrolled
 [eva] code/harness/harness.c:2838: starting to merge loop iterations
 [kernel] code/telem.c:142: 
-  more than 200(17675) elements to enumerate. Approximating.
+  more than 10(24) elements to enumerate. Approximating.
 [kernel] code/telem.c:148: 
-  more than 200(17675) elements to enumerate. Approximating.
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(25) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(25) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(26) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(26) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(27) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(27) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(28) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(28) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(29) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(29) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(30) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(30) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] code/telem.c:142: 
+  more than 10(17675) elements to enumerate. Approximating.
+[kernel] code/telem.c:148: 
+  more than 10(17675) elements to enumerate. Approximating.
 [eva:alarm] code/harness/harness.c:2853: Warning: 
   signed overflow. assert octets + 2 ≤ 2147483647;
 [eva] using specification for function printf_va_177
@@ -923,8 +1059,6 @@
 [eva] using specification for function printf_va_183
 [eva] using specification for function printf_va_191
 [eva] using specification for function printf_va_192
-[eva:alarm] code/harness/harness.c:1020: Warning: 
-  accessing out of bounds index. assert channel < 0x28;
 [eva] code/measure.c:172: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:1089: Warning: 
   signed overflow. assert ad_conv_timer + 1 ≤ 2147483647;
@@ -974,11 +1108,33 @@
 [eva] code/harness/harness.c:3266: starting to merge loop iterations
 [eva:alarm] code/telem.c:313: Warning: 
   accessing out of bounds index. assert sensor_unit < 4;
+[kernel] code/harness/harness.c:925: 
+  more than 10(11) elements to enumerate. Approximating.
 [kernel] code/telem.c:419: 
-  more than 200(1261) locations to update in array. Approximating.
+  more than 10(11) locations to update in array. Approximating.
 [kernel] code/telem.c:435: too many locations to update in array. Approximating.
 [kernel] code/telem.c:419: 
-  more than 200(1261) elements to enumerate. Approximating.
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:925: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:925: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:925: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(1261) locations to update in array. Approximating.
+[kernel] code/telem.c:419: 
+  more than 10(1261) elements to enumerate. Approximating.
+[kernel] code/harness/harness.c:925: 
+  more than 10(15) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_205
 [eva] using specification for function printf_va_198
 [eva] code/harness/harness.c:3152: starting to merge loop iterations
@@ -986,9 +1142,9 @@
 [eva] using specification for function printf_va_206
 [eva] code/telem.c:246: starting to merge loop iterations
 [kernel] code/telem.c:195: 
-  more than 200(1260) elements to enumerate. Approximating.
+  more than 10(1260) elements to enumerate. Approximating.
 [kernel] code/telem.c:250: 
-  more than 200(1260) elements to enumerate. Approximating.
+  more than 10(1260) elements to enumerate. Approximating.
 [eva:alarm] code/telem.c:431: Warning: 
   accessing out of bounds index. assert record_index < 1261;
 [eva] using specification for function printf_va_207
@@ -2573,8 +2729,7 @@
              [0].[bits 24 to 31] ∈ {0}
              [0]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [0].delay_2 ∈ [0..32767]
-             [0].delay_3 ∈ [0..4095]
+             [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
              [1].quality_number ∈ [--..--]
@@ -2583,8 +2738,7 @@
              [1].[bits 24 to 31] ∈ {0}
              [1]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [1].delay_2 ∈ [0..32767]
-             [1].delay_3 ∈ [0..4095]
+             [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
              [2].quality_number ∈ [--..--]
@@ -2593,8 +2747,7 @@
              [2].[bits 24 to 31] ∈ {0}
              [2]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [2].delay_2 ∈ [0..32767]
-             [2].delay_3 ∈ [0..4095]
+             [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
              [3].quality_number ∈ [--..--]
@@ -2603,8 +2756,7 @@
              [3].[bits 24 to 31] ∈ {0}
              [3]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [3].delay_2 ∈ [0..32767]
-             [3].delay_3 ∈ [0..4095]
+             [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
              [4].quality_number ∈ [--..--]
@@ -2613,8 +2765,7 @@
              [4].[bits 24 to 31] ∈ {0}
              [4]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [4].delay_2 ∈ [0..32767]
-             [4].delay_3 ∈ [0..4095]
+             [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
              [5].quality_number ∈ [--..--]
@@ -2623,8 +2774,7 @@
              [5].[bits 24 to 31] ∈ {0}
              [5]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [5].delay_2 ∈ [0..32767]
-             [5].delay_3 ∈ [0..4095]
+             [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
              [6].quality_number ∈ [--..--]
@@ -2633,8 +2783,7 @@
              [6].[bits 24 to 31] ∈ {0}
              [6]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [6].delay_2 ∈ [0..32767]
-             [6].delay_3 ∈ [0..4095]
+             [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
              [7].quality_number ∈ [--..--]
@@ -2675,8 +2824,7 @@
              [0].[bits 24 to 31] ∈ {0}
              [0]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [0].delay_2 ∈ [0..32767]
-             [0].delay_3 ∈ [0..4095]
+             [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
              [1].quality_number ∈ [--..--]
@@ -2685,8 +2833,7 @@
              [1].[bits 24 to 31] ∈ {0}
              [1]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [1].delay_2 ∈ [0..32767]
-             [1].delay_3 ∈ [0..4095]
+             [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
              [2].quality_number ∈ [--..--]
@@ -2695,8 +2842,7 @@
              [2].[bits 24 to 31] ∈ {0}
              [2]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [2].delay_2 ∈ [0..32767]
-             [2].delay_3 ∈ [0..4095]
+             [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
              [3].quality_number ∈ [--..--]
@@ -2705,8 +2851,7 @@
              [3].[bits 24 to 31] ∈ {0}
              [3]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [3].delay_2 ∈ [0..32767]
-             [3].delay_3 ∈ [0..4095]
+             [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
              [4].quality_number ∈ [--..--]
@@ -2715,8 +2860,7 @@
              [4].[bits 24 to 31] ∈ {0}
              [4]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [4].delay_2 ∈ [0..32767]
-             [4].delay_3 ∈ [0..4095]
+             [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
              [5].quality_number ∈ [--..--]
@@ -2725,8 +2869,7 @@
              [5].[bits 24 to 31] ∈ {0}
              [5]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [5].delay_2 ∈ [0..32767]
-             [5].delay_3 ∈ [0..4095]
+             [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
              [6].quality_number ∈ [--..--]
@@ -2735,8 +2878,7 @@
              [6].[bits 24 to 31] ∈ {0}
              [6]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [6].delay_2 ∈ [0..32767]
-             [6].delay_3 ∈ [0..4095]
+             [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
              [7].quality_number ∈ [--..--]
@@ -3438,119 +3580,53 @@
 [eva:final-states] Values at end of function Set_AD_Unlimited:
   c ∈ {40}
   ad_limit[0].min ∈ {0}
-          [0].max ∈ {65535}
-          [1].min ∈ {0}
-          [1].max ∈ {65535}
-          [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
-          [5].min ∈ {0}
-          [5].max ∈ {64255; 65535}
-          [6].min ∈ {0}
-          [6].max ∈ {62719; 65535}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
-          [13].min ∈ {0}
-          [13].max ∈ {64255; 65535}
-          [14].min ∈ {0}
-          [14].max ∈ {62719; 65535}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
-          [16].min ∈ {0; 47616}
-          [16].max ∈ {58623; 65535}
-          [17].min ∈ {0; 47616}
-          [17].max ∈ {58623; 65535}
-          [18].min ∈ {0; 43008}
-          [18].max ∈ {58367; 65535}
-          [19].min ∈ {0; 47616}
-          [19].max ∈ {58623; 65535}
-          [20].min ∈ {0; 3328}
-          [20].max ∈ {8959; 65535}
-          [21].min ∈ {0; 3328}
-          [21].max ∈ {8959; 65535}
-          [22].min ∈ {0; 3584}
-          [22].max ∈ {11519; 65535}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
-          [29].min ∈ {0}
-          [29].max ∈ {64255; 65535}
-          [30].min ∈ {0}
-          [30].max ∈ {62719; 65535}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
-          [37].min ∈ {0}
-          [37].max ∈ {64255; 65535}
-          [38].min ∈ {0}
-          [38].max ∈ {62719; 65535}
-          [39].min ∈ {0}
+          {[0].max; [1..4]{.min; .max}; [5].min} ∈ {0; 65535}
+          [5].max ∈ {0; 64255; 65535}
+          [6].min ∈ {0; 65535}
+          [6].max ∈ {0; 62719; 65535}
+          {[7..12]{.min; .max}; [13].min} ∈ {0; 65535}
+          [13].max ∈ {0; 64255; 65535}
+          [14].min ∈ {0; 65535}
+          [14].max ∈ {0; 62719; 65535}
+          [15]{.min; .max} ∈ {0; 65535}
+          [16].min ∈ {0; 47616; 65535}
+          [16].max ∈ {0; 58623; 65535}
+          [17].min ∈ {0; 47616; 65535}
+          [17].max ∈ {0; 58623; 65535}
+          [18].min ∈ {0; 43008; 65535}
+          [18].max ∈ {0; 58367; 65535}
+          [19].min ∈ {0; 47616; 65535}
+          [19].max ∈ {0; 58623; 65535}
+          [20].min ∈ {0; 3328; 65535}
+          [20].max ∈ {0; 8959; 65535}
+          [21].min ∈ {0; 3328; 65535}
+          [21].max ∈ {0; 8959; 65535}
+          [22].min ∈ {0; 3584; 65535}
+          [22].max ∈ {0; 11519; 65535}
+          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
+          [29].max ∈ {0; 64255; 65535}
+          [30].min ∈ {0; 65535}
+          [30].max ∈ {0; 62719; 65535}
+          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
+          [37].max ∈ {0; 64255; 65535}
+          [38].min ∈ {0; 65535}
+          [38].max ∈ {0; 62719; 65535}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Set_AD_Nominal:
   ad_limit[0].min ∈ {0}
-          [0].max ∈ {65535}
-          [1].min ∈ {0}
-          [1].max ∈ {65535}
-          [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
+          {[0].max; [1..4]{.min; .max}} ∈ {0; 65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          [7..12]{.min; .max} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -3565,39 +3641,17 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Update_ADC_Channel_Reg:
@@ -3938,8 +3992,7 @@
              [0].[bits 24 to 31] ∈ {0}
              [0]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [0].delay_2 ∈ [0..32767]
-             [0].delay_3 ∈ [0..4095]
+             [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
              [1].quality_number ∈ [--..--]
@@ -3948,8 +4001,7 @@
              [1].[bits 24 to 31] ∈ {0}
              [1]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [1].delay_2 ∈ [0..32767]
-             [1].delay_3 ∈ [0..4095]
+             [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
              [2].quality_number ∈ [--..--]
@@ -3958,8 +4010,7 @@
              [2].[bits 24 to 31] ∈ {0}
              [2]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [2].delay_2 ∈ [0..32767]
-             [2].delay_3 ∈ [0..4095]
+             [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
              [3].quality_number ∈ [--..--]
@@ -3968,8 +4019,7 @@
              [3].[bits 24 to 31] ∈ {0}
              [3]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [3].delay_2 ∈ [0..32767]
-             [3].delay_3 ∈ [0..4095]
+             [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
              [4].quality_number ∈ [--..--]
@@ -3978,8 +4028,7 @@
              [4].[bits 24 to 31] ∈ {0}
              [4]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [4].delay_2 ∈ [0..32767]
-             [4].delay_3 ∈ [0..4095]
+             [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
              [5].quality_number ∈ [--..--]
@@ -3988,8 +4037,7 @@
              [5].[bits 24 to 31] ∈ {0}
              [5]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [5].delay_2 ∈ [0..32767]
-             [5].delay_3 ∈ [0..4095]
+             [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
              [6].quality_number ∈ [--..--]
@@ -3998,8 +4046,7 @@
              [6].[bits 24 to 31] ∈ {0}
              [6]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [6].delay_2 ∈ [0..32767]
-             [6].delay_3 ∈ [0..4095]
+             [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
              [7].quality_number ∈ [--..--]
@@ -4317,7 +4364,7 @@
            self_test_e; self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   ADC_result[0..4] ∈ [--..--]
   initial_delay ∈ {44}
   delay_limit ∈ {44}
@@ -4377,7 +4424,7 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [133..214]
+  ADC_channel_register ∈ [5..214]
   AD_temperature_parameters.ADC_channel ∈ {5; 6; 13; 14; 29; 30; 37; 38}
                            {.ADC_max_tries; .conversion_max_tries} ∈ {255}
                            .unsigned_ADC ∈ [0..65535]
@@ -4442,7 +4489,7 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   AD_temperature_parameters.ADC_channel ∈
                            {5; 6; 13; 14; 29; 30; 37; 38} or UNINITIALIZED
                            {.ADC_max_tries; .conversion_max_tries} ∈
@@ -4512,7 +4559,7 @@
                 .coefficient[0..4] ∈ [--..--]
                 .not_used ∈ {0}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ {144; 145; 146; 147; 212; 213; 214}
+  ADC_channel_register ∈ [16..214]
   AD_voltage_parameters.ADC_channel ∈ {16; 17; 18; 19; 84; 85; 86}
                        {.ADC_max_tries; .conversion_max_tries} ∈ {255}
                        .unsigned_ADC ∈ [0..65535]
@@ -4772,7 +4819,7 @@
            self_test_trigger_e; acquisition_e}
   self_test_SU_number ∈ {0; 1; 2; 3; 4}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   i ∈ {7}
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
                              .SU_state ∈ {off_e}
@@ -4845,7 +4892,7 @@
   checksum_count ∈ [0..59]
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   self_test_flag ∈ {0; 1}
   SU_self_test_channel ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
@@ -4923,7 +4970,7 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   self_test_flag ∈ {0; 1}
   SU_self_test_channel ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
@@ -5001,7 +5048,7 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   self_test_flag ∈ {0; 1}
   SU_self_test_channel ∈ [--..--]
   SetSensorUnitOff_SU_setting.SU_number ∈ {1; 2; 3; 4}
@@ -5069,7 +5116,7 @@
            self_test_e; self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   ADC_result[0..4] ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
@@ -5131,7 +5178,7 @@
            self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..11]
   confirm_hit_result ∈ {1}
-  ADC_channel_register ∈ [128..165]
+  ADC_channel_register ∈ [0..165]
   event_queue_length ∈ [0..10]
   free_slot_index ∈ [0..1261]
   ADC_result[0..4] ∈ [--..--]
@@ -5141,8 +5188,7 @@
              [0].[bits 24 to 31] ∈ {0}
              [0]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [0].delay_2 ∈ [0..32767]
-             [0].delay_3 ∈ [0..4095]
+             [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
              [1].quality_number ∈ [--..--]
@@ -5151,8 +5197,7 @@
              [1].[bits 24 to 31] ∈ {0}
              [1]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [1].delay_2 ∈ [0..32767]
-             [1].delay_3 ∈ [0..4095]
+             [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
              [2].quality_number ∈ [--..--]
@@ -5161,8 +5206,7 @@
              [2].[bits 24 to 31] ∈ {0}
              [2]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [2].delay_2 ∈ [0..32767]
-             [2].delay_3 ∈ [0..4095]
+             [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
              [3].quality_number ∈ [--..--]
@@ -5171,8 +5215,7 @@
              [3].[bits 24 to 31] ∈ {0}
              [3]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [3].delay_2 ∈ [0..32767]
-             [3].delay_3 ∈ [0..4095]
+             [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
              [4].quality_number ∈ [--..--]
@@ -5181,8 +5224,7 @@
              [4].[bits 24 to 31] ∈ {0}
              [4]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [4].delay_2 ∈ [0..32767]
-             [4].delay_3 ∈ [0..4095]
+             [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
              [5].quality_number ∈ [--..--]
@@ -5191,8 +5233,7 @@
              [5].[bits 24 to 31] ∈ {0}
              [5]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [5].delay_2 ∈ [0..32767]
-             [5].delay_3 ∈ [0..4095]
+             [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
              [6].quality_number ∈ [--..--]
@@ -5201,8 +5242,7 @@
              [6].[bits 24 to 31] ∈ {0}
              [6]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [6].delay_2 ∈ [0..32767]
-             [6].delay_3 ∈ [0..4095]
+             [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
              [7].quality_number ∈ [--..--]
@@ -5288,7 +5328,7 @@
            self_test_e; self_test_trigger_e; acquisition_e}
   hit_budget_left ∈ [0..79]
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   ADC_result[0..4] ∈ [--..--]
   ad_converting ∈ {0; 1}
   mail_message[0] ∈ [513..65535]
@@ -5348,7 +5388,7 @@
   self_test_SU_number ∈ {0}
   hit_budget_left ∈ {0}
   confirm_hit_result ∈ {0; 1}
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   ADC_result[0..4] ∈ [--..--]
   su ∈ {0; 1; 2; 3}
   ad_converting ∈ {0; 1}
@@ -6071,7 +6111,7 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e; SC_TM_e}
@@ -6106,8 +6146,7 @@
              [0].[bits 24 to 31] ∈ {0}
              [0]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [0].delay_2 ∈ [0..32767]
-             [0].delay_3 ∈ [0..4095]
+             [0]{.delay_2; .delay_3} ∈ [0..4095]
              [0].checksum ∈ [--..--]
              [0].[bits 216 to 223] ∈ {0}
              [1].quality_number ∈ [--..--]
@@ -6116,8 +6155,7 @@
              [1].[bits 24 to 31] ∈ {0}
              [1]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [1].delay_2 ∈ [0..32767]
-             [1].delay_3 ∈ [0..4095]
+             [1]{.delay_2; .delay_3} ∈ [0..4095]
              [1].checksum ∈ [--..--]
              [1].[bits 216 to 223] ∈ {0}
              [2].quality_number ∈ [--..--]
@@ -6126,8 +6164,7 @@
              [2].[bits 24 to 31] ∈ {0}
              [2]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [2].delay_2 ∈ [0..32767]
-             [2].delay_3 ∈ [0..4095]
+             [2]{.delay_2; .delay_3} ∈ [0..4095]
              [2].checksum ∈ [--..--]
              [2].[bits 216 to 223] ∈ {0}
              [3].quality_number ∈ [--..--]
@@ -6136,8 +6173,7 @@
              [3].[bits 24 to 31] ∈ {0}
              [3]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [3].delay_2 ∈ [0..32767]
-             [3].delay_3 ∈ [0..4095]
+             [3]{.delay_2; .delay_3} ∈ [0..4095]
              [3].checksum ∈ [--..--]
              [3].[bits 216 to 223] ∈ {0}
              [4].quality_number ∈ [--..--]
@@ -6146,8 +6182,7 @@
              [4].[bits 24 to 31] ∈ {0}
              [4]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [4].delay_2 ∈ [0..32767]
-             [4].delay_3 ∈ [0..4095]
+             [4]{.delay_2; .delay_3} ∈ [0..4095]
              [4].checksum ∈ [--..--]
              [4].[bits 216 to 223] ∈ {0}
              [5].quality_number ∈ [--..--]
@@ -6156,8 +6191,7 @@
              [5].[bits 24 to 31] ∈ {0}
              [5]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [5].delay_2 ∈ [0..32767]
-             [5].delay_3 ∈ [0..4095]
+             [5]{.delay_2; .delay_3} ∈ [0..4095]
              [5].checksum ∈ [--..--]
              [5].[bits 216 to 223] ∈ {0}
              [6].quality_number ∈ [--..--]
@@ -6166,8 +6200,7 @@
              [6].[bits 24 to 31] ∈ {0}
              [6]{.hit_time; .SU_temperature_1; .SU_temperature_2; .plasma_1_plus; .plasma_1_minus; .piezo_1; .piezo_2; .plasma_2_plus; .rise_time; .delay_1} ∈
              [--..--]
-             [6].delay_2 ∈ [0..32767]
-             [6].delay_3 ∈ [0..4095]
+             [6]{.delay_2; .delay_3} ∈ [0..4095]
              [6].checksum ∈ [--..--]
              [6].[bits 216 to 223] ∈ {0}
              [7].quality_number ∈ [--..--]
@@ -6235,37 +6268,17 @@
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
   ad_limit[0].min ∈ {0}
-          [0].max ∈ {65535}
-          [1].min ∈ {0}
-          [1].max ∈ {65535}
-          [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
+          {[0].max; [1..4]{.min; .max}} ∈ {0; 65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          [7..12]{.min; .max} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6280,39 +6293,17 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-5000..2147483647]
   ad_conv_delay[0..5] ∈ [0..34]
@@ -6389,7 +6380,7 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [133..255]
+  ADC_channel_register ∈ [5..255]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e}
@@ -6437,84 +6428,38 @@
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
   ad_limit[0].min ∈ {0}
-          [0].max ∈ {65535}
-          [1].min ∈ {0}
-          [1].max ∈ {65535}
-          [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
-          [5].min ∈ {0}
-          [5].max ∈ {64255; 65535}
-          [6].min ∈ {0}
-          [6].max ∈ {62719; 65535}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
-          [13].min ∈ {0}
-          [13].max ∈ {64255; 65535}
-          [14].min ∈ {0}
-          [14].max ∈ {62719; 65535}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
-          [16].min ∈ {0; 47616}
-          [16].max ∈ {58623; 65535}
-          [17].min ∈ {0; 47616}
-          [17].max ∈ {58623; 65535}
-          [18].min ∈ {0; 43008}
-          [18].max ∈ {58367; 65535}
-          [19].min ∈ {0; 47616}
-          [19].max ∈ {58623; 65535}
-          [20].min ∈ {0; 3328}
-          [20].max ∈ {8959; 65535}
-          [21].min ∈ {0; 3328}
-          [21].max ∈ {8959; 65535}
-          [22].min ∈ {0; 3584}
-          [22].max ∈ {11519; 65535}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
-          [29].min ∈ {0}
-          [29].max ∈ {64255; 65535}
-          [30].min ∈ {0}
-          [30].max ∈ {62719; 65535}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
-          [37].min ∈ {0}
-          [37].max ∈ {64255; 65535}
-          [38].min ∈ {0}
-          [38].max ∈ {62719; 65535}
-          [39].min ∈ {0}
+          {[0].max; [1..4]{.min; .max}; [5].min} ∈ {0; 65535}
+          [5].max ∈ {0; 64255; 65535}
+          [6].min ∈ {0; 65535}
+          [6].max ∈ {0; 62719; 65535}
+          {[7..12]{.min; .max}; [13].min} ∈ {0; 65535}
+          [13].max ∈ {0; 64255; 65535}
+          [14].min ∈ {0; 65535}
+          [14].max ∈ {0; 62719; 65535}
+          [15]{.min; .max} ∈ {0; 65535}
+          [16].min ∈ {0; 47616; 65535}
+          [16].max ∈ {0; 58623; 65535}
+          [17].min ∈ {0; 47616; 65535}
+          [17].max ∈ {0; 58623; 65535}
+          [18].min ∈ {0; 43008; 65535}
+          [18].max ∈ {0; 58367; 65535}
+          [19].min ∈ {0; 47616; 65535}
+          [19].max ∈ {0; 58623; 65535}
+          [20].min ∈ {0; 3328; 65535}
+          [20].max ∈ {0; 8959; 65535}
+          [21].min ∈ {0; 3328; 65535}
+          [21].max ∈ {0; 8959; 65535}
+          [22].min ∈ {0; 3584; 65535}
+          [22].max ∈ {0; 11519; 65535}
+          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
+          [29].max ∈ {0; 64255; 65535}
+          [30].min ∈ {0; 65535}
+          [30].max ∈ {0; 62719; 65535}
+          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
+          [37].max ∈ {0; 64255; 65535}
+          [38].min ∈ {0; 65535}
+          [38].max ∈ {0; 62719; 65535}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-4999..255]
   ad_conv_delay[0..5] ∈ {0; 2}
@@ -6591,7 +6536,7 @@
   code_checksum ∈ {0}
   confirm_hit_result ∈ {0; 1}
   internal_time ∈ [--..--]
-  ADC_channel_register ∈ [128..255]
+  ADC_channel_register ∈ [--..--]
   TC_state ∈
           {TC_handling_e; read_memory_e; memory_dump_e; write_memory_e;
            memory_patch_e; SC_TM_e}
@@ -6641,37 +6586,17 @@
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
   ad_limit[0].min ∈ {0}
-          [0].max ∈ {65535}
-          [1].min ∈ {0}
-          [1].max ∈ {65535}
-          [2].min ∈ {0}
-          [2].max ∈ {65535}
-          [3].min ∈ {0}
-          [3].max ∈ {65535}
-          [4].min ∈ {0}
-          [4].max ∈ {65535}
+          {[0].max; [1..4]{.min; .max}} ∈ {0; 65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7].min ∈ {0}
-          [7].max ∈ {65535}
-          [8].min ∈ {0}
-          [8].max ∈ {65535}
-          [9].min ∈ {0}
-          [9].max ∈ {65535}
-          [10].min ∈ {0}
-          [10].max ∈ {65535}
-          [11].min ∈ {0}
-          [11].max ∈ {65535}
-          [12].min ∈ {0}
-          [12].max ∈ {65535}
+          [7..12]{.min; .max} ∈ {0; 65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15].min ∈ {0}
-          [15].max ∈ {65535}
+          [15]{.min; .max} ∈ {0; 65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6686,39 +6611,17 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23].min ∈ {0}
-          [23].max ∈ {65535}
-          [24].min ∈ {0}
-          [24].max ∈ {65535}
-          [25].min ∈ {0}
-          [25].max ∈ {65535}
-          [26].min ∈ {0}
-          [26].max ∈ {65535}
-          [27].min ∈ {0}
-          [27].max ∈ {65535}
-          [28].min ∈ {0}
-          [28].max ∈ {65535}
+          [23..28]{.min; .max} ∈ {0; 65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31].min ∈ {0}
-          [31].max ∈ {65535}
-          [32].min ∈ {0}
-          [32].max ∈ {65535}
-          [33].min ∈ {0}
-          [33].max ∈ {65535}
-          [34].min ∈ {0}
-          [34].max ∈ {65535}
-          [35].min ∈ {0}
-          [35].max ∈ {65535}
-          [36].min ∈ {0}
-          [36].max ∈ {65535}
+          [31..36]{.min; .max} ∈ {0; 65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0}
+          [39].min ∈ {0; 65535}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-5000..2147483647]
   ad_conv_delay[0..5] ∈ [0..34]
@@ -6799,37 +6702,7 @@
   TC_timeout ∈ {0; 100}
   memory_type ∈ {code_e; data_e}
   memory_transfer_buffer[0] ∈ [0..222]
-                        [1] ∈ [--..--]
-                        [2] ∈ [0..222]
-                        [3] ∈ [--..--]
-                        [4] ∈ [0..222]
-                        [5] ∈ [--..--]
-                        [6] ∈ [0..222]
-                        [7] ∈ [--..--]
-                        [8] ∈ [0..222]
-                        [9] ∈ [--..--]
-                        [10] ∈ [0..222]
-                        [11] ∈ [--..--]
-                        [12] ∈ [0..222]
-                        [13] ∈ [--..--]
-                        [14] ∈ [0..222]
-                        [15] ∈ [--..--]
-                        [16] ∈ [0..222]
-                        [17] ∈ [--..--]
-                        [18] ∈ [0..222]
-                        [19] ∈ [--..--]
-                        [20] ∈ [0..222]
-                        [21] ∈ [--..--]
-                        [22] ∈ [0..222]
-                        [23] ∈ [--..--]
-                        [24] ∈ [0..222]
-                        [25] ∈ [--..--]
-                        [26] ∈ [0..222]
-                        [27] ∈ [--..--]
-                        [28] ∈ [0..222]
-                        [29] ∈ [--..--]
-                        [30] ∈ [0..222]
-                        [31] ∈ [--..--]
+                        [1..31] ∈ [--..--]
   address_MSB ∈ [--..--]
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
@@ -6923,37 +6796,7 @@
   TC_timeout ∈ {0; 100}
   memory_type ∈ {code_e; data_e}
   memory_transfer_buffer[0] ∈ [0..223]
-                        [1] ∈ [--..--]
-                        [2] ∈ [0..223]
-                        [3] ∈ [--..--]
-                        [4] ∈ [0..223]
-                        [5] ∈ [--..--]
-                        [6] ∈ [0..223]
-                        [7] ∈ [--..--]
-                        [8] ∈ [0..223]
-                        [9] ∈ [--..--]
-                        [10] ∈ [0..223]
-                        [11] ∈ [--..--]
-                        [12] ∈ [0..223]
-                        [13] ∈ [--..--]
-                        [14] ∈ [0..223]
-                        [15] ∈ [--..--]
-                        [16] ∈ [0..223]
-                        [17] ∈ [--..--]
-                        [18] ∈ [0..223]
-                        [19] ∈ [--..--]
-                        [20] ∈ [0..223]
-                        [21] ∈ [--..--]
-                        [22] ∈ [0..223]
-                        [23] ∈ [--..--]
-                        [24] ∈ [0..223]
-                        [25] ∈ [--..--]
-                        [26] ∈ [0..223]
-                        [27] ∈ [--..--]
-                        [28] ∈ [0..223]
-                        [29] ∈ [--..--]
-                        [30] ∈ [0..223]
-                        [31] ∈ [--..--]
+                        [1..31] ∈ [--..--]
   address_MSB ∈ [--..--]
   address_LSB ∈ [--..--]
   memory_buffer_index ∈ [0..32],0%2
@@ -7495,5 +7338,5 @@
     Preconditions   373 valid     0 unknown     0 invalid    373 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-100.17user 1.37system 1:41.55elapsed 99%CPU (0avgtext+0avgdata 1128260maxresident)k
-0inputs+17600outputs (0major+296494minor)pagefaults 0swaps
+170.20user 4.62system 2:54.87elapsed 99%CPU (0avgtext+0avgdata 4295848maxresident)k
+0inputs+17520outputs (0major+1088374minor)pagefaults 0swaps

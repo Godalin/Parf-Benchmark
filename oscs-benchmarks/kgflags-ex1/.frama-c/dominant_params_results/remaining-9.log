@@ -1,5 +1,19 @@
 [kernel] Parsing fc_stubs.c (with preprocessing)
 [kernel] Parsing examples/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 5 (not modified).
+  option -eva-auto-loop-unroll already set to 109 (not modified).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history already set to 4 (not modified).
+  option -eva-slevel already set to 157 (not modified).
+  option -eva-ilevel already set to 95 (not modified).
+  option -eva-plevel already set to 224 (not modified).
+  option -eva-subdivide-non-linear already set to 38 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   _kgflags_g ∈ {0}
@@ -15,27 +29,23 @@
   function strcmp: precondition 'valid_string_s1' got status invalid.
 [eva] FRAMAC_SHARE/libc/string.h:156: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
-[eva:loop-unroll:partial] kgflags.h:369: loop not completely unrolled
-[eva:loop-unroll:partial] kgflags.h:373: loop not completely unrolled
-[eva:loop-unroll:partial] kgflags.h:380: loop not completely unrolled
 [eva:loop-unroll:auto] kgflags.h:663: Automatic loop unrolling.
 [eva] kgflags.h:385: Trace partitioning superposing up to 100 states
 [eva] using specification for function puts
 [eva] using specification for function fprintf_va_1
+[eva] using specification for function fprintf_va_2
+[eva] using specification for function fprintf_va_3
+[eva] using specification for function fprintf_va_8
 [eva:alarm] kgflags.h:404: Warning: 
   function fprintf_va_1: precondition valid_read_string(param1) got status unknown.
-[eva] using specification for function fprintf_va_2
 [eva:alarm] kgflags.h:408: Warning: 
   function fprintf_va_2: precondition valid_read_string(param1) got status unknown.
-[eva] using specification for function fprintf_va_3
 [eva:alarm] kgflags.h:412: Warning: 
   function fprintf_va_3: precondition valid_read_string(param1) got status unknown.
-[eva] using specification for function fprintf_va_8
 [eva:alarm] kgflags.h:432: Warning: 
   function fprintf_va_8: precondition valid_read_string(param1) got status unknown.
-[eva:loop-unroll:partial] kgflags.h:400: loop not completely unrolled
 [eva] kgflags.h:400: Trace partitioning superposing up to 100 states
-[eva] kgflags.h:400: starting to merge loop iterations
+[eva] kgflags.h:400: Trace partitioning superposing up to 400 states
 [eva] using specification for function fprintf_va_11
 [eva] using specification for function fprintf_va_13
 [eva] using specification for function fprintf_va_14
@@ -587,5 +597,5 @@
     Preconditions    27 valid     5 unknown     0 invalid     32 total
   84% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.18user 0.09system 0:01.28elapsed 100%CPU (0avgtext+0avgdata 138848maxresident)k
-0inputs+2688outputs (0major+30074minor)pagefaults 0swaps
+1.51user 0.15system 0:01.67elapsed 100%CPU (0avgtext+0avgdata 145748maxresident)k
+0inputs+2688outputs (0major+31857minor)pagefaults 0swaps

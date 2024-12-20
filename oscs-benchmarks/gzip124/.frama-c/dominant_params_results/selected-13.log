@@ -44,6 +44,20 @@
   Incorrect type for argument 4. The argument will be cast from unsigned long to long.
 [variadic:typing] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:218: Warning: 
   Incorrect type for argument 5. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   method ∈ {8}
@@ -1019,6 +1033,10 @@
   out of bounds read. assert \valid_read(*(argv + optind) + 1);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:443: Warning: 
   out of bounds read. assert \valid_read(argv + optind);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:448: Warning: 
+  out of bounds read. assert \valid_read(argv + optind);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:448: Warning: 
+  out of bounds read. assert \valid_read(*(argv + optind) + 0);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:449: Warning: 
   out of bounds read. assert \valid_read(argv + optind);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:449: Warning: 
@@ -1037,13 +1055,19 @@
   function strncmp: precondition 'valid_string_s2' got status unknown.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:188: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:189: Warning: 
+  signed overflow. assert n + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:188: Warning: 
   out of bounds read. assert \valid_read(tmp);
                       (tmp from str++)
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:466: 
   starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:189: Warning: 
-  signed overflow. assert n + 1 ≤ 2147483647;
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:466: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:468: 
+  more than 10(23) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:467: Warning: 
+  signed overflow. assert option_index + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:492: Warning: 
   out of bounds read. assert \valid_read(argv + optind);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:492: Warning: 
@@ -1063,6 +1087,8 @@
   signed overflow. assert optind + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:503: Warning: 
   out of bounds read. assert \valid_read(s);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:507: 
+  more than 10(23) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:513: Warning: 
   out of bounds read. assert \valid_read(argv + (int)(optind - 1));
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:513: Warning: 
@@ -1072,6 +1098,8 @@
   out of bounds read. assert \valid_read(*(argv + (int)(optind - 1)) + 1);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:515: Warning: 
   out of bounds read. assert \valid_read(argv + 0);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:515: 
+  more than 10(22) elements to enumerate. Approximating.
 [eva] using specification for function fprintf_va_67
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:515: Warning: 
   function fprintf_va_67: precondition valid_read_string(param0) got status unknown.
@@ -1099,6 +1127,14 @@
   function fprintf_va_69: precondition valid_read_string(param0) got status unknown.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:535: Warning: 
   function fprintf_va_69: precondition valid_read_string(param1) got status unknown.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:544: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:549: 
+  more than 10(23) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:563: Warning: 
+  out of bounds read. assert \valid_read(argv + optind);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:563: Warning: 
+  out of bounds read. assert \valid_read(*(argv + optind) + 1);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:565: Warning: 
   out of bounds read. assert \valid_read(argv + 0);
 [eva] using specification for function fprintf_va_70
@@ -1230,12 +1266,8 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:256: Warning: 
   signed overflow. assert -2147483648 ≤ first_nonopt - 1;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:448: Warning: 
-  out of bounds read. assert \valid_read(argv + optind);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:448: Warning: 
   accessing uninitialized left-value.
   assert \initialized(*(argv + optind) + 0);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:448: Warning: 
-  out of bounds read. assert \valid_read(*(argv + optind) + 0);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/getopt.c:449: Warning: 
   accessing uninitialized left-value.
   assert \initialized(*(argv + optind) + 1);
@@ -1468,10 +1500,6 @@
   accessing out of bounds index.
   assert tmp_2 < (int)(16384 + 2048);
   (tmp_2 from outpos++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:288: Warning: 
-  signed overflow. assert outpos + 1 ≤ 2147483647;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:339: Warning: 
-  signed overflow. assert outpos + i_0 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:255: Warning: 
   accessing out of bounds index. assert 0 ≤ (int)(i + o);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:255: Warning: 
@@ -1480,6 +1508,8 @@
   accessing out of bounds index. assert i < (int)(0x8000 + 64);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:330: Warning: 
   accessing out of bounds index. assert code < (long)(2L * 0x8000);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:364: Warning: 
+  accessing out of bounds index. assert code < (long)(1L << 16);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:272: Warning: 
   signed overflow. assert n_bits << 3 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:274: Warning: 
@@ -1524,14 +1554,16 @@
   invalid RHS operand for shift. assert 0 ≤ n < 32;
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:220: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:119: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ bitcount < 32;
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:230: 
   starting to merge loop iterations
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:227: Warning: 
-  accessing out of bounds index. assert tmp_2 < (int)(16 + 3);
-                                 (tmp_2 from i++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:230: Warning: 
   accessing out of bounds index. assert tmp_4 < (int)(16 + 3);
                                  (tmp_4 from i++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:227: Warning: 
+  accessing out of bounds index. assert tmp_2 < (int)(16 + 3);
+                                 (tmp_2 from i++)
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:233: 
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:150: 
@@ -1566,6 +1598,9 @@
   assert \initialized(&start[(int)(tablebits + 1)]);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: Warning: 
+  out of bounds write. assert \valid(table + tmp);
+                       (tmp from i++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:179: Warning: 
   accessing out of bounds index. assert len < 18;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:179: Warning: 
@@ -1592,12 +1627,12 @@
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:265: 
   starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:250: 
-  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:265: Warning: 
   accessing out of bounds index.
   assert tmp_3 < (int)(16384 + 2048);
   (tmp_3 from i++)
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:250: 
+  starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:268: 
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:290: 
@@ -1636,32 +1671,30 @@
   (tmp_5 from inptr++)
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:111: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:113: Warning: 
+  signed overflow. assert n + leaves[len] ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:136: Warning: 
   accessing out of bounds index.
   assert tmp_9 < (int)(0x8000 + 64);
   (tmp_9 from inptr++)
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:135: 
   starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:131: 
-  starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:136: Warning: 
+  signed overflow. assert base + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:136: Warning: 
   accessing out of bounds index. assert tmp_8 < 256;
                                  (tmp_8 from base++)
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:131: 
+  starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:151: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:160: Warning: 
   signed overflow. assert -2147483648 ≤ lit_base[len] - nodes;
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:171: 
-  more than 200(2048) locations to update in array. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:171: 
-  more than 200(2048) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:171: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:171: Warning: 
   out of bounds write. assert \valid(prefixp);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:169: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:174: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:211: Warning: 
   accessing out of bounds index.
@@ -1688,6 +1721,8 @@
   assert (unsigned int)(peek + (unsigned int)lit_base[len]) < 256;
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:206: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:211: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ (int)(valid - peek_bits) < 64;
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/util.c:72: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/util.c:73: Warning: 
@@ -1719,8 +1754,6 @@
   accessing out of bounds index.
   assert tmp_8 < (int)(0x8000 + 64);
   (tmp_8 from inptr++)
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:757: 
-  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:312: Warning: 
   accessing uninitialized left-value. assert \initialized(p);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:309: 
@@ -1738,11 +1771,11 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:352: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:353: Warning: 
-  out of bounds write. assert \valid(tmp);
-                       (tmp from xp++)
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:353: Warning: 
   out of bounds read. assert \valid_read(tmp_0);
                       (tmp_0 from p++)
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:353: Warning: 
+  out of bounds write. assert \valid(tmp);
+                       (tmp from xp++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:360: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp_2);
@@ -1859,7 +1892,7 @@
   Assigning imprecise value to j_0.
   The imprecision originates from Misaligned
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:778: 
-  more than 200(32768) elements to enumerate. Approximating.
+  more than 10(32768) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:779: Warning: 
   invalid RHS operand for shift. assert 0 ≤ j_0 < 64;
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:779: 
@@ -1879,7 +1912,7 @@
   Assigning imprecise value to j_0.
   The imprecision originates from Misaligned
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:780: 
-  more than 200(32768) elements to enumerate. Approximating.
+  more than 10(32768) elements to enumerate. Approximating.
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:782: 
   Assigning imprecise value to l.
   The imprecision originates from Misaligned
@@ -2692,6 +2725,8 @@
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:672: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:361: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[j_0]);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:403: 
   allocating variable __malloc_huft_build_l403_2
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:446: 
@@ -2724,15 +2759,9 @@
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&td);
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:516: 
-  more than 200(32768) elements to enumerate. Approximating.
+  more than 10(32768) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:523: 
-  more than 200(32768) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:552: 
-  more than 200(1152921504606846976) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:553: 
-  more than 200(1152921504606846976) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:555: 
-  more than 200(1152921504606846976) elements to enumerate. Approximating.
+  more than 10(32768) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:697: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&td);
@@ -3195,26 +3224,23 @@
   function fprintf_va_53: precondition valid_read_string(param0) got status unknown.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:352: 
   starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:350: 
-  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:353: Warning: 
   accessing out of bounds index.
   assert tmp < (int)((int)(258 - 3) + 1);
   (tmp from length++)
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:350: 
+  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:361: Warning: 
   accessing out of bounds index. assert 0 ≤ (int)(length - 1);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:361: Warning: 
-  accessing out of bounds index.
-  assert (int)(length - 1) < (int)((int)(258 - 3) + 1);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:367: 
-  starting to merge loop iterations
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:365: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:368: Warning: 
   signed overflow. assert dist + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:368: Warning: 
   accessing out of bounds index. assert tmp_0 < 512;
                                  (tmp_0 from dist++)
+[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:365: 
+  starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:376: Warning: 
   accessing out of bounds index.
   assert (int)(256 + tmp_1) < 512;
@@ -3227,10 +3253,30 @@
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
+  more than 10(30) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
+  more than 10(30) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
+  more than 10(144) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:384: 
+  more than 10(144) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:385: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:385: 
+  more than 10(112) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:385: 
+  more than 10(112) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:386: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:386: 
+  more than 10(24) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:386: 
+  more than 10(24) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:387: 
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:580: 
@@ -3242,25 +3288,71 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:590: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:591: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: Warning: 
+  accessing uninitialized left-value. assert \initialized(&next_code[len]);
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: Warning: 
   accessing out of bounds index. assert len < (int)(15 + 1);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:395: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:396: 
+  more than 10(30) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:397: 
+  more than 10(30) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:397: 
+  more than 10(30) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(19) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(30) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(39) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(39) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(40) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(40) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(61) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(61) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(62) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(62) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(286) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:412: 
+  more than 10(286) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:413: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:413: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:413: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:413: 
+  more than 10(30) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:414: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:414: 
+  more than 10(19) locations to update in array. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:324: Warning: 
   pointer to function with incompatible type. assert \valid_function(read_buf);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/zip.c:111: Warning: 
@@ -3272,48 +3364,64 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:338: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:965: 
-  more than 200(256) locations to update in array. Approximating.
+  more than 10(256) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:965: 
-  more than 200(256) elements to enumerate. Approximating.
+  more than 10(256) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:650: 
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:587: 
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:453: 
   starting to merge loop iterations
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: 
-  more than 200(8192) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: 
-  more than 200(8192) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: 
-  more than 200(8192) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: Warning: 
+  out of bounds read. assert \valid_read(scan);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: Warning: 
+  out of bounds read. assert \valid_read(scan);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: Warning: 
   out of bounds read. assert \valid_read(scan);
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: 
-  more than 200(8192) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: Warning: 
+  out of bounds read. assert \valid_read(scan);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
   out of bounds read. assert \valid_read(scan);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
+  out of bounds read. assert \valid_read(scan);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
+  out of bounds read. assert \valid_read(scan);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
+  out of bounds read. assert \valid_read(scan);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: 
+  more than 10(8192) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: 
+  more than 10(8192) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: 
+  more than 10(8192) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: 
+  more than 10(8192) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
   out of bounds read. assert \valid_read(match);
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: 
-  more than 200(8191) elements to enumerate. Approximating.
+  more than 10(8191) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: 
-  more than 200(8191) elements to enumerate. Approximating.
+  more than 10(8191) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: 
-  more than 200(8191) elements to enumerate. Approximating.
+  more than 10(8191) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: 
-  more than 200(8191) elements to enumerate. Approximating.
+  more than 10(8191) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:396: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:965: Warning: 
   accessing out of bounds index.
   assert lc < (int)((int)(2 * (int)((int)(256 + 1) + 29)) + 1);
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:965: 
-  more than 200(573) locations to update in array. Approximating.
+  more than 10(573) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:965: 
-  more than 200(573) elements to enumerate. Approximating.
+  more than 10(573) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:973: Warning: 
   accessing out of bounds index. assert lc < (int)((int)(258 - 3) + 1);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:973: 
+  more than 10(128) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:973: 
+  more than 10(128) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:974: Warning: 
   accessing out of bounds index. assert 0 ≤ dist;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:974: Warning: 
@@ -3321,6 +3429,8 @@
   assert tmp_0 < (int)((int)(2 * 30) + 1);
   (tmp_0 from (dist) <
   256?dist_code[dist]:dist_code[256 + (dist >> 7)])
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:974: 
+  more than 10(61) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:617: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:619: Warning: 
@@ -3342,29 +3452,17 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:437: Warning: 
   out of bounds read. assert \valid_read(match + best_len);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: Warning: 
-  out of bounds read. assert \valid_read(scan);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: Warning: 
   out of bounds read. assert \valid_read(match);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: Warning: 
-  out of bounds read. assert \valid_read(scan);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:454: Warning: 
   out of bounds read. assert \valid_read(match);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: Warning: 
-  out of bounds read. assert \valid_read(scan);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: Warning: 
   out of bounds read. assert \valid_read(match);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:455: Warning: 
   out of bounds read. assert \valid_read(match);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
-  out of bounds read. assert \valid_read(scan);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
   out of bounds read. assert \valid_read(match);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
-  out of bounds read. assert \valid_read(scan);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
   out of bounds read. assert \valid_read(match);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
-  out of bounds read. assert \valid_read(scan);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
   out of bounds read. assert \valid_read(match);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:458: Warning: 
@@ -3391,74 +3489,66 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:625: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:630: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:630: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:627: Warning: 
   accessing out of bounds index.
   assert heap_len < (int)((int)(2 * (int)((int)(256 + 1) + 29)) + 1);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:639: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:459: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:457: 
   starting to merge loop iterations
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:651: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:656: 
   starting to merge loop iterations
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:459: 
-  more than 200(287) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(573) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(287) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(573) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:660: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:660: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:661: Warning: 
   accessing out of bounds index. assert 0 ≤ heap_max;
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:661: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:661: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
-  more than 200(287) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(573) locations to update in array. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(573) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: Warning: 
   out of bounds write. assert \valid(&(tree + node)->fc.freq);
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:679: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:679: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:499: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:504: 
-  more than 200(573) locations to update in array. Approximating.
+  more than 10(573) locations to update in array. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:508: Warning: 
   out of bounds read. assert \valid_read(&(tree + (tree + n)->dl.dad)->dl.len);
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:510: 
-  more than 200(573) locations to update in array. Approximating.
+  more than 10(573) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:506: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:509: Warning: 
+  signed overflow. assert overflow + 1 ≤ 2147483647;
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:530: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:530: Warning: 
   accessing out of bounds index. assert 0 ≤ bits;
-[eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:528: 
-  starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:547: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:548: Warning: 
@@ -3466,7 +3556,9 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:545: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:630: 
+  more than 10(30) locations to update in array. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:459: Warning: 
   out of bounds read. assert \valid_read(&(tree + heap[j_0])->fc.freq);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:459: Warning: 
@@ -3485,33 +3577,87 @@
   out of bounds read. assert \valid_read(&(tree + n)->fc.freq);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: Warning: 
   out of bounds read. assert \valid_read(&(tree + m)->fc.freq);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
+  more than 10(61) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
+  more than 10(61) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 10(31) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:504: Warning: 
+  out of bounds write. assert \valid(&(tree + heap[heap_max])->dl.len);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:504: 
+  more than 10(61) locations to update in array. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:508: Warning: 
   out of bounds read. assert \valid_read(&(tree + n)->dl.dad);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:510: 
+  more than 10(61) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
+  more than 10(30) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: 
+  more than 10(30) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:709: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:709: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:716: Warning: 
   accessing out of bounds index. assert curlen < (int)((int)(2 * 19) + 1);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:716: 
+  more than 10(39) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:711: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:718: Warning: 
   accessing out of bounds index. assert curlen < (int)((int)(2 * 19) + 1);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:718: 
+  more than 10(38) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:718: 
+  more than 10(38) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:712: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:713: Warning: 
+  signed overflow. assert count + 1 ≤ 2147483647;
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:709: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:712: 
+  more than 10(30) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:630: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:630: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
+  more than 10(39) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
+  more than 10(39) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:504: 
+  more than 10(39) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:510: 
+  more than 10(39) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: 
+  more than 10(19) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:808: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:809: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:198: 
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:203: Warning: 
   out of bounds read. assert \valid_read(tmp_8);
                       (tmp_8 from buf++)
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1028: 
-  more than 200(256) elements to enumerate. Approximating.
+  more than 10(256) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1033: Warning: 
   out of bounds read.
   assert
   \valid_read(&(ltree + (unsigned int)((unsigned int)(code + 256) + 1))->dl.len);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1033: 
+  more than 10(31) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1034: Warning: 
   accessing out of bounds index. assert code < 29;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:133: Warning: 
@@ -3540,43 +3686,123 @@
   signed overflow. assert value << bi_valid ≤ 2147483647;
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1024: 
   starting to merge loop iterations
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(12) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1026: Warning: 
   accessing out of bounds index.
   assert tmp_0 < (int)(0x8000 + 64);
   (tmp_0 from lx++)
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(17) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(17) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(18) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(18) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
+  more than 10(20) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1025: Warning: 
   accessing out of bounds index.
   assert tmp < (int)(0x8000 / 8);
   (tmp from fx++)
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8186) locations to update in array. Approximating.
+  more than 10(8186) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8186) elements to enumerate. Approximating.
+  more than 10(8186) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8186) locations to update in array. Approximating.
+  more than 10(8186) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8186) elements to enumerate. Approximating.
+  more than 10(8186) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1039: Warning: 
   accessing out of bounds index. assert tmp_1 < 0x8000;
                                  (tmp_1 from dx++)
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8191) locations to update in array. Approximating.
+  more than 10(8191) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8191) elements to enumerate. Approximating.
+  more than 10(8191) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8191) locations to update in array. Approximating.
+  more than 10(8191) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8191) elements to enumerate. Approximating.
+  more than 10(8191) elements to enumerate. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:835: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8185) locations to update in array. Approximating.
+  more than 10(8185) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8185) elements to enumerate. Approximating.
+  more than 10(8185) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8185) locations to update in array. Approximating.
+  more than 10(8185) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
-  more than 200(8185) elements to enumerate. Approximating.
+  more than 10(8185) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:760: Warning: 
   accessing out of bounds index. assert curlen < (int)((int)(2 * 19) + 1);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:755: 
@@ -3585,6 +3811,12 @@
   starting to merge loop iterations
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:764: Warning: 
   accessing out of bounds index. assert curlen < (int)((int)(2 * 19) + 1);
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:764: 
+  more than 10(38) elements to enumerate. Approximating.
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:757: Warning: 
+  signed overflow. assert count + 1 ≤ 2147483647;
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1033: 
+  more than 10(128) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1045: Warning: 
   accessing out of bounds index. assert code < 30;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:861: Warning: 
@@ -3616,22 +3848,24 @@
   accessing out of bounds index.
   assert
   (unsigned int)((unsigned int)(strstart + 3) - 1) < (long)(2L * 0x8000);
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:626: 
-  more than 200(286) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:520: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:594: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:709: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:712: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:716: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:716: 
+  more than 10(31) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:679: Warning: 
   accessing out of bounds index.
   assert
@@ -3789,14 +4023,6 @@
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:373: 
   Assigning imprecise value to *(buffer + r)
-  (pointing to window with offsets {0; 8; 16; 24}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:373: 
-  Assigning imprecise value to *(buffer + r)
-  (pointing to window with offsets {0; 8; 16; 24; 32}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:373: 
-  Assigning imprecise value to *(buffer + r)
   (pointing to window with offsets [0..524280],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:356: Warning: 
@@ -3861,8 +4087,8 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unzip.c:142: Warning: 
   out of bounds write. assert \valid(&window[tmp_4]);
                        (tmp_4 from outcnt++)
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:756: 
-  more than 200(286) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:760: 
+  more than 10(39) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:151: Warning: 
   accessing out of bounds index. assert 0 ≤ *(bitlen + i);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:151: Warning: 
@@ -3905,9 +4131,6 @@
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: 
   Assigning imprecise value to i.
   The imprecision originates from Misaligned
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: Warning: 
-  out of bounds write. assert \valid(table + tmp);
-                       (tmp from i++)
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:178: 
   Assigning imprecise value to len.
   The imprecision originates from Misaligned
@@ -4037,8 +4260,6 @@
   The imprecision originates from Misaligned
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:119: Warning: 
   signed overflow. assert bitcount - n ≤ 2147483647;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:119: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ bitcount < 32;
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:119: 
   Assigning imprecise value to bitbuf_0.
   The imprecision originates from Misaligned
@@ -4453,8 +4674,6 @@
   Assigning imprecise value to valid.
   The imprecision originates from Misaligned
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:211: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ (int)(valid - peek_bits) < 64;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:211: Warning: 
   signed overflow. assert valid - peek_bits ≤ 2147483647;
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1039: 
   Assigning imprecise value to dist.
@@ -4502,9 +4721,16 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1044: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&(dtree + code)->fc.code);
-[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1047: 
-  Assigning imprecise value to dist.
-  The imprecision originates from Misaligned
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:132: Warning: 
+  signed overflow.
+  assert
+  -2147483648 ≤
+  (int)((unsigned long)((unsigned long)((int)(8 * 2)) * sizeof(char))) - length;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:132: Warning: 
+  signed overflow.
+  assert
+  (int)((unsigned long)((unsigned long)((int)(8 * 2)) * sizeof(char))) - length
+  ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:133: Warning: 
   signed overflow. assert -2147483648 ≤ value << bi_valid;
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:133: 
@@ -4519,10 +4745,23 @@
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:135: 
   Assigning imprecise value to bi_buf.
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:136: 
+  Assigning imprecise value to bi_valid.
+  The imprecision originates from Misaligned
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:138: Warning: 
   signed overflow. assert -2147483648 ≤ value << bi_valid;
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:138: 
   Assigning imprecise value to bi_buf.
+  The imprecision originates from Misaligned
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:139: Warning: 
+  signed overflow. assert -2147483648 ≤ bi_valid + length;
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:139: Warning: 
+  signed overflow. assert bi_valid + length ≤ 2147483647;
+[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:139: 
+  Assigning imprecise value to bi_valid.
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:1047: 
+  Assigning imprecise value to dist.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/bits.c:134: 
   Assigning imprecise value to outbuf[tmp_1].
@@ -4547,8 +4786,6 @@
   The imprecision originates from Misaligned
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:127: Warning: 
   signed overflow. assert leaves[max_len] + 1 ≤ 2147483647;
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:136: Warning: 
-  signed overflow. assert base + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:139: Warning: 
   signed overflow. assert leaves[max_len] + 1 ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unpack.c:162: Warning: 
@@ -5001,7 +5238,7 @@
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/zip.c:69: 
   starting to merge loop iterations
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:756: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
 [eva:locals-escaping] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/gzip.c:817: Warning: 
   locals {attr} escaping the scope of zip through file_type
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/gzip.c:1311: Warning: 
@@ -5165,11 +5402,6 @@
   (pointing to __malloc_w_huft_build_l403_11 with offsets [128..274877906816],0%128).
   The imprecision originates from Merge
   {/home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:444}
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
-  more than 200(286) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
-  more than 200(554) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 36 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function __fc_initenv:
   Frama_C_entropy_source ∈ [--..--]
@@ -5241,66 +5473,8 @@
        [32767] ∈ [--..--]
   dist ∈ [0..2147483646]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   flag_buf[0..4095] ∈ [--..--]
   last_lit ∈ [1..32832]
@@ -5318,7 +5492,7 @@
           &__calloc_add_envopt_l311 +
           [-17179869176..18446744073709551616],0%8 }}
   last ∈
-      {{ &S_argv + [-17179869184..17179869168],0%8 ;
+      {{ &S_argv + [--..17179869168],0%8 ;
          &__calloc_add_envopt_l311 + [--..17179869168],0%8 }}
   first_nonopt ∈ [-2147483647..2147483647]
   last_nonopt ∈ [-2147483647..2147483647]
@@ -5353,6 +5527,10 @@
                [1] ∈ [--..--]
 [eva:final-states] Values at end of function do_exit:
   NON TERMINATING FUNCTION
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:504: 
+  more than 10(39) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
+  more than 10(286) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function gen_bitlen:
   tree ∈ {{ &dyn_ltree[0] ; &dyn_dtree[0] ; &bl_tree[0] }}
   extra ∈ {{ &extra_lbits[0] ; &extra_dbits[0] ; &extra_blbits[0] }}
@@ -5368,144 +5546,10 @@
   f ∈ [--..--] or UNINITIALIZED
   overflow ∈ {-1; 0}
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
@@ -5518,146 +5562,12 @@
   bits ∈ {16}
   n ∈ [0..2147483647]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
               [287].dl{.dad; .len} ∈ {0; 8}
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
 [eva:final-states] Values at end of function getenv:
   Frama_C_entropy_source ∈ [--..--]
@@ -6513,144 +6423,10 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   last_lit ∈ {0}
   last_dist ∈ {0}
@@ -6670,215 +6446,20 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {0; 1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
               [287].dl{.dad; .len} ∈ {0; 8}
-  static_dtree[0].fc ∈ [--..--]
-              [0].dl{.dad; .len} ∈ {0; 5}
-              [1].fc ∈ [--..--]
-              [1].dl{.dad; .len} ∈ {0; 5}
-              [2].fc ∈ [--..--]
-              [2].dl{.dad; .len} ∈ {0; 5}
-              [3].fc ∈ [--..--]
-              [3].dl{.dad; .len} ∈ {0; 5}
-              [4].fc ∈ [--..--]
-              [4].dl{.dad; .len} ∈ {0; 5}
-              [5].fc ∈ [--..--]
-              [5].dl{.dad; .len} ∈ {0; 5}
-              [6].fc ∈ [--..--]
-              [6].dl{.dad; .len} ∈ {0; 5}
-              [7].fc ∈ [--..--]
-              [7].dl{.dad; .len} ∈ {0; 5}
-              [8].fc ∈ [--..--]
-              [8].dl{.dad; .len} ∈ {0; 5}
-              [9].fc ∈ [--..--]
-              [9].dl{.dad; .len} ∈ {0; 5}
-              [10].fc ∈ [--..--]
-              [10].dl{.dad; .len} ∈ {0; 5}
-              [11].fc ∈ [--..--]
-              [11].dl{.dad; .len} ∈ {0; 5}
-              [12].fc ∈ [--..--]
-              [12].dl{.dad; .len} ∈ {0; 5}
-              [13].fc ∈ [--..--]
-              [13].dl{.dad; .len} ∈ {0; 5}
-              [14].fc ∈ [--..--]
-              [14].dl{.dad; .len} ∈ {0; 5}
-              [15].fc ∈ [--..--]
-              [15].dl{.dad; .len} ∈ {0; 5}
-              [16].fc ∈ [--..--]
-              [16].dl{.dad; .len} ∈ {0; 5}
-              [17].fc ∈ [--..--]
-              [17].dl{.dad; .len} ∈ {0; 5}
-              [18].fc ∈ [--..--]
-              [18].dl{.dad; .len} ∈ {0; 5}
-              [19].fc ∈ [--..--]
-              [19].dl{.dad; .len} ∈ {0; 5}
-              [20].fc ∈ [--..--]
-              [20].dl{.dad; .len} ∈ {0; 5}
-              [21].fc ∈ [--..--]
-              [21].dl{.dad; .len} ∈ {0; 5}
-              [22].fc ∈ [--..--]
-              [22].dl{.dad; .len} ∈ {0; 5}
-              [23].fc ∈ [--..--]
-              [23].dl{.dad; .len} ∈ {0; 5}
-              [24].fc ∈ [--..--]
-              [24].dl{.dad; .len} ∈ {0; 5}
-              [25].fc ∈ [--..--]
-              [25].dl{.dad; .len} ∈ {0; 5}
-              [26].fc ∈ [--..--]
-              [26].dl{.dad; .len} ∈ {0; 5}
-              [27].fc ∈ [--..--]
-              [27].dl{.dad; .len} ∈ {0; 5}
-              [28].fc ∈ [--..--]
-              [28].dl{.dad; .len} ∈ {0; 5}
-              [29].fc ∈ [--..--]
+  static_dtree{[0..28]; [29].fc} ∈ [--..--]
               [29].dl{.dad; .len} ∈ {0; 5}
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  length_code[0..18] ∈ [0..127]
-             [19..255] ∈ [0..28]
-  dist_code[0..1] ∈ [0..127]
-           [2..255] ∈ [0..15]
-           [256..511] ∈ [0..127]
-  base_length[0..27] ∈ [0..2147483647]
+  length_code[0..255] ∈ [0..127]
+  dist_code[0..511] ∈ [0..127]
+  base_length[0..27] ∈ [0..256]
              [28] ∈ {0}
   base_dist[0..15] ∈ [0..2147483647]
            [16..29] ∈ [0..2147483520],0%128
@@ -7260,7 +6841,7 @@
       &__malloc_w_huft_build_l403_11[1] ; &__malloc_w_huft_build_l403_12[1] ;
       &__malloc_w_huft_build_l403_13[1] }} or UNINITIALIZED or ESCAPINGADDR
   v[0..287] ∈ [--..--] or UNINITIALIZED
-  w ∈ [-16..15] or UNINITIALIZED
+  w ∈ [-16..2147483647] or UNINITIALIZED
   x[0] ∈ {0} or UNINITIALIZED
    [1..16] ∈
    {{ garbled mix of &{__malloc_w_huft_build_l403;
@@ -7839,8 +7420,12 @@
 [eva:final-states] Values at end of function pqdownheap:
   k ∈ [1..572]
   v ∈ [0..572]
-  j_0 ∈ [2..1144]
+  j_0 ∈ [2..2147483646]
   heap[0..572] ∈ [0..572]
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 10(554) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 10(42) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function build_tree:
   tree ∈ {{ &dyn_ltree[0] ; &dyn_dtree[0] ; &bl_tree[0] }}
   stree ∈ {{ NULL ; &static_ltree[0] ; &static_dtree[0] }}
@@ -7850,144 +7435,10 @@
   max_code ∈ [-1..285]
   node ∈ [20..573]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -8081,286 +7532,18 @@
   max_count ∈ {6; 7; 138}
   min_count ∈ {3; 4}
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
 [eva:final-states] Values at end of function build_bl_tree:
   max_blindex ∈ [2..18]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   bl_desc.dyn_tree ∈ {{ &bl_tree[0] }}
          .static_tree ∈ {0}
@@ -8371,9 +7554,7 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
@@ -14133,7 +13314,23 @@
                             __malloc_w_huft_build_l403_12;
                             __malloc_w_huft_build_l403_13}
          (origin: Misaligned) }}
-  bi_valid ∈ [--..--]
+  bi_valid ∈
+          {{ garbled mix of &{__malloc_w_huft_build_l403;
+                              __malloc_w_huft_build_l403_0;
+                              __malloc_w_huft_build_l403_1;
+                              __malloc_w_huft_build_l403_2;
+                              __malloc_w_huft_build_l403_3;
+                              __malloc_w_huft_build_l403_4;
+                              __malloc_w_huft_build_l403_5;
+                              __malloc_w_huft_build_l403_6;
+                              __malloc_w_huft_build_l403_7;
+                              __malloc_w_huft_build_l403_8;
+                              __malloc_w_huft_build_l403_9;
+                              __malloc_w_huft_build_l403_10;
+                              __malloc_w_huft_build_l403_11;
+                              __malloc_w_huft_build_l403_12;
+                              __malloc_w_huft_build_l403_13}
+           (origin: Misaligned) }}
   nextchar ∈
           {{ NULL ; &S_0_S_argv + [1..2147483649] ;
              &S_1_S_argv + [1..2147483649] ;
@@ -14244,7 +13441,23 @@
                             __malloc_w_huft_build_l403_12;
                             __malloc_w_huft_build_l403_13}
          (origin: Misaligned) }}
-  bi_valid ∈ [--..--]
+  bi_valid ∈
+          {{ garbled mix of &{__malloc_w_huft_build_l403;
+                              __malloc_w_huft_build_l403_0;
+                              __malloc_w_huft_build_l403_1;
+                              __malloc_w_huft_build_l403_2;
+                              __malloc_w_huft_build_l403_3;
+                              __malloc_w_huft_build_l403_4;
+                              __malloc_w_huft_build_l403_5;
+                              __malloc_w_huft_build_l403_6;
+                              __malloc_w_huft_build_l403_7;
+                              __malloc_w_huft_build_l403_8;
+                              __malloc_w_huft_build_l403_9;
+                              __malloc_w_huft_build_l403_10;
+                              __malloc_w_huft_build_l403_11;
+                              __malloc_w_huft_build_l403_12;
+                              __malloc_w_huft_build_l403_13}
+           (origin: Misaligned) }}
   nextchar ∈
           {{ NULL ; &S_0_S_argv + [1..2147483649] ;
              &S_1_S_argv + [1..2147483649] ;
@@ -14338,7 +13551,23 @@
                             __malloc_w_huft_build_l403_12;
                             __malloc_w_huft_build_l403_13}
          (origin: Misaligned) }}
-  bi_valid ∈ [--..--]
+  bi_valid ∈
+          {{ garbled mix of &{__malloc_w_huft_build_l403;
+                              __malloc_w_huft_build_l403_0;
+                              __malloc_w_huft_build_l403_1;
+                              __malloc_w_huft_build_l403_2;
+                              __malloc_w_huft_build_l403_3;
+                              __malloc_w_huft_build_l403_4;
+                              __malloc_w_huft_build_l403_5;
+                              __malloc_w_huft_build_l403_6;
+                              __malloc_w_huft_build_l403_7;
+                              __malloc_w_huft_build_l403_8;
+                              __malloc_w_huft_build_l403_9;
+                              __malloc_w_huft_build_l403_10;
+                              __malloc_w_huft_build_l403_11;
+                              __malloc_w_huft_build_l403_12;
+                              __malloc_w_huft_build_l403_13}
+           (origin: Misaligned) }}
   nextchar ∈
           {{ NULL ; &S_0_S_argv + [1..2147483649] ;
              &S_1_S_argv + [1..2147483649] ;
@@ -14426,7 +13655,23 @@
                             __malloc_w_huft_build_l403_12;
                             __malloc_w_huft_build_l403_13}
          (origin: Misaligned) }}
-  bi_valid ∈ [--..--]
+  bi_valid ∈
+          {{ garbled mix of &{__malloc_w_huft_build_l403;
+                              __malloc_w_huft_build_l403_0;
+                              __malloc_w_huft_build_l403_1;
+                              __malloc_w_huft_build_l403_2;
+                              __malloc_w_huft_build_l403_3;
+                              __malloc_w_huft_build_l403_4;
+                              __malloc_w_huft_build_l403_5;
+                              __malloc_w_huft_build_l403_6;
+                              __malloc_w_huft_build_l403_7;
+                              __malloc_w_huft_build_l403_8;
+                              __malloc_w_huft_build_l403_9;
+                              __malloc_w_huft_build_l403_10;
+                              __malloc_w_huft_build_l403_11;
+                              __malloc_w_huft_build_l403_12;
+                              __malloc_w_huft_build_l403_13}
+           (origin: Misaligned) }}
   nextchar ∈
           {{ NULL ; &S_0_S_argv + [1..2147483649] ;
              &S_1_S_argv + [1..2147483649] ;
@@ -14502,144 +13747,10 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -14664,9 +13775,7 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
@@ -14700,7 +13809,23 @@
                             __malloc_w_huft_build_l403_12;
                             __malloc_w_huft_build_l403_13}
          (origin: Misaligned) }}
-  bi_valid ∈ [--..--]
+  bi_valid ∈
+          {{ garbled mix of &{__malloc_w_huft_build_l403;
+                              __malloc_w_huft_build_l403_0;
+                              __malloc_w_huft_build_l403_1;
+                              __malloc_w_huft_build_l403_2;
+                              __malloc_w_huft_build_l403_3;
+                              __malloc_w_huft_build_l403_4;
+                              __malloc_w_huft_build_l403_5;
+                              __malloc_w_huft_build_l403_6;
+                              __malloc_w_huft_build_l403_7;
+                              __malloc_w_huft_build_l403_8;
+                              __malloc_w_huft_build_l403_9;
+                              __malloc_w_huft_build_l403_10;
+                              __malloc_w_huft_build_l403_11;
+                              __malloc_w_huft_build_l403_12;
+                              __malloc_w_huft_build_l403_13}
+           (origin: Misaligned) }}
   nextchar ∈
           {{ NULL ; &S_0_S_argv + [1..2147483649] ;
              &S_1_S_argv + [1..2147483649] ;
@@ -14807,144 +13932,10 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -14969,9 +13960,7 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
@@ -15098,144 +14087,10 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -15260,9 +14115,7 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
@@ -15755,10 +14608,10 @@
   incode ∈ [0..9223372036854775807] or UNINITIALIZED
   inbits ∈ [-2147483646..34359738360] or UNINITIALIZED
   posbits ∈ [0..9223372036854775800] or UNINITIALIZED
-  outpos ∈ [0..2147483647] or UNINITIALIZED
+  outpos ∈ [0..18432] or UNINITIALIZED
   bitmask ∈ [511..2147483647],511%512 or UNINITIALIZED
   free_ent ∈ [256..9223372036854775807] or UNINITIALIZED
-  maxcode ∈ [511..9223372036854775807] or UNINITIALIZED
+  maxcode ∈ [1..9223372036854774783] or UNINITIALIZED
   maxmaxcode ∈ [1..2147483648]
   n_bits ∈ [9..2147483647] or UNINITIALIZED
   rsize ∈ {0} or UNINITIALIZED
@@ -16573,7 +15426,7 @@
   env_0 ∈ {{ NULL ; &__malloc_xmalloc_l400[0] }} or ESCAPINGADDR
   p ∈
    {{ &__malloc_xmalloc_l400 + [0..--] }} or UNINITIALIZED or ESCAPINGADDR
-  oargv ∈ {{ &S_argv{[1], [2], [3]} }} or UNINITIALIZED
+  oargv ∈ {{ &S_argv + [8..--],0%8 }} or UNINITIALIZED
   nargv ∈
        {{ &__calloc_add_envopt_l311 + [8..18446744073709551608],0%8 }} or UNINITIALIZED
   oargc ∈ [--..--]
@@ -16683,206 +15536,14 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
               [287].dl{.dad; .len} ∈ {0; 8}
-  static_dtree[0].fc ∈ [--..--]
-              [0].dl{.dad; .len} ∈ {0; 5}
-              [1].fc ∈ [--..--]
-              [1].dl{.dad; .len} ∈ {0; 5}
-              [2].fc ∈ [--..--]
-              [2].dl{.dad; .len} ∈ {0; 5}
-              [3].fc ∈ [--..--]
-              [3].dl{.dad; .len} ∈ {0; 5}
-              [4].fc ∈ [--..--]
-              [4].dl{.dad; .len} ∈ {0; 5}
-              [5].fc ∈ [--..--]
-              [5].dl{.dad; .len} ∈ {0; 5}
-              [6].fc ∈ [--..--]
-              [6].dl{.dad; .len} ∈ {0; 5}
-              [7].fc ∈ [--..--]
-              [7].dl{.dad; .len} ∈ {0; 5}
-              [8].fc ∈ [--..--]
-              [8].dl{.dad; .len} ∈ {0; 5}
-              [9].fc ∈ [--..--]
-              [9].dl{.dad; .len} ∈ {0; 5}
-              [10].fc ∈ [--..--]
-              [10].dl{.dad; .len} ∈ {0; 5}
-              [11].fc ∈ [--..--]
-              [11].dl{.dad; .len} ∈ {0; 5}
-              [12].fc ∈ [--..--]
-              [12].dl{.dad; .len} ∈ {0; 5}
-              [13].fc ∈ [--..--]
-              [13].dl{.dad; .len} ∈ {0; 5}
-              [14].fc ∈ [--..--]
-              [14].dl{.dad; .len} ∈ {0; 5}
-              [15].fc ∈ [--..--]
-              [15].dl{.dad; .len} ∈ {0; 5}
-              [16].fc ∈ [--..--]
-              [16].dl{.dad; .len} ∈ {0; 5}
-              [17].fc ∈ [--..--]
-              [17].dl{.dad; .len} ∈ {0; 5}
-              [18].fc ∈ [--..--]
-              [18].dl{.dad; .len} ∈ {0; 5}
-              [19].fc ∈ [--..--]
-              [19].dl{.dad; .len} ∈ {0; 5}
-              [20].fc ∈ [--..--]
-              [20].dl{.dad; .len} ∈ {0; 5}
-              [21].fc ∈ [--..--]
-              [21].dl{.dad; .len} ∈ {0; 5}
-              [22].fc ∈ [--..--]
-              [22].dl{.dad; .len} ∈ {0; 5}
-              [23].fc ∈ [--..--]
-              [23].dl{.dad; .len} ∈ {0; 5}
-              [24].fc ∈ [--..--]
-              [24].dl{.dad; .len} ∈ {0; 5}
-              [25].fc ∈ [--..--]
-              [25].dl{.dad; .len} ∈ {0; 5}
-              [26].fc ∈ [--..--]
-              [26].dl{.dad; .len} ∈ {0; 5}
-              [27].fc ∈ [--..--]
-              [27].dl{.dad; .len} ∈ {0; 5}
-              [28].fc ∈ [--..--]
-              [28].dl{.dad; .len} ∈ {0; 5}
-              [29].fc ∈ [--..--]
+  static_dtree{[0..28]; [29].fc} ∈ [--..--]
               [29].dl{.dad; .len} ∈ {0; 5}
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -16907,21 +15568,16 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
        [19..60] ∈ [--..--]
        [61..285] ∈ {0}
        [286..572] ∈ [--..--]
-  length_code[0..18] ∈ [0..127]
-             [19..255] ∈ [0..28]
-  dist_code[0..1] ∈ [0..127]
-           [2..255] ∈ [0..15]
-           [256..511] ∈ [0..127]
-  base_length[0..27] ∈ [0..2147483647]
+  length_code[0..255] ∈ [0..127]
+  dist_code[0..511] ∈ [0..127]
+  base_length[0..27] ∈ [0..256]
              [28] ∈ {0}
   base_dist[0..15] ∈ [0..2147483647]
            [16..29] ∈ [0..2147483520],0%128
@@ -17148,206 +15804,14 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {0; 1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
               [287].dl{.dad; .len} ∈ {0; 8}
-  static_dtree[0].fc ∈ [--..--]
-              [0].dl{.dad; .len} ∈ {0; 5}
-              [1].fc ∈ [--..--]
-              [1].dl{.dad; .len} ∈ {0; 5}
-              [2].fc ∈ [--..--]
-              [2].dl{.dad; .len} ∈ {0; 5}
-              [3].fc ∈ [--..--]
-              [3].dl{.dad; .len} ∈ {0; 5}
-              [4].fc ∈ [--..--]
-              [4].dl{.dad; .len} ∈ {0; 5}
-              [5].fc ∈ [--..--]
-              [5].dl{.dad; .len} ∈ {0; 5}
-              [6].fc ∈ [--..--]
-              [6].dl{.dad; .len} ∈ {0; 5}
-              [7].fc ∈ [--..--]
-              [7].dl{.dad; .len} ∈ {0; 5}
-              [8].fc ∈ [--..--]
-              [8].dl{.dad; .len} ∈ {0; 5}
-              [9].fc ∈ [--..--]
-              [9].dl{.dad; .len} ∈ {0; 5}
-              [10].fc ∈ [--..--]
-              [10].dl{.dad; .len} ∈ {0; 5}
-              [11].fc ∈ [--..--]
-              [11].dl{.dad; .len} ∈ {0; 5}
-              [12].fc ∈ [--..--]
-              [12].dl{.dad; .len} ∈ {0; 5}
-              [13].fc ∈ [--..--]
-              [13].dl{.dad; .len} ∈ {0; 5}
-              [14].fc ∈ [--..--]
-              [14].dl{.dad; .len} ∈ {0; 5}
-              [15].fc ∈ [--..--]
-              [15].dl{.dad; .len} ∈ {0; 5}
-              [16].fc ∈ [--..--]
-              [16].dl{.dad; .len} ∈ {0; 5}
-              [17].fc ∈ [--..--]
-              [17].dl{.dad; .len} ∈ {0; 5}
-              [18].fc ∈ [--..--]
-              [18].dl{.dad; .len} ∈ {0; 5}
-              [19].fc ∈ [--..--]
-              [19].dl{.dad; .len} ∈ {0; 5}
-              [20].fc ∈ [--..--]
-              [20].dl{.dad; .len} ∈ {0; 5}
-              [21].fc ∈ [--..--]
-              [21].dl{.dad; .len} ∈ {0; 5}
-              [22].fc ∈ [--..--]
-              [22].dl{.dad; .len} ∈ {0; 5}
-              [23].fc ∈ [--..--]
-              [23].dl{.dad; .len} ∈ {0; 5}
-              [24].fc ∈ [--..--]
-              [24].dl{.dad; .len} ∈ {0; 5}
-              [25].fc ∈ [--..--]
-              [25].dl{.dad; .len} ∈ {0; 5}
-              [26].fc ∈ [--..--]
-              [26].dl{.dad; .len} ∈ {0; 5}
-              [27].fc ∈ [--..--]
-              [27].dl{.dad; .len} ∈ {0; 5}
-              [28].fc ∈ [--..--]
-              [28].dl{.dad; .len} ∈ {0; 5}
-              [29].fc ∈ [--..--]
+  static_dtree{[0..28]; [29].fc} ∈ [--..--]
               [29].dl{.dad; .len} ∈ {0; 5}
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -17372,21 +15836,16 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {0; 1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
        [19..60] ∈ [--..--]
        [61..285] ∈ {0}
        [286..572] ∈ [--..--]
-  length_code[0..18] ∈ [0..127]
-             [19..255] ∈ [0..28]
-  dist_code[0..1] ∈ [0..127]
-           [2..255] ∈ [0..15]
-           [256..511] ∈ [0..127]
-  base_length[0..27] ∈ [0..2147483647]
+  length_code[0..255] ∈ [0..127]
+  dist_code[0..511] ∈ [0..127]
+  base_length[0..27] ∈ [0..256]
              [28] ∈ {0}
   base_dist[0..15] ∈ [0..2147483647]
            [16..29] ∈ [0..2147483520],0%128
@@ -17886,206 +16345,14 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {0; 1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
-  dyn_dtree{[0..30]; [31].fc} ∈ [--..--]
-           [31].dl{.dad; .len} ∈ [0..32767]
-           [32].fc ∈ [--..--]
-           [32].dl{.dad; .len} ∈ [0..32767]
-           [33].fc ∈ [--..--]
-           [33].dl{.dad; .len} ∈ [0..32767]
-           [34].fc ∈ [--..--]
-           [34].dl{.dad; .len} ∈ [0..32767]
-           [35].fc ∈ [--..--]
-           [35].dl{.dad; .len} ∈ [0..32767]
-           [36].fc ∈ [--..--]
-           [36].dl{.dad; .len} ∈ [0..32767]
-           [37].fc ∈ [--..--]
-           [37].dl{.dad; .len} ∈ [0..32767]
-           [38].fc ∈ [--..--]
-           [38].dl{.dad; .len} ∈ [0..32767]
-           [39].fc ∈ [--..--]
-           [39].dl{.dad; .len} ∈ [0..32767]
-           [40].fc ∈ [--..--]
-           [40].dl{.dad; .len} ∈ [0..32767]
-           [41].fc ∈ [--..--]
-           [41].dl{.dad; .len} ∈ [0..32767]
-           [42].fc ∈ [--..--]
-           [42].dl{.dad; .len} ∈ [0..32767]
-           [43].fc ∈ [--..--]
-           [43].dl{.dad; .len} ∈ [0..32767]
-           [44].fc ∈ [--..--]
-           [44].dl{.dad; .len} ∈ [0..32767]
-           [45].fc ∈ [--..--]
-           [45].dl{.dad; .len} ∈ [0..32767]
-           [46].fc ∈ [--..--]
-           [46].dl{.dad; .len} ∈ [0..32767]
-           [47].fc ∈ [--..--]
-           [47].dl{.dad; .len} ∈ [0..32767]
-           [48].fc ∈ [--..--]
-           [48].dl{.dad; .len} ∈ [0..32767]
-           [49].fc ∈ [--..--]
-           [49].dl{.dad; .len} ∈ [0..32767]
-           [50].fc ∈ [--..--]
-           [50].dl{.dad; .len} ∈ [0..32767]
-           [51].fc ∈ [--..--]
-           [51].dl{.dad; .len} ∈ [0..32767]
-           [52].fc ∈ [--..--]
-           [52].dl{.dad; .len} ∈ [0..32767]
-           [53].fc ∈ [--..--]
-           [53].dl{.dad; .len} ∈ [0..32767]
-           [54].fc ∈ [--..--]
-           [54].dl{.dad; .len} ∈ [0..32767]
-           [55].fc ∈ [--..--]
-           [55].dl{.dad; .len} ∈ [0..32767]
-           [56].fc ∈ [--..--]
-           [56].dl{.dad; .len} ∈ [0..32767]
-           [57].fc ∈ [--..--]
-           [57].dl{.dad; .len} ∈ [0..32767]
-           [58].fc ∈ [--..--]
-           [58].dl{.dad; .len} ∈ [0..32767]
-           [59].fc ∈ [--..--]
-           [59].dl{.dad; .len} ∈ [0..32767]
-           [60].fc ∈ [--..--]
+           [572].dl{.dad; .len} ∈ [0..32767]
+  dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
               [287].dl{.dad; .len} ∈ {0; 8}
-  static_dtree[0].fc ∈ [--..--]
-              [0].dl{.dad; .len} ∈ {0; 5}
-              [1].fc ∈ [--..--]
-              [1].dl{.dad; .len} ∈ {0; 5}
-              [2].fc ∈ [--..--]
-              [2].dl{.dad; .len} ∈ {0; 5}
-              [3].fc ∈ [--..--]
-              [3].dl{.dad; .len} ∈ {0; 5}
-              [4].fc ∈ [--..--]
-              [4].dl{.dad; .len} ∈ {0; 5}
-              [5].fc ∈ [--..--]
-              [5].dl{.dad; .len} ∈ {0; 5}
-              [6].fc ∈ [--..--]
-              [6].dl{.dad; .len} ∈ {0; 5}
-              [7].fc ∈ [--..--]
-              [7].dl{.dad; .len} ∈ {0; 5}
-              [8].fc ∈ [--..--]
-              [8].dl{.dad; .len} ∈ {0; 5}
-              [9].fc ∈ [--..--]
-              [9].dl{.dad; .len} ∈ {0; 5}
-              [10].fc ∈ [--..--]
-              [10].dl{.dad; .len} ∈ {0; 5}
-              [11].fc ∈ [--..--]
-              [11].dl{.dad; .len} ∈ {0; 5}
-              [12].fc ∈ [--..--]
-              [12].dl{.dad; .len} ∈ {0; 5}
-              [13].fc ∈ [--..--]
-              [13].dl{.dad; .len} ∈ {0; 5}
-              [14].fc ∈ [--..--]
-              [14].dl{.dad; .len} ∈ {0; 5}
-              [15].fc ∈ [--..--]
-              [15].dl{.dad; .len} ∈ {0; 5}
-              [16].fc ∈ [--..--]
-              [16].dl{.dad; .len} ∈ {0; 5}
-              [17].fc ∈ [--..--]
-              [17].dl{.dad; .len} ∈ {0; 5}
-              [18].fc ∈ [--..--]
-              [18].dl{.dad; .len} ∈ {0; 5}
-              [19].fc ∈ [--..--]
-              [19].dl{.dad; .len} ∈ {0; 5}
-              [20].fc ∈ [--..--]
-              [20].dl{.dad; .len} ∈ {0; 5}
-              [21].fc ∈ [--..--]
-              [21].dl{.dad; .len} ∈ {0; 5}
-              [22].fc ∈ [--..--]
-              [22].dl{.dad; .len} ∈ {0; 5}
-              [23].fc ∈ [--..--]
-              [23].dl{.dad; .len} ∈ {0; 5}
-              [24].fc ∈ [--..--]
-              [24].dl{.dad; .len} ∈ {0; 5}
-              [25].fc ∈ [--..--]
-              [25].dl{.dad; .len} ∈ {0; 5}
-              [26].fc ∈ [--..--]
-              [26].dl{.dad; .len} ∈ {0; 5}
-              [27].fc ∈ [--..--]
-              [27].dl{.dad; .len} ∈ {0; 5}
-              [28].fc ∈ [--..--]
-              [28].dl{.dad; .len} ∈ {0; 5}
-              [29].fc ∈ [--..--]
+  static_dtree{[0..28]; [29].fc} ∈ [--..--]
               [29].dl{.dad; .len} ∈ {0; 5}
-  bl_tree[0].fc ∈ [--..--]
-         [0].dl{.dad; .len} ∈ [0..32767]
-         [1].fc ∈ [--..--]
-         [1].dl{.dad; .len} ∈ [0..32767]
-         [2].fc ∈ [--..--]
-         [2].dl{.dad; .len} ∈ [0..32767]
-         [3].fc ∈ [--..--]
-         [3].dl{.dad; .len} ∈ [0..32767]
-         [4].fc ∈ [--..--]
-         [4].dl{.dad; .len} ∈ [0..32767]
-         [5].fc ∈ [--..--]
-         [5].dl{.dad; .len} ∈ [0..32767]
-         [6].fc ∈ [--..--]
-         [6].dl{.dad; .len} ∈ [0..32767]
-         [7].fc ∈ [--..--]
-         [7].dl{.dad; .len} ∈ [0..32767]
-         [8].fc ∈ [--..--]
-         [8].dl{.dad; .len} ∈ [0..32767]
-         [9].fc ∈ [--..--]
-         [9].dl{.dad; .len} ∈ [0..32767]
-         [10].fc ∈ [--..--]
-         [10].dl{.dad; .len} ∈ [0..32767]
-         [11].fc ∈ [--..--]
-         [11].dl{.dad; .len} ∈ [0..32767]
-         [12].fc ∈ [--..--]
-         [12].dl{.dad; .len} ∈ [0..32767]
-         [13].fc ∈ [--..--]
-         [13].dl{.dad; .len} ∈ [0..32767]
-         [14].fc ∈ [--..--]
-         [14].dl{.dad; .len} ∈ [0..32767]
-         [15].fc ∈ [--..--]
-         [15].dl{.dad; .len} ∈ [0..32767]
-         [16].fc ∈ [--..--]
-         [16].dl{.dad; .len} ∈ [0..32767]
-         [17].fc ∈ [--..--]
-         [17].dl{.dad; .len} ∈ [0..32767]
-         [18].fc ∈ [--..--]
-         [18].dl{.dad; .len} ∈ [0..32767]
-         [19].fc ∈ [--..--]
-         [19].dl{.dad; .len} ∈ [0..32767]
-         [20].fc ∈ [--..--]
-         [20].dl{.dad; .len} ∈ [0..32767]
-         [21].fc ∈ [--..--]
-         [21].dl{.dad; .len} ∈ [0..32767]
-         [22].fc ∈ [--..--]
-         [22].dl{.dad; .len} ∈ [0..32767]
-         [23].fc ∈ [--..--]
-         [23].dl{.dad; .len} ∈ [0..32767]
-         [24].fc ∈ [--..--]
-         [24].dl{.dad; .len} ∈ [0..32767]
-         [25].fc ∈ [--..--]
-         [25].dl{.dad; .len} ∈ [0..32767]
-         [26].fc ∈ [--..--]
-         [26].dl{.dad; .len} ∈ [0..32767]
-         [27].fc ∈ [--..--]
-         [27].dl{.dad; .len} ∈ [0..32767]
-         [28].fc ∈ [--..--]
-         [28].dl{.dad; .len} ∈ [0..32767]
-         [29].fc ∈ [--..--]
-         [29].dl{.dad; .len} ∈ [0..32767]
-         [30].fc ∈ [--..--]
-         [30].dl{.dad; .len} ∈ [0..32767]
-         [31].fc ∈ [--..--]
-         [31].dl{.dad; .len} ∈ [0..32767]
-         [32].fc ∈ [--..--]
-         [32].dl{.dad; .len} ∈ [0..32767]
-         [33].fc ∈ [--..--]
-         [33].dl{.dad; .len} ∈ [0..32767]
-         [34].fc ∈ [--..--]
-         [34].dl{.dad; .len} ∈ [0..32767]
-         [35].fc ∈ [--..--]
-         [35].dl{.dad; .len} ∈ [0..32767]
-         [36].fc ∈ [--..--]
-         [36].dl{.dad; .len} ∈ [0..32767]
-         [37].fc ∈ [--..--]
-         [37].dl{.dad; .len} ∈ [0..32767]
-         [38].fc ∈ [--..--]
+  bl_tree{[0..37]; [38].fc} ∈ [--..--]
          [38].dl{.dad; .len} ∈ [0..32767]
   l_desc.dyn_tree ∈ {{ &dyn_ltree[0] }}
         .static_tree ∈ {{ &static_ltree[0] }}
@@ -18110,21 +16377,16 @@
          .max_code ∈ [-1..18]
   bl_count[0] ∈ {0}
           [1..15] ∈ [--..--]
-  heap[0] ∈ [0..572]
-      [1] ∈ [0..38]
-      [2..572] ∈ [0..572]
+  heap[0..572] ∈ [0..572]
   heap_len ∈ {0; 1}
   heap_max ∈ [0..570],0%2
   depth[0..18] ∈ {0}
        [19..60] ∈ [--..--]
        [61..285] ∈ {0}
        [286..572] ∈ [--..--]
-  length_code[0..18] ∈ [0..127]
-             [19..255] ∈ [0..28]
-  dist_code[0..1] ∈ [0..127]
-           [2..255] ∈ [0..15]
-           [256..511] ∈ [0..127]
-  base_length[0..27] ∈ [0..2147483647]
+  length_code[0..255] ∈ [0..127]
+  dist_code[0..511] ∈ [0..127]
+  base_length[0..27] ∈ [0..256]
              [28] ∈ {0}
   base_dist[0..15] ∈ [0..2147483647]
            [16..29] ∈ [0..2147483520],0%128
@@ -18394,11 +16656,11 @@
     by the Eva analyzer:      0 errors    4 warnings
     by the Frama-C kernel:    0 errors    4 warnings
   ----------------------------------------------------------------------------
-  814 alarms generated by the analysis:
-     209 invalid memory accesses
+  826 alarms generated by the analysis:
+     212 invalid memory accesses
      173 accesses out of bounds index
-     133 integer overflows
-     129 accesses to uninitialized left-values
+     140 integer overflows
+     131 accesses to uninitialized left-values
       97 escaping addresses
       52 invalid shifts
        2 divisions by zero
@@ -18409,5 +16671,5 @@
     Preconditions   226 valid   191 unknown     0 invalid    417 total
   54% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-251.52user 1.25system 4:12.81elapsed 99%CPU (0avgtext+0avgdata 804100maxresident)k
-0inputs+27544outputs (0major+274083minor)pagefaults 0swaps
+116.94user 2.14system 1:59.10elapsed 99%CPU (0avgtext+0avgdata 695816maxresident)k
+0inputs+27312outputs (0major+352451minor)pagefaults 0swaps

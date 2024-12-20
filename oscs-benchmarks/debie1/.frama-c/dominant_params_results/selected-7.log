@@ -13,6 +13,20 @@
 [kernel] Parsing code/intel/linux/target.c (with preprocessing)
 [variadic:typing] code/harness/harness.c:496: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 364 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   s_w_reset ∈ {power_up_reset_e}
@@ -734,13 +748,13 @@
   assert \initialized(&SU_setting.execution_result);
 [eva] code/tc_hand.c:662: starting to merge loop iterations
 [kernel] code/intel/linux/target.c:63: 
-  more than 20(772) locations to update in array. Approximating.
+  more than 364(772) locations to update in array. Approximating.
 [kernel] code/intel/linux/target.c:63: 
-  more than 20(772) elements to enumerate. Approximating.
+  more than 364(772) elements to enumerate. Approximating.
 [kernel] code/intel/linux/target.c:69: 
-  more than 20(448) elements to enumerate. Approximating.
+  more than 364(448) elements to enumerate. Approximating.
 [kernel] code/intel/linux/target.c:63: 
-  more than 20(448) locations to update in array. Approximating.
+  more than 364(448) locations to update in array. Approximating.
 [eva:alarm] code/measure.c:629: Warning: 
   accessing out of bounds index. assert SU < 4;
 [eva:alarm] code/hw_if.c:753: Warning: 
@@ -830,14 +844,6 @@
 [eva] using specification for function printf_va_145
 [eva] using specification for function printf_va_34
 [eva] code/harness/harness.c:769: starting to merge loop iterations
-[kernel] code/harness/harness.c:771: 
-  more than 20(40) locations to update in array. Approximating.
-[kernel] code/harness/harness.c:772: 
-  more than 20(40) locations to update in array. Approximating.
-[kernel] code/harness/harness.c:771: 
-  more than 20(40) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:772: 
-  more than 20(40) elements to enumerate. Approximating.
 [eva] code/harness/harness.c:2686: starting to merge loop iterations
 [eva] using specification for function printf_va_146
 [eva] code/harness/harness.c:2677: starting to merge loop iterations
@@ -877,10 +883,6 @@
                      (void *)(&telemetry_data.time));
 [eva:alarm] code/telem.c:142: Warning: 
   out of bounds read. assert \valid_read(telemetry_pointer);
-[kernel] code/telem.c:142: 
-  more than 20(59) elements to enumerate. Approximating.
-[kernel] code/telem.c:148: 
-  more than 20(59) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_155
 [eva] using specification for function printf_va_156
 [eva] using specification for function printf_va_157
@@ -913,33 +915,13 @@
 [eva] using specification for function printf_va_174
 [eva] using specification for function printf_va_175
 [eva] using specification for function printf_va_176
-[kernel] code/telem.c:142: 
-  more than 20(21) elements to enumerate. Approximating.
-[kernel] code/telem.c:148: 
-  more than 20(21) elements to enumerate. Approximating.
-[kernel] code/telem.c:142: 
-  more than 20(22) elements to enumerate. Approximating.
-[kernel] code/telem.c:148: 
-  more than 20(22) elements to enumerate. Approximating.
-[kernel] code/telem.c:142: 
-  more than 20(23) elements to enumerate. Approximating.
-[kernel] code/telem.c:148: 
-  more than 20(23) elements to enumerate. Approximating.
 [eva:loop-unroll:partial] code/harness/harness.c:2854: 
   loop not completely unrolled
 [eva] code/harness/harness.c:2838: starting to merge loop iterations
 [kernel] code/telem.c:142: 
-  more than 20(24) elements to enumerate. Approximating.
+  more than 364(17675) elements to enumerate. Approximating.
 [kernel] code/telem.c:148: 
-  more than 20(24) elements to enumerate. Approximating.
-[kernel] code/telem.c:142: 
-  more than 20(25) elements to enumerate. Approximating.
-[kernel] code/telem.c:148: 
-  more than 20(25) elements to enumerate. Approximating.
-[kernel] code/telem.c:142: 
-  more than 20(17675) elements to enumerate. Approximating.
-[kernel] code/telem.c:148: 
-  more than 20(17675) elements to enumerate. Approximating.
+  more than 364(17675) elements to enumerate. Approximating.
 [eva:alarm] code/harness/harness.c:2853: Warning: 
   signed overflow. assert octets + 2 ≤ 2147483647;
 [eva] using specification for function printf_va_177
@@ -957,10 +939,6 @@
 [eva] using specification for function printf_va_192
 [eva:alarm] code/harness/harness.c:1020: Warning: 
   accessing out of bounds index. assert channel < 0x28;
-[kernel] code/harness/harness.c:1021: 
-  more than 20(39) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1023: 
-  more than 20(39) elements to enumerate. Approximating.
 [eva] code/measure.c:172: starting to merge loop iterations
 [eva:alarm] code/harness/harness.c:1089: Warning: 
   signed overflow. assert ad_conv_timer + 1 ≤ 2147483647;
@@ -968,24 +946,6 @@
 [eva] using specification for function printf_va_58
 [eva] code/measure.c:252: starting to merge loop iterations
 [eva] code/measure.c:235: starting to merge loop iterations
-[kernel] code/harness/harness.c:1020: 
-  more than 20(35) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1021: 
-  more than 20(34) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1022: 
-  more than 20(35) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1020: 
-  more than 20(36) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1021: 
-  more than 20(35) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1022: 
-  more than 20(36) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1020: 
-  more than 20(38) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1021: 
-  more than 20(37) elements to enumerate. Approximating.
-[kernel] code/harness/harness.c:1022: 
-  more than 20(38) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_184
 [eva] code/harness/harness.c:2998: starting to merge loop iterations
 [eva] using specification for function printf_va_193
@@ -1010,8 +970,6 @@
 [eva] using specification for function printf_va_202
 [eva] using specification for function printf_va_203
 [eva] using specification for function printf_va_204
-[kernel] code/harness/harness.c:1021: 
-  more than 20(36) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_185
 [eva] using specification for function printf_va_186
 [eva] using specification for function printf_va_52
@@ -1028,15 +986,13 @@
 [eva] using specification for function printf_va_187
 [eva] using specification for function printf_va_188
 [eva] code/harness/harness.c:3266: starting to merge loop iterations
-[kernel] code/harness/harness.c:1020: 
-  more than 20(40) elements to enumerate. Approximating.
 [eva:alarm] code/telem.c:313: Warning: 
   accessing out of bounds index. assert sensor_unit < 4;
 [kernel] code/telem.c:419: 
-  more than 20(1261) locations to update in array. Approximating.
+  more than 364(1261) locations to update in array. Approximating.
 [kernel] code/telem.c:435: too many locations to update in array. Approximating.
 [kernel] code/telem.c:419: 
-  more than 20(1261) elements to enumerate. Approximating.
+  more than 364(1261) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_205
 [eva] using specification for function printf_va_198
 [eva] code/harness/harness.c:3152: starting to merge loop iterations
@@ -1044,9 +1000,9 @@
 [eva] using specification for function printf_va_206
 [eva] code/telem.c:246: starting to merge loop iterations
 [kernel] code/telem.c:195: 
-  more than 20(1260) elements to enumerate. Approximating.
+  more than 364(1260) elements to enumerate. Approximating.
 [kernel] code/telem.c:250: 
-  more than 20(1260) elements to enumerate. Approximating.
+  more than 364(1260) elements to enumerate. Approximating.
 [eva:alarm] code/telem.c:431: Warning: 
   accessing out of bounds index. assert record_index < 1261;
 [eva] using specification for function printf_va_207
@@ -1790,8 +1746,6 @@
 [eva] using specification for function printf_va_223
 [eva] using specification for function printf_va_224
 [eva] using specification for function printf_va_225
-[kernel] code/harness/harness.c:1022: 
-  more than 20(40) elements to enumerate. Approximating.
 [eva] code/harness/harness.c:3571: starting to merge loop iterations
 [eva] using specification for function printf_va_226
 [eva] code/harness/harness.c:3597: starting to merge loop iterations
@@ -3484,53 +3438,119 @@
 [eva:final-states] Values at end of function Set_AD_Unlimited:
   c ∈ {40}
   ad_limit[0].min ∈ {0}
-          {[0].max; [1..4]{.min; .max}; [5].min} ∈ {0; 65535}
-          [5].max ∈ {0; 64255; 65535}
-          [6].min ∈ {0; 65535}
-          [6].max ∈ {0; 62719; 65535}
-          {[7..12]{.min; .max}; [13].min} ∈ {0; 65535}
-          [13].max ∈ {0; 64255; 65535}
-          [14].min ∈ {0; 65535}
-          [14].max ∈ {0; 62719; 65535}
-          [15]{.min; .max} ∈ {0; 65535}
-          [16].min ∈ {0; 47616; 65535}
-          [16].max ∈ {0; 58623; 65535}
-          [17].min ∈ {0; 47616; 65535}
-          [17].max ∈ {0; 58623; 65535}
-          [18].min ∈ {0; 43008; 65535}
-          [18].max ∈ {0; 58367; 65535}
-          [19].min ∈ {0; 47616; 65535}
-          [19].max ∈ {0; 58623; 65535}
-          [20].min ∈ {0; 3328; 65535}
-          [20].max ∈ {0; 8959; 65535}
-          [21].min ∈ {0; 3328; 65535}
-          [21].max ∈ {0; 8959; 65535}
-          [22].min ∈ {0; 3584; 65535}
-          [22].max ∈ {0; 11519; 65535}
-          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
-          [29].max ∈ {0; 64255; 65535}
-          [30].min ∈ {0; 65535}
-          [30].max ∈ {0; 62719; 65535}
-          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
-          [37].max ∈ {0; 64255; 65535}
-          [38].min ∈ {0; 65535}
-          [38].max ∈ {0; 62719; 65535}
-          [39].min ∈ {0; 65535}
+          [0].max ∈ {65535}
+          [1].min ∈ {0}
+          [1].max ∈ {65535}
+          [2].min ∈ {0}
+          [2].max ∈ {65535}
+          [3].min ∈ {0}
+          [3].max ∈ {65535}
+          [4].min ∈ {0}
+          [4].max ∈ {65535}
+          [5].min ∈ {0}
+          [5].max ∈ {64255; 65535}
+          [6].min ∈ {0}
+          [6].max ∈ {62719; 65535}
+          [7].min ∈ {0}
+          [7].max ∈ {65535}
+          [8].min ∈ {0}
+          [8].max ∈ {65535}
+          [9].min ∈ {0}
+          [9].max ∈ {65535}
+          [10].min ∈ {0}
+          [10].max ∈ {65535}
+          [11].min ∈ {0}
+          [11].max ∈ {65535}
+          [12].min ∈ {0}
+          [12].max ∈ {65535}
+          [13].min ∈ {0}
+          [13].max ∈ {64255; 65535}
+          [14].min ∈ {0}
+          [14].max ∈ {62719; 65535}
+          [15].min ∈ {0}
+          [15].max ∈ {65535}
+          [16].min ∈ {0; 47616}
+          [16].max ∈ {58623; 65535}
+          [17].min ∈ {0; 47616}
+          [17].max ∈ {58623; 65535}
+          [18].min ∈ {0; 43008}
+          [18].max ∈ {58367; 65535}
+          [19].min ∈ {0; 47616}
+          [19].max ∈ {58623; 65535}
+          [20].min ∈ {0; 3328}
+          [20].max ∈ {8959; 65535}
+          [21].min ∈ {0; 3328}
+          [21].max ∈ {8959; 65535}
+          [22].min ∈ {0; 3584}
+          [22].max ∈ {11519; 65535}
+          [23].min ∈ {0}
+          [23].max ∈ {65535}
+          [24].min ∈ {0}
+          [24].max ∈ {65535}
+          [25].min ∈ {0}
+          [25].max ∈ {65535}
+          [26].min ∈ {0}
+          [26].max ∈ {65535}
+          [27].min ∈ {0}
+          [27].max ∈ {65535}
+          [28].min ∈ {0}
+          [28].max ∈ {65535}
+          [29].min ∈ {0}
+          [29].max ∈ {64255; 65535}
+          [30].min ∈ {0}
+          [30].max ∈ {62719; 65535}
+          [31].min ∈ {0}
+          [31].max ∈ {65535}
+          [32].min ∈ {0}
+          [32].max ∈ {65535}
+          [33].min ∈ {0}
+          [33].max ∈ {65535}
+          [34].min ∈ {0}
+          [34].max ∈ {65535}
+          [35].min ∈ {0}
+          [35].max ∈ {65535}
+          [36].min ∈ {0}
+          [36].max ∈ {65535}
+          [37].min ∈ {0}
+          [37].max ∈ {64255; 65535}
+          [38].min ∈ {0}
+          [38].max ∈ {62719; 65535}
+          [39].min ∈ {0}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Set_AD_Nominal:
   ad_limit[0].min ∈ {0}
-          {[0].max; [1..4]{.min; .max}} ∈ {0; 65535}
+          [0].max ∈ {65535}
+          [1].min ∈ {0}
+          [1].max ∈ {65535}
+          [2].min ∈ {0}
+          [2].max ∈ {65535}
+          [3].min ∈ {0}
+          [3].max ∈ {65535}
+          [4].min ∈ {0}
+          [4].max ∈ {65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7..12]{.min; .max} ∈ {0; 65535}
+          [7].min ∈ {0}
+          [7].max ∈ {65535}
+          [8].min ∈ {0}
+          [8].max ∈ {65535}
+          [9].min ∈ {0}
+          [9].max ∈ {65535}
+          [10].min ∈ {0}
+          [10].max ∈ {65535}
+          [11].min ∈ {0}
+          [11].max ∈ {65535}
+          [12].min ∈ {0}
+          [12].max ∈ {65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15]{.min; .max} ∈ {0; 65535}
+          [15].min ∈ {0}
+          [15].max ∈ {65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -3545,17 +3565,39 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23..28]{.min; .max} ∈ {0; 65535}
+          [23].min ∈ {0}
+          [23].max ∈ {65535}
+          [24].min ∈ {0}
+          [24].max ∈ {65535}
+          [25].min ∈ {0}
+          [25].max ∈ {65535}
+          [26].min ∈ {0}
+          [26].max ∈ {65535}
+          [27].min ∈ {0}
+          [27].max ∈ {65535}
+          [28].min ∈ {0}
+          [28].max ∈ {65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31..36]{.min; .max} ∈ {0; 65535}
+          [31].min ∈ {0}
+          [31].max ∈ {65535}
+          [32].min ∈ {0}
+          [32].max ∈ {65535}
+          [33].min ∈ {0}
+          [33].max ∈ {65535}
+          [34].min ∈ {0}
+          [34].max ∈ {65535}
+          [35].min ∈ {0}
+          [35].max ∈ {65535}
+          [36].min ∈ {0}
+          [36].max ∈ {65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0; 65535}
+          [39].min ∈ {0}
           [39].max ∈ {65535}
   S___fc_stdout[0..1] ∈ [--..--]
 [eva:final-states] Values at end of function Update_ADC_Channel_Reg:
@@ -6172,17 +6214,37 @@
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
   ad_limit[0].min ∈ {0}
-          {[0].max; [1..4]{.min; .max}} ∈ {0; 65535}
+          [0].max ∈ {65535}
+          [1].min ∈ {0}
+          [1].max ∈ {65535}
+          [2].min ∈ {0}
+          [2].max ∈ {65535}
+          [3].min ∈ {0}
+          [3].max ∈ {65535}
+          [4].min ∈ {0}
+          [4].max ∈ {65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7..12]{.min; .max} ∈ {0; 65535}
+          [7].min ∈ {0}
+          [7].max ∈ {65535}
+          [8].min ∈ {0}
+          [8].max ∈ {65535}
+          [9].min ∈ {0}
+          [9].max ∈ {65535}
+          [10].min ∈ {0}
+          [10].max ∈ {65535}
+          [11].min ∈ {0}
+          [11].max ∈ {65535}
+          [12].min ∈ {0}
+          [12].max ∈ {65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15]{.min; .max} ∈ {0; 65535}
+          [15].min ∈ {0}
+          [15].max ∈ {65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6197,17 +6259,39 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23..28]{.min; .max} ∈ {0; 65535}
+          [23].min ∈ {0}
+          [23].max ∈ {65535}
+          [24].min ∈ {0}
+          [24].max ∈ {65535}
+          [25].min ∈ {0}
+          [25].max ∈ {65535}
+          [26].min ∈ {0}
+          [26].max ∈ {65535}
+          [27].min ∈ {0}
+          [27].max ∈ {65535}
+          [28].min ∈ {0}
+          [28].max ∈ {65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31..36]{.min; .max} ∈ {0; 65535}
+          [31].min ∈ {0}
+          [31].max ∈ {65535}
+          [32].min ∈ {0}
+          [32].max ∈ {65535}
+          [33].min ∈ {0}
+          [33].max ∈ {65535}
+          [34].min ∈ {0}
+          [34].max ∈ {65535}
+          [35].min ∈ {0}
+          [35].max ∈ {65535}
+          [36].min ∈ {0}
+          [36].max ∈ {65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0; 65535}
+          [39].min ∈ {0}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-5000..2147483647]
   ad_conv_delay[0..5] ∈ [0..34]
@@ -6332,38 +6416,84 @@
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
   ad_limit[0].min ∈ {0}
-          {[0].max; [1..4]{.min; .max}; [5].min} ∈ {0; 65535}
-          [5].max ∈ {0; 64255; 65535}
-          [6].min ∈ {0; 65535}
-          [6].max ∈ {0; 62719; 65535}
-          {[7..12]{.min; .max}; [13].min} ∈ {0; 65535}
-          [13].max ∈ {0; 64255; 65535}
-          [14].min ∈ {0; 65535}
-          [14].max ∈ {0; 62719; 65535}
-          [15]{.min; .max} ∈ {0; 65535}
-          [16].min ∈ {0; 47616; 65535}
-          [16].max ∈ {0; 58623; 65535}
-          [17].min ∈ {0; 47616; 65535}
-          [17].max ∈ {0; 58623; 65535}
-          [18].min ∈ {0; 43008; 65535}
-          [18].max ∈ {0; 58367; 65535}
-          [19].min ∈ {0; 47616; 65535}
-          [19].max ∈ {0; 58623; 65535}
-          [20].min ∈ {0; 3328; 65535}
-          [20].max ∈ {0; 8959; 65535}
-          [21].min ∈ {0; 3328; 65535}
-          [21].max ∈ {0; 8959; 65535}
-          [22].min ∈ {0; 3584; 65535}
-          [22].max ∈ {0; 11519; 65535}
-          {[23..28]{.min; .max}; [29].min} ∈ {0; 65535}
-          [29].max ∈ {0; 64255; 65535}
-          [30].min ∈ {0; 65535}
-          [30].max ∈ {0; 62719; 65535}
-          {[31..36]{.min; .max}; [37].min} ∈ {0; 65535}
-          [37].max ∈ {0; 64255; 65535}
-          [38].min ∈ {0; 65535}
-          [38].max ∈ {0; 62719; 65535}
-          [39].min ∈ {0; 65535}
+          [0].max ∈ {65535}
+          [1].min ∈ {0}
+          [1].max ∈ {65535}
+          [2].min ∈ {0}
+          [2].max ∈ {65535}
+          [3].min ∈ {0}
+          [3].max ∈ {65535}
+          [4].min ∈ {0}
+          [4].max ∈ {65535}
+          [5].min ∈ {0}
+          [5].max ∈ {64255; 65535}
+          [6].min ∈ {0}
+          [6].max ∈ {62719; 65535}
+          [7].min ∈ {0}
+          [7].max ∈ {65535}
+          [8].min ∈ {0}
+          [8].max ∈ {65535}
+          [9].min ∈ {0}
+          [9].max ∈ {65535}
+          [10].min ∈ {0}
+          [10].max ∈ {65535}
+          [11].min ∈ {0}
+          [11].max ∈ {65535}
+          [12].min ∈ {0}
+          [12].max ∈ {65535}
+          [13].min ∈ {0}
+          [13].max ∈ {64255; 65535}
+          [14].min ∈ {0}
+          [14].max ∈ {62719; 65535}
+          [15].min ∈ {0}
+          [15].max ∈ {65535}
+          [16].min ∈ {0; 47616}
+          [16].max ∈ {58623; 65535}
+          [17].min ∈ {0; 47616}
+          [17].max ∈ {58623; 65535}
+          [18].min ∈ {0; 43008}
+          [18].max ∈ {58367; 65535}
+          [19].min ∈ {0; 47616}
+          [19].max ∈ {58623; 65535}
+          [20].min ∈ {0; 3328}
+          [20].max ∈ {8959; 65535}
+          [21].min ∈ {0; 3328}
+          [21].max ∈ {8959; 65535}
+          [22].min ∈ {0; 3584}
+          [22].max ∈ {11519; 65535}
+          [23].min ∈ {0}
+          [23].max ∈ {65535}
+          [24].min ∈ {0}
+          [24].max ∈ {65535}
+          [25].min ∈ {0}
+          [25].max ∈ {65535}
+          [26].min ∈ {0}
+          [26].max ∈ {65535}
+          [27].min ∈ {0}
+          [27].max ∈ {65535}
+          [28].min ∈ {0}
+          [28].max ∈ {65535}
+          [29].min ∈ {0}
+          [29].max ∈ {64255; 65535}
+          [30].min ∈ {0}
+          [30].max ∈ {62719; 65535}
+          [31].min ∈ {0}
+          [31].max ∈ {65535}
+          [32].min ∈ {0}
+          [32].max ∈ {65535}
+          [33].min ∈ {0}
+          [33].max ∈ {65535}
+          [34].min ∈ {0}
+          [34].max ∈ {65535}
+          [35].min ∈ {0}
+          [35].max ∈ {65535}
+          [36].min ∈ {0}
+          [36].max ∈ {65535}
+          [37].min ∈ {0}
+          [37].max ∈ {64255; 65535}
+          [38].min ∈ {0}
+          [38].max ∈ {62719; 65535}
+          [39].min ∈ {0}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-4999..255]
   ad_conv_delay[0..5] ∈ {0; 2}
@@ -6490,17 +6620,37 @@
   tm_lsb ∈ [--..--]
   tc_timer_overflow ∈ {0; 1}
   ad_limit[0].min ∈ {0}
-          {[0].max; [1..4]{.min; .max}} ∈ {0; 65535}
+          [0].max ∈ {65535}
+          [1].min ∈ {0}
+          [1].max ∈ {65535}
+          [2].min ∈ {0}
+          [2].max ∈ {65535}
+          [3].min ∈ {0}
+          [3].max ∈ {65535}
+          [4].min ∈ {0}
+          [4].max ∈ {65535}
           [5].min ∈ {0}
           [5].max ∈ {64255}
           [6].min ∈ {0}
           [6].max ∈ {62719}
-          [7..12]{.min; .max} ∈ {0; 65535}
+          [7].min ∈ {0}
+          [7].max ∈ {65535}
+          [8].min ∈ {0}
+          [8].max ∈ {65535}
+          [9].min ∈ {0}
+          [9].max ∈ {65535}
+          [10].min ∈ {0}
+          [10].max ∈ {65535}
+          [11].min ∈ {0}
+          [11].max ∈ {65535}
+          [12].min ∈ {0}
+          [12].max ∈ {65535}
           [13].min ∈ {0}
           [13].max ∈ {64255}
           [14].min ∈ {0}
           [14].max ∈ {62719}
-          [15]{.min; .max} ∈ {0; 65535}
+          [15].min ∈ {0}
+          [15].max ∈ {65535}
           [16].min ∈ {47616}
           [16].max ∈ {58623}
           [17].min ∈ {47616}
@@ -6515,17 +6665,39 @@
           [21].max ∈ {8959}
           [22].min ∈ {3584}
           [22].max ∈ {11519}
-          [23..28]{.min; .max} ∈ {0; 65535}
+          [23].min ∈ {0}
+          [23].max ∈ {65535}
+          [24].min ∈ {0}
+          [24].max ∈ {65535}
+          [25].min ∈ {0}
+          [25].max ∈ {65535}
+          [26].min ∈ {0}
+          [26].max ∈ {65535}
+          [27].min ∈ {0}
+          [27].max ∈ {65535}
+          [28].min ∈ {0}
+          [28].max ∈ {65535}
           [29].min ∈ {0}
           [29].max ∈ {64255}
           [30].min ∈ {0}
           [30].max ∈ {62719}
-          [31..36]{.min; .max} ∈ {0; 65535}
+          [31].min ∈ {0}
+          [31].max ∈ {65535}
+          [32].min ∈ {0}
+          [32].max ∈ {65535}
+          [33].min ∈ {0}
+          [33].max ∈ {65535}
+          [34].min ∈ {0}
+          [34].max ∈ {65535}
+          [35].min ∈ {0}
+          [35].max ∈ {65535}
+          [36].min ∈ {0}
+          [36].max ∈ {65535}
           [37].min ∈ {0}
           [37].max ∈ {64255}
           [38].min ∈ {0}
           [38].max ∈ {62719}
-          [39].min ∈ {0; 65535}
+          [39].min ∈ {0}
           [39].max ∈ {65535}
   ad_conv_timer ∈ [-5000..2147483647]
   ad_conv_delay[0..5] ∈ [0..34]
@@ -7302,5 +7474,5 @@
     Preconditions   373 valid     0 unknown     0 invalid    373 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-103.75user 1.52system 1:45.29elapsed 99%CPU (0avgtext+0avgdata 1094228maxresident)k
-0inputs+17632outputs (0major+287965minor)pagefaults 0swaps
+102.37user 1.67system 1:44.07elapsed 99%CPU (0avgtext+0avgdata 1098968maxresident)k
+0inputs+17504outputs (0major+289266minor)pagefaults 0swaps

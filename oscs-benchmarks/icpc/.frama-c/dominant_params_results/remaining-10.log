@@ -9,6 +9,20 @@
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
 [variadic] src/main.c:41: Warning: 
   Call to function fprintf with non-static format argument: assuming that parameters are coherent with the format, and that no %n specifiers are present in the actual string.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 27 (not modified).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history already set to 1 (not modified).
+  option -eva-slevel already set to 40 (not modified).
+  option -eva-ilevel already set to 62 (not modified).
+  option -eva-plevel already set to 108 (not modified).
+  option -eva-subdivide-non-linear already set to 12 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -190,8 +204,8 @@
 [eva] src/main.c:35: Trace partitioning superposing up to 100 states
 [eva:alarm] src/impls.c:96: Warning: 
   signed overflow. assert _t + delayMs ≤ 2147483647;
-[eva] src/impls.c:140: cannot properly split on \result == -1
 [eva] src/main.c:35: Trace partitioning superposing up to 200 states
+[eva] src/impls.c:140: cannot properly split on \result == -1
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function Interpolate_from_curve:
   result ∈ [-60. .. 60.]
@@ -263,8 +277,8 @@
 [eva:final-states] Values at end of function Timer_elapsedTime:
   __retres ∈ [0. .. 3.40282346639e+38]
 [eva:final-states] Values at end of function Timer_start:
-  initTimer ∈ [0. .. 10.04]
-  shutdownTimer ∈ [0. .. 0.42]
+  initTimer ∈ [0. .. 10000000000.]
+  shutdownTimer ∈ [0. .. 10000000000.]
 [eva:final-states] Values at end of function Timer_tick:
   initTimer ∈ [0. .. 3.40282346639e+38]
   shutdownTimer ∈ [0. .. 3.40282346639e+38]
@@ -385,9 +399,9 @@
   Sim_maxPos_PARAM ∈ {121.}
   Sim_minPos_PARAM ∈ {-121.}
   Srv_PT1 ∈ [-1e+80 .. 1e+80]
-  lastTime ∈ [180..2147483640],0%20
+  lastTime ∈ [780..2147483640],0%20
   cnt ∈ {9000}
-  _t ∈ [200..2147483640],0%20
+  _t ∈ [800..2147483640],0%20
   angleDiffRequest ∈ [-1. .. 1.]
   desiredEngineVoltage ∈ [-10. .. 10.]
   initBackwards ∈ {0; 1}
@@ -440,5 +454,5 @@
     Preconditions    14 valid     0 unknown     0 invalid     14 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.86user 0.19system 0:03.06elapsed 99%CPU (0avgtext+0avgdata 185956maxresident)k
-0inputs+6296outputs (0major+46558minor)pagefaults 0swaps
+4.10user 0.19system 0:04.30elapsed 99%CPU (0avgtext+0avgdata 206324maxresident)k
+0inputs+6296outputs (0major+51654minor)pagefaults 0swaps

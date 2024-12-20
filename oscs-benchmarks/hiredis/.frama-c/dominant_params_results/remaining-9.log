@@ -30,6 +30,20 @@
 [kernel] Parsing fc_stubs.c (with preprocessing)
 [variadic:typing] read.c:90: Warning: 
   Incorrect type for argument 4. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 466 (not modified).
+  option -eva-widening-delay already set to 20 (not modified).
+  option -eva-partition-history already set to 2 (not modified).
+  option -eva-slevel already set to 499 (not modified).
+  option -eva-ilevel already set to 467 (not modified).
+  option -eva-plevel already set to 2438 (not modified).
+  option -eva-subdivide-non-linear already set to 45 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   callbackDict.hashFunction ∈ {{ &callbackHash }}
@@ -71,9 +85,11 @@
 [eva] using specification for function atoi
 [eva] using specification for function fprintf_va_2
 [eva] using specification for function exit
-[eva] test.c:1008: Trace partitioning superposing up to 100 states
+[eva] test.c:981: Trace partitioning superposing up to 100 states
+[eva] test.c:981: Trace partitioning superposing up to 200 states
 [eva] using specification for function signal
 [eva] using specification for function access
+[eva] test.c:1015: Trace partitioning superposing up to 400 states
 [eva] using specification for function printf_va_271
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function strcmp:
@@ -133,5 +149,5 @@
     Preconditions     8 valid     0 unknown     0 invalid      8 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-7.95user 0.54system 0:08.50elapsed 99%CPU (0avgtext+0avgdata 233012maxresident)k
-0inputs+25240outputs (0major+108348minor)pagefaults 0swaps
+15.83user 0.35system 0:16.19elapsed 99%CPU (0avgtext+0avgdata 244492maxresident)k
+16inputs+25248outputs (0major+81295minor)pagefaults 0swaps

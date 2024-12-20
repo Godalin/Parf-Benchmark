@@ -1,91 +1,20 @@
 [kernel] Parsing src/x509-parser.c (with preprocessing)
 [kernel:typing:incompatible-types-call] src/x509-parser.c:9242: Warning: 
   expected 'char *' but got argument of type 'u8 *': buf
-[eva] Splitting return states on:
-  \return(getcwd) == 0 (auto)
-  \return(ttyname) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(parse_x509_cert) == 0 (auto)
-  \return(Frama_C_nondet_ptr) == 0 (auto)
-  \return(Frama_C_malloc_fresh) == 0 (auto)
-  \return(bufs_differ) == 0 (auto)
-  \return(_extract_complex_tag) == 0 (auto)
-  \return(get_identifier) == 0 (auto)
-  \return(get_length) == 0 (auto)
-  \return(parse_id_len) == 0 (auto)
-  \return(parse_explicit_id_len) == 0 (auto)
-  \return(_parse_arc) == 0 (auto)
-  \return(parse_OID) == 0 (auto)
-  \return(parse_integer) == 0 (auto)
-  \return(parse_boolean) == 0 (auto)
-  \return(parse_x509_Version) == 0 (auto)
-  \return(parse_CertificateSerialNumber) == 0 (auto)
-  \return(find_curve_by_oid) == 0 (auto)
-  \return(find_alg_by_oid) == 0 (auto)
-  \return(parse_x509_AlgorithmIdentifier) == 0 (auto)
-  \return(check_utf8_string) == 0 (auto)
-  \return(check_printable_string) == 0 (auto)
-  \return(check_visible_string) == 0 (auto)
-  \return(check_teletex_string) == 0 (auto)
-  \return(check_universal_string) == 0 (auto)
-  \return(check_bmp_string) == 0 (auto)
-  \return(check_ia5_string) == 0 (auto)
-  \return(parse_ia5_string) == 0 (auto)
-  \return(_is_digit) == 0 (auto)
-  \return(_is_alpha) == 0 (auto)
-  \return(find_dn_by_oid) == 0 (auto)
-  \return(parse_AttributeTypeAndValue) == 0 (auto)
-  \return(parse_RelativeDistinguishedName) == 0 (auto)
-  \return(parse_x509_Name) == 0 (auto)
-  \return(parse_UTCTime) == 0 (auto)
-  \return(parse_generalizedTime) == 0 (auto)
-  \return(parse_Time) == 0 (auto)
-  \return(_verify_correct_time_use) == 0 (auto)
-  \return(parse_x509_Validity) == 0 (auto)
-  \return(parse_x509_subjectPublicKeyInfo) == 0 (auto)
-  \return(parse_GeneralName) == 0 (auto)
-  \return(parse_GeneralNames) == 0 (auto)
-  \return(parse_AccessDescription) == 0 (auto)
-  \return(parse_nine_bit_named_bit_list) == 0 (auto)
-  \return(parse_CPSuri) == 0 (auto)
-  \return(parse_DisplayText) == 0 (auto)
-  \return(parse_NoticeReference) == 0 (auto)
-  \return(parse_UserNotice) == 0 (auto)
-  \return(parse_policyQualifierInfo) == 0 (auto)
-  \return(parse_PolicyInformation) == 0 (auto)
-  \return(parse_GeneralSubtrees) == 0 (auto)
-  \return(find_kp_by_oid) == 0 (auto)
-  \return(parse_crldp_reasons) == 0 (auto)
-  \return(parse_DistributionPoint) == 0 (auto)
-  \return(find_ext_by_oid) == 0 (auto)
-  \return(check_record_ext_unknown) == 0 (auto)
-  \return(parse_x509_Extension) == 0 (auto)
-  \return(parse_x509_Extensions) == 0 (auto)
-  \return(parse_x509_tbsCertificate) == 0 (auto)
-  \return(parse_x509_signatureAlgorithm) == 0 (auto)
-  \return(parse_x509_signatureValue) == 0 (auto)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   _ecdsa_sha1_name[0] ∈ {101}
@@ -2520,12 +2449,10 @@
   function _extract_complex_tag: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:99: Warning: 
   function _extract_complex_tag: postcondition got status unknown.
-[eva] src/x509-parser.c:164: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:190: Warning: 
   function get_identifier: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:192: Warning: 
   function get_identifier: postcondition got status unknown.
-[eva] src/x509-parser.c:282: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:527: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:548: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)cur_parsed);
@@ -2543,7 +2470,6 @@
   function get_length: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:301: Warning: 
   function get_length: postcondition got status unknown.
-[eva] src/x509-parser.c:450: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:561: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)cur_parsed);
 [eva:alarm] src/x509-parser.c:490: Warning: 
@@ -2552,7 +2478,6 @@
   function parse_id_len: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:492: Warning: 
   function parse_id_len: postcondition got status unknown.
-[eva] src/x509-parser.c:578: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9130: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)eaten);
 [eva:alarm] src/x509-parser.c:9144: Warning: 
@@ -2595,12 +2520,10 @@
   function parse_explicit_id_len: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:599: Warning: 
   function parse_explicit_id_len: postcondition got status unknown.
-[eva] src/x509-parser.c:653: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:997: Warning: 
   function parse_x509_Version: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:998: Warning: 
   function parse_x509_Version: postcondition got status unknown.
-[eva] src/x509-parser.c:1045: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8564: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8567: Warning: 
@@ -2619,12 +2542,10 @@
   unsigned downcast. assert (int)((int)hdr_len + (int)data_len) ≤ 65535;
 [eva:alarm] src/x509-parser.c:853: Warning: 
   function parse_integer: postcondition got status unknown.
-[eva] src/x509-parser.c:917: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:1064: Warning: 
   function parse_CertificateSerialNumber: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:1065: Warning: 
   function parse_CertificateSerialNumber: postcondition got status unknown.
-[eva] src/x509-parser.c:1130: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8576: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8579: Warning: 
@@ -2662,7 +2583,6 @@
   function _parse_arc: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:666: Warning: 
   function _parse_arc: postcondition got status unknown.
-[eva] src/x509-parser.c:737: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:815: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:820: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)rbytes);
@@ -2675,7 +2595,6 @@
   function parse_OID: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:753: Warning: 
   function parse_OID: postcondition got status unknown.
-[eva] src/x509-parser.c:839: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:2410: Warning: 
   function find_alg_by_oid: precondition len > 0 ∧ buf ≢ (u8 const *)0 ⇒
                                          \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -2685,7 +2604,6 @@
   function find_alg_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:2311: Warning: 
   function find_alg_by_oid: postcondition got status unknown.
-[eva] src/x509-parser.c:2350: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:2419: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)oid_len);
 [eva:alarm] src/x509-parser.c:2423: Warning: 
@@ -2752,7 +2670,6 @@
 [eva:alarm] src/x509-parser.c:59: Warning: loop invariant got status unknown.
 [eva:alarm] src/x509-parser.c:1822: Warning: 
   function find_curve_by_oid: postcondition got status unknown.
-[eva] src/x509-parser.c:1862: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:1873: Warning: 
   function parse_algoid_params_ecPublicKey: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:1875: Warning: 
@@ -2779,7 +2696,6 @@
   function parse_x509_AlgorithmIdentifier: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:2372: Warning: 
   function parse_x509_AlgorithmIdentifier: postcondition got status unknown.
-[eva] src/x509-parser.c:2435: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8585: Warning: 
   out of bounds read. assert \valid_read(&alg->alg_type);
 [eva:alarm] src/x509-parser.c:8592: Warning: 
@@ -2829,9 +2745,14 @@
   function find_dn_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:3483: Warning: 
   function find_dn_by_oid: postcondition got status unknown.
-[eva] src/x509-parser.c:3522: cannot properly split on \result == 0
+[kernel] src/x509-parser.c:3509: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/x509-parser.c:3514: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:3587: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)oid_len);
+[kernel] src/x509-parser.c:3594: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:3602: Warning: 
   function parse_rdn_val_pseudo: precondition len > 0 ∧ buf ≢ \null ⇒
                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -2853,7 +2774,6 @@
 [eva:alarm] src/x509-parser.c:2653: Warning: 
   out of bounds read. assert \valid_read(buf + rbytes);
 [eva:alarm] src/x509-parser.c:2648: Warning: loop invariant got status unknown.
-[eva] src/x509-parser.c:2687: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:2902: Warning: 
   function check_utf8_string: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -2864,7 +2784,6 @@
 [eva] src/x509-parser.c:2485: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:2486: Warning: 
   out of bounds read. assert \valid_read(buf + 0);
-[eva] src/x509-parser.c:2614: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:2914: Warning: 
   function check_teletex_string: precondition len > 0 ∧ buf ≢ \null ⇒
                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -2898,10 +2817,8 @@
 [eva:alarm] src/x509-parser.c:3032: Warning: loop invariant got status unknown.
 [eva:alarm] src/x509-parser.c:3038: Warning: 
   out of bounds read. assert \valid_read(buf + i);
-[eva] src/x509-parser.c:3048: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:3059: Warning: 
   function parse_ia5_string: postcondition got status unknown.
-[eva] src/x509-parser.c:3111: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:3336: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - 2);
 [eva:alarm] src/x509-parser.c:3339: Warning: 
@@ -3026,13 +2943,11 @@
 [eva:alarm] src/x509-parser.c:3609: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:3539: Warning: 
   function parse_AttributeTypeAndValue: postcondition got status unknown.
-[eva] src/x509-parser.c:3614: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:3677: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)rdn_remain - (int)parsed);
 [eva] src/x509-parser.c:3663: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:3628: Warning: 
   function parse_RelativeDistinguishedName: postcondition got status unknown.
-[eva] src/x509-parser.c:3686: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:3806: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva] src/x509-parser.c:3796: starting to merge loop iterations
@@ -3043,7 +2958,6 @@
   function parse_x509_Name: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:3763: Warning: 
   function parse_x509_Name: postcondition got status unknown.
-[eva] src/x509-parser.c:3816: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8616: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8619: Warning: 
@@ -3145,7 +3059,6 @@
   function parse_Time: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4156: Warning: 
   function parse_Time: postcondition got status unknown.
-[eva] src/x509-parser.c:4237: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:4302: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)nb_len);
 [eva:alarm] src/x509-parser.c:4306: Warning: 
@@ -3159,7 +3072,6 @@
   function parse_x509_Validity: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4255: Warning: 
   function parse_x509_Validity: postcondition got status unknown.
-[eva] src/x509-parser.c:4366: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8626: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8629: Warning: 
@@ -3257,7 +3169,6 @@
   function parse_x509_subjectPublicKeyInfo: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4383: Warning: 
   function parse_x509_subjectPublicKeyInfo: postcondition got status unknown.
-[eva] src/x509-parser.c:4456: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8658: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8690: Warning: 
@@ -3297,7 +3208,10 @@
   function find_ext_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8063: Warning: 
   function find_ext_by_oid: postcondition got status unknown.
-[eva] src/x509-parser.c:8102: cannot properly split on \result == 0
+[kernel] src/x509-parser.c:8089: 
+  more than 10(29) elements to enumerate. Approximating.
+[kernel] src/x509-parser.c:8094: 
+  more than 10(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8259: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)oid_len);
 [eva:alarm] src/x509-parser.c:8268: Warning: 
@@ -3315,7 +3229,6 @@
   function parse_boolean: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:936: Warning: 
   function parse_boolean: postcondition got status unknown.
-[eva] src/x509-parser.c:978: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8276: Warning: 
   out of bounds read. assert \valid_read(buf + 2);
 [eva:alarm] src/x509-parser.c:8289: Warning: 
@@ -3325,6 +3238,8 @@
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:8305: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)hdr_len);
+[kernel] src/x509-parser.c:8315: 
+  more than 10(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_bad_oid: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3411,7 +3326,6 @@
 [eva:alarm] src/x509-parser.c:4740: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:4575: Warning: 
   function parse_GeneralName: postcondition got status unknown.
-[eva] src/x509-parser.c:4768: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:4817: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva] src/x509-parser.c:4810: starting to merge loop iterations
@@ -3419,7 +3333,6 @@
   function parse_GeneralNames: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4779: Warning: 
   function parse_GeneralNames: postcondition got status unknown.
-[eva] src/x509-parser.c:4826: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7480: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)dpn_remain - (int)dpn_eaten);
 [eva:alarm] src/x509-parser.c:7511: Warning: 
@@ -3456,12 +3369,10 @@
 [eva] src/x509-parser.c:5443: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:5295: Warning: 
   function parse_nine_bit_named_bit_list: postcondition got status unknown.
-[eva] src/x509-parser.c:5458: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7344: Warning: 
   function parse_crldp_reasons: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:7345: Warning: 
   function parse_crldp_reasons: postcondition got status unknown.
-[eva] src/x509-parser.c:7381: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7525: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:7536: Warning: 
@@ -3473,7 +3384,6 @@
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:7412: Warning: 
   function parse_DistributionPoint: postcondition got status unknown.
-[eva] src/x509-parser.c:7570: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7652: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
 [eva] src/x509-parser.c:7643: starting to merge loop iterations
@@ -3501,7 +3411,6 @@
   function find_kp_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:7192: Warning: 
   function find_kp_by_oid: postcondition got status unknown.
-[eva] src/x509-parser.c:7231: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7316: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)oid_len);
 [eva] src/x509-parser.c:7290: starting to merge loop iterations
@@ -3571,7 +3480,6 @@
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:6841: Warning: 
   function parse_GeneralSubtrees: postcondition got status unknown.
-[eva] src/x509-parser.c:6914: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6984: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)data_len);
 [eva:alarm] src/x509-parser.c:6988: Warning: 
@@ -3746,7 +3654,6 @@
   function parse_CPSuri: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5593: Warning: 
   function parse_CPSuri: postcondition got status unknown.
-[eva] src/x509-parser.c:5618: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5986: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)cpsuri_len);
 [eva:alarm] src/x509-parser.c:5990: Warning: 
@@ -3800,7 +3707,6 @@
 [eva] src/x509-parser.c:2760: Trace partitioning superposing up to 100 states
 [eva:alarm] src/x509-parser.c:2697: Warning: 
   function check_visible_string: postcondition got status unknown.
-[eva] src/x509-parser.c:2774: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5690: Warning: 
   function check_bmp_string: precondition len > 0 ∧ buf ≢ \null ⇒
                                           \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3808,7 +3714,6 @@
   function parse_DisplayText: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5635: Warning: 
   function parse_DisplayText: postcondition got status unknown.
-[eva] src/x509-parser.c:5714: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5775: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:5782: Warning: 
@@ -3827,7 +3732,6 @@
   function parse_NoticeReference: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5736: Warning: 
   function parse_NoticeReference: postcondition got status unknown.
-[eva] src/x509-parser.c:5824: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5888: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:5893: Warning: 
@@ -3839,18 +3743,15 @@
   function parse_UserNotice: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5850: Warning: 
   function parse_UserNotice: postcondition got status unknown.
-[eva] src/x509-parser.c:5910: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6002: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)cpsunotice_len);
 [eva:alarm] src/x509-parser.c:5932: Warning: 
   function parse_policyQualifierInfo: postcondition got status unknown.
-[eva] src/x509-parser.c:6016: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6108: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)pqi_len);
 [eva] src/x509-parser.c:6099: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:6031: Warning: 
   function parse_PolicyInformation: postcondition got status unknown.
-[eva] src/x509-parser.c:6124: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6244: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
 [eva] src/x509-parser.c:6237: starting to merge loop iterations
@@ -3973,7 +3874,6 @@
 [eva:alarm] src/x509-parser.c:4928: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:4834: Warning: 
   function parse_AccessDescription: postcondition got status unknown.
-[eva] src/x509-parser.c:4932: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5064: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva] src/x509-parser.c:5054: starting to merge loop iterations
@@ -3983,16 +3883,13 @@
   function parse_ext_AIA: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8177: Warning: 
   function parse_x509_Extension: postcondition got status unknown.
-[eva] src/x509-parser.c:8327: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8428: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)ext_len);
 [eva] src/x509-parser.c:8418: starting to merge loop iterations
 [eva] src/x509-parser.c:8123: starting to merge loop iterations
-[eva] src/x509-parser.c:8154: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8450: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:8353: Warning: 
   function parse_x509_Extensions: postcondition got status unknown.
-[eva] src/x509-parser.c:8456: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8697: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8803: Warning: assertion got status unknown.
@@ -4003,7 +3900,6 @@
   function parse_x509_tbsCertificate: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8491: Warning: 
   function parse_x509_tbsCertificate: postcondition got status unknown.
-[eva] src/x509-parser.c:8810: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9150: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)eaten);
 [eva:alarm] src/x509-parser.c:9154: Warning: 
@@ -4030,7 +3926,6 @@
   function parse_x509_signatureAlgorithm: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8820: Warning: 
   function parse_x509_signatureAlgorithm: postcondition got status unknown.
-[eva] src/x509-parser.c:8870: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9160: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)eaten);
 [eva:alarm] src/x509-parser.c:9164: Warning: 
@@ -4086,11 +3981,8 @@
   function parse_x509_signatureValue: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:9058: Warning: 
   function parse_x509_signatureValue: postcondition got status unknown.
-[eva] src/x509-parser.c:9096: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9103: Warning: 
   function parse_x509_cert: postcondition got status unknown.
-[eva] src/x509-parser.c:9180: cannot properly split on \result == 0
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function _extract_complex_tag:
   len ∈ {0; 1; 2; 3; 4}
@@ -5158,5 +5050,5 @@
     Preconditions   614 valid   231 unknown     0 invalid    845 total
   68% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.87user 0.15system 0:05.02elapsed 99%CPU (0avgtext+0avgdata 225108maxresident)k
-0inputs+3032outputs (0major+49736minor)pagefaults 0swaps
+4.36user 0.21system 0:04.57elapsed 99%CPU (0avgtext+0avgdata 213708maxresident)k
+0inputs+3032outputs (0major+46916minor)pagefaults 0swaps

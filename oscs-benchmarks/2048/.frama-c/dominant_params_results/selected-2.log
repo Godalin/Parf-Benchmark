@@ -1,6 +1,20 @@
 [kernel] Parsing 2048.c (with preprocessing)
 [variadic:typing] 2048.c:46: Warning: 
   Incorrect type for argument 2. The argument will be cast from uint32_t to int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 108 (not modified).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   score ∈ {0}
@@ -13,6 +27,32 @@
 [eva] using specification for function time
 [eva] using specification for function srand
 [eva] using specification for function rand
+[kernel] 2048.c:240: more than 10(16) elements to enumerate. Approximating.
+[kernel] 2048.c:241: more than 10(16) elements to enumerate. Approximating.
+[kernel] 2048.c:240: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] 2048.c:241: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] 2048.c:240: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] 2048.c:241: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] 2048.c:240: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] 2048.c:241: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] 2048.c:240: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] 2048.c:241: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] 2048.c:240: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] 2048.c:241: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] 2048.c:240: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] 2048.c:241: 
+  more than 10(16) locations to update in array. Approximating.
 [eva:alarm] 2048.c:249: Warning: 
   accessing uninitialized left-value. assert \initialized(&list[r][0]);
 [eva:alarm] 2048.c:250: Warning: 
@@ -255,29 +295,9 @@
   r ∈ [0..15] or UNINITIALIZED
   len ∈ [0..16]
   n ∈ {1; 2} or UNINITIALIZED
-  list[0..3][0..1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [4][0] ∈ {1; 2; 3} or UNINITIALIZED
-      [4][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [5][0] ∈ {1; 2; 3} or UNINITIALIZED
-      [5][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [6][0] ∈ {1; 2; 3} or UNINITIALIZED
-      [6][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [7][0] ∈ {1; 2; 3} or UNINITIALIZED
-      [7][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [8][0] ∈ {2; 3} or UNINITIALIZED
-      [8][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [9][0] ∈ {2; 3} or UNINITIALIZED
-      [9][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [10][0] ∈ {2; 3} or UNINITIALIZED
-      [10][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [11][0] ∈ {2; 3} or UNINITIALIZED
-      [11][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [12][0] ∈ {3} or UNINITIALIZED
-      [12][1] ∈ {0; 1; 2; 3} or UNINITIALIZED
-      [13][0] ∈ {3} or UNINITIALIZED
-      [13][1] ∈ {1; 2; 3} or UNINITIALIZED
-      [14][0] ∈ {3} or UNINITIALIZED
-      [14][1] ∈ {2; 3} or UNINITIALIZED
+  list[0..12][0..1] ∈ {0; 1; 2; 3} or UNINITIALIZED
+      [13][0..1] ∈ {1; 2; 3} or UNINITIALIZED
+      [14][0..1] ∈ {2; 3} or UNINITIALIZED
       [15][0..1] ∈ {3} or UNINITIALIZED
   board[0..3][0..3] ∈ [0..31]
   addRandom_initialized ∈ {1}
@@ -319,5 +339,5 @@
     Preconditions    36 valid     5 unknown     0 invalid     41 total
   87% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.06user 0.13system 0:02.20elapsed 99%CPU (0avgtext+0avgdata 149792maxresident)k
-0inputs+2448outputs (0major+30914minor)pagefaults 0swaps
+2.09user 0.10system 0:02.20elapsed 100%CPU (0avgtext+0avgdata 148672maxresident)k
+0inputs+2456outputs (0major+30709minor)pagefaults 0swaps

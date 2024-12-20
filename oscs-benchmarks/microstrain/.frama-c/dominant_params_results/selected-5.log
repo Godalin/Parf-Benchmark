@@ -65,6 +65,20 @@
   Incorrect type for argument 2. The argument will be cast from int to unsigned int.
 [variadic:typing] MIPSDK/C/Examples/Linux/GX4-45/GX4_45_Test/GX4-45_Test.c:1090: Warning: 
   Incorrect type for argument 2. The argument will be cast from u32 to unsigned long long.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 12 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   enable_data_stats_output ∈ {0}
@@ -130,8 +144,6 @@
 [eva] using specification for function printf_va_3
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-[eva] MIPSDK/C/Library/Source/mip_sdk_inteface.c:96: 
-  starting to merge loop iterations
 [eva] using specification for function printf_va_7
 [eva] using specification for function printf_va_8
 [eva] using specification for function printf_va_9
@@ -257,37 +269,45 @@
   Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets {2712}).
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2720}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2728}).
+  The imprecision originates from Misaligned
 [eva] MIPSDK/C/Library/Source/mip_sdk_inteface.c:527: 
   starting to merge loop iterations
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2712; 2720}).
+  (pointing to device_interface with offsets {2728; 2736}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2712; 2720; 2728}).
+  (pointing to device_interface with offsets {2728; 2736; 2744}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2712..4680],0%8).
+  (pointing to device_interface with offsets [2728..4680],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2712..4688],0%8).
+  (pointing to device_interface with offsets [2728..4688],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2712..4704],0%8).
+  (pointing to device_interface with offsets [2728..4704],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2712..4712],0%8).
+  (pointing to device_interface with offsets [2728..4712],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] MIPSDK/C/Library/Source/ring_buffer.c:511: Warning: 
   out of bounds write. assert \valid(entry + i);
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2712..6520],0%8).
+  (pointing to device_interface with offsets [2728..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
@@ -412,8 +432,6 @@
   assert
   \pointer_comparable((void (*)())device_interface_0->callback_function_list[i],
                      (void (*)())0);
-[eva] MIPSDK/C/Library/Source/mip_sdk_inteface.c:642: 
-  starting to merge loop iterations
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:647: 
   Assigning imprecise value to *callback_user_ptr
   (pointing to callback_user_ptr).
@@ -566,6 +584,54 @@
   (pointing to device_interface with offsets {2624}).
   The imprecision originates from Misaligned
   {MIPSDK/C/Library/Source/ring_buffer.c:511}
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2632}).
+  The imprecision originates from Misaligned
+  {MIPSDK/C/Library/Source/ring_buffer.c:511}
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2640}).
+  The imprecision originates from Misaligned
+  {MIPSDK/C/Library/Source/ring_buffer.c:511}
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2648}).
+  The imprecision originates from Misaligned
+  {MIPSDK/C/Library/Source/ring_buffer.c:511}
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2656}).
+  The imprecision originates from Misaligned
+  {MIPSDK/C/Library/Source/ring_buffer.c:511}
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2664; 2672}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2664; 2672; 2680}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2664..4680],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2664..4688],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2664..4704],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2664..4712],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2664..6520],0%8).
+  The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:219: 
   Assigning imprecise value to __retres.
   The imprecision originates from Misaligned
@@ -666,21 +732,29 @@
   Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets {2680}).
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:438: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2688}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:438: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2696}).
+  The imprecision originates from Misaligned
 [eva] MIPSDK/C/Library/Source/ring_buffer.c:437: 
   starting to merge loop iterations
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:438: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2680; 2688}).
+  (pointing to device_interface with offsets {2696; 2704}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:438: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2680; 2688; 2696}).
+  (pointing to device_interface with offsets {2696; 2704; 2712}).
   The imprecision originates from Misaligned
 [eva:alarm] MIPSDK/C/Library/Source/ring_buffer.c:438: Warning: 
   out of bounds write. assert \valid(entry + i);
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:438: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2680..6520],0%8).
+  (pointing to device_interface with offsets [2696..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:441: 
   Assigning imprecise value to buffer->position
@@ -711,30 +785,6 @@
   starting to merge loop iterations
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2688; 2696}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2688; 2696; 2704}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2688..6520],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2696; 2704}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2696; 2704; 2712}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2696..6520],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets {2704; 2712}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
@@ -745,20 +795,17 @@
   Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets [2704..6520],0%8).
   The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:497: 
-  Assigning imprecise value to device_interface_0->parser_headers_skipped
-  (pointing to device_interface with offsets {4832}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:506: 
-  Assigning imprecise value to device_interface_0->parser_timeouts
-  (pointing to device_interface with offsets {4768}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:524: 
-  Assigning imprecise value to tmp_7.
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2712; 2720}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2720}).
+  (pointing to device_interface with offsets {2712; 2720; 2728}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2712..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
@@ -772,21 +819,16 @@
   Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets [2720..6520],0%8).
   The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2728}).
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:497: 
+  Assigning imprecise value to device_interface_0->parser_headers_skipped
+  (pointing to device_interface with offsets {4832}).
   The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2728; 2736}).
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:506: 
+  Assigning imprecise value to device_interface_0->parser_timeouts
+  (pointing to device_interface with offsets {4768}).
   The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2728; 2736; 2744}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2728..6520],0%8).
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:524: 
+  Assigning imprecise value to tmp_7.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
@@ -918,67 +960,179 @@
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2792; 2800; 2808; 2816}).
+  (pointing to device_interface with offsets {2800}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets {2792; 2800; 2808; 2816; 2824}).
+  (pointing to device_interface with offsets {2800; 2808}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2720..4688],0%8).
+  (pointing to device_interface with offsets {2800; 2808; 2816}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2728..4696],0%8).
+  (pointing to device_interface with offsets [2800..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2736..4704],0%8).
+  (pointing to device_interface with offsets {2808}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2744..4712],0%8).
+  (pointing to device_interface with offsets {2808; 2816}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2752..4720],0%8).
+  (pointing to device_interface with offsets {2808; 2816; 2824}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2760..4728],0%8).
+  (pointing to device_interface with offsets [2808..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2768..4736],0%8).
+  (pointing to device_interface with offsets {2816}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2776..4744],0%8).
+  (pointing to device_interface with offsets {2816; 2824}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2784..4752],0%8).
+  (pointing to device_interface with offsets {2816; 2824; 2832}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4760],0%8).
+  (pointing to device_interface with offsets [2816..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4768],0%8).
+  (pointing to device_interface with offsets {2824}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4776],0%8).
+  (pointing to device_interface with offsets {2824; 2832}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2720..4696],0%8).
+  (pointing to device_interface with offsets {2824; 2832; 2840}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2728..4704],0%8).
+  (pointing to device_interface with offsets [2824..6520],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2824; 2832; 2840; 2848}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets {2824; 2832; 2840; 2848; 2856}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2736..4688],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2744..4696],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2752..4704],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2760..4712],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2768..4720],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2776..4728],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2784..4736],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2792..4744],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2800..4752],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2808..4760],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2816..4768],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2824..4776],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2824..4784],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2824..4792],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2736..4696],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2744..4704],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2752..4712],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2760..4720],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2768..4728],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2776..4736],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2784..4744],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2792..4752],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2800..4760],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2808..4768],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2816..4776],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2824..4800],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
@@ -1010,91 +1164,75 @@
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4784],0%8).
+  (pointing to device_interface with offsets [2792..4768],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2720..4712],0%8).
+  (pointing to device_interface with offsets [2800..4776],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2728..4720],0%8).
+  (pointing to device_interface with offsets [2808..4784],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2736..4728],0%8).
+  (pointing to device_interface with offsets [2816..4792],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2744..4736],0%8).
+  (pointing to device_interface with offsets [2824..4808],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2752..4744],0%8).
+  (pointing to device_interface with offsets [2824..4816],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2760..4752],0%8).
+  (pointing to device_interface with offsets [2736..4720],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2768..4760],0%8).
+  (pointing to device_interface with offsets [2744..4728],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2776..4768],0%8).
+  (pointing to device_interface with offsets [2752..4736],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2784..4776],0%8).
+  (pointing to device_interface with offsets [2760..4744],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4792],0%8).
+  (pointing to device_interface with offsets [2768..4752],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4800],0%8).
+  (pointing to device_interface with offsets [2776..4760],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2720..4720],0%8).
+  (pointing to device_interface with offsets [2784..4768],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2728..4728],0%8).
+  (pointing to device_interface with offsets [2792..4776],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2736..4736],0%8).
+  (pointing to device_interface with offsets [2800..4784],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2744..4744],0%8).
+  (pointing to device_interface with offsets [2808..4792],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2752..4752],0%8).
+  (pointing to device_interface with offsets [2816..4800],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2760..4760],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2768..4768],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2776..4776],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2784..4784],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2792..4808],0%8).
+  (pointing to device_interface with offsets [2824..4824],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
@@ -1110,15 +1248,19 @@
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
-  (pointing to device_interface with offsets [2664..6520],0%8).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
-  Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets [2672..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
   Assigning imprecise value to *(entry + i)
   (pointing to device_interface with offsets [2680..6520],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2688..6520],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/ring_buffer.c:511: 
+  Assigning imprecise value to *(entry + i)
+  (pointing to device_interface with offsets [2696..6520],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_inteface.c:749: 
   Assigning imprecise value to device_interface_0->command_id
@@ -1371,39 +1513,55 @@
   Assigning imprecise value to *end
   (pointing to device_descriptors with offsets {168}).
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to device_descriptors with offsets {176}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to device_descriptors with offsets {184}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to device_descriptors with offsets {192}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to device_descriptors with offsets {200}).
+  The imprecision originates from Misaligned
 [eva] MIPSDK/C/Library/Source/mip_sdk_base.c:221: 
   starting to merge loop iterations
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
-  (pointing to device_descriptors with offsets {160; 176}).
+  (pointing to device_descriptors with offsets {192; 208}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
-  (pointing to device_descriptors with offsets {168; 184}).
+  (pointing to device_descriptors with offsets {200; 216}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
-  (pointing to device_descriptors with offsets {168}).
+  (pointing to device_descriptors with offsets {200}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
-  (pointing to device_descriptors with offsets {176}).
+  (pointing to device_descriptors with offsets {208}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
-  (pointing to device_descriptors with offsets {160; 176; 192}).
+  (pointing to device_descriptors with offsets {192; 208; 224}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
-  (pointing to device_descriptors with offsets {168; 184; 200}).
+  (pointing to device_descriptors with offsets {200; 216; 232}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
-  (pointing to device_descriptors with offsets {168; 184}).
+  (pointing to device_descriptors with offsets {200; 216}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
-  (pointing to device_descriptors with offsets {176; 192}).
+  (pointing to device_descriptors with offsets {208; 224}).
   The imprecision originates from Misaligned
 [eva:alarm] MIPSDK/C/Utilities/Source/byteswap_utilities.c:106: Warning: 
   pointer comparison. assert \pointer_comparable((void *)end, (void *)start);
@@ -1413,36 +1571,52 @@
   out of bounds read. assert \valid_read(end);
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
-  (pointing to device_descriptors with offsets [160..2032],0%16).
+  (pointing to device_descriptors with offsets [192..2032],0%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  more than 10(116) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
-  (pointing to device_descriptors with offsets [168..2040],8%16).
+  (pointing to device_descriptors with offsets [200..2040],8%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  more than 10(116) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
-  (pointing to device_descriptors with offsets [168..2024],8%16).
+  (pointing to device_descriptors with offsets [200..2024],8%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  more than 10(115) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
-  (pointing to device_descriptors with offsets [176..2032],0%16).
+  (pointing to device_descriptors with offsets [208..2032],0%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  more than 10(115) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
   (pointing to device_descriptors with offsets [0..2032],0%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  more than 10(128) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
   (pointing to device_descriptors with offsets [8..2040],8%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  more than 10(128) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
   (pointing to device_descriptors with offsets [8..2024],8%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  more than 10(127) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
   (pointing to device_descriptors with offsets [16..2032],0%16).
   The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  more than 10(127) locations to update in array. Approximating.
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_base.c:197: 
   Assigning imprecise value to user_buffer_size.
   The imprecision originates from Misaligned
@@ -3320,16 +3494,164 @@
   The imprecision originates from Misaligned
 [eva:alarm] MIPSDK/C/Library/Source/mip_sdk_3dm.c:475: Warning: 
   out of bounds read. assert \valid_read(descriptors + i);
-[eva:alarm] MIPSDK/C/Library/Source/mip.c:691: Warning: 
-  accessing uninitialized left-value. assert \initialized(mip_buffer + i);
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
   Assigning imprecise value to *(mip_buffer + checksum_offset)
-  (pointing to mip_packet with offsets [64..304],16%24).
+  (pointing to mip_packet with offsets {88}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
   Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
-  (pointing to mip_packet with offsets [72..312],0%24).
+  (pointing to mip_packet with offsets {96}).
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {112}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {120}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {136}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {144}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {160}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {168}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {184}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {192}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {208}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {216}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {232}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {240}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {256}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {264}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {280}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {288}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
+  Assigning imprecise value to *(mip_buffer + checksum_offset)
+  (pointing to mip_packet with offsets {304}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
+  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
+  (pointing to mip_packet with offsets {312}).
+  The imprecision originates from Misaligned
+[eva] MIPSDK/C/Library/Source/mip_sdk_3dm.c:516: 
+  starting to merge loop iterations
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_3dm.c:518: 
+  Assigning imprecise value to *(descriptors + i)
+  (pointing to data_stream_format_descriptors with offsets {8; 16}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_3dm.c:520: 
+  Assigning imprecise value to *(decimation + i)
+  (pointing to data_stream_format_decimation with offsets {16; 32}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to data_stream_format_decimation with offsets {16; 32}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to data_stream_format_decimation with offsets {24; 40}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to data_stream_format_decimation with offsets {24}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to data_stream_format_decimation with offsets {32}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_3dm.c:518: 
+  Assigning imprecise value to *(descriptors + i)
+  (pointing to data_stream_format_descriptors with offsets {8; 16; 24}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_3dm.c:520: 
+  Assigning imprecise value to *(decimation + i)
+  (pointing to data_stream_format_decimation with offsets {16; 32; 48}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to data_stream_format_decimation with offsets {16; 32; 48}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to data_stream_format_decimation with offsets {24; 40; 56}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to data_stream_format_decimation with offsets {24; 40}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to data_stream_format_decimation with offsets {32; 48}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_3dm.c:518: 
+  Assigning imprecise value to *(descriptors + i)
+  (pointing to data_stream_format_descriptors with offsets [8..72],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip_sdk_3dm.c:520: 
+  Assigning imprecise value to *(decimation + i)
+  (pointing to data_stream_format_decimation with offsets [16..144],0%16).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to data_stream_format_decimation with offsets [16..144],0%16).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to data_stream_format_decimation with offsets [24..152],8%16).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
+  Assigning imprecise value to *start
+  (pointing to data_stream_format_decimation with offsets {24; 40; 56; 72; 88;
+                                                           104; 120; 136}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
+  Assigning imprecise value to *end
+  (pointing to data_stream_format_decimation with offsets {32; 48; 64; 80; 96;
+                                                           112; 128; 144}).
+  The imprecision originates from Misaligned
+[kernel] MIPSDK/C/Library/Source/mip_sdk_3dm.c:475: 
+  more than 10(11) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_131
 [eva] using specification for function printf_va_132
 [eva] using specification for function printf_va_133
@@ -3366,6 +3688,8 @@
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:291: 
   Assigning imprecise value to checksum_offset.
   The imprecision originates from Misaligned
+[eva:alarm] MIPSDK/C/Library/Source/mip.c:691: Warning: 
+  accessing uninitialized left-value. assert \initialized(mip_buffer + i);
 [eva:alarm] MIPSDK/C/Library/Source/mip.c:300: Warning: 
   out of bounds write. assert \valid(mip_buffer + checksum_offset);
 [eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
@@ -3698,6 +4022,8 @@
 [eva] using specification for function printf_va_228
 [eva] using specification for function printf_va_229
 [eva] using specification for function printf_va_230
+[eva] MIPSDK/C/Examples/Linux/GX4-45/GX4_45_Test/GX4-45_Test.c:970: 
+  starting to merge loop iterations
 [eva:alarm] MIPSDK/C/Examples/Linux/GX4-45/GX4_45_Test/GX4-45_Test.c:978: Warning: 
   non-finite float value. assert \is_finite(soft_iron_readback[0]);
 [eva:alarm] MIPSDK/C/Examples/Linux/GX4-45/GX4_45_Test/GX4-45_Test.c:978: Warning: 
@@ -4046,14 +4372,6 @@
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:110: 
   Assigning imprecise value to *end
   (pointing to command_data with offsets {40}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:300: 
-  Assigning imprecise value to *(mip_buffer + checksum_offset)
-  (pointing to mip_packet with offsets {136}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] MIPSDK/C/Library/Source/mip.c:301: 
-  Assigning imprecise value to *(mip_buffer + ((int)checksum_offset + 1))
-  (pointing to mip_packet with offsets {144}).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] MIPSDK/C/Utilities/Source/byteswap_utilities.c:109: 
   Assigning imprecise value to *start
@@ -4702,8 +5020,6 @@
   The imprecision originates from Misaligned
 [eva] using specification for function printf_va_301
 [eva] using specification for function printf_va_302
-[eva] MIPSDK/C/Examples/Linux/GX4-45/GX4_45_Test/GX4-45_Test.c:1207: 
-  starting to merge loop iterations
 [eva] using specification for function printf_va_303
 [eva:alarm] MIPSDK/C/Library/Source/mip_sdk_filter.c:1224: Warning: 
   function memcpy: precondition 'valid_dest' got status invalid.
@@ -5335,7 +5651,6 @@
 [eva] using specification for function printf_va_532
 [eva] using specification for function printf_va_533
 [eva] using specification for function printf_va_534
-[scope:rm_asserts] removing 16 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function __mip_interface_find_callback:
   callback_function ∈
@@ -5448,7 +5763,7 @@
           &command_data{[3], [7], [11]} ; &command_data{[3], [7], [11]} ;
           &command_data{[3], [7], [11]} ; &command_data[2] ;
           &device_info + {1} ; &bit_result + {2} ;
-          &data_stream_format_decimation + [1..19],1%2 ; &base_rate + {1} ;
+          &data_stream_format_decimation + [1..19] ; &base_rate + {1} ;
           &device_descriptors + [1..131070] ; &angles + {2; 6; 10} ;
           &readback_angles + {2; 6; 10} ; &offset + {2; 6; 10} ;
           &readback_offset + {2; 6; 10} ; &hard_iron + {2; 6; 10} ;
@@ -5467,7 +5782,7 @@
         &command_data{[2], [6], [10]} ; &command_data{[2], [6], [10]} ;
         &command_data{[2], [6], [10]} ; &command_data[1] ;
         (u8 *)&device_info ; &bit_result + {1} ;
-        &data_stream_format_decimation + [0..18],0%2 ; (u8 *)&base_rate ;
+        &data_stream_format_decimation + [0..18] ; (u8 *)&base_rate ;
         &device_descriptors + [0..131069] ; &angles + {1; 5; 9} ;
         &readback_angles + {1; 5; 9} ; &offset + {1; 5; 9} ;
         &readback_offset + {1; 5; 9} ; &hard_iron + {1; 5; 9} ;
@@ -7142,7 +7457,7 @@
 [eva:final-states] Values at end of function mip_3dm_cmd_ahrs_message_format:
   __fc_time ∈ [--..--]
   __fc_fds[0..1023] ∈ [--..--]
-  i ∈ [0..10]
+  i ∈ [0..127]
   response_data ∈
                {{ garbled mix of &{__mip_interface_command_response_handler;
                                    device_interface;
@@ -8311,5 +8626,5 @@
     Preconditions   506 valid    90 unknown     0 invalid    596 total
   84% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-17.65user 0.50system 0:18.16elapsed 99%CPU (0avgtext+0avgdata 350188maxresident)k
-0inputs+29960outputs (0major+109819minor)pagefaults 0swaps
+8.72user 0.49system 0:09.22elapsed 99%CPU (0avgtext+0avgdata 348444maxresident)k
+8inputs+29992outputs (0major+109394minor)pagefaults 0swaps

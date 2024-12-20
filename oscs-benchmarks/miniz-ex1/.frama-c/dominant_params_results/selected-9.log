@@ -3,6 +3,20 @@
 [kernel] Parsing miniz.c (with preprocessing)
 [kernel] Parsing miniz_tdef.c (with preprocessing)
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -672,7 +686,7 @@
 [eva:alarm] miniz_tdef.c:1127: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_hash[hash_0]);
 [kernel] miniz_tdef.c:1128: 
-  more than 200(4096) locations to update in array. Approximating.
+  more than 10(4096) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:1117: Warning: 
   out of bounds read. assert \valid_read(tmp_1);
                       (tmp_1 from pSrc++)
@@ -857,9 +871,9 @@
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing uninitialized left-value. assert \initialized(pSym_count + i);
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing out of bounds index. assert num_used_syms < TDEFL_MAX_HUFF_SYMBOLS;
 [eva:alarm] miniz_tdef.c:110: Warning: 
@@ -894,7 +908,7 @@
 [eva:alarm] miniz_tdef.c:126: Warning: 
   invalid RHS operand for shift. assert 0 ≤ pass_shift < 32;
 [kernel] miniz_tdef.c:110: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + 0)->m_key);
 [eva:alarm] miniz_tdef.c:147: Warning: 
@@ -925,25 +939,25 @@
   (tmp_2 from leaf++)
 [eva] miniz_tdef.c:150: starting to merge loop iterations
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:158: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:161: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:165: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:152: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [eva:alarm] miniz_tdef.c:154: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:155: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:161: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:162: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:169: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + next)->m_key);
 [eva:alarm] miniz_tdef.c:169: Warning: 
@@ -952,17 +966,17 @@
 [eva:alarm] miniz_tdef.c:169: Warning: 
   out of bounds read. assert \valid_read(&(A + (A + next)->m_key)->m_key);
 [kernel] miniz_tdef.c:169: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:176: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + root)->m_key);
 [eva] miniz_tdef.c:176: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:178: Warning: 
   signed overflow. assert used + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:183: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva] miniz_tdef.c:181: starting to merge loop iterations
 [kernel] miniz_tdef.c:183: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:183: Warning: 
   out of bounds write. assert \valid(&(A + tmp_3)->m_key);
                        (tmp_3 from next--)
@@ -974,13 +988,13 @@
 [eva:alarm] miniz_tdef.c:187: Warning: 
   signed overflow. assert dpth + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:152: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&(pSyms + i)->m_key);
 [eva:alarm] miniz_tdef.c:247: Warning: 
@@ -1019,7 +1033,7 @@
   accessing out of bounds index.
   assert code_size < (int)(TDEFL_MAX_SUPPORTED_HUFF_CODESIZE + 1);
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:351: starting to merge loop iterations
 [eva] miniz_tdef.c:354: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:383: Warning: 
@@ -1507,7 +1521,7 @@
 [eva:alarm] miniz_tdef.c:723: Warning: 
   signed overflow. assert n - bytes_to_copy ≤ 2147483647;
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:710: Warning: 
   signed overflow.
   assert -9223372036854775808 ≤ d->m_pOutput_buf - pOutput_buf_start;
@@ -2100,8 +2114,6 @@
   (tmp_34 from code_len_1++)
 [eva:alarm] miniz_tinfl.c:464: Warning: 
   invalid RHS operand for shift. assert 0 ≤ code_len_1 < 64;
-[eva] miniz_tinfl.c:398: starting to merge loop iterations
-[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -2133,10 +2145,12 @@
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva] miniz_tinfl.c:395: starting to merge loop iterations
+[eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
+[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:alarm] miniz_tinfl.c:486: Warning: 
@@ -3456,12 +3470,6 @@
 [eva:alarm] miniz_tdef.c:1042: Warning: 
   out of bounds write. assert \valid(tmp);
                        (tmp from d->m_pLZ_code_buf++)
-[eva:alarm] miniz_tdef.c:1060: Warning: 
-  out of bounds write. assert \valid(d->m_pLZ_code_buf + 0);
-[eva:alarm] miniz_tdef.c:618: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ d->m_num_flags_left < 32;
-[eva:alarm] miniz_tdef.c:623: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ d->m_bits_in < 32;
 [eva:alarm] miniz_tdef.c:1043: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(d->m_pLZ_flags);
@@ -3492,69 +3500,20 @@
   Assigning imprecise value to d->m_huff_count[0][lit]
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [265808..267744],0%16).
   The imprecision originates from Misaligned {miniz_tdef.c:1043}
-[eva:alarm] miniz_tdef.c:1067: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(d->m_pLZ_flags);
-[eva:garbled-mix:write] miniz_tdef.c:1067: 
-  Assigning imprecise value to *(d->m_pLZ_flags)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808],0%8).
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
-[eva:garbled-mix:write] miniz_tdef.c:1068: 
-  Assigning imprecise value to d->m_num_flags_left
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {640}).
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
-[eva:garbled-mix:write] miniz_tdef.c:1071: 
-  Assigning imprecise value to tmp_0.
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
-[eva:garbled-mix:write] miniz_tdef.c:1071: 
-  Assigning imprecise value to d->m_pLZ_code_buf
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {384}).
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
-[eva:garbled-mix:write] miniz_tdef.c:1071: 
-  Assigning imprecise value to d->m_pLZ_flags
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {448}).
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
-[eva:alarm] miniz_tdef.c:1076: Warning: 
-  signed overflow.
-  assert -2147483648 ≤ (int)d->m_huff_count[1][tmp_1] + 1;
-  (tmp_1 from (match_dist < 512)?s0:s1)
-[eva:alarm] miniz_tdef.c:1076: Warning: 
-  signed overflow.
-  assert (int)d->m_huff_count[1][tmp_1] + 1 ≤ 2147483647;
-  (tmp_1 from (match_dist < 512)?s0:s1)
-[eva:garbled-mix:write] miniz_tdef.c:1076: 
-  Assigning imprecise value to d->m_huff_count[1][tmp_1]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [270416..270880],0%16).
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
-[eva:alarm] miniz_tdef.c:1079: Warning: 
-  signed overflow.
-  assert
-  -2147483648 ≤
-  (int)d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(match_len -
-                                                    TDEFL_MIN_MATCH_LEN)]]
-  + 1;
-[eva:alarm] miniz_tdef.c:1079: Warning: 
-  signed overflow.
-  assert
-  (int)d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(match_len -
-                                                    TDEFL_MIN_MATCH_LEN)]]
-  + 1 ≤ 2147483647;
-[eva:garbled-mix:write] miniz_tdef.c:1079: 
-  Assigning imprecise value to d->m_huff_count[0][s_tdefl_len_sym[match_len - (mz_uint)TDEFL_MIN_MATCH_LEN]]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [269920..270368],0%16).
-  The imprecision originates from Misaligned {miniz_tdef.c:1067}
+[eva:alarm] miniz_tdef.c:1060: Warning: 
+  out of bounds write. assert \valid(d->m_pLZ_code_buf + 0);
 [eva:garbled-mix:write] miniz_tdef.c:1206: 
   Assigning imprecise value to d->m_lookahead_pos
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {288}).
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:garbled-mix:write] miniz_tdef.c:1208: 
   Assigning imprecise value to d->m_lookahead_size
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {320}).
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:garbled-mix:write] miniz_tdef.c:1209: 
   Assigning imprecise value to d->m_dict_size
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {352}).
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:alarm] miniz_tdef.c:1212: Warning: 
   signed overflow.
   assert
@@ -3580,18 +3539,20 @@
   assert ¬\dangling(d->m_pOut_buf_size);
 [eva:garbled-mix:write] miniz_tdef.c:609: 
   Assigning imprecise value to tmp_0.
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:garbled-mix:write] miniz_tdef.c:609: 
   Assigning imprecise value to pOutput_buf_start.
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:garbled-mix:write] miniz_tdef.c:611: 
   Assigning imprecise value to d->m_pOutput_buf
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {512}).
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:garbled-mix:write] miniz_tdef.c:612: 
   Assigning imprecise value to d->m_pOutput_buf_end
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {576}).
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
+[eva:alarm] miniz_tdef.c:618: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ d->m_num_flags_left < 32;
 [eva:alarm] miniz_tdef.c:618: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(d->m_pLZ_flags);
@@ -3601,11 +3562,13 @@
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
   __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
-  The imprecision originates from Misaligned
+  The imprecision originates from Misaligned {miniz_tdef.c:1043}
 [eva:garbled-mix:write] miniz_tdef.c:619: 
   Assigning imprecise value to d->m_pLZ_code_buf
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {384}).
   The imprecision originates from Misaligned
+[eva:alarm] miniz_tdef.c:623: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ d->m_bits_in < 32;
 [eva:garbled-mix:write] miniz_tdef.c:623: 
   Assigning imprecise value to d->m_bit_buffer
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {768}).
@@ -6014,6 +5977,9 @@
   Assigning imprecise value to d->m_pLZ_code_buf
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {384}).
   The imprecision originates from Misaligned
+[eva:alarm] miniz_tdef.c:1067: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(d->m_pLZ_flags);
 [eva:garbled-mix:write] miniz_tdef.c:1067: 
   Assigning imprecise value to *(d->m_pLZ_flags)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
@@ -6098,6 +6064,14 @@
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_huff_count[1][tmp_1]);
   (tmp_1 from (match_dist < 512)?s0:s1)
+[eva:alarm] miniz_tdef.c:1076: Warning: 
+  signed overflow.
+  assert -2147483648 ≤ (int)d->m_huff_count[1][tmp_1] + 1;
+  (tmp_1 from (match_dist < 512)?s0:s1)
+[eva:alarm] miniz_tdef.c:1076: Warning: 
+  signed overflow.
+  assert (int)d->m_huff_count[1][tmp_1] + 1 ≤ 2147483647;
+  (tmp_1 from (match_dist < 512)?s0:s1)
 [eva:garbled-mix:write] miniz_tdef.c:1076: 
   Assigning imprecise value to d->m_huff_count[1][tmp_1]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
@@ -6141,6 +6115,19 @@
   assert
   ¬\dangling(&d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(match_len -
                                                             TDEFL_MIN_MATCH_LEN)]]);
+[eva:alarm] miniz_tdef.c:1079: Warning: 
+  signed overflow.
+  assert
+  -2147483648 ≤
+  (int)d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(match_len -
+                                                    TDEFL_MIN_MATCH_LEN)]]
+  + 1;
+[eva:alarm] miniz_tdef.c:1079: Warning: 
+  signed overflow.
+  assert
+  (int)d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(match_len -
+                                                    TDEFL_MIN_MATCH_LEN)]]
+  + 1 ≤ 2147483647;
 [eva:garbled-mix:write] miniz_tdef.c:1079: 
   Assigning imprecise value to d->m_huff_count[0][s_tdefl_len_sym[match_len - (mz_uint)TDEFL_MIN_MATCH_LEN]]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
@@ -6255,9 +6242,42 @@
   Assigning imprecise value to d->m_saved_match_len
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {832}).
   The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1206: 
+  Assigning imprecise value to d->m_lookahead_pos
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {288}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1208: 
+  Assigning imprecise value to d->m_lookahead_size
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {320}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1209: 
+  Assigning imprecise value to d->m_dict_size
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {352}).
+  The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1216: 
   Assigning imprecise value to d->m_src_buf_left
   (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {1472}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:609: 
+  Assigning imprecise value to tmp_0.
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:609: 
+  Assigning imprecise value to pOutput_buf_start.
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:611: 
+  Assigning imprecise value to d->m_pOutput_buf
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {512}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:612: 
+  Assigning imprecise value to d->m_pOutput_buf_end
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets {576}).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:618: 
+  Assigning imprecise value to *(d->m_pLZ_flags)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1119: 
   Assigning imprecise value to src_buf_left.
@@ -6717,6 +6737,11 @@
 [eva:alarm] miniz_tdef.c:1231: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pIn_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1231: 
+  Assigning imprecise value to *(d->m_pIn_buf_size) (pointing to in_bytes;
+  out_bytes; __malloc_main_l34 with offsets [0..147573952589676412856];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1236: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_out_buf_ofs);
@@ -6735,6 +6760,11 @@
 [eva:alarm] miniz_tdef.c:1237: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_out_buf_ofs);
+[eva:garbled-mix:write] miniz_tdef.c:1242: 
+  Assigning imprecise value to *(d->m_pOut_buf_size) (pointing to in_bytes;
+  out_bytes; __malloc_main_l34 with offsets [0..147573952589676412856];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1283: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_flags);
@@ -6953,7 +6983,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:904: 
   Assigning imprecise value to cur_match_dist.
@@ -7059,7 +7089,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:921: Warning: 
   out of bounds write. assert \valid(pLZ_flags);
@@ -7073,7 +7103,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:922: Warning: 
   accessing out of bounds index. assert 0 ≤ (mz_uint8)first_trigram;
@@ -7100,7 +7130,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:927: 
   Assigning imprecise value to cur_match_len.
@@ -7117,7 +7147,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:935: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
@@ -7133,7 +7163,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:942: Warning: 
   accessing out of bounds index.
@@ -7208,7 +7238,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:946: Warning: 
   accessing out of bounds index.
@@ -7269,7 +7299,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:951: 
   Assigning imprecise value to tmp_14.
@@ -7285,7 +7315,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:952: Warning: 
   out of bounds write. assert \valid(pLZ_flags);
@@ -7299,7 +7329,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:953: Warning: 
   accessing out of bounds index. assert 0 ≤ (mz_uint8)first_trigram;
@@ -7326,7 +7356,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:956: 
   Assigning imprecise value to num_flags_left.
@@ -7421,6 +7451,13 @@
 [eva:alarm] miniz_tdef.c:618: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_num_flags_left);
+[eva:garbled-mix:write] miniz_tdef.c:618: 
+  Assigning imprecise value to *(d->m_pLZ_flags)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:619: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
@@ -7448,6 +7485,13 @@
 [eva:alarm] miniz_tdef.c:623: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:623: 
+  Assigning imprecise value to *tmp_1
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:623: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7469,6 +7513,13 @@
 [eva:alarm] miniz_tdef.c:624: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:624: 
+  Assigning imprecise value to *tmp_2
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:624: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7490,6 +7541,13 @@
 [eva:alarm] miniz_tdef.c:627: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:627: 
+  Assigning imprecise value to *tmp_3
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:627: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7529,6 +7587,13 @@
 [eva:alarm] miniz_tdef.c:446: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:446: 
+  Assigning imprecise value to *tmp_3
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:446: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7541,6 +7606,21 @@
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSym_count + i);
+[eva:garbled-mix:write] miniz_tdef.c:126: 
+  Assigning imprecise value to *(pNew_syms + tmp)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32};
+  out_bytes with offsets {0; 8; 16; 24; 32}; syms1 with offsets [0..9184],0%8;
+  __malloc_main_l34 with offsets [0..147573952589676412888];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412896]).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:126: 
+  Assigning imprecise value to *(pNew_syms + tmp)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32};
+  out_bytes with offsets {0; 8; 16; 24; 32}; syms0 with offsets [0..9184],0%8;
+  syms1 with offsets [0..9184],0%8;
+  __malloc_main_l34 with offsets [0..147573952589676412888];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412896]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:352: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_huff_code_sizes[0][(int)(num_lit_codes - 1)]);
@@ -7550,9 +7630,30 @@
 [eva:alarm] miniz_tdef.c:368: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&code_sizes_to_pack[i]);
+[eva:garbled-mix:write] miniz_tdef.c:383: 
+  Assigning imprecise value to d->m_huff_count[2][code_size]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:371: 
+  Assigning imprecise value to d->m_huff_count[2][prev_code_size]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:379: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_huff_count[2][0]);
+[eva:garbled-mix:write] miniz_tdef.c:382: 
+  Assigning imprecise value to d->m_huff_count[2][prev_code_size]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:371: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_huff_count[2][16]);
@@ -7571,6 +7672,13 @@
 [eva:alarm] miniz_tdef.c:374: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_huff_count[2][18]);
+[eva:garbled-mix:write] miniz_tdef.c:395: 
+  Assigning imprecise value to d->m_huff_count[2][prev_code_size]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:395: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_huff_count[2][16]);
@@ -7598,6 +7706,13 @@
 [eva:alarm] miniz_tdef.c:404: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:404: 
+  Assigning imprecise value to *tmp_34
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:404: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7619,6 +7734,13 @@
 [eva:alarm] miniz_tdef.c:406: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:406: 
+  Assigning imprecise value to *tmp_35
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:406: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7640,6 +7762,13 @@
 [eva:alarm] miniz_tdef.c:407: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:407: 
+  Assigning imprecise value to *tmp_36
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:407: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7665,6 +7794,13 @@
 [eva:alarm] miniz_tdef.c:413: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:413: 
+  Assigning imprecise value to *tmp_37
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:413: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7690,6 +7826,13 @@
 [eva:alarm] miniz_tdef.c:415: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:415: 
+  Assigning imprecise value to *tmp_38
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:415: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7711,6 +7854,13 @@
 [eva:alarm] miniz_tdef.c:421: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:421: 
+  Assigning imprecise value to *tmp_40
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:421: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7732,6 +7882,13 @@
 [eva:alarm] miniz_tdef.c:423: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:423: 
+  Assigning imprecise value to *tmp_42
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:423: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7769,6 +7926,12 @@
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(tmp_2);
   (tmp_2 from pLZ_codes++)
+[eva:garbled-mix:write] miniz_tdef.c:521: 
+  Assigning imprecise value to *((mz_uint64 *)pOutput_buf)
+  (pointing to in_bytes; out_bytes;
+  __malloc_main_l34 with offsets [0..147573952589676412856];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:536: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7784,6 +7947,13 @@
 [eva:alarm] miniz_tdef.c:536: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:536: 
+  Assigning imprecise value to *tmp_4
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:536: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7811,6 +7981,13 @@
 [eva:alarm] miniz_tdef.c:541: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:541: 
+  Assigning imprecise value to *tmp_5
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:541: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7847,6 +8024,13 @@
 [eva:alarm] miniz_tdef.c:643: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:643: 
+  Assigning imprecise value to *tmp_5
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:643: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7874,6 +8058,13 @@
 [eva:alarm] miniz_tdef.c:646: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:646: 
+  Assigning imprecise value to *tmp_6
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:646: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7898,6 +8089,13 @@
 [eva:alarm] miniz_tdef.c:650: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:650: 
+  Assigning imprecise value to *tmp_7
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:650: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7928,6 +8126,13 @@
 [eva:alarm] miniz_tdef.c:654: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:654: 
+  Assigning imprecise value to *tmp_8
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:654: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -7952,6 +8157,11 @@
 [eva:alarm] miniz_tdef.c:714: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pIn_buf);
+[eva:garbled-mix:write] miniz_tdef.c:714: 
+  Assigning imprecise value to *(d->m_pIn_buf_size) (pointing to in_bytes;
+  out_bytes; __malloc_main_l34 with offsets [0..147573952589676412856];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:715: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pPut_buf_func);
@@ -8042,7 +8252,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:994: Warning: 
   out of bounds write. assert \valid(pLZ_flags);
@@ -8056,7 +8266,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:995: 
   Assigning imprecise value to num_flags_left.
@@ -8091,7 +8301,7 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1003: 
   Assigning imprecise value to lookahead_pos.
@@ -8285,14 +8495,28 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1105: 
   Assigning imprecise value to d->m_dict[(mz_uint)TDEFL_LZ_DICT_SIZE + dst_pos]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1107: 
+  Assigning imprecise value to d->m_next[ins_pos & (unsigned int)TDEFL_LZ_DICT_SIZE_MASK]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1108: 
+  Assigning imprecise value to d->m_hash[hash]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1115: Warning: 
   accessing left-value that contains escaping addresses.
@@ -8325,14 +8549,14 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1122: 
   Assigning imprecise value to d->m_dict[(mz_uint)TDEFL_LZ_DICT_SIZE + dst_pos_0]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1123: Warning: 
   accessing left-value that contains escaping addresses.
@@ -8349,6 +8573,20 @@
 [eva:alarm] miniz_tdef.c:1125: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_lookahead_size);
+[eva:garbled-mix:write] miniz_tdef.c:1127: 
+  Assigning imprecise value to d->m_next[ins_pos_0 & (unsigned int)TDEFL_LZ_DICT_SIZE_MASK]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1128: 
+  Assigning imprecise value to d->m_hash[hash_0]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1132: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_lookahead_size);
@@ -8418,9 +8656,23 @@
 [eva:alarm] miniz_tdef.c:1042: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1042: 
+  Assigning imprecise value to *tmp
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1043: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_flags);
+[eva:garbled-mix:write] miniz_tdef.c:1043: 
+  Assigning imprecise value to *(d->m_pLZ_flags)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1044: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_num_flags_left);
@@ -8433,24 +8685,59 @@
 [eva:alarm] miniz_tdef.c:1047: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1049: 
+  Assigning imprecise value to d->m_huff_count[0][lit]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1058: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_total_lz_bytes);
 [eva:alarm] miniz_tdef.c:1060: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1060: 
+  Assigning imprecise value to *(d->m_pLZ_code_buf + 0)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1063: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1063: 
+  Assigning imprecise value to *(d->m_pLZ_code_buf + 1)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1064: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1064: 
+  Assigning imprecise value to *(d->m_pLZ_code_buf + 2)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1065: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
 [eva:alarm] miniz_tdef.c:1067: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_flags);
+[eva:garbled-mix:write] miniz_tdef.c:1067: 
+  Assigning imprecise value to *(d->m_pLZ_flags)
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1068: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_num_flags_left);
@@ -8463,6 +8750,20 @@
 [eva:alarm] miniz_tdef.c:1071: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_pLZ_code_buf);
+[eva:garbled-mix:write] miniz_tdef.c:1076: 
+  Assigning imprecise value to d->m_huff_count[1][tmp_1]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tdef.c:1079: 
+  Assigning imprecise value to d->m_huff_count[0][s_tdefl_len_sym[match_len - (mz_uint)TDEFL_MIN_MATCH_LEN]]
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
+  __malloc_main_l34 with offsets [0..147573952589676412904];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:1187: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_saved_match_dist);
@@ -8609,6 +8910,13 @@
 [eva:alarm] miniz_tdef.c:671: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:671: 
+  Assigning imprecise value to *tmp_9
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:671: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -8636,6 +8944,13 @@
 [eva:alarm] miniz_tdef.c:678: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
+[eva:garbled-mix:write] miniz_tdef.c:678: 
+  Assigning imprecise value to *tmp_10
+  (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
+  __malloc_main_l34 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
+  The imprecision originates from Misaligned
 [eva:alarm] miniz_tdef.c:678: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d->m_bit_buffer);
@@ -8679,7 +8994,7 @@
 [eva:garbled-mix:write] examples/example1.c:61: 
   Assigning imprecise value to *(pCmp + i)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva] examples/example1.c:58: starting to merge loop iterations
 [eva:garbled-mix:write] miniz.c:566: 
@@ -9092,7 +9407,7 @@
   Assigning imprecise value to *tmp_13
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:266: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
@@ -9735,7 +10050,11 @@
                        (tmp_32 from pOut_buf_cur++)
 [eva:garbled-mix:write] miniz_tinfl.c:245: 
   Assigning imprecise value to *tmp_13
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..34359826520],0%8).
+  The imprecision originates from Misaligned
+[eva:garbled-mix:write] miniz_tinfl.c:245: 
+  Assigning imprecise value to *tmp_13
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:565: Warning: 
   accessing left-value that contains escaping addresses.
@@ -9761,8 +10080,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:245: 
   Assigning imprecise value to *tmp_13
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:266: Warning: 
   accessing left-value that contains escaping addresses.
@@ -9805,49 +10124,49 @@
   assert ¬\dangling(pSrc + 0);
 [eva:garbled-mix:write] miniz_tinfl.c:538: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88224..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88224..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:540: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSrc + 1);
 [eva:garbled-mix:write] miniz_tinfl.c:540: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88232..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88232..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:549: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSrc + 0);
 [eva:garbled-mix:write] miniz_tinfl.c:549: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:550: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSrc + 1);
 [eva:garbled-mix:write] miniz_tinfl.c:550: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88168..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88168..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:551: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSrc + 2);
 [eva:garbled-mix:write] miniz_tinfl.c:551: 
   Assigning imprecise value to *(pOut_buf_cur + 2)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88176..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88176..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:558: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSrc + 0);
 [eva:garbled-mix:write] miniz_tinfl.c:558: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:560: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(pSrc + 1);
 [eva:garbled-mix:write] miniz_tinfl.c:560: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88168..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88168..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:516: Warning: 
   accessing left-value that contains escaping addresses.
@@ -9858,7 +10177,7 @@
   (tmp_41 from dist_from_out_buf_start++)
 [eva:garbled-mix:write] miniz_tinfl.c:516: 
   Assigning imprecise value to *tmp_40
-  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [88160..350328],0%8).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:587: Warning: 
   accessing left-value that contains escaping addresses.
@@ -10077,8 +10396,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:516: 
   Assigning imprecise value to *tmp_40
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:510: 
   Assigning imprecise value to tmp_42.
@@ -10199,8 +10518,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:409: 
   Assigning imprecise value to *tmp_32
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:418: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
@@ -10327,16 +10646,16 @@
 [eva:garbled-mix:write] miniz_tinfl.c:467: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:474: Warning: 
   out of bounds write. assert \valid(pOut_buf_cur + 1);
 [eva:garbled-mix:write] miniz_tinfl.c:474: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:471: 
   Assigning imprecise value to counter.
@@ -10375,8 +10694,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:230: 
   Assigning imprecise value to r->m_raw_header[counter]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:230: 
   Assigning imprecise value to num_bits.
@@ -10388,8 +10707,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:232: 
   Assigning imprecise value to r->m_raw_header[counter]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:227: 
   Assigning imprecise value to counter.
@@ -10445,8 +10764,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:300: 
   Assigning imprecise value to r->m_tables[2].m_code_size[tinfl_decompress_s_length_dezigzag[counter]]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:296: 
   Assigning imprecise value to counter.
@@ -10549,8 +10868,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:339: 
   Assigning imprecise value to pTable->m_look_up[rev_code]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412904];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:340: Warning: 
   invalid RHS operand for shift. assert 0 ≤ code_size < 32;
@@ -10813,8 +11132,8 @@
 [eva:garbled-mix:write] miniz_tinfl.c:374: 
   Assigning imprecise value to r->m_len_codes[tmp_26]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz_tinfl.c:381: Warning: 
   accessing uninitialized left-value.
@@ -11123,14 +11442,14 @@
 [eva:garbled-mix:write] miniz_tinfl.c:538: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:540: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:541: 
   Assigning imprecise value to pOut_buf_cur.
@@ -11138,20 +11457,20 @@
 [eva:garbled-mix:write] miniz_tinfl.c:549: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:550: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:551: 
   Assigning imprecise value to *(pOut_buf_cur + 2)
   (pointing to __malloc_main_l34 with offsets [16..147573952589676412912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [16..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [16..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [16..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [16..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:554: 
   Assigning imprecise value to counter.
@@ -11159,14 +11478,14 @@
 [eva:garbled-mix:write] miniz_tinfl.c:558: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:560: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:561: 
   Assigning imprecise value to pOut_buf_cur.
@@ -11260,132 +11579,132 @@
   ¬\dangling(&((tdefl_compressor *)pStream->state)->m_prev_return_status);
 [eva:garbled-mix:write] miniz_tdef.c:1231: 
   Assigning imprecise value to *(d->m_pIn_buf_size) (pointing to in_bytes;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554752];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350272]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412864]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1242: 
   Assigning imprecise value to *(d->m_pOut_buf_size) (pointing to in_bytes;
   out_bytes; __malloc_main_l34 with offsets [0..147573952589676412864];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554752];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350272]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412864]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:902: 
   Assigning imprecise value to d->m_hash[hash]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:920: 
   Assigning imprecise value to *tmp_11
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:921: 
   Assigning imprecise value to *pLZ_flags
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:922: 
   Assigning imprecise value to d->m_huff_count[0][(mz_uint8)first_trigram]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:933: 
   Assigning imprecise value to *(pLZ_code_buf + 0)
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:940: 
   Assigning imprecise value to *pLZ_flags
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:944: 
   Assigning imprecise value to d->m_huff_count[1][tmp_13]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:946: 
   Assigning imprecise value to d->m_huff_count[0][s_tdefl_len_sym[cur_match_len - (mz_uint)TDEFL_MIN_MATCH_LEN]]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:951: 
   Assigning imprecise value to *tmp_14
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:952: 
   Assigning imprecise value to *pLZ_flags
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:953: 
   Assigning imprecise value to d->m_huff_count[0][(mz_uint8)first_trigram]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:618: 
   Assigning imprecise value to *(d->m_pLZ_flags)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:623: 
   Assigning imprecise value to *tmp_1
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:624: 
   Assigning imprecise value to *tmp_2
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:627: 
   Assigning imprecise value to *tmp_3
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:446: 
   Assigning imprecise value to *tmp_3
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:126: 
   Assigning imprecise value to *(pNew_syms + tmp)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32};
   out_bytes with offsets {0; 8; 16; 24; 32}; syms1 with offsets [0..9184],0%8;
   __malloc_main_l34 with offsets [0..147573952589676412896];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554784];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350304]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412896];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412896]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:126: 
   Assigning imprecise value to *(pNew_syms + tmp)
@@ -11393,157 +11712,157 @@
   out_bytes with offsets {0; 8; 16; 24; 32}; syms0 with offsets [0..9184],0%8;
   syms1 with offsets [0..9184],0%8;
   __malloc_main_l34 with offsets [0..147573952589676412896];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554784];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350304]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412896];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412896]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:383: 
   Assigning imprecise value to d->m_huff_count[2][code_size]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:371: 
   Assigning imprecise value to d->m_huff_count[2][prev_code_size]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:382: 
   Assigning imprecise value to d->m_huff_count[2][prev_code_size]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:395: 
   Assigning imprecise value to d->m_huff_count[2][prev_code_size]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:404: 
   Assigning imprecise value to *tmp_34
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:406: 
   Assigning imprecise value to *tmp_35
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:407: 
   Assigning imprecise value to *tmp_36
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:413: 
   Assigning imprecise value to *tmp_37
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:415: 
   Assigning imprecise value to *tmp_38
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:421: 
   Assigning imprecise value to *tmp_40
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:423: 
   Assigning imprecise value to *tmp_42
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:521: 
   Assigning imprecise value to *((mz_uint64 *)pOutput_buf)
   (pointing to in_bytes; out_bytes;
   __malloc_main_l34 with offsets [0..147573952589676412864];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554752];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350272]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412864]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:536: 
   Assigning imprecise value to *tmp_4
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:541: 
   Assigning imprecise value to *tmp_5
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:643: 
   Assigning imprecise value to *tmp_5
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:646: 
   Assigning imprecise value to *tmp_6
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:650: 
   Assigning imprecise value to *tmp_7
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:654: 
   Assigning imprecise value to *tmp_8
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:714: 
   Assigning imprecise value to *(d->m_pIn_buf_size) (pointing to in_bytes;
   out_bytes; __malloc_main_l34 with offsets [0..147573952589676412864];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554752];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350272]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412864]).
   The imprecision originates from Misaligned
 [eva] miniz_tdef.c:895: starting to merge loop iterations
 [eva:garbled-mix:write] miniz_tdef.c:920: 
@@ -11551,264 +11870,264 @@
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:921: 
   Assigning imprecise value to *pLZ_flags
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:933: 
   Assigning imprecise value to *(pLZ_code_buf + 0)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:940: 
   Assigning imprecise value to *pLZ_flags
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:951: 
   Assigning imprecise value to *tmp_14
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:952: 
   Assigning imprecise value to *pLZ_flags
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:993: 
   Assigning imprecise value to *tmp_18
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:994: 
   Assigning imprecise value to *pLZ_flags
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1001: 
   Assigning imprecise value to d->m_huff_count[0][lit]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva] miniz_tdef.c:988: starting to merge loop iterations
 [eva:garbled-mix:write] miniz_tdef.c:1103: 
   Assigning imprecise value to d->m_dict[dst_pos]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1105: 
   Assigning imprecise value to d->m_dict[(mz_uint)TDEFL_LZ_DICT_SIZE + dst_pos]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1107: 
   Assigning imprecise value to d->m_next[ins_pos & (unsigned int)TDEFL_LZ_DICT_SIZE_MASK]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1108: 
   Assigning imprecise value to d->m_hash[hash]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1120: 
   Assigning imprecise value to d->m_dict[dst_pos_0]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1122: 
   Assigning imprecise value to d->m_dict[(mz_uint)TDEFL_LZ_DICT_SIZE + dst_pos_0]
-  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  (pointing to __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1127: 
   Assigning imprecise value to d->m_next[ins_pos_0 & (unsigned int)TDEFL_LZ_DICT_SIZE_MASK]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1128: 
   Assigning imprecise value to d->m_hash[hash_0]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1120: 
   Assigning imprecise value to d->m_dict[dst_pos_0]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1122: 
   Assigning imprecise value to d->m_dict[(mz_uint)TDEFL_LZ_DICT_SIZE + dst_pos_0]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1042: 
   Assigning imprecise value to *tmp
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1043: 
   Assigning imprecise value to *(d->m_pLZ_flags)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1049: 
   Assigning imprecise value to d->m_huff_count[0][lit]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1060: 
   Assigning imprecise value to *(d->m_pLZ_code_buf + 0)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1063: 
   Assigning imprecise value to *(d->m_pLZ_code_buf + 1)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1064: 
   Assigning imprecise value to *(d->m_pLZ_code_buf + 2)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1067: 
   Assigning imprecise value to *(d->m_pLZ_flags)
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1076: 
   Assigning imprecise value to d->m_huff_count[1][tmp_1]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1079: 
   Assigning imprecise value to d->m_huff_count[0][s_tdefl_len_sym[match_len - (mz_uint)TDEFL_MIN_MATCH_LEN]]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1103: 
   Assigning imprecise value to d->m_dict[dst_pos]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1105: 
   Assigning imprecise value to d->m_dict[(mz_uint)TDEFL_LZ_DICT_SIZE + dst_pos]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1107: 
   Assigning imprecise value to d->m_next[ins_pos & (unsigned int)TDEFL_LZ_DICT_SIZE_MASK]
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48};
   __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:671: 
   Assigning imprecise value to *tmp_9
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:678: 
   Assigning imprecise value to *tmp_10
   (pointing to in_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   out_bytes with offsets {0; 8; 16; 24; 32; 40; 48; 56};
   __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tdef.c:1231: 
   Assigning imprecise value to *(d->m_pIn_buf_size) (pointing to in_bytes;
   out_bytes; __malloc_main_l34 with offsets [0..147573952589676412864];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554752];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350272]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412864];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412864]).
   The imprecision originates from Misaligned
 [eva:locals-escaping] miniz.c:335: Warning: 
   locals {in_bytes, out_bytes} escaping the scope of mz_deflate through __malloc_w_miniz_def_alloc_func_l169_0
 [eva:garbled-mix:write] examples/example1.c:61: 
   Assigning imprecise value to *(pCmp + i)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz.c:562: Warning: 
   accessing left-value that contains escaping addresses.
@@ -11896,60 +12215,60 @@
 [eva:garbled-mix:write] miniz_tinfl.c:230: 
   Assigning imprecise value to r->m_raw_header[counter]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:232: 
   Assigning imprecise value to r->m_raw_header[counter]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:245: 
   Assigning imprecise value to *tmp_13
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:300: 
   Assigning imprecise value to r->m_tables[2].m_code_size[tinfl_decompress_s_length_dezigzag[counter]]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:339: 
   Assigning imprecise value to pTable->m_look_up[rev_code]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554800];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350320]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412912];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412912]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:374: 
   Assigning imprecise value to r->m_len_codes[tmp_26]
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:409: 
   Assigning imprecise value to *tmp_32
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:467: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:474: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
   __malloc_main_l35 with offsets [8..3912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [kernel] miniz_tinfl.c:527: 
   writing somewhere in {NULL; __malloc_main_l34; __malloc_main_l35;
@@ -11959,57 +12278,57 @@
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:540: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
   __malloc_main_l35 with offsets [8..3912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:549: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:550: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
   __malloc_main_l35 with offsets [8..3912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:551: 
   Assigning imprecise value to *(pOut_buf_cur + 2)
   (pointing to __malloc_main_l34 with offsets [16..147573952589676412920],0%8;
   __malloc_main_l35 with offsets [16..3912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [16..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [16..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [16..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [16..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:558: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:560: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
   __malloc_main_l35 with offsets [8..3912],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:516: 
   Assigning imprecise value to *tmp_40
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
   __malloc_main_l35 with offsets [0..3912];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:alarm] miniz.c:471: Warning: 
   accessing left-value that contains escaping addresses.
@@ -12064,74 +12383,74 @@
 [eva:garbled-mix:write] miniz_tinfl.c:516: 
   Assigning imprecise value to *tmp_40
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:409: 
   Assigning imprecise value to *tmp_32
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:467: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:474: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:245: 
   Assigning imprecise value to *tmp_13
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:538: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:540: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:549: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:550: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:551: 
   Assigning imprecise value to *(pOut_buf_cur + 2)
   (pointing to __malloc_main_l34 with offsets [16..147573952589676412920],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [16..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [16..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [16..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [16..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:558: 
   Assigning imprecise value to *(pOut_buf_cur + 0)
   (pointing to __malloc_main_l34 with offsets [0..147573952589676412920];
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..2554808];
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..350328]).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [0..147573952589676412920];
+  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [0..147573952589676412920]).
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] miniz_tinfl.c:560: 
   Assigning imprecise value to *(pOut_buf_cur + 1)
   (pointing to __malloc_main_l34 with offsets [8..147573952589676412920],0%8;
-  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..2554808],0%8;
-  __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..350328],0%8).
+  __malloc_w_miniz_def_alloc_func_l169 with offsets [8..147573952589676412920],0%8;
+   __malloc_w_miniz_def_alloc_func_l169_0 with offsets [8..147573952589676412920],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] examples/example1.c:83: Warning: 
   accessing left-value that contains escaping addresses.
@@ -12152,7 +12471,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[scope:rm_asserts] removing 401 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈
@@ -12288,7 +12606,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
@@ -12320,7 +12638,7 @@
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
                                          (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-                                        [72..43791] ∈
+                                        [72..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -12431,13 +12749,13 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -12514,7 +12832,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
@@ -12546,7 +12864,7 @@
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
                                          (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-                                        [72..43791] ∈
+                                        [72..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -12579,7 +12897,7 @@
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .adler; .reserved; .[bits 736 to 767]} ∈ {0}
   __retres ∈ {-4; 0}
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -12608,7 +12926,7 @@
         .zalloc ∈ {{ &miniz_def_alloc_func }}
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .adler; .reserved; .[bits 736 to 767]} ∈ {0}
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -12694,7 +13012,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -12702,7 +13020,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -12835,7 +13153,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -12843,7 +13161,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -12878,12 +13196,12 @@
             (origin: Misaligned) }}
 [eva:final-states] Values at end of function tdefl_init:
   __retres ∈ {TDEFL_STATUS_OKAY}
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
@@ -12913,12 +13231,12 @@
         .adler ∈ {1}
         .reserved ∈ {0}
   __retres ∈ {-4; 0}
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
@@ -12944,12 +13262,12 @@
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0}
         .adler ∈ {1}
         .reserved ∈ {0}
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
@@ -13003,7 +13321,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13011,7 +13329,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13084,7 +13402,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13092,7 +13410,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13122,7 +13440,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13130,7 +13448,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13181,7 +13499,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13189,7 +13507,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13250,7 +13568,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13258,7 +13576,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13290,7 +13608,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13298,7 +13616,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13328,7 +13646,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13336,7 +13654,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13410,7 +13728,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13418,7 +13736,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13505,7 +13823,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13513,7 +13831,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13565,7 +13883,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13573,7 +13891,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13610,7 +13928,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13618,7 +13936,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13690,7 +14008,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{in_bytes;
                                                           out_bytes;
                                                           "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13698,7 +14016,7 @@
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{in_bytes;
                                                             out_bytes;
                                                             "Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
@@ -13768,13 +14086,13 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -13806,13 +14124,13 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -13918,7 +14236,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
@@ -13950,7 +14268,7 @@
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
                                          (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-                                        [72..43791] ∈
+                                        [72..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -14041,7 +14359,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
@@ -14073,7 +14391,7 @@
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
                                          (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-                                        [72..43791] ∈
+                                        [72..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -14155,7 +14473,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
@@ -14187,7 +14505,7 @@
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
                                          (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-                                        [72..43791] ∈
+                                        [72..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -14233,7 +14551,7 @@
                                        __malloc_w_miniz_def_alloc_func_l169;
                                        __malloc_w_miniz_def_alloc_func_l169_0}
                     (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_main_l34;
                                                           __malloc_w_miniz_def_alloc_func_l169;
@@ -14265,7 +14583,7 @@
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
                                          (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-                                        [72..43791] ∈
+                                        [72..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_main_l34;
                                                             __malloc_w_miniz_def_alloc_func_l169;
@@ -14300,12 +14618,12 @@
                [1] ∈ [--..--]
   __malloc_main_l34[0..18446744073709551615] ∈ UNINITIALIZED
   __malloc_main_l35[0..489] ∈ UNINITIALIZED
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
@@ -14340,12 +14658,12 @@
                [1] ∈ [--..--]
   __malloc_main_l34[0..18446744073709551615] ∈ UNINITIALIZED
   __malloc_main_l35[0..489] ∈ UNINITIALIZED
-  __malloc_w_miniz_def_alloc_func_l169[0..319351] ∈
+  __malloc_w_miniz_def_alloc_func_l169[0..18446744073709551615] ∈
                                       {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                           __malloc_w_miniz_def_alloc_func_l169;
                                                           __malloc_w_miniz_def_alloc_func_l169_0}
                                        (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __malloc_w_miniz_def_alloc_func_l169_0[0..43791] ∈
+  __malloc_w_miniz_def_alloc_func_l169_0[0..18446744073709551615] ∈
                                         {{ garbled mix of &{"Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.Good morning Dr. Chandra. This is Hal. I am ready for my first lesson.";
                                                             __malloc_w_miniz_def_alloc_func_l169;
                                                             __malloc_w_miniz_def_alloc_func_l169_0}
@@ -14374,5 +14692,5 @@
     Preconditions    67 valid    62 unknown     0 invalid    129 total
   51% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-24.10user 0.40system 0:24.50elapsed 99%CPU (0avgtext+0avgdata 331528maxresident)k
-0inputs+11528outputs (0major+85868minor)pagefaults 0swaps
+17.07user 0.35system 0:17.42elapsed 99%CPU (0avgtext+0avgdata 315452maxresident)k
+0inputs+11536outputs (0major+81818minor)pagefaults 0swaps

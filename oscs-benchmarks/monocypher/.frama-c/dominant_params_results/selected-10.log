@@ -1,6 +1,20 @@
 [kernel] Parsing src/monocypher.c (with preprocessing)
 [kernel] Parsing src/optional/sha512.c (with preprocessing)
 [kernel] Parsing tests/test.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   chacha20_0[0] ∈ {228}
@@ -416981,6 +416995,8 @@
 [eva:alarm] tests/test.c:80: Warning: 
   signed overflow. assert nb_tests + 1 ≤ 2147483647;
 [eva] using specification for function printf_va_3
+[kernel] tests/test.c:61: 
+  more than 10(136) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_1
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_2
 [eva] src/monocypher.c:176: starting to merge loop iterations
@@ -416994,6 +417010,7 @@
   accessing uninitialized left-value. assert \initialized(in + 15);
 [eva] src/monocypher.c:182: starting to merge loop iterations
 [eva] src/monocypher.c:99: starting to merge loop iterations
+[kernel] tests/test.c:61: more than 10(50) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_3
 [eva:alarm] src/monocypher.c:45: Warning: 
   accessing uninitialized left-value. assert \initialized(s + 0);
@@ -417004,6 +417021,8 @@
 [eva:alarm] src/monocypher.c:45: Warning: 
   accessing uninitialized left-value. assert \initialized(s + 3);
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_4
+[kernel] tests/test.c:61: 
+  more than 10(131) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_5
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_6
 [eva] src/monocypher.c:380: starting to merge loop iterations
@@ -417012,12 +417031,19 @@
 [eva:alarm] src/monocypher.c:306: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->r[0]);
 [eva] src/monocypher.c:398: starting to merge loop iterations
+[kernel] src/monocypher.c:45: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:45: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:361: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] tests/test.c:61: more than 10(48) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_7
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_8
 [eva:alarm] src/monocypher.c:361: Warning: 
   accessing uninitialized left-value. assert \initialized(message + i);
 [kernel] tests/test.c:61: 
-  more than 200(320) elements to enumerate. Approximating.
+  more than 10(320) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_9
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_10
 [eva] src/monocypher.c:627: starting to merge loop iterations
@@ -417083,7 +417109,7 @@
   out of bounds write. assert \valid(hash + i_1);
 [eva] src/monocypher.c:638: starting to merge loop iterations
 [kernel] tests/test.c:61: 
-  more than 200(351) elements to enumerate. Approximating.
+  more than 10(351) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_11
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_12
 [eva] src/optional/sha512.c:99: starting to merge loop iterations
@@ -417133,17 +417159,255 @@
 [eva:alarm] src/optional/sha512.c:12: Warning: 
   out of bounds read. assert \valid_read(s + 7);
 [eva] src/optional/sha512.c:162: starting to merge loop iterations
+[kernel] src/optional/sha512.c:12: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva] src/optional/sha512.c:161: starting to merge loop iterations
+[kernel] src/optional/sha512.c:12: 
+  more than 10(17) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(21) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(22) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(23) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(25) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(26) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(27) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(28) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(29) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(30) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(32) elements to enumerate. Approximating.
 [kernel] tests/test.c:61: 
-  more than 200(256) elements to enumerate. Approximating.
+  more than 10(256) elements to enumerate. Approximating.
 [kernel] tests/test.c:67: 
-  more than 200(256) elements to enumerate. Approximating.
+  more than 10(256) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_13
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_14
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_15
 [eva:alarm] src/monocypher.c:566: Warning: 
   accessing uninitialized left-value. assert \initialized(message + i);
 [eva] src/monocypher.c:729: starting to merge loop iterations
+[kernel] src/monocypher.c:58: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(12) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(12) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(11) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(11) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(16) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(15) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(15) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(20) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(20) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(18) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(18) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(18) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(18) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(18) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(19) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(19) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(24) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(24) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(24) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(24) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(24) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:566: 
+  more than 10(32) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(31) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(31) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(124) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(124) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(124) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(124) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(124) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(124) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(124) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(124) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(32) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(32) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(32) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(32) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(32) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(32) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(32) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(32) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(128) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(128) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(128) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(128) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(128) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(128) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(128) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(128) elements to enumerate. Approximating.
 [eva] src/monocypher.c:687: starting to merge loop iterations
 [eva:alarm] src/monocypher.c:701: Warning: 
   accessing uninitialized left-value. assert \initialized(&in->a[i]);
@@ -417156,21 +417420,25 @@
   accessing uninitialized left-value. assert \initialized(&in->a[i]);
 [eva:alarm] src/monocypher.c:705: Warning: 
   accessing uninitialized left-value. assert \initialized(&o->a[i]);
+[kernel] src/monocypher.c:701: 
+  more than 10(125) locations to update in array. Approximating.
+[kernel] src/monocypher.c:705: 
+  more than 10(125) locations to update in array. Approximating.
 [eva] src/monocypher.c:973: starting to merge loop iterations
 [eva:alarm] src/monocypher.c:904: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->b.a[index_0]);
 [kernel] src/monocypher.c:701: 
-  more than 200(254) locations to update in array. Approximating.
+  more than 10(254) locations to update in array. Approximating.
 [kernel] src/monocypher.c:705: 
-  more than 200(254) locations to update in array. Approximating.
+  more than 10(254) locations to update in array. Approximating.
 [kernel] src/monocypher.c:701: 
-  more than 200(381) locations to update in array. Approximating.
+  more than 10(381) locations to update in array. Approximating.
 [kernel] src/monocypher.c:705: 
-  more than 200(381) locations to update in array. Approximating.
+  more than 10(381) locations to update in array. Approximating.
 [kernel] src/monocypher.c:701: 
-  more than 200(508) locations to update in array. Approximating.
+  more than 10(508) locations to update in array. Approximating.
 [kernel] src/monocypher.c:705: 
-  more than 200(508) locations to update in array. Approximating.
+  more than 10(508) locations to update in array. Approximating.
 [eva] src/monocypher.c:970: starting to merge loop iterations
 [eva:alarm] src/monocypher.c:695: Warning: 
   accessing uninitialized left-value. assert \initialized(&b->a[i]);
@@ -417192,15 +417460,16 @@
 [eva:alarm] src/monocypher.c:705: Warning: 
   out of bounds write. assert \valid(&o->a[i]);
 [kernel] src/monocypher.c:701: 
-  more than 200(765) locations to update in array. Approximating.
+  more than 10(765) locations to update in array. Approximating.
 [kernel] src/monocypher.c:705: 
-  more than 200(765) locations to update in array. Approximating.
+  more than 10(765) locations to update in array. Approximating.
 [kernel] src/monocypher.c:701: 
-  more than 200(767) locations to update in array. Approximating.
+  more than 10(767) locations to update in array. Approximating.
 [kernel] src/monocypher.c:705: 
-  more than 200(767) locations to update in array. Approximating.
+  more than 10(767) locations to update in array. Approximating.
 [kernel] src/monocypher.c:695: 
-  more than 200(767) elements to enumerate. Approximating.
+  more than 10(767) elements to enumerate. Approximating.
+[kernel] tests/test.c:61: more than 10(14) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_16
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_17
 [eva] src/monocypher.c:1355: starting to merge loop iterations
@@ -419802,8 +420071,12 @@
   signed overflow. assert t[9] - (i32)(c9 * (int)(1 << 25)) ≤ 2147483647;
 [eva] using specification for function printf_va_4
 [eva] using specification for function printf_va_5
+[kernel] tests/test.c:61: 
+  more than 10(112) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_18
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_19
+[kernel] tests/test.c:61: more than 10(51) elements to enumerate. Approximating.
+[kernel] tests/test.c:67: more than 10(51) elements to enumerate. Approximating.
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_20
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_21
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_22
@@ -419879,9 +420152,9 @@
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_24
 [eva] tests/test.c:29: allocating variable __malloc_alloc_l29_25
 [kernel] tests/test.c:61: 
-  more than 200(257) elements to enumerate. Approximating.
+  more than 10(257) elements to enumerate. Approximating.
 [kernel] tests/test.c:67: 
-  more than 200(257) elements to enumerate. Approximating.
+  more than 10(257) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_7
 [eva] FRAMAC_SHARE/libc/string.h:101: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
@@ -419925,6 +420198,38 @@
 [eva:alarm] tests/test.c:405: Warning: 
   function memcmp: precondition 'initialization,s1' got status unknown.
 [eva] tests/test.c:379: starting to merge loop iterations
+[kernel] src/monocypher.c:58: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(13) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(14) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(14) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_12
 [eva] tests/test.c:418: starting to merge loop iterations
 [eva] using specification for function printf_va_13
@@ -419943,6 +420248,10 @@
   function memcmp: precondition 'initialization,s1' got status unknown.
 [eva] tests/test.c:500: starting to merge loop iterations
 [eva] using specification for function printf_va_16
+[kernel] src/optional/sha512.c:12: 
+  more than 10(48) elements to enumerate. Approximating.
+[kernel] src/optional/sha512.c:12: 
+  more than 10(60) elements to enumerate. Approximating.
 [eva:alarm] tests/test.c:536: Warning: 
   function memcmp: precondition 'initialization,s1' got status unknown.
 [eva:alarm] tests/test.c:536: Warning: 
@@ -420082,20 +420391,6 @@
 [eva] tests/test.c:803: starting to merge loop iterations
 [eva] using specification for function printf_va_27
 [eva] using specification for function printf_va_32
-[kernel] src/monocypher.c:45: 
-  more than 200(256) elements to enumerate. Approximating.
-[kernel] src/monocypher.c:58: 
-  more than 200(304) elements to enumerate. Approximating.
-[kernel] src/monocypher.c:59: 
-  more than 200(256) elements to enumerate. Approximating.
-[kernel] src/monocypher.c:59: 
-  more than 200(304) elements to enumerate. Approximating.
-[kernel] src/monocypher.c:60: 
-  more than 200(256) elements to enumerate. Approximating.
-[kernel] src/monocypher.c:60: 
-  more than 200(304) elements to enumerate. Approximating.
-[kernel] src/monocypher.c:61: 
-  more than 200(304) elements to enumerate. Approximating.
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function blake2b_incr:
   x ∈
@@ -424179,6 +424474,46 @@
         [254..257] ∈ {0; 1}
   i ∈ {-1}
   diff ∈ [--..--]
+[kernel] src/monocypher.c:58: 
+  more than 10(256) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(64) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(160) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(304) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:58: 
+  more than 10(48) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(256) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(64) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(160) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(304) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:59: 
+  more than 10(48) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(256) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(64) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(160) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(304) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:60: 
+  more than 10(48) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(256) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(64) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(160) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(304) elements to enumerate. Approximating.
+[kernel] src/monocypher.c:61: 
+  more than 10(48) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function store32_le:
   derived_key[0..31] ∈ [--..--] or UNINITIALIZED
   buf[0] ∈ [--..--]
@@ -425907,5 +426242,5 @@
     Preconditions   205 valid    30 unknown     0 invalid    235 total
   87% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-183.06user 3.33system 3:06.40elapsed 99%CPU (0avgtext+0avgdata 2409456maxresident)k
-0inputs+40056outputs (0major+606026minor)pagefaults 0swaps
+179.24user 3.75system 3:03.01elapsed 99%CPU (0avgtext+0avgdata 2387708maxresident)k
+0inputs+39976outputs (0major+600626minor)pagefaults 0swaps

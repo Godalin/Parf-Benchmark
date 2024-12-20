@@ -1,6 +1,76 @@
 [kernel] Parsing 2048.c (with preprocessing)
 [variadic:typing] 2048.c:46: Warning: 
   Incorrect type for argument 2. The argument will be cast from uint32_t to int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 108 (not modified).
+  option -eva-widening-delay already set to 12 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel already set to 143 (not modified).
+  option -eva-plevel already set to 322 (not modified).
+  option -eva-subdivide-non-linear already set to 16 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
+[eva] Splitting return states on:
+  \return(tmpfile) == 0 (auto)
+  \return(tmpnam) == 0 (auto)
+  \return(fopen) == 0 (auto)
+  \return(fdopen) == 0 (auto)
+  \return(freopen) == 0 (auto)
+  \return(fgets) == 0 (auto)
+  \return(getchar) == 121 (auto)
+  \return(gets) == 0 (auto)
+  \return(popen) == 0 (auto)
+  \return(fmemopen) == 0 (auto)
+  \return(seed48) == 0 (auto)
+  \return(calloc) == 0 (auto)
+  \return(malloc) == 0 (auto)
+  \return(realloc) == 0 (auto)
+  \return(reallocarray) == 0 (auto)
+  \return(getenv) == 0 (auto)
+  \return(bsearch) == 0 (auto)
+  \return(memchr) == 0 (auto)
+  \return(memcpy) == 0 (auto)
+  \return(mempcpy) == 0 (auto)
+  \return(memmove) == 0 (auto)
+  \return(memset) == 0 (auto)
+  \return(strchr) == 0 (auto)
+  \return(strchrnul) == 0 (auto)
+  \return(strrchr) == 0 (auto)
+  \return(strpbrk) == 0 (auto)
+  \return(strstr) == 0 (auto)
+  \return(strcasestr) == 0 (auto)
+  \return(strtok) == 0 (auto)
+  \return(strtok_r) == 0 (auto)
+  \return(strsep) == 0 (auto)
+  \return(strerror) == 0 (auto)
+  \return(strcpy) == 0 (auto)
+  \return(strncpy) == 0 (auto)
+  \return(stpcpy) == 0 (auto)
+  \return(strcat) == 0 (auto)
+  \return(strncat) == 0 (auto)
+  \return(strdup) == 0 (auto)
+  \return(strndup) == 0 (auto)
+  \return(strsignal) == 0 (auto)
+  \return(getcwd) == 0 (auto)
+  \return(ttyname) == 0 (auto)
+  \return(signal) == 0 (auto)
+  \return(asctime) == 0 (auto)
+  \return(ctime) == 0 (auto)
+  \return(gmtime) == 0 (auto)
+  \return(localtime) == 0 (auto)
+  \return(gmtime_r) == 0 (auto)
+  \return(localtime_r) == 0 (auto)
+  \return(moveUp) == 0 (auto)
+  \return(moveLeft) == 0 (auto)
+  \return(moveDown) == 0 (auto)
+  \return(moveRight) == 0 (auto)
+  \return(findPairDown) == 0 (auto)
+  \return(gameEnded) == 0 (auto)
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   score ∈ {0}
@@ -67,11 +137,16 @@
 [eva] 2048.c:89: starting to merge loop iterations
 [eva:alarm] 2048.c:90: Warning: 
   out of bounds read. assert \valid_read(array + t);
+[eva] 2048.c:155: cannot properly split on \result == 0
+[eva] 2048.c:165: cannot properly split on \result == 0
+[eva] 2048.c:185: cannot properly split on \result == 0
+[eva] 2048.c:175: cannot properly split on \result == 0
 [eva] using specification for function usleep
 [eva:loop-unroll:auto] 2048.c:202: Automatic loop unrolling.
 [eva:loop-unroll:auto] 2048.c:203: Automatic loop unrolling.
 [eva:loop-unroll:auto] 2048.c:191: Automatic loop unrolling.
 [eva:loop-unroll:auto] 2048.c:192: Automatic loop unrolling.
+[eva] 2048.c:221: cannot properly split on \result == 0
 [eva] using specification for function printf_va_32
 [eva] using specification for function printf_va_33
 [eva] 2048.c:387: starting to merge loop iterations
@@ -321,5 +396,5 @@
     Preconditions    36 valid     5 unknown     0 invalid     41 total
   87% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-6.98user 0.14system 0:07.12elapsed 99%CPU (0avgtext+0avgdata 208848maxresident)k
-0inputs+2448outputs (0major+45709minor)pagefaults 0swaps
+21.24user 0.23system 0:21.48elapsed 99%CPU (0avgtext+0avgdata 296600maxresident)k
+0inputs+2456outputs (0major+67632minor)pagefaults 0swaps

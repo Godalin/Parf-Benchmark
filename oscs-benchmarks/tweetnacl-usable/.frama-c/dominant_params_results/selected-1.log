@@ -3,6 +3,20 @@
 [kernel] Parsing randombytes.c (with preprocessing)
 [variadic:typing] main.c:21: Warning: 
   Incorrect type for argument 2. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 2 (not modified).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   _0[0..15] ∈ {0}
@@ -274,6 +288,7 @@
 [eva] tweetnacl.c:339: starting to merge loop iterations
 [eva:alarm] tweetnacl.c:340: Warning: 
   accessing uninitialized left-value. assert \initialized(o + 15);
+[kernel] tweetnacl.c:339: more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] tweetnacl.c:405: Warning: 
   accessing uninitialized left-value. assert \initialized(&x[i]);
 [eva:loop-unroll:partial] tweetnacl.c:404: loop not completely unrolled
@@ -312,7 +327,6 @@
   accessing uninitialized left-value. assert \initialized(a + i);
 [eva:loop-unroll:partial] tweetnacl.c:359: loop not completely unrolled
 [eva] tweetnacl.c:359: starting to merge loop iterations
-[eva] tweetnacl.c:359: Trace partitioning superposing up to 100 states
 [eva:alarm] tweetnacl.c:360: Warning: 
   accessing uninitialized left-value. assert \initialized(&t[(i64)(i + 16)]);
 [eva:loop-unroll:partial] tweetnacl.c:360: loop not completely unrolled
@@ -448,6 +462,14 @@
   accessing uninitialized left-value. assert \initialized(&t[i]);
 [eva:alarm] tweetnacl.c:317: Warning: 
   accessing uninitialized left-value. assert \initialized(&t[i]);
+[kernel] tweetnacl.c:316: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] tweetnacl.c:317: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] tweetnacl.c:316: 
+  more than 10(14) locations to update in array. Approximating.
+[kernel] tweetnacl.c:317: 
+  more than 10(14) locations to update in array. Approximating.
 [eva] using specification for function printf_va_4
 [eva] using specification for function printf_va_5
 [eva] using specification for function printf_va_6
@@ -473,22 +495,52 @@
   accessing uninitialized left-value. assert \initialized(x + 1);
 [eva:alarm] tweetnacl.c:32: Warning: 
   accessing uninitialized left-value. assert \initialized(x + 0);
+[eva:loop-unroll:partial] tweetnacl.c:76: loop not completely unrolled
+[eva] tweetnacl.c:76: starting to merge loop iterations
 [eva:loop-unroll:partial] tweetnacl.c:83: loop not completely unrolled
 [eva] tweetnacl.c:83: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:83: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[i]);
+[eva:alarm] tweetnacl.c:87: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&x[(int)((int)((int)(5 * j) + (int)(4 * m)) % 16)]);
+[eva:loop-unroll:partial] tweetnacl.c:87: loop not completely unrolled
+[eva] tweetnacl.c:87: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:88: Warning: 
+  accessing uninitialized left-value. assert \initialized(&t[3]);
+[eva:alarm] tweetnacl.c:89: Warning: 
+  accessing uninitialized left-value. assert \initialized(&t[2]);
+[eva:loop-unroll:partial] tweetnacl.c:92: loop not completely unrolled
+[eva] tweetnacl.c:92: starting to merge loop iterations
+[eva:loop-unroll:partial] tweetnacl.c:86: loop not completely unrolled
+[eva] tweetnacl.c:86: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:94: Warning: 
+  accessing uninitialized left-value. assert \initialized(&w[m]);
 [eva:loop-unroll:partial] tweetnacl.c:94: loop not completely unrolled
 [eva] tweetnacl.c:94: starting to merge loop iterations
-[eva] tweetnacl.c:87: Trace partitioning superposing up to 100 states
 [eva:loop-unroll:partial] tweetnacl.c:85: loop not completely unrolled
 [eva] tweetnacl.c:85: starting to merge loop iterations
-[eva] tweetnacl.c:86: starting to merge loop iterations
-[eva] tweetnacl.c:87: starting to merge loop iterations
-[eva] tweetnacl.c:92: starting to merge loop iterations
-[eva] tweetnacl.c:87: Trace partitioning superposing up to 200 states
-[eva] tweetnacl.c:87: Trace partitioning superposing up to 300 states
+[eva] tweetnacl.c:87: Trace partitioning superposing up to 100 states
 [eva:alarm] tweetnacl.c:98: Warning: 
   accessing uninitialized left-value. assert \initialized(&y[i]);
 [eva:loop-unroll:partial] tweetnacl.c:98: loop not completely unrolled
 [eva] tweetnacl.c:98: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:98: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[i]);
+[eva:alarm] tweetnacl.c:100: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[(int)(5 * i)]);
+[eva:alarm] tweetnacl.c:101: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[(int)(6 + i)]);
+[eva:loop-unroll:partial] tweetnacl.c:99: loop not completely unrolled
+[eva] tweetnacl.c:99: starting to merge loop iterations
+[eva:loop-unroll:partial] tweetnacl.c:45: loop not completely unrolled
+[eva] tweetnacl.c:45: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:104: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[(int)(5 * i)]);
+[eva:alarm] tweetnacl.c:105: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[(int)(6 + i)]);
+[eva:loop-unroll:partial] tweetnacl.c:103: loop not completely unrolled
+[eva] tweetnacl.c:103: starting to merge loop iterations
 [eva:loop-unroll:partial] tweetnacl.c:130: loop not completely unrolled
 [eva] tweetnacl.c:130: starting to merge loop iterations
 [eva:loop-unroll:partial] tweetnacl.c:131: loop not completely unrolled
@@ -497,21 +549,29 @@
   accessing uninitialized left-value. assert \initialized(&y[i]);
 [eva:loop-unroll:partial] tweetnacl.c:108: loop not completely unrolled
 [eva] tweetnacl.c:108: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:108: Warning: 
+  accessing uninitialized left-value. assert \initialized(&x[i]);
+[kernel] tweetnacl.c:45: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] tweetnacl.c:45: 
+  more than 10(14) locations to update in array. Approximating.
 [eva:alarm] tweetnacl.c:134: Warning: 
   accessing uninitialized left-value. assert \initialized(m + i);
 [eva:alarm] tweetnacl.c:134: Warning: out of bounds write. assert \valid(c + i);
-[eva:loop-unroll:partial] tweetnacl.c:134: loop not completely unrolled
-[eva] tweetnacl.c:134: starting to merge loop iterations
 [eva:alarm] tweetnacl.c:134: Warning: 
   accessing uninitialized left-value. assert \initialized(&x[i]);
+[eva:loop-unroll:partial] tweetnacl.c:134: loop not completely unrolled
+[eva] tweetnacl.c:134: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:137: Warning: 
+  accessing uninitialized left-value. assert \initialized(&z[i]);
 [eva:loop-unroll:partial] tweetnacl.c:136: loop not completely unrolled
 [eva] tweetnacl.c:136: starting to merge loop iterations
 [eva:alarm] tweetnacl.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(m + i);
-[eva:loop-unroll:partial] tweetnacl.c:147: loop not completely unrolled
-[eva] tweetnacl.c:147: starting to merge loop iterations
 [eva:alarm] tweetnacl.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&x[i]);
+[eva:loop-unroll:partial] tweetnacl.c:147: loop not completely unrolled
+[eva] tweetnacl.c:147: starting to merge loop iterations
 [eva:loop-unroll:partial] tweetnacl.c:189: loop not completely unrolled
 [eva] tweetnacl.c:189: starting to merge loop iterations
 [eva:alarm] tweetnacl.c:190: Warning: 
@@ -520,6 +580,10 @@
   accessing uninitialized left-value. assert \initialized(k + j);
 [eva:loop-unroll:partial] tweetnacl.c:190: loop not completely unrolled
 [eva] tweetnacl.c:190: starting to merge loop iterations
+[eva:alarm] tweetnacl.c:191: Warning: 
+  accessing uninitialized left-value. assert \initialized(&r[3]);
+[eva:alarm] tweetnacl.c:192: Warning: 
+  accessing uninitialized left-value. assert \initialized(&r[4]);
 [eva:alarm] tweetnacl.c:193: Warning: 
   accessing uninitialized left-value. assert \initialized(&r[7]);
 [eva:alarm] tweetnacl.c:194: Warning: 
@@ -551,7 +615,6 @@
   accessing uninitialized left-value. assert \initialized(&h[j]);
 [eva:loop-unroll:partial] tweetnacl.c:208: loop not completely unrolled
 [eva] tweetnacl.c:208: starting to merge loop iterations
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 100 states
 [eva:alarm] tweetnacl.c:208: Warning: 
   accessing uninitialized left-value. assert \initialized(&r[(u32)(i - j)]);
 [eva:loop-unroll:partial] tweetnacl.c:206: loop not completely unrolled
@@ -576,10 +639,7 @@
   accessing uninitialized left-value. assert \initialized(&h[j]);
 [eva:loop-unroll:partial] tweetnacl.c:219: loop not completely unrolled
 [eva] tweetnacl.c:219: starting to merge loop iterations
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 200 states
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 300 states
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 400 states
-[eva] tweetnacl.c:208: Trace partitioning superposing up to 500 states
+[eva] tweetnacl.c:208: Trace partitioning superposing up to 100 states
 [eva:alarm] tweetnacl.c:227: Warning: 
   accessing uninitialized left-value. assert \initialized(&h[j]);
 [eva:loop-unroll:partial] tweetnacl.c:227: loop not completely unrolled
@@ -616,80 +676,79 @@
 [eva] using specification for function printf_va_10
 [eva] using specification for function printf_va_11
 [eva] using specification for function printf_va_12
-[scope:rm_asserts] removing 3 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function A:
   i ∈ {16}
-  a[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  c[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  e[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
+  a[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  c[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  e[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function L32:
   __retres ∈ [--..--]
 [eva:final-states] Values at end of function Z:
   i ∈ {16}
-  a[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  b[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  c[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
+  a[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  b[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  c[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function add1305:
   j ∈ {17}
   u ∈ [0..72057594037927935]
-  h[0..5] ∈ [0..255]
-   [6..16] ∈ [--..--] or UNINITIALIZED
+  h[0..1] ∈ [0..255]
+   [2..16] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function car25519:
   i ∈ {16}
   c ∈ [0..9223372036854775807]
-  t[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  c[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  x[0..5] ∈ [0..65535]
-   [6..14] ∈ [0..65535] or UNINITIALIZED
+  t[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  c[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [0..65535]
+   [2..14] ∈ [0..65535] or UNINITIALIZED
    [15] ∈ [0..32767]
    [16..79] ∈ [--..--] or UNINITIALIZED
-  a[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  b[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  c[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  d[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
+  a[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  b[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  c[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  d[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
   f[0..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function M:
   i ∈ {16}
   j ∈ {16}
-  t[0..10] ∈ [--..--]
-   [11..15] ∈ [--..--] or UNINITIALIZED
-   [16..21] ∈ [--..--]
-   [22..30] ∈ [--..--] or UNINITIALIZED
-  c[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  x[0..5] ∈ [0..65535]
-   [6..14] ∈ [0..65535] or UNINITIALIZED
+  t[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..30] ∈ [--..--] or UNINITIALIZED
+  c[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [0..65535]
+   [2..14] ∈ [0..65535] or UNINITIALIZED
    [15] ∈ [0..32767]
    [16..79] ∈ [--..--] or UNINITIALIZED
-  a[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  b[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  c[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  d[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
+  a[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  b[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  c[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  d[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
   f[0..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function S:
-  c[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  b[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  d[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
+  c[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  b[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  d[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
   f[0..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function crypto_onetimeauth_poly1305_tweet:
   m ∈
@@ -699,61 +758,61 @@
   i ∈ {17}
   j ∈ {16}
   u ∈ [0..72057594037927938]
-  x[0..5] ∈ [--..--]
-   [6..16] ∈ [--..--] or UNINITIALIZED
-  r[0..2] ∈ [0..255]
+  x[0..1] ∈ [--..--]
+   [2..16] ∈ [--..--] or UNINITIALIZED
+  r[0..1] ∈ [0..255]
+   [2] ∈ [0..255] or UNINITIALIZED
    [3] ∈ [0..15]
    [4] ∈ [0..252],0%4
-   [5] ∈ [0..255]
-   [6] ∈ [0..255] or UNINITIALIZED
+   [5..6] ∈ [0..255] or UNINITIALIZED
    [7] ∈ [0..15]
    [8] ∈ [0..252],0%4
    [9..10] ∈ [0..255] or UNINITIALIZED
    [11] ∈ [0..15]
    [12] ∈ [0..252],0%4
-   [13..14] ∈ [0..255]
+   [13..14] ∈ [0..255] or UNINITIALIZED
    [15] ∈ [0..15]
    [16] ∈ {0}
-  h[0..5] ∈ [0..255]
-   [6..15] ∈ [--..--] or UNINITIALIZED
+  h[0..1] ∈ [0..255]
+   [2..15] ∈ [--..--] or UNINITIALIZED
    [16] ∈ [--..--]
-  c[0..5] ∈ [0..255]
-   [6..15] ∈ [0..255] or UNINITIALIZED
+  c[0..1] ∈ [0..255]
+   [2..15] ∈ [0..255] or UNINITIALIZED
    [16] ∈ {0}
-  g[0..5] ∈ [0..255]
-   [6..16] ∈ [--..--] or UNINITIALIZED
-  x[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
+  g[0..1] ∈ [0..255]
+   [2..16] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
   __retres ∈ {0}
-  __malloc_main_l60[0..5] ∈ [--..--]
-                   [6..15] ∈ [--..--] or UNINITIALIZED
-                   [16..21] ∈ [--..--]
-                   [22..31] ∈ [--..--] or UNINITIALIZED
-                   [32..37] ∈ [--..--]
-                   [38..47] ∈ [--..--] or UNINITIALIZED
-                   [48..53] ∈ [--..--]
-                   [54..63] ∈ [--..--] or UNINITIALIZED
-                   [64..69] ∈ [--..--]
-                   [70..79] ∈ [--..--] or UNINITIALIZED
-                   [80..85] ∈ [--..--]
-                   [86..95] ∈ [--..--] or UNINITIALIZED
-                   [96..101] ∈ [--..--]
-                   [102..104] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l60[0..1] ∈ [--..--]
+                   [2..15] ∈ [--..--] or UNINITIALIZED
+                   [16..17] ∈ [--..--]
+                   [18..31] ∈ [--..--] or UNINITIALIZED
+                   [32..33] ∈ [--..--]
+                   [34..47] ∈ [--..--] or UNINITIALIZED
+                   [48..49] ∈ [--..--]
+                   [50..63] ∈ [--..--] or UNINITIALIZED
+                   [64..65] ∈ [--..--]
+                   [66..79] ∈ [--..--] or UNINITIALIZED
+                   [80..81] ∈ [--..--]
+                   [82..95] ∈ [--..--] or UNINITIALIZED
+                   [96..97] ∈ [--..--]
+                   [98..104] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function inv25519:
-  c[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
+  c[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
   a ∈ {16}
-  x[0..5] ∈ [0..65535]
-   [6..14] ∈ [0..65535] or UNINITIALIZED
+  x[0..1] ∈ [0..65535]
+   [2..14] ∈ [0..65535] or UNINITIALIZED
    [15] ∈ [0..32767]
-   [16..21] ∈ [--..--]
-   [22..31] ∈ [--..--] or UNINITIALIZED
-   [32..37] ∈ [--..--]
-   [38..47] ∈ [--..--] or UNINITIALIZED
-   [48..53] ∈ [--..--]
-   [54..63] ∈ [--..--] or UNINITIALIZED
-   [64..69] ∈ [--..--]
-   [70..79] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..31] ∈ [--..--] or UNINITIALIZED
+   [32..33] ∈ [--..--]
+   [34..47] ∈ [--..--] or UNINITIALIZED
+   [48..49] ∈ [--..--]
+   [50..63] ∈ [--..--] or UNINITIALIZED
+   [64..65] ∈ [--..--]
+   [66..79] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function ld32:
   u ∈ [0..16777215]
   __retres ∈ [0..4294967295]
@@ -772,73 +831,142 @@
   t ∈ [--..--]
   i ∈ {16}
   c ∈ {-1; 0}
-  m[0..6] ∈ [--..--]
-   [7..13] ∈ [--..--] or UNINITIALIZED
+  m[0..2] ∈ [--..--]
+   [3..13] ∈ [--..--] or UNINITIALIZED
    [14..15] ∈ [--..--]
-  t[0..6] ∈ [--..--]
-   [7..14] ∈ [--..--] or UNINITIALIZED
+  t[0..2] ∈ [--..--]
+   [3..14] ∈ [--..--] or UNINITIALIZED
    [15] ∈ [--..--]
-  a[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  b[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  c[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  d[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
+  a[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  b[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  c[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  d[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function pack25519:
   pk[0..31] ∈ [--..--]
   pk2[0..31] ∈ [--..--]
   i ∈ {16}
   j ∈ {2}
   b ∈ {0; 1}
-  m[0..6] ∈ [--..--]
-   [7..13] ∈ [--..--] or UNINITIALIZED
+  m[0..2] ∈ [--..--]
+   [3..13] ∈ [--..--] or UNINITIALIZED
    [14..15] ∈ [--..--]
-  t[0..6] ∈ [--..--]
-   [7..14] ∈ [--..--] or UNINITIALIZED
+  t[0..2] ∈ [--..--]
+   [3..14] ∈ [--..--] or UNINITIALIZED
    [15] ∈ [--..--]
-  s[0..11] ∈ [--..--]
-   [12..31] ∈ [--..--] or UNINITIALIZED
+  s[0..3] ∈ [--..--]
+   [4..31] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function st32:
-  u ∈ [0..4294967295]
+  u ∈ [0..281474976710655]
   i ∈ {4}
-  x[0..3] ∈ [--..--]
-   [4..63] ∈ [--..--] or UNINITIALIZED
-  s[0..3] ∈ [--..--]
-   [4..31] ∈ [--..--] or UNINITIALIZED
-  s[0..3] ∈ [--..--]
-   [4..31] ∈ [--..--] or UNINITIALIZED
-  k[0..3] ∈ [--..--]
-   [4..31] ∈ [--..--] or UNINITIALIZED
-  k[0..3] ∈ [--..--]
-   [4..31] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..63] ∈ [--..--] or UNINITIALIZED
+  s[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
+  s[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function core:
-  w[0..15] ∈ [--..--]
-  x[0..15] ∈ [--..--]
+  w[0..1] ∈ [--..--]
+   [2..4] ∈ [--..--] or UNINITIALIZED
+   [5..6] ∈ [--..--]
+   [7..15] ∈ [--..--] or UNINITIALIZED
+  x[0..2] ∈ [--..--]
+   [3] ∈ [--..--] or UNINITIALIZED
+   [4..7] ∈ [--..--]
+   [8] ∈ [--..--] or UNINITIALIZED
+   [9] ∈ [--..--]
+   [10] ∈ [--..--] or UNINITIALIZED
+   [11..12] ∈ [--..--]
+   [13..15] ∈ [--..--] or UNINITIALIZED
   y[0] ∈ {1634760805}
-   [1..4] ∈ [0..4294967295]
-   [5] ∈ {857760878}
-   [6..15] ∈ [0..4294967295] or UNINITIALIZED
+   [1] ∈ [0..4294967295]
+   [2..15] ∈ [0..4294967295] or UNINITIALIZED
   t[0..3] ∈ [--..--]
   i ∈ {4; 16}
   j ∈ {4}
   m ∈ {16}
-  x[0..23] ∈ [--..--]
-   [24..63] ∈ [--..--] or UNINITIALIZED
-  s[0..31] ∈ [--..--]
-  s[0..31] ∈ [--..--]
-  k[0..31] ∈ [--..--]
-  k[0..31] ∈ [--..--]
+  x[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..63] ∈ [--..--] or UNINITIALIZED
+  s[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  s[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function crypto_core_hsalsa20_tweet:
-  s[0..31] ∈ [--..--]
-  s[0..31] ∈ [--..--]
-  k[0..31] ∈ [--..--]
-  k[0..31] ∈ [--..--]
+  s[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  s[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
   __retres ∈ {0}
 [eva:final-states] Values at end of function crypto_core_salsa20_tweet:
-  x[0..23] ∈ [--..--]
-   [24..63] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..63] ∈ [--..--] or UNINITIALIZED
   __retres ∈ {0}
 [eva:final-states] Values at end of function crypto_stream_salsa20_tweet_xor:
   c ∈
@@ -849,133 +977,161 @@
       &__malloc_main_l60[64] }}
   b ∈ {32; 41}
   z[0..7] ∈ [--..--]
-   [8] ∈ {0; 1}
-   [9..15] ∈ {0}
-  x[0..23] ∈ [--..--]
-   [24..63] ∈ [--..--] or UNINITIALIZED
+   [8] ∈ {0; 1} or UNINITIALIZED
+   [9..15] ∈ {0} or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..63] ∈ [--..--] or UNINITIALIZED
   u ∈ {0} or UNINITIALIZED
   i ∈ [32..63]
-  x[0..5] ∈ [--..--]
-   [6..31] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
   __retres ∈ {0}
-  __malloc_main_l60[0..5] ∈ [--..--]
-                   [6..63] ∈ [--..--] or UNINITIALIZED
-                   [64..69] ∈ [--..--]
-                   [70..104] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l60[0..1] ∈ [--..--]
+                   [2..63] ∈ [--..--] or UNINITIALIZED
+                   [64..65] ∈ [--..--]
+                   [66..104] ∈ [--..--] or UNINITIALIZED
   __malloc_main_l63[0..104] ∈ [--..--] or UNINITIALIZED
                    [105] ∈ {0}
 [eva:final-states] Values at end of function crypto_stream_salsa20_tweet:
-  x[0..5] ∈ [--..--]
-   [6..31] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function crypto_stream_xsalsa20_tweet:
-  s[0..31] ∈ [--..--]
-  x[0..5] ∈ [--..--]
-   [6..31] ∈ [--..--] or UNINITIALIZED
+  s[0..7] ∈ [--..--]
+   [8..15] ∈ [--..--] or UNINITIALIZED
+   [16..23] ∈ [--..--]
+   [24..31] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..31] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function crypto_stream_xsalsa20_tweet_xor:
-  s[0..31] ∈ [--..--]
-  __malloc_main_l60[0..5] ∈ [--..--]
-                   [6..63] ∈ [--..--] or UNINITIALIZED
-                   [64..69] ∈ [--..--]
-                   [70..104] ∈ [--..--] or UNINITIALIZED
+  s[0..7] ∈ [--..--]
+   [8..15] ∈ [--..--] or UNINITIALIZED
+   [16..23] ∈ [--..--]
+   [24..31] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l60[0..1] ∈ [--..--]
+                   [2..63] ∈ [--..--] or UNINITIALIZED
+                   [64..65] ∈ [--..--]
+                   [66..104] ∈ [--..--] or UNINITIALIZED
   __malloc_main_l63[0..104] ∈ [--..--] or UNINITIALIZED
                    [105] ∈ {0}
 [eva:final-states] 
   Values at end of function crypto_secretbox_xsalsa20poly1305_tweet:
   i ∈ {16}
   __retres ∈ {0}
-  __malloc_main_l60[0..5] ∈ {0}
-                   [6..15] ∈ [--..--] or UNINITIALIZED
-                   [16..21] ∈ [--..--]
-                   [22..31] ∈ [--..--] or UNINITIALIZED
-                   [32..37] ∈ [--..--]
-                   [38..47] ∈ [--..--] or UNINITIALIZED
-                   [48..53] ∈ [--..--]
-                   [54..63] ∈ [--..--] or UNINITIALIZED
-                   [64..69] ∈ [--..--]
-                   [70..79] ∈ [--..--] or UNINITIALIZED
-                   [80..85] ∈ [--..--]
-                   [86..95] ∈ [--..--] or UNINITIALIZED
-                   [96..101] ∈ [--..--]
-                   [102..104] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l60[0..1] ∈ {0}
+                   [2..15] ∈ [--..--] or UNINITIALIZED
+                   [16..17] ∈ [--..--]
+                   [18..31] ∈ [--..--] or UNINITIALIZED
+                   [32..33] ∈ [--..--]
+                   [34..47] ∈ [--..--] or UNINITIALIZED
+                   [48..49] ∈ [--..--]
+                   [50..63] ∈ [--..--] or UNINITIALIZED
+                   [64..65] ∈ [--..--]
+                   [66..79] ∈ [--..--] or UNINITIALIZED
+                   [80..81] ∈ [--..--]
+                   [82..95] ∈ [--..--] or UNINITIALIZED
+                   [96..97] ∈ [--..--]
+                   [98..104] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] 
   Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_afternm:
-  __malloc_main_l60[0..5] ∈ {0}
-                   [6..15] ∈ [--..--] or UNINITIALIZED
-                   [16..21] ∈ [--..--]
-                   [22..31] ∈ [--..--] or UNINITIALIZED
-                   [32..37] ∈ [--..--]
-                   [38..47] ∈ [--..--] or UNINITIALIZED
-                   [48..53] ∈ [--..--]
-                   [54..63] ∈ [--..--] or UNINITIALIZED
-                   [64..69] ∈ [--..--]
-                   [70..79] ∈ [--..--] or UNINITIALIZED
-                   [80..85] ∈ [--..--]
-                   [86..95] ∈ [--..--] or UNINITIALIZED
-                   [96..101] ∈ [--..--]
-                   [102..104] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l60[0..1] ∈ {0}
+                   [2..15] ∈ [--..--] or UNINITIALIZED
+                   [16..17] ∈ [--..--]
+                   [18..31] ∈ [--..--] or UNINITIALIZED
+                   [32..33] ∈ [--..--]
+                   [34..47] ∈ [--..--] or UNINITIALIZED
+                   [48..49] ∈ [--..--]
+                   [50..63] ∈ [--..--] or UNINITIALIZED
+                   [64..65] ∈ [--..--]
+                   [66..79] ∈ [--..--] or UNINITIALIZED
+                   [80..81] ∈ [--..--]
+                   [82..95] ∈ [--..--] or UNINITIALIZED
+                   [96..97] ∈ [--..--]
+                   [98..104] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function unpack25519:
   i ∈ {16}
-  x[0..5] ∈ [0..65535]
-   [6..14] ∈ [0..65535] or UNINITIALIZED
+  x[0..1] ∈ [0..65535]
+   [2..14] ∈ [0..65535] or UNINITIALIZED
    [15] ∈ [0..32767]
    [16..79] ∈ UNINITIALIZED
 [eva:final-states] Values at end of function crypto_scalarmult_curve25519_tweet:
   pk[0..31] ∈ [--..--]
   pk2[0..31] ∈ [--..--]
   z[0] ∈ [0..248],0%8
-   [1..5] ∈ [--..--]
-   [6..30] ∈ [--..--] or UNINITIALIZED
+   [1] ∈ [--..--]
+   [2..30] ∈ [--..--] or UNINITIALIZED
    [31] ∈ [64..127]
-  x[0..5] ∈ [0..65535]
-   [6..14] ∈ [0..65535] or UNINITIALIZED
+  x[0..1] ∈ [0..65535]
+   [2..14] ∈ [0..65535] or UNINITIALIZED
    [15] ∈ [0..32767]
-   [16..22] ∈ [--..--]
-   [23..31] ∈ [--..--] or UNINITIALIZED
-   [32..37] ∈ [--..--]
-   [38..47] ∈ [--..--] or UNINITIALIZED
-   [48..53] ∈ [--..--]
-   [54..63] ∈ [--..--] or UNINITIALIZED
-   [64..69] ∈ [--..--]
-   [70..79] ∈ [--..--] or UNINITIALIZED
+   [16..18] ∈ [--..--]
+   [19..31] ∈ [--..--] or UNINITIALIZED
+   [32..33] ∈ [--..--]
+   [34..47] ∈ [--..--] or UNINITIALIZED
+   [48..49] ∈ [--..--]
+   [50..63] ∈ [--..--] or UNINITIALIZED
+   [64..65] ∈ [--..--]
+   [66..79] ∈ [--..--] or UNINITIALIZED
   r ∈ {0; 1}
   i ∈ {16}
-  a[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  b[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  c[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  d[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  e[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-  f[0..6] ∈ [--..--]
-   [7..15] ∈ [--..--] or UNINITIALIZED
-  s[0..11] ∈ [--..--]
-   [12..31] ∈ [--..--] or UNINITIALIZED
+  a[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  b[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  c[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  d[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  e[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+  f[0..2] ∈ [--..--]
+   [3..15] ∈ [--..--] or UNINITIALIZED
+  s[0..3] ∈ [--..--]
+   [4..31] ∈ [--..--] or UNINITIALIZED
   __retres ∈ {0}
 [eva:final-states] 
   Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_beforenm:
-  s[0..31] ∈ [--..--]
-  k[0..31] ∈ [--..--]
-  k[0..31] ∈ [--..--]
+  s[0..7] ∈ [--..--]
+   [8..15] ∈ [--..--] or UNINITIALIZED
+   [16..23] ∈ [--..--]
+   [24..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
+  k[0..1] ∈ [--..--]
+   [2..3] ∈ [--..--] or UNINITIALIZED
+   [4..5] ∈ [--..--]
+   [6..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..19] ∈ [--..--] or UNINITIALIZED
+   [20..21] ∈ [--..--]
+   [22..31] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] 
   Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet:
-  k[0..31] ∈ [--..--]
-  __malloc_main_l60[0..5] ∈ {0}
-                   [6..15] ∈ [--..--] or UNINITIALIZED
-                   [16..21] ∈ [--..--]
-                   [22..31] ∈ [--..--] or UNINITIALIZED
-                   [32..37] ∈ [--..--]
-                   [38..47] ∈ [--..--] or UNINITIALIZED
-                   [48..53] ∈ [--..--]
-                   [54..63] ∈ [--..--] or UNINITIALIZED
-                   [64..69] ∈ [--..--]
-                   [70..79] ∈ [--..--] or UNINITIALIZED
-                   [80..85] ∈ [--..--]
-                   [86..95] ∈ [--..--] or UNINITIALIZED
-                   [96..101] ∈ [--..--]
-                   [102..104] ∈ [--..--] or UNINITIALIZED
+  k[0..7] ∈ [--..--]
+   [8..15] ∈ [--..--] or UNINITIALIZED
+   [16..23] ∈ [--..--]
+   [24..31] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l60[0..1] ∈ {0}
+                   [2..15] ∈ [--..--] or UNINITIALIZED
+                   [16..17] ∈ [--..--]
+                   [18..31] ∈ [--..--] or UNINITIALIZED
+                   [32..33] ∈ [--..--]
+                   [34..47] ∈ [--..--] or UNINITIALIZED
+                   [48..49] ∈ [--..--]
+                   [50..63] ∈ [--..--] or UNINITIALIZED
+                   [64..65] ∈ [--..--]
+                   [66..79] ∈ [--..--] or UNINITIALIZED
+                   [80..81] ∈ [--..--]
+                   [82..95] ∈ [--..--] or UNINITIALIZED
+                   [96..97] ∈ [--..--]
+                   [98..104] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] 
   Values at end of function crypto_scalarmult_curve25519_tweet_base:
   pk[0..31] ∈ [--..--]
@@ -996,29 +1152,32 @@
   
 [eva:final-states] 
   Values at end of function crypto_onetimeauth_poly1305_tweet_verify:
-  x[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
 [eva:final-states] 
   Values at end of function crypto_secretbox_xsalsa20poly1305_tweet_open:
   i ∈ {32} or UNINITIALIZED
-  x[0..5] ∈ [--..--]
-   [6..15] ∈ [--..--] or UNINITIALIZED
-   [16..21] ∈ [--..--]
-   [22..31] ∈ [--..--] or UNINITIALIZED
+  x[0..1] ∈ [--..--]
+   [2..15] ∈ [--..--] or UNINITIALIZED
+   [16..17] ∈ [--..--]
+   [18..31] ∈ [--..--] or UNINITIALIZED
   __retres ∈ {-1; 0}
-  __malloc_main_l63[0..5] ∈ {0} or UNINITIALIZED
-                   [6..104] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l63[0..1] ∈ {0} or UNINITIALIZED
+                   [2..104] ∈ [--..--] or UNINITIALIZED
                    [105] ∈ {0}
 [eva:final-states] 
   Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_open_afternm:
-  __malloc_main_l63[0..5] ∈ {0} or UNINITIALIZED
-                   [6..104] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l63[0..1] ∈ {0} or UNINITIALIZED
+                   [2..104] ∈ [--..--] or UNINITIALIZED
                    [105] ∈ {0}
 [eva:final-states] 
   Values at end of function crypto_box_curve25519xsalsa20poly1305_tweet_open:
-  k[0..31] ∈ [--..--]
-  __malloc_main_l63[0..5] ∈ {0} or UNINITIALIZED
-                   [6..104] ∈ [--..--] or UNINITIALIZED
+  k[0..7] ∈ [--..--]
+   [8..15] ∈ [--..--] or UNINITIALIZED
+   [16..23] ∈ [--..--]
+   [24..31] ∈ [--..--] or UNINITIALIZED
+  __malloc_main_l63[0..1] ∈ {0} or UNINITIALIZED
+                   [2..104] ∈ [--..--] or UNINITIALIZED
                    [105] ∈ {0}
 [eva:final-states] Values at end of function main:
   __fc_fopen[0..15] ∈ [--..--]
@@ -1116,8 +1275,8 @@
   ----------------------------------------------------------------------------
   No errors or warnings raised during the analysis.
   ----------------------------------------------------------------------------
-  99 alarms generated by the analysis:
-      69 accesses to uninitialized left-values
+  113 alarms generated by the analysis:
+      83 accesses to uninitialized left-values
       21 integer overflows
        6 invalid memory accesses
        2 accesses out of bounds index
@@ -1128,5 +1287,5 @@
     Preconditions    33 valid     2 unknown     0 invalid     35 total
   94% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.65user 0.23system 0:04.88elapsed 99%CPU (0avgtext+0avgdata 198980maxresident)k
-0inputs+3360outputs (0major+62752minor)pagefaults 0swaps
+3.20user 0.14system 0:03.34elapsed 99%CPU (0avgtext+0avgdata 179068maxresident)k
+104inputs+3368outputs (0major+42285minor)pagefaults 0swaps

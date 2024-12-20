@@ -1,5 +1,19 @@
 [kernel] Parsing fc_stubs.c (with preprocessing)
 [kernel] Parsing examples/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 5 (not modified).
+  option -eva-auto-loop-unroll already set to 109 (not modified).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history already set to 4 (not modified).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel already set to 95 (not modified).
+  option -eva-plevel already set to 224 (not modified).
+  option -eva-subdivide-non-linear already set to 38 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -69,18 +83,23 @@
   function strcmp: precondition 'valid_string_s1' got status unknown.
 [eva] FRAMAC_SHARE/libc/string.h:156: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[eva] kgflags.h:366: Trace partitioning superposing up to 100 states
+[eva] kgflags.h:366: Trace partitioning superposing up to 200 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 300 states
 [eva:loop-unroll:partial] kgflags.h:369: loop not completely unrolled
 [eva:loop-unroll:partial] kgflags.h:373: loop not completely unrolled
 [eva:loop-unroll:partial] kgflags.h:380: loop not completely unrolled
 [eva] kgflags.h:360: starting to merge loop iterations
-[eva] kgflags.h:360: Trace partitioning superposing up to 100 states
-[eva] kgflags.h:366: Trace partitioning superposing up to 200 states
-[eva] kgflags.h:360: Trace partitioning superposing up to 300 states
 [eva] kgflags.h:360: Trace partitioning superposing up to 400 states
-[kernel] kgflags.h:657: too many locations to update in array. Approximating.
 [eva] kgflags.h:360: Trace partitioning superposing up to 500 states
-[eva] kgflags.h:360: Trace partitioning superposing up to 600 states
 [eva] kgflags.h:360: Trace partitioning superposing up to 700 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 800 states
+[kernel] kgflags.h:657: too many locations to update in array. Approximating.
+[eva] kgflags.h:360: Trace partitioning superposing up to 900 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 1100 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 1200 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 1300 states
+[eva] kgflags.h:360: Trace partitioning superposing up to 1400 states
 [eva:loop-unroll:auto] kgflags.h:663: Automatic loop unrolling.
 [eva] using specification for function puts
 [eva:alarm] examples/simple.c:12: Warning: 
@@ -138,14 +157,17 @@
 [eva:alarm] kgflags.h:440: Warning: 
   function fprintf_va_10: precondition valid_read_string(param1) got status unknown.
 [eva] kgflags.h:400: Trace partitioning superposing up to 100 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 800 states
+[eva] kgflags.h:400: Trace partitioning superposing up to 900 states
 [eva:loop-unroll:partial] kgflags.h:400: loop not completely unrolled
 [eva] kgflags.h:400: starting to merge loop iterations
-[eva] kgflags.h:400: Trace partitioning superposing up to 200 states
-[kernel] kgflags.h:404: more than 238(510) elements to enumerate. Approximating.
-[kernel] kgflags.h:416: more than 238(510) elements to enumerate. Approximating.
-[kernel] kgflags.h:402: more than 238(512) elements to enumerate. Approximating.
-[kernel] kgflags.h:404: more than 238(512) elements to enumerate. Approximating.
-[kernel] kgflags.h:416: more than 238(512) elements to enumerate. Approximating.
+[eva] kgflags.h:400: Trace partitioning superposing up to 1000 states
+[kernel] kgflags.h:402: more than 224(507) elements to enumerate. Approximating.
+[kernel] kgflags.h:404: more than 224(507) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 224(507) elements to enumerate. Approximating.
+[kernel] kgflags.h:402: more than 224(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:404: more than 224(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 224(512) elements to enumerate. Approximating.
 [eva] using specification for function fprintf_va_11
 [eva] using specification for function fprintf_va_13
 [eva] using specification for function fprintf_va_14
@@ -453,5 +475,5 @@
     Preconditions    36 valid    12 unknown     0 invalid     48 total
   75% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-6.22user 0.17system 0:06.40elapsed 99%CPU (0avgtext+0avgdata 204552maxresident)k
-0inputs+2672outputs (0major+46545minor)pagefaults 0swaps
+13.00user 0.20system 0:13.21elapsed 99%CPU (0avgtext+0avgdata 242864maxresident)k
+0inputs+2688outputs (0major+56161minor)pagefaults 0swaps

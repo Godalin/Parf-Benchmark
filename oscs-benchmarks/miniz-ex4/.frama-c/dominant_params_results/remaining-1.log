@@ -2,6 +2,20 @@
 [kernel] Parsing examples/example4.c (with preprocessing)
 [kernel] Parsing miniz.c (with preprocessing)
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 53 (not modified).
+  option -eva-widening-delay already set to 10 (not modified).
+  option -eva-partition-history already set to 4 (not modified).
+  option -eva-slevel already set to 76 (not modified).
+  option -eva-ilevel already set to 65 (not modified).
+  option -eva-plevel already set to 153 (not modified).
+  option -eva-subdivide-non-linear already set to 5 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Splitting return states on:
   \return(Frama_C_nondet_ptr) == 0 (auto)
   \return(Frama_C_malloc_fresh) == 0 (auto)
@@ -533,6 +547,7 @@
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
 [eva] miniz_tinfl.c:248: starting to merge loop iterations
+[eva] miniz_tinfl.c:248: Trace partitioning superposing up to 100 states
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva] miniz_tinfl.c:279: starting to merge loop iterations
@@ -573,17 +588,22 @@
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   out of bounds read. assert \valid_read(tmp_21);
                       (tmp_21 from pIn_buf_cur++)
-[eva] miniz_tinfl.c:296: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tinfl.c:313: Automatic loop unrolling.
+[eva:alarm] miniz_tinfl.c:313: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[r->m_type]);
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&pTable->m_code_size[i_0]);
 [eva:loop-unroll:auto] miniz_tinfl.c:317: Automatic loop unrolling.
-[eva:loop-unroll:auto] miniz_tinfl.c:332: Automatic loop unrolling.
-[eva] miniz_tinfl.c:337: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:326: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[r->m_type]);
 [eva:alarm] miniz_tinfl.c:328: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&pTable->m_code_size[sym_index]);
+[eva:loop-unroll:auto] miniz_tinfl.c:332: Automatic loop unrolling.
+[eva] miniz_tinfl.c:337: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:331: Warning: 
   accessing out of bounds index. assert code_size < 17;
 [eva:alarm] miniz_tinfl.c:344: Warning: 
@@ -612,13 +632,13 @@
   assert (int)((int)(-tree_cur) - 1) < (int)(TINFL_MAX_HUFF_SYMBOLS_0 * 2);
 [kernel] miniz_tinfl.c:364: Warning: 
   all target addresses were invalid. This path is assumed to be dead.
-[eva] miniz_tinfl.c:332: starting to merge loop iterations
-[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 100 states
 [eva] miniz_tinfl.c:351: starting to merge loop iterations
-[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 200 states
+[eva] miniz_tinfl.c:332: starting to merge loop iterations
 [eva] miniz_tinfl.c:326: starting to merge loop iterations
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 200 states
 [eva] miniz_tinfl.c:332: Trace partitioning superposing up to 300 states
-[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 400 states
+[eva] miniz_tinfl.c:351: Trace partitioning superposing up to 400 states
+[eva] miniz_tinfl.c:351: Trace partitioning superposing up to 500 states
 [eva:alarm] miniz_tinfl.c:348: Warning: 
   signed overflow. assert -2147483648 ≤ tree_next - 2;
 [eva:alarm] miniz_tinfl.c:358: Warning: 
@@ -718,14 +738,15 @@
   accessing uninitialized left-value.
   assert \initialized(&r->m_len_codes[(mz_uint32)(counter - 1)]);
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&pTable->m_code_size[i_0]);
 [eva] miniz_tinfl.c:313: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
 [eva] miniz_tinfl.c:317: starting to merge loop iterations
+[eva] miniz_tinfl.c:368: starting to merge loop iterations
+[eva] miniz_tinfl.c:371: starting to merge loop iterations
+[eva] miniz_tinfl.c:382: starting to merge loop iterations
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 600 states
+[eva] miniz_tinfl.c:371: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
 [eva:loop-unroll:auto] miniz_tinfl.c:402: Automatic loop unrolling.
@@ -870,6 +891,7 @@
                                                                       >> tmp_34)
                                                                       & 1))]);
   (tmp_34 from code_len_1++)
+[eva] miniz_tinfl.c:459: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:461: Warning: 
   invalid RHS operand for shift.
   assert 0 ≤ tmp_34 < 64;
@@ -887,6 +909,7 @@
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   out of bounds read. assert \valid_read(tmp_10);
                       (tmp_10 from pIn_buf_cur++)
+[eva] miniz_tinfl.c:227: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tinfl.c:240: Automatic loop unrolling.
 [eva:alarm] miniz_tinfl.c:240: Warning: 
   pointer comparison.
@@ -901,12 +924,9 @@
 [eva:alarm] miniz_tinfl.c:241: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
-[eva] miniz_tinfl.c:227: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:313: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[r->m_type]);
-[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 500 states
-[eva] miniz_tinfl.c:459: starting to merge loop iterations
+[eva] miniz_tinfl.c:290: starting to merge loop iterations
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
+[eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:loop-unroll:auto] miniz_tinfl.c:486: Automatic loop unrolling.
@@ -1074,10 +1094,13 @@
   accessing uninitialized left-value. assert \initialized(pSrc + 1);
 [eva:alarm] miniz_tinfl.c:560: Warning: 
   out of bounds read. assert \valid_read(pSrc + 1);
-[eva] miniz_tinfl.c:402: starting to merge loop iterations
-[eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva] miniz_tinfl.c:232: starting to merge loop iterations
-[eva] miniz_tinfl.c:290: starting to merge loop iterations
+[eva] miniz_tinfl.c:296: starting to merge loop iterations
+[eva] miniz_tinfl.c:304: starting to merge loop iterations
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
+[eva] miniz_tinfl.c:490: starting to merge loop iterations
+[eva] miniz_tinfl.c:490: starting to merge loop iterations
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:512: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
@@ -1088,13 +1111,20 @@
                (unsigned long)((size_t)(tmp_41 - (size_t)dist) &
                                out_buf_size_mask));
   (tmp_41 from dist_from_out_buf_start++)
-[eva] miniz_tinfl.c:510: starting to merge loop iterations
-[eva] miniz_tinfl.c:512: starting to merge loop iterations
-[eva] miniz_tinfl.c:402: starting to merge loop iterations
+[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva] miniz_tinfl.c:283: starting to merge loop iterations
-[eva] miniz_tinfl.c:371: starting to merge loop iterations
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 700 states
+[eva] miniz_tinfl.c:510: starting to merge loop iterations
+[eva] miniz_tinfl.c:395: starting to merge loop iterations
+[eva] miniz_tinfl.c:512: starting to merge loop iterations
 [eva] miniz_tinfl.c:490: starting to merge loop iterations
-[eva] miniz_tinfl.c:490: starting to merge loop iterations
+[eva] miniz_tinfl.c:496: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva] miniz_tinfl.c:299: starting to merge loop iterations
+[eva] miniz_tinfl.c:220: starting to merge loop iterations
+[eva] miniz_tinfl.c:222: starting to merge loop iterations
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 800 states
+[eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tinfl.c:570: Automatic loop unrolling.
 [eva:alarm] miniz_tinfl.c:570: Warning: 
   pointer comparison.
@@ -1115,6 +1145,7 @@
   accessing uninitialized left-value.
   assert \initialized(tmp_46);
   (tmp_46 from pIn_buf_cur++)
+[eva] miniz_tinfl.c:580: starting to merge loop iterations
 [eva:loop-unroll:auto] miniz_tinfl.c:600: Automatic loop unrolling.
 [eva:alarm] miniz_tinfl.c:600: Warning: 
   pointer comparison.
@@ -1143,21 +1174,21 @@
   accessing uninitialized left-value. assert \initialized(ptr + 7);
 [eva] miniz_tinfl.c:622: starting to merge loop iterations
 [kernel] miniz_tinfl.c:624: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:625: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:626: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:627: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:628: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:629: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:630: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [kernel] miniz_tinfl.c:631: 
-  more than 131(4092) elements to enumerate. Approximating.
+  more than 153(4090) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:624: Warning: 
   out of bounds read. assert \valid_read(ptr + 0);
 [eva:loop-unroll:auto] miniz_tinfl.c:633: Automatic loop unrolling.
@@ -1169,32 +1200,52 @@
   out of bounds read. assert \valid_read(tmp_47);
                       (tmp_47 from ptr++)
 [kernel] miniz_tinfl.c:634: 
-  more than 131(4094) elements to enumerate. Approximating.
-[kernel] miniz_tinfl.c:634: 
-  more than 131(4093) elements to enumerate. Approximating.
-[kernel] miniz_tinfl.c:634: 
-  more than 131(4092) elements to enumerate. Approximating.
-[kernel] miniz_tinfl.c:634: 
-  more than 131(4091) elements to enumerate. Approximating.
-[kernel] miniz_tinfl.c:634: 
-  more than 131(4090) elements to enumerate. Approximating.
-[kernel] miniz_tinfl.c:634: 
-  more than 131(4089) elements to enumerate. Approximating.
-[eva] miniz_tinfl.c:633: starting to merge loop iterations
+  more than 153(4092) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:624: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:624: 
+  more than 153(4096) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:625: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:625: 
+  more than 153(4096) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:625: Warning: 
   out of bounds read. assert \valid_read(ptr + 1);
+[kernel] miniz_tinfl.c:626: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:626: 
+  more than 153(4096) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:626: Warning: 
   out of bounds read. assert \valid_read(ptr + 2);
+[kernel] miniz_tinfl.c:627: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:627: 
+  more than 153(4096) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:627: Warning: 
   out of bounds read. assert \valid_read(ptr + 3);
+[kernel] miniz_tinfl.c:628: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:628: 
+  more than 153(4096) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:628: Warning: 
   out of bounds read. assert \valid_read(ptr + 4);
+[kernel] miniz_tinfl.c:629: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:629: 
+  more than 153(4096) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:629: Warning: 
   out of bounds read. assert \valid_read(ptr + 5);
+[kernel] miniz_tinfl.c:630: 
+  more than 153(4095) elements to enumerate. Approximating.
+[kernel] miniz_tinfl.c:630: 
+  more than 153(4096) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:630: Warning: 
   out of bounds read. assert \valid_read(ptr + 6);
+[kernel] miniz_tinfl.c:631: 
+  more than 153(4095) elements to enumerate. Approximating.
 [eva:alarm] miniz_tinfl.c:631: Warning: 
   out of bounds read. assert \valid_read(ptr + 7);
+[eva] miniz_tinfl.c:643: cannot properly split on \result == 0
 [eva] using specification for function fwrite
 [eva:alarm] examples/example4.c:16: Warning: 
   function fwrite: precondition 'valid_ptr_block' got status unknown.
@@ -1207,6 +1258,7 @@
   (tmp_41 from dist_from_out_buf_start++)
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
+[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tinfl.c:409: Warning: 
   out of bounds write. assert \valid(tmp_32);
                        (tmp_32 from pOut_buf_cur++)
@@ -1214,22 +1266,65 @@
   out of bounds write. assert \valid(pOut_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:474: Warning: 
   out of bounds write. assert \valid(pOut_buf_cur + 1);
-[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 100 states
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
+[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 200 states
+[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 300 states
+[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 400 states
+[eva] miniz_tinfl.c:402: Trace partitioning superposing up to 500 states
 [eva:alarm] miniz_tinfl.c:245: Warning: 
   out of bounds write. assert \valid(tmp_13);
                        (tmp_13 from pOut_buf_cur++)
 [eva] miniz_tinfl.c:238: starting to merge loop iterations
 [eva] miniz_tinfl.c:241: starting to merge loop iterations
+[eva] miniz_tinfl.c:240: starting to merge loop iterations
+[eva] miniz_tinfl.c:240: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
+[eva] miniz_tinfl.c:351: Trace partitioning superposing up to 600 states
+[eva] miniz_tinfl.c:351: Trace partitioning superposing up to 700 states
+[eva] miniz_tinfl.c:351: Trace partitioning superposing up to 800 states
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
+[eva] miniz_tinfl.c:299: starting to merge loop iterations
+[eva] miniz_tinfl.c:351: Trace partitioning superposing up to 900 states
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva] miniz_tinfl.c:382: starting to merge loop iterations
+[eva] miniz_tinfl.c:285: starting to merge loop iterations
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 1000 states
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 1100 states
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 1200 states
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 1300 states
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 1400 states
+[eva] miniz_tinfl.c:332: Trace partitioning superposing up to 1500 states
+[eva] miniz_tinfl.c:222: starting to merge loop iterations
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 1600 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 1700 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 1800 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 1900 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2000 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2100 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2200 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2300 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2400 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2500 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2600 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2700 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2800 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 2900 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3000 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3100 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3200 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3300 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3400 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3500 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3600 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3700 states
+[eva] miniz_tinfl.c:313: Trace partitioning superposing up to 3800 states
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:490: Warning: 
@@ -1237,8 +1332,11 @@
 [eva:alarm] miniz_tinfl.c:516: Warning: 
   out of bounds write. assert \valid(tmp_40);
                        (tmp_40 from pOut_buf_cur++)
+[eva] miniz_tinfl.c:633: starting to merge loop iterations
+[eva] miniz_tinfl.c:620: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:612: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_cur - pIn_buf_next;
+[eva] miniz_tinfl.c:720: cannot properly split on \result == 0
 [eva] using specification for function printf_va_11
 [eva] using specification for function fclose
 [eva] using specification for function printf_va_12
@@ -1247,7 +1345,6 @@
 [eva] using specification for function printf_va_15
 [eva] miniz_tinfl.c:381: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[scope:rm_asserts] removing 1 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function tinfl_decompress:
   status ∈
@@ -1388,7 +1485,7 @@
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   5 functions analyzed (out of 33): 15% coverage.
-  In these functions, 1135 statements reached (out of 1246): 91% coverage.
+  In these functions, 1140 statements reached (out of 1246): 91% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
@@ -1407,5 +1504,5 @@
     Preconditions    45 valid     8 unknown     0 invalid     53 total
   84% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-17.49user 0.38system 0:17.88elapsed 99%CPU (0avgtext+0avgdata 408088maxresident)k
-0inputs+7464outputs (0major+102416minor)pagefaults 0swaps
+160.49user 2.73system 2:43.25elapsed 99%CPU (0avgtext+0avgdata 2162096maxresident)k
+0inputs+7472outputs (0major+544413minor)pagefaults 0swaps

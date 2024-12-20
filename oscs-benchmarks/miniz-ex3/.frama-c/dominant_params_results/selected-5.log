@@ -5,6 +5,20 @@
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
 [variadic:typing] examples/example3.c:88: Warning: 
   Incorrect type for argument 3. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 4 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   s_inbuf[0..1048575] ∈ {0}
@@ -564,7 +578,6 @@
 [eva] using specification for function printf_va_6
 [eva] using specification for function printf_va_7
 [eva] using specification for function atoi
-[eva] examples/example3.c:44: starting to merge loop iterations
 [eva] using specification for function printf_va_8
 [eva] using specification for function printf_va_9
 [eva] using specification for function printf_va_10
@@ -617,24 +630,17 @@
   accessing uninitialized left-value. assert \initialized(&d->m_pLZ_flags);
 [eva] FRAMAC_SHARE/libc/string.h:101: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
-[eva] miniz_tdef.c:880: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:883: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tdef.c:885: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tdef.c:860: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ret);
 [eva:alarm] miniz_tdef.c:901: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_hash[hash]);
-[eva:alarm] miniz_tdef.c:750: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ret);
 [eva] miniz_tdef.c:909: starting to merge loop iterations
 [kernel] miniz_tdef.c:749: 
-  more than 200(39893) elements to enumerate. Approximating.
+  more than 10(39890) elements to enumerate. Approximating.
+[eva:alarm] miniz_tdef.c:750: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ret);
 [eva:alarm] miniz_tdef.c:749: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [kernel] miniz_tdef.c:749: 
-  more than 200(39892) elements to enumerate. Approximating.
+  more than 10(39889) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:913: Warning: 
   accessing uninitialized left-value. assert \initialized((mz_uint8 const *)p);
 [eva:alarm] miniz_tdef.c:913: Warning: 
@@ -660,7 +666,9 @@
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_count[0][(mz_uint8)first_trigram]);
 [kernel] miniz_tdef.c:749: 
-  more than 200(39894) elements to enumerate. Approximating.
+  more than 10(39894) elements to enumerate. Approximating.
+[kernel] miniz_tdef.c:749: 
+  more than 10(39893) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:929: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:940: Warning: 
@@ -679,9 +687,11 @@
   assert
   \initialized(&d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(cur_match_len -
                                                              TDEFL_MIN_MATCH_LEN)]]);
+[eva] miniz_tdef.c:895: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:966: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva] miniz_tdef.c:895: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:860: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ret);
 [eva:alarm] miniz_tdef.c:935: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] miniz_tdef.c:969: Warning: 
@@ -723,21 +733,16 @@
 [eva:alarm] miniz_tdef.c:229: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[table_num][i]);
-[eva:alarm] miniz_tdef.c:229: Warning: 
-  accessing out of bounds index.
-  assert
-  d->m_huff_code_sizes[table_num][i] <
-  (int)(1 + TDEFL_MAX_SUPPORTED_HUFF_CODESIZE);
 [eva] miniz_tdef.c:228: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:229: Warning: 
   signed overflow.
   assert num_codes[d->m_huff_code_sizes[table_num][i]] + 1 ≤ 2147483647;
+[eva] miniz_tdef.c:259: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:260: Warning: 
   signed overflow.
   assert (int)(j + num_codes[(int)(i - 1)]) << 1 ≤ 2147483647;
 [eva:alarm] miniz_tdef.c:260: Warning: 
   signed overflow. assert j + num_codes[(int)(i - 1)] ≤ 2147483647;
-[eva] miniz_tdef.c:259: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:267: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&next_code[code_size]);
@@ -746,21 +751,18 @@
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[table_num][i]);
 [eva:alarm] miniz_tdef.c:267: Warning: 
-  accessing out of bounds index.
-  assert code_size < (int)(TDEFL_MAX_SUPPORTED_HUFF_CODESIZE + 1);
-[eva:alarm] miniz_tdef.c:267: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&next_code[code_size]);
 [eva] miniz_tdef.c:262: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:237: Warning: 
   accessing uninitialized left-value. assert \initialized(pSym_count + i);
-[eva] miniz_tdef.c:236: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing uninitialized left-value. assert \initialized(pSym_count + i);
+[eva] miniz_tdef.c:236: starting to merge loop iterations
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing out of bounds index. assert num_used_syms < TDEFL_MAX_HUFF_SYMBOLS;
 [eva:alarm] miniz_tdef.c:110: Warning: 
@@ -794,7 +796,7 @@
 [eva:alarm] miniz_tdef.c:126: Warning: 
   invalid RHS operand for shift. assert 0 ≤ pass_shift < 32;
 [kernel] miniz_tdef.c:110: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + 0)->m_key);
 [eva:alarm] miniz_tdef.c:147: Warning: 
@@ -825,25 +827,27 @@
   (tmp_2 from leaf++)
 [eva] miniz_tdef.c:150: starting to merge loop iterations
 [kernel] miniz_tdef.c:154: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:158: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:161: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:165: 
-  more than 200(285) locations to update in array. Approximating.
+  more than 10(285) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:162: 
+  more than 10(11) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:152: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [eva:alarm] miniz_tdef.c:154: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:155: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:161: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:162: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:169: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + next)->m_key);
 [eva:alarm] miniz_tdef.c:169: Warning: 
@@ -852,17 +856,17 @@
 [eva:alarm] miniz_tdef.c:169: Warning: 
   out of bounds read. assert \valid_read(&(A + (A + next)->m_key)->m_key);
 [kernel] miniz_tdef.c:169: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:176: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + root)->m_key);
 [eva] miniz_tdef.c:176: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:178: Warning: 
   signed overflow. assert used + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:183: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva] miniz_tdef.c:181: starting to merge loop iterations
 [kernel] miniz_tdef.c:183: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:183: Warning: 
   out of bounds write. assert \valid(&(A + tmp_3)->m_key);
                        (tmp_3 from next--)
@@ -874,15 +878,15 @@
 [eva:alarm] miniz_tdef.c:187: Warning: 
   signed overflow. assert dpth + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:152: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(285) elements to enumerate. Approximating.
+  more than 10(285) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&(pSyms + i)->m_key);
 [eva:alarm] miniz_tdef.c:247: Warning: 
@@ -917,10 +921,14 @@
 [eva:alarm] miniz_tdef.c:260: Warning: 
   invalid LHS operand for left shift.
   assert 0 ≤ (int)(j + num_codes[(int)(i - 1)]);
+[eva:alarm] miniz_tdef.c:267: Warning: 
+  accessing out of bounds index.
+  assert code_size < (int)(TDEFL_MAX_SUPPORTED_HUFF_CODESIZE + 1);
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:351: starting to merge loop iterations
 [eva] miniz_tdef.c:354: starting to merge loop iterations
+[kernel] miniz_tdef.c:359: too many locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:383: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_count[2][code_size]);
@@ -1059,17 +1067,17 @@
   (tmp_41 from packed_code_sizes_index++)
 [eva:alarm] miniz_tdef.c:423: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva] miniz_tdef.c:421: starting to merge loop iterations
-[eva] miniz_tdef.c:423: starting to merge loop iterations
 [eva] miniz_tdef.c:417: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:419: Warning: 
   accessing out of bounds index.
   assert tmp_39 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_39 from packed_code_sizes_index++)
+[eva] miniz_tdef.c:421: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:423: Warning: 
   accessing out of bounds index.
   assert tmp_41 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_41 from packed_code_sizes_index++)
+[eva] miniz_tdef.c:423: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:468: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pLZ_codes, (void *)pLZ_code_buf_end);
@@ -1081,27 +1089,19 @@
 [eva:alarm] miniz_tdef.c:479: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][s_tdefl_len_sym[match_len]]);
-[eva:alarm] miniz_tdef.c:479: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:480: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_codes[0][s_tdefl_len_sym[match_len]]);
 [eva:alarm] miniz_tdef.c:480: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][s_tdefl_len_sym[match_len]]);
-[eva:alarm] miniz_tdef.c:481: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
 [eva:alarm] miniz_tdef.c:486: Warning: 
   accessing out of bounds index. assert (mz_uint)(match_dist >> 8) < 128;
 [eva:alarm] miniz_tdef.c:487: Warning: 
   accessing out of bounds index. assert (mz_uint)(match_dist >> 8) < 128;
 [eva:alarm] miniz_tdef.c:492: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
-[eva:alarm] miniz_tdef.c:492: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_codes[1][sym]);
-[eva:alarm] miniz_tdef.c:493: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
 [eva:alarm] miniz_tdef.c:497: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp_0);
@@ -1109,8 +1109,6 @@
 [eva:alarm] miniz_tdef.c:498: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][lit]);
-[eva:alarm] miniz_tdef.c:498: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:499: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_codes[0][lit]);
@@ -1127,10 +1125,6 @@
 [eva:alarm] miniz_tdef.c:505: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][lit]);
-[eva:alarm] miniz_tdef.c:505: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] miniz_tdef.c:506: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
 [eva:alarm] miniz_tdef.c:506: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_codes[0][lit]);
@@ -1147,24 +1141,17 @@
 [eva:alarm] miniz_tdef.c:512: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][lit]);
-[eva:alarm] miniz_tdef.c:512: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] miniz_tdef.c:513: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
 [eva:alarm] miniz_tdef.c:513: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_codes[0][lit]);
 [eva:alarm] miniz_tdef.c:513: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][lit]);
-[eva:alarm] miniz_tdef.c:523: Warning: 
-  invalid RHS operand for shift.
-  assert 0 ≤ (unsigned int)(bits_in & (unsigned int)((int)(~7))) < 64;
-[eva] miniz_tdef.c:468: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:471: Warning: 
   accessing uninitialized left-value.
   assert \initialized(tmp);
   (tmp from pLZ_codes++)
+[eva] miniz_tdef.c:468: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:476: Warning: 
   out of bounds read. assert \valid_read(pLZ_codes + 0);
 [eva:alarm] miniz_tdef.c:476: Warning: 
@@ -1191,23 +1178,49 @@
   accessing uninitialized left-value.
   assert \initialized(&d->m_huff_code_sizes[0][256]);
 [eva:alarm] miniz_tdef.c:541: Warning: 
-  invalid RHS operand for shift. assert 0 ≤ len_0 < 32;
-[eva:alarm] miniz_tdef.c:541: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:479: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:481: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
 [eva:alarm] miniz_tdef.c:491: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:492: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
+[eva:alarm] miniz_tdef.c:493: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
+[eva:alarm] miniz_tdef.c:498: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:505: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:506: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
+[eva:alarm] miniz_tdef.c:512: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:513: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ bits_in < 64;
+[eva:alarm] miniz_tdef.c:523: Warning: 
+  invalid RHS operand for shift.
+  assert 0 ≤ (unsigned int)(bits_in & (unsigned int)((int)(~7))) < 64;
+[eva:alarm] miniz_tdef.c:541: Warning: 
+  invalid RHS operand for shift. assert 0 ≤ len_0 < 32;
 [eva:alarm] miniz_tdef.c:638: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_lz_code_buf_dict_pos);
 [eva] miniz_tdef.c:650: starting to merge loop iterations
+[eva] miniz_tdef.c:654: starting to merge loop iterations
+[eva] miniz_tdef.c:652: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:654: Warning: 
   accessing uninitialized left-value.
   assert
   \initialized(&d->m_dict[(unsigned int)((mz_uint)(d->m_lz_code_buf_dict_pos +
                                                    i)
                                          & TDEFL_LZ_DICT_SIZE_MASK)]);
-[eva] miniz_tdef.c:654: starting to merge loop iterations
-[eva] miniz_tdef.c:652: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:229: Warning: 
+  accessing out of bounds index.
+  assert
+  d->m_huff_code_sizes[table_num][i] <
+  (int)(1 + TDEFL_MAX_SUPPORTED_HUFF_CODESIZE);
 [eva:alarm] miniz_tdef.c:698: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:706: Warning: 
@@ -1356,6 +1369,7 @@
 [eva:alarm] miniz_tdef.c:650: Warning: 
   out of bounds write. assert \valid(tmp_7);
                        (tmp_7 from d->m_pOutput_buf++)
+[eva] miniz_tdef.c:648: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:654: Warning: 
   pointer comparison.
   assert
@@ -1406,9 +1420,13 @@
   \pointer_comparable((void *)pLZ_code_buf,
                      (void *)(&d->m_lz_code_buf[(int)(TDEFL_LZ_CODE_BUF_SIZE -
                                                       8)]));
-[eva:alarm] miniz_tdef.c:1088: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&d->m_lookahead_size);
+[eva] miniz_tdef.c:880: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:883: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] miniz_tdef.c:885: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva] miniz_tdef.c:988: starting to merge loop iterations
+[eva] miniz_tdef.c:872: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:1092: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_lookahead_size);
@@ -1437,13 +1455,8 @@
 [eva:alarm] miniz_tdef.c:759: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_max_probes[(int)(match_len ≥ 32? 1: 0)]);
-[eva:alarm] miniz_tdef.c:744: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ret);
 [eva:alarm] miniz_tdef.c:762: Warning: 
   function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva:alarm] miniz_tdef.c:778: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&d->m_next[probe_pos]);
 [eva:alarm] miniz_tdef.c:1041: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_total_lz_bytes);
@@ -1477,11 +1490,6 @@
 [eva:alarm] miniz_tdef.c:1107: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_hash[hash]);
 [eva] miniz_tdef.c:1100: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:1145: Warning: 
-  accessing uninitialized left-value.
-  assert
-  \initialized(&d->m_dict[(unsigned int)((mz_uint)(cur_pos - 1) &
-                                         TDEFL_LZ_DICT_SIZE_MASK)]);
 [eva:alarm] miniz_tdef.c:1149: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_dict[(mz_uint)(cur_pos + cur_match_len)]);
@@ -1491,10 +1499,17 @@
   assert
   (mz_uint)(cur_pos + cur_match_len) <
   (int)((int)(TDEFL_LZ_DICT_SIZE + TDEFL_MAX_MATCH_LEN) - 1);
+[eva:alarm] miniz_tdef.c:762: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status invalid.
+[eva:alarm] miniz_tdef.c:744: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ret);
 [eva:alarm] miniz_tdef.c:779: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_next[probe_pos]);
 [eva:alarm] miniz_tdef.c:780: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&d->m_next[probe_pos]);
+[eva:alarm] miniz_tdef.c:778: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_next[probe_pos]);
 [eva] miniz_tdef.c:789: starting to merge loop iterations
@@ -1509,16 +1524,17 @@
 [eva:alarm] miniz_tdef.c:799: Warning: 
   out of bounds read. assert \valid_read((mz_uint8 const *)q);
 [eva] miniz_tdef.c:767: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:1193: Warning: 
+[kernel] miniz_tdef.c:799: 
+  more than 10(159575) elements to enumerate. Approximating.
+[eva] miniz_tdef.c:1088: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:1145: Warning: 
   accessing uninitialized left-value.
-  assert \initialized(&d->m_dict[tmp_2]);
-  (tmp_2 from
-  ((cur_pos) < (sizeof((d->m_dict)) - 1))?cur_pos:sizeof(d->m_dict) - (unsigned long)1)
+  assert
+  \initialized(&d->m_dict[(unsigned int)((mz_uint)(cur_pos - 1) &
+                                         TDEFL_LZ_DICT_SIZE_MASK)]);
 [eva:alarm] miniz_tdef.c:1194: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_greedy_parsing);
-[eva:alarm] miniz_tdef.c:1056: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status invalid.
 [eva:alarm] miniz_tdef.c:1058: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_total_lz_bytes);
@@ -1543,13 +1559,8 @@
   assert
   \initialized(&d->m_huff_count[0][s_tdefl_len_sym[(mz_uint)(match_len -
                                                              TDEFL_MIN_MATCH_LEN)]]);
-[eva:alarm] miniz_tdef.c:1201: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&d->m_dict[tmp_3]);
-  (tmp_3 from
-  ((cur_pos) < (sizeof((d->m_dict)) - 1))?cur_pos:sizeof(d->m_dict) - (unsigned long)1)
-[eva:alarm] miniz_tdef.c:1207: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
+[eva:alarm] miniz_tdef.c:1056: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status invalid.
 [eva:alarm] miniz_tdef.c:1211: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_pLZ_code_buf);
 [eva:alarm] miniz_tdef.c:1212: Warning: 
@@ -1563,6 +1574,8 @@
 [eva:alarm] miniz_tdef.c:618: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_num_flags_left);
+[kernel] miniz_tdef.c:239: 
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:1171: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_saved_lit);
 [eva:alarm] miniz_tdef.c:1180: Warning: 
@@ -1570,9 +1583,16 @@
 [eva:alarm] miniz_tdef.c:1187: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_saved_match_dist);
-[eva:alarm] miniz_tdef.c:1056: Warning: 
-  function __FC_assert: precondition 'nonnull_c' got status unknown.
-[eva] miniz_tdef.c:1088: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:1193: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&d->m_dict[tmp_2]);
+  (tmp_2 from
+  ((cur_pos) < (sizeof((d->m_dict)) - 1))?cur_pos:sizeof(d->m_dict) - (unsigned long)1)
+[eva:alarm] miniz_tdef.c:1201: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&d->m_dict[tmp_3]);
+  (tmp_3 from
+  ((cur_pos) < (sizeof((d->m_dict)) - 1))?cur_pos:sizeof(d->m_dict) - (unsigned long)1)
 [eva:alarm] miniz_tdef.c:1060: Warning: 
   out of bounds write. assert \valid(d->m_pLZ_code_buf + 0);
 [eva:alarm] miniz_tdef.c:1063: Warning: 
@@ -1627,9 +1647,50 @@
   out of bounds read. assert \valid_read(ptr + 6);
 [eva:alarm] miniz.c:56: Warning: 
   out of bounds read. assert \valid_read(ptr + 7);
-[eva:alarm] miniz_tdef.c:1300: Warning: 
+[eva:alarm] miniz_tdef.c:1231: Warning: 
+  signed overflow.
+  assert d->m_pSrc - (mz_uint8 const *)d->m_pIn_buf ≤ 9223372036854775807;
+[eva:alarm] miniz_tdef.c:1237: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&d->m_output_flush_ofs);
+[eva:alarm] miniz_tdef.c:1237: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tdef.c:1237: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] miniz_tdef.c:1365: Warning: 
+  accessing uninitialized left-value. assert \initialized(&d->m_adler32);
+[eva:alarm] miniz_tdef.c:1268: Warning: 
+  pointer comparison. assert \pointer_comparable(pOut_buf, (void *)0);
+[eva:alarm] miniz_tdef.c:1269: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)0, pIn_buf);
+[eva:alarm] miniz_tdef.c:1269: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)0, pOut_buf);
+[eva:alarm] miniz_tdef.c:1297: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)0, pIn_buf);
+[eva:alarm] miniz.c:43: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)0, (void *)ptr);
+[eva] miniz.c:258: starting to merge loop iterations
+[eva:alarm] miniz_tdef.c:1231: Warning: 
+  signed overflow.
+  assert -9223372036854775808 ≤ d->m_pSrc - (mz_uint8 const *)d->m_pIn_buf;
+[eva:alarm] miniz_tdef.c:1298: Warning: 
+  signed overflow.
+  assert -9223372036854775808 ≤ d->m_pSrc - (mz_uint8 const *)pIn_buf;
+[eva:locals-escaping] examples/example3.c:161: Warning: 
+  locals {in_bytes} escaping the scope of mz_deflate through __malloc_miniz_def_alloc_func_l169
+[eva:locals-escaping] examples/example3.c:161: Warning: 
+  locals {out_bytes} escaping the scope of mz_deflate through __malloc_miniz_def_alloc_func_l169
+[eva:alarm] miniz_tdef.c:883: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tdef.c:1094: Warning: 
+  accessing uninitialized left-value. assert \initialized(&d->m_lookahead_pos);
+[eva:alarm] miniz_tdef.c:1140: Warning: 
+  accessing uninitialized left-value. assert \initialized(&d->m_lookahead_pos);
+[eva:alarm] miniz_tdef.c:1088: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&d->m_lookahead_size);
+[eva:alarm] miniz_tdef.c:1207: Warning: 
+  function __FC_assert: precondition 'nonnull_c' got status unknown.
 [eva:alarm] miniz_tdef.c:608: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_lookahead_pos);
 [eva:alarm] miniz_tdef.c:608: Warning: 
@@ -1658,46 +1719,6 @@
                        (tmp_10 from d->m_pOutput_buf++)
 [eva] miniz_tdef.c:678: starting to merge loop iterations
 [eva] miniz_tdef.c:676: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:1231: Warning: 
-  signed overflow.
-  assert d->m_pSrc - (mz_uint8 const *)d->m_pIn_buf ≤ 9223372036854775807;
-[eva:alarm] miniz_tdef.c:1237: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&d->m_output_flush_ofs);
-[eva:alarm] miniz_tdef.c:1237: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tdef.c:1237: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tdef.c:1365: Warning: 
-  accessing uninitialized left-value. assert \initialized(&d->m_adler32);
-[eva:alarm] miniz_tdef.c:1268: Warning: 
-  pointer comparison. assert \pointer_comparable(pOut_buf, (void *)0);
-[eva:alarm] miniz_tdef.c:1269: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)0, pIn_buf);
-[eva:alarm] miniz_tdef.c:1269: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)0, pOut_buf);
-[kernel] miniz_tdef.c:239: 
-  more than 200(288) elements to enumerate. Approximating.
-[eva] miniz_tdef.c:988: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:1094: Warning: 
-  accessing uninitialized left-value. assert \initialized(&d->m_lookahead_pos);
-[eva:alarm] miniz_tdef.c:1140: Warning: 
-  accessing uninitialized left-value. assert \initialized(&d->m_lookahead_pos);
-[eva:alarm] miniz_tdef.c:1297: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)0, pIn_buf);
-[eva:alarm] miniz.c:43: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)0, (void *)ptr);
-[eva] miniz.c:258: starting to merge loop iterations
-[eva:alarm] miniz_tdef.c:1231: Warning: 
-  signed overflow.
-  assert -9223372036854775808 ≤ d->m_pSrc - (mz_uint8 const *)d->m_pIn_buf;
-[eva:alarm] miniz_tdef.c:1298: Warning: 
-  signed overflow.
-  assert -9223372036854775808 ≤ d->m_pSrc - (mz_uint8 const *)pIn_buf;
-[eva:locals-escaping] examples/example3.c:161: Warning: 
-  locals {in_bytes} escaping the scope of mz_deflate through __malloc_miniz_def_alloc_func_l169
-[eva:locals-escaping] examples/example3.c:161: Warning: 
-  locals {out_bytes} escaping the scope of mz_deflate through __malloc_miniz_def_alloc_func_l169
 [eva] using specification for function fwrite
 [eva:alarm] examples/example3.c:167: Warning: 
   function fwrite: precondition 'valid_ptr_block' got status unknown.
@@ -1706,6 +1727,9 @@
   assert \pointer_comparable((void *)0, (void *)pStream->next_out);
 [eva:alarm] miniz_tdef.c:1245: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_finished);
+[eva:alarm] miniz_tdef.c:1300: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&d->m_lookahead_size);
 [eva] using specification for function printf_va_19
 [eva] using specification for function printf_va_20
 [eva] using specification for function printf_va_21
@@ -1743,26 +1767,22 @@
   assert \initialized(&r->m_dist_from_out_buf_start);
 [eva:alarm] miniz_tinfl.c:203: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_state);
-[eva] miniz_tinfl.c:227: starting to merge loop iterations
-[eva] miniz_tinfl.c:232: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:234: Warning: 
-  accessing uninitialized left-value. assert \initialized(&r->m_raw_header[2]);
-[eva:alarm] miniz_tinfl.c:234: Warning: 
-  accessing uninitialized left-value. assert \initialized(&r->m_raw_header[3]);
+[eva:alarm] miniz_tinfl.c:260: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:251: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
+[eva] miniz_tinfl.c:248: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:260: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:255: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva:alarm] miniz_tinfl.c:260: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva] miniz_tinfl.c:248: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:251: Warning: 
-  pointer comparison.
-  assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
 [eva:alarm] miniz_tinfl.c:222: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva] miniz_tinfl.c:227: starting to merge loop iterations
+[eva] miniz_tinfl.c:232: starting to merge loop iterations
 [eva] miniz_tinfl.c:251: starting to merge loop iterations
 [eva] miniz_tinfl.c:255: starting to merge loop iterations
 [eva] miniz_tinfl.c:279: starting to merge loop iterations
@@ -1781,20 +1801,9 @@
   out of bounds write. assert \valid(tmp_19);
                        (tmp_19 from p++)
 [eva] miniz_tinfl.c:285: starting to merge loop iterations
-[eva] miniz_tinfl.c:290: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:293: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[counter]);
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:296: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[2]);
 [eva] miniz_tinfl.c:296: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:300: Warning: 
-  accessing out of bounds index. assert counter < 19;
 [eva:alarm] miniz_tinfl.c:313: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[r->m_type]);
@@ -1802,8 +1811,6 @@
   accessing uninitialized left-value.
   assert \initialized(&pTable->m_code_size[i_0]);
 [eva] miniz_tinfl.c:313: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  accessing out of bounds index. assert i_0 < TINFL_MAX_HUFF_SYMBOLS_0;
 [eva] miniz_tinfl.c:317: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:326: Warning: 
   accessing uninitialized left-value.
@@ -1850,14 +1857,9 @@
 [eva:alarm] miniz_tinfl.c:364: Warning: 
   accessing out of bounds index.
   assert (int)((int)(-tree_cur) - 1) < (int)(TINFL_MAX_HUFF_SYMBOLS_0 * 2);
-[eva] miniz_tinfl.c:326: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:348: Warning: 
   signed overflow. assert -2147483648 ≤ tree_next - 2;
-[eva:alarm] miniz_tinfl.c:328: Warning: 
-  accessing out of bounds index. assert sym_index < TINFL_MAX_HUFF_SYMBOLS_0;
-[eva:alarm] miniz_tinfl.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[1]);
+[eva] miniz_tinfl.c:326: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   accessing uninitialized left-value.
   assert
@@ -1928,27 +1930,14 @@
 [eva:alarm] miniz_tinfl.c:384: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_len_codes[(mz_uint32)(counter - 1)]);
-[eva] miniz_tinfl.c:368: starting to merge loop iterations
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva] miniz_tinfl.c:382: starting to merge loop iterations
-[eva] miniz_tinfl.c:382: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:374: Warning: 
-  accessing out of bounds index.
-  assert
-  tmp_26 <
-  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
-  (tmp_26 from counter++)
-[eva:alarm] miniz_tinfl.c:384: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'separation' got status unknown.
+[eva] miniz_tinfl.c:368: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
-[eva] miniz_tinfl.c:304: starting to merge loop iterations
+[eva] miniz_tinfl.c:382: starting to merge loop iterations
+[eva] miniz_tinfl.c:382: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:400: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   accessing uninitialized left-value.
   assert
@@ -1975,6 +1964,10 @@
                                                                       & 1))]);
   (tmp_29 from code_len_0++)
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:402: Warning: 
+  invalid RHS operand for shift.
+  assert 0 ≤ tmp_29 < 64;
+  (tmp_29 from code_len_0++)
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   accessing uninitialized left-value.
   assert
@@ -2074,7 +2067,11 @@
   (tmp_34 from code_len_1++)
 [eva:alarm] miniz_tinfl.c:464: Warning: 
   invalid RHS operand for shift. assert 0 ≤ code_len_1 < 64;
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
+[eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva] miniz_tinfl.c:220: starting to merge loop iterations
+[eva] miniz_tinfl.c:222: starting to merge loop iterations
+[eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -2085,6 +2082,10 @@
   accessing uninitialized left-value. assert \initialized(&r->m_raw_header[0]);
 [eva:alarm] miniz_tinfl.c:234: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_raw_header[1]);
+[eva:alarm] miniz_tinfl.c:234: Warning: 
+  accessing uninitialized left-value. assert \initialized(&r->m_raw_header[2]);
+[eva:alarm] miniz_tinfl.c:234: Warning: 
+  accessing uninitialized left-value. assert \initialized(&r->m_raw_header[3]);
 [eva:alarm] miniz_tinfl.c:240: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -2092,34 +2093,68 @@
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
 [eva] miniz_tinfl.c:238: starting to merge loop iterations
-[eva] miniz_tinfl.c:222: starting to merge loop iterations
-[eva] miniz_tinfl.c:222: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva] miniz_tinfl.c:290: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:293: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[counter]);
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:296: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[2]);
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva:alarm] miniz_tinfl.c:300: Warning: 
+  accessing out of bounds index. assert counter < 19;
+[eva] miniz_tinfl.c:304: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  accessing out of bounds index. assert i_0 < TINFL_MAX_HUFF_SYMBOLS_0;
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  accessing out of bounds index. assert sym_index < TINFL_MAX_HUFF_SYMBOLS_0;
 [eva:alarm] miniz_tinfl.c:368: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[0]);
+[eva:alarm] miniz_tinfl.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[1]);
+[eva:alarm] miniz_tinfl.c:371: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva:alarm] miniz_tinfl.c:374: Warning: 
+  accessing out of bounds index.
+  assert
+  tmp_26 <
+  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
+  (tmp_26 from counter++)
 [eva:alarm] miniz_tinfl.c:382: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva:alarm] miniz_tinfl.c:384: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
 [eva:alarm] miniz_tinfl.c:391: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] miniz_tinfl.c:391: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:391: Warning: 
   function memcpy: precondition 'separation' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'separation' got status unknown.
 [eva] miniz_tinfl.c:398: starting to merge loop iterations
+[eva:alarm] miniz_tinfl.c:400: Warning: 
+  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:alarm] miniz_tinfl.c:486: Warning: 
@@ -2191,6 +2226,9 @@
 [eva:alarm] miniz_tinfl.c:496: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva:alarm] miniz_tinfl.c:500: Warning: 
+  signed overflow.
+  assert pOut_buf_cur - pOut_buf_start ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:508: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pSrc);
@@ -2250,24 +2288,8 @@
   accessing uninitialized left-value. assert \initialized(pSrc + 1);
 [eva:alarm] miniz_tinfl.c:560: Warning: 
   out of bounds read. assert \valid_read(pSrc + 1);
-[eva:alarm] miniz_tinfl.c:400: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
-[eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva] miniz_tinfl.c:405: starting to merge loop iterations
-[eva] miniz_tinfl.c:230: starting to merge loop iterations
-[eva] miniz_tinfl.c:230: starting to merge loop iterations
-[eva] miniz_tinfl.c:240: starting to merge loop iterations
-[eva] miniz_tinfl.c:240: starting to merge loop iterations
-[eva] miniz_tinfl.c:395: starting to merge loop iterations
 [eva] miniz_tinfl.c:490: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:500: Warning: 
-  signed overflow.
-  assert pOut_buf_cur - pOut_buf_start ≤ 9223372036854775807;
-[eva] miniz_tinfl.c:547: starting to merge loop iterations
-[eva] miniz_tinfl.c:241: starting to merge loop iterations
-[eva] miniz_tinfl.c:486: starting to merge loop iterations
-[eva] miniz_tinfl.c:490: starting to merge loop iterations
-[eva] miniz_tinfl.c:496: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:512: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pOut_buf_cur, (void *)pOut_buf_end);
@@ -2278,14 +2300,22 @@
                (unsigned long)((size_t)(tmp_41 - (size_t)dist) &
                                out_buf_size_mask));
   (tmp_41 from dist_from_out_buf_start++)
+[eva] miniz_tinfl.c:395: starting to merge loop iterations
+[eva] miniz_tinfl.c:240: starting to merge loop iterations
+[eva] miniz_tinfl.c:240: starting to merge loop iterations
+[eva] miniz_tinfl.c:230: starting to merge loop iterations
+[eva] miniz_tinfl.c:230: starting to merge loop iterations
+[eva] miniz_tinfl.c:496: starting to merge loop iterations
 [eva] miniz_tinfl.c:510: starting to merge loop iterations
+[eva] miniz_tinfl.c:241: starting to merge loop iterations
+[eva] miniz_tinfl.c:490: starting to merge loop iterations
+[eva] miniz_tinfl.c:512: starting to merge loop iterations
+[eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:496: starting to merge loop iterations
-[eva] miniz_tinfl.c:512: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:570: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
-[eva] miniz_tinfl.c:570: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:575: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:576: Warning: 
@@ -2300,6 +2330,8 @@
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
 [eva:alarm] miniz_tinfl.c:607: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:612: Warning: 
+  signed overflow. assert pIn_buf_cur - pIn_buf_next ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:613: Warning: 
   signed overflow. assert pOut_buf_cur - pOut_buf_next ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:624: Warning: 
@@ -2325,10 +2357,10 @@
   accessing uninitialized left-value.
   assert \initialized(tmp_47);
   (tmp_47 from ptr++)
-[eva] miniz_tinfl.c:633: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:634: Warning: 
   out of bounds read. assert \valid_read(tmp_47);
                       (tmp_47 from ptr++)
+[eva] miniz_tinfl.c:633: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:624: Warning: 
   out of bounds read. assert \valid_read(ptr + 0);
 [eva:alarm] miniz_tinfl.c:625: Warning: 
@@ -2365,8 +2397,6 @@
   out of bounds read. assert \valid_read(pIn_buf_cur + 1);
 [eva:alarm] miniz_tinfl.c:418: Warning: 
   out of bounds read. assert \valid_read((mz_uint32 const *)pIn_buf_cur);
-[eva:alarm] miniz_tinfl.c:400: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:409: Warning: 
@@ -2430,12 +2460,14 @@
 [eva:alarm] miniz_tinfl.c:313: Warning: 
   accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
-  signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
-[eva:alarm] miniz_tinfl.c:371: Warning: 
   out of bounds read. assert \valid_read(tmp_24);
                       (tmp_24 from pIn_buf_cur++)
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:371: Warning: 
+  invalid RHS operand for shift.
+  assert 0 ≤ tmp_23 < 64;
+  (tmp_23 from code_len++)
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   out of bounds read. assert \valid_read(pIn_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -2450,6 +2482,34 @@
   assert \valid_read("\003\003\v" + (mz_uint32)(dist - 16));
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
+[eva:alarm] miniz_tinfl.c:311: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:312: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
+[eva:alarm] miniz_tinfl.c:339: Warning: 
+  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
+[eva:alarm] miniz_tinfl.c:344: Warning: 
+  out of bounds read.
+  assert
+  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
+                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                     - 1)))]);
+[eva:alarm] miniz_tinfl.c:346: Warning: 
+  out of bounds write.
+  assert
+  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
+                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                - 1)))]);
+[eva:alarm] miniz_tinfl.c:354: Warning: 
+  out of bounds read.
+  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
+[eva:alarm] miniz_tinfl.c:364: Warning: 
+  out of bounds write.
+  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:486: Warning: 
   out of bounds read. assert \valid_read(tmp_35);
                       (tmp_35 from pIn_buf_cur++)
@@ -2462,6 +2522,10 @@
                       (tmp_37 from pIn_buf_cur++)
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:490: Warning: 
+  invalid RHS operand for shift.
+  assert 0 ≤ tmp_36 < 64;
+  (tmp_36 from code_len_2++)
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   out of bounds read. assert \valid_read(pIn_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:490: Warning: 
@@ -2493,10 +2557,14 @@
                       (tmp_45 from pIn_buf_cur++)
 [eva:alarm] miniz_tinfl.c:584: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
-[eva:alarm] miniz_tinfl.c:612: Warning: 
-  signed overflow. assert pIn_buf_cur - pIn_buf_next ≤ 9223372036854775807;
+[eva] miniz_tinfl.c:584: starting to merge loop iterations
+[eva] miniz_tinfl.c:584: starting to merge loop iterations
 [eva:alarm] miniz.c:517: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
+[kernel] miniz_tinfl.c:339: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] miniz_tinfl.c:346: 
+  more than 10(13) locations to update in array. Approximating.
 [eva] miniz.c:501: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
@@ -2518,45 +2586,10 @@
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:259: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
-[eva:alarm] miniz_tinfl.c:311: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:312: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
-[eva:alarm] miniz_tinfl.c:328: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
-[eva:alarm] miniz_tinfl.c:339: Warning: 
-  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
-[eva:alarm] miniz_tinfl.c:344: Warning: 
-  out of bounds read.
-  assert
-  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
-                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
-                                                                     - 1)))]);
-[eva:alarm] miniz_tinfl.c:346: Warning: 
-  out of bounds write.
-  assert
-  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
-                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
-                                                                - 1)))]);
-[eva:alarm] miniz_tinfl.c:354: Warning: 
-  out of bounds read.
-  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
-[eva:alarm] miniz_tinfl.c:356: Warning: 
-  out of bounds write.
-  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
-[eva:alarm] miniz_tinfl.c:361: Warning: 
-  out of bounds read.
-  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
-[eva:alarm] miniz_tinfl.c:364: Warning: 
-  out of bounds write.
-  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
-[eva] miniz_tinfl.c:584: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:612: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_cur - pIn_buf_next;
 [eva:alarm] miniz_tinfl.c:209: Warning: 
@@ -2606,9 +2639,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[kernel] miniz_tdef.c:158: 
-  more than 200(286) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 20 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈ [--..--] or UNINITIALIZED
@@ -2734,6 +2764,8 @@
                                       [11020..43787] ∈ UNINITIALIZED
                                       [bits 350304 to 350335] ∈
                                       {1} or UNINITIALIZED
+[kernel] miniz_tdef.c:169: 
+  more than 10(286) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function tdefl_calculate_minimum_redundancy:
   root ∈ [-1..286] or UNINITIALIZED
   leaf ∈ [2..2147483647] or UNINITIALIZED
@@ -2813,8 +2845,8 @@
                                     [184..199] ∈ [--..--]
                                     [200..36681] ∈
                                     [--..--] or UNINITIALIZED
-                                    [36682..36683] ∈ [0..127]
-                                    [36684..36969] ∈
+                                    [36682..36685] ∈ [0..127]
+                                    [36686..36969] ∈
                                     [--..--] or UNINITIALIZED
                                     [36970..37001] ∈ [0..127]
                                     [37002..319351] ∈
@@ -3049,12 +3081,12 @@
   j ∈ [0..2147483646],0%2
   l ∈ [-2147483648..0]
   num_codes[0..1] ∈ [0..2147483647]
-           [2] ∈ [-2147483646..2147483647]
-           [3..15] ∈ [--..--]
+           [2..4] ∈ [-2147483646..2147483647]
+           [5..15] ∈ [--..--]
            [16..32] ∈ [0..2147483647]
   next_code[0] ∈ UNINITIALIZED
-           [1..3] ∈ [--..--]
-           [4..32] ∈ [--..--] or UNINITIALIZED
+           [1..5] ∈ [--..--]
+           [6..32] ∈ [--..--] or UNINITIALIZED
   __malloc_miniz_def_alloc_func_l169[0..7] ∈ {0}
                                     [8..15] ∈ {0} or UNINITIALIZED
                                     [bits 128 to 159] ∈ [8192..554460]
@@ -3113,8 +3145,8 @@
                                     [184..199] ∈ [--..--]
                                     [200..36681] ∈
                                     [--..--] or UNINITIALIZED
-                                    [36682..36683] ∈ [0..127]
-                                    [36684..319351] ∈
+                                    [36682..36685] ∈ [0..127]
+                                    [36686..319351] ∈
                                     [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_record_literal:
   __malloc_miniz_def_alloc_func_l169[0..7] ∈ {0}
@@ -3178,7 +3210,7 @@
                                     [200..319351] ∈
                                     [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_record_match:
-  match_dist ∈ [--..--]
+  match_dist ∈ [0..32767]
   s0 ∈ [0..17]
   s1 ∈ [0..29]
   __malloc_miniz_def_alloc_func_l169[0..7] ∈ {0}
@@ -3252,10 +3284,11 @@
   rle_repeat_count ∈ {0}
   packed_code_sizes_index ∈ [--..--]
   code_sizes_to_pack[0..256] ∈ [0..127]
-                    [257..315] ∈ [0..127] or UNINITIALIZED
+                    [257..287] ∈ [--..--] or UNINITIALIZED
+                    [288..315] ∈ [0..127] or UNINITIALIZED
                     [316..319] ∈ UNINITIALIZED
-  packed_code_sizes[0..319] ∈ [0..127] or UNINITIALIZED
-  prev_code_size ∈ [0..127]
+  packed_code_sizes[0..319] ∈ [--..--] or UNINITIALIZED
+  prev_code_size ∈ [--..--]
   s_outbuf[0..1048575] ∈ [--..--] or UNINITIALIZED
   __malloc_miniz_def_alloc_func_l169[0..7] ∈ {0}
                                     [8..15] ∈ {0} or UNINITIALIZED
@@ -3315,14 +3348,14 @@
                                     [184..199] ∈ [--..--]
                                     [200..33225] ∈
                                     [--..--] or UNINITIALIZED
-                                    [33226..33227] ∈ [--..--]
-                                    [33228..33737] ∈
+                                    [33226..33229] ∈ [--..--]
+                                    [33230..33737] ∈
                                     [--..--] or UNINITIALIZED
                                     [bits 269904 to 269919] ∈ {1}
                                     [33740..33801] ∈
                                     [--..--] or UNINITIALIZED
-                                    [33802..33803] ∈ [--..--]
-                                    [33804..34377] ∈
+                                    [33802..33805] ∈ [--..--]
+                                    [33806..34377] ∈
                                     [--..--] or UNINITIALIZED
                                     [34378..34415] ∈ [--..--]
                                     [34416..34953] ∈
@@ -3336,7 +3369,7 @@
                                     [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_start_static_block:
   i ∈ {288}
-  p ∈ {{ &__malloc_miniz_def_alloc_func_l169 + [36690..--] }}
+  p ∈ {{ &__malloc_miniz_def_alloc_func_l169 + [36698..--] }}
   s_outbuf[0..1048575] ∈ [--..--] or UNINITIALIZED
   __malloc_miniz_def_alloc_func_l169[0..7] ∈ {0}
                                     [8..15] ∈ {0} or UNINITIALIZED
@@ -3397,8 +3430,8 @@
                                     [184..199] ∈ [--..--]
                                     [200..36681] ∈
                                     [--..--] or UNINITIALIZED
-                                    [36682..36683] ∈ {8}
-                                    [36684..36969] ∈
+                                    [36682..36685] ∈ {8}
+                                    [36686..36969] ∈
                                     [--..--] or UNINITIALIZED
                                     [36970..37001] ∈ {5}
                                     [37002..319351] ∈
@@ -3463,8 +3496,8 @@
                                     [184..199] ∈ [--..--]
                                     [200..36681] ∈
                                     [--..--] or UNINITIALIZED
-                                    [36682..36683] ∈ [0..127]
-                                    [36684..36969] ∈
+                                    [36682..36685] ∈ [0..127]
+                                    [36686..36969] ∈
                                     [--..--] or UNINITIALIZED
                                     [36970..37001] ∈ [0..127]
                                     [37002..319351] ∈
@@ -4177,18 +4210,18 @@
     by the Eva analyzer:      0 errors    2 warnings
     by the Frama-C kernel:    0 errors    0 warnings
   ----------------------------------------------------------------------------
-  575 alarms generated by the analysis:
+  576 alarms generated by the analysis:
      229 accesses to uninitialized left-values
-     132 invalid memory accesses
+     130 invalid memory accesses
       62 accesses out of bounds index
       50 integer overflows
-      36 invalid shifts
+      39 invalid shifts
       66 others
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   111 valid    47 unknown     0 invalid    158 total
-  70% of the logical properties reached have been proven.
+    Preconditions   110 valid    48 unknown     0 invalid    158 total
+  69% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-36.53user 0.52system 0:37.07elapsed 99%CPU (0avgtext+0avgdata 440000maxresident)k
-0inputs+10304outputs (0major+112953minor)pagefaults 0swaps
+196.82user 1.58system 3:18.43elapsed 99%CPU (0avgtext+0avgdata 770084maxresident)k
+0inputs+10288outputs (0major+195496minor)pagefaults 0swaps

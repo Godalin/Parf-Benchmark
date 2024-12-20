@@ -1,6 +1,20 @@
 [kernel] Parsing src/x509-parser.c (with preprocessing)
 [kernel:typing:incompatible-types-call] src/x509-parser.c:9242: Warning: 
   expected 'char *' but got argument of type 'u8 *': buf
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   _ecdsa_sha1_name[0] ∈ {101}
@@ -2731,8 +2745,14 @@
   function find_dn_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:3483: Warning: 
   function find_dn_by_oid: postcondition got status unknown.
+[kernel] src/x509-parser.c:3509: 
+  more than 10(16) elements to enumerate. Approximating.
+[kernel] src/x509-parser.c:3514: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:3587: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)oid_len);
+[kernel] src/x509-parser.c:3594: 
+  more than 10(16) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:3602: Warning: 
   function parse_rdn_val_pseudo: precondition len > 0 ∧ buf ≢ \null ⇒
                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3188,6 +3208,10 @@
   function find_ext_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8063: Warning: 
   function find_ext_by_oid: postcondition got status unknown.
+[kernel] src/x509-parser.c:8089: 
+  more than 10(29) elements to enumerate. Approximating.
+[kernel] src/x509-parser.c:8094: 
+  more than 10(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8259: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)oid_len);
 [eva:alarm] src/x509-parser.c:8268: Warning: 
@@ -3214,6 +3238,8 @@
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:8305: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)hdr_len);
+[kernel] src/x509-parser.c:8315: 
+  more than 10(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_bad_oid: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3957,7 +3983,6 @@
   function parse_x509_signatureValue: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:9103: Warning: 
   function parse_x509_cert: postcondition got status unknown.
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function _extract_complex_tag:
   len ∈ {0; 1; 2; 3; 4}
@@ -5025,5 +5050,5 @@
     Preconditions   614 valid   231 unknown     0 invalid    845 total
   68% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.92user 0.15system 0:05.07elapsed 99%CPU (0avgtext+0avgdata 224892maxresident)k
-0inputs+3024outputs (0major+49617minor)pagefaults 0swaps
+4.36user 0.18system 0:04.55elapsed 99%CPU (0avgtext+0avgdata 214028maxresident)k
+472inputs+3024outputs (0major+46922minor)pagefaults 0swaps

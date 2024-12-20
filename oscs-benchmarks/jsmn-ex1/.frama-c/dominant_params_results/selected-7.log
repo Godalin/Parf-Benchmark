@@ -1,6 +1,20 @@
 [kernel] Parsing test/tests.c (with preprocessing)
 [variadic:typing] test/testutil.h:30: Warning: 
   Incorrect type for argument 3. The argument will be cast from jsmntype_t (unsigned int) to int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 2490 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   test_passed ∈ {0}
@@ -207,7 +221,6 @@
 [eva] test/testutil.h:76: allocating variable __malloc_parse_l76_32
 [eva] test/testutil.h:76: allocating variable __malloc_parse_l76_33
 [eva] using specification for function printf_va_8
-[scope:rm_asserts] removing 13 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function jsmn_alloc_token:
   tok ∈
@@ -250,28 +263,23 @@
   p.pos ∈ [0..2147483647]
    .toknext ∈ [1..2147483647]
    .toksuper ∈ [--..--]
-  p.pos ∈ [0..30]
+  p.pos ∈ [0..2147483647]
    .toknext ∈ [1..2147483647]
    .toksuper ∈ [--..--]
-  tok[0].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [0]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+  tok[0].type ∈ [1..2147483647] or UNINITIALIZED
+     [0]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
-     [1].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [1].type ∈ [1..2147483647] or UNINITIALIZED
+     [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
-     [2].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [2].type ∈ [1..2147483647] or UNINITIALIZED
+     [2]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
-     [3].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [3].type ∈ [1..2147483647] or UNINITIALIZED
+     [3]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
-     [4].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [4].type ∈ [1..2147483647] or UNINITIALIZED
+     [4]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [0..27]
    .toknext ∈ [0..2147483647]
@@ -366,31 +374,40 @@
      [0].end ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
      [1].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [1].start ∈ [-1..24] or UNINITIALIZED
+     [1].end ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
      [2].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [2].start ∈ [-1..24] or UNINITIALIZED
+     [2].end ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
      [3].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [3].start ∈ [-1..24] or UNINITIALIZED
+     [3].end ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
      [4].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [4].start ∈ [-1..24] or UNINITIALIZED
+     [4].end ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
      [5].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [5]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [5].start ∈ [-1..24] or UNINITIALIZED
+     [5].end ∈ [-1..2147483647] or UNINITIALIZED
      [5].size ∈ [0..2147483647] or UNINITIALIZED
      [6].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [6]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [6].start ∈ [-1..24] or UNINITIALIZED
+     [6].end ∈ [-1..2147483647] or UNINITIALIZED
      [6].size ∈ [0..2147483647] or UNINITIALIZED
      [7].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [7]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [7].start ∈ [-1..24] or UNINITIALIZED
+     [7].end ∈ [-1..2147483647] or UNINITIALIZED
      [7].size ∈ [0..2147483647] or UNINITIALIZED
      [8].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [8]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [8].start ∈ [-1..24] or UNINITIALIZED
+     [8].end ∈ [-1..2147483647] or UNINITIALIZED
      [8].size ∈ [0..2147483647] or UNINITIALIZED
      [9].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [9]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [9].start ∈ [-1..24] or UNINITIALIZED
+     [9].end ∈ [-1..2147483647] or UNINITIALIZED
      [9].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [0..457]
    .toknext ∈ [1..2147483647]
@@ -1379,31 +1396,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -1425,7 +1449,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -1441,15 +1466,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -1483,25 +1511,20 @@
                        [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
 [eva:final-states] Values at end of function jsmn_fill_token:
-  tok[0].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [0]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+  tok[0].type ∈ [1..2147483647] or UNINITIALIZED
+     [0]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
-     [1].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [1].type ∈ [1..2147483647] or UNINITIALIZED
+     [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
-     [2].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [2].type ∈ [1..2147483647] or UNINITIALIZED
+     [2]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
-     [3].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [3].type ∈ [1..2147483647] or UNINITIALIZED
+     [3]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
-     [4].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [4].type ∈ [1..2147483647] or UNINITIALIZED
+     [4]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
   toksmall[0].type ∈
           {JSMN_UNDEFINED; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE}
@@ -1590,31 +1613,40 @@
      [0].end ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
      [1].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [1].start ∈ [-1..24] or UNINITIALIZED
+     [1].end ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
      [2].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [2].start ∈ [-1..24] or UNINITIALIZED
+     [2].end ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
      [3].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [3].start ∈ [-1..24] or UNINITIALIZED
+     [3].end ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
      [4].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [4].start ∈ [-1..24] or UNINITIALIZED
+     [4].end ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
      [5].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [5]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [5].start ∈ [-1..24] or UNINITIALIZED
+     [5].end ∈ [-1..2147483647] or UNINITIALIZED
      [5].size ∈ [0..2147483647] or UNINITIALIZED
      [6].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [6]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [6].start ∈ [-1..24] or UNINITIALIZED
+     [6].end ∈ [-1..2147483647] or UNINITIALIZED
      [6].size ∈ [0..2147483647] or UNINITIALIZED
      [7].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [7]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [7].start ∈ [-1..24] or UNINITIALIZED
+     [7].end ∈ [-1..2147483647] or UNINITIALIZED
      [7].size ∈ [0..2147483647] or UNINITIALIZED
      [8].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [8]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [8].start ∈ [-1..24] or UNINITIALIZED
+     [8].end ∈ [-1..2147483647] or UNINITIALIZED
      [8].size ∈ [0..2147483647] or UNINITIALIZED
      [9].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [9]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [9].start ∈ [-1..24] or UNINITIALIZED
+     [9].end ∈ [-1..2147483647] or UNINITIALIZED
      [9].size ∈ [0..2147483647] or UNINITIALIZED
   tokens[0].type ∈
         {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -2538,31 +2570,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -2584,7 +2623,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -2600,15 +2640,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -2697,28 +2740,23 @@
   p.pos ∈ [0..2147483646]
    .toknext ∈ [0..2147483647]
    .toksuper ∈ [--..--]
-  p.pos ∈ [0..30]
+  p.pos ∈ [0..2147483646]
    .toknext ∈ [1..2147483647]
    .toksuper ∈ [--..--]
-  tok[0].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [0]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+  tok[0].type ∈ [1..2147483647] or UNINITIALIZED
+     [0]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
-     [1].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [1].type ∈ [1..2147483647] or UNINITIALIZED
+     [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
-     [2].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [2].type ∈ [1..2147483647] or UNINITIALIZED
+     [2]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
-     [3].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [3].type ∈ [1..2147483647] or UNINITIALIZED
+     [3]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
-     [4].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [4].type ∈ [1..2147483647] or UNINITIALIZED
+     [4]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [--..--]
    .toknext ∈ [0..2147483647]
@@ -2813,31 +2851,40 @@
      [0].end ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
      [1].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [1].start ∈ [-1..24] or UNINITIALIZED
+     [1].end ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
      [2].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [2].start ∈ [-1..24] or UNINITIALIZED
+     [2].end ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
      [3].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [3].start ∈ [-1..24] or UNINITIALIZED
+     [3].end ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
      [4].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [4].start ∈ [-1..24] or UNINITIALIZED
+     [4].end ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
      [5].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [5]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [5].start ∈ [-1..24] or UNINITIALIZED
+     [5].end ∈ [-1..2147483647] or UNINITIALIZED
      [5].size ∈ [0..2147483647] or UNINITIALIZED
      [6].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [6]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [6].start ∈ [-1..24] or UNINITIALIZED
+     [6].end ∈ [-1..2147483647] or UNINITIALIZED
      [6].size ∈ [0..2147483647] or UNINITIALIZED
      [7].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [7]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [7].start ∈ [-1..24] or UNINITIALIZED
+     [7].end ∈ [-1..2147483647] or UNINITIALIZED
      [7].size ∈ [0..2147483647] or UNINITIALIZED
      [8].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [8]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [8].start ∈ [-1..24] or UNINITIALIZED
+     [8].end ∈ [-1..2147483647] or UNINITIALIZED
      [8].size ∈ [0..2147483647] or UNINITIALIZED
      [9].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [9]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [9].start ∈ [-1..24] or UNINITIALIZED
+     [9].end ∈ [-1..2147483647] or UNINITIALIZED
      [9].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [0..457]
    .toknext ∈ [1..2147483647]
@@ -3407,7 +3454,7 @@
         [9].start ∈ [-1..8] or UNINITIALIZED
         [9].end ∈ [-1..2147483647] or UNINITIALIZED
         [9].size ∈ [0..2147483647] or UNINITIALIZED
-  p.pos ∈ [0..20]
+  p.pos ∈ [0..2147483646]
    .toknext ∈ {0}
    .toksuper ∈ {-1}
   __retres ∈ {-2; -1; 0}
@@ -3771,31 +3818,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -3817,7 +3871,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -3833,15 +3888,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -3916,25 +3974,20 @@
   p.pos ∈ [0..30]
    .toknext ∈ [0..2147483647]
    .toksuper ∈ [--..--]
-  tok[0].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [0]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+  tok[0].type ∈ [1..2147483647] or UNINITIALIZED
+     [0]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
-     [1].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [1].type ∈ [1..2147483647] or UNINITIALIZED
+     [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
-     [2].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [2].type ∈ [1..2147483647] or UNINITIALIZED
+     [2]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
-     [3].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [3].type ∈ [1..2147483647] or UNINITIALIZED
+     [3]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
-     [4].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [4].type ∈ [1..2147483647] or UNINITIALIZED
+     [4]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [0..27]
    .toknext ∈ [0..2147483647]
@@ -4029,31 +4082,40 @@
      [0].end ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
      [1].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [1].start ∈ [-1..24] or UNINITIALIZED
+     [1].end ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
      [2].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [2].start ∈ [-1..24] or UNINITIALIZED
+     [2].end ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
      [3].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [3].start ∈ [-1..24] or UNINITIALIZED
+     [3].end ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
      [4].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [4].start ∈ [-1..24] or UNINITIALIZED
+     [4].end ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
      [5].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [5]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [5].start ∈ [-1..24] or UNINITIALIZED
+     [5].end ∈ [-1..2147483647] or UNINITIALIZED
      [5].size ∈ [0..2147483647] or UNINITIALIZED
      [6].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [6]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [6].start ∈ [-1..24] or UNINITIALIZED
+     [6].end ∈ [-1..2147483647] or UNINITIALIZED
      [6].size ∈ [0..2147483647] or UNINITIALIZED
      [7].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [7]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [7].start ∈ [-1..24] or UNINITIALIZED
+     [7].end ∈ [-1..2147483647] or UNINITIALIZED
      [7].size ∈ [0..2147483647] or UNINITIALIZED
      [8].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [8]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [8].start ∈ [-1..24] or UNINITIALIZED
+     [8].end ∈ [-1..2147483647] or UNINITIALIZED
      [8].size ∈ [0..2147483647] or UNINITIALIZED
      [9].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [9]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [9].start ∈ [-1..24] or UNINITIALIZED
+     [9].end ∈ [-1..2147483647] or UNINITIALIZED
      [9].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [0..457]
    .toknext ∈ [0..2147483647]
@@ -4971,31 +5033,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -5017,7 +5086,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -5033,15 +5103,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -5117,28 +5190,22 @@
   count ∈ [0..2147483647]
   p{.pos; .toknext} ∈ [0..2147483647]
    .toksuper ∈ [--..--]
-  p.pos ∈ [0..31]
-   .toknext ∈ [0..2147483647]
+  p{.pos; .toknext} ∈ [0..2147483647]
    .toksuper ∈ [--..--]
-  tok[0].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [0]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+  tok[0].type ∈ [1..2147483647] or UNINITIALIZED
+     [0]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
-     [1].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [1].type ∈ [1..2147483647] or UNINITIALIZED
+     [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
-     [2].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [2].type ∈ [1..2147483647] or UNINITIALIZED
+     [2]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
-     [3].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [3].type ∈ [1..2147483647] or UNINITIALIZED
+     [3]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
-     [4].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [4].type ∈ [1..2147483647] or UNINITIALIZED
+     [4]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
   p.pos ∈ [--..--]
    .toknext ∈ [0..2147483647]
@@ -5232,31 +5299,40 @@
      [0].end ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
      [1].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [1].start ∈ [-1..24] or UNINITIALIZED
+     [1].end ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
      [2].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [2].start ∈ [-1..24] or UNINITIALIZED
+     [2].end ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
      [3].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [3].start ∈ [-1..24] or UNINITIALIZED
+     [3].end ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
      [4].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [4].start ∈ [-1..24] or UNINITIALIZED
+     [4].end ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
      [5].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [5]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [5].start ∈ [-1..24] or UNINITIALIZED
+     [5].end ∈ [-1..2147483647] or UNINITIALIZED
      [5].size ∈ [0..2147483647] or UNINITIALIZED
      [6].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [6]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [6].start ∈ [-1..24] or UNINITIALIZED
+     [6].end ∈ [-1..2147483647] or UNINITIALIZED
      [6].size ∈ [0..2147483647] or UNINITIALIZED
      [7].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [7]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [7].start ∈ [-1..24] or UNINITIALIZED
+     [7].end ∈ [-1..2147483647] or UNINITIALIZED
      [7].size ∈ [0..2147483647] or UNINITIALIZED
      [8].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [8]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [8].start ∈ [-1..24] or UNINITIALIZED
+     [8].end ∈ [-1..2147483647] or UNINITIALIZED
      [8].size ∈ [0..2147483647] or UNINITIALIZED
      [9].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [9]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [9].start ∈ [-1..24] or UNINITIALIZED
+     [9].end ∈ [-1..2147483647] or UNINITIALIZED
      [9].size ∈ [0..2147483647] or UNINITIALIZED
   p{.pos; .toknext} ∈ [0..2147483647]
    .toksuper ∈ [--..--]
@@ -6210,31 +6286,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -6256,7 +6339,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -6272,15 +6356,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -7326,31 +7413,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -7372,7 +7466,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -7388,15 +7483,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -7584,31 +7682,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
 [eva:final-states] Values at end of function test_object:
   __fc_heap_status ∈ [--..--]
@@ -7977,7 +8082,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -7993,15 +8099,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -8232,28 +8341,22 @@
 [eva:final-states] Values at end of function test_partial_string:
   i ∈ [1..2147483647]
   r ∈ [-3..2147483647] or UNINITIALIZED
-  p.pos ∈ [0..31]
-   .toknext ∈ [0..2147483647]
+  p{.pos; .toknext} ∈ [0..2147483647]
    .toksuper ∈ [--..--]
-  tok[0].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [0]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+  tok[0].type ∈ [1..2147483647] or UNINITIALIZED
+     [0]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
-     [1].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [1].type ∈ [1..2147483647] or UNINITIALIZED
+     [1]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
-     [2].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [2].type ∈ [1..2147483647] or UNINITIALIZED
+     [2]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
-     [3].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [3].type ∈ [1..2147483647] or UNINITIALIZED
+     [3]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
-     [4].type ∈
-     {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..31] or UNINITIALIZED
+     [4].type ∈ [1..2147483647] or UNINITIALIZED
+     [4]{.start; .end} ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
   js ∈ {{ "{\"x\": \"va\\\\ue\", \"y\": \"value y\"}" }}
   __retres ∈ {0; 86; 87; 89}
@@ -8281,31 +8384,40 @@
      [0].end ∈ [-1..2147483647] or UNINITIALIZED
      [0].size ∈ [0..2147483647] or UNINITIALIZED
      [1].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [1]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [1].start ∈ [-1..24] or UNINITIALIZED
+     [1].end ∈ [-1..2147483647] or UNINITIALIZED
      [1].size ∈ [0..2147483647] or UNINITIALIZED
      [2].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [2]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [2].start ∈ [-1..24] or UNINITIALIZED
+     [2].end ∈ [-1..2147483647] or UNINITIALIZED
      [2].size ∈ [0..2147483647] or UNINITIALIZED
      [3].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [3]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [3].start ∈ [-1..24] or UNINITIALIZED
+     [3].end ∈ [-1..2147483647] or UNINITIALIZED
      [3].size ∈ [0..2147483647] or UNINITIALIZED
      [4].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [4]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [4].start ∈ [-1..24] or UNINITIALIZED
+     [4].end ∈ [-1..2147483647] or UNINITIALIZED
      [4].size ∈ [0..2147483647] or UNINITIALIZED
      [5].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [5]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [5].start ∈ [-1..24] or UNINITIALIZED
+     [5].end ∈ [-1..2147483647] or UNINITIALIZED
      [5].size ∈ [0..2147483647] or UNINITIALIZED
      [6].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [6]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [6].start ∈ [-1..24] or UNINITIALIZED
+     [6].end ∈ [-1..2147483647] or UNINITIALIZED
      [6].size ∈ [0..2147483647] or UNINITIALIZED
      [7].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [7]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [7].start ∈ [-1..24] or UNINITIALIZED
+     [7].end ∈ [-1..2147483647] or UNINITIALIZED
      [7].size ∈ [0..2147483647] or UNINITIALIZED
      [8].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [8]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [8].start ∈ [-1..24] or UNINITIALIZED
+     [8].end ∈ [-1..2147483647] or UNINITIALIZED
      [8].size ∈ [0..2147483647] or UNINITIALIZED
      [9].type ∈ {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-     [9]{.start; .end} ∈ [-1..24] or UNINITIALIZED
+     [9].start ∈ [-1..24] or UNINITIALIZED
+     [9].end ∈ [-1..2147483647] or UNINITIALIZED
      [9].size ∈ [0..2147483647] or UNINITIALIZED
   js ∈ {{ "key1: \"value\"\nkey2 : 123" }}
   __retres ∈ {0; 153; 154}
@@ -8728,31 +8840,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -8774,7 +8893,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -8790,15 +8910,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -9234,31 +9357,38 @@
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [1].start ∈ [-1..30] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [2].start ∈ [-1..30] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
                        [3].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [3]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [3].start ∈ [-1..30] or UNINITIALIZED
+                       [3].end ∈ [-1..2147483647] or UNINITIALIZED
                        [3].size ∈ [0..2147483647] or UNINITIALIZED
                        [4].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [4]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [4].start ∈ [-1..30] or UNINITIALIZED
+                       [4].end ∈ [-1..2147483647] or UNINITIALIZED
                        [4].size ∈ [0..2147483647] or UNINITIALIZED
                        [5].type ∈
                        {JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [5]{.start; .end} ∈ [-1..30] or UNINITIALIZED
+                       [5].start ∈ [-1..30] or UNINITIALIZED
+                       [5].end ∈ [-1..2147483647] or UNINITIALIZED
                        [5].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_27[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_28[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
@@ -9280,7 +9410,8 @@
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_30[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -9296,15 +9427,18 @@
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_31[0].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [0]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [0].start ∈ [-1..14] or UNINITIALIZED
+                       [0].end ∈ [-1..2147483647] or UNINITIALIZED
                        [0].size ∈ [0..2147483647] or UNINITIALIZED
                        [1].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [1]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [1].start ∈ [-1..14] or UNINITIALIZED
+                       [1].end ∈ [-1..2147483647] or UNINITIALIZED
                        [1].size ∈ [0..2147483647] or UNINITIALIZED
                        [2].type ∈
                        {JSMN_OBJECT; JSMN_ARRAY; JSMN_STRING; JSMN_PRIMITIVE} or UNINITIALIZED
-                       [2]{.start; .end} ∈ [-1..14] or UNINITIALIZED
+                       [2].start ∈ [-1..14] or UNINITIALIZED
+                       [2].end ∈ [-1..2147483647] or UNINITIALIZED
                        [2].size ∈ [0..2147483647] or UNINITIALIZED
   __malloc_parse_l76_32[0].type ∈ [1..2147483647] or UNINITIALIZED
                        [0]{.start; .end} ∈
@@ -9354,5 +9488,5 @@
     Preconditions    35 valid     2 unknown     0 invalid     37 total
   94% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-7.24user 0.15system 0:07.40elapsed 99%CPU (0avgtext+0avgdata 227572maxresident)k
-0inputs+2720outputs (0major+50224minor)pagefaults 0swaps
+6.51user 0.13system 0:06.65elapsed 99%CPU (0avgtext+0avgdata 209788maxresident)k
+0inputs+2744outputs (0major+45791minor)pagefaults 0swaps

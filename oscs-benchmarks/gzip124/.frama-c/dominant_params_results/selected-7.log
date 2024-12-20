@@ -44,6 +44,20 @@
   Incorrect type for argument 4. The argument will be cast from unsigned long to long.
 [variadic:typing] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzw.c:218: Warning: 
   Incorrect type for argument 5. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 20 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   method ∈ {8}
@@ -1622,6 +1636,9 @@
   assert \initialized(&start[(int)(tablebits + 1)]);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: Warning: 
+  out of bounds write. assert \valid(table + tmp);
+                       (tmp from i++)
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:179: Warning: 
   accessing out of bounds index. assert len < 18;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:179: Warning: 
@@ -1837,6 +1854,8 @@
   allocating variable __malloc_huft_build_l403
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:382: 
   starting to merge loop iterations
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:382: Warning: 
+  signed overflow. assert w + l ≤ 2147483647;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:422: Warning: 
   invalid RHS operand for shift. assert 0 ≤ (int)(w - l) < 32;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:423: Warning: 
@@ -3392,13 +3411,13 @@
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
   out of bounds read. assert \valid_read(scan);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
-  out of bounds read. assert \valid_read(match);
+  out of bounds read. assert \valid_read(scan);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
+  out of bounds read. assert \valid_read(scan);
+[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
+  out of bounds read. assert \valid_read(scan);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:456: Warning: 
-  out of bounds read. assert \valid_read(scan);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
-  out of bounds read. assert \valid_read(scan);
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:457: Warning: 
-  out of bounds read. assert \valid_read(scan);
+  out of bounds read. assert \valid_read(match);
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:473: Warning: 
   out of bounds read. assert \valid_read(scan + best_len);
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/deflate.c:396: 
@@ -3515,12 +3534,8 @@
   more than 20(286) locations to update in array. Approximating.
 [eva] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:656: 
   starting to merge loop iterations
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:459: 
-  more than 20(287) elements to enumerate. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 20(287) locations to update in array. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 20(288) locations to update in array. Approximating.
+  more than 20(573) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:660: 
   more than 20(287) locations to update in array. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:661: Warning: 
@@ -3529,8 +3544,6 @@
   more than 20(286) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
   more than 20(287) locations to update in array. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:666: 
-  more than 20(573) locations to update in array. Approximating.
 [kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:462: 
   more than 20(287) elements to enumerate. Approximating.
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: Warning: 
@@ -3947,14 +3960,6 @@
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:373: 
   Assigning imprecise value to *(buffer + r)
-  (pointing to window with offsets {0; 8; 16; 24}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:373: 
-  Assigning imprecise value to *(buffer + r)
-  (pointing to window with offsets {0; 8; 16; 24; 32}).
-  The imprecision originates from Misaligned
-[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:373: 
-  Assigning imprecise value to *(buffer + r)
   (pointing to window with offsets [0..524280],0%8).
   The imprecision originates from Misaligned
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:356: Warning: 
@@ -4063,9 +4068,6 @@
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: 
   Assigning imprecise value to i.
   The imprecision originates from Misaligned
-[eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:172: Warning: 
-  out of bounds write. assert \valid(table + tmp);
-                       (tmp from i++)
 [eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/unlzh.c:178: 
   Assigning imprecise value to len.
   The imprecision originates from Misaligned
@@ -5350,13 +5352,6 @@
   (pointing to __malloc_w_huft_build_l403_11 with offsets [128..274877906816],0%128).
   The imprecision originates from Merge
   {/home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:444}
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
-  more than 20(286) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
-  more than 20(554) elements to enumerate. Approximating.
-[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
-  more than 20(42) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 65 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function __fc_initenv:
   Frama_C_entropy_source ∈ [--..--]
@@ -5428,7 +5423,7 @@
        [32767] ∈ [--..--]
   dist ∈ [0..2147483646]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   flag_buf[0..4095] ∈ [--..--]
@@ -5447,8 +5442,8 @@
           &__calloc_add_envopt_l311 +
           [-17179869176..18446744073709551616],0%8 }}
   last ∈
-      {{ &S_argv + [-17179869184..17179869168],0%8 ;
-         &__calloc_add_envopt_l311 + [-17179869184..17179869168],0%8 }}
+      {{ &S_argv + [--..17179869168],0%8 ;
+         &__calloc_add_envopt_l311 + [--..17179869168],0%8 }}
   first_nonopt ∈ [-2147483647..2147483647]
   last_nonopt ∈ [-2147483647..2147483647]
   S_argv[0..1] ∈
@@ -5482,6 +5477,8 @@
                [1] ∈ [--..--]
 [eva:final-states] Values at end of function do_exit:
   NON TERMINATING FUNCTION
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:553: 
+  more than 20(286) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function gen_bitlen:
   tree ∈ {{ &dyn_ltree[0] ; &dyn_dtree[0] ; &bl_tree[0] }}
   extra ∈ {{ &extra_lbits[0] ; &extra_dbits[0] ; &extra_blbits[0] }}
@@ -5497,7 +5494,7 @@
   f ∈ [--..--] or UNINITIALIZED
   overflow ∈ {-1; 0}
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -5513,7 +5510,7 @@
   bits ∈ {16}
   n ∈ [0..2147483647]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
@@ -6415,7 +6412,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -6438,7 +6435,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {0; 1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
@@ -6833,7 +6830,7 @@
       &__malloc_w_huft_build_l403_11[1] ; &__malloc_w_huft_build_l403_12[1] ;
       &__malloc_w_huft_build_l403_13[1] }} or UNINITIALIZED or ESCAPINGADDR
   v[0..287] ∈ [--..--] or UNINITIALIZED
-  w ∈ [-16..31] or UNINITIALIZED
+  w ∈ [-16..2147483647] or UNINITIALIZED
   x[0] ∈ {0} or UNINITIALIZED
    [1..16] ∈
    {{ garbled mix of &{__malloc_w_huft_build_l403;
@@ -7464,8 +7461,12 @@
 [eva:final-states] Values at end of function pqdownheap:
   k ∈ [1..572]
   v ∈ [0..572]
-  j_0 ∈ [2..1144]
+  j_0 ∈ [2..2147483646]
   heap[0..572] ∈ [0..572]
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 20(554) elements to enumerate. Approximating.
+[kernel] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/trees.c:664: 
+  more than 20(42) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function build_tree:
   tree ∈ {{ &dyn_ltree[0] ; &dyn_dtree[0] ; &bl_tree[0] }}
   stree ∈ {{ NULL ; &static_ltree[0] ; &static_dtree[0] }}
@@ -7475,7 +7476,7 @@
   max_code ∈ [-1..285]
   node ∈ [20..573]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -7572,7 +7573,7 @@
   max_count ∈ {6; 7; 138}
   min_count ∈ {3; 4}
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -7580,7 +7581,7 @@
 [eva:final-states] Values at end of function build_bl_tree:
   max_blindex ∈ [2..18]
   dyn_ltree{[0..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -14051,7 +14052,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -14236,7 +14237,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -14391,7 +14392,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   bl_tree{[0..37]; [38].fc} ∈ [--..--]
@@ -15907,7 +15908,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
@@ -16175,7 +16176,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {0; 1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
@@ -16748,7 +16749,7 @@
   dyn_ltree[0..255] ∈ [--..--]
            [256].fc{.freq; .code} ∈ {0; 1}
            {[256].dl; [257..571]; [572].fc} ∈ [--..--]
-           [572].dl{.dad; .len} ∈ [0..572]
+           [572].dl{.dad; .len} ∈ [0..32767]
   dyn_dtree{[0..59]; [60].fc} ∈ [--..--]
            [60].dl{.dad; .len} ∈ [0..32767]
   static_ltree{[0..286]; [287].fc} ∈ [--..--]
@@ -17081,10 +17082,10 @@
     by the Eva analyzer:      0 errors    4 warnings
     by the Frama-C kernel:    0 errors    4 warnings
   ----------------------------------------------------------------------------
-  884 alarms generated by the analysis:
+  885 alarms generated by the analysis:
      217 invalid memory accesses
      177 accesses out of bounds index
-     162 integer overflows
+     163 integer overflows
      147 accesses to uninitialized left-values
      106 escaping addresses
       53 invalid shifts
@@ -17096,5 +17097,5 @@
     Preconditions   227 valid   193 unknown     0 invalid    420 total
   54% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-63.25user 0.87system 1:04.14elapsed 99%CPU (0avgtext+0avgdata 587916maxresident)k
-0inputs+27352outputs (0major+175102minor)pagefaults 0swaps
+63.61user 0.95system 1:04.57elapsed 99%CPU (0avgtext+0avgdata 587744maxresident)k
+0inputs+27352outputs (0major+175040minor)pagefaults 0swaps

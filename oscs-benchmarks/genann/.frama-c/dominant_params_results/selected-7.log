@@ -5,6 +5,20 @@
 [kernel:parser:decimal-float] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/genann/test.c:44: Warning: 
   Floating-point constant 0.001 is not represented exactly. Will use 0x1.0624dd2f1a9fcp-10.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 116 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   sigmoid_dom_min ∈ {-15.}
@@ -827,7 +841,6 @@
 [eva] using specification for function printf_va_57
 [eva] using specification for function printf_va_58
 [eva] using specification for function printf_va_59
-[scope:rm_asserts] removing 7 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function genann_act_sigmoid:
   __fc_errno ∈ [--..--]
@@ -1837,5 +1850,5 @@
     Preconditions   143 valid     6 unknown     0 invalid    149 total
   95% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.34user 0.10system 0:02.44elapsed 99%CPU (0avgtext+0avgdata 171732maxresident)k
-0inputs+4664outputs (0major+38759minor)pagefaults 0swaps
+2.17user 0.15system 0:02.32elapsed 99%CPU (0avgtext+0avgdata 168504maxresident)k
+0inputs+4672outputs (0major+37941minor)pagefaults 0swaps

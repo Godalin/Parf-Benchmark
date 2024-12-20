@@ -1,6 +1,20 @@
 [kernel] Parsing stream_decompress.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 49 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -74,8 +88,8 @@
 [eva:alarm] quicklz.c:713: Warning: out of bounds write. assert \valid(dst);
 [eva:alarm] quicklz.c:713: Warning: 
   accessing uninitialized left-value. assert \initialized(src);
-[eva] quicklz.c:702: starting to merge loop iterations
 [eva:alarm] quicklz.c:713: Warning: out of bounds read. assert \valid_read(src);
+[eva] quicklz.c:702: starting to merge loop iterations
 [eva:alarm] quicklz.c:839: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
 [eva:alarm] quicklz.c:839: Warning: 
@@ -114,7 +128,7 @@
 [eva:final-states] Values at end of function qlz_size_header:
   n ∈ {3; 9}
 [eva:final-states] Values at end of function qlz_decompress_core:
-  src ∈ {{ &__malloc_main_l27 + [7..10400] }}
+  src ∈ {{ &__malloc_main_l27 + [7..--] }}
   dst ∈ {{ &__malloc_main_l19 + [0..18446744073709551615] }}
   last_destination_byte ∈
                        {{ &__malloc_main_l19 + [-1..18446744073709551614] }}
@@ -188,5 +202,5 @@
     Preconditions    12 valid    13 unknown     0 invalid     25 total
   48% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.98user 0.10system 0:01.08elapsed 99%CPU (0avgtext+0avgdata 128972maxresident)k
-0inputs+2832outputs (0major+29612minor)pagefaults 0swaps
+0.92user 0.11system 0:01.04elapsed 100%CPU (0avgtext+0avgdata 127456maxresident)k
+0inputs+2832outputs (0major+29245minor)pagefaults 0swaps

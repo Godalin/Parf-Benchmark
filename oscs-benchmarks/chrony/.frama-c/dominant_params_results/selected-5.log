@@ -27,6 +27,20 @@
 [kernel] Parsing util.c (with preprocessing)
 [kernel] Parsing stubs.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 457 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   nondet ∈ [--..--]
@@ -473,7 +487,6 @@
 [eva] using specification for function LOG_Finalise
 [eva] using specification for function printf_va_3
 [eva] test/unit/test.c:55: assertion 'Eva,mem_access' got final status invalid.
-[scope:rm_asserts] removing 2 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function strcmp:
   i ∈ {0; 1}
@@ -514,5 +527,5 @@
     Preconditions     4 valid     2 unknown     0 invalid      6 total
   66% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-6.98user 1.21system 0:08.21elapsed 99%CPU (0avgtext+0avgdata 449956maxresident)k
-24inputs+106832outputs (0major+180359minor)pagefaults 0swaps
+6.86user 1.16system 0:08.02elapsed 99%CPU (0avgtext+0avgdata 449676maxresident)k
+0inputs+106832outputs (0major+180241minor)pagefaults 0swaps

@@ -9,6 +9,20 @@
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
 [variadic:typing] examples/example5.c:304: Warning: 
   Possible portability issues with enum type for argument 2 (use -variadic-no-strict to avoid this warning).
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 3 (not modified).
+  option -eva-widening-delay already set to 2 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 2 (not modified).
+  option -eva-ilevel already set to 16 (not modified).
+  option -eva-plevel already set to 20 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls already set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   g_deflator ∈ {0}
@@ -1427,21 +1441,11 @@
   out of bounds write. assert \valid(tmp_19);
                        (tmp_19 from p++)
 [eva] miniz_tinfl.c:285: starting to merge loop iterations
-[eva] miniz_tinfl.c:290: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:293: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[counter]);
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva] miniz_tinfl.c:292: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:296: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[2]);
+[eva:loop-unroll:auto] miniz_tinfl.c:290: Automatic loop unrolling.
 [eva:loop-unroll:auto] miniz_tinfl.c:299: Automatic loop unrolling.
 [eva] miniz_tinfl.c:296: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
 [eva] miniz_tinfl.c:299: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:300: Warning: 
-  accessing out of bounds index. assert counter < 19;
 [eva:alarm] miniz_tinfl.c:313: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&r->m_table_sizes[r->m_type]);
@@ -1449,8 +1453,6 @@
   accessing uninitialized left-value.
   assert \initialized(&pTable->m_code_size[i_0]);
 [eva] miniz_tinfl.c:313: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  accessing out of bounds index. assert i_0 < TINFL_MAX_HUFF_SYMBOLS_0;
 [eva] miniz_tinfl.c:317: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:326: Warning: 
   accessing uninitialized left-value.
@@ -1500,11 +1502,6 @@
 [eva] miniz_tinfl.c:326: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:348: Warning: 
   signed overflow. assert -2147483648 ≤ tree_next - 2;
-[eva:alarm] miniz_tinfl.c:328: Warning: 
-  accessing out of bounds index. assert sym_index < TINFL_MAX_HUFF_SYMBOLS_0;
-[eva:alarm] miniz_tinfl.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[1]);
 [eva:loop-unroll:auto] miniz_tinfl.c:371: Automatic loop unrolling.
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   accessing uninitialized left-value.
@@ -1532,10 +1529,6 @@
                                                                       & 1))]);
   (tmp_23 from code_len++)
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:371: Warning: 
-  invalid RHS operand for shift.
-  assert 0 ≤ tmp_23 < 64;
-  (tmp_23 from code_len++)
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   accessing uninitialized left-value.
   assert
@@ -1572,6 +1565,10 @@
   out of bounds read.
   assert \valid_read("\002\003\a" + (mz_uint32)(dist - 16));
 [eva:loop-unroll:auto] miniz_tinfl.c:382: Automatic loop unrolling.
+[eva:alarm] miniz_tinfl.c:371: Warning: 
+  invalid RHS operand for shift.
+  assert 0 ≤ tmp_23 < 64;
+  (tmp_23 from code_len++)
 [eva:alarm] miniz_tinfl.c:384: Warning: 
   accessing out of bounds index.
   assert
@@ -1585,20 +1582,6 @@
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
 [eva] miniz_tinfl.c:382: starting to merge loop iterations
 [eva] miniz_tinfl.c:382: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:384: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:374: Warning: 
-  accessing out of bounds index.
-  assert
-  tmp_26 <
-  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
-  (tmp_26 from counter++)
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:392: Warning: 
-  function memcpy: precondition 'separation' got status unknown.
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
 [eva] miniz_tinfl.c:304: starting to merge loop iterations
@@ -1761,12 +1744,10 @@
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
+[eva] miniz_tinfl.c:290: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva:alarm] miniz_tinfl.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&r->m_table_sizes[0]);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -1775,12 +1756,6 @@
 [eva:alarm] miniz_tinfl.c:382: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'valid_src' got status unknown.
-[eva:alarm] miniz_tinfl.c:391: Warning: 
-  function memcpy: precondition 'separation' got status unknown.
 [eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
@@ -1793,6 +1768,8 @@
 [eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva] miniz_tinfl.c:240: starting to merge loop iterations
 [eva] miniz_tinfl.c:240: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
+[eva] miniz_tinfl.c:292: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:loop-unroll:auto] miniz_tinfl.c:486: Automatic loop unrolling.
@@ -1935,7 +1912,6 @@
 [eva] miniz_tinfl.c:490: starting to merge loop iterations
 [eva] miniz_tinfl.c:496: starting to merge loop iterations
 [eva] miniz_tinfl.c:510: starting to merge loop iterations
-[eva] miniz_tinfl.c:371: Trace partitioning superposing up to 100 states
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:496: starting to merge loop iterations
 [eva] miniz_tinfl.c:512: starting to merge loop iterations
@@ -1950,8 +1926,9 @@
 [eva:alarm] miniz_tinfl.c:586: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva] miniz_tinfl.c:580: starting to merge loop iterations
+[eva:loop-unroll:auto] miniz_tinfl.c:587: Automatic loop unrolling.
 [eva] miniz_tinfl.c:586: starting to merge loop iterations
+[eva] miniz_tinfl.c:580: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:600: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
@@ -2111,11 +2088,19 @@
   out of bounds read. assert \valid_read("\005\005\004" + counter);
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   accessing out of bounds index. assert counter < TINFL_MAX_HUFF_TABLES;
+[eva:alarm] miniz_tinfl.c:293: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[counter]);
+[eva:alarm] miniz_tinfl.c:296: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[2]);
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   out of bounds read. assert \valid_read(tmp_21);
                       (tmp_21 from pIn_buf_cur++)
 [eva:alarm] miniz_tinfl.c:299: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
+[eva:alarm] miniz_tinfl.c:300: Warning: 
+  accessing out of bounds index. assert counter < 19;
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
 [eva:alarm] miniz_tinfl.c:311: Warning: 
@@ -2124,6 +2109,8 @@
   function memset: precondition 'valid_s' got status unknown.
 [eva:alarm] miniz_tinfl.c:313: Warning: 
   accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  accessing out of bounds index. assert i_0 < TINFL_MAX_HUFF_SYMBOLS_0;
 [eva:alarm] miniz_tinfl.c:339: Warning: 
   out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
 [eva:alarm] miniz_tinfl.c:344: Warning: 
@@ -2144,6 +2131,14 @@
 [eva:alarm] miniz_tinfl.c:364: Warning: 
   out of bounds write.
   assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  accessing out of bounds index. assert sym_index < TINFL_MAX_HUFF_SYMBOLS_0;
+[eva:alarm] miniz_tinfl.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[0]);
+[eva:alarm] miniz_tinfl.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&r->m_table_sizes[1]);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -2155,6 +2150,12 @@
   out of bounds read. assert \valid_read(pIn_buf_cur + 0);
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   out of bounds read. assert \valid_read(pIn_buf_cur + 1);
+[eva:alarm] miniz_tinfl.c:374: Warning: 
+  accessing out of bounds index.
+  assert
+  tmp_26 <
+  (int)((int)(TINFL_MAX_HUFF_SYMBOLS_0 + TINFL_MAX_HUFF_SYMBOLS_1) + 137);
+  (tmp_26 from counter++)
 [eva:alarm] miniz_tinfl.c:382: Warning: 
   out of bounds read. assert \valid_read(tmp_27);
                       (tmp_27 from pIn_buf_cur++)
@@ -2163,8 +2164,22 @@
 [eva:alarm] miniz_tinfl.c:383: Warning: 
   out of bounds read.
   assert \valid_read("\003\003\v" + (mz_uint32)(dist - 16));
+[eva:alarm] miniz_tinfl.c:384: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:391: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
+[eva:alarm] miniz_tinfl.c:391: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:391: Warning: 
+  function memcpy: precondition 'separation' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:392: Warning: 
+  function memcpy: precondition 'separation' got status unknown.
 [eva:alarm] miniz_tinfl.c:486: Warning: 
   out of bounds read. assert \valid_read(tmp_35);
                       (tmp_35 from pIn_buf_cur++)
@@ -2239,9 +2254,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[kernel] miniz_tdef.c:158: 
-  more than 20(286) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 20 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈ [--..--]
@@ -3030,5 +3042,5 @@
     Preconditions   106 valid    43 unknown     0 invalid    149 total
   71% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-24.16user 0.56system 0:24.73elapsed 99%CPU (0avgtext+0avgdata 501988maxresident)k
-0inputs+9712outputs (0major+128384minor)pagefaults 0swaps
+23.27user 0.48system 0:23.76elapsed 99%CPU (0avgtext+0avgdata 516384maxresident)k
+0inputs+9704outputs (0major+131908minor)pagefaults 0swaps

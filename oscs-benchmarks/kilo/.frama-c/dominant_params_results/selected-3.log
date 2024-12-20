@@ -1,5 +1,19 @@
 [kernel] Parsing kilo.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 4 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   C_HL_extensions[0] ∈ {{ ".c" }}
@@ -189,9 +203,14 @@
   out of bounds write. assert \valid(&(E.row + j)->idx);
 [eva:alarm] kilo.c:579: Warning: 
   accessing uninitialized left-value. assert \initialized(&(E.row + j)->idx);
-[eva] kilo.c:579: starting to merge loop iterations
+[eva:alarm] kilo.c:579: Warning: 
+  signed overflow. assert -2147483648 ≤ (E.row + j)->idx + 1;
 [eva:alarm] kilo.c:579: Warning: 
   signed overflow. assert (E.row + j)->idx + 1 ≤ 2147483647;
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets {384}).
+  The imprecision originates from Misaligned {kilo.c:578}
 [eva:alarm] kilo.c:582: Warning: 
   out of bounds write. assert \valid(&(E.row + at)->chars);
 [eva:alarm] kilo.c:583: Warning: 
@@ -199,6 +218,11 @@
   assert \initialized(&(E.row + at)->chars);
 [eva:alarm] kilo.c:583: Warning: 
   out of bounds read. assert \valid_read(&(E.row + at)->chars);
+[kernel] kilo.c:583: 
+  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
+                        __malloc_editorUpdateRow_l555;
+                        __realloc_editorUpdateSyntax_l370} because of Misaligned
+                                                          {kilo.c:578}.
 [eva:alarm] kilo.c:584: Warning: 
   out of bounds write. assert \valid(&(E.row + at)->hl);
 [eva:alarm] kilo.c:585: Warning: 
@@ -213,133 +237,27 @@
   accessing uninitialized left-value. assert \initialized(&row->render);
 [eva:alarm] kilo.c:551: Warning: 
   out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:552: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->size);
-[eva:alarm] kilo.c:552: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:553: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:553: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:555: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->size);
-[eva:alarm] kilo.c:555: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:555: Warning: 
-  out of bounds write. assert \valid(&row->render);
-[eva:alarm] kilo.c:557: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->size);
-[eva:alarm] kilo.c:557: Warning: 
-  out of bounds read. assert \valid_read(&row->size);
-[eva:alarm] kilo.c:558: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:558: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:559: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:559: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:559: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:560: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:560: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:560: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:562: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->chars);
-[eva:alarm] kilo.c:562: Warning: 
-  out of bounds read. assert \valid_read(&row->chars);
-[eva:alarm] kilo.c:565: Warning: 
-  out of bounds write. assert \valid(&row->rsize);
-[eva:alarm] kilo.c:566: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->render);
-[eva:alarm] kilo.c:566: Warning: 
-  out of bounds read. assert \valid_read(&row->render);
-[eva:alarm] kilo.c:566: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:370: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->rsize);
-[eva:alarm] kilo.c:370: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->hl);
-[eva:alarm] kilo.c:370: Warning: 
-  out of bounds read. assert \valid_read(&row->rsize);
-[eva:alarm] kilo.c:370: Warning: 
-  out of bounds read. assert \valid_read(&row->hl);
-[eva:alarm] kilo.c:370: Warning: out of bounds write. assert \valid(&row->hl);
-[eva:alarm] kilo.c:371: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->rsize);
-[eva:alarm] kilo.c:371: Warning: 
-  accessing uninitialized left-value. assert \initialized(&row->hl);
-[eva:alarm] kilo.c:371: Warning: 
-  out of bounds read. assert \valid_read(&row->rsize);
-[eva:alarm] kilo.c:371: Warning: 
-  out of bounds read. assert \valid_read(&row->hl);
-[eva:alarm] kilo.c:371: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->hl);
-[eva:alarm] kilo.c:551: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->render);
-[eva:alarm] kilo.c:370: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&row->hl);
-[eva:alarm] kilo.c:576: Warning: 
-  signed overflow. assert E.numrows + 1 ≤ 2147483647;
-[eva:alarm] kilo.c:579: Warning: signed overflow. assert at + 1 ≤ 2147483647;
-[eva:alarm] kilo.c:579: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&(E.row + j)->idx);
-[eva:alarm] kilo.c:579: Warning: 
-  signed overflow. assert -2147483648 ≤ (E.row + j)->idx + 1;
-[eva:garbled-mix:write] kilo.c:579: 
-  Assigning imprecise value to (E.row + j)->idx
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [384..824633720064],0%384).
-  The imprecision originates from Misaligned {kilo.c:578}
-[kernel] kilo.c:579: 
-  more than 200(2147483646) locations to update in array. Approximating.
-[kernel] kilo.c:581: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:582: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[eva:alarm] kilo.c:583: Warning: 
-  accessing left-value that contains escaping addresses.
-  assert ¬\dangling(&(E.row + at)->chars);
-[kernel] kilo.c:583: 
-  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
-                        __malloc_w_editorUpdateRow_l555;
-                        __realloc_w_editorUpdateSyntax_l370} because of Misaligned
-                                                            {kilo.c:578}.
-[kernel] kilo.c:584: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:585: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:586: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:587: 
-  more than 200(2147483647) locations to update in array. Approximating.
-[kernel] kilo.c:588: 
-  more than 200(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:551: Warning: 
   function free: precondition 'freeable' got status unknown.
+[eva:alarm] kilo.c:552: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->size);
+[eva:alarm] kilo.c:552: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:552: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
 [eva:alarm] kilo.c:553: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->chars);
+[eva:alarm] kilo.c:553: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
+[eva:alarm] kilo.c:553: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
 [eva:alarm] kilo.c:552: Warning: signed overflow. assert j + 1 ≤ 2147483647;
+[eva:alarm] kilo.c:555: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->size);
+[eva:alarm] kilo.c:555: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:555: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
@@ -358,46 +276,158 @@
   assert
   -2147483648 ≤
   (int)((int)(row->size + (int)(tabs * 8)) + (int)(nonprint * 9)) + 1;
-[kernel] kilo.c:555: 
-  more than 200(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:555: Warning: 
+  out of bounds write. assert \valid(&row->render);
+[eva:alarm] kilo.c:557: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->size);
+[eva:alarm] kilo.c:557: Warning: 
+  out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:557: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->size);
 [eva:alarm] kilo.c:558: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->chars);
+[eva:alarm] kilo.c:558: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
+[eva:alarm] kilo.c:558: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
+[eva:alarm] kilo.c:559: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:559: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:559: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:560: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:560: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:560: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:562: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->chars);
+[eva:alarm] kilo.c:562: Warning: 
+  out of bounds read. assert \valid_read(&row->chars);
 [eva:alarm] kilo.c:562: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->chars);
 [eva:alarm] kilo.c:557: Warning: signed overflow. assert j + 1 ≤ 2147483647;
-[kernel] kilo.c:565: 
-  more than 200(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:565: Warning: 
+  out of bounds write. assert \valid(&row->rsize);
+[eva:alarm] kilo.c:566: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->render);
+[eva:alarm] kilo.c:566: Warning: 
+  out of bounds read. assert \valid_read(&row->render);
+[eva:alarm] kilo.c:566: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:alarm] kilo.c:370: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->rsize);
+[eva:alarm] kilo.c:370: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->hl);
+[eva:alarm] kilo.c:370: Warning: 
+  out of bounds read. assert \valid_read(&row->rsize);
+[eva:alarm] kilo.c:370: Warning: 
+  out of bounds read. assert \valid_read(&row->hl);
 [eva:alarm] kilo.c:370: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->rsize);
 [eva:alarm] kilo.c:370: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->hl);
+[eva:alarm] kilo.c:370: Warning: 
   function realloc: precondition 'freeable' got status unknown.
-[kernel] kilo.c:370: 
-  more than 200(2147483647) locations to update in array. Approximating.
+[eva:alarm] kilo.c:370: Warning: out of bounds write. assert \valid(&row->hl);
+[eva:alarm] kilo.c:371: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->rsize);
+[eva:alarm] kilo.c:371: Warning: 
+  accessing uninitialized left-value. assert \initialized(&row->hl);
+[eva:alarm] kilo.c:371: Warning: 
+  out of bounds read. assert \valid_read(&row->rsize);
+[eva:alarm] kilo.c:371: Warning: 
+  out of bounds read. assert \valid_read(&row->hl);
 [eva:alarm] kilo.c:371: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&row->rsize);
+[eva:alarm] kilo.c:371: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->hl);
+[eva:alarm] kilo.c:579: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&(E.row + j)->idx);
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets {384; 768}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:583: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&(E.row + at)->chars);
+[kernel] kilo.c:583: 
+  writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
+                        __malloc_w_editorUpdateRow_l555;
+                        __realloc_w_editorUpdateSyntax_l370} because of Misaligned
+                                                            {kilo.c:578}.
+[eva:alarm] kilo.c:551: Warning: 
+  accessing left-value that contains escaping addresses.
+  assert ¬\dangling(&row->render);
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets {384; 768; 1152}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:alarm] kilo.c:576: Warning: 
+  signed overflow. assert E.numrows + 1 ≤ 2147483647;
+[eva:alarm] kilo.c:579: Warning: signed overflow. assert at + 1 ≤ 2147483647;
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [384..824633720064],0%384).
+  The imprecision originates from Misaligned {kilo.c:578}
+[kernel] kilo.c:579: 
+  more than 10(2147483646) locations to update in array. Approximating.
+[kernel] kilo.c:581: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:582: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:584: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:585: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:586: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:587: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:588: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:555: 
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:565: 
+  more than 10(2147483647) locations to update in array. Approximating.
 [kernel] kilo.c:370: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
+[kernel] kilo.c:370: 
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:551: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:552: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:553: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:591: Warning: 
   signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [kernel] kilo.c:579: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [kernel] kilo.c:585: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [kernel] kilo.c:588: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva] using specification for function fclose
 [eva] using specification for function isatty
 [eva] using specification for function atexit
@@ -464,6 +494,7 @@
 [eva:alarm] kilo.c:905: Warning: out of bounds read. assert \valid_read(c + j);
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_6
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_7
+[kernel] kilo.c:851: too many locations to update in array. Approximating.
 [eva:alarm] kilo.c:910: Warning: 
   accessing uninitialized left-value. assert \initialized(hl + j);
 [eva:alarm] kilo.c:910: Warning: out of bounds read. assert \valid_read(hl + j);
@@ -475,7 +506,6 @@
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_9
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_10
 [eva] kilo.c:900: starting to merge loop iterations
-[kernel] kilo.c:851: too many locations to update in array. Approximating.
 [eva] kilo.c:848: allocating variable __realloc_abAppend_l848_11
 [eva:alarm] kilo.c:848: Warning: 
   signed overflow. assert -2147483648 ≤ ab->len + len;
@@ -543,11 +573,11 @@
 [eva:alarm] kilo.c:976: Warning: 
   function write: precondition 'buf_has_room' got status unknown.
 [kernel] kilo.c:893: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [kernel] kilo.c:897: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [kernel] kilo.c:898: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [eva] kilo.c:243: starting to merge loop iterations
 [eva:alarm] kilo.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&c);
@@ -573,6 +603,7 @@
   Assigning imprecise value to (E.row + j)->idx
   (pointing to __realloc_editorInsertRow_l576_1 with offsets {384}).
   The imprecision originates from Misaligned {kilo.c:578}
+[eva] kilo.c:579: starting to merge loop iterations
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
   (pointing to __realloc_editorInsertRow_l576_1 with offsets {384; 768}).
@@ -580,6 +611,11 @@
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
   (pointing to __realloc_editorInsertRow_l576_1 with offsets {384; 768; 1152}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_editorInsertRow_l576_1 with offsets {384; 768; 1152;
+                                                              1536}).
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
@@ -614,15 +650,20 @@
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:garbled-mix:write] kilo.c:579: 
   Assigning imprecise value to (E.row + j)->idx
+  (pointing to __realloc_editorInsertRow_l576_2 with offsets {768; 1152; 1536;
+                                                              1920}).
+  The imprecision originates from Misaligned {kilo.c:578}
+[eva:garbled-mix:write] kilo.c:579: 
+  Assigning imprecise value to (E.row + j)->idx
   (pointing to __realloc_editorInsertRow_l576_2 with offsets [768..824633720064],0%384).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:579: 
-  more than 200(2147483645) locations to update in array. Approximating.
+  more than 10(2147483645) locations to update in array. Approximating.
 [eva] kilo.c:582: allocating variable __malloc_editorInsertRow_l582_2
 [eva] kilo.c:555: allocating variable __malloc_editorUpdateRow_l555_2
 [eva] kilo.c:370: allocating variable __realloc_editorUpdateSyntax_l370_2
 [kernel] kilo.c:579: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:728: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->chars);
 [eva:alarm] kilo.c:728: Warning: 
@@ -701,7 +742,7 @@
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:alarm] kilo.c:637: Warning: out of bounds write. assert \valid(p);
 [kernel] kilo.c:632: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva] using specification for function __va_open_mode_t
 [eva:alarm] kilo.c:813: Warning: 
   function __va_open_mode_t: precondition 'valid_filename' got status unknown.
@@ -932,7 +973,7 @@
   signed overflow. assert cx + (int)(7 - (int)(cx % 8)) ≤ 2147483647;
 [eva:alarm] kilo.c:970: Warning: signed overflow. assert cx + 1 ≤ 2147483647;
 [kernel] kilo.c:969: 
-  more than 200(2147483647) elements to enumerate. Approximating.
+  more than 10(2147483647) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:1062: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(E.row + saved_hl_line)->rsize);
@@ -1032,10 +1073,10 @@
   The imprecision originates from Misaligned {kilo.c:578}
 [eva:alarm] kilo.c:1092: Warning: 
   signed overflow. assert E.rowoff + E.cy ≤ 2147483647;
-[eva:alarm] kilo.c:1143: Warning: 
-  signed overflow. assert E.rowoff + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:1145: Warning: 
   signed overflow. assert E.cy + 1 ≤ 2147483647;
+[eva:alarm] kilo.c:1143: Warning: 
+  signed overflow. assert E.rowoff + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:1117: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->size);
 [eva:alarm] kilo.c:1118: Warning: 
@@ -1225,7 +1266,7 @@
   (pointing to __realloc_w_editorInsertRow_l576_1 with offsets [0..824633720064],0%384).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:579: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [kernel] kilo.c:583: 
   writing somewhere in {NULL; __malloc_w_editorInsertRow_l582;
                         __malloc_w_editorUpdateRow_l555;
@@ -1279,7 +1320,7 @@
   __realloc_w_editorInsertRow_l576_3 with offsets {32}).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:729: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:734: Warning: 
   signed overflow. assert E.rowoff + 1 ≤ 2147483647;
 [eva:locals-escaping] kilo.c:1184: Warning: 
@@ -1356,7 +1397,7 @@
 [eva:alarm] kilo.c:667: Warning: 
   out of bounds write. assert \valid(&row->chars);
 [kernel] kilo.c:667: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:668: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&s);
@@ -1398,7 +1439,7 @@
   __realloc_w_editorInsertRow_l576_3 with offsets {32}).
   The imprecision originates from Misaligned
 [kernel] kilo.c:669: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:670: Warning: 
   accessing uninitialized left-value. assert \initialized(&row->chars);
 [eva:alarm] kilo.c:670: Warning: 
@@ -1447,11 +1488,11 @@
 [eva:alarm] kilo.c:598: Warning: 
   function free: precondition 'freeable' got status unknown.
 [kernel] kilo.c:596: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [kernel] kilo.c:597: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [kernel] kilo.c:598: 
-  more than 200(2147483646) elements to enumerate. Approximating.
+  more than 10(2147483646) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:609: Warning: 
   function memmove: precondition 'valid_dest' got status unknown.
 [eva:alarm] kilo.c:609: Warning: 
@@ -1475,11 +1516,11 @@
   __realloc_w_editorInsertRow_l576_2 with offsets [384..824633719680],0%384).
   The imprecision originates from Misaligned
 [kernel] kilo.c:610: 
-  more than 200(2147483645) locations to update in array. Approximating.
+  more than 10(2147483645) locations to update in array. Approximating.
 [eva:alarm] kilo.c:612: Warning: 
   signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [kernel] kilo.c:610: 
-  more than 200(2147483645) elements to enumerate. Approximating.
+  more than 10(2147483645) elements to enumerate. Approximating.
 [eva:alarm] kilo.c:759: Warning: 
   signed overflow. assert -2147483648 ≤ E.cy - 1;
 [eva:alarm] kilo.c:760: Warning: 
@@ -1570,7 +1611,7 @@
   __realloc_w_editorInsertRow_l576_3 with offsets {32}).
   The imprecision originates from Misaligned {kilo.c:578}
 [kernel] kilo.c:680: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:681: Warning: 
   signed overflow. assert E.dirty + 1 ≤ 2147483647;
 [eva:alarm] kilo.c:768: Warning: 
@@ -1747,7 +1788,7 @@
 [eva:alarm] kilo.c:649: Warning: 
   out of bounds write. assert \valid(&row->chars);
 [kernel] kilo.c:649: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:650: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&padlen);
@@ -1782,7 +1823,7 @@
   __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
   The imprecision originates from Misaligned
 [kernel] kilo.c:652: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:656: Warning: 
   out of bounds read. assert \valid_read(&row->size);
 [eva:alarm] kilo.c:656: Warning: 
@@ -1795,7 +1836,7 @@
 [eva:alarm] kilo.c:656: Warning: 
   out of bounds write. assert \valid(&row->chars);
 [kernel] kilo.c:656: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:657: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&at);
@@ -1827,7 +1868,7 @@
   __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720096],32%384).
   The imprecision originates from Misaligned
 [kernel] kilo.c:658: 
-  more than 200(2147483647) locations to update in array. Approximating.
+  more than 10(2147483647) locations to update in array. Approximating.
 [eva:alarm] kilo.c:660: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&at);
@@ -2112,16 +2153,12 @@
 [eva:garbled-mix:write] kilo.c:1011: 
   Assigning imprecise value to saved_coloff.
   The imprecision originates from Misaligned
-[kernel] kilo.c:1053: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:1024: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:1025: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned
-[kernel] kilo.c:1062: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:745: 
   Assigning imprecise value to filecol.
   The imprecision originates from Misaligned
@@ -2131,8 +2168,6 @@
 [eva:garbled-mix:write] kilo.c:771: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
-[kernel] kilo.c:752: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:1101: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned
@@ -2148,45 +2183,50 @@
 [eva:garbled-mix:write] kilo.c:687: 
   Assigning imprecise value to filecol.
   The imprecision originates from Misaligned
-[kernel] kilo.c:649: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[eva:garbled-mix:write] kilo.c:652: 
-  Assigning imprecise value to row->size
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720480],32%384;
-   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720480],32%384).
-  The imprecision originates from Misaligned
-[kernel] kilo.c:652: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:656: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[eva:garbled-mix:write] kilo.c:658: 
-  Assigning imprecise value to row->size
-  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720480],32%384;
-   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720480],32%384;
-  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720480],32%384).
-  The imprecision originates from Misaligned
-[kernel] kilo.c:658: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:555: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:565: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:370: 
-  more than 200(2147483648) locations to update in array. Approximating.
-[kernel] kilo.c:553: 
-  more than 200(2147483648) elements to enumerate. Approximating.
 [eva:garbled-mix:write] kilo.c:699: 
   Assigning imprecise value to E.coloff.
   The imprecision originates from Misaligned
 [eva:garbled-mix:write] kilo.c:701: 
   Assigning imprecise value to E.cx.
   The imprecision originates from Misaligned
-[scope:rm_asserts] removing 85 assertion(s)
+[kernel] kilo.c:1053: 
+  more than 10(2147483648) elements to enumerate. Approximating.
+[kernel] kilo.c:1062: 
+  more than 10(2147483648) elements to enumerate. Approximating.
+[kernel] kilo.c:752: 
+  more than 10(2147483648) elements to enumerate. Approximating.
+[kernel] kilo.c:649: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[eva:garbled-mix:write] kilo.c:652: 
+  Assigning imprecise value to row->size
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720096],32%384;
+   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720480],32%384;
+  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720480],32%384).
+  The imprecision originates from Misaligned
+[kernel] kilo.c:652: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[kernel] kilo.c:656: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[eva:garbled-mix:write] kilo.c:658: 
+  Assigning imprecise value to row->size
+  (pointing to __realloc_w_editorInsertRow_l576 with offsets [32..824633720096],32%384;
+   __realloc_w_editorInsertRow_l576_0 with offsets [32..824633720480],32%384;
+  __realloc_w_editorInsertRow_l576_1 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_2 with offsets [32..824633720096],32%384;
+  __realloc_w_editorInsertRow_l576_3 with offsets [32..824633720480],32%384).
+  The imprecision originates from Misaligned
+[kernel] kilo.c:658: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[kernel] kilo.c:555: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[kernel] kilo.c:565: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[kernel] kilo.c:370: 
+  more than 10(2147483648) locations to update in array. Approximating.
+[kernel] kilo.c:553: 
+  more than 10(2147483648) elements to enumerate. Approximating.
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function editorMoveCursor:
   filerow ∈ [--..--]
@@ -2481,7 +2521,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -2541,7 +2581,7 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -2571,7 +2611,7 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -2894,7 +2934,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -2954,7 +2994,7 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -2984,7 +3024,7 @@
                                                         __malloc_w_editorUpdateRow_l555_8;
                                                         __realloc_w_editorUpdateSyntax_l370_8}
                                      (origin: Misaligned) }} or UNINITIALIZED or ESCAPINGADDR
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -3587,7 +3627,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -3658,7 +3698,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -3693,7 +3733,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -4147,7 +4187,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -4218,7 +4258,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -4253,7 +4293,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -4559,7 +4599,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -4630,7 +4670,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -4665,7 +4705,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -4880,7 +4920,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -4951,7 +4991,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -4986,7 +5026,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -5255,7 +5295,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -5326,7 +5366,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -5361,7 +5401,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -5600,7 +5640,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -5671,7 +5711,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -5706,7 +5746,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -5928,7 +5968,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -5999,7 +6039,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -6034,7 +6074,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -6273,7 +6313,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -6344,7 +6384,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -6379,7 +6419,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -6510,10 +6550,10 @@
                              __realloc_w_editorUpdateSyntax_l370_8}
           (origin: Misaligned) }} or ESCAPINGADDR
   row ∈
-     {{ &__realloc_w_editorInsertRow_l576 + [0..103079215056],0%48 ;
+     {{ &__realloc_w_editorInsertRow_l576 + [0..103079215008],0%48 ;
         &__realloc_w_editorInsertRow_l576_0 + [0..103079215056],0%48 ;
-        &__realloc_w_editorInsertRow_l576_1 + [0..103079215056],0%48 ;
-        &__realloc_w_editorInsertRow_l576_2 + [0..103079215056],0%48 ;
+        &__realloc_w_editorInsertRow_l576_1 + [0..103079215008],0%48 ;
+        &__realloc_w_editorInsertRow_l576_2 + [0..103079215008],0%48 ;
         &__realloc_w_editorInsertRow_l576_3 + [0..103079215056],0%48 }}
   E.cx ∈
    {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
@@ -6595,7 +6635,7 @@
    .syntax ∈ {0}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -6666,7 +6706,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -6701,7 +6741,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -7753,7 +7793,7 @@
   strerror___fc_strerror_init ∈ {0; 1}
   __realloc_w_editorInsertRow_l576[0].idx ∈
                                   [0..2147483647] or UNINITIALIZED
-                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+                                  {[0]{.size; .rsize; .chars; .render; .hl; .hl_oc; .[bits 96 to 127]; .[bits 352 to 383]}; [1..2147483646]} ∈
                                   {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                       __malloc_w_editorUpdateRow_l555;
                                                       __realloc_w_editorUpdateSyntax_l370;
@@ -7824,7 +7864,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_0[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_1{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_1[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -7859,7 +7899,7 @@
                                    [--..--] or UNINITIALIZED
   __realloc_w_editorUpdateSyntax_l370_1[0..18446744073709551615] ∈
                                        [--..--] or UNINITIALIZED
-  __realloc_w_editorInsertRow_l576_2{[0..384307168202282324]; [384307168202282325]{.idx; .size; .rsize; .[bits 96 to 127]}} ∈
+  __realloc_w_editorInsertRow_l576_2[0..2147483646] ∈
                                     {{ garbled mix of &{__malloc_w_editorInsertRow_l582;
                                                         __malloc_w_editorUpdateRow_l555;
                                                         __realloc_w_editorUpdateSyntax_l370;
@@ -8074,5 +8114,5 @@
     Preconditions    68 valid    50 unknown     0 invalid    118 total
   57% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-12.29user 0.22system 0:12.51elapsed 99%CPU (0avgtext+0avgdata 241576maxresident)k
-0inputs+6192outputs (0major+56523minor)pagefaults 0swaps
+18.82user 0.25system 0:19.08elapsed 99%CPU (0avgtext+0avgdata 256680maxresident)k
+0inputs+6184outputs (0major+60308minor)pagefaults 0swaps

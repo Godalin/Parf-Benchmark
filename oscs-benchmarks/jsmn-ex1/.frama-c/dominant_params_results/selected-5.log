@@ -1,6 +1,20 @@
 [kernel] Parsing test/tests.c (with preprocessing)
 [variadic:typing] test/testutil.h:30: Warning: 
   Incorrect type for argument 3. The argument will be cast from jsmntype_t (unsigned int) to int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 746 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   test_passed ∈ {0}
@@ -45,6 +59,13 @@
 [eva] jsmn.c:250: Trace partitioning superposing up to 100 states
 [eva] jsmn.c:250: Trace partitioning superposing up to 200 states
 [eva] jsmn.c:250: Trace partitioning superposing up to 300 states
+[kernel] jsmn.c:211: more than 10(61) elements to enumerate. Approximating.
+[kernel] jsmn.c:211: more than 10(61) elements to enumerate. Approximating.
+[kernel] jsmn.c:224: more than 10(49) elements to enumerate. Approximating.
+[kernel] jsmn.c:224: more than 10(49) elements to enumerate. Approximating.
+[kernel] jsmn.c:245: more than 10(58) elements to enumerate. Approximating.
+[kernel] jsmn.c:251: more than 10(59) elements to enumerate. Approximating.
+[kernel] jsmn.c:282: more than 10(59) elements to enumerate. Approximating.
 [eva] test/testutil.h:76: allocating variable __malloc_parse_l76_24
 [eva] test/testutil.h:76: allocating variable __malloc_parse_l76_25
 [eva] test/testutil.h:76: allocating variable __malloc_parse_l76_26
@@ -57,6 +78,7 @@
 [eva] test/testutil.h:76: allocating variable __malloc_parse_l76_33
 [eva] using specification for function printf_va_8
 [eva] ====== VALUES COMPUTED ======
+[kernel] jsmn.c:14: more than 10(61) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function jsmn_alloc_token:
   tok ∈
      {{ &tok{[0], [1], [2], [3], [4]} ; &toksmall{[0], [1], [2], [3], [4]} ;
@@ -899,6 +921,10 @@
                        [3].type ∈ UNINITIALIZED
                        [3]{.start; .end} ∈ {-1} or UNINITIALIZED
                        [3].size ∈ {0} or UNINITIALIZED
+[kernel] jsmn.c:26: more than 10(60) elements to enumerate. Approximating.
+[kernel] jsmn.c:27: more than 10(60) elements to enumerate. Approximating.
+[kernel] jsmn.c:28: more than 10(60) elements to enumerate. Approximating.
+[kernel] jsmn.c:29: more than 10(60) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function jsmn_fill_token:
   tok[0].type ∈ {JSMN_OBJECT}
      [0].start ∈ {0}
@@ -2929,6 +2955,9 @@
                        [2].end ∈ {8}
                        [2].size ∈ {0}
                        [3] ∈ UNINITIALIZED
+[kernel] jsmn.c:173: more than 10(48) elements to enumerate. Approximating.
+[kernel] jsmn.c:236: more than 10(46) elements to enumerate. Approximating.
+[kernel] jsmn.c:282: more than 10(60) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function jsmn_parse:
   r ∈ {-3; -2; -1; 0} or UNINITIALIZED
   i ∈ {-1; 0; 5} or UNINITIALIZED
@@ -4231,5 +4260,5 @@
     Preconditions    33 valid     0 unknown     0 invalid     33 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-4.41user 0.17system 0:04.59elapsed 99%CPU (0avgtext+0avgdata 224084maxresident)k
-0inputs+2032outputs (0major+49269minor)pagefaults 0swaps
+4.33user 0.17system 0:04.51elapsed 100%CPU (0avgtext+0avgdata 213780maxresident)k
+0inputs+2040outputs (0major+46798minor)pagefaults 0swaps

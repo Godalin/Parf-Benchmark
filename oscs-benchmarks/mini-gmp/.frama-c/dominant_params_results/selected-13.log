@@ -6,6 +6,20 @@
   __builtin_constant_p is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
 [kernel] Parsing tests/mini-random.c (with preprocessing)
 [kernel] Parsing fc_stubs.h (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at testmain
 [eva:initial-state] Values of globals at initialization
   mp_bits_per_limb ∈ {64}
@@ -96,6 +110,11 @@
 [eva:alarm] mini-gmp.c:1284: Warning: 
   out of bounds read. assert \valid_read(sp + j);
 [eva] mini-gmp.c:1280: starting to merge loop iterations
+[eva:alarm] mini-gmp.c:1284: Warning: 
+  out of bounds write. assert \valid(rp + tmp);
+                       (tmp from rn++)
+[eva:alarm] mini-gmp.c:1289: Warning: 
+  out of bounds write. assert \valid(rp + (mp_size_t)(rn - 1));
 [eva:alarm] mini-gmp.c:1289: Warning: 
   accessing uninitialized left-value. assert \initialized(sp + j);
 [eva:alarm] mini-gmp.c:1289: Warning: 
@@ -103,11 +122,6 @@
 [eva:alarm] mini-gmp.c:1289: Warning: 
   accessing uninitialized left-value.
   assert \initialized(rp + (mp_size_t)(rn - 1));
-[eva:alarm] mini-gmp.c:1289: Warning: 
-  out of bounds write. assert \valid(rp + (mp_size_t)(rn - 1));
-[eva:alarm] mini-gmp.c:1284: Warning: 
-  out of bounds write. assert \valid(rp + tmp);
-                       (tmp from rn++)
 [eva:alarm] mini-gmp.c:1284: Warning: 
   signed overflow. assert rn + 1 ≤ 9223372036854775807;
 [eva:alarm] mini-gmp.c:376: Warning: 
@@ -240,7 +254,6 @@
 [eva] tests/t-add.c:39: starting to merge loop iterations
 [eva:alarm] mini-gmp.c:1398: Warning: 
   signed overflow. assert -r->_mp_size ≤ 2147483647;
-[scope:rm_asserts] removing 14 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function gmp_default_free:
   p ∈
@@ -927,5 +940,5 @@
     Preconditions    21 valid    11 unknown     0 invalid     32 total
   65% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-2.45user 0.19system 0:02.65elapsed 100%CPU (0avgtext+0avgdata 175296maxresident)k
-0inputs+9992outputs (0major+48695minor)pagefaults 0swaps
+2.45user 0.21system 0:02.67elapsed 99%CPU (0avgtext+0avgdata 175952maxresident)k
+0inputs+9984outputs (0major+48870minor)pagefaults 0swaps

@@ -2,6 +2,20 @@
 [kernel] Parsing test.c (with preprocessing)
 [kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
 [kernel] Parsing FRAMAC_SHARE/libc/string.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear already set to 14 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   b ∈ {0}
@@ -214,7 +228,6 @@
 [eva] using specification for function printf_va_8
 [eva] using specification for function printf_va_9
 [eva] using specification for function printf_va_10
-[scope:rm_asserts] removing 6 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fgetc:
   __fc_errno ∈ [--..--]
@@ -690,5 +703,5 @@
     Preconditions    32 valid    10 unknown     0 invalid     42 total
   76% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-1.55user 0.18system 0:01.74elapsed 99%CPU (0avgtext+0avgdata 156860maxresident)k
-0inputs+5392outputs (0major+39103minor)pagefaults 0swaps
+1.53user 0.17system 0:01.71elapsed 99%CPU (0avgtext+0avgdata 156120maxresident)k
+0inputs+5392outputs (0major+38841minor)pagefaults 0swaps

@@ -5,6 +5,20 @@
 [kernel] Parsing miniz_tinfl.c (with preprocessing)
 [variadic:typing] examples/example3.c:88: Warning: 
   Incorrect type for argument 3. The argument will be cast from int to unsigned int.
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 5 (not modified).
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   s_inbuf[0..1048575] ∈ {0}
@@ -619,8 +633,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memcmp
 [eva] miniz_tdef.c:880: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:883: Warning: 
-  function memcpy: precondition 'valid_dest' got status unknown.
-[eva:alarm] miniz_tdef.c:883: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] miniz_tdef.c:885: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
@@ -632,11 +644,11 @@
   accessing uninitialized left-value. assert \initialized(&ret);
 [eva] miniz_tdef.c:909: starting to merge loop iterations
 [kernel] miniz_tdef.c:749: 
-  more than 200(39894) elements to enumerate. Approximating.
+  more than 10(39894) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:749: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [kernel] miniz_tdef.c:749: 
-  more than 200(39893) elements to enumerate. Approximating.
+  more than 10(39893) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:913: Warning: 
   accessing uninitialized left-value. assert \initialized((mz_uint8 const *)p);
 [eva:alarm] miniz_tdef.c:913: Warning: 
@@ -760,9 +772,13 @@
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing uninitialized left-value. assert \initialized(pSym_count + i);
 [kernel] miniz_tdef.c:239: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(11) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(11) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:239: 
+  more than 10(288) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:240: 
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:239: Warning: 
   accessing out of bounds index. assert num_used_syms < TDEFL_MAX_HUFF_SYMBOLS;
 [eva:alarm] miniz_tdef.c:110: Warning: 
@@ -797,7 +813,7 @@
 [eva:alarm] miniz_tdef.c:126: Warning: 
   invalid RHS operand for shift. assert 0 ≤ pass_shift < 32;
 [kernel] miniz_tdef.c:110: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:147: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + 0)->m_key);
 [eva:alarm] miniz_tdef.c:147: Warning: 
@@ -828,25 +844,33 @@
   (tmp_2 from leaf++)
 [eva] miniz_tdef.c:150: starting to merge loop iterations
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:155: 
+  more than 10(11) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:158: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:161: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:162: 
+  more than 10(12) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:165: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:155: 
+  more than 10(13) locations to update in array. Approximating.
+[kernel] miniz_tdef.c:162: 
+  more than 10(14) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:152: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [eva:alarm] miniz_tdef.c:154: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:155: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:161: Warning: 
   out of bounds read. assert \valid_read(&(A + root)->m_key);
 [kernel] miniz_tdef.c:162: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:169: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + next)->m_key);
 [eva:alarm] miniz_tdef.c:169: Warning: 
@@ -855,17 +879,17 @@
 [eva:alarm] miniz_tdef.c:169: Warning: 
   out of bounds read. assert \valid_read(&(A + (A + next)->m_key)->m_key);
 [kernel] miniz_tdef.c:169: 
-  more than 200(286) locations to update in array. Approximating.
+  more than 10(286) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:176: Warning: 
   accessing uninitialized left-value. assert \initialized(&(A + root)->m_key);
 [eva] miniz_tdef.c:176: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:178: Warning: 
   signed overflow. assert used + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:183: 
-  more than 200(287) locations to update in array. Approximating.
+  more than 10(287) locations to update in array. Approximating.
 [eva] miniz_tdef.c:181: starting to merge loop iterations
 [kernel] miniz_tdef.c:183: 
-  more than 200(288) locations to update in array. Approximating.
+  more than 10(288) locations to update in array. Approximating.
 [eva:alarm] miniz_tdef.c:183: Warning: 
   out of bounds write. assert \valid(&(A + tmp_3)->m_key);
                        (tmp_3 from next--)
@@ -877,13 +901,13 @@
 [eva:alarm] miniz_tdef.c:187: Warning: 
   signed overflow. assert dpth + 1 ≤ 2147483647;
 [kernel] miniz_tdef.c:152: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:154: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:159: 
-  more than 200(286) elements to enumerate. Approximating.
+  more than 10(286) elements to enumerate. Approximating.
 [kernel] miniz_tdef.c:167: 
-  more than 200(287) elements to enumerate. Approximating.
+  more than 10(287) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:247: Warning: 
   accessing uninitialized left-value. assert \initialized(&(pSyms + i)->m_key);
 [eva:alarm] miniz_tdef.c:247: Warning: 
@@ -919,7 +943,7 @@
   invalid LHS operand for left shift.
   assert 0 ≤ (int)(j + num_codes[(int)(i - 1)]);
 [kernel] miniz_tdef.c:240: 
-  more than 200(288) elements to enumerate. Approximating.
+  more than 10(288) elements to enumerate. Approximating.
 [eva] miniz_tdef.c:351: starting to merge loop iterations
 [eva] miniz_tdef.c:354: starting to merge loop iterations
 [eva:alarm] miniz_tdef.c:383: Warning: 
@@ -959,9 +983,6 @@
   accessing out of bounds index.
   assert tmp_12 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_12 from num_packed_code_sizes++)
-[eva:alarm] miniz_tdef.c:368: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&code_sizes_to_pack[i]);
 [eva:alarm] miniz_tdef.c:371: Warning: 
   accessing out of bounds index.
   assert tmp_1 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -986,6 +1007,9 @@
   accessing out of bounds index.
   assert tmp_23 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
   (tmp_23 from num_packed_code_sizes++)
+[eva:alarm] miniz_tdef.c:368: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&code_sizes_to_pack[i]);
 [eva:alarm] miniz_tdef.c:379: Warning: 
   accessing out of bounds index.
   assert tmp_13 < (int)(TDEFL_MAX_HUFF_SYMBOLS_0 + TDEFL_MAX_HUFF_SYMBOLS_1);
@@ -1583,6 +1607,11 @@
   assert \initialized(&d->m_num_flags_left);
 [eva:alarm] miniz_tdef.c:1171: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_saved_lit);
+[eva:alarm] miniz_tdef.c:1180: Warning: 
+  accessing uninitialized left-value. assert \initialized(&d->m_dict[cur_pos]);
+[eva:alarm] miniz_tdef.c:1187: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&d->m_saved_match_dist);
 [eva:alarm] miniz_tdef.c:1060: Warning: 
   out of bounds write. assert \valid(d->m_pLZ_code_buf + 0);
 [eva:alarm] miniz_tdef.c:1063: Warning: 
@@ -1591,11 +1620,6 @@
   out of bounds write. assert \valid(d->m_pLZ_code_buf + 2);
 [eva:alarm] miniz_tdef.c:1067: Warning: 
   out of bounds write. assert \valid(d->m_pLZ_flags);
-[eva:alarm] miniz_tdef.c:1180: Warning: 
-  accessing uninitialized left-value. assert \initialized(&d->m_dict[cur_pos]);
-[eva:alarm] miniz_tdef.c:1187: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&d->m_saved_match_dist);
 [eva:alarm] miniz_tdef.c:1211: Warning: 
   pointer comparison.
   assert
@@ -1619,8 +1643,6 @@
   assert \initialized(&d->m_total_lz_bytes);
 [eva:alarm] miniz_tdef.c:1043: Warning: 
   out of bounds write. assert \valid(d->m_pLZ_flags);
-[kernel] miniz_tdef.c:239: 
-  more than 200(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:1298: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_adler32);
 [eva:alarm] miniz_tdef.c:1298: Warning: 
@@ -1701,6 +1723,8 @@
   pointer comparison. assert \pointer_comparable((void *)0, pOut_buf);
 [eva:alarm] miniz_tdef.c:1245: Warning: 
   accessing uninitialized left-value. assert \initialized(&d->m_finished);
+[kernel] miniz_tdef.c:239: 
+  more than 10(288) elements to enumerate. Approximating.
 [eva:alarm] miniz_tdef.c:1297: Warning: 
   pointer comparison. assert \pointer_comparable((void *)0, pIn_buf);
 [eva:alarm] miniz.c:43: Warning: 
@@ -1911,10 +1935,6 @@
                                                                       & 1))]);
   (tmp_23 from code_len++)
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:371: Warning: 
-  invalid RHS operand for shift.
-  assert 0 ≤ tmp_23 < 64;
-  (tmp_23 from code_len++)
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
 [eva] miniz_tinfl.c:371: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:371: Warning: 
@@ -1986,36 +2006,6 @@
 [eva] miniz_tinfl.c:304: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:314: Warning: 
   accessing out of bounds index. assert pTable->m_code_size[i_0] < 16;
-[eva:alarm] miniz_tinfl.c:311: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:312: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
-[eva:alarm] miniz_tinfl.c:313: Warning: 
-  accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
-[eva:alarm] miniz_tinfl.c:314: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
-[eva:alarm] miniz_tinfl.c:328: Warning: 
-  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
-[eva:alarm] miniz_tinfl.c:339: Warning: 
-  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
-[eva:alarm] miniz_tinfl.c:344: Warning: 
-  out of bounds read.
-  assert
-  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
-                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
-                                                                     - 1)))]);
-[eva:alarm] miniz_tinfl.c:346: Warning: 
-  out of bounds write.
-  assert
-  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
-                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
-                                                                - 1)))]);
-[eva:alarm] miniz_tinfl.c:354: Warning: 
-  out of bounds read.
-  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
-[eva:alarm] miniz_tinfl.c:364: Warning: 
-  out of bounds write.
-  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pOut_buf_end - pOut_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
@@ -2044,10 +2034,6 @@
                                                                       & 1))]);
   (tmp_29 from code_len_0++)
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:402: Warning: 
-  invalid RHS operand for shift.
-  assert 0 ≤ tmp_29 < 64;
-  (tmp_29 from code_len_0++)
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva] miniz_tinfl.c:402: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:402: Warning: 
@@ -2149,6 +2135,8 @@
   (tmp_34 from code_len_1++)
 [eva:alarm] miniz_tinfl.c:464: Warning: 
   invalid RHS operand for shift. assert 0 ≤ code_len_1 < 64;
+[eva] miniz_tinfl.c:398: starting to merge loop iterations
+[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:230: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -2165,7 +2153,6 @@
 [eva] miniz_tinfl.c:240: starting to merge loop iterations
 [eva] miniz_tinfl.c:230: starting to merge loop iterations
 [eva] miniz_tinfl.c:230: starting to merge loop iterations
-[eva] miniz_tinfl.c:241: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:292: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -2181,7 +2168,6 @@
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
 [eva] miniz_tinfl.c:395: starting to merge loop iterations
-[eva] miniz_tinfl.c:398: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert -9223372036854775808 ≤ pIn_buf_end - pIn_buf_cur;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
@@ -2189,7 +2175,6 @@
 [eva:alarm] miniz_tinfl.c:402: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
-[eva] miniz_tinfl.c:405: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:481: Warning: 
   accessing out of bounds index. assert (mz_uint32)(counter - 257) < 31;
 [eva:alarm] miniz_tinfl.c:486: Warning: 
@@ -2223,10 +2208,6 @@
                                                                       & 1))]);
   (tmp_36 from code_len_2++)
 [eva] miniz_tinfl.c:490: starting to merge loop iterations
-[eva:alarm] miniz_tinfl.c:490: Warning: 
-  invalid RHS operand for shift.
-  assert 0 ≤ tmp_36 < 64;
-  (tmp_36 from code_len_2++)
 [eva:alarm] miniz_tinfl.c:490: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_end);
@@ -2331,6 +2312,7 @@
   accessing uninitialized left-value. assert \initialized(pSrc + 1);
 [eva:alarm] miniz_tinfl.c:560: Warning: 
   out of bounds read. assert \valid_read(pSrc + 1);
+[eva] miniz_tinfl.c:241: starting to merge loop iterations
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:486: starting to merge loop iterations
 [eva] miniz_tinfl.c:496: starting to merge loop iterations
@@ -2350,6 +2332,7 @@
 [eva:alarm] miniz_tinfl.c:570: Warning: 
   pointer comparison.
   assert \pointer_comparable((void *)pIn_buf_cur, (void *)pIn_buf_next);
+[eva] miniz_tinfl.c:570: starting to merge loop iterations
 [eva:alarm] miniz_tinfl.c:575: Warning: 
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:576: Warning: 
@@ -2505,6 +2488,8 @@
   invalid RHS operand for shift. assert 0 ≤ num_bits < 64;
 [eva:alarm] miniz_tinfl.c:304: Warning: 
   accessing uninitialized left-value. assert \initialized(&r->m_type);
+[eva:alarm] miniz_tinfl.c:313: Warning: 
+  accessing out of bounds index. assert r->m_type < TINFL_MAX_HUFF_TABLES;
 [eva:alarm] miniz_tinfl.c:371: Warning: 
   out of bounds read. assert \valid_read(tmp_24);
                       (tmp_24 from pIn_buf_cur++)
@@ -2576,6 +2561,34 @@
   assert \initialized(&pState->m_decomp.m_check_adler32);
 [eva:alarm] miniz.c:517: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
+[eva:alarm] miniz_tinfl.c:311: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:312: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[eva:alarm] miniz_tinfl.c:314: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[i_0]);
+[eva:alarm] miniz_tinfl.c:328: Warning: 
+  out of bounds read. assert \valid_read(&pTable->m_code_size[sym_index]);
+[eva:alarm] miniz_tinfl.c:339: Warning: 
+  out of bounds write. assert \valid(&pTable->m_look_up[rev_code]);
+[eva:alarm] miniz_tinfl.c:344: Warning: 
+  out of bounds read.
+  assert
+  \valid_read(&pTable->m_look_up[(unsigned int)(rev_code &
+                                                (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                     - 1)))]);
+[eva:alarm] miniz_tinfl.c:346: Warning: 
+  out of bounds write.
+  assert
+  \valid(&pTable->m_look_up[(unsigned int)(rev_code &
+                                           (unsigned int)((int)(TINFL_FAST_LOOKUP_SIZE
+                                                                - 1)))]);
+[eva:alarm] miniz_tinfl.c:354: Warning: 
+  out of bounds read.
+  assert \valid_read(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
+[eva:alarm] miniz_tinfl.c:364: Warning: 
+  out of bounds write.
+  assert \valid(&pTable->m_tree[(int)((int)(-tree_cur) - 1)]);
 [eva:alarm] miniz_tinfl.c:400: Warning: 
   signed overflow. assert pIn_buf_end - pIn_buf_cur ≤ 9223372036854775807;
 [eva:alarm] miniz_tinfl.c:402: Warning: 
@@ -2627,11 +2640,6 @@
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
 [eva] miniz_tinfl.c:383: 
   cannot evaluate ACSL term, unsupported ACSL construct: constant strings
-[kernel] miniz_tdef.c:169: 
-  more than 200(286) elements to enumerate. Approximating.
-[kernel] miniz_tdef.c:158: 
-  more than 200(286) elements to enumerate. Approximating.
-[scope:rm_asserts] removing 19 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function TDEFL_READ_UNALIGNED_WORD:
   ret ∈ [--..--] or UNINITIALIZED
@@ -2655,7 +2663,7 @@
         .zalloc ∈ {{ &miniz_def_alloc_func }}
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0}
-        .adler ∈ [0..4294967295]
+        .adler ∈ [0..4293984255]
         .reserved ∈ {0}
   address ∈ ESCAPINGADDR
 [eva:final-states] Values at end of function mz_adler32:
@@ -2663,9 +2671,9 @@
   buf_len ∈ {0}
   i ∈ [0..2147483640] or UNINITIALIZED
   s1 ∈ [0..65535]
-  s2 ∈ [0..65535]
+  s2 ∈ [0..65520]
   block_len ∈ [0..5552]
-  __retres ∈ [0..4294967295]
+  __retres ∈ [0..4293984255]
 [eva:final-states] Values at end of function mz_deflateEnd:
   stream.next_in ∈ {{ &s_inbuf + [0..--] }}
         .avail_in ∈ [--..--]
@@ -2679,7 +2687,7 @@
         .zalloc ∈ {{ &miniz_def_alloc_func }}
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0}
-        .adler ∈ [0..4294967295]
+        .adler ∈ [0..4293984255]
         .reserved ∈ {0}
   __retres ∈ {0}
 [eva:final-states] Values at end of function mz_inflateEnd:
@@ -2695,7 +2703,7 @@
         .zalloc ∈ {{ &miniz_def_alloc_func }}
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0}
-        .adler ∈ [0..4294967295]
+        .adler ∈ [0..4293984255]
         .reserved ∈ {0}
   __retres ∈ {0}
 [eva:final-states] Values at end of function mz_inflateInit2:
@@ -2757,6 +2765,8 @@
                                       [11020..43787] ∈ UNINITIALIZED
                                       [bits 350304 to 350335] ∈
                                       {1} or UNINITIALIZED
+[kernel] miniz_tdef.c:169: 
+  more than 10(286) elements to enumerate. Approximating.
 [eva:final-states] Values at end of function tdefl_calculate_minimum_redundancy:
   root ∈ [-1..286] or UNINITIALIZED
   leaf ∈ [2..2147483647] or UNINITIALIZED
@@ -2787,7 +2797,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..39] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..39] ∈ [--..--] or UNINITIALIZED
                                     [40..43] ∈ [--..--]
                                     [44..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
@@ -2808,9 +2820,9 @@
                                     [84..91] ∈ [--..--] or UNINITIALIZED
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7}
-                                    [bits 768 to 799] ∈ [0..2147483647]
+                                    [bits 768 to 799] ∈ [0..8388607]
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -2872,7 +2884,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..47] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
                                        [37547..319351] }} or UNINITIALIZED
@@ -2893,9 +2907,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -2921,7 +2935,7 @@
                                     [200..319351] ∈
                                     [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_get_adler32:
-  __retres ∈ [--..--]
+  __retres ∈ [0..4293984255]
 [eva:final-states] 
   Values at end of function tdefl_huffman_enforce_max_code_size:
   i ∈ [0..14] or UNINITIALIZED
@@ -3053,7 +3067,7 @@
 [eva:final-states] Values at end of function tdefl_radix_sort_syms:
   total_passes ∈ {1; 2}
   pass_shift ∈ [0..4294967288],0%8
-  pass ∈ [1..2147483647]
+  pass ∈ {1; 2}
   i ∈ [0..2147483647]
   hist[0..511] ∈ [--..--]
   pCur_syms ∈ {{ &syms0[0] ; &syms1[0] }}
@@ -3079,7 +3093,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..39] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..39] ∈ [--..--] or UNINITIALIZED
                                     [40..43] ∈ [--..--]
                                     [44..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
@@ -3100,9 +3116,9 @@
                                     [84..91] ∈ [--..--] or UNINITIALIZED
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7}
-                                    [bits 768 to 799] ∈ [0..2147483647]
+                                    [bits 768 to 799] ∈ [0..8388607]
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3136,7 +3152,8 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..35] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
                                     [36..47] ∈ [--..--]
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
@@ -3159,9 +3176,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈ [0..127]
                                     [bits 864 to 895] ∈
                                     [0..255] or UNINITIALIZED
@@ -3199,7 +3216,8 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..35] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
                                     [36..47] ∈ [--..--]
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
@@ -3222,9 +3240,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈ [0..127]
                                     [bits 864 to 895] ∈
                                     [0..255] or UNINITIALIZED
@@ -3274,7 +3292,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..39] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..39] ∈ [--..--] or UNINITIALIZED
                                     [40..43] ∈ [--..--]
                                     [44..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
@@ -3295,9 +3315,9 @@
                                     [84..91] ∈ [--..--] or UNINITIALIZED
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7}
-                                    [bits 768 to 799] ∈ [0..2147483647]
+                                    [bits 768 to 799] ∈ [0..8388607]
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3347,7 +3367,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..39] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..39] ∈ [--..--] or UNINITIALIZED
                                     [40..43] ∈ [--..--]
                                     [44..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
@@ -3368,9 +3390,9 @@
                                     [84..91] ∈ [--..--] or UNINITIALIZED
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7}
-                                    [bits 768 to 799] ∈ [0..2147483647]
+                                    [bits 768 to 799] ∈ [0..8388607]
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3408,7 +3430,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..39] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..39] ∈ [--..--] or UNINITIALIZED
                                     [40..43] ∈ [--..--]
                                     [44..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
@@ -3429,9 +3453,9 @@
                                     [84..91] ∈ [--..--] or UNINITIALIZED
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7}
-                                    [bits 768 to 799] ∈ [0..2147483647]
+                                    [bits 768 to 799] ∈ [0..8388607]
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3459,7 +3483,7 @@
                                     [37002..319351] ∈
                                     [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function tdefl_flush_block:
-  saved_bit_buf ∈ [0..2147483647]
+  saved_bit_buf ∈ [0..8388607]
   saved_bits_in ∈ {0; 1; 2; 3; 4; 5; 6; 7}
   pSaved_output_buf ∈
                    {{ &s_outbuf + [0..--] ;
@@ -3481,7 +3505,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..39] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..39] ∈ [--..--] or UNINITIALIZED
                                     [40..43] ∈ [--..--]
                                     [44..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
@@ -3500,9 +3526,9 @@
                                     [88..91] ∈ [--..--]
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7}
-                                    [bits 768 to 799] ∈ [0..2147483647]
+                                    [bits 768 to 799] ∈ [0..8388607]
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3551,7 +3577,8 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..35] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
                                     [36..47] ∈ [--..--]
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
@@ -3574,9 +3601,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3617,7 +3644,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..47] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
                                        [37547..319351] }} or UNINITIALIZED
@@ -3638,9 +3667,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3681,7 +3710,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..47] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
                                        [37547..319351] }} or UNINITIALIZED
@@ -3702,9 +3733,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3747,7 +3778,7 @@
         .zalloc ∈ {{ &miniz_def_alloc_func }}
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0}
-        .adler ∈ [0..4294967295]
+        .adler ∈ [0..4293984255]
         .reserved ∈ {0}
   in_bytes ∈ [--..--] or UNINITIALIZED
   out_bytes ∈ [--..--] or UNINITIALIZED
@@ -3765,7 +3796,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..47] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
                                        [37547..319351] }} or UNINITIALIZED
@@ -3786,9 +3819,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -3849,7 +3882,10 @@
                                       [16..19] ∈ [--..--] or UNINITIALIZED
                                       [bits 160 to 191] ∈
                                       {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
-                                      [24..39] ∈ [--..--] or UNINITIALIZED
+                                      [24..27] ∈ [--..--] or UNINITIALIZED
+                                      [bits 224 to 255] ∈
+                                      [0..4293984255] or UNINITIALIZED
+                                      [32..39] ∈ [--..--] or UNINITIALIZED
                                       [bits 320 to 351] ∈
                                       [0..13] or UNINITIALIZED
                                       [44..55] ∈ [--..--] or UNINITIALIZED
@@ -3873,7 +3909,7 @@
         .zalloc ∈ {{ &miniz_def_alloc_func }}
         .zfree ∈ {{ &miniz_def_free_func }}
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0}
-        .adler ∈ [0..4294967295]
+        .adler ∈ [0..4293984255]
         .reserved ∈ {0}
   pState ∈
         {{ (inflate_state *)&__malloc_miniz_def_alloc_func_l169_0 }} or UNINITIALIZED
@@ -3897,7 +3933,10 @@
                                       [16..19] ∈ [--..--] or UNINITIALIZED
                                       [bits 160 to 191] ∈
                                       {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
-                                      [24..39] ∈ [--..--] or UNINITIALIZED
+                                      [24..27] ∈ [--..--] or UNINITIALIZED
+                                      [bits 224 to 255] ∈
+                                      [0..4293984255] or UNINITIALIZED
+                                      [32..39] ∈ [--..--] or UNINITIALIZED
                                       [bits 320 to 351] ∈
                                       [0..13] or UNINITIALIZED
                                       [44..55] ∈ [--..--] or UNINITIALIZED
@@ -3936,9 +3975,9 @@
         .zalloc ∈ {{ NULL ; &miniz_def_alloc_func }} or UNINITIALIZED
         .zfree ∈ {{ NULL ; &miniz_def_free_func }} or UNINITIALIZED
         {.opaque; .data_type; .[bits 736 to 767]} ∈ {0} or UNINITIALIZED
-        .adler ∈ [0..4294967295] or UNINITIALIZED
+        .adler ∈ [0..4293984255] or UNINITIALIZED
         .reserved ∈ {0} or UNINITIALIZED
-  p ∈ [1..2147483647]
+  p ∈ {1; 2; 3; 4; 5}
   pSrc_filename ∈ {{ &argv2[0] ; &argv3[0] }} or UNINITIALIZED
   pDst_filename ∈ {{ &argv3[0] ; &argv4[0] }} or UNINITIALIZED
   file_loc ∈ [-1..9223372036854775807] or UNINITIALIZED
@@ -3955,7 +3994,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..47] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
                                        [37547..319351] }} or UNINITIALIZED
@@ -3976,9 +4017,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -4012,7 +4053,10 @@
                                       [16..19] ∈ [--..--] or UNINITIALIZED
                                       [bits 160 to 191] ∈
                                       {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
-                                      [24..39] ∈ [--..--] or UNINITIALIZED
+                                      [24..27] ∈ [--..--] or UNINITIALIZED
+                                      [bits 224 to 255] ∈
+                                      [0..4293984255] or UNINITIALIZED
+                                      [32..39] ∈ [--..--] or UNINITIALIZED
                                       [bits 320 to 351] ∈
                                       [0..13] or UNINITIALIZED
                                       [44..55] ∈ [--..--] or UNINITIALIZED
@@ -4060,7 +4104,9 @@
                                     [1..342] or UNINITIALIZED
                                     [bits 224 to 255] ∈
                                     {0; 1} or UNINITIALIZED
-                                    [32..47] ∈ [--..--] or UNINITIALIZED
+                                    [bits 256 to 287] ∈
+                                    [0..4293984255] or UNINITIALIZED
+                                    [36..47] ∈ [--..--] or UNINITIALIZED
                                     [bits 384 to 447] ∈
                                     {{ &__malloc_miniz_def_alloc_func_l169 +
                                        [37547..319351] }} or UNINITIALIZED
@@ -4081,9 +4127,9 @@
                                     [bits 736 to 767] ∈
                                     {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
                                     [bits 768 to 799] ∈
-                                    [0..2147483647] or UNINITIALIZED
+                                    [0..8388607] or UNINITIALIZED
                                     [bits 800 to 831] ∈
-                                    [0..65535] or UNINITIALIZED
+                                    [0..2147483647] or UNINITIALIZED
                                     [bits 832 to 863] ∈
                                     [0..127] or UNINITIALIZED
                                     [bits 864 to 895] ∈
@@ -4117,7 +4163,10 @@
                                       [16..19] ∈ [--..--] or UNINITIALIZED
                                       [bits 160 to 191] ∈
                                       {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
-                                      [24..39] ∈ [--..--] or UNINITIALIZED
+                                      [24..27] ∈ [--..--] or UNINITIALIZED
+                                      [bits 224 to 255] ∈
+                                      [0..4293984255] or UNINITIALIZED
+                                      [32..39] ∈ [--..--] or UNINITIALIZED
                                       [bits 320 to 351] ∈
                                       [0..13] or UNINITIALIZED
                                       [44..55] ∈ [--..--] or UNINITIALIZED
@@ -4140,18 +4189,18 @@
     by the Eva analyzer:      0 errors    2 warnings
     by the Frama-C kernel:    0 errors    0 warnings
   ----------------------------------------------------------------------------
-  577 alarms generated by the analysis:
+  574 alarms generated by the analysis:
      230 accesses to uninitialized left-values
      130 invalid memory accesses
       62 accesses out of bounds index
       50 integer overflows
-      39 invalid shifts
+      36 invalid shifts
       66 others
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions        0 valid     0 unknown     0 invalid      0 total
-    Preconditions   110 valid    48 unknown     0 invalid    158 total
-  69% of the logical properties reached have been proven.
+    Preconditions   111 valid    47 unknown     0 invalid    158 total
+  70% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-13.66user 0.36system 0:14.03elapsed 99%CPU (0avgtext+0avgdata 300240maxresident)k
-0inputs+10272outputs (0major+77997minor)pagefaults 0swaps
+26.51user 0.39system 0:26.92elapsed 99%CPU (0avgtext+0avgdata 370992maxresident)k
+0inputs+10264outputs (0major+95705minor)pagefaults 0swaps

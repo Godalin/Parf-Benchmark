@@ -1,5 +1,19 @@
 [kernel] Parsing fc_stubs.c (with preprocessing)
 [kernel] Parsing examples/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 5 (not modified).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   _kgflags_g ∈ {0}
@@ -15,11 +29,11 @@
   function strcmp: precondition 'valid_string_s1' got status unknown.
 [eva] FRAMAC_SHARE/libc/string.h:156: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
+[kernel] kgflags.h:657: too many locations to update in array. Approximating.
 [eva:loop-unroll:partial] kgflags.h:369: loop not completely unrolled
 [eva:loop-unroll:partial] kgflags.h:373: loop not completely unrolled
 [eva:loop-unroll:partial] kgflags.h:380: loop not completely unrolled
 [eva] kgflags.h:360: starting to merge loop iterations
-[kernel] kgflags.h:657: too many locations to update in array. Approximating.
 [eva] using specification for function puts
 [eva:alarm] examples/simple.c:12: Warning: 
   function puts: precondition 'valid_string_s' got status unknown.
@@ -77,11 +91,11 @@
   function fprintf_va_10: precondition valid_read_string(param1) got status unknown.
 [eva:loop-unroll:partial] kgflags.h:400: loop not completely unrolled
 [eva] kgflags.h:400: starting to merge loop iterations
-[kernel] kgflags.h:404: more than 200(511) elements to enumerate. Approximating.
-[kernel] kgflags.h:416: more than 200(511) elements to enumerate. Approximating.
-[kernel] kgflags.h:402: more than 200(512) elements to enumerate. Approximating.
-[kernel] kgflags.h:404: more than 200(512) elements to enumerate. Approximating.
-[kernel] kgflags.h:416: more than 200(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:404: more than 10(507) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 10(507) elements to enumerate. Approximating.
+[kernel] kgflags.h:402: more than 10(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:404: more than 10(512) elements to enumerate. Approximating.
+[kernel] kgflags.h:416: more than 10(512) elements to enumerate. Approximating.
 [eva] using specification for function fprintf_va_11
 [eva] using specification for function fprintf_va_13
 [eva] using specification for function fprintf_va_14
@@ -389,5 +403,5 @@
     Preconditions    36 valid    12 unknown     0 invalid     48 total
   75% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.60user 0.12system 0:00.73elapsed 100%CPU (0avgtext+0avgdata 115820maxresident)k
-0inputs+2664outputs (0major+24349minor)pagefaults 0swaps
+0.69user 0.08system 0:00.77elapsed 99%CPU (0avgtext+0avgdata 117692maxresident)k
+80inputs+2672outputs (0major+24841minor)pagefaults 0swaps

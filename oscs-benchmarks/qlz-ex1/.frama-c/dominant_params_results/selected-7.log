@@ -1,6 +1,20 @@
 [kernel] Parsing compress_file.c (with preprocessing)
 [kernel] Parsing quicklz.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel set to 0 (default value).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel already set to 4001 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at eva_main
 [eva:initial-state] Values of globals at initialization
   qlz_decompress_core_bitlut[0] ∈ {4}
@@ -205,7 +219,6 @@
 [eva:alarm] compress_file.c:31: Warning: 
   function fwrite: precondition 'valid_stream' got status unknown.
 [eva] using specification for function fclose
-[scope:rm_asserts] removing 5 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function fast_read:
   __retres ∈ [--..--]
@@ -225,7 +238,7 @@
   last_byte ∈
            {{ NULL + [0..4294966894] ;
               &__malloc_main_l23 + [0..4294966894] }}
-  src ∈ {{ NULL ; &__malloc_main_l23 + [0..18446744073709551615] }}
+  src ∈ {{ NULL ; &__malloc_main_l23 + [0..--] }}
   cword_ptr ∈
            {{ NULL + {3; 7; 9; 13} ;
               &__malloc_main_l27 + [3..18446744073709551615] }}
@@ -317,5 +330,5 @@
     Preconditions    14 valid     6 unknown     0 invalid     20 total
   70% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.68user 0.12system 0:00.81elapsed 99%CPU (0avgtext+0avgdata 116228maxresident)k
-0inputs+2848outputs (0major+26434minor)pagefaults 0swaps
+0.66user 0.11system 0:00.78elapsed 99%CPU (0avgtext+0avgdata 115868maxresident)k
+0inputs+2840outputs (0major+26364minor)pagefaults 0swaps

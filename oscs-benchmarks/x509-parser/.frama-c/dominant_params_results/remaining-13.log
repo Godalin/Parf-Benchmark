@@ -1,91 +1,20 @@
 [kernel] Parsing src/x509-parser.c (with preprocessing)
 [kernel:typing:incompatible-types-call] src/x509-parser.c:9242: Warning: 
   expected 'char *' but got argument of type 'u8 *': buf
-[eva] Splitting return states on:
-  \return(getcwd) == 0 (auto)
-  \return(ttyname) == 0 (auto)
-  \return(memchr) == 0 (auto)
-  \return(memcpy) == 0 (auto)
-  \return(mempcpy) == 0 (auto)
-  \return(memmove) == 0 (auto)
-  \return(memset) == 0 (auto)
-  \return(strchr) == 0 (auto)
-  \return(strchrnul) == 0 (auto)
-  \return(strrchr) == 0 (auto)
-  \return(strpbrk) == 0 (auto)
-  \return(strstr) == 0 (auto)
-  \return(strcasestr) == 0 (auto)
-  \return(strtok) == 0 (auto)
-  \return(strtok_r) == 0 (auto)
-  \return(strsep) == 0 (auto)
-  \return(strerror) == 0 (auto)
-  \return(strcpy) == 0 (auto)
-  \return(strncpy) == 0 (auto)
-  \return(stpcpy) == 0 (auto)
-  \return(strcat) == 0 (auto)
-  \return(strncat) == 0 (auto)
-  \return(strdup) == 0 (auto)
-  \return(strndup) == 0 (auto)
-  \return(strsignal) == 0 (auto)
-  \return(parse_x509_cert) == 0 (auto)
-  \return(Frama_C_nondet_ptr) == 0 (auto)
-  \return(Frama_C_malloc_fresh) == 0 (auto)
-  \return(bufs_differ) == 0 (auto)
-  \return(_extract_complex_tag) == 0 (auto)
-  \return(get_identifier) == 0 (auto)
-  \return(get_length) == 0 (auto)
-  \return(parse_id_len) == 0 (auto)
-  \return(parse_explicit_id_len) == 0 (auto)
-  \return(_parse_arc) == 0 (auto)
-  \return(parse_OID) == 0 (auto)
-  \return(parse_integer) == 0 (auto)
-  \return(parse_boolean) == 0 (auto)
-  \return(parse_x509_Version) == 0 (auto)
-  \return(parse_CertificateSerialNumber) == 0 (auto)
-  \return(find_curve_by_oid) == 0 (auto)
-  \return(find_alg_by_oid) == 0 (auto)
-  \return(parse_x509_AlgorithmIdentifier) == 0 (auto)
-  \return(check_utf8_string) == 0 (auto)
-  \return(check_printable_string) == 0 (auto)
-  \return(check_visible_string) == 0 (auto)
-  \return(check_teletex_string) == 0 (auto)
-  \return(check_universal_string) == 0 (auto)
-  \return(check_bmp_string) == 0 (auto)
-  \return(check_ia5_string) == 0 (auto)
-  \return(parse_ia5_string) == 0 (auto)
-  \return(_is_digit) == 0 (auto)
-  \return(_is_alpha) == 0 (auto)
-  \return(find_dn_by_oid) == 0 (auto)
-  \return(parse_AttributeTypeAndValue) == 0 (auto)
-  \return(parse_RelativeDistinguishedName) == 0 (auto)
-  \return(parse_x509_Name) == 0 (auto)
-  \return(parse_UTCTime) == 0 (auto)
-  \return(parse_generalizedTime) == 0 (auto)
-  \return(parse_Time) == 0 (auto)
-  \return(_verify_correct_time_use) == 0 (auto)
-  \return(parse_x509_Validity) == 0 (auto)
-  \return(parse_x509_subjectPublicKeyInfo) == 0 (auto)
-  \return(parse_GeneralName) == 0 (auto)
-  \return(parse_GeneralNames) == 0 (auto)
-  \return(parse_AccessDescription) == 0 (auto)
-  \return(parse_nine_bit_named_bit_list) == 0 (auto)
-  \return(parse_CPSuri) == 0 (auto)
-  \return(parse_DisplayText) == 0 (auto)
-  \return(parse_NoticeReference) == 0 (auto)
-  \return(parse_UserNotice) == 0 (auto)
-  \return(parse_policyQualifierInfo) == 0 (auto)
-  \return(parse_PolicyInformation) == 0 (auto)
-  \return(parse_GeneralSubtrees) == 0 (auto)
-  \return(find_kp_by_oid) == 0 (auto)
-  \return(parse_crldp_reasons) == 0 (auto)
-  \return(parse_DistributionPoint) == 0 (auto)
-  \return(find_ext_by_oid) == 0 (auto)
-  \return(check_record_ext_unknown) == 0 (auto)
-  \return(parse_x509_Extension) == 0 (auto)
-  \return(parse_x509_Extensions) == 0 (auto)
-  \return(parse_x509_tbsCertificate) == 0 (auto)
-  \return(parse_x509_signatureAlgorithm) == 0 (auto)
-  \return(parse_x509_signatureValue) == 0 (auto)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 12 (not modified).
+  option -eva-widening-delay already set to 2 (not modified).
+  option -eva-partition-history already set to 2 (not modified).
+  option -eva-slevel already set to 10 (not modified).
+  option -eva-ilevel already set to 16 (not modified).
+  option -eva-plevel already set to 30 (not modified).
+  option -eva-subdivide-non-linear already set to 2 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   _ecdsa_sha1_name[0] ∈ {101}
@@ -2506,7 +2435,6 @@
 [eva] using specification for function Frama_C_make_unknown
 [eva] using specification for function Frama_C_interval
 [eva:loop-unroll:auto] src/x509-parser.c:126: Automatic loop unrolling.
-[eva:alarm] src/x509-parser.c:146: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:95: Warning: 
   function _extract_complex_tag: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:97: Warning: 
@@ -2515,11 +2443,6 @@
   function _extract_complex_tag: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:190: Warning: 
   function get_identifier: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:548: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)len - (int)cur_parsed);
-[eva:alarm] src/x509-parser.c:552: Warning: 
-  function get_length: precondition len > 0 ∧ buf ≢ \null ⇒
-                                    \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:346: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:435: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:442: Warning: assertion got status unknown.
@@ -2541,11 +2464,11 @@
   function parse_id_len: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:9130: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)eaten);
-[eva:alarm] src/x509-parser.c:9144: Warning: 
-  function parse_x509_tbsCertificate: precondition len > 0 ∧ buf ≢ \null ⇒
-                                                   \valid_read(buf +
-                                                               (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:8541: Warning: 
+[eva:alarm] src/x509-parser.c:121: Warning: loop invariant got status unknown.
+[eva:alarm] src/x509-parser.c:146: Warning: assertion got status unknown.
+[eva:alarm] src/x509-parser.c:628: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)len - (int)hdr_len);
+[eva:alarm] src/x509-parser.c:632: Warning: 
   function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:522: Warning: 
@@ -2555,25 +2478,11 @@
 [eva:alarm] src/x509-parser.c:263: Warning: 
   function _extract_complex_tag: precondition len > 0 ∧ buf ≢ \null ⇒
                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:121: Warning: loop invariant got status unknown.
-[eva:alarm] src/x509-parser.c:8557: Warning: 
-  function parse_x509_Version: precondition len > 0 ∧ buf ≢ \null ⇒
-                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:1014: Warning: 
-  function parse_explicit_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:620: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:628: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)len - (int)hdr_len);
-[eva:alarm] src/x509-parser.c:632: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:192: Warning: 
-  function get_identifier: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:193: Warning: 
   function get_identifier: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:552: Warning: 
+  function get_length: precondition len > 0 ∧ buf ≢ \null ⇒
+                                    \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:493: Warning: 
   function parse_id_len: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:639: Warning: 
@@ -2652,8 +2561,8 @@
 [eva:alarm] src/x509-parser.c:2410: Warning: 
   function find_alg_by_oid: precondition len > 0 ∧ buf ≢ (u8 const *)0 ⇒
                                          \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:loop-unroll:auto] src/x509-parser.c:63: Automatic loop unrolling.
 [eva:alarm] src/x509-parser.c:60: Warning: loop invariant got status unknown.
-[eva] src/x509-parser.c:63: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:2310: Warning: 
   function find_alg_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:2419: Warning: 
@@ -2662,10 +2571,7 @@
   function parse_algoid_params_rsa: precondition len > 0 ∧ buf ≢ \null ⇒
                                                  \valid_read(buf +
                                                              (0 .. len - 1)) got status unknown.
-[eva:loop-unroll:auto] src/x509-parser.c:63: Automatic loop unrolling.
 [eva:alarm] src/x509-parser.c:2135: Warning: 
-  function parse_algoid_params_rsa: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:2139: Warning: 
   function parse_algoid_params_rsa: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:2423: Warning: 
   function parse_algoid_params_generic: precondition len > 0 ∧ buf ≢ \null ⇒
@@ -2709,8 +2615,8 @@
   function parse_x509_AlgorithmIdentifier: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:2370: Warning: 
   function parse_x509_AlgorithmIdentifier: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:2372: Warning: 
-  function parse_x509_AlgorithmIdentifier: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:8585: Warning: 
+  out of bounds read. assert \valid_read(&alg->alg_type);
 [eva:alarm] src/x509-parser.c:8592: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8595: Warning: 
@@ -2723,8 +2629,6 @@
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:132: Warning: 
   out of bounds read. assert \valid_read(buf + rbytes);
-[eva:alarm] src/x509-parser.c:311: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
 [eva:alarm] src/x509-parser.c:323: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:394: Warning: 
   out of bounds read. assert \valid_read(buf + 1);
@@ -2786,8 +2690,8 @@
                                                             (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:2653: Warning: 
   out of bounds read. assert \valid_read(buf + rbytes);
-[eva:alarm] src/x509-parser.c:2648: Warning: loop invariant got status unknown.
 [eva] src/x509-parser.c:2652: starting to merge loop iterations
+[eva:alarm] src/x509-parser.c:2648: Warning: loop invariant got status unknown.
 [eva:alarm] src/x509-parser.c:2902: Warning: 
   function check_utf8_string: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3096,6 +3000,7 @@
   out of bounds read. assert \valid_read(b1 + i);
 [eva:alarm] src/x509-parser.c:64: Warning: 
   out of bounds read. assert \valid_read(b2 + i);
+[eva] src/x509-parser.c:63: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:59: Warning: loop invariant got status unknown.
 [eva:alarm] src/x509-parser.c:8651: Warning: 
   function parse_x509_subjectPublicKeyInfo: precondition len > 0 ∧
@@ -3196,13 +3101,14 @@
 [eva:alarm] src/x509-parser.c:8378: Warning: 
   function parse_explicit_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
                                                \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:620: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:508: Warning: 
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
 [eva:alarm] src/x509-parser.c:206: Warning: 
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
 [eva:alarm] src/x509-parser.c:8388: Warning: assertion got status unknown.
-[eva:alarm] src/x509-parser.c:8390: Warning: 
-  unsigned downcast. assert (int)((int)hdr_len + (int)data_len) ≤ 65535;
 [eva:alarm] src/x509-parser.c:8391: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:8392: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:8415: Warning: loop invariant got status unknown.
@@ -3223,10 +3129,6 @@
 [eva:alarm] src/x509-parser.c:8093: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:8062: Warning: 
   function find_ext_by_oid: postcondition got status unknown.
-[kernel] src/x509-parser.c:8089: 
-  more than 20(29) elements to enumerate. Approximating.
-[kernel] src/x509-parser.c:8094: 
-  more than 20(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8259: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)oid_len);
 [eva:alarm] src/x509-parser.c:8268: Warning: 
@@ -3244,17 +3146,11 @@
   function parse_boolean: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:936: Warning: 
   function parse_boolean: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:8276: Warning: 
-  out of bounds read. assert \valid_read(buf + 2);
-[eva:alarm] src/x509-parser.c:8289: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)parsed);
 [eva:alarm] src/x509-parser.c:8296: Warning: 
   function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:8305: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)ext_data_len - (int)hdr_len);
-[kernel] src/x509-parser.c:8315: 
-  more than 20(29) elements to enumerate. Approximating.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_bad_oid: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3266,13 +3162,6 @@
                                                                 (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:7686: Warning: 
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
-[eva:alarm] src/x509-parser.c:7702: Warning: 
-  function parse_integer: precondition len > 0 ∧ buf ≢ \null ⇒
-                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:7720: Warning: 
-  out of bounds read. assert \valid_read(buf + 2);
-[eva:alarm] src/x509-parser.c:7675: Warning: 
-  function parse_ext_inhibitAnyPolicy: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_CRLDP: precondition len > 0 ∧ buf ≢ \null ⇒
                                          \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3328,6 +3217,7 @@
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)grabbed);
 [eva:alarm] src/x509-parser.c:4692: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)name_len);
+[eva:alarm] src/x509-parser.c:4696: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:4714: Warning: 
   function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
@@ -3340,7 +3230,10 @@
   function parse_GeneralName: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4817: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
+[eva] src/x509-parser.c:4812: Trace partitioning superposing up to 100 states
+[eva] src/x509-parser.c:4812: Trace partitioning superposing up to 200 states
 [eva] src/x509-parser.c:4810: starting to merge loop iterations
+[eva] src/x509-parser.c:4812: Trace partitioning superposing up to 300 states
 [eva:alarm] src/x509-parser.c:4778: Warning: 
   function parse_GeneralNames: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4779: Warning: 
@@ -3374,19 +3267,17 @@
   out of bounds read. assert \valid_read(buf + 0);
 [eva:alarm] src/x509-parser.c:5362: Warning: 
   out of bounds read. assert \valid_read(buf + 1);
-[eva] src/x509-parser.c:5391: starting to merge loop iterations
-[eva] src/x509-parser.c:5411: starting to merge loop iterations
+[eva:loop-unroll:auto] src/x509-parser.c:5391: Automatic loop unrolling.
+[eva:loop-unroll:auto] src/x509-parser.c:5411: Automatic loop unrolling.
 [eva:alarm] src/x509-parser.c:5426: Warning: 
   out of bounds read. assert \valid_read(buf + 2);
-[eva] src/x509-parser.c:5443: starting to merge loop iterations
+[eva:loop-unroll:auto] src/x509-parser.c:5443: Automatic loop unrolling.
 [eva:alarm] src/x509-parser.c:5295: Warning: 
   function parse_nine_bit_named_bit_list: postcondition got status unknown.
-[eva] src/x509-parser.c:5458: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7344: Warning: 
   function parse_crldp_reasons: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:7345: Warning: 
   function parse_crldp_reasons: postcondition got status unknown.
-[eva] src/x509-parser.c:7381: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7525: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:7536: Warning: 
@@ -3398,9 +3289,9 @@
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:7412: Warning: 
   function parse_DistributionPoint: postcondition got status unknown.
-[eva] src/x509-parser.c:7570: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:7652: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
+[eva] src/x509-parser.c:7647: Trace partitioning superposing up to 100 states
 [eva] src/x509-parser.c:7643: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:7593: Warning: 
   function parse_ext_CRLDP: postcondition got status unknown.
@@ -3419,9 +3310,8 @@
 [eva:alarm] src/x509-parser.c:7297: Warning: 
   function find_kp_by_oid: precondition len > 0 ∧ buf ≢ (u8 const *)0 ⇒
                                         \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:loop-unroll:auto] src/x509-parser.c:7212: Automatic loop unrolling.
 [eva:alarm] src/x509-parser.c:7222: Warning: assertion got status unknown.
-[eva] src/x509-parser.c:7212: starting to merge loop iterations
-[eva:alarm] src/x509-parser.c:7217: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:7191: Warning: 
   function find_kp_by_oid: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:7316: Warning: 
@@ -3434,77 +3324,12 @@
                                                                  (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:7046: Warning: 
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
-[eva:alarm] src/x509-parser.c:7063: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:7085: Warning: 
-  function parse_integer: precondition len > 0 ∧ buf ≢ \null ⇒
-                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:7100: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
-[eva:alarm] src/x509-parser.c:7104: Warning: 
-  function parse_integer: precondition len > 0 ∧ buf ≢ \null ⇒
-                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:7119: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
-[eva:alarm] src/x509-parser.c:7036: Warning: 
-  function parse_ext_policyConstraints: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_nameConstraints: precondition len > 0 ∧ buf ≢ \null ⇒
                                                    \valid_read(buf +
                                                                (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:6934: Warning: 
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
-[eva:alarm] src/x509-parser.c:6951: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6971: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6975: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)hdr_len);
-[eva:alarm] src/x509-parser.c:6977: Warning: 
-  function parse_GeneralSubtrees: precondition len > 0 ∧ buf ≢ \null ⇒
-                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6850: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
-[eva:alarm] src/x509-parser.c:6856: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6867: Warning: 
-  function parse_GeneralName: precondition len > 0 ∧ buf ≢ \null ⇒
-                                           \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:4587: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
-[eva:alarm] src/x509-parser.c:4605: Warning: 
-  out of bounds read. assert \valid_read(buf + 0);
-[eva:alarm] src/x509-parser.c:4577: Warning: 
-  function parse_GeneralName: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:6874: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)grabbed);
-[eva:alarm] src/x509-parser.c:6887: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6896: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6841: Warning: 
-  function parse_GeneralSubtrees: postcondition got status unknown.
-[eva] src/x509-parser.c:6914: cannot properly split on \result == 0
-[eva:alarm] src/x509-parser.c:6984: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)data_len);
-[eva:alarm] src/x509-parser.c:6988: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6992: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)hdr_len);
-[eva:alarm] src/x509-parser.c:6994: Warning: 
-  function parse_GeneralSubtrees: precondition len > 0 ∧ buf ≢ \null ⇒
-                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:7001: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)data_len);
-[eva:alarm] src/x509-parser.c:6924: Warning: 
-  function parse_ext_nameConstraints: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_basicConstraints: precondition len > 0 ∧ buf ≢ \null ⇒
                                                     \valid_read(buf +
@@ -3559,7 +3384,10 @@
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:6594: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
+[eva] src/x509-parser.c:6589: Trace partitioning superposing up to 100 states
+[eva] src/x509-parser.c:6589: Trace partitioning superposing up to 200 states
 [eva] src/x509-parser.c:6587: starting to merge loop iterations
+[eva] src/x509-parser.c:6589: Trace partitioning superposing up to 300 states
 [eva:alarm] src/x509-parser.c:6524: Warning: 
   function parse_ext_IAN: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
@@ -3586,32 +3414,6 @@
                                                              (0 .. len - 1)) got status unknown.
 [eva:alarm] src/x509-parser.c:6282: Warning: 
   pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
-[eva:alarm] src/x509-parser.c:6299: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6318: Warning: loop invariant got status unknown.
-[eva:alarm] src/x509-parser.c:6322: Warning: 
-  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
-                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6331: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)hdr_len);
-[eva:alarm] src/x509-parser.c:6334: Warning: 
-  function parse_OID: precondition len > 0 ∧ buf ≢ \null ⇒
-                                   \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6341: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
-[eva:alarm] src/x509-parser.c:6342: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)eaten);
-[eva:alarm] src/x509-parser.c:6345: Warning: 
-  function parse_OID: precondition len > 0 ∧ buf ≢ \null ⇒
-                                   \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:6351: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)eaten);
-[eva:alarm] src/x509-parser.c:6363: Warning: 
-  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
-[eva] src/x509-parser.c:6321: starting to merge loop iterations
-[eva:alarm] src/x509-parser.c:6272: Warning: 
-  function parse_ext_policyMapping: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
   function parse_ext_certPolicies: precondition len > 0 ∧ buf ≢ \null ⇒
                                                 \valid_read(buf +
@@ -3714,7 +3516,8 @@
 [eva:alarm] src/x509-parser.c:2718: Warning: 
   out of bounds read. assert \valid_read(buf + rbytes);
 [eva] src/x509-parser.c:2717: starting to merge loop iterations
-[eva] src/x509-parser.c:2760: Trace partitioning superposing up to 100 states
+[eva] src/x509-parser.c:2717: Trace partitioning superposing up to 100 states
+[eva] src/x509-parser.c:2717: Trace partitioning superposing up to 200 states
 [eva:alarm] src/x509-parser.c:2697: Warning: 
   function check_visible_string: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5690: Warning: 
@@ -3724,7 +3527,6 @@
   function parse_DisplayText: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5635: Warning: 
   function parse_DisplayText: postcondition got status unknown.
-[eva] src/x509-parser.c:5714: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5775: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:5782: Warning: 
@@ -3743,7 +3545,6 @@
   function parse_NoticeReference: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5736: Warning: 
   function parse_NoticeReference: postcondition got status unknown.
-[eva] src/x509-parser.c:5824: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:5888: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:5893: Warning: 
@@ -3755,21 +3556,19 @@
   function parse_UserNotice: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:5850: Warning: 
   function parse_UserNotice: postcondition got status unknown.
-[eva] src/x509-parser.c:5910: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6002: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)cpsunotice_len);
 [eva:alarm] src/x509-parser.c:5932: Warning: 
   function parse_policyQualifierInfo: postcondition got status unknown.
-[eva] src/x509-parser.c:6016: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6108: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)pqi_len);
 [eva] src/x509-parser.c:6099: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:6031: Warning: 
   function parse_PolicyInformation: postcondition got status unknown.
-[eva] src/x509-parser.c:6124: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:6244: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
 [eva] src/x509-parser.c:6237: starting to merge loop iterations
+[eva] src/x509-parser.c:6239: Trace partitioning superposing up to 100 states
 [eva:alarm] src/x509-parser.c:6182: Warning: 
   function parse_ext_certPolicies: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8317: Warning: 
@@ -3877,9 +3676,9 @@
 [eva:alarm] src/x509-parser.c:4904: Warning: 
   function parse_GeneralName: precondition len > 0 ∧ buf ≢ \null ⇒
                                            \valid_read(buf + (0 .. len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:3762: Warning: 
-  function parse_x509_Name: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:4576: Warning: 
+[eva:alarm] src/x509-parser.c:4605: Warning: 
+  out of bounds read. assert \valid_read(buf + 0);
+[eva:alarm] src/x509-parser.c:4577: Warning: 
   function parse_GeneralName: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:4917: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:4918: Warning: 
@@ -3894,31 +3693,117 @@
 [eva] src/x509-parser.c:5054: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:4988: Warning: 
   function parse_ext_AIA: postcondition got status unknown.
-[eva:alarm] src/x509-parser.c:4989: Warning: 
-  function parse_ext_AIA: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:7702: Warning: 
+  function parse_integer: precondition len > 0 ∧ buf ≢ \null ⇒
+                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:7720: Warning: 
+  out of bounds read. assert \valid_read(buf + 2);
+[eva:alarm] src/x509-parser.c:7675: Warning: 
+  function parse_ext_inhibitAnyPolicy: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:7063: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:7085: Warning: 
+  function parse_integer: precondition len > 0 ∧ buf ≢ \null ⇒
+                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:7100: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
+[eva:alarm] src/x509-parser.c:7104: Warning: 
+  function parse_integer: precondition len > 0 ∧ buf ≢ \null ⇒
+                                       \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:7119: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
+[eva:alarm] src/x509-parser.c:7036: Warning: 
+  function parse_ext_policyConstraints: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:6951: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6971: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6975: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)hdr_len);
+[eva:alarm] src/x509-parser.c:6977: Warning: 
+  function parse_GeneralSubtrees: precondition len > 0 ∧ buf ≢ \null ⇒
+                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6850: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
+[eva:alarm] src/x509-parser.c:6856: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6867: Warning: 
+  function parse_GeneralName: precondition len > 0 ∧ buf ≢ \null ⇒
+                                           \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:4587: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
+[eva:alarm] src/x509-parser.c:6874: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)grabbed);
+[eva:alarm] src/x509-parser.c:6887: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6896: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6841: Warning: 
+  function parse_GeneralSubtrees: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:6984: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)data_len);
+[eva:alarm] src/x509-parser.c:6988: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6992: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)hdr_len);
+[eva:alarm] src/x509-parser.c:6994: Warning: 
+  function parse_GeneralSubtrees: precondition len > 0 ∧ buf ≢ \null ⇒
+                                               \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:7001: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)data_len);
+[eva:alarm] src/x509-parser.c:6924: Warning: 
+  function parse_ext_nameConstraints: postcondition got status unknown.
+[eva:alarm] src/x509-parser.c:6299: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6318: Warning: loop invariant got status unknown.
+[eva:alarm] src/x509-parser.c:6322: Warning: 
+  function parse_id_len: precondition len > 0 ∧ buf ≢ \null ⇒
+                                      \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6331: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)hdr_len);
+[eva:alarm] src/x509-parser.c:6334: Warning: 
+  function parse_OID: precondition len > 0 ∧ buf ≢ \null ⇒
+                                   \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6341: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
+[eva:alarm] src/x509-parser.c:6342: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)eaten);
+[eva:alarm] src/x509-parser.c:6345: Warning: 
+  function parse_OID: precondition len > 0 ∧ buf ≢ \null ⇒
+                                   \valid_read(buf + (0 .. len - 1)) got status unknown.
+[eva:alarm] src/x509-parser.c:6351: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)data_len - (int)eaten);
+[eva:alarm] src/x509-parser.c:6363: Warning: 
+  unsigned downcast. assert 0 ≤ (int)((int)remain - (int)eaten);
+[eva] src/x509-parser.c:6321: starting to merge loop iterations
+[eva:alarm] src/x509-parser.c:6272: Warning: 
+  function parse_ext_policyMapping: postcondition got status unknown.
+[eva] src/x509-parser.c:8318: Trace partitioning superposing up to 100 states
 [eva:alarm] src/x509-parser.c:8177: Warning: 
   function parse_x509_Extension: postcondition got status unknown.
-[eva] src/x509-parser.c:8327: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8428: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)ext_len);
-[eva] src/x509-parser.c:8154: cannot properly split on \result == 0
+[eva] src/x509-parser.c:8423: Trace partitioning superposing up to 100 states
 [eva] src/x509-parser.c:8418: starting to merge loop iterations
 [eva] src/x509-parser.c:8123: starting to merge loop iterations
 [eva:alarm] src/x509-parser.c:8450: Warning: assertion got status unknown.
 [eva:alarm] src/x509-parser.c:8353: Warning: 
   function parse_x509_Extensions: postcondition got status unknown.
-[eva] src/x509-parser.c:8456: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:8697: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)remain - (int)parsed);
 [eva:alarm] src/x509-parser.c:8803: Warning: assertion got status unknown.
-[eva:alarm] src/x509-parser.c:8804: Warning: 
-  unsigned downcast.
-  assert (int)((int)tbs_hdr_len + (int)tbs_data_len) ≤ 65535;
 [eva:alarm] src/x509-parser.c:8489: Warning: 
   function parse_x509_tbsCertificate: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8491: Warning: 
   function parse_x509_tbsCertificate: postcondition got status unknown.
-[eva] src/x509-parser.c:8810: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9150: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)eaten);
 [eva:alarm] src/x509-parser.c:9154: Warning: 
@@ -3927,23 +3812,18 @@
                                                        \valid_read(buf +
                                                                    (0 ..
                                                                      len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:8832: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)buf, (void *)0);
 [eva:alarm] src/x509-parser.c:8839: Warning: 
   function parse_x509_AlgorithmIdentifier: precondition len > 0 ∧
                                                         buf ≢ \null ⇒
                                                         \valid_read(buf +
                                                                     (0 ..
                                                                       len - 1)) got status unknown.
-[eva:alarm] src/x509-parser.c:2430: Warning: 
-  unsigned downcast. assert (int)((int)hdr_len + (int)data_len) ≤ 65535;
 [eva:alarm] src/x509-parser.c:8852: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)parsed);
 [eva:alarm] src/x509-parser.c:8819: Warning: 
   function parse_x509_signatureAlgorithm: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:8820: Warning: 
   function parse_x509_signatureAlgorithm: postcondition got status unknown.
-[eva] src/x509-parser.c:8870: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9160: Warning: 
   unsigned downcast. assert 0 ≤ (int)((int)len - (int)eaten);
 [eva:alarm] src/x509-parser.c:9164: Warning: 
@@ -3993,11 +3873,8 @@
   function parse_x509_signatureValue: postcondition got status unknown.
 [eva:alarm] src/x509-parser.c:9058: Warning: 
   function parse_x509_signatureValue: postcondition got status unknown.
-[eva] src/x509-parser.c:9096: cannot properly split on \result == 0
 [eva:alarm] src/x509-parser.c:9103: Warning: 
   function parse_x509_cert: postcondition got status unknown.
-[eva] src/x509-parser.c:9180: cannot properly split on \result == 0
-[scope:rm_asserts] removing 5 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function _extract_complex_tag:
   len ∈ {0; 1; 2; 3; 4}
@@ -4005,7 +3882,7 @@
   t ∈ [0..268435455]
   ret ∈ {-153; -147; -109; 0}
   t ∈ [31..268435455]
-  tag_len ∈ {0; 1; 2; 3; 4; 5}
+  tag_len ∈ {0; 1; 2; 3; 4}
 [eva:final-states] Values at end of function _is_alpha:
   
 [eva:final-states] Values at end of function _is_digit:
@@ -4018,10 +3895,10 @@
   arc_val ∈ [0..268435455]
   rbytes ∈ {0; 1; 2; 3; 4}
 [eva:final-states] Values at end of function _verify_correct_time_use:
-  ret ∈ {-4230; -4227; -1; 0}
+  ret ∈ {-4230; -4227; 0}
 [eva:final-states] Values at end of function bufs_differ:
   ret ∈ {0; 1}
-  i ∈ [0..65520]
+  i ∈ [0..65511]
 [eva:final-states] Values at end of function check_bmp_string:
   __retres ∈ {-2820}
 [eva:final-states] Values at end of function check_ia5_string:
@@ -4034,14 +3911,15 @@
 [eva:final-states] Values at end of function check_record_ext_unknown:
   pos ∈ [0..29]
   ret ∈ {-8146; -8134; 0}
-  parsed_oid_list[0..28] ∈ {{ NULL ; &known_ext_oids + [0..672],0%24 }}
+  parsed_oid_list[0] ∈ {{ &known_ext_oids + [0..672],0%24 }}
+                 [1..28] ∈ {{ NULL ; &known_ext_oids + [0..672],0%24 }}
 [eva:final-states] Values at end of function check_teletex_string:
   __retres ∈ {-2790}
 [eva:final-states] Values at end of function check_universal_string:
   __retres ∈ {-2805}
 [eva:final-states] Values at end of function check_utf8_string:
-  buf ∈ {{ &buf + [19..65546] }}
-  len ∈ [0..65466]
+  buf ∈ {{ &buf + [28..65538] }}
+  len ∈ [0..65453]
   ret ∈
      {-2606; -2596; -2588; -2583; -2571; -2554; -2549; -2538; -2530; -2513;
       -2506; -2475; 0}
@@ -4104,7 +3982,7 @@
 [eva:final-states] Values at end of function get_identifier:
   ret ∈ {-218; -153; -147; -109; 0}
   t ∈ [0..268435455] or UNINITIALIZED
-  rbytes ∈ {0; 1; 2; 3; 4; 5; 6}
+  rbytes ∈ {0; 1; 2; 3; 4; 5}
   p ∈ {0; 1} or UNINITIALIZED
   c ∈
    {CLASS_UNIVERSAL; CLASS_APPLICATION; CLASS_CONTEXT_SPECIFIC;
@@ -4114,19 +3992,19 @@
     CLASS_PRIVATE}
   p ∈ {0; 1} or UNINITIALIZED
   t ∈ [0..268435455]
-  cur_parsed ∈ {0; 1; 2; 3; 4; 5; 6}
+  cur_parsed ∈ {0; 1; 2; 3; 4; 5}
 [eva:final-states] Values at end of function get_length:
   l ∈ [--..--] or UNINITIALIZED
   rbytes ∈ {0; 1; 2; 3}
   len_len ∈ [1..127] or UNINITIALIZED
   b0 ∈ [--..--] or UNINITIALIZED
   ret ∈ {-437; -428; -413; -400; -378; -357; -338; -318; 0}
-  cur_parsed ∈ {1; 2; 3; 4; 5; 6}
+  cur_parsed ∈ {1; 2; 3}
   adv_len ∈ [0..65530]
-  name_len ∈ [0..65491]
+  name_len ∈ [0..65480]
   grabbed ∈ {0; 1; 2; 3}
 [eva:final-states] Values at end of function parse_UTCTime:
-  buf ∈ {{ &buf + [10..65534] }}
+  buf ∈ {{ &buf + [19..65534] }}
   yyyy ∈ [1950..2049] or UNINITIALIZED
   mo ∈ [0..99] or UNINITIALIZED
   dd ∈ [0..99] or UNINITIALIZED
@@ -4142,7 +4020,7 @@
   nb_len ∈ {0; 15; 17}
   na_len ∈ {0; 15}
   na_year ∈ [0..2049]
-  nb_year ∈ [0..9999]
+  nb_year ∈ [0..2049]
   na_month ∈ [0..99]
   na_day ∈ [0..99]
   na_hour ∈ [0..99]
@@ -4197,14 +4075,14 @@
   ret ∈ {-967; -957; -951; -945; 0}
   parsed ∈ {0; 3}
 [eva:final-states] Values at end of function parse_directory_string:
-  buf ∈ {{ &buf + [17..65542] }}
-  len ∈ [0..65505]
+  buf ∈ {{ &buf + [26..65542] }}
+  len ∈ [0..65496]
   ret ∈ [-2933..0]
   str_type ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_ext_bad_oid:
   ret ∈ {-7773; 0}
 [eva:final-states] Values at end of function parse_generalizedTime:
-  buf ∈ {{ &buf + [10..65534] }}
+  buf ∈ {{ &buf + [19..65534] }}
   yyyy ∈ [0..9999] or UNINITIALIZED
   mo ∈ [0..99] or UNINITIALIZED
   dd ∈ [0..99] or UNINITIALIZED
@@ -4250,146 +4128,146 @@
   nb_sec ∈ [0..99]
   t_type ∈ [--..--]
 [eva:final-states] Values at end of function parse_ia5_string:
-  buf ∈ {{ &buf + [17..65535] }}
-  len ∈ [0..65507]
+  buf ∈ {{ &buf + [26..65535] }}
+  len ∈ [0..65498]
   ret ∈ {-3097; -3090; -3083; -3076; -3039; 0}
   str_type ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_CPSuri:
   ret ∈ {-5602; -3097; -3090; -3083; -3076; -3039; 0}
-  cpsuri_len ∈ [0..65472]
+  cpsuri_len ∈ [0..65459]
 [eva:final-states] Values at end of function parse_id_len:
-  buf ∈ {{ &buf + [0..196592] }}
+  buf ∈ {{ &buf + [0..196505] }}
   len ∈ [--..--]
   c ∈
    {CLASS_UNIVERSAL; CLASS_APPLICATION; CLASS_CONTEXT_SPECIFIC;
     CLASS_PRIVATE}
   p ∈ {0; 1} or UNINITIALIZED
   t ∈ [0..268435455]
-  cur_parsed ∈ {0; 1; 2; 3; 4; 5; 6}
-  grabbed ∈ [1..12] or UNINITIALIZED
+  cur_parsed ∈ {0; 1; 2; 3; 4; 5}
+  grabbed ∈ {1; 2; 3; 4} or UNINITIALIZED
   adv_len ∈ [0..65530]
   ret ∈ [-566..0]
-  hdr_len ∈ {0} ∪ [2..12]
+  hdr_len ∈ {0; 2; 3; 4}
   val_len ∈ [0..65522]
   data_len ∈ [0..65520]
-  hdr_len ∈ {0} ∪ [2..12]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65522]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65508]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65508]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65524]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65512]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65516]
-  name_hdr_len ∈ {0} ∪ [2..12]
-  name_data_len ∈ [0..65520]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65518]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65514]
-  name_len ∈ [0..65491]
-  name_hdr_len ∈ {0} ∪ [2..12]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  key_id_hdr_len ∈ {0} ∪ [2..12]
-  key_id_data_len ∈ [0..65491]
-  key_id_hdr_len ∈ {0} ∪ [2..12]
-  key_id_data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65466]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65466]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65468]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65482]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65487]
-  remain ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65487]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  data_len ∈ [0..65499]
-  hdr_len ∈ {0} ∪ [2..12]
-  ext_hdr_len ∈ {0} ∪ [2..12]
-  ext_data_len ∈ [0..65508]
-  tbs_data_len ∈ [0..65526]
-  tbs_hdr_len ∈ {0} ∪ [2..12]
-  bs_hdr_len ∈ {0} ∪ [2..12]
-  bs_data_len ∈ [0..65522]
-  bs_hdr_len ∈ {0} ∪ [2..12]
-  bs_data_len ∈ [0..65522]
-  hdr_len ∈ {0} ∪ [2..12]
+  hdr_len ∈ {0; 2; 3; 4}
+  hdr_len ∈ {0; 2; 3; 4}
   data_len ∈ [0..65517]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65492]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65492]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65524]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65503]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65507]
+  name_hdr_len ∈ {0; 2; 3; 4}
+  name_data_len ∈ [0..65511]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65509]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65505]
+  name_len ∈ [0..65480]
+  name_hdr_len ∈ {0; 2; 3; 4}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  key_id_hdr_len ∈ {0; 2; 3; 4}
+  key_id_data_len ∈ [0..65480]
+  key_id_hdr_len ∈ {0; 2; 3; 4}
+  key_id_data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65453]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65453]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65455]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65469]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65481]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65473]
+  remain ∈ [0..65481]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65477]
+  data_len ∈ [0..65481]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65476]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  data_len ∈ [0..65488]
+  hdr_len ∈ {0; 2; 3; 4}
+  ext_hdr_len ∈ {0; 2; 3; 4}
+  ext_data_len ∈ [0..65497]
+  tbs_data_len ∈ [0..65526]
+  tbs_hdr_len ∈ {0; 2; 3; 4}
+  bs_hdr_len ∈ {0; 2; 3; 4}
+  bs_data_len ∈ [0..65515]
+  bs_hdr_len ∈ {0; 2; 3; 4}
+  bs_data_len ∈ [0..65515]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65510]
   seq_data_len ∈ [0..65530]
   eaten ∈ [0..65530]
 [eva:final-states] Values at end of function parse_DisplayText:
-  buf ∈ {{ &buf + [44..131017] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65466]
+  buf ∈ {{ &buf + [57..130996] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65453]
   str_type ∈ [--..--] or UNINITIALIZED
   ret ∈ [-5707..0]
-  parsed ∈ [0..65474]
-  parsed ∈ [0..65478]
+  parsed ∈ [0..65453]
+  parsed ∈ [0..65457]
 [eva:final-states] Values at end of function parse_OID:
   buf ∈ {{ &buf + [6..--] }}
   len ∈ [0..65524]
   data_len ∈ [0..65520]
-  hdr_len ∈ {0} ∪ [2..12]
+  hdr_len ∈ {0; 2; 3; 4}
   remain ∈ [0..65520]
   num ∈ [0..21] or UNINITIALIZED
   ret ∈ [-804..0]
-  oid_len ∈ [0..65525]
-  oid_len ∈ [0..65532]
-  oid_len ∈ [0..65520]
-  oid_len ∈ [0..65499]
-  oid_len ∈ [0..65490]
-  oid_len ∈ [0..65499]
-  eaten ∈ [0..65503]
+  oid_len ∈ [0..65517]
+  oid_len ∈ [0..65524]
   oid_len ∈ [0..65503]
-  oid_len ∈ [0..65503]
-  oid_len ∈ [0..65516]
+  oid_len ∈ [0..65480]
+  oid_len ∈ [0..65469]
+  oid_len ∈ [0..65480]
+  eaten ∈ [0..65477]
+  oid_len ∈ [0..65480]
+  oid_len ∈ [0..65484]
+  oid_len ∈ [0..65497]
 [eva:final-states] Values at end of function parse_algoid_params_ecPublicKey:
   curve ∈
        {{ NULL ; &_curve_secp256r1 ; &_curve_secp384r1 ; &_curve_secp521r1 ;
           &_curve_brainpoolP256R1 ; &_curve_brainpoolP384R1 ;
           &_curve_brainpoolP512R1 }}
-  oid_len ∈ [0..65525]
+  oid_len ∈ [0..65517]
   ret ∈ [-1938..0]
   param.curve_param ∈
        {{ NULL ; &_curve_secp256r1 ; &_curve_secp384r1 ; &_curve_secp521r1 ;
@@ -4408,36 +4286,36 @@
           &_curve_brainpoolP512R1 }} or UNINITIALIZED
        {.null_param; .ecdsa_no_param; .unparsed_param} ∈ UNINITIALIZED
 [eva:final-states] Values at end of function parse_explicit_id_len:
-  buf ∈ {{ &buf + [4..65546] }}
+  buf ∈ {{ &buf + [4..65538] }}
   len ∈ [0..65526]
-  hdr_len ∈ {0} ∪ [2..12]
+  hdr_len ∈ {0; 2; 3; 4}
   val_len ∈ [0..65522]
   ret ∈ [-642..0]
-  data_len ∈ [0..65522]
-  hdr_len ∈ [0..24]
-  data_len ∈ [0..65512]
-  hdr_len ∈ [0..24]
+  data_len ∈ [0..65520]
+  hdr_len ∈ {0; 2; 3; 4; 5; 6; 7; 8}
+  data_len ∈ [0..65501]
+  hdr_len ∈ {0; 2; 3; 4; 5; 6; 7; 8}
 [eva:final-states] Values at end of function parse_ext_EKU:
-  buf ∈ {{ &buf + [21..131025] }}
-  remain ∈ [0..65495]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  oid_len ∈ [0..65503]
+  buf ∈ {{ &buf + [34..65550] }}
+  remain ∈ [0..65484]
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  oid_len ∈ [0..65484]
   kp ∈ {{ NULL ; &known_kp_oids{[0], [1], [2], [3], [4], [5], [6]} }}
   ret ∈ [-7310..0]
 [eva:final-states] Values at end of function parse_ext_SKI:
-  key_id_hdr_len ∈ {0} ∪ [2..12]
-  key_id_data_len ∈ [0..65495]
-  remain ∈ [0..65499] or UNINITIALIZED
+  key_id_hdr_len ∈ {0; 2; 3; 4}
+  key_id_data_len ∈ [0..65484]
+  remain ∈ [0..65488] or UNINITIALIZED
   ret ∈ [-5264..0]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_ext_basicConstraints:
-  buf ∈ {{ &buf + [21..65566] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
+  buf ∈ {{ &buf + [34..65550] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
   ca_true_wo_plc[0..1] ∈ {1}
                 [2] ∈ {255}
   ca_true_w_plc[0..1] ∈ {1}
@@ -4450,92 +4328,92 @@
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_ext_policyMapping:
-  buf ∈ {{ &buf + [21..--] }}
-  remain ∈ [0..65495]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  eaten ∈ [0..65503]
+  buf ∈ {{ &buf + [34..--] }}
+  remain ∈ [0..65481]
+  data_len ∈ [0..65481]
+  hdr_len ∈ {0; 2; 3; 4}
+  eaten ∈ [0..65477]
   ret ∈ [-6357..0]
 [eva:final-states] Values at end of function parse_ext_subjectDirAttr:
-  buf ∈ {{ &buf + [21..--] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  oid_len ∈ [0..65503]
-  remain ∈ [0..65495]
+  buf ∈ {{ &buf + [34..--] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  oid_len ∈ [0..65480]
+  remain ∈ [0..65484]
   ret ∈ [-6666..0]
 [eva:final-states] Values at end of function parse_integer:
-  buf ∈ {{ &buf + [4..131066] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65522]
+  buf ∈ {{ &buf + [9..131030] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65517]
   ret ∈ [-906..0]
-  parsed ∈ [0..65534]
-  eaten ∈ [0..65515]
-  parsed ∈ [0..65472]
-  parsed ∈ [0..65503]
-  eaten ∈ [0..65507]
+  parsed ∈ [0..65521]
+  eaten ∈ [0..65487]
+  parsed ∈ [0..65453]
+  parsed ∈ [0..65481]
+  eaten ∈ [0..65485]
 [eva:final-states] Values at end of function parse_CertificateSerialNumber:
-  parsed ∈ [0..65534]
+  parsed ∈ [0..65521]
   ret ∈ [-1120..0]
   cert_serial_len ∈ [0..22]
-  parsed ∈ [0..65518]
+  parsed ∈ [2..65509]
 [eva:final-states] Values at end of function parse_NoticeReference:
-  buf ∈ {{ &buf + [44..--] }}
-  remain ∈ [0..65470] or UNINITIALIZED
-  parsed ∈ [0..65474]
-  saved_len ∈ [0..65478]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65466]
+  buf ∈ {{ &buf + [57..--] }}
+  remain ∈ [0..65457] or UNINITIALIZED
+  parsed ∈ [0..65453]
+  saved_len ∈ [0..65457]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65453]
   ret ∈ [-5794..0]
-  parsed ∈ [0..65478]
+  parsed ∈ [0..65457]
 [eva:final-states] Values at end of function parse_UserNotice:
-  buf ∈ {{ &buf + [42..196487] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65468]
-  remain ∈ [0..65472]
-  parsed ∈ [0..65478]
+  buf ∈ {{ &buf + [55..196451] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65455]
+  remain ∈ [0..65459]
+  parsed ∈ [0..65457]
   ret ∈ [-5900..0]
-  cpsunotice_len ∈ [0..65480]
+  cpsunotice_len ∈ [0..65459]
 [eva:final-states] Values at end of function parse_ext_inhibitAnyPolicy:
-  eaten ∈ [0..65507]
+  eaten ∈ [0..65485]
   ret ∈ {-7727; -7721; -7715; -7705; -7697; -7687; 0}
 [eva:final-states] Values at end of function parse_ext_policyConstraints:
-  buf ∈ {{ &buf + [21..65572] }}
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  remain ∈ [0..65495]
-  parsed ∈ [0..65503]
+  buf ∈ {{ &buf + [34..65549] }}
+  data_len ∈ [0..65481]
+  hdr_len ∈ {0; 2; 3; 4}
+  remain ∈ [0..65481]
+  parsed ∈ [0..65481]
   ret ∈ {-7123; -7113; -7094; -7076; -7066; -7057; -7047; 0}
 [eva:final-states] Values at end of function parse_nine_bit_named_bit_list:
   k ∈ {0; 1; 2; 3; 4; 5; 6; 7; 8} or UNINITIALIZED
   non_signif ∈ {0; 1; 2; 3; 4; 5; 6; 7} or UNINITIALIZED
   ret ∈ {-5450; -5427; -5399; -5363; -5347; -5335; -5317; -5310; 0}
-  val ∈ [0..32767]
-  val ∈ [0..32767] or UNINITIALIZED
+  val ∈ [0..255]
+  val ∈ [0..255] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_crldp_reasons:
-  buf ∈ {{ &buf + [25..131037] }}
-  len ∈ [0..65491]
-  val ∈ [0..32767] or UNINITIALIZED
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65487]
+  buf ∈ {{ &buf + [38..131014] }}
+  len ∈ [0..65480]
+  val ∈ [0..255] or UNINITIALIZED
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65476]
   ret ∈ [-7355..0]
-  parsed ∈ [0..65499]
+  parsed ∈ [0..65480]
 [eva:final-states] Values at end of function parse_ext_keyUsage:
-  buf ∈ {{ &buf + [21..65566] }}
-  len ∈ [0..65499]
-  val ∈ [0..32767]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
+  buf ∈ {{ &buf + [34..65550] }}
+  len ∈ [0..65488]
+  val ∈ [0..255]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
   ret ∈ [-5570..0]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_policyQualifierInfo:
-  buf ∈ {{ &buf + [30..131007] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65482]
-  oid_len ∈ [0..65490]
-  remain ∈ [0..65482]
+  buf ∈ {{ &buf + [43..130994] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65469]
+  oid_len ∈ [0..65469]
+  remain ∈ [0..65469]
   id_qt_cps_oid[0] ∈ {6}
                [1] ∈ {8}
                [2] ∈ {43}
@@ -4554,26 +4432,26 @@
                    [7] ∈ {7}
                    [8..9] ∈ {2}
   ret ∈ [-6006..0]
-  pqi_len ∈ [0..65494]
+  pqi_len ∈ [0..65473]
 [eva:final-states] Values at end of function parse_PolicyInformation:
-  buf ∈ {{ &buf + [23..--] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  oid_len ∈ [0..65499]
-  saved_pi_len ∈ [2..65503] or UNINITIALIZED
-  remain ∈ [0..65491] or UNINITIALIZED
+  buf ∈ {{ &buf + [36..--] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  oid_len ∈ [0..65480]
+  saved_pi_len ∈ [2..65484] or UNINITIALIZED
+  remain ∈ [0..65480] or UNINITIALIZED
   ret ∈ [-6085..0]
-  eaten ∈ [0..65503]
+  eaten ∈ [0..65484]
 [eva:final-states] Values at end of function parse_ext_certPolicies:
-  buf ∈ {{ &buf + [21..--] }}
-  remain ∈ [0..65495]
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  eaten ∈ [0..65503]
+  buf ∈ {{ &buf + [34..--] }}
+  remain ∈ [0..65484]
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  eaten ∈ [0..65484]
   ret ∈ [-6226..0]
 [eva:final-states] Values at end of function parse_printable_string:
-  buf ∈ {{ &buf + [17..65542] }}
-  len ∈ [0..65507]
+  buf ∈ {{ &buf + [26..65542] }}
+  len ∈ [0..65498]
   ret ∈ {-2995; -2988; -2981; -2974; -2968; -2679; 0}
   str_type ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_rdn_val_cn:
@@ -4581,10 +4459,10 @@
 [eva:final-states] Values at end of function parse_rdn_val_country:
   
 [eva:final-states] Values at end of function parse_rdn_val_dc:
-  buf ∈ {{ &buf + [17..65542] }}
-  len ∈ [0..65507]
+  buf ∈ {{ &buf + [26..65542] }}
+  len ∈ [0..65498]
   ret ∈ {-3377; -3359; -3342; -3323; -3097; -3090; -3083; -3076; -3039; 0}
-  i ∈ [0..65503] or UNINITIALIZED
+  i ∈ [0..65494] or UNINITIALIZED
   c ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_rdn_val_dn_qual:
   
@@ -4605,61 +4483,61 @@
 [eva:final-states] Values at end of function parse_rdn_val_x520name:
   
 [eva:final-states] Values at end of function parse_AttributeTypeAndValue:
-  buf ∈ {{ &buf + [10..65546] }}
-  len ∈ [0..65516]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65512]
-  oid_len ∈ [0..65520]
-  parsed ∈ [2..65516] or UNINITIALIZED
+  buf ∈ {{ &buf + [19..65542] }}
+  len ∈ [0..65507]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65503]
+  oid_len ∈ [0..65503]
+  parsed ∈ [2..65507] or UNINITIALIZED
   cur ∈
      {{ NULL ;
         &known_dn_oids{[0], [1], [2], [3], [4], [5], [6], [7], [8], [9],
                        [10], [11], [12], [13], [14], [15]} }}
   ret ∈ [-3582..0]
-  parsed ∈ [0..65516]
+  parsed ∈ [0..65507]
 [eva:final-states] Values at end of function parse_RelativeDistinguishedName:
-  buf ∈ {{ &buf + [8..--] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65516]
-  rdn_remain ∈ [0..65516] or UNINITIALIZED
-  saved_rdn_len ∈ [2..65528] or UNINITIALIZED
+  buf ∈ {{ &buf + [17..--] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65507]
+  rdn_remain ∈ [0..65507] or UNINITIALIZED
+  saved_rdn_len ∈ [2..65511] or UNINITIALIZED
   ret ∈ [-3582..0]
-  parsed ∈ [0..65528]
+  parsed ∈ [0..65511]
 [eva:final-states] Values at end of function parse_sig_ecdsa:
-  buf ∈ {{ &buf + [6..196603] }}
-  bs_hdr_len ∈ {0} ∪ [2..12]
-  bs_data_len ∈ [0..65522]
-  sig_len ∈ [0..65521]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65517]
-  remain ∈ [0..65519]
-  saved_sig_len ∈ [0..65526]
+  buf ∈ {{ &buf + [13..196561] }}
+  bs_hdr_len ∈ {0; 2; 3; 4}
+  bs_data_len ∈ [0..65515]
+  sig_len ∈ [0..65514]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65510]
+  remain ∈ [0..65512]
+  saved_sig_len ∈ [0..65519]
   ret ∈ [-9036..0]
   eaten ∈ [2..65528]
 [eva:final-states] Values at end of function parse_sig_generic:
-  bs_hdr_len ∈ {0} ∪ [2..12]
-  bs_data_len ∈ [0..65522]
+  bs_hdr_len ∈ {0; 2; 3; 4}
+  bs_data_len ∈ [0..65515]
   ret ∈
      {-8904; -566; -541; -534; -437; -428; -413; -400; -378; -357; -338;
       -318; -153; -147; -109; 0}
-  eaten ∈ [2..65534]
+  eaten ∈ [3..65528]
 [eva:final-states] Values at end of function parse_subjectpubkey_ec:
-  buf ∈ {{ &buf + [16..327692] }}
-  remain ∈ [0..65506] or UNINITIALIZED
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65508]
+  buf ∈ {{ &buf + [32..327605] }}
+  remain ∈ [0..65490] or UNINITIALIZED
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65492]
   order_ceil_len ∈ {32; 48; 64; 66} or UNINITIALIZED
   ret ∈ [-2085..0]
   pc ∈ [--..--] or UNINITIALIZED
 [eva:final-states] Values at end of function parse_subjectpubkey_rsa:
-  buf ∈ {{ &buf + [16..327692] }}
-  remain ∈ [0..65507] or UNINITIALIZED
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65508]
-  eaten ∈ [0..65515]
+  buf ∈ {{ &buf + [32..327605] }}
+  remain ∈ [0..65491] or UNINITIALIZED
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65492]
+  eaten ∈ [0..65487]
   ret ∈ [-2294..0]
 [eva:final-states] Values at end of function parse_x509_AlgorithmIdentifier:
-  buf ∈ {{ &buf + [4..262190] }}
+  buf ∈ {{ &buf + [4..262104] }}
   talg ∈
       {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ; &_ecdsa_sha256_alg ;
          &_ecdsa_sha384_alg ; &_ecdsa_sha512_alg ; &_ecpublickey_alg ;
@@ -4669,12 +4547,12 @@
          &_rsassapss_alg ; &_odd1_alg ; &_odd2_alg ; &_odd3_alg ;
          &_odd4_alg ; &_gost1_alg ; &_gost2_alg ; &_rsa_ripemd160_alg ;
          &_weird1_alg ; &_weird2_alg ; &_weird3_alg }}
-  hdr_len ∈ {0} ∪ [2..12]
+  hdr_len ∈ {0; 2; 3; 4}
   data_len ∈ [0..65524]
   param_len ∈ [0..65517] or UNINITIALIZED
-  oid_len ∈ [0..65532]
+  oid_len ∈ [0..65524]
   ret ∈ [-2412..0]
-  parsed ∈ [0..65522]
+  parsed ∈ [0..65505]
   alg ∈
      {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ; &_ecdsa_sha256_alg ;
         &_ecdsa_sha384_alg ; &_ecdsa_sha512_alg ; &_ecpublickey_alg ;
@@ -4690,7 +4568,7 @@
           &_curve_brainpoolP512R1 }}
        .null_param ∈ {{ NULL ; &null_encoded_val[0] }}
        {.ecdsa_no_param; .unparsed_param} ∈ {0; 1}
-  parsed ∈ [0..65534]
+  parsed ∈ [2..65518]
   param.curve_param ∈
        {{ &_curve_secp256r1 ; &_curve_secp384r1 ; &_curve_secp521r1 ;
           &_curve_brainpoolP256R1 ; &_curve_brainpoolP384R1 ;
@@ -4721,47 +4599,47 @@
           &_curve_brainpoolP512R1 }} or UNINITIALIZED
        .null_param ∈ {{ &null_encoded_val[0] }} or UNINITIALIZED
        {.ecdsa_no_param; .unparsed_param} ∈ {1} or UNINITIALIZED
-  parsed ∈ [--..--]
+  parsed ∈ [0..65528]
 [eva:final-states] Values at end of function parse_x509_Name:
-  buf ∈ {{ &buf + [6..--] }}
-  name_hdr_len ∈ {0} ∪ [2..12]
-  name_data_len ∈ [0..65520]
-  remain ∈ [0..65520]
+  buf ∈ {{ &buf + [15..--] }}
+  name_hdr_len ∈ {0; 2; 3; 4}
+  name_data_len ∈ [0..65511]
+  remain ∈ [0..65511]
   ret ∈ [-3775..0]
-  grabbed ∈ [0..65499]
+  grabbed ∈ [0..65480]
   unused ∈ {0; 1}
   unused ∈ {0; 1} or UNINITIALIZED
   empty_gen_name ∈ {0; 1}
   unused ∈ {0; 1}
   unused ∈ {0; 1}
-  parsed ∈ [2..65532]
+  parsed ∈ [2..65518]
   ctx.empty_subject ∈ {0; 1}
      {.san_empty; .san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints} ∈
      {0}
      .has_crldp ∈ {0; 1}
-     {.one_crldp_has_all_reasons; .aki_has_keyIdentifier} ∈ {0}
-     .self_signed ∈ {0; 1}
+     {.one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
+     {0}
   empty_issuer ∈ {0; 1}
 [eva:final-states] Values at end of function parse_GeneralName:
-  buf ∈ {{ &buf + [23..131093] }}
-  remain ∈ [0..65495]
-  name_len ∈ [0..65491]
-  name_hdr_len ∈ {0} ∪ [2..12]
-  grabbed ∈ [0..65499]
+  buf ∈ {{ &buf + [36..131032] }}
+  remain ∈ [0..65484]
+  name_len ∈ [0..65480]
+  name_hdr_len ∈ {0; 2; 3; 4}
+  grabbed ∈ [0..65480]
   name_type ∈ [--..--] or UNINITIALIZED
   ret ∈ [-4758..0]
-  parsed ∈ [0..65499]
+  parsed ∈ [0..65480]
   unused ∈ {0; 1}
-  al_len ∈ [0..65496]
+  al_len ∈ [0..65470]
   unused ∈ {0; 1} or UNINITIALIZED
-  eaten ∈ [0..65503]
+  eaten ∈ [0..65484]
   empty_gen_name ∈ {0; 1}
-  eaten ∈ [0..65503]
+  eaten ∈ [0..65484]
   unused ∈ {0; 1}
-  grabbed ∈ [0..65495]
+  grabbed ∈ [0..65473]
   unused ∈ {0; 1}
 [eva:final-states] Values at end of function parse_AccessDescription:
-  buf ∈ {{ &buf + [23..196525] }}
+  buf ∈ {{ &buf + [36..131005] }}
   id_ad_caIssuers_oid[0] ∈ {6}
                      [1] ∈ {8}
                      [2] ∈ {43}
@@ -4780,38 +4658,38 @@
                 [7] ∈ {7}
                 [8] ∈ {48}
                 [9] ∈ {2}
-  remain ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  oid_len ∈ [0..65499]
-  al_len ∈ [0..65496]
-  saved_ad_len ∈ [0..65495]
+  remain ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  oid_len ∈ [0..65480]
+  al_len ∈ [0..65470]
+  saved_ad_len ∈ [0..65484]
   ret ∈ [-4922..0]
   found ∈ {0; 1} or UNINITIALIZED
   unused ∈ {0; 1} or UNINITIALIZED
-  parsed ∈ [0..65495]
+  parsed ∈ [0..65484]
 [eva:final-states] Values at end of function parse_GeneralNames:
-  buf ∈ {{ &buf + [23..--] }}
-  remain ∈ [0..65491] or UNINITIALIZED
-  parsed ∈ [0..65499]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
+  buf ∈ {{ &buf + [36..--] }}
+  remain ∈ [0..65480] or UNINITIALIZED
+  parsed ∈ [0..65480]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
   ret ∈ [-4790..0]
   unused ∈ {0; 1}
-  parsed ∈ [0..65503]
-  parsed ∈ [0..65499]
-  dpn_eaten ∈ [0..65499]
+  parsed ∈ [0..65484]
+  parsed ∈ [0..65480]
+  dpn_eaten ∈ [0..65476]
 [eva:final-states] Values at end of function parse_DistributionPoint:
-  buf ∈ {{ &buf + [23..262023] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
-  remain ∈ [0..65491]
-  total_len ∈ [0..65503]
+  buf ∈ {{ &buf + [36..261964] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65480]
+  remain ∈ [0..65480]
+  total_len ∈ [0..65484]
   dp_or_issuer_present ∈ {0; 1}
-  parsed ∈ [0..65499]
+  parsed ∈ [0..65480]
   ret ∈ [-7558..0]
   has_all_reasons ∈ {0; 1}
-  eaten ∈ [0..65503]
+  eaten ∈ [0..65484]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints} ∈
@@ -4820,27 +4698,27 @@
      {.one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_GeneralSubtrees:
-  buf ∈ {{ &buf + [25..196580] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  remain ∈ [0..65487]
-  grabbed ∈ [0..65495]
-  data_len ∈ [0..65487]
+  buf ∈ {{ &buf + [41..196505] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  remain ∈ [0..65473]
+  grabbed ∈ [0..65473]
+  data_len ∈ [0..65473]
   ret ∈ [-6906..0]
   unused ∈ {0; 1}
 [eva:final-states] Values at end of function parse_ext_AIA:
-  buf ∈ {{ &buf + [21..--] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  remain ∈ [0..65499] or UNINITIALIZED
+  buf ∈ {{ &buf + [34..--] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  remain ∈ [0..65488] or UNINITIALIZED
   ret ∈ [-5059..0]
 [eva:final-states] Values at end of function parse_ext_AKI:
-  buf ∈ {{ &buf + [21..196594] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  key_id_hdr_len ∈ {0} ∪ [2..12]
-  key_id_data_len ∈ [0..65491]
-  remain ∈ [0..65495] or UNINITIALIZED
-  parsed ∈ [0..65503]
+  buf ∈ {{ &buf + [34..196537] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  key_id_hdr_len ∈ {0; 2; 3; 4}
+  key_id_data_len ∈ [0..65480]
+  remain ∈ [0..65484] or UNINITIALIZED
+  parsed ∈ [0..65484]
   ret ∈ [-5190..0]
   has_keyIdentifier ∈ {0; 1}
   ctx.empty_subject ∈ {0; 1}
@@ -4848,29 +4726,29 @@
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_ext_CRLDP:
-  buf ∈ {{ &buf + [21..--] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65495]
-  remain ∈ [0..65495] or UNINITIALIZED
+  buf ∈ {{ &buf + [34..--] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65484]
+  remain ∈ [0..65484] or UNINITIALIZED
   ret ∈ [-7629..0]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_ext_IAN:
-  buf ∈ {{ &buf + [21..--] }}
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  remain ∈ [0..65495]
-  eaten ∈ [0..65503]
+  buf ∈ {{ &buf + [34..--] }}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  remain ∈ [0..65484]
+  eaten ∈ [0..65484]
   ret ∈ [-6577..0]
   unused ∈ {0; 1}
 [eva:final-states] Values at end of function parse_ext_SAN:
-  buf ∈ {{ &buf + [21..131029] }}
-  data_len ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  remain ∈ [0..65495]
-  eaten ∈ [0..65503]
+  buf ∈ {{ &buf + [34..131018] }}
+  data_len ∈ [0..65484]
+  hdr_len ∈ {0; 2; 3; 4}
+  remain ∈ [0..65484]
+  eaten ∈ [0..65484]
   ret ∈ [-6493..0]
   san_empty ∈ {0} or UNINITIALIZED
   empty_gen_name ∈ {0; 1} or UNINITIALIZED
@@ -4879,55 +4757,55 @@
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_ext_nameConstraints:
-  buf ∈ {{ &buf + [21..196572] }}
-  remain ∈ [0..65495]
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65491]
+  buf ∈ {{ &buf + [34..196505] }}
+  remain ∈ [0..65481]
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65477]
   ret ∈ [-7005..0]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_x509_Extension:
-  buf ∈ {{ &buf + [14..65554] }}
-  data_len ∈ [0..65499]
-  hdr_len ∈ {0} ∪ [2..12]
-  remain ∈ [0..65512]
-  ext_hdr_len ∈ {0} ∪ [2..12]
-  ext_data_len ∈ [0..65508]
-  oid_len ∈ [0..65516]
-  saved_ext_len ∈ [0..65520]
+  buf ∈ {{ &buf + [27..65546] }}
+  data_len ∈ [0..65488]
+  hdr_len ∈ {0; 2; 3; 4}
+  remain ∈ [0..65501]
+  ext_hdr_len ∈ {0; 2; 3; 4}
+  ext_data_len ∈ [0..65497]
+  oid_len ∈ [0..65497]
+  saved_ext_len ∈ [0..65501]
   parsed ∈ {0; 3}
   ext ∈ {{ NULL ; &known_ext_oids + [0..672],0%24 }}
   critical ∈ {0; 1}
   ret ∈ [-8309..0]
   parsed_oid_list[0..28] ∈ {{ NULL ; &known_ext_oids + [0..672],0%24 }}
-  ext_len ∈ [0..65520]
+  ext_len ∈ [0..65501]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_x509_Extensions:
-  buf ∈ {{ &buf + [14..--] }}
-  data_len ∈ [0..65512]
-  hdr_len ∈ [0..24]
-  remain ∈ [0..65512]
-  saved_len ∈ [0..65516]
+  buf ∈ {{ &buf + [23..--] }}
+  data_len ∈ [0..65501]
+  hdr_len ∈ {0; 2; 3; 4; 5; 6; 7; 8}
+  remain ∈ [0..65501]
+  saved_len ∈ [0..65507]
   parsed_oid_list[0..28] ∈
                  {{ NULL ; &known_ext_oids + [0..672],0%24 }} or UNINITIALIZED
   ret ∈ [-8444..0]
   i ∈ {29} or UNINITIALIZED
-  parsed ∈ [1..65518]
+  parsed ∈ [2..65509]
   ctx.empty_subject ∈ {0; 1}
      .san_empty ∈ {0}
      {.san_critical; .ca_true; .bc_critical; .has_ski; .has_keyUsage; .keyCertSign_set; .cRLSign_set; .pathLenConstraint_set; .has_name_constraints; .has_crldp; .one_crldp_has_all_reasons; .aki_has_keyIdentifier; .self_signed} ∈
      {0; 1}
 [eva:final-states] Values at end of function parse_x509_Validity:
-  buf ∈ {{ &buf + [8..131136] }}
+  buf ∈ {{ &buf + [17..131076] }}
   ret ∈ [-4355..0]
-  hdr_len ∈ {0} ∪ [2..12]
-  remain ∈ [0..65518]
-  data_len ∈ [0..65518]
+  hdr_len ∈ {0; 2; 3; 4}
+  remain ∈ [0..65509]
+  data_len ∈ [0..65509]
   nb_len ∈ {0; 15; 17}
   na_len ∈ {0; 15; 17}
   na_year ∈ [0..9999]
@@ -4943,15 +4821,17 @@
   nb_min ∈ [0..99]
   nb_sec ∈ [0..99]
   t_type ∈ [--..--]
-  parsed ∈ [2..65530]
+  parsed ∈ [2..65515]
 [eva:final-states] Values at end of function parse_x509_Version:
-  buf ∈ {{ &buf + [4..48] }}
-  data_len ∈ [0..65522]
-  hdr_len ∈ [0..24]
+  buf ∈
+     {{ &buf{[4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14],
+             [15], [16]} }}
+  data_len ∈ [0..65520]
+  hdr_len ∈ {0; 2; 3; 4; 5; 6; 7; 8}
   ret ∈ [-1035..0]
-  parsed ∈ [0..25]
+  parsed ∈ {0; 5; 6; 7; 8; 9}
 [eva:final-states] Values at end of function parse_x509_signatureAlgorithm:
-  buf ∈ {{ &buf + [4..131070] }}
+  buf ∈ {{ &buf + [4..131062] }}
   len ∈ [0..65528]
   alg ∈
      {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ; &_ecdsa_sha256_alg ;
@@ -4968,18 +4848,18 @@
           &_curve_brainpoolP512R1 }} or UNINITIALIZED
        .null_param ∈ {{ &null_encoded_val[0] }} or UNINITIALIZED
        {.ecdsa_no_param; .unparsed_param} ∈ {1} or UNINITIALIZED
-  parsed ∈ [--..--]
+  parsed ∈ [0..65528]
   ret ∈ [-8860..0]
   eaten ∈ [2..65530]
 [eva:final-states] Values at end of function parse_x509_signatureValue:
-  ret ∈ [-9074..0]
+  ret ∈ [-9068..0]
   eaten ∈ [2..65528]
 [eva:final-states] Values at end of function parse_x509_subjectPublicKeyInfo:
-  buf ∈ {{ &buf + [12..327692] }}
-  hdr_len ∈ {0} ∪ [2..12]
-  data_len ∈ [0..65514]
-  parsed ∈ [0..65522]
-  remain ∈ [0..65514]
+  buf ∈ {{ &buf + [21..327605] }}
+  hdr_len ∈ {0; 2; 3; 4}
+  data_len ∈ [0..65505]
+  parsed ∈ [0..65505]
+  remain ∈ [0..65505]
   alg ∈
      {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ; &_ecdsa_sha256_alg ;
         &_ecdsa_sha384_alg ; &_ecdsa_sha512_alg ; &_ecpublickey_alg ;
@@ -4996,17 +4876,17 @@
        .null_param ∈ {{ NULL ; &null_encoded_val[0] }} or UNINITIALIZED
        {.ecdsa_no_param; .unparsed_param} ∈ {0; 1} or UNINITIALIZED
   ret ∈ [-4425..0]
-  parsed ∈ [2..65526]
+  parsed ∈ [2..65511]
 [eva:final-states] Values at end of function parse_x509_tbsCertificate:
-  buf ∈ {{ &buf + [2..393210] }}
+  buf ∈ {{ &buf + [2..393116] }}
   tbs_data_len ∈ [0..65526]
-  tbs_hdr_len ∈ {0} ∪ [2..12]
+  tbs_hdr_len ∈ {0; 2; 3; 4}
   remain ∈ [0..65526]
-  parsed ∈ [0..65534]
-  subject_ptr ∈ {{ &buf + [10..196646] }} or UNINITIALIZED
-  issuer_ptr ∈ {{ &buf + [6..65600] }} or UNINITIALIZED
-  subject_len ∈ [2..65520] or UNINITIALIZED
-  issuer_len ∈ [2..65524] or UNINITIALIZED
+  parsed ∈ [0..65518]
+  subject_ptr ∈ {{ &buf + [19..196585] }} or UNINITIALIZED
+  issuer_ptr ∈ {{ &buf + [15..65557] }} or UNINITIALIZED
+  subject_len ∈ [2..65511] or UNINITIALIZED
+  issuer_len ∈ [2..65515] or UNINITIALIZED
   param.curve_param ∈
        {{ &_curve_secp256r1 ; &_curve_secp384r1 ; &_curve_secp521r1 ;
           &_curve_brainpoolP256R1 ; &_curve_brainpoolP384R1 ;
@@ -5028,7 +4908,7 @@
      {0; 1} or UNINITIALIZED
   ret ∈ [-8798..0]
   empty_issuer ∈ {0; 1}
-  eaten ∈ [2..65535]
+  eaten ∈ [2..65530]
   sig_alg ∈
          {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ;
             &_ecdsa_sha256_alg ; &_ecdsa_sha384_alg ; &_ecdsa_sha512_alg ;
@@ -5039,10 +4919,10 @@
             &_gost2_alg ; &_rsa_ripemd160_alg ; &_weird1_alg ; &_weird2_alg ;
             &_weird3_alg }}
 [eva:final-states] Values at end of function parse_x509_cert:
-  buf ∈ {{ &buf + [0..131070] }}
+  buf ∈ {{ &buf + [0..131062] }}
   len ∈ [--..--]
   seq_data_len ∈ [0..65530]
-  eaten ∈ [--..--]
+  eaten ∈ [0..65530]
   sig_alg ∈
          {{ NULL ; &_ecdsa_sha1_alg ; &_ecdsa_sha224_alg ;
             &_ecdsa_sha256_alg ; &_ecdsa_sha384_alg ; &_ecdsa_sha512_alg ;
@@ -5061,21 +4941,21 @@
 [eva:summary] ====== ANALYSIS SUMMARY ======
   ----------------------------------------------------------------------------
   98 functions analyzed (out of 99): 98% coverage.
-  In these functions, 2956 statements reached (out of 3112): 94% coverage.
+  In these functions, 2948 statements reached (out of 3112): 94% coverage.
   ----------------------------------------------------------------------------
   Some errors and warnings have been raised during the analysis:
     by the Eva analyzer:      0 errors    0 warnings
     by the Frama-C kernel:    0 errors    1 warning
   ----------------------------------------------------------------------------
-  192 alarms generated by the analysis:
-      97 integer overflows
+  185 alarms generated by the analysis:
+      92 integer overflows
       46 invalid memory accesses
-      49 others
+      47 others
   ----------------------------------------------------------------------------
   Evaluation of the logical properties reached by the analysis:
     Assertions       70 valid    63 unknown     0 invalid    133 total
-    Preconditions   616 valid   229 unknown     0 invalid    845 total
+    Preconditions   620 valid   225 unknown     0 invalid    845 total
   70% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-15.51user 0.56system 0:16.08elapsed 99%CPU (0avgtext+0avgdata 339152maxresident)k
-0inputs+3032outputs (0major+134458minor)pagefaults 0swaps
+53.14user 0.74system 0:53.89elapsed 99%CPU (0avgtext+0avgdata 765328maxresident)k
+0inputs+3064outputs (0major+185826minor)pagefaults 0swaps

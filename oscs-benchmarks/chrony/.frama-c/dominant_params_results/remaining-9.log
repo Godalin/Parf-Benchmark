@@ -27,6 +27,20 @@
 [kernel] Parsing util.c (with preprocessing)
 [kernel] Parsing stubs.c (with preprocessing)
 [kernel] Parsing fc_stubs.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll already set to 8 (not modified).
+  option -eva-auto-loop-unroll already set to 511 (not modified).
+  option -eva-widening-delay already set to 21 (not modified).
+  option -eva-partition-history already set to 9 (not modified).
+  option -eva-slevel already set to 457 (not modified).
+  option -eva-ilevel already set to 458 (not modified).
+  option -eva-plevel already set to 2361 (not modified).
+  option -eva-subdivide-non-linear already set to 77 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls already set to true (not modified).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   nondet ∈ [--..--]
@@ -465,7 +479,6 @@
    generating default assigns. See -generated-spec-* options for more info
 [eva] using specification for function LOG_Finalise
 [eva] using specification for function printf_va_3
-[scope:rm_asserts] removing 1 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function strcmp:
   i ∈ {0; 1}
@@ -505,5 +518,5 @@
     Preconditions     4 valid     2 unknown     0 invalid      6 total
   66% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-7.13user 1.15system 0:08.29elapsed 99%CPU (0avgtext+0avgdata 450932maxresident)k
-0inputs+106832outputs (1major+180597minor)pagefaults 0swaps
+6.84user 1.01system 0:07.86elapsed 99%CPU (0avgtext+0avgdata 450900maxresident)k
+40inputs+106832outputs (0major+180502minor)pagefaults 0swaps

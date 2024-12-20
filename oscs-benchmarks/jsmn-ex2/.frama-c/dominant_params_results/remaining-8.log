@@ -1,5 +1,19 @@
 [kernel] Parsing jsmn.c (with preprocessing)
 [kernel] Parsing example/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll already set to 50 (not modified).
+  option -eva-widening-delay already set to 7 (not modified).
+  option -eva-partition-history already set to 1 (not modified).
+  option -eva-slevel already set to 53 (not modified).
+  option -eva-ilevel already set to 69 (not modified).
+  option -eva-plevel already set to 143 (not modified).
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -47,10 +61,7 @@
 [eva:initial-state] Values of globals at initialization
   JSON_STRING ∈
              {{ "{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  \"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}" }}
-[eva:loop-unroll:partial] jsmn.c:93: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:158: loop not completely unrolled
 [eva:loop-unroll:auto] jsmn.c:250: Automatic loop unrolling.
-[eva:loop-unroll:partial] jsmn.c:42: loop not completely unrolled
 [eva:loop-unroll:auto] jsmn.c:209: Automatic loop unrolling.
 [eva:loop-unroll:auto] jsmn.c:222: Automatic loop unrolling.
 [eva:loop-unroll:auto] jsmn.c:294: Automatic loop unrolling.
@@ -64,7 +75,6 @@
 [eva] using specification for function printf_va_6
 [eva:loop-unroll:auto] example/simple.c:65: Automatic loop unrolling.
 [eva] using specification for function printf_va_7
-[eva:loop-unroll:partial] example/simple.c:43: loop not completely unrolled
 [eva:alarm] example/simple.c:51: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&t[(int)(i + 1)].start);
@@ -423,5 +433,5 @@
     Preconditions    15 valid     0 unknown     0 invalid     15 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.83user 0.07system 0:00.91elapsed 99%CPU (0avgtext+0avgdata 122916maxresident)k
-0inputs+1904outputs (0major+25046minor)pagefaults 0swaps
+0.79user 0.06system 0:00.86elapsed 100%CPU (0avgtext+0avgdata 120824maxresident)k
+0inputs+1904outputs (0major+24525minor)pagefaults 0swaps

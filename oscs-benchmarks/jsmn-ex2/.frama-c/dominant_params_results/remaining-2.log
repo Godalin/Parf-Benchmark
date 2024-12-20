@@ -1,5 +1,19 @@
 [kernel] Parsing jsmn.c (with preprocessing)
 [kernel] Parsing example/simple.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay already set to 7 (not modified).
+  option -eva-partition-history already set to 1 (not modified).
+  option -eva-slevel already set to 53 (not modified).
+  option -eva-ilevel already set to 69 (not modified).
+  option -eva-plevel already set to 143 (not modified).
+  option -eva-subdivide-non-linear already set to 14 (not modified).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains already set to '@default,cvalue,equality,gauges,octagon,symbolic-locations' (not modified).
+  option -eva-split-return already set to 'auto' (not modified).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Splitting return states on:
   \return(tmpfile) == 0 (auto)
   \return(tmpnam) == 0 (auto)
@@ -47,13 +61,6 @@
 [eva:initial-state] Values of globals at initialization
   JSON_STRING ∈
              {{ "{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  \"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}" }}
-[eva:loop-unroll:partial] jsmn.c:93: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:158: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:42: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:250: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:209: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:222: loop not completely unrolled
-[eva:loop-unroll:partial] jsmn.c:294: loop not completely unrolled
 [eva] using specification for function strncmp
 [eva] FRAMAC_SHARE/libc/string.h:163: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strncmp
@@ -63,8 +70,6 @@
 [eva] using specification for function printf_va_5
 [eva] using specification for function printf_va_6
 [eva] using specification for function printf_va_7
-[eva:loop-unroll:partial] example/simple.c:65: loop not completely unrolled
-[eva:loop-unroll:partial] example/simple.c:43: loop not completely unrolled
 [eva:alarm] example/simple.c:51: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&t[(int)(i + 1)].start);
@@ -423,5 +428,5 @@
     Preconditions    15 valid     0 unknown     0 invalid     15 total
   100% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-0.82user 0.09system 0:00.91elapsed 99%CPU (0avgtext+0avgdata 122816maxresident)k
-0inputs+1904outputs (0major+25009minor)pagefaults 0swaps
+0.75user 0.10system 0:00.86elapsed 99%CPU (0avgtext+0avgdata 120552maxresident)k
+0inputs+1904outputs (0major+24445minor)pagefaults 0swaps

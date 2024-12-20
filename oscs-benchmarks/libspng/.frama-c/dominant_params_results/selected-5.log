@@ -10,6 +10,20 @@
   Floating-point constant 2.2f is not represented exactly. Will use 0x1.19999a0000000p1.
   (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
 [kernel] Parsing FRAMAC_SHARE/libc/stdio.c (with preprocessing)
+[eva] Option -eva-precision 0 detected, automatic configuration of the analysis:
+  option -eva-min-loop-unroll set to 0 (default value).
+  option -eva-auto-loop-unroll set to 0 (default value).
+  option -eva-widening-delay set to 1.
+  option -eva-partition-history set to 0 (default value).
+  option -eva-slevel already set to 95 (not modified).
+  option -eva-ilevel set to 8 (default value).
+  option -eva-plevel set to 10.
+  option -eva-subdivide-non-linear set to 0 (default value).
+  option -eva-remove-redundant-alarms set to false.
+  option -eva-domains set to 'cvalue' (default value).
+  option -eva-split-return set to '' (default value).
+  option -eva-equality-through-calls set to 'none'.
+  option -eva-octagon-through-calls set to false (default value).
 [eva] Analyzing a complete application starting at main
 [eva:initial-state] Values of globals at initialization
   png_u32max ∈ {2147483647}
@@ -193,39 +207,40 @@
 [eva:alarm] spng.c:1090: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva] spng.c:1086: starting to merge loop iterations
-[kernel] spng.c:1088: more than 200(237) elements to enumerate. Approximating.
+[kernel] spng.c:1088: more than 10(209) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(237) locations to update in array. Approximating.
-[kernel] spng.c:1089: more than 200(237) elements to enumerate. Approximating.
+  more than 10(209) locations to update in array. Approximating.
+[kernel] spng.c:1089: more than 10(209) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(237) locations to update in array. Approximating.
-[kernel] spng.c:1090: more than 200(237) elements to enumerate. Approximating.
+  more than 10(209) locations to update in array. Approximating.
+[kernel] spng.c:1090: more than 10(209) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(237) locations to update in array. Approximating.
-[kernel] spng.c:1088: more than 200(238) elements to enumerate. Approximating.
+  more than 10(209) locations to update in array. Approximating.
+[eva] spng.c:1086: Trace partitioning superposing up to 100 states
+[kernel] spng.c:1088: more than 10(210) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(238) locations to update in array. Approximating.
-[kernel] spng.c:1089: more than 200(238) elements to enumerate. Approximating.
+  more than 10(210) locations to update in array. Approximating.
+[kernel] spng.c:1089: more than 10(210) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(238) locations to update in array. Approximating.
-[kernel] spng.c:1090: more than 200(238) elements to enumerate. Approximating.
+  more than 10(210) locations to update in array. Approximating.
+[kernel] spng.c:1090: more than 10(210) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(238) locations to update in array. Approximating.
+  more than 10(210) locations to update in array. Approximating.
 [eva:alarm] spng.c:1088: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1088: more than 200(622) elements to enumerate. Approximating.
+[kernel] spng.c:1088: more than 10(594) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(622) locations to update in array. Approximating.
+  more than 10(594) locations to update in array. Approximating.
 [eva:alarm] spng.c:1089: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1089: more than 200(622) elements to enumerate. Approximating.
+[kernel] spng.c:1089: more than 10(594) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(622) locations to update in array. Approximating.
+  more than 10(594) locations to update in array. Approximating.
 [eva:alarm] spng.c:1090: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1090: more than 200(622) elements to enumerate. Approximating.
+[kernel] spng.c:1090: more than 10(594) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(622) locations to update in array. Approximating.
+  more than 10(594) locations to update in array. Approximating.
 [eva] spng.c:220: allocating variable __malloc_spng__malloc_l220
 [eva:alarm] spng.c:1467: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
@@ -271,6 +286,7 @@
 [eva:alarm] spng.c:950: Warning: 
   accessing uninitialized left-value. assert \initialized(&c);
 [eva] spng.c:946: starting to merge loop iterations
+[eva] spng.c:950: Trace partitioning superposing up to 100 states
 [eva:alarm] spng.c:948: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] spng.c:946: Warning: 
@@ -308,15 +324,15 @@
   assert \valid(&((ctx->splt_list + i_0)->entries + k_1)->frequency);
 [eva] spng.c:1417: starting to merge loop iterations
 [kernel] spng.c:1419: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1420: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1421: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1422: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1423: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [eva:alarm] spng.c:1431: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] spng.c:1432: Warning: 
@@ -350,15 +366,15 @@
   assert \valid(&((ctx->splt_list + i_0)->entries + k_1)->alpha);
 [eva] spng.c:1428: starting to merge loop iterations
 [kernel] spng.c:1435: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1437: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1438: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1439: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [kernel] spng.c:1440: 
-  more than 200(4294967286) locations to update in array. Approximating.
+  more than 10(4294967272) locations to update in array. Approximating.
 [eva:alarm] spng.c:275: Warning: 
   accessing uninitialized left-value. assert \initialized(data + 0);
 [eva:alarm] spng.c:275: Warning: 
@@ -475,60 +491,34 @@
   accessing uninitialized left-value. assert \initialized(&sbit->alpha_bits);
 [eva:alarm] spng.c:858: Warning: 
   accessing uninitialized left-value. assert \initialized(&ihdr->bit_depth);
-[kernel] spng.c:1088: more than 200(641) elements to enumerate. Approximating.
+[kernel] spng.c:1088: more than 10(641) elements to enumerate. Approximating.
 [kernel] spng.c:1088: 
-  more than 200(641) locations to update in array. Approximating.
-[kernel] spng.c:1089: more than 200(641) elements to enumerate. Approximating.
+  more than 10(641) locations to update in array. Approximating.
+[kernel] spng.c:1089: more than 10(641) elements to enumerate. Approximating.
 [kernel] spng.c:1089: 
-  more than 200(641) locations to update in array. Approximating.
-[kernel] spng.c:1090: more than 200(641) elements to enumerate. Approximating.
+  more than 10(641) locations to update in array. Approximating.
+[kernel] spng.c:1090: more than 10(641) elements to enumerate. Approximating.
 [kernel] spng.c:1090: 
-  more than 200(641) locations to update in array. Approximating.
-[eva:alarm] spng.c:1359: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ctx->n_splt);
-[eva:alarm] spng.c:1363: Warning: 
-  accessing uninitialized left-value. assert \initialized(&ctx->splt_list);
-[eva:alarm] spng.c:230: Warning: 
-  function realloc: precondition 'freeable' got status unknown.
+  more than 10(641) locations to update in array. Approximating.
 [eva] spng.c:230: allocating variable __realloc_spng__realloc_l230
-[eva:alarm] spng.c:1366: Warning: 
-  function memset: precondition 'valid_s' got status unknown.
 [eva] FRAMAC_SHARE/libc/string.h:134: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
 [eva:alarm] spng.c:1375: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1375: 
-  more than 200(4294967295) locations to update in array. Approximating.
-[kernel] spng.c:1375: 
-  more than 200(4294967295) elements to enumerate. Approximating.
-[eva:alarm] spng.c:941: Warning: 
-  accessing uninitialized left-value. assert \initialized(str + 0);
-[eva:alarm] spng.c:942: Warning: 
-  out of bounds read. assert \valid_read(end + (int)(-1));
-[eva:alarm] spng.c:936: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)str, (void *)0);
 [eva:alarm] spng.c:937: Warning: 
   function memchr: precondition 'valid' got status unknown.
 [eva:alarm] spng.c:937: Warning: 
   function memchr: precondition 'danglingness' got status unknown.
-[eva:alarm] spng.c:939: Warning: 
-  pointer comparison. assert \pointer_comparable((void *)end, (void *)0);
 [eva:alarm] spng.c:940: Warning: 
   pointer comparison. assert \pointer_comparable((void *)end, (void *)str);
 [eva:alarm] spng.c:941: Warning: 
+  accessing uninitialized left-value. assert \initialized(str + 0);
+[eva:alarm] spng.c:941: Warning: 
   out of bounds read. assert \valid_read(str + 0);
-[eva:alarm] spng.c:943: Warning: 
-  pointer comparison.
-  assert \pointer_comparable((void *)tmp_0, (void *)0);
-  (tmp_0 from strstr(str, "  "))
-[kernel] spng.c:948: 
-  more than 200(4294967295) elements to enumerate. Approximating.
+[eva:alarm] spng.c:942: Warning: 
+  out of bounds read. assert \valid_read(end + (int)(-1));
 [eva:alarm] spng.c:1383: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
-[kernel] spng.c:1383: 
-  more than 200(4294967295) elements to enumerate. Approximating.
-[kernel] spng.c:1383: 
-  more than 200(4294967295) locations to update in array. Approximating.
 [eva] using specification for function strcmp
 [eva:alarm] spng.c:1390: Warning: 
   function strcmp: precondition 'valid_string_s1' got status unknown.
@@ -536,14 +526,11 @@
   function strcmp: precondition 'valid_string_s2' got status unknown.
 [eva] FRAMAC_SHARE/libc/string.h:156: 
   cannot evaluate ACSL term, unsupported ACSL construct: logic function strcmp
-[eva] spng.c:1388: starting to merge loop iterations
 [eva:alarm] spng.c:1394: Warning: 
   out of bounds read.
   assert \valid_read(&(ctx->splt_list + i_0)->sample_depth);
 [eva:alarm] spng.c:1397: Warning: 
   out of bounds write. assert \valid(&(ctx->splt_list + i_0)->n_entries);
-[kernel] spng.c:1397: 
-  more than 200(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1399: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->sample_depth);
@@ -552,32 +539,26 @@
   assert \valid_read(&(ctx->splt_list + i_0)->sample_depth);
 [eva:alarm] spng.c:1402: Warning: 
   out of bounds write. assert \valid(&(ctx->splt_list + i_0)->n_entries);
-[kernel] spng.c:1402: 
-  more than 200(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1406: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->n_entries);
 [eva:alarm] spng.c:1406: Warning: 
+  out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->n_entries);
+[eva:alarm] spng.c:1407: Warning: 
+  accessing uninitialized left-value.
+  assert \initialized(&(ctx->splt_list + i_0)->n_entries);
+[eva:alarm] spng.c:1407: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->n_entries);
 [eva:alarm] spng.c:1407: Warning: 
   division by zero.
   assert (unsigned long)(ctx->splt_list + i_0)->n_entries ≢ 0;
-[eva:alarm] spng.c:1407: Warning: 
-  accessing uninitialized left-value.
-  assert \initialized(&(ctx->splt_list + i_0)->n_entries);
-[eva:alarm] spng.c:1407: Warning: 
-  out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->n_entries);
 [eva:alarm] spng.c:1409: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->n_entries);
 [eva:alarm] spng.c:1409: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->n_entries);
-[kernel] spng.c:1409: 
-  more than 200(4294967295) elements to enumerate. Approximating.
 [eva:alarm] spng.c:1409: Warning: 
   out of bounds write. assert \valid(&(ctx->splt_list + i_0)->entries);
-[kernel] spng.c:1409: 
-  more than 200(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1410: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
@@ -600,35 +581,35 @@
 [eva:alarm] spng.c:1419: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1419: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1420: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1420: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1420: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1421: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1421: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1421: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1422: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1422: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1422: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1423: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1423: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1423: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1426: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->sample_depth);
@@ -646,35 +627,35 @@
 [eva:alarm] spng.c:1435: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1435: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1437: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1437: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1437: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1438: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1438: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1438: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1439: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1439: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1439: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva:alarm] spng.c:1440: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&(ctx->splt_list + i_0)->entries);
 [eva:alarm] spng.c:1440: Warning: 
   out of bounds read. assert \valid_read(&(ctx->splt_list + i_0)->entries);
 [kernel] spng.c:1440: 
-  more than 200(4294967295) locations to update in array. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
 [eva] spng.c:1283: starting to merge loop iterations
 [eva:alarm] spng.c:1285: Warning: 
   accessing out of bounds index. assert k_0 < 256;
@@ -683,54 +664,89 @@
 [eva] spng.c:1263: starting to merge loop iterations
 [eva:alarm] spng.c:1265: Warning: 
   function memcpy: precondition 'valid_dest' got status unknown.
+[eva] spng.c:1271: Trace partitioning superposing up to 200 states
 [eva:alarm] spng.c:1227: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva:alarm] spng.c:1228: Warning: 
   accessing uninitialized left-value.
   assert \initialized(&ctx->bkgd.plte_index);
-[eva] spng.c:1046: starting to merge loop iterations
-[eva] spng.c:1046: Trace partitioning superposing up to 100 states
-[kernel] spng.c:1419: 
-  more than 200(1844674407370955162) locations to update in array. Approximating.
-[kernel] spng.c:1420: 
-  more than 200(1844674407370955162) locations to update in array. Approximating.
-[kernel] spng.c:1421: 
-  more than 200(1844674407370955162) locations to update in array. Approximating.
-[kernel] spng.c:1422: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[kernel] spng.c:1423: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[kernel] spng.c:1435: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[kernel] spng.c:1437: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[kernel] spng.c:1438: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[kernel] spng.c:1439: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[kernel] spng.c:1440: 
-  more than 200(1844674407370955161) locations to update in array. Approximating.
-[eva] spng.c:1046: Trace partitioning superposing up to 200 states
-[eva] spng.c:1046: Trace partitioning superposing up to 300 states
-[eva] spng.c:1483: Trace partitioning superposing up to 1400 states
+[eva] spng.c:1046: Trace partitioning superposing up to 700 states
+[eva:alarm] spng.c:1359: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ctx->n_splt);
+[eva:alarm] spng.c:1363: Warning: 
+  accessing uninitialized left-value. assert \initialized(&ctx->splt_list);
+[eva:alarm] spng.c:230: Warning: 
+  function realloc: precondition 'freeable' got status unknown.
+[eva:alarm] spng.c:1366: Warning: 
+  function memset: precondition 'valid_s' got status unknown.
+[kernel] spng.c:1375: 
+  more than 10(4294967295) locations to update in array. Approximating.
+[kernel] spng.c:1375: 
+  more than 10(4294967295) elements to enumerate. Approximating.
+[eva:alarm] spng.c:936: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)str, (void *)0);
+[eva:alarm] spng.c:939: Warning: 
+  pointer comparison. assert \pointer_comparable((void *)end, (void *)0);
+[eva:alarm] spng.c:943: Warning: 
+  pointer comparison.
+  assert \pointer_comparable((void *)tmp_0, (void *)0);
+  (tmp_0 from strstr(str, "  "))
+[kernel] spng.c:948: 
+  more than 10(4294967295) elements to enumerate. Approximating.
+[kernel] spng.c:1383: 
+  more than 10(4294967295) elements to enumerate. Approximating.
+[kernel] spng.c:1383: 
+  more than 10(4294967295) locations to update in array. Approximating.
+[eva] spng.c:1388: starting to merge loop iterations
 [kernel] spng.c:1397: 
-  more than 200(4294967295) elements to enumerate. Approximating.
+  more than 10(4294967295) locations to update in array. Approximating.
+[kernel] spng.c:1402: 
+  more than 10(4294967295) locations to update in array. Approximating.
+[kernel] spng.c:1409: 
+  more than 10(4294967295) elements to enumerate. Approximating.
+[kernel] spng.c:1409: 
+  more than 10(4294967295) locations to update in array. Approximating.
+[eva] spng.c:1046: starting to merge loop iterations
 [kernel] spng.c:1419: 
-  more than 200(1844674407370955162) elements to enumerate. Approximating.
+  more than 10(1844674407370955162) locations to update in array. Approximating.
 [kernel] spng.c:1420: 
-  more than 200(1844674407370955162) elements to enumerate. Approximating.
+  more than 10(1844674407370955162) locations to update in array. Approximating.
 [kernel] spng.c:1421: 
-  more than 200(1844674407370955162) elements to enumerate. Approximating.
+  more than 10(1844674407370955162) locations to update in array. Approximating.
 [kernel] spng.c:1422: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1423: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
+[kernel] spng.c:1435: 
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1437: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1438: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
 [kernel] spng.c:1439: 
-  more than 200(1844674407370955161) elements to enumerate. Approximating.
+  more than 10(1844674407370955161) locations to update in array. Approximating.
+[kernel] spng.c:1440: 
+  more than 10(1844674407370955161) locations to update in array. Approximating.
+[eva] spng.c:1046: Trace partitioning superposing up to 800 states
+[eva] spng.c:1483: Trace partitioning superposing up to 3200 states
+[kernel] spng.c:1397: 
+  more than 10(4294967295) elements to enumerate. Approximating.
+[kernel] spng.c:1419: 
+  more than 10(1844674407370955162) elements to enumerate. Approximating.
+[kernel] spng.c:1420: 
+  more than 10(1844674407370955162) elements to enumerate. Approximating.
+[kernel] spng.c:1421: 
+  more than 10(1844674407370955162) elements to enumerate. Approximating.
+[kernel] spng.c:1422: 
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
+[kernel] spng.c:1423: 
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
+[kernel] spng.c:1437: 
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
+[kernel] spng.c:1438: 
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
+[kernel] spng.c:1439: 
+  more than 10(1844674407370955161) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_8
 [eva:alarm] examples/example.c:80: Warning: 
   accessing uninitialized left-value. assert \initialized(&ihdr.color_type);
@@ -760,26 +776,27 @@
 [eva] spng.c:230: allocating variable __realloc_spng__realloc_l230_0
 [eva] spng.c:220: allocating variable __malloc_spng__malloc_l220_2
 [kernel] spng.c:1419: 
-  more than 200(1844674407370955158) locations to update in array. Approximating.
+  more than 10(1844674407370955152) locations to update in array. Approximating.
 [kernel] spng.c:1420: 
-  more than 200(1844674407370955158) locations to update in array. Approximating.
+  more than 10(1844674407370955152) locations to update in array. Approximating.
 [kernel] spng.c:1421: 
-  more than 200(1844674407370955158) locations to update in array. Approximating.
+  more than 10(1844674407370955152) locations to update in array. Approximating.
 [kernel] spng.c:1422: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
+  more than 10(1844674407370955151) locations to update in array. Approximating.
 [kernel] spng.c:1423: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
+  more than 10(1844674407370955151) locations to update in array. Approximating.
 [kernel] spng.c:1435: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
+  more than 10(1844674407370955151) locations to update in array. Approximating.
 [kernel] spng.c:1437: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
+  more than 10(1844674407370955151) locations to update in array. Approximating.
 [kernel] spng.c:1438: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
+  more than 10(1844674407370955151) locations to update in array. Approximating.
 [kernel] spng.c:1439: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
+  more than 10(1844674407370955151) locations to update in array. Approximating.
 [kernel] spng.c:1440: 
-  more than 200(1844674407370955157) locations to update in array. Approximating.
-[eva] spng.c:1483: Trace partitioning superposing up to 800 states
+  more than 10(1844674407370955151) locations to update in array. Approximating.
+[eva] spng.c:1444: Trace partitioning superposing up to 200 states
+[eva] spng.c:1483: Trace partitioning superposing up to 900 states
 [eva:alarm] spng.c:2449: Warning: 
   division by zero. assert (unsigned long)ctx->ihdr.width ≢ 0;
 [eva:alarm] spng.c:2452: Warning: 
@@ -812,6 +829,8 @@
   signed overflow. assert 1 << (int)ctx->ihdr.bit_depth ≤ 2147483647;
 [eva:alarm] spng.c:1656: Warning: 
   division by zero. assert (unsigned long)ihdr->width ≢ 0;
+[eva] spng.c:1650: Trace partitioning superposing up to 200 states
+[eva] spng.c:1650: Trace partitioning superposing up to 100 states
 [eva] spng.c:220: allocating variable __malloc_spng__malloc_l220_5
 [eva] spng.c:220: allocating variable __malloc_spng__malloc_l220_6
 [eva] spng.c:220: allocating variable __malloc_spng__malloc_l220_7
@@ -846,6 +865,7 @@
   function memcmp: precondition 'initialization,s1' got status unknown.
 [eva:alarm] spng.c:484: Warning: 
   accessing uninitialized left-value. assert \initialized(&bytes_read);
+[eva] spng.c:511: Trace partitioning superposing up to 100 states
 [eva] spng.c:488: starting to merge loop iterations
 [eva:alarm] spng.c:1513: Warning: 
   function memcmp: precondition 'initialization,s1' got status unknown.
@@ -867,11 +887,11 @@
 [eva:alarm] spng.c:1570: Warning: 
   function memcpy: precondition 'valid_src' got status unknown.
 [eva] spng.c:1617: Trace partitioning superposing up to 100 states
-[kernel] spng.c:1927: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1929: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1930: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1931: more than 200(256) elements to enumerate. Approximating.
-[kernel] spng.c:1932: more than 200(256) elements to enumerate. Approximating.
+[kernel] spng.c:1927: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1929: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1930: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1931: more than 10(256) elements to enumerate. Approximating.
+[kernel] spng.c:1932: more than 10(256) elements to enumerate. Approximating.
 [eva] using specification for function printf_va_11
 [eva:alarm] spng.c:2293: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->exif.data);
@@ -909,13 +929,50 @@
 [eva:alarm] spng.c:2304: Warning: 
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&(ctx->splt_list + i)->entries);
+[eva] spng.c:2302: Trace partitioning superposing up to 100 states
+[kernel] spng.c:2304: more than 10(11) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(12) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(13) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(14) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(15) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(16) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(17) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(18) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(19) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(20) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(21) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(22) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(23) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(24) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(25) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(26) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(27) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(28) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(29) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(30) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(31) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(32) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(33) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(34) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(35) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(36) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(37) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(38) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(39) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(40) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(41) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(42) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(43) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(44) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(45) elements to enumerate. Approximating.
+[kernel] spng.c:2304: more than 10(46) elements to enumerate. Approximating.
 [eva] spng.c:2302: starting to merge loop iterations
 [kernel] spng.c:2304: 
-  more than 200(2147483638) elements to enumerate. Approximating.
+  more than 10(2147483624) elements to enumerate. Approximating.
 [kernel] spng.c:2304: 
-  more than 200(2147483639) elements to enumerate. Approximating.
+  more than 10(2147483625) elements to enumerate. Approximating.
 [kernel] spng.c:2304: 
-  more than 200(4294967285) elements to enumerate. Approximating.
+  more than 10(4294967271) elements to enumerate. Approximating.
 [eva:alarm] spng.c:2309: Warning: 
   accessing uninitialized left-value. assert \initialized(&ctx->text_list);
 [eva:alarm] spng.c:2312: Warning: 
@@ -926,7 +983,6 @@
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&out);
 [eva] spng.c:2314: assertion 'Eva,mem_access' got final status invalid.
-[scope:rm_asserts] removing 35 assertion(s)
 [eva] ====== VALUES COMPUTED ======
 [eva:final-states] Values at end of function buffer_read_fn:
   __retres ∈ {-1; 0}
@@ -1022,7 +1078,7 @@
      [1].scanline_width ∈ [0..8321499122]
      [2].width ∈ [0..1073741823]
      [2].height ∈ [0..536870911]
-     [2].scanline_width ∈ [0..66571993074]
+     [2].scanline_width ∈ [0..16642998258]
      [3]{.width; .height} ∈ [0..1073741823]
      [3].scanline_width ∈ [0..66571993074]
      [4].width ∈ [0..2147483647]
@@ -1913,9 +1969,21 @@
                               {{ NULL + [--..--] ;
                                  (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR
   __realloc_w_spng__realloc_l230[0..87] ∈ [--..--] or UNINITIALIZED
-                                [bits 704 to 3298534881799]# ∈
+                                [bits 704 to 1407]# ∈
                                 {{ NULL + [--..--] ;
-                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                [176] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                [bits 1416 to 1439]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                [180..183] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                [bits 1472 to 3298534881799]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                 [bits 3298534881800 to 3298534882439]# ∈
                                 {{ NULL + [--..--] ;
                                    (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 8 to 647 
@@ -1932,10 +2000,26 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_2 }} or ESCAPINGADDR
   __realloc_w_spng__realloc_l230_0[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -1955,11 +2039,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }} or ESCAPINGADDR
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2199,9 +2303,21 @@
                               {{ NULL + [--..--] ;
                                  (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR
   __realloc_w_spng__realloc_l230[0..87] ∈ [--..--] or UNINITIALIZED
-                                [bits 704 to 3298534881799]# ∈
+                                [bits 704 to 1407]# ∈
                                 {{ NULL + [--..--] ;
-                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                [176] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                [bits 1416 to 1439]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                [180..183] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                [bits 1472 to 3298534881799]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                 [bits 3298534881800 to 3298534882439]# ∈
                                 {{ NULL + [--..--] ;
                                    (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 8 to 647 
@@ -2218,10 +2334,26 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_2 }} or ESCAPINGADDR
   __realloc_w_spng__realloc_l230_0[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2241,11 +2373,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }} or ESCAPINGADDR
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2519,9 +2671,21 @@
   __malloc_w_spng__malloc_l220_0[0..18446744073709551615] ∈
                                 [--..--] or UNINITIALIZED
   __realloc_w_spng__realloc_l230[0..87] ∈ [--..--] or UNINITIALIZED
-                                [bits 704 to 3298534881799]# ∈
+                                [bits 704 to 1407]# ∈
                                 {{ NULL + [--..--] ;
-                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64 
+                                [176] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                [bits 1416 to 1439]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED%64, bits 8 to 31 
+                                [180..183] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                [bits 1472 to 3298534881799]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                 [bits 3298534881800 to 3298534882439]# ∈
                                 {{ NULL + [--..--] ;
                                    (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 8 to 647 
@@ -2539,10 +2703,26 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_2 }}
   __realloc_w_spng__realloc_l230_0[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2565,11 +2745,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }}
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2674,9 +2874,21 @@
   __malloc_w_spng__malloc_l220_0[0..18446744073709551615] ∈
                                 [--..--] or UNINITIALIZED
   __realloc_w_spng__realloc_l230[0..87] ∈ [--..--] or UNINITIALIZED
-                                [bits 704 to 3298534881799]# ∈
+                                [bits 704 to 1407]# ∈
                                 {{ NULL + [--..--] ;
-                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64 
+                                [176] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                [bits 1416 to 1439]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED%64, bits 8 to 31 
+                                [180..183] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                [bits 1472 to 3298534881799]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                 [bits 3298534881800 to 3298534882439]# ∈
                                 {{ NULL + [--..--] ;
                                    (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 8 to 647 
@@ -2694,10 +2906,26 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_2 }}
   __realloc_w_spng__realloc_l230_0[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2720,11 +2948,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }}
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2835,10 +3083,26 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_2 }}
   __realloc_w_spng__realloc_l230_0[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2861,11 +3125,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }}
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -2936,7 +3220,7 @@
      [1].scanline_width ∈ [0..8321499122] or UNINITIALIZED
      [2].width ∈ [0..1073741823] or UNINITIALIZED
      [2].height ∈ [0..536870911] or UNINITIALIZED
-     [2].scanline_width ∈ [0..66571993074] or UNINITIALIZED
+     [2].scanline_width ∈ [0..16642998258] or UNINITIALIZED
      [3]{.width; .height} ∈ [0..1073741823] or UNINITIALIZED
      [3].scanline_width ∈ [0..66571993074] or UNINITIALIZED
      [4].width ∈ [0..2147483647] or UNINITIALIZED
@@ -3054,11 +3338,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }}
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -3163,9 +3467,21 @@
   __malloc_w_spng__malloc_l220_0[0..18446744073709551615] ∈
                                 [--..--] or UNINITIALIZED
   __realloc_w_spng__realloc_l230[0..87] ∈ [--..--] or UNINITIALIZED
-                                [bits 704 to 3298534881799]# ∈
+                                [bits 704 to 1407]# ∈
                                 {{ NULL + [--..--] ;
-                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 0 to 3298534881095 
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64 
+                                [176] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                [bits 1416 to 1439]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED%64, bits 8 to 31 
+                                [180..183] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED
+                                [bits 1472 to 3298534881799]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 0 to 3298534880327 
                                 [bits 3298534881800 to 3298534882439]# ∈
                                 {{ NULL + [--..--] ;
                                    (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED repeated %64, bits 8 to 647 
@@ -3283,9 +3599,21 @@
   __malloc_w_spng__malloc_l220_0[0..18446744073709551615] ∈
                                 [--..--] or UNINITIALIZED
   __realloc_w_spng__realloc_l230[0..87] ∈ [--..--] or UNINITIALIZED
-                                [bits 704 to 3298534881799]# ∈
+                                [bits 704 to 1407]# ∈
                                 {{ NULL + [--..--] ;
-                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                [176] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                [bits 1416 to 1439]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                [180..183] ∈
+                                {{ garbled mix of &{__malloc_w_spng__malloc_l220_0}
+                                 (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                [bits 1472 to 3298534881799]# ∈
+                                {{ NULL + [--..--] ;
+                                   (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                 [bits 3298534881800 to 3298534882439]# ∈
                                 {{ NULL + [--..--] ;
                                    (? *)&__malloc_w_spng__malloc_l220_0 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 8 to 647 
@@ -3303,10 +3631,26 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_2 }} or ESCAPINGADDR
   __realloc_w_spng__realloc_l230_0[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -3329,11 +3673,31 @@
                                 {{ NULL ;
                                    (? *)&__malloc_w_spng__malloc_l220_4 }} or ESCAPINGADDR
   __realloc_w_spng__realloc_l230_1[0..87] ∈ [--..--] or UNINITIALIZED
-                                  [bits 704 to 3298534881799]# ∈
+                                  [bits 704 to 1407]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
                                      (? *)&__malloc_w_spng__malloc_l220_2 ;
-                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534881095 
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64 
+                                  [176] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1416 to 1439]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR%64, bits 8 to 31 
+                                  [180..183] ∈
+                                  {{ garbled mix of &{__malloc_w_spng__malloc_l220_0;
+                                                      __malloc_w_spng__malloc_l220_2;
+                                                      __malloc_w_spng__malloc_l220_4}
+                                   (origin: Merge {spng.c:1483}) }} or UNINITIALIZED or ESCAPINGADDR
+                                  [bits 1472 to 3298534881799]# ∈
+                                  {{ NULL + [--..--] ;
+                                     (? *)&__malloc_w_spng__malloc_l220_0 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_2 ;
+                                     (? *)&__malloc_w_spng__malloc_l220_4 }} or UNINITIALIZED or ESCAPINGADDR repeated %64, bits 0 to 3298534880327 
                                   [bits 3298534881800 to 3298534882439]# ∈
                                   {{ NULL + [--..--] ;
                                      (? *)&__malloc_w_spng__malloc_l220_0 ;
@@ -3378,5 +3742,5 @@
     Preconditions   411 valid    84 unknown     0 invalid    495 total
   83% of the logical properties reached have been proven.
   ----------------------------------------------------------------------------
-20.50user 0.37system 0:20.88elapsed 99%CPU (0avgtext+0avgdata 354516maxresident)k
-0inputs+6016outputs (0major+88465minor)pagefaults 0swaps
+31.92user 0.43system 0:32.36elapsed 99%CPU (0avgtext+0avgdata 412760maxresident)k
+0inputs+6048outputs (0major+103129minor)pagefaults 0swaps

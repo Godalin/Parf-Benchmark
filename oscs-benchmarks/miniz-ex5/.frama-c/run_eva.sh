@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Default values for parameters (can be overridden by command-line arguments)
-default_timelimit="10m"
+default_timelimit="30m"
 default_logfile="log_eva"
 default_parameters=""
 
@@ -46,7 +46,7 @@ kernelparams="-main eva_main \
 
 
 
-evaparams5="-eva $parameters" 
+evaparams5="-eva -eva-precision 0 $parameters" 
 
 
 # Analysis Targets: source files

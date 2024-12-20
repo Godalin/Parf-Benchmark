@@ -1,6 +1,6 @@
 #!/bin/sh
 
-timelimit="65m"
+timelimit="67m"
 # Default values for parameters (can be overridden by command-line arguments)
 default_timeBudget=3600
 default_processCore=4
