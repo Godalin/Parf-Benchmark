@@ -5179,11 +5179,21 @@
   accessing left-value that contains escaping addresses.
   assert ¬\dangling(&d_buf[tmp_1]);
   (tmp_1 from dx++)
+[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:446: 
+  Assigning imprecise value to *(q + j_0)
+  (pointing to __malloc_w_huft_build_l403_6 with offsets [384..274877906816],0%128).
+  The imprecision originates from Merge
+  {/home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:464}
+[eva:garbled-mix:write] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:446: 
+  Assigning imprecise value to *(q + j_0)
+  (pointing to __malloc_w_huft_build_l403_6 with offsets [128..274877906816],0%128).
+  The imprecision originates from Merge
+  {/home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/inflate.c:464}
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/gzip.c:1353: Warning: 
   signed overflow.
   assert total_out - (long)(total_in - header_bytes) ≤ 9223372036854775807;
 [eva:alarm] /home/zhongyi/Parf-Benchmark/oscs-benchmarks/gzip124/gzip.c:1400: Warning: 
   signed overflow. assert total_out + bytes_out ≤ 9223372036854775807;
 Command exited with non-zero status 124
-597.23user 2.76system 10:00.06elapsed 99%CPU (0avgtext+0avgdata 700024maxresident)k
-0inputs+26056outputs (0major+203106minor)pagefaults 0swaps
+595.68user 4.23system 10:00.08elapsed 99%CPU (0avgtext+0avgdata 707736maxresident)k
+0inputs+26064outputs (0major+205063minor)pagefaults 0swaps
