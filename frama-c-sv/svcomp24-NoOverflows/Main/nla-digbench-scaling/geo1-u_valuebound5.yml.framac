@@ -1,0 +1,137 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:34: Automatic loop unrolling.
+INFO:FRAMAC:[eva:alarm] output/program.c:18: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_uint:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  z ∈ {0; 1; 2; 3; 4; 5}
+INFO:FRAMAC:  k ∈ {0; 1; 2; 3; 4; 5}
+INFO:FRAMAC:  x ∈
+INFO:FRAMAC:   [0..5]
+INFO:FRAMAC:    ∪ {7; 8; 9; 11; 14; 15; 17; 19; 23; 24; 26; 29; 31; 35; 39; 44; 47; 49;
+INFO:FRAMAC:         53; 59; 63; 71; 74; 79; 80; 89; 95; 99; 107; 119; 124; 127; 134;
+INFO:FRAMAC:         143; 149; 159; 161; 179; 191; 199; 215; 224; 239; 242; 249; 255;
+INFO:FRAMAC:         269; 287; 299; 319; 323; 359; 374; 383; 399; 404; 431; 449; 479;
+INFO:FRAMAC:         499; 511; 539; 575; 599; 624; 639; 674; 719; 749; 767; 799; 899;
+INFO:FRAMAC:         959; 999; 1023; 1124; 1199; 1249; 1279; 1499; 1599; 1874; 1999;
+INFO:FRAMAC:         2499; 3124}
+INFO:FRAMAC:  y ∈
+INFO:FRAMAC:   [1..6]
+INFO:FRAMAC:    ∪ {8; 9; 10; 12; 15; 16; 18; 20; 24; 25; 27; 30; 32; 36; 40; 45; 48;
+INFO:FRAMAC:         50; 54; 60; 64; 72; 75; 80; 81; 90; 96; 100; 108; 120; 125; 128;
+INFO:FRAMAC:         135; 144; 150; 160; 162; 180; 192; 200; 216; 225; 240; 243; 250;
+INFO:FRAMAC:         256; 270; 288; 300; 320; 324; 360; 375; 384; 400; 405; 432; 450;
+INFO:FRAMAC:         480; 500; 512; 540; 576; 600; 625; 640; 675; 720; 750; 768; 800;
+INFO:FRAMAC:         900; 960; 1000; 1024; 1125; 1200; 1250; 1280; 1500; 1600; 1875;
+INFO:FRAMAC:         2000; 2500; 3125}
+INFO:FRAMAC:  c ∈ {1; 2; 3; 4; 5}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  5 functions analyzed (out of 20): 25% coverage.
+INFO:FRAMAC:  In these functions, 36 statements reached (out of 40): 90% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  0 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_int
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

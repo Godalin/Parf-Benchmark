@@ -520,7 +520,7 @@ if __name__ == "__main__":
 
     # dirty hack to get why3 solvers working when benchmarking on vcloud:
     subprocess.call(  # noqa S603 we control cmd completely S607 it's a hack
-        ["why3", "config", "--detect"]
+        ["why3", "config", "detect"]
     )
 
     resource(OUT_DIR).mkdir(parents=True, exist_ok=True)

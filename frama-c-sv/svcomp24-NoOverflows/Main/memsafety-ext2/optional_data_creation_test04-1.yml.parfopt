@@ -1,0 +1,148 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:188: Warning: 
+INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:193: Warning: 
+INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] output/program.c:576: allocating variable __malloc_append_l576
+INFO:FRAMAC:[eva:alarm] output/program.c:577: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&node->next);
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] output/program.c:553: allocating variable __malloc_create_data_l553
+INFO:FRAMAC:[eva] output/program.c:555: allocating variable __malloc_create_data_l555
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&data->array);
+INFO:FRAMAC:[eva:alarm] output/program.c:558: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(data->array + counter);
+INFO:FRAMAC:[eva] output/program.c:557: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:561: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&data->array);
+INFO:FRAMAC:[eva] output/program.c:584: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:558: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->array);
+INFO:FRAMAC:[eva:alarm] output/program.c:588: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:570: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->array);
+INFO:FRAMAC:[eva:alarm] output/program.c:571: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->array);
+INFO:FRAMAC:[eva:alarm] output/program.c:591: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&next);
+INFO:FRAMAC:[eva] output/program.c:587: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:588: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&list->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&list->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:570: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&data->array);
+INFO:FRAMAC:[eva:alarm] output/program.c:571: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&data->array);
+INFO:FRAMAC:[scope:rm_asserts] removing 2 assertion(s)
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function freeData:
+INFO:FRAMAC:  data ∈ {{ NULL ; &__malloc_w_create_data_l553 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_append_l576.data ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_create_data_l553 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l576 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_create_data_l553.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                             .array ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l555[0] }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:[eva:final-states] Values at end of function create_data:
+INFO:FRAMAC:  data ∈ {{ &__malloc_w_create_data_l553 }} or UNINITIALIZED
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {{ NULL ; &__malloc_w_create_data_l553 }}
+INFO:FRAMAC:  __malloc_w_create_data_l553.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                             .array ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l555[0] }} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_w_create_data_l555[0..19] ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:[eva:final-states] Values at end of function append:
+INFO:FRAMAC:  node ∈ {{ &__malloc_w_append_l576 }}
+INFO:FRAMAC:  list ∈ {{ &__malloc_w_append_l576 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __malloc_w_append_l576.data ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_create_data_l553 }} or UNINITIALIZED
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l576 }} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_w_create_data_l553.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                             .array ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l555[0] }} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_w_create_data_l555[0..19] ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  list ∈ {0}
+INFO:FRAMAC:  dataNotFinished ∈ {0}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:  __malloc_w_append_l576.data ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_create_data_l553 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l576 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_create_data_l553.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                             .array ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l555[0] }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_create_data_l555[0..19] ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  5 functions analyzed (out of 23): 21% coverage.
+INFO:FRAMAC:  In these functions, 53 statements reached (out of 53): 100% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  14 alarms generated by the analysis:
+INFO:FRAMAC:       5 accesses to uninitialized left-values
+INFO:FRAMAC:       5 escaping addresses
+INFO:FRAMAC:       4 invalid memory accesses
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     4 valid     0 unknown     0 invalid      4 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __bswap_32
+INFO:FRAMAC:[rte:annot] annotating function __bswap_64
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function reach_error
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

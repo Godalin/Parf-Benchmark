@@ -1,0 +1,235 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 21 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges -eva-auto-loop-unroll 7 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_bool) == 0 (auto)
+INFO:FRAMAC:  \return(read_history_bool) == 0 (auto)
+INFO:FRAMAC:  \return(add_history_type) == 0 (auto)
+INFO:FRAMAC:  \return(check) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  nomsg ∈ {-1}
+INFO:FRAMAC:  g1v ∈ {0}
+INFO:FRAMAC:  g1v_old ∈ {0}
+INFO:FRAMAC:  g1v_new ∈ {0}
+INFO:FRAMAC:  g2v ∈ {0}
+INFO:FRAMAC:  g2v_old ∈ {0}
+INFO:FRAMAC:  g2v_new ∈ {0}
+INFO:FRAMAC:  g3v ∈ {0}
+INFO:FRAMAC:  g3v_old ∈ {0}
+INFO:FRAMAC:  g3v_new ∈ {0}
+INFO:FRAMAC:  gate1Failed ∈ {0}
+INFO:FRAMAC:  gate2Failed ∈ {0}
+INFO:FRAMAC:  gate3Failed ∈ {0}
+INFO:FRAMAC:  VALUE1 ∈ {0}
+INFO:FRAMAC:  VALUE2 ∈ {0}
+INFO:FRAMAC:  VALUE3 ∈ {0}
+INFO:FRAMAC:  gate1Failed_History_0 ∈ {0}
+INFO:FRAMAC:  gate1Failed_History_1 ∈ {0}
+INFO:FRAMAC:  gate1Failed_History_2 ∈ {0}
+INFO:FRAMAC:  gate2Failed_History_0 ∈ {0}
+INFO:FRAMAC:  gate2Failed_History_1 ∈ {0}
+INFO:FRAMAC:  gate2Failed_History_2 ∈ {0}
+INFO:FRAMAC:  gate3Failed_History_0 ∈ {0}
+INFO:FRAMAC:  gate3Failed_History_1 ∈ {0}
+INFO:FRAMAC:  gate3Failed_History_2 ∈ {0}
+INFO:FRAMAC:  votedValue_History_0 ∈ {0}
+INFO:FRAMAC:  votedValue_History_1 ∈ {0}
+INFO:FRAMAC:  votedValue_History_2 ∈ {0}
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] harness.c:34: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:74: Automatic loop unrolling.
+INFO:FRAMAC:[eva] output/program.c:161: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] output/program.c:515: starting to merge loop iterations
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_bool:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_uchar:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_char:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function read_history_bool:
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function read_history_int8:
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function add_history_type:
+INFO:FRAMAC:  ini_bool ∈ {0}
+INFO:FRAMAC:  ini_int ∈ {-2}
+INFO:FRAMAC:  var ∈ {0; 3}
+INFO:FRAMAC:  tmp ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___1 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___2 ∈ [-128..127] or UNINITIALIZED
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function check:
+INFO:FRAMAC:  tmp ∈ {1}
+INFO:FRAMAC:  temp_count ∈ {0; 1; 2; 3} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___1 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___2 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___3 ∈ {0; 1}
+INFO:FRAMAC:  tmp___4 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___5 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___6 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___7 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___8 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___9 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___10 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___11 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___12 ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___13 ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___14 ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function init:
+INFO:FRAMAC:  tmp ∈ {0; 1}
+INFO:FRAMAC:  tmp___0 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___1 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___2 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function write_history_bool:
+INFO:FRAMAC:  gate1Failed_History_0 ∈ {0; 1}
+INFO:FRAMAC:  gate1Failed_History_1 ∈ {0; 1}
+INFO:FRAMAC:  gate1Failed_History_2 ∈ {0; 1}
+INFO:FRAMAC:  gate2Failed_History_0 ∈ {0; 1}
+INFO:FRAMAC:  gate2Failed_History_1 ∈ {0; 1}
+INFO:FRAMAC:  gate2Failed_History_2 ∈ {0; 1}
+INFO:FRAMAC:  gate3Failed_History_0 ∈ {0; 1}
+INFO:FRAMAC:  gate3Failed_History_1 ∈ {0; 1}
+INFO:FRAMAC:  gate3Failed_History_2 ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function gate1_each_pals_period:
+INFO:FRAMAC:  g1v_new ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  gate1Failed ∈ {0; 1}
+INFO:FRAMAC:  gate1Failed_History_0 ∈ {0; 1}
+INFO:FRAMAC:  gate1Failed_History_1 ∈ {0; 1}
+INFO:FRAMAC:  gate1Failed_History_2 ∈ {0; 1}
+INFO:FRAMAC:  next_state ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function gate2_each_pals_period:
+INFO:FRAMAC:  g2v_new ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  gate2Failed ∈ {0; 1}
+INFO:FRAMAC:  gate2Failed_History_0 ∈ {0; 1}
+INFO:FRAMAC:  gate2Failed_History_1 ∈ {0; 1}
+INFO:FRAMAC:  gate2Failed_History_2 ∈ {0; 1}
+INFO:FRAMAC:  next_state ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function gate3_each_pals_period:
+INFO:FRAMAC:  g3v_new ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  gate3Failed ∈ {0; 1}
+INFO:FRAMAC:  gate3Failed_History_0 ∈ {0; 1}
+INFO:FRAMAC:  gate3Failed_History_1 ∈ {0; 1}
+INFO:FRAMAC:  gate3Failed_History_2 ∈ {0; 1}
+INFO:FRAMAC:  next_state ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function write_history_int8:
+INFO:FRAMAC:  votedValue_History_0 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  votedValue_History_1 ∈ [--..--]
+INFO:FRAMAC:  votedValue_History_2 ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function voter:
+INFO:FRAMAC:  g1v_old ∈ {-1}
+INFO:FRAMAC:  g2v_old ∈ {-1}
+INFO:FRAMAC:  g3v_old ∈ {-1}
+INFO:FRAMAC:  VALUE1 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  VALUE2 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  VALUE3 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  votedValue_History_0 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  votedValue_History_1 ∈ [--..--]
+INFO:FRAMAC:  votedValue_History_2 ∈ [--..--]
+INFO:FRAMAC:  voted_value ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  19 functions analyzed (out of 31): 61% coverage.
+INFO:FRAMAC:  In these functions, 342 statements reached (out of 380): 90% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  0 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     1 invalid      3 total
+INFO:FRAMAC:  66% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

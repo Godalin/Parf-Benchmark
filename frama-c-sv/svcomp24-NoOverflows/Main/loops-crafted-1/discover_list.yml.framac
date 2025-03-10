@@ -1,0 +1,221 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[variadic:typing] output/program.c:193: Warning: 
+INFO:FRAMAC:  Incorrect type for argument 3. The argument will be cast from int to unsigned int.
+INFO:FRAMAC:[variadic:typing] output/program.c:201: Warning: 
+INFO:FRAMAC:  Incorrect type for argument 3. The argument will be cast from int to unsigned int.
+INFO:FRAMAC:[variadic:typing] output/program.c:217: Warning: 
+INFO:FRAMAC:  Incorrect type for argument 3. The argument will be cast from int to unsigned int.
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(smp_send_req) == 0 (auto)
+INFO:FRAMAC:  \return(smp_get_func_def_resp_len) == 0 (auto)
+INFO:FRAMAC:  \return(smp_get_num) == -1 (auto)
+INFO:FRAMAC:  \return(smp_get_llnum) == -1 (auto)
+INFO:FRAMAC:  \return(toupper) == 0, 66, 68, 72, 73 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:  \return(sscanf_va_1) == 1, 2, 4 (auto)
+INFO:FRAMAC:  \return(sscanf_va_2) == 1, 2, 4 (auto)
+INFO:FRAMAC:  \return(sscanf_va_3) == 1, 2, 4 (auto)
+INFO:FRAMAC:  \return(sscanf_va_4) == 1, 2, 4 (auto)
+INFO:FRAMAC:  \return(sscanf_va_5) == 1, 2, 4 (auto)
+INFO:FRAMAC:  \return(sscanf_va_6) == 1, 2, 4 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  __tmpTR__int_1 ∈ {0}
+INFO:FRAMAC:  smp_def_rrlen_arr[0]{.func; .def_req_len} ∈ {0}
+INFO:FRAMAC:                   [0].def_resp_len ∈ {6}
+INFO:FRAMAC:                   [1].func ∈ {1}
+INFO:FRAMAC:                   [1].def_req_len ∈ {0}
+INFO:FRAMAC:                   [1].def_resp_len ∈ {14}
+INFO:FRAMAC:                   [2].func ∈ {2}
+INFO:FRAMAC:                   [2]{.def_req_len; .def_resp_len} ∈ {-3}
+INFO:FRAMAC:                   [3].func ∈ {3}
+INFO:FRAMAC:                   [3]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [4].func ∈ {4}
+INFO:FRAMAC:                   [4]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [5].func ∈ {5}
+INFO:FRAMAC:                   [5]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [6].func ∈ {6}
+INFO:FRAMAC:                   [6]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [7].func ∈ {7}
+INFO:FRAMAC:                   [7]{.def_req_len; .def_resp_len} ∈ {-3}
+INFO:FRAMAC:                   [8].func ∈ {16}
+INFO:FRAMAC:                   [8].def_req_len ∈ {2}
+INFO:FRAMAC:                   [8].def_resp_len ∈ {12}
+INFO:FRAMAC:                   [9].func ∈ {17}
+INFO:FRAMAC:                   [9].def_req_len ∈ {2}
+INFO:FRAMAC:                   [9].def_resp_len ∈ {6}
+INFO:FRAMAC:                   [10].func ∈ {18}
+INFO:FRAMAC:                   [10].def_req_len ∈ {2}
+INFO:FRAMAC:                   [10].def_resp_len ∈ {13}
+INFO:FRAMAC:                   [11].func ∈ {19}
+INFO:FRAMAC:                   [11].def_req_len ∈ {2}
+INFO:FRAMAC:                   [11].def_resp_len ∈ {9}
+INFO:FRAMAC:                   [12].func ∈ {20}
+INFO:FRAMAC:                   [12]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [13].func ∈ {32}
+INFO:FRAMAC:                   [13]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [14].func ∈ {33}
+INFO:FRAMAC:                   [14]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [15].func ∈ {34}
+INFO:FRAMAC:                   [15]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [16].func ∈ {128}
+INFO:FRAMAC:                   [16].def_req_len ∈ {3}
+INFO:FRAMAC:                   [16].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [17].func ∈ {129}
+INFO:FRAMAC:                   [17].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [17].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [18].func ∈ {130}
+INFO:FRAMAC:                   [18]{.def_req_len; .def_resp_len} ∈ {-3}
+INFO:FRAMAC:                   [19].func ∈ {131}
+INFO:FRAMAC:                   [19]{.def_req_len; .def_resp_len} ∈ {-3}
+INFO:FRAMAC:                   [20].func ∈ {133}
+INFO:FRAMAC:                   [20].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [20].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [21].func ∈ {134}
+INFO:FRAMAC:                   [21]{.def_req_len; .def_resp_len} ∈ {-2}
+INFO:FRAMAC:                   [22].func ∈ {135}
+INFO:FRAMAC:                   [22].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [22].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [23].func ∈ {136}
+INFO:FRAMAC:                   [23].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [23].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [24].func ∈ {137}
+INFO:FRAMAC:                   [24].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [24].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [25].func ∈ {138}
+INFO:FRAMAC:                   [25].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [25].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [26].func ∈ {139}
+INFO:FRAMAC:                   [26].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [26].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [27].func ∈ {144}
+INFO:FRAMAC:                   [27].def_req_len ∈ {9}
+INFO:FRAMAC:                   [27].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [28].func ∈ {145}
+INFO:FRAMAC:                   [28].def_req_len ∈ {9}
+INFO:FRAMAC:                   [28].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [29].func ∈ {146}
+INFO:FRAMAC:                   [29].def_req_len ∈ {9}
+INFO:FRAMAC:                   [29].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [30].func ∈ {147}
+INFO:FRAMAC:                   [30].def_req_len ∈ {-2}
+INFO:FRAMAC:                   [30].def_resp_len ∈ {0}
+INFO:FRAMAC:                   [31]{.func; .def_req_len; .def_resp_len} ∈ {-1}
+INFO:FRAMAC:[eva] output/program.c:495: allocating variable __malloc_main_l495
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:alarm] output/program.c:425: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&op->do_num);
+INFO:FRAMAC:[eva] output/program.c:425: 
+INFO:FRAMAC:  assertion 'Eva,initialization' got final status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function do_discover_list:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  3 functions analyzed (out of 25): 12% coverage.
+INFO:FRAMAC:  In these functions, 13 statements reached (out of 85): 15% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  1 alarm generated by the analysis:
+INFO:FRAMAC:       1 access to uninitialized left-values
+INFO:FRAMAC:  1 of them is a sure alarm (invalid status).
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     0 invalid      1 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_assert
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function dStrHex
+INFO:FRAMAC:[rte:annot] annotating function reach_error
+INFO:FRAMAC:[rte:annot] annotating function smp_get_func_def_resp_len
+INFO:FRAMAC:[rte:annot] annotating function smp_get_llnum
+INFO:FRAMAC:[rte:annot] annotating function smp_get_num
+INFO:FRAMAC:[rte:annot] annotating function smp_is_naa5
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

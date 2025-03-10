@@ -1,0 +1,556 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:65: Warning: 
+INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:70: Warning: 
+INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_malloc) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_successful_malloc) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_is_in_set) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_set_empty) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  mutexes{.next; .prev} ∈ {{ &mutexes }}
+INFO:FRAMAC:  drvlist{.next; .prev} ∈ {{ &drvlist }}
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] output/program.c:580: 
+INFO:FRAMAC:  allocating variable __malloc_ldv_successful_malloc_l580
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:693: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 800 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1000 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1100 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1200 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1300 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1400 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1500 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1600 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1700 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1800 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 1900 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2000 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2100 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2200 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2400 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2500 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2600 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2700 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2800 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 2900 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3000 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3100 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3200 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3300 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3400 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3500 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3600 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3700 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3800 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 3900 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4000 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4100 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4200 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4300 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4400 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4500 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4600 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4700 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4800 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 4900 states
+INFO:FRAMAC:[eva] output/program.c:693: Trace partitioning superposing up to 5000 states
+INFO:FRAMAC:[eva] output/program.c:693: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:580: 
+INFO:FRAMAC:  allocating variable __malloc_ldv_successful_malloc_l580_0
+INFO:FRAMAC:[eva:alarm] output/program.c:698: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&me_0->list.next);
+INFO:FRAMAC:[eva:alarm] output/program.c:660: Warning: 
+INFO:FRAMAC:  pointer comparison. assert \pointer_comparable((void *)m->e, (void *)e);
+INFO:FRAMAC:[eva:alarm] output/program.c:673: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:660: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&m->e);
+INFO:FRAMAC:[eva:alarm] output/program.c:659: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&m->list.next);
+INFO:FRAMAC:[eva:alarm] output/program.c:660: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&m->e);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:659: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 800 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1000 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1100 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1200 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1300 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1400 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1500 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1600 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1700 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1800 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 1900 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2000 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2100 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2200 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2400 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2500 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2600 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2700 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2800 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 2900 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3000 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3100 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3200 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3300 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3400 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3500 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3600 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3700 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3800 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 3900 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4000 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4100 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4200 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4300 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4400 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4500 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4600 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4700 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4800 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 4900 states
+INFO:FRAMAC:[eva] output/program.c:659: Trace partitioning superposing up to 5000 states
+INFO:FRAMAC:[eva] output/program.c:659: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:698: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:698: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:677: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:650: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&m->list.next);
+INFO:FRAMAC:[eva:alarm] output/program.c:651: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&m->e);
+INFO:FRAMAC:[eva:alarm] output/program.c:651: Warning: 
+INFO:FRAMAC:  pointer comparison. assert \pointer_comparable((void *)m->e, (void *)e);
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&entry->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&entry->prev);
+INFO:FRAMAC:[eva:alarm] output/program.c:650: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&n->list.next);
+INFO:FRAMAC:[eva:alarm] output/program.c:650: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&n->list.next);
+INFO:FRAMAC:[eva:alarm] output/program.c:651: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&m->e);
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&entry->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&entry->prev);
+INFO:FRAMAC:[eva:alarm] output/program.c:650: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&n);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:650: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 1900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 2900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 3900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 4900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 5900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 6900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 7900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 8900 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9000 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9100 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9200 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9300 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9400 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9500 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9600 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9700 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9800 states
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 9900 states
+INFO:FRAMAC:[eva] output/program.c:650: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:650: Trace partitioning superposing up to 10000 states
+INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&me_0->list.next);
+INFO:FRAMAC:[eva:alarm] output/program.c:624: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&head->next);
+INFO:FRAMAC:[eva] output/program.c:667: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:alarm] output/program.c:681: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __ldv_list_add:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }}
+INFO:FRAMAC:  drvlist{.next; .prev} ∈
+INFO:FRAMAC:         {{ (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580[8] }}
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580[0..7] ∈ UNINITIALIZED
+INFO:FRAMAC:                                       [bits 64 to 127]# ∈
+INFO:FRAMAC:                                       {{ (? *)&drvlist ;
+INFO:FRAMAC:                                          (? *)&__malloc_w_ldv_successful_malloc_l580[8] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function __ldv_list_del:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED or ESCAPINGADDR repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_initialize:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_is_in_set:
+INFO:FRAMAC:  m ∈
+INFO:FRAMAC:   {{ &mutexes + {-4} ;
+INFO:FRAMAC:      (struct ldv_list_element *)&__malloc_w_ldv_successful_malloc_l580_0 }}
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_list_add:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }}
+INFO:FRAMAC:  drvlist{.next; .prev} ∈
+INFO:FRAMAC:         {{ (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580[8] }}
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580[0..7] ∈ UNINITIALIZED
+INFO:FRAMAC:                                       [bits 64 to 127]# ∈
+INFO:FRAMAC:                                       {{ (? *)&drvlist ;
+INFO:FRAMAC:                                          (? *)&__malloc_w_ldv_successful_malloc_l580[8] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_list_del:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED or ESCAPINGADDR repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_list_empty:
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_set_del:
+INFO:FRAMAC:  m ∈
+INFO:FRAMAC:   {{ &mutexes + {-4} ;
+INFO:FRAMAC:      (struct ldv_list_element *)&__malloc_w_ldv_successful_malloc_l580_0 }}
+INFO:FRAMAC:  n ∈
+INFO:FRAMAC:   {{ &mutexes + {-4} ;
+INFO:FRAMAC:      (struct ldv_list_element *)&__malloc_w_ldv_successful_malloc_l580_0 }}
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED or ESCAPINGADDR repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_set_empty:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_successful_malloc:
+INFO:FRAMAC:  ptr ∈
+INFO:FRAMAC:     {{ (void *)&__malloc_w_ldv_successful_malloc_l580 ;
+INFO:FRAMAC:        (void *)&__malloc_w_ldv_successful_malloc_l580_0 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_set_add:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function ldv_check_final_state:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function mutex_lock:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function mutex_unlock:
+INFO:FRAMAC:  mutexes{.next; .prev} ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED or ESCAPINGADDR repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function foo:
+INFO:FRAMAC:  mutexes.next ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }}
+INFO:FRAMAC:         .prev ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or ESCAPINGADDR
+INFO:FRAMAC:  drvlist{.next; .prev} ∈
+INFO:FRAMAC:         {{ &drvlist ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580[8] }}
+INFO:FRAMAC:  i ∈ [0..2147483647]
+INFO:FRAMAC:  N ∈ [--..--]
+INFO:FRAMAC:  me_0 ∈
+INFO:FRAMAC:      {{ &drvlist + {-8} ;
+INFO:FRAMAC:         (struct mutex_list_elem *)&__malloc_w_ldv_successful_malloc_l580 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580[0..7] ∈ UNINITIALIZED
+INFO:FRAMAC:                                       [bits 64 to 127]# ∈
+INFO:FRAMAC:                                       {{ (? *)&drvlist ;
+INFO:FRAMAC:                                          (? *)&__malloc_w_ldv_successful_malloc_l580[8] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED or ESCAPINGADDR repeated %32 
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  mutexes.next ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }}
+INFO:FRAMAC:         .prev ∈
+INFO:FRAMAC:         {{ &mutexes ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or ESCAPINGADDR
+INFO:FRAMAC:  drvlist{.next; .prev} ∈
+INFO:FRAMAC:         {{ &drvlist ;
+INFO:FRAMAC:            (struct ldv_list_head *)&__malloc_w_ldv_successful_malloc_l580[8] }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580[0..7] ∈ UNINITIALIZED
+INFO:FRAMAC:                                       [bits 64 to 127]# ∈
+INFO:FRAMAC:                                       {{ (? *)&drvlist ;
+INFO:FRAMAC:                                          (? *)&__malloc_w_ldv_successful_malloc_l580[8] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:  __malloc_w_ldv_successful_malloc_l580_0[bits 0 to 31] ∈
+INFO:FRAMAC:                                         {{ &drvlist + {-8} ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580 }} or UNINITIALIZED
+INFO:FRAMAC:                                         [bits 32 to 95]# ∈
+INFO:FRAMAC:                                         {{ (? *)&mutexes ;
+INFO:FRAMAC:                                            (? *)&__malloc_w_ldv_successful_malloc_l580_0[4] }} or UNINITIALIZED or ESCAPINGADDR repeated %32 
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  19 functions analyzed (out of 40): 47% coverage.
+INFO:FRAMAC:  In these functions, 134 statements reached (out of 139): 96% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  18 alarms generated by the analysis:
+INFO:FRAMAC:       9 accesses to uninitialized left-values
+INFO:FRAMAC:       5 escaping addresses
+INFO:FRAMAC:       2 invalid memory accesses
+INFO:FRAMAC:       2 others
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     3 invalid      5 total
+INFO:FRAMAC:  40% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function LDV_INIT_LIST_HEAD
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __bswap_32
+INFO:FRAMAC:[rte:annot] annotating function __bswap_64
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function ldv_init_set
+INFO:FRAMAC:[rte:annot] annotating function ldv_list_add_tail
+INFO:FRAMAC:[rte:annot] annotating function ldv_malloc
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

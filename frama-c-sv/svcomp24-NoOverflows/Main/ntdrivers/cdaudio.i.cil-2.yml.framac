@@ -1,0 +1,368 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:3596: Warning: 
+INFO:FRAMAC:  expected 'PCWSTR' but got argument of type 'char const *': "M\000a\000p\000T\000y\000p\000e\000"
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:3673: Warning: 
+INFO:FRAMAC:  expected 'PLONG' but got argument of type 'ULONG *': & deviceExtension->PagingPathCount
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:3677: Warning: 
+INFO:FRAMAC:  expected 'PLONG' but got argument of type 'ULONG *': & deviceExtension->PagingPathCount
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:7460: Warning: 
+INFO:FRAMAC:  implicit conversion between incompatible function types:
+INFO:FRAMAC:  NTSTATUS (*)(PDEVICE_OBJECT DeviceObject, PIRP Irp, PKEVENT Event)
+INFO:FRAMAC:  and
+INFO:FRAMAC:  NTSTATUS (*)(PDEVICE_OBJECT DeviceObject, PIRP Irp, PVOID Context)
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:7465: Warning: 
+INFO:FRAMAC:  implicit conversion between incompatible function types:
+INFO:FRAMAC:  NTSTATUS (*)(PDEVICE_OBJECT DeviceObject, PIRP Irp, PKEVENT Event)
+INFO:FRAMAC:  and
+INFO:FRAMAC:  NTSTATUS (*)(PDEVICE_OBJECT DeviceObject, PIRP Irp, PVOID Context)
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:7550: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:7580: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:7724: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:7878: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:7916: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:7948: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:implicit-conv-void-ptr] output/program.c:8203: Warning: 
+INFO:FRAMAC:  implicit conversion from void * to PKEVENT
+INFO:FRAMAC:[kernel:typing:int-conversion] output/program.c:8441: Warning: 
+INFO:FRAMAC:  Conversion from a pointer to an integer without an explicit cast
+INFO:FRAMAC:[kernel:typing:implicit-conv-void-ptr] output/program.c:8557: Warning: 
+INFO:FRAMAC:  implicit conversion from void * to PKEVENT
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0, 1, 2, 3, 4 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_long) == -1, 259 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memcmp) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(RtlCompareMemory) == 16 (auto)
+INFO:FRAMAC:  \return(ExAllocatePoolWithTag) == 0 (auto)
+INFO:FRAMAC:  \return(ExfInterlockedInsertHeadList) == 0 (auto)
+INFO:FRAMAC:  \return(ExfInterlockedInsertTailList) == 0 (auto)
+INFO:FRAMAC:  \return(ExfInterlockedRemoveHeadList) == 0 (auto)
+INFO:FRAMAC:  \return(MmMapLockedPagesSpecifyCache) == 0 (auto)
+INFO:FRAMAC:  \return(MmAllocateContiguousMemory) == 0 (auto)
+INFO:FRAMAC:  \return(MmPageEntireDriver) == 0 (auto)
+INFO:FRAMAC:  \return(IoAllocateMdl) == 0 (auto)
+INFO:FRAMAC:  \return(IoAttachDeviceToDeviceStack) == 0 (auto)
+INFO:FRAMAC:  \return(IoBuildAsynchronousFsdRequest) == 0 (auto)
+INFO:FRAMAC:  \return(IoBuildDeviceIoControlRequest) == 0 (auto)
+INFO:FRAMAC:  \return(IoGetConfigurationInformation) == 0 (auto)
+INFO:FRAMAC:  \return(CdAudioDeviceControl) == -1, 259 (auto)
+INFO:FRAMAC:  \return(CdAudioIsPlayActive) == 0, 1 (auto)
+INFO:FRAMAC:  \return(NecSupportNeeded) == 0 (auto)
+INFO:FRAMAC:  \return(CdAudioPower) == -1, 259 (auto)
+INFO:FRAMAC:  \return(SendSrbSynchronous) == -2147483626, -1073741808, -1073741764,
+INFO:FRAMAC:                                 -1073741661 (auto)
+INFO:FRAMAC:  \return(CdAudioSignalCompletion) == -1073741802 (auto)
+INFO:FRAMAC:  \return(CdAudioPnp) == -1, 259 (auto)
+INFO:FRAMAC:  \return(nondet_malloc) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {0}
+INFO:FRAMAC:  DC ∈ {0}
+INFO:FRAMAC:  SKIP1 ∈ {0}
+INFO:FRAMAC:  SKIP2 ∈ {0}
+INFO:FRAMAC:  MPR1 ∈ {0}
+INFO:FRAMAC:  MPR3 ∈ {0}
+INFO:FRAMAC:  IPC ∈ {0}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:  routine ∈ {0}
+INFO:FRAMAC:  myStatus ∈ {0}
+INFO:FRAMAC:  myIrp_PendingReturned ∈ {0}
+INFO:FRAMAC:  pirp ∈ {0}
+INFO:FRAMAC:  _SLAM_alloc_dummy ∈ {0}
+INFO:FRAMAC:[eva] using specification for function Frama_C_long_interval
+INFO:FRAMAC:[eva] harness.c:38: cannot properly split on \result == -1
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] output/program.c:7562: allocating variable __malloc_main_l7562
+INFO:FRAMAC:[eva] output/program.c:7563: allocating variable __malloc_main_l7563
+INFO:FRAMAC:[eva] output/program.c:7566: allocating variable __malloc_main_l7566
+INFO:FRAMAC:[eva:alarm] output/program.c:3791: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&deviceExtension->Active);
+INFO:FRAMAC:[eva:alarm] output/program.c:3791: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&deviceExtension->Active);
+INFO:FRAMAC:[eva:alarm] output/program.c:3621: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&irpSp->MinorFunction);
+INFO:FRAMAC:[eva:alarm] output/program.c:3621: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&irpSp->MinorFunction);
+INFO:FRAMAC:[eva:alarm] output/program.c:7509: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&Irp->CurrentLocation);
+INFO:FRAMAC:[eva] output/program.c:7509: 
+INFO:FRAMAC:  assertion 'Eva,initialization' got final status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioDeviceControl:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioPnp:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioPower:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function _BLAST_init:
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {1}
+INFO:FRAMAC:  DC ∈ {2}
+INFO:FRAMAC:  SKIP1 ∈ {3}
+INFO:FRAMAC:  SKIP2 ∈ {4}
+INFO:FRAMAC:  MPR1 ∈ {5}
+INFO:FRAMAC:  MPR3 ∈ {6}
+INFO:FRAMAC:  IPC ∈ {7}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_long:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function stub_driver_init:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  s ∈ {0; 1}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {1}
+INFO:FRAMAC:  DC ∈ {2}
+INFO:FRAMAC:  SKIP1 ∈ {3}
+INFO:FRAMAC:  SKIP2 ∈ {4}
+INFO:FRAMAC:  MPR1 ∈ {5}
+INFO:FRAMAC:  MPR3 ∈ {6}
+INFO:FRAMAC:  IPC ∈ {7}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:  myStatus ∈ {-1073741637; 0}
+INFO:FRAMAC:  pirp ∈ {{ &irp }}
+INFO:FRAMAC:  status ∈ [--..--]
+INFO:FRAMAC:  irp{.Type; .Size; .MdlAddress; .Flags} ∈ UNINITIALIZED
+INFO:FRAMAC:     .AssociatedIrp{.MasterIrp; .IrpCount; .SystemBuffer} ∈
+INFO:FRAMAC:     {{ NULL ; (? *)&__malloc_main_l7566 }}
+INFO:FRAMAC:     .ThreadListEntry ∈ UNINITIALIZED
+INFO:FRAMAC:     .IoStatus.__annonCompField4{.Status; .Pointer} ∈
+INFO:FRAMAC:     {-1073741637; 0} or UNINITIALIZED
+INFO:FRAMAC:     {.IoStatus.Information; .RequestorMode; .PendingReturned; .StackCount; .CurrentLocation; .Cancel; .CancelIrql; .ApcEnvironment; .AllocationFlags; .UserIosb; .UserEvent; .Overlay; .CancelRoutine; .UserBuffer; .Tail{.Overlay{.__annonCompField15; .Thread; .AuxiliaryBuffer; .__annonCompField17.ListEntry}; .Apc{.Type; .Size; .Spare0; .Thread; .ApcListEntry; .KernelRoutine; .RundownRoutine; .NormalRoutine}; .CompletionKey[bits 0 to 255]}} ∈
+INFO:FRAMAC:     UNINITIALIZED
+INFO:FRAMAC:     .Tail{.Overlay.__annonCompField17.__annonCompField16{.CurrentStackLocation; .PacketType}; .Apc.NormalContext; .CompletionKey[bits 256 to 287]} ∈
+INFO:FRAMAC:     {{ NULL + {108} ; (? *)&__malloc_main_l7563[3] }}
+INFO:FRAMAC:     .Tail{.Overlay{.OriginalFileObject; .[bits 320 to 383]}; .Apc{.SystemArgument1; .SystemArgument2; .ApcStateIndex; .ApcMode; .Inserted; .[bits 376 to 383]}; .CompletionKey[bits 288 to 383]} ∈
+INFO:FRAMAC:     UNINITIALIZED
+INFO:FRAMAC:  we_should_unload ∈ [--..--]
+INFO:FRAMAC:  __BLAST_NONDET___0 ∈ [--..--]
+INFO:FRAMAC:  irp_choice ∈ [--..--]
+INFO:FRAMAC:  devobj{.Type; .Size; .ReferenceCount; .DriverObject; .NextDevice; .AttachedDevice; .CurrentIrp; .Timer; .Flags; .Characteristics; .Vpb} ∈
+INFO:FRAMAC:        UNINITIALIZED
+INFO:FRAMAC:        .DeviceExtension ∈ {{ NULL ; (void *)&__malloc_main_l7562 }}
+INFO:FRAMAC:        {.DeviceType; .StackSize; .Queue; .AlignmentRequirement; .DeviceQueue; .Dpc; .ActiveThreadCount; .SecurityDescriptor; .DeviceLock; .SectorSize; .Spare1; .DeviceObjectExtension; .Reserved; .[bits 392 to 415]} ∈
+INFO:FRAMAC:        UNINITIALIZED
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [-2147483648..-1]
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  8 functions analyzed (out of 109): 7% coverage.
+INFO:FRAMAC:  In these functions, 89 statements reached (out of 207): 42% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors   14 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  5 alarms generated by the analysis:
+INFO:FRAMAC:       3 accesses to uninitialized left-values
+INFO:FRAMAC:       2 invalid memory accesses
+INFO:FRAMAC:  1 of them is a sure alarm (invalid status).
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     0 invalid      2 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function CdAudio435DeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudio535DeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioAddDevice
+INFO:FRAMAC:[rte:annot] annotating function CdAudioAtapiDeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioDenonDeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioForwardIrpSynchronous
+INFO:FRAMAC:[rte:annot] annotating function CdAudioHPCdrDeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioHitachiDeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioHitachiSendPauseCommand
+INFO:FRAMAC:[rte:annot] annotating function CdAudioIsPlayActive
+INFO:FRAMAC:[rte:annot] annotating function CdAudioNECDeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioPioneerDeviceControl
+INFO:FRAMAC:[rte:annot] annotating function CdAudioReadWrite
+INFO:FRAMAC:[rte:annot] annotating function CdAudioSendToNextDriver
+INFO:FRAMAC:[rte:annot] annotating function CdAudioSignalCompletion
+INFO:FRAMAC:[rte:annot] annotating function CdAudioStartDevice
+INFO:FRAMAC:[rte:annot] annotating function CdAudioUnload
+INFO:FRAMAC:[rte:annot] annotating function DriverEntry
+INFO:FRAMAC:[rte:annot] annotating function ExAcquireFastMutex
+INFO:FRAMAC:[rte:annot] annotating function ExAllocatePoolWithTag
+INFO:FRAMAC:[rte:annot] annotating function ExFreePool
+INFO:FRAMAC:[rte:annot] annotating function ExReleaseFastMutex
+INFO:FRAMAC:[rte:annot] annotating function ExfInterlockedInsertHeadList
+INFO:FRAMAC:[rte:annot] annotating function ExfInterlockedInsertTailList
+INFO:FRAMAC:[rte:annot] annotating function ExfInterlockedRemoveHeadList
+INFO:FRAMAC:[rte:annot] annotating function HPCdrCompletion
+INFO:FRAMAC:[rte:annot] annotating function HpCdrProcessLastSession
+INFO:FRAMAC:[rte:annot] annotating function InterlockedDecrement
+INFO:FRAMAC:[rte:annot] annotating function InterlockedIncrement
+INFO:FRAMAC:[rte:annot] annotating function IoAllocateMdl
+INFO:FRAMAC:[rte:annot] annotating function IoAttachDeviceToDeviceStack
+INFO:FRAMAC:[rte:annot] annotating function IoBuildAsynchronousFsdRequest
+INFO:FRAMAC:[rte:annot] annotating function IoBuildDeviceIoControlRequest
+INFO:FRAMAC:[rte:annot] annotating function IoCreateDevice
+INFO:FRAMAC:[rte:annot] annotating function IoCreateSymbolicLink
+INFO:FRAMAC:[rte:annot] annotating function IoDeleteDevice
+INFO:FRAMAC:[rte:annot] annotating function IoDeleteSymbolicLink
+INFO:FRAMAC:[rte:annot] annotating function IoDetachDevice
+INFO:FRAMAC:[rte:annot] annotating function IoFreeIrp
+INFO:FRAMAC:[rte:annot] annotating function IoFreeMdl
+INFO:FRAMAC:[rte:annot] annotating function IoGetConfigurationInformation
+INFO:FRAMAC:[rte:annot] annotating function IoOpenDeviceRegistryKey
+INFO:FRAMAC:[rte:annot] annotating function IoQueryDeviceDescription
+INFO:FRAMAC:[rte:annot] annotating function IoRegisterDeviceInterface
+INFO:FRAMAC:[rte:annot] annotating function IoReleaseCancelSpinLock
+INFO:FRAMAC:[rte:annot] annotating function IoSetDeviceInterfaceState
+INFO:FRAMAC:[rte:annot] annotating function IoSetHardErrorOrVerifyDevice
+INFO:FRAMAC:[rte:annot] annotating function IofCallDriver
+INFO:FRAMAC:[rte:annot] annotating function IofCompleteRequest
+INFO:FRAMAC:[rte:annot] annotating function KeAcquireSpinLockRaiseToDpc
+INFO:FRAMAC:[rte:annot] annotating function KeDelayExecutionThread
+INFO:FRAMAC:[rte:annot] annotating function KeInitializeEvent
+INFO:FRAMAC:[rte:annot] annotating function KeInitializeSemaphore
+INFO:FRAMAC:[rte:annot] annotating function KeInitializeSpinLock
+INFO:FRAMAC:[rte:annot] annotating function KeReleaseSemaphore
+INFO:FRAMAC:[rte:annot] annotating function KeSetEvent
+INFO:FRAMAC:[rte:annot] annotating function KeWaitForSingleObject
+INFO:FRAMAC:[rte:annot] annotating function KfReleaseSpinLock
+INFO:FRAMAC:[rte:annot] annotating function MmAllocateContiguousMemory
+INFO:FRAMAC:[rte:annot] annotating function MmFreeContiguousMemory
+INFO:FRAMAC:[rte:annot] annotating function MmLockPagableDataSection
+INFO:FRAMAC:[rte:annot] annotating function MmMapLockedPagesSpecifyCache
+INFO:FRAMAC:[rte:annot] annotating function MmPageEntireDriver
+INFO:FRAMAC:[rte:annot] annotating function MmResetDriverPaging
+INFO:FRAMAC:[rte:annot] annotating function MmUnlockPages
+INFO:FRAMAC:[rte:annot] annotating function NecSupportNeeded
+INFO:FRAMAC:[rte:annot] annotating function ObReferenceObjectByHandle
+INFO:FRAMAC:[rte:annot] annotating function ObfDereferenceObject
+INFO:FRAMAC:[rte:annot] annotating function PoCallDriver
+INFO:FRAMAC:[rte:annot] annotating function PoStartNextPowerIrp
+INFO:FRAMAC:[rte:annot] annotating function PsCreateSystemThread
+INFO:FRAMAC:[rte:annot] annotating function PsTerminateSystemThread
+INFO:FRAMAC:[rte:annot] annotating function RtlAnsiStringToUnicodeString
+INFO:FRAMAC:[rte:annot] annotating function RtlCompareMemory
+INFO:FRAMAC:[rte:annot] annotating function RtlCopyUnicodeString
+INFO:FRAMAC:[rte:annot] annotating function RtlDeleteRegistryValue
+INFO:FRAMAC:[rte:annot] annotating function RtlFreeUnicodeString
+INFO:FRAMAC:[rte:annot] annotating function RtlInitString
+INFO:FRAMAC:[rte:annot] annotating function RtlInitUnicodeString
+INFO:FRAMAC:[rte:annot] annotating function RtlQueryRegistryValues
+INFO:FRAMAC:[rte:annot] annotating function RtlWriteRegistryValue
+INFO:FRAMAC:[rte:annot] annotating function SendSrbSynchronous
+INFO:FRAMAC:[rte:annot] annotating function ZwClose
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function errorFn
+INFO:FRAMAC:[rte:annot] annotating function nondet_malloc
+INFO:FRAMAC:[rte:annot] annotating function reach_error
+INFO:FRAMAC:[rte:annot] annotating function stubMoreProcessingRequired
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

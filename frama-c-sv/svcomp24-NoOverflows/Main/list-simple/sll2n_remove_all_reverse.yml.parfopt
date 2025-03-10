@@ -1,0 +1,124 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:77: Warning: 
+INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:82: Warning: 
+INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] output/program.c:575: allocating variable __malloc_node_create_l575
+INFO:FRAMAC:[eva] output/program.c:585: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&(*head)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(*head)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:599: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&last->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:601: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&last->next);
+INFO:FRAMAC:[eva] output/program.c:599: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:599: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&last->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:603: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&snd_to_last->next);
+INFO:FRAMAC:[eva] output/program.c:612: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(head);
+INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(*head)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:599: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&last->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:601: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&last->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:615: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&s);
+INFO:FRAMAC:[eva:alarm] output/program.c:619: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[scope:rm_asserts] removing 2 assertion(s)
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function myexit:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function node_create:
+INFO:FRAMAC:  temp ∈ {{ &__malloc_w_node_create_l575 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_w_node_create_l575.data ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:                             .next ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_node_create_l575 }} or UNINITIALIZED
+INFO:FRAMAC:[eva:final-states] Values at end of function sll_create:
+INFO:FRAMAC:  len ∈ {0}
+INFO:FRAMAC:  head ∈ {{ NULL ; &__malloc_w_node_create_l575 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_w_node_create_l575.data ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:                             .next ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_node_create_l575 }} or UNINITIALIZED
+INFO:FRAMAC:[eva:final-states] Values at end of function sll_remove_last:
+INFO:FRAMAC:  s ∈ {{ NULL ; &__malloc_w_node_create_l575 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_node_create_l575.data ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:                             .next ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_node_create_l575 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  len ∈ {2}
+INFO:FRAMAC:  data ∈ {1}
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  i ∈ {-1}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:  __malloc_w_node_create_l575.data ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:                             .next ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_w_node_create_l575 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  6 functions analyzed (out of 24): 25% coverage.
+INFO:FRAMAC:  In these functions, 49 statements reached (out of 54): 90% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  11 alarms generated by the analysis:
+INFO:FRAMAC:       5 escaping addresses
+INFO:FRAMAC:       3 invalid memory accesses
+INFO:FRAMAC:       3 accesses to uninitialized left-values
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     1 invalid      3 total
+INFO:FRAMAC:  66% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_int
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __bswap_32
+INFO:FRAMAC:[rte:annot] annotating function __bswap_64
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

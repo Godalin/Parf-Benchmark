@@ -1,0 +1,587 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {0}
+INFO:FRAMAC:  DC ∈ {0}
+INFO:FRAMAC:  SKIP1 ∈ {0}
+INFO:FRAMAC:  SKIP2 ∈ {0}
+INFO:FRAMAC:  MPR1 ∈ {0}
+INFO:FRAMAC:  MPR3 ∈ {0}
+INFO:FRAMAC:  IPC ∈ {0}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:  routine ∈ {0}
+INFO:FRAMAC:  myStatus ∈ {0}
+INFO:FRAMAC:  pirp ∈ {0}
+INFO:FRAMAC:  Executive ∈ {0}
+INFO:FRAMAC:  Suspended ∈ {0}
+INFO:FRAMAC:  KernelMode ∈ {0}
+INFO:FRAMAC:  DeviceUsageTypePaging ∈ {0}
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva:alarm] output/program.c:381: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:382: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1563: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ index_0 - 1;
+INFO:FRAMAC:[eva:alarm] output/program.c:1696: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1697: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:59: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioUnload:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function IofCompleteRequest:
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:[eva:final-states] Values at end of function AG_SetStatusAndReturn:
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670}
+INFO:FRAMAC:  __cil_tmp4 ∈
+INFO:FRAMAC:            {2147483665; 3221225473; 3221225476; 3221225488; 3221225507;
+INFO:FRAMAC:             3221225626}
+INFO:FRAMAC:[eva:final-states] Values at end of function _BLAST_init:
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {1}
+INFO:FRAMAC:  DC ∈ {2}
+INFO:FRAMAC:  SKIP1 ∈ {3}
+INFO:FRAMAC:  SKIP2 ∈ {4}
+INFO:FRAMAC:  MPR1 ∈ {5}
+INFO:FRAMAC:  MPR3 ∈ {6}
+INFO:FRAMAC:  IPC ∈ {7}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function HpCdrProcessLastSession:
+INFO:FRAMAC:  index_0 ∈ [-2147483648..2147483646]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function HPCdrCompletion:
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  Irp__PendingReturned ∈ [--..--]
+INFO:FRAMAC:  Irp__AssociatedIrp__SystemBuffer ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function KeSetEvent:
+INFO:FRAMAC:  setEventCalled ∈ {1}
+INFO:FRAMAC:  l ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioSignalCompletion:
+INFO:FRAMAC:  setEventCalled ∈ {1}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741802}
+INFO:FRAMAC:[eva:final-states] Values at end of function KeWaitForSingleObject:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  tmp_ndt_6 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioIsPlayActive:
+INFO:FRAMAC:  deviceExtension__PlayActive ∈ [--..--]
+INFO:FRAMAC:  ioStatus__Status ∈ [--..--]
+INFO:FRAMAC:  currentBuffer__Header__AudioStatus ∈ [--..--]
+INFO:FRAMAC:  irp_CdAudioIsPlayActive ∈ [--..--]
+INFO:FRAMAC:  event ∈ [--..--]
+INFO:FRAMAC:  status ∈ [--..--]
+INFO:FRAMAC:  currentBuffer ∈ [--..--]
+INFO:FRAMAC:  returnValue ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp10 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function PoCallDriver:
+INFO:FRAMAC:  s ∈ {4}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  returnVal ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  lcontext ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioPower:
+INFO:FRAMAC:  s ∈ {4}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  Irp__CurrentLocation ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  deviceExtension__TargetDeviceObject ∈ [--..--]
+INFO:FRAMAC:  tmp_2 ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function SendSrbSynchronous:
+INFO:FRAMAC:  ioStatus__Status ∈ [--..--]
+INFO:FRAMAC:  ioctl ∈ {315396; 315412}
+INFO:FRAMAC:  event ∈ [--..--]
+INFO:FRAMAC:  irp ∈ {0}
+INFO:FRAMAC:  status ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp10 ∈ {4116} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp11 ∈ {49152} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp12 ∈ {262144} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp13 ∈ {311296} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp14 ∈ {4100} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp15 ∈ {49152} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp16 ∈ {262144} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp17 ∈ {311296} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741670}
+INFO:FRAMAC:[eva:final-states] Values at end of function ZwClose:
+INFO:FRAMAC:  tmp_ndt_9 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function errorFn:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function stubMoreProcessingRequired:
+INFO:FRAMAC:  s ∈ {5}
+INFO:FRAMAC:[eva:final-states] Values at end of function IofCallDriver:
+INFO:FRAMAC:  s ∈ {1; 4; 6; 7}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  Irp__PendingReturned ∈ [--..--]
+INFO:FRAMAC:  returnVal2 ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  compRetStatus ∈ {-1073741802; -1073741637; 0} or UNINITIALIZED
+INFO:FRAMAC:  lcontext ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp8 ∈ {0; 3221225494; 3221225659} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioForwardIrpSynchronous:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  compRegistered ∈ {1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  routine ∈ {1}
+INFO:FRAMAC:  deviceExtension__TargetDeviceObject ∈ [--..--]
+INFO:FRAMAC:  event ∈ [--..--]
+INFO:FRAMAC:  status ∈ {-1073741637; 0}
+INFO:FRAMAC:  irpSp__Control ∈ {224}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioSendToNextDriver:
+INFO:FRAMAC:  s ∈ {4}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  Irp__CurrentLocation ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  deviceExtension__TargetDeviceObject ∈ [--..--]
+INFO:FRAMAC:  tmp_2 ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudio435DeviceControl:
+INFO:FRAMAC:  s ∈ {2; 4}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670; -1073741637; 0}
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__IoControlCode ∈ [--..--]
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__OutputBufferLength ∈
+INFO:FRAMAC:                                                                  [--..--]
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__InputBufferLength ∈
+INFO:FRAMAC:                                                                 [--..--]
+INFO:FRAMAC:  TrackData__0 ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  srb__TimeOutValue ∈ {10} or UNINITIALIZED
+INFO:FRAMAC:  srb__CdbLength ∈ {10} or UNINITIALIZED
+INFO:FRAMAC:  sizeof__CDROM_TOC ∈ [--..--]
+INFO:FRAMAC:  cdaudioDataOut__LastTrack ∈ [--..--]
+INFO:FRAMAC:  cdaudioDataOut__FirstTrack ∈ [--..--]
+INFO:FRAMAC:  sizeof__CDROM_PLAY_AUDIO_MSF ∈ [--..--]
+INFO:FRAMAC:  sizeof__CDROM_SEEK_AUDIO_MSF ∈ [--..--]
+INFO:FRAMAC:  deviceExtension__Paused ∈ [--..--]
+INFO:FRAMAC:  deviceExtension__PlayActive ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  sizeof__SUB_Q_CHANNEL_DATA ∈ [--..--]
+INFO:FRAMAC:  sizeof__SUB_Q_CURRENT_POSITION ∈ [--..--]
+INFO:FRAMAC:  deviceExtension ∈ [--..--]
+INFO:FRAMAC:  srb ∈ [--..--]
+INFO:FRAMAC:  status ∈
+INFO:FRAMAC:        {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:         -1073741670; 0} or UNINITIALIZED
+INFO:FRAMAC:  i ∈ [--..--]
+INFO:FRAMAC:  Toc ∈ [--..--]
+INFO:FRAMAC:  tmp_15 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  SubQPtr ∈ [--..--]
+INFO:FRAMAC:  userPtr__Format ∈ [--..--]
+INFO:FRAMAC:  SubQPtr___0 ∈ [--..--]
+INFO:FRAMAC:  tmp___0 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  tmp___1 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___2 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp35 ∈ {16384}
+INFO:FRAMAC:  __cil_tmp36 ∈ {131072}
+INFO:FRAMAC:  __cil_tmp37 ∈ {147456}
+INFO:FRAMAC:  __cil_tmp38 ∈ {24} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp39 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp40 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp41 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp42 ∈ {147480} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp43 ∈ {8} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp44 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp45 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp46 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp47 ∈ {147464} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp48 ∈ {4} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp49 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp50 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp51 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp52 ∈ {147460} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp53 ∈ {12} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp54 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp55 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp56 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp57 ∈ {147468} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp58 ∈ {16} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp59 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp60 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp61 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp62 ∈ {147472} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp63 ∈ {44} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp64 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp65 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp66 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp67 ∈ {147500} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp68 ∈ {2056} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp69 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp70 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp71 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp72 ∈ {149512} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp73 ∈ {52} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp74 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp75 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp76 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp77 ∈ {147508} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp78 ∈ {20} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp79 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp80 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp81 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp82 ∈ {147476} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp83 ∈ {40} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp84 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp85 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp86 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp87 ∈ {147496} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp88 ∈ {2048} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp89 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp90 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp91 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp92 ∈ {149504} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp93 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp95 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp96 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp97 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp99 ∈ {8} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp100 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp101 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp102 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp103 ∈ {147464} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp104 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp105 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp106 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp107 ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp109 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp112 ∈ {3221225473} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp113 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp114 ∈ {3221225473} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp115 ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp116 ∈
+INFO:FRAMAC:              {2147483665; 3221225476; 3221225488; 3221225507; 3221225626} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudio535DeviceControl:
+INFO:FRAMAC:  s ∈ {2; 4}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670; -1073741637; 0}
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [--..--]
+INFO:FRAMAC:  DeviceObject__DeviceExtension ∈ [--..--]
+INFO:FRAMAC:  deviceExtension__TargetDeviceObject ∈ [--..--]
+INFO:FRAMAC:  Irp__AssociatedIrp__SystemBuffer ∈ [--..--]
+INFO:FRAMAC:  srb__Cdb ∈ [--..--]
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__IoControlCode ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__OutputBufferLength ∈
+INFO:FRAMAC:                                                                  [--..--]
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__InputBufferLength ∈
+INFO:FRAMAC:                                                                 [--..--]
+INFO:FRAMAC:  srb__CdbLength ∈ {10} or UNINITIALIZED
+INFO:FRAMAC:  cdb__CDB10__OperationCode ∈ {38} or UNINITIALIZED
+INFO:FRAMAC:  srb__TimeOutValue ∈ {10} or UNINITIALIZED
+INFO:FRAMAC:  sizeof__READ_CAPACITY_DATA ∈ [--..--]
+INFO:FRAMAC:  lastSession__LogicalBlockAddress ∈ [--..--]
+INFO:FRAMAC:  cdaudioDataOut__FirstTrack ∈ [--..--]
+INFO:FRAMAC:  cdaudioDataOut__LastTrack ∈ [--..--]
+INFO:FRAMAC:  sizeof__CDROM_TOC ∈ [--..--]
+INFO:FRAMAC:  sizeof__SUB_Q_CURRENT_POSITION ∈ [--..--]
+INFO:FRAMAC:  userPtr__Format ∈ [--..--]
+INFO:FRAMAC:  sizeof__CDROM_PLAY_AUDIO_MSF ∈ [--..--]
+INFO:FRAMAC:  inputBuffer__StartingM ∈ [--..--]
+INFO:FRAMAC:  inputBuffer__EndingM ∈ [--..--]
+INFO:FRAMAC:  inputBuffer__StartingS ∈ [--..--]
+INFO:FRAMAC:  inputBuffer__EndingS ∈ [--..--]
+INFO:FRAMAC:  inputBuffer__StartingF ∈ [--..--]
+INFO:FRAMAC:  inputBuffer__EndingF ∈ [--..--]
+INFO:FRAMAC:  cdb__PLAY_AUDIO_MSF__OperationCode ∈ [--..--]
+INFO:FRAMAC:  sizeof__CDROM_SEEK_AUDIO_MSF ∈ [--..--]
+INFO:FRAMAC:  currentIrpStack ∈ [--..--]
+INFO:FRAMAC:  deviceExtension ∈ [--..--]
+INFO:FRAMAC:  cdaudioDataOut ∈ [--..--]
+INFO:FRAMAC:  srb ∈ [--..--]
+INFO:FRAMAC:  lastSession ∈ [--..--]
+INFO:FRAMAC:  cdb ∈ [--..--]
+INFO:FRAMAC:  status ∈
+INFO:FRAMAC:        {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:         -1073741670} or UNINITIALIZED
+INFO:FRAMAC:  i ∈ [--..--]
+INFO:FRAMAC:  bytesTransfered ∈ [--..--]
+INFO:FRAMAC:  Toc ∈ [--..--]
+INFO:FRAMAC:  tmp_28 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  tmp___1 ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  tmp___2 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp___3 ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  tmp___4 ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  userPtr ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  SubQPtr ∈ [--..--]
+INFO:FRAMAC:  tmp___5 ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  tmp___6 ∈ {-1073741823} or UNINITIALIZED
+INFO:FRAMAC:  inputBuffer ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  inputBuffer___0 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___7 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  tmp___8 ∈
+INFO:FRAMAC:         {-2147483631; -1073741820; -1073741808; -1073741789; -1073741670} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp58 ∈ {56}
+INFO:FRAMAC:  __cil_tmp59 ∈ {16384}
+INFO:FRAMAC:  __cil_tmp60 ∈ {131072}
+INFO:FRAMAC:  __cil_tmp61 ∈ {147456}
+INFO:FRAMAC:  __cil_tmp62 ∈ {147512}
+INFO:FRAMAC:  __cil_tmp63 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp64 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp65 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp66 ∈ {44} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp67 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp68 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp69 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp70 ∈ {147500} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp71 ∈ {24} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp72 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp73 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp74 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp75 ∈ {147480} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp76 ∈ {4} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp77 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp78 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp79 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp80 ∈ {147460} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp81 ∈ {2056} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp82 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp83 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp84 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp85 ∈ {149512} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp86 ∈ {52} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp87 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp88 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp89 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp90 ∈ {147508} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp91 ∈ {20} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp92 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp93 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp94 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp95 ∈ {147476} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp96 ∈ {40} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp97 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp98 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp99 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp100 ∈ {147496} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp101 ∈ {2048} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp102 ∈ {16384} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp103 ∈ {131072} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp104 ∈ {147456} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp105 ∈ {149504} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp108 ∈ {3221225626} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioAtapiDeviceControl:
+INFO:FRAMAC:  s ∈ {2; 4}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  myStatus ∈ {-1073741670; -1073741637; 0}
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__IoControlCode ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  deviceExtension__PlayActive ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  srb__CdbLength ∈ {12} or UNINITIALIZED
+INFO:FRAMAC:  srb__TimeOutValue ∈ {10} or UNINITIALIZED
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  status ∈ {-1073741670} or UNINITIALIZED
+INFO:FRAMAC:  deviceExtension ∈ [--..--]
+INFO:FRAMAC:  srb ∈ [--..--]
+INFO:FRAMAC:  tmp_2 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp13 ∈ {8}
+INFO:FRAMAC:  __cil_tmp14 ∈ {16384}
+INFO:FRAMAC:  __cil_tmp15 ∈ {131072}
+INFO:FRAMAC:  __cil_tmp16 ∈ {147456}
+INFO:FRAMAC:  __cil_tmp17 ∈ {147464}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; -1073741670; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioHPCdrDeviceControl:
+INFO:FRAMAC:  s ∈ {4; 7}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  compRegistered ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  routine ∈ {0}
+INFO:FRAMAC:  currentIrpStack__Parameters__DeviceIoControl__IoControlCode ∈ [--..--]
+INFO:FRAMAC:  deviceExtension__TargetDeviceObject ∈ [--..--]
+INFO:FRAMAC:  irpSp__Control ∈ {224} or UNINITIALIZED
+INFO:FRAMAC:  tmp_1 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp8 ∈ {56}
+INFO:FRAMAC:  __cil_tmp9 ∈ {16384}
+INFO:FRAMAC:  __cil_tmp10 ∈ {131072}
+INFO:FRAMAC:  __cil_tmp11 ∈ {147456}
+INFO:FRAMAC:  __cil_tmp12 ∈ {147512}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioDeviceControl:
+INFO:FRAMAC:  s ∈ {2; 4; 7}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  compRegistered ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  routine ∈ {0}
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670; -1073741637; 0}
+INFO:FRAMAC:  deviceExtension__Active ∈ {0; 1; 2; 3; 7}
+INFO:FRAMAC:  status ∈
+INFO:FRAMAC:        {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:         -1073741670; 0; 259}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioStartDevice:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  compRegistered ∈ {1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  routine ∈ {1}
+INFO:FRAMAC:  deviceExtension__Active ∈ [--..--]
+INFO:FRAMAC:  deviceExtension ∈ [--..--]
+INFO:FRAMAC:  status ∈ {-1073741637; 0}
+INFO:FRAMAC:  srb ∈ [--..--]
+INFO:FRAMAC:  srb__Cdb ∈ [--..--]
+INFO:FRAMAC:  cdb ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  inquiryDataPtr ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  attempt ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  deviceParameterHandle ∈ [--..--]
+INFO:FRAMAC:  keyValue ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741637; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function CdAudioPnp:
+INFO:FRAMAC:  s ∈ {2; 4}
+INFO:FRAMAC:  compRegistered ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  routine ∈ {0; 1}
+INFO:FRAMAC:  myStatus ∈ {-1073741637; 0}
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [--..--]
+INFO:FRAMAC:  irpSp__MinorFunction ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741637; 0} or UNINITIALIZED
+INFO:FRAMAC:  irpSp__Parameters__UsageNotification__Type ∈ [--..--]
+INFO:FRAMAC:  deviceExtension__PagingPathCountEvent ∈ [--..--]
+INFO:FRAMAC:  irpSp__Parameters__UsageNotification__InPath ∈ [--..--]
+INFO:FRAMAC:  deviceExtension__PagingPathCount ∈ [--..--]
+INFO:FRAMAC:  irpSp ∈ [--..--]
+INFO:FRAMAC:  status ∈ {-1073741637; 0}
+INFO:FRAMAC:  setPagable ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  tmp_5 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; -1073741637; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function stub_driver_init:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  s ∈ {0; 1; 2; 4; 7}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {1}
+INFO:FRAMAC:  DC ∈ {2}
+INFO:FRAMAC:  SKIP1 ∈ {3}
+INFO:FRAMAC:  SKIP2 ∈ {4}
+INFO:FRAMAC:  MPR1 ∈ {5}
+INFO:FRAMAC:  MPR3 ∈ {6}
+INFO:FRAMAC:  IPC ∈ {7}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  compFptr ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:  routine ∈ {0; 1}
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483631; -1073741823; -1073741820; -1073741808; -1073741789;
+INFO:FRAMAC:           -1073741670; -1073741637; 0}
+INFO:FRAMAC:  pirp ∈ [--..--]
+INFO:FRAMAC:  Executive ∈ {0}
+INFO:FRAMAC:  Suspended ∈ {5}
+INFO:FRAMAC:  KernelMode ∈ {0}
+INFO:FRAMAC:  DeviceUsageTypePaging ∈ {1}
+INFO:FRAMAC:  pirp__IoStatus__Status ∈ {-1073741637; 0} or UNINITIALIZED
+INFO:FRAMAC:  d ∈ [--..--]
+INFO:FRAMAC:  status ∈ [--..--]
+INFO:FRAMAC:  irp ∈ [--..--]
+INFO:FRAMAC:  we_should_unload ∈ [--..--]
+INFO:FRAMAC:  irp_choice ∈ [--..--]
+INFO:FRAMAC:  devobj ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [-2147483648..259]
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  30 functions analyzed (out of 45): 66% coverage.
+INFO:FRAMAC:  In these functions, 1105 statements reached (out of 1269): 87% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  5 alarms generated by the analysis:
+INFO:FRAMAC:       5 integer overflows
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown

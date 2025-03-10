@@ -1,128 +1,18 @@
+extern void abort(void);
 
+extern void __assert_fail (const char *__assertion, const char *__file,
+      unsigned int __line, const char *__function)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern void __assert_perror_fail (int __errnum, const char *__file,
+      unsigned int __line, const char *__function)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern void __assert (const char *__assertion, const char *__file, int __line)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+/*@ requires unreach: \false;*/ void reach_error() { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "simple-ext.c", 3, __extension__ __PRETTY_FUNCTION__); })); }
+extern int __VERIFIER_nondet_int(void);
 typedef unsigned int size_t;
-extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
-       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern void *memmove (void *__dest, const void *__src, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
-        int __c, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-extern int memcmp (const void *__s1, const void *__s2, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern void *memchr (const void *__s, int __c, size_t __n)
-      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strncpy (char *__restrict __dest,
-        const char *__restrict __src, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strcat (char *__restrict __dest, const char *__restrict __src)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strncat (char *__restrict __dest, const char *__restrict __src,
-        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern int strcmp (const char *__s1, const char *__s2)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern int strncmp (const char *__s1, const char *__s2, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern int strcoll (const char *__s1, const char *__s2)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern size_t strxfrm (char *__restrict __dest,
-         const char *__restrict __src, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
-struct __locale_struct
-{
-  struct __locale_data *__locales[13];
-  const unsigned short int *__ctype_b;
-  const int *__ctype_tolower;
-  const int *__ctype_toupper;
-  const char *__names[13];
-};
-typedef struct __locale_struct *__locale_t;
-typedef __locale_t locale_t;
-extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
-extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
-    locale_t __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
-extern char *strdup (const char *__s)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
-extern char *strndup (const char *__string, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
-extern char *strchr (const char *__s, int __c)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern char *strrchr (const char *__s, int __c)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern size_t strcspn (const char *__s, const char *__reject)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern size_t strspn (const char *__s, const char *__accept)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strpbrk (const char *__s, const char *__accept)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strstr (const char *__haystack, const char *__needle)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strtok (char *__restrict __s, const char *__restrict __delim)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
-extern char *__strtok_r (char *__restrict __s,
-    const char *__restrict __delim,
-    char **__restrict __save_ptr)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
-extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
-         char **__restrict __save_ptr)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
-extern size_t strlen (const char *__s)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern size_t strnlen (const char *__string, size_t __maxlen)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
-extern int strerror_r (int __errnum, char *__buf, size_t __buflen) __asm__ ("" "__xpg_strerror_r") __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
-extern char *strerror_l (int __errnum, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
-
-extern int bcmp (const void *__s1, const void *__s2, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern void bcopy (const void *__src, void *__dest, size_t __n)
-  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-extern char *index (const char *__s, int __c)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern char *rindex (const char *__s, int __c)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
-extern int ffs (int __i) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
-extern int ffsl (long int __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
-__extension__ extern int ffsll (long long int __ll)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
-extern int strcasecmp (const char *__s1, const char *__s2)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
-extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
-extern int strncasecmp_l (const char *__s1, const char *__s2,
-     size_t __n, locale_t __loc)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
-
-extern void explicit_bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
-extern char *strsep (char **__restrict __stringp,
-       const char *__restrict __delim)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *strsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
-extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *__stpncpy (char *__restrict __dest,
-   const char *__restrict __src, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-extern char *stpncpy (char *__restrict __dest,
-        const char *__restrict __src, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
-
-typedef int ptrdiff_t;
 typedef long int wchar_t;
-typedef struct {
-  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
-  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
-  __float128 __max_align_f128 __attribute__((__aligned__(__alignof(__float128))));
-} max_align_t;
 
 typedef enum
 {
@@ -631,107 +521,43 @@ extern int getsubopt (char **__restrict __optionp,
 extern int getloadavg (double __loadavg[], int __nelem)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
-typedef __uint8_t uint8_t;
-typedef __uint16_t uint16_t;
-typedef __uint32_t uint32_t;
-typedef __uint64_t uint64_t;
-typedef signed char int_least8_t;
-typedef short int int_least16_t;
-typedef int int_least32_t;
-__extension__
-typedef long long int int_least64_t;
-typedef unsigned char uint_least8_t;
-typedef unsigned short int uint_least16_t;
-typedef unsigned int uint_least32_t;
-__extension__
-typedef unsigned long long int uint_least64_t;
-typedef signed char int_fast8_t;
-typedef int int_fast16_t;
-typedef int int_fast32_t;
-__extension__
-typedef long long int int_fast64_t;
-typedef unsigned char uint_fast8_t;
-typedef unsigned int uint_fast16_t;
-typedef unsigned int uint_fast32_t;
-__extension__
-typedef unsigned long long int uint_fast64_t;
-typedef int intptr_t;
-typedef unsigned int uintptr_t;
-typedef __intmax_t intmax_t;
-typedef __uintmax_t uintmax_t;
-typedef struct UT_hash_bucket {
-   struct UT_hash_handle *hh_head;
-   unsigned count;
-   unsigned expand_mult;
-} UT_hash_bucket;
-typedef struct UT_hash_table {
-   UT_hash_bucket *buckets;
-   unsigned num_buckets, log2_num_buckets;
-   unsigned num_items;
-   struct UT_hash_handle *tail;
-   ptrdiff_t hho;
-   unsigned ideal_chain_maxlen;
-   unsigned nonideal_items;
-   unsigned ineff_expands, noexpand;
-   uint32_t signature;
-} UT_hash_table;
-typedef struct UT_hash_handle {
-   struct UT_hash_table *tbl;
-   void *prev;
-   void *next;
-   struct UT_hash_handle *hh_prev;
-   struct UT_hash_handle *hh_next;
-   void *key;
-   unsigned keylen;
-   unsigned hashv;
-} UT_hash_handle;
-
-extern void __assert_fail (const char *__assertion, const char *__file,
-      unsigned int __line, const char *__function)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
-extern void __assert_perror_fail (int __errnum, const char *__file,
-      unsigned int __line, const char *__function)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
-extern void __assert (const char *__assertion, const char *__file, int __line)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
-
-/*@ requires unreach: \false;*/ void reach_error() {
-  ((void) sizeof ((0) ? 1 : 0), __extension__ ({ if (0) ; else __assert_fail ("0", "uthash_SFH_test7-1.c", 6, __extension__ __PRETTY_FUNCTION__); }));
+void myexit(int s) {
+ _EXIT: goto _EXIT;
 }
-void __VERIFIER_assert(int cond) {
-  if (!cond) {
-    reach_error();
+typedef struct node {
+  int h;
+  struct node *n;
+} *List;
+int main() {
+  List a = (List) malloc(sizeof(struct node));
+  if (a == 0) myexit(1);
+  List t;
+  List p = a;
+  int i = 0;
+  while (i < 30 && __VERIFIER_nondet_int()) {
+    p->h = i;
+    t = (List) malloc(sizeof(struct node));
+    if (t == 0) myexit(1);
+    p->n = t;
+    p = p->n;
+    i++;
   }
-}
-typedef struct example_user_t {
-    int id;
-    int cookie;
-    UT_hash_handle hh;
-} example_user_t;
-int main()
-{
-    int i;
-    example_user_t *user, *tmp, *users=((void *)0);
-    for(i=0; i<1000; i++) {
-        user = (example_user_t*)malloc(sizeof(example_user_t));
-        if (user == ((void *)0)) {
-            exit(-1);
-        }
-        user->id = i;
-        user->cookie = i*i;
-        do { unsigned _ha_hashv; do { do { unsigned _hj_i,_hj_j,_hj_k; unsigned const char *_hj_key=(unsigned const char*)(&((user)->id)); _ha_hashv = 0xfeedbeefu; _hj_i = _hj_j = 0x9e3779b9u; _hj_k = (unsigned)(sizeof(int)); while (_hj_k >= 12U) { _hj_i += (_hj_key[0] + ( (unsigned)_hj_key[1] << 8 ) + ( (unsigned)_hj_key[2] << 16 ) + ( (unsigned)_hj_key[3] << 24 ) ); _hj_j += (_hj_key[4] + ( (unsigned)_hj_key[5] << 8 ) + ( (unsigned)_hj_key[6] << 16 ) + ( (unsigned)_hj_key[7] << 24 ) ); _ha_hashv += (_hj_key[8] + ( (unsigned)_hj_key[9] << 8 ) + ( (unsigned)_hj_key[10] << 16 ) + ( (unsigned)_hj_key[11] << 24 ) ); do { _hj_i -= _hj_j; _hj_i -= _ha_hashv; _hj_i ^= ( _ha_hashv >> 13 ); _hj_j -= _ha_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 8 ); _ha_hashv -= _hj_i; _ha_hashv -= _hj_j; _ha_hashv ^= ( _hj_j >> 13 ); _hj_i -= _hj_j; _hj_i -= _ha_hashv; _hj_i ^= ( _ha_hashv >> 12 ); _hj_j -= _ha_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 16 ); _ha_hashv -= _hj_i; _ha_hashv -= _hj_j; _ha_hashv ^= ( _hj_j >> 5 ); _hj_i -= _hj_j; _hj_i -= _ha_hashv; _hj_i ^= ( _ha_hashv >> 3 ); _hj_j -= _ha_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 10 ); _ha_hashv -= _hj_i; _ha_hashv -= _hj_j; _ha_hashv ^= ( _hj_j >> 15 ); } while (0); _hj_key += 12; _hj_k -= 12U; } _ha_hashv += (unsigned)(sizeof(int)); switch ( _hj_k ) { case 11: _ha_hashv += ( (unsigned)_hj_key[10] << 24 ); case 10: _ha_hashv += ( (unsigned)_hj_key[9] << 16 ); case 9: _ha_hashv += ( (unsigned)_hj_key[8] << 8 ); case 8: _hj_j += ( (unsigned)_hj_key[7] << 24 ); case 7: _hj_j += ( (unsigned)_hj_key[6] << 16 ); case 6: _hj_j += ( (unsigned)_hj_key[5] << 8 ); case 5: _hj_j += _hj_key[4]; case 4: _hj_i += ( (unsigned)_hj_key[3] << 24 ); case 3: _hj_i += ( (unsigned)_hj_key[2] << 16 ); case 2: _hj_i += ( (unsigned)_hj_key[1] << 8 ); case 1: _hj_i += _hj_key[0]; } do { _hj_i -= _hj_j; _hj_i -= _ha_hashv; _hj_i ^= ( _ha_hashv >> 13 ); _hj_j -= _ha_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 8 ); _ha_hashv -= _hj_i; _ha_hashv -= _hj_j; _ha_hashv ^= ( _hj_j >> 13 ); _hj_i -= _hj_j; _hj_i -= _ha_hashv; _hj_i ^= ( _ha_hashv >> 12 ); _hj_j -= _ha_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 16 ); _ha_hashv -= _hj_i; _ha_hashv -= _hj_j; _ha_hashv ^= ( _hj_j >> 5 ); _hj_i -= _hj_j; _hj_i -= _ha_hashv; _hj_i ^= ( _ha_hashv >> 3 ); _hj_j -= _ha_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 10 ); _ha_hashv -= _hj_i; _ha_hashv -= _hj_j; _ha_hashv ^= ( _hj_j >> 15 ); } while (0); } while (0); } while (0); do { (user)->hh.hashv = (_ha_hashv); (user)->hh.key = (char*) (&((user)->id)); (user)->hh.keylen = (unsigned) (sizeof(int)); if (!(users)) { (user)->hh.next = ((void *)0); (user)->hh.prev = ((void *)0); do { (user)->hh.tbl = (UT_hash_table*)malloc(sizeof(UT_hash_table)); if (!(user)->hh.tbl) { exit(-1); } else { memset((user)->hh.tbl,'\0',sizeof(UT_hash_table)); (user)->hh.tbl->tail = &((user)->hh); (user)->hh.tbl->num_buckets = 32U; (user)->hh.tbl->log2_num_buckets = 5U; (user)->hh.tbl->hho = (char*)(&(user)->hh) - (char*)(user); (user)->hh.tbl->buckets = (UT_hash_bucket*)malloc(32U * sizeof(struct UT_hash_bucket)); (user)->hh.tbl->signature = 0xa0111fe1u; if (!(user)->hh.tbl->buckets) { exit(-1); free((user)->hh.tbl); } else { memset((user)->hh.tbl->buckets,'\0',32U * sizeof(struct UT_hash_bucket)); ; } } } while (0); (users) = (user); } else { (user)->hh.tbl = (users)->hh.tbl; do { (user)->hh.next = ((void *)0); (user)->hh.prev = ((void*)(((char*)((users)->hh.tbl->tail)) - (((users)->hh.tbl)->hho))); (users)->hh.tbl->tail->next = (user); (users)->hh.tbl->tail = &((user)->hh); } while (0); } do { unsigned _ha_bkt; (users)->hh.tbl->num_items++; do { _ha_bkt = ((_ha_hashv) & (((users)->hh.tbl->num_buckets) - 1U)); } while (0); do { UT_hash_bucket *_ha_head = &((users)->hh.tbl->buckets[_ha_bkt]); _ha_head->count++; (&(user)->hh)->hh_next = _ha_head->hh_head; (&(user)->hh)->hh_prev = ((void *)0); if (_ha_head->hh_head != ((void *)0)) { _ha_head->hh_head->hh_prev = (&(user)->hh); } _ha_head->hh_head = (&(user)->hh); if ((_ha_head->count >= ((_ha_head->expand_mult + 1U) * 10U)) && !(&(user)->hh)->tbl->noexpand) { do { unsigned _he_bkt; unsigned _he_bkt_i; struct UT_hash_handle *_he_thh, *_he_hh_nxt; UT_hash_bucket *_he_new_buckets, *_he_newbkt; _he_new_buckets = (UT_hash_bucket*)malloc(2UL * ((&(user)->hh)->tbl)->num_buckets * sizeof(struct UT_hash_bucket)); if (!_he_new_buckets) { exit(-1); } else { memset(_he_new_buckets,'\0',2UL * ((&(user)->hh)->tbl)->num_buckets * sizeof(struct UT_hash_bucket)); ((&(user)->hh)->tbl)->ideal_chain_maxlen = (((&(user)->hh)->tbl)->num_items >> (((&(user)->hh)->tbl)->log2_num_buckets+1U)) + (((((&(user)->hh)->tbl)->num_items & ((((&(user)->hh)->tbl)->num_buckets*2U)-1U)) != 0U) ? 1U : 0U); ((&(user)->hh)->tbl)->nonideal_items = 0; for (_he_bkt_i = 0; _he_bkt_i < ((&(user)->hh)->tbl)->num_buckets; _he_bkt_i++) { _he_thh = ((&(user)->hh)->tbl)->buckets[ _he_bkt_i ].hh_head; while (_he_thh != ((void *)0)) { _he_hh_nxt = _he_thh->hh_next; do { _he_bkt = ((_he_thh->hashv) & ((((&(user)->hh)->tbl)->num_buckets * 2U) - 1U)); } while (0); _he_newbkt = &(_he_new_buckets[_he_bkt]); if (++(_he_newbkt->count) > ((&(user)->hh)->tbl)->ideal_chain_maxlen) { ((&(user)->hh)->tbl)->nonideal_items++; if (_he_newbkt->count > _he_newbkt->expand_mult * ((&(user)->hh)->tbl)->ideal_chain_maxlen) { _he_newbkt->expand_mult++; } } _he_thh->hh_prev = ((void *)0); _he_thh->hh_next = _he_newbkt->hh_head; if (_he_newbkt->hh_head != ((void *)0)) { _he_newbkt->hh_head->hh_prev = _he_thh; } _he_newbkt->hh_head = _he_thh; _he_thh = _he_hh_nxt; } } free(((&(user)->hh)->tbl)->buckets); ((&(user)->hh)->tbl)->num_buckets *= 2U; ((&(user)->hh)->tbl)->log2_num_buckets++; ((&(user)->hh)->tbl)->buckets = _he_new_buckets; ((&(user)->hh)->tbl)->ineff_expands = (((&(user)->hh)->tbl)->nonideal_items > (((&(user)->hh)->tbl)->num_items >> 1)) ? (((&(user)->hh)->tbl)->ineff_expands+1U) : 0U; if (((&(user)->hh)->tbl)->ineff_expands > 1U) { ((&(user)->hh)->tbl)->noexpand = 1; ; } ; } } while (0); } } while (0); ; ; } while (0); ; } while (0); } while (0);
+  p->h = i;
+  p->n = 0;
+  p = a;
+  i = 0;
+  while (p!=0) {
+    if (p->h != 1) {
+      ERROR: {reach_error();abort();}
     }
-    for(i=0; i<1000; i++) {
-        do { unsigned _hf_hashv; do { do { unsigned _hj_i,_hj_j,_hj_k; unsigned const char *_hj_key=(unsigned const char*)(&i); _hf_hashv = 0xfeedbeefu; _hj_i = _hj_j = 0x9e3779b9u; _hj_k = (unsigned)(sizeof(int)); while (_hj_k >= 12U) { _hj_i += (_hj_key[0] + ( (unsigned)_hj_key[1] << 8 ) + ( (unsigned)_hj_key[2] << 16 ) + ( (unsigned)_hj_key[3] << 24 ) ); _hj_j += (_hj_key[4] + ( (unsigned)_hj_key[5] << 8 ) + ( (unsigned)_hj_key[6] << 16 ) + ( (unsigned)_hj_key[7] << 24 ) ); _hf_hashv += (_hj_key[8] + ( (unsigned)_hj_key[9] << 8 ) + ( (unsigned)_hj_key[10] << 16 ) + ( (unsigned)_hj_key[11] << 24 ) ); do { _hj_i -= _hj_j; _hj_i -= _hf_hashv; _hj_i ^= ( _hf_hashv >> 13 ); _hj_j -= _hf_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 8 ); _hf_hashv -= _hj_i; _hf_hashv -= _hj_j; _hf_hashv ^= ( _hj_j >> 13 ); _hj_i -= _hj_j; _hj_i -= _hf_hashv; _hj_i ^= ( _hf_hashv >> 12 ); _hj_j -= _hf_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 16 ); _hf_hashv -= _hj_i; _hf_hashv -= _hj_j; _hf_hashv ^= ( _hj_j >> 5 ); _hj_i -= _hj_j; _hj_i -= _hf_hashv; _hj_i ^= ( _hf_hashv >> 3 ); _hj_j -= _hf_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 10 ); _hf_hashv -= _hj_i; _hf_hashv -= _hj_j; _hf_hashv ^= ( _hj_j >> 15 ); } while (0); _hj_key += 12; _hj_k -= 12U; } _hf_hashv += (unsigned)(sizeof(int)); switch ( _hj_k ) { case 11: _hf_hashv += ( (unsigned)_hj_key[10] << 24 ); case 10: _hf_hashv += ( (unsigned)_hj_key[9] << 16 ); case 9: _hf_hashv += ( (unsigned)_hj_key[8] << 8 ); case 8: _hj_j += ( (unsigned)_hj_key[7] << 24 ); case 7: _hj_j += ( (unsigned)_hj_key[6] << 16 ); case 6: _hj_j += ( (unsigned)_hj_key[5] << 8 ); case 5: _hj_j += _hj_key[4]; case 4: _hj_i += ( (unsigned)_hj_key[3] << 24 ); case 3: _hj_i += ( (unsigned)_hj_key[2] << 16 ); case 2: _hj_i += ( (unsigned)_hj_key[1] << 8 ); case 1: _hj_i += _hj_key[0]; } do { _hj_i -= _hj_j; _hj_i -= _hf_hashv; _hj_i ^= ( _hf_hashv >> 13 ); _hj_j -= _hf_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 8 ); _hf_hashv -= _hj_i; _hf_hashv -= _hj_j; _hf_hashv ^= ( _hj_j >> 13 ); _hj_i -= _hj_j; _hj_i -= _hf_hashv; _hj_i ^= ( _hf_hashv >> 12 ); _hj_j -= _hf_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 16 ); _hf_hashv -= _hj_i; _hf_hashv -= _hj_j; _hf_hashv ^= ( _hj_j >> 5 ); _hj_i -= _hj_j; _hj_i -= _hf_hashv; _hj_i ^= ( _hf_hashv >> 3 ); _hj_j -= _hf_hashv; _hj_j -= _hj_i; _hj_j ^= ( _hj_i << 10 ); _hf_hashv -= _hj_i; _hf_hashv -= _hj_j; _hf_hashv ^= ( _hj_j >> 15 ); } while (0); } while (0); } while (0); do { (tmp) = ((void *)0); if (users) { unsigned _hf_bkt; do { _hf_bkt = ((_hf_hashv) & (((users)->hh.tbl->num_buckets) - 1U)); } while (0); if ((1) != 0) { do { if (((users)->hh.tbl->buckets[ _hf_bkt ]).hh_head != ((void *)0)) { do { (tmp) = (__typeof(tmp))(((void*)(((char*)(((users)->hh.tbl->buckets[ _hf_bkt ]).hh_head)) - (((users)->hh.tbl)->hho)))); } while (0); } else { (tmp) = ((void *)0); } while ((tmp) != ((void *)0)) { if ((tmp)->hh.hashv == (_hf_hashv) && (tmp)->hh.keylen == (sizeof(int))) { if (memcmp((tmp)->hh.key,&i,sizeof(int)) == 0) { break; } } if ((tmp)->hh.hh_next != ((void *)0)) { do { (tmp) = (__typeof(tmp))(((void*)(((char*)((tmp)->hh.hh_next)) - (((users)->hh.tbl)->hho)))); } while (0); } else { (tmp) = ((void *)0); } } } while (0); } } } while (0); } while (0);
-        if (tmp != ((void *)0)) {
-            do { struct UT_hash_handle *_hd_hh_del = (&(tmp)->hh); if ((_hd_hh_del->prev == ((void *)0)) && (_hd_hh_del->next == ((void *)0))) { ; free((users)->hh.tbl->buckets); free((users)->hh.tbl); (users) = ((void *)0); } else { unsigned _hd_bkt; if (_hd_hh_del == (users)->hh.tbl->tail) { (users)->hh.tbl->tail = ((UT_hash_handle *)(((char*)(_hd_hh_del->prev)) + (((users)->hh.tbl)->hho))); } if (_hd_hh_del->prev != ((void *)0)) { ((UT_hash_handle *)(((char*)(_hd_hh_del->prev)) + (((users)->hh.tbl)->hho)))->next = _hd_hh_del->next; } else { do { (users) = (__typeof(users))(_hd_hh_del->next); } while (0); } if (_hd_hh_del->next != ((void *)0)) { ((UT_hash_handle *)(((char*)(_hd_hh_del->next)) + (((users)->hh.tbl)->hho)))->prev = _hd_hh_del->prev; } do { _hd_bkt = ((_hd_hh_del->hashv) & (((users)->hh.tbl->num_buckets) - 1U)); } while (0); do { UT_hash_bucket *_hd_head = &((users)->hh.tbl->buckets[_hd_bkt]); _hd_head->count--; if (_hd_head->hh_head == (_hd_hh_del)) { _hd_head->hh_head = (_hd_hh_del)->hh_next; } if ((_hd_hh_del)->hh_prev) { (_hd_hh_del)->hh_prev->hh_next = (_hd_hh_del)->hh_next; } if ((_hd_hh_del)->hh_next) { (_hd_hh_del)->hh_next->hh_prev = (_hd_hh_del)->hh_prev; } } while (0); (users)->hh.tbl->num_items--; } ; } while (0);
-            free(tmp);
-        } else {
-            reach_error();
-        }
-    }
-    for(user=users; user != ((void *)0); user=(example_user_t*)(user->hh.next)) {
-        reach_error();
-    }
-    return 0;
+    p = p->n;
+    i++;
+  }
+  p = a;
+  while (p!=0) {
+    struct node *tmp = p->n;
+    free(p);
+    p = tmp;
+  }
+  return 0;
 }

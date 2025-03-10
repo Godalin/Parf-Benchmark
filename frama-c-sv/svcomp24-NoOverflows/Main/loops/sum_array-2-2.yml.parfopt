@@ -1,0 +1,170 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 7 -eva-subdivide-non-linear 13 -eva-split-return auto -eva-slevel 46 -eva-remove-redundant-alarms -eva-plevel 92 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 31 -eva-equality-through-calls formals -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 24 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:27: Warning: 
+INFO:FRAMAC:  Calling function __VERIFIER_nondet_uint that is declared without prototype.
+INFO:FRAMAC:  Its formals will be inferred from actual arguments
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(__fc_vla_alloc) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
+INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
+INFO:FRAMAC:  assertion 'alloca_bounds' got status unknown.
+INFO:FRAMAC:[eva] output/program.c:31: allocating variable __malloc_main_l31
+INFO:FRAMAC:[eva] output/program.c:31: allocating variable __malloc_main_l31_0
+INFO:FRAMAC:[eva] output/program.c:31: allocating variable __malloc_main_l31_1
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:35: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(A + i);
+INFO:FRAMAC:[eva] output/program.c:33: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:35: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(A + i);
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:38: Automatic loop unrolling.
+INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(B + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:40: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(B + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(B + i);
+INFO:FRAMAC:[eva] output/program.c:38: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:43: Automatic loop unrolling.
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(C + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(B + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(B + i);
+INFO:FRAMAC:[eva] output/program.c:43: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:43: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ *(A + i) + *(B + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert *(A + i) + *(B + i) ≤ 2147483647;
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:45: Automatic loop unrolling.
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(C + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(B + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:20: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(C + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(A + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(B + i);
+INFO:FRAMAC:[eva] output/program.c:45: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ *(A + i) + *(B + i);
+INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
+INFO:FRAMAC:  signed overflow. assert *(A + i) + *(B + i) ≤ 2147483647;
+INFO:FRAMAC:[scope:rm_asserts] removing 5 assertion(s)
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_uint:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  5 functions analyzed (out of 20): 25% coverage.
+INFO:FRAMAC:  In these functions, 85 statements reached (out of 88): 96% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  23 alarms generated by the analysis:
+INFO:FRAMAC:      12 invalid memory accesses
+INFO:FRAMAC:       7 accesses to uninitialized left-values
+INFO:FRAMAC:       4 integer overflows
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     3 unknown     0 invalid      3 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     1 invalid      3 total
+INFO:FRAMAC:  33% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function assume_abort_if_not
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown

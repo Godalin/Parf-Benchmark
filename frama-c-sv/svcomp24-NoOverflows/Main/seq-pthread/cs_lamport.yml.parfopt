@@ -1,0 +1,262 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 15 -eva-plevel 30 -eva-partition-history 1 -eva-min-loop-unroll 1 -eva-ilevel 20 -eva-equality-through-calls none -eva-domains cvalue,octagon -eva-auto-loop-unroll 8 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:181: Warning: 
+INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:186: Warning: 
+INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:CERT:MSC:37] output/program.c:756: Warning: 
+INFO:FRAMAC:  Body of function thr1 falls-through. Adding a return statement
+INFO:FRAMAC:[kernel:CERT:MSC:37] output/program.c:833: Warning: 
+INFO:FRAMAC:  Body of function thr2 falls-through. Adding a return statement
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:850: Warning: 
+INFO:FRAMAC:  implicit conversion between incompatible function types:
+INFO:FRAMAC:  void *(*)(void)
+INFO:FRAMAC:  and
+INFO:FRAMAC:  void *(*)(void *)
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:850: Warning: 
+INFO:FRAMAC:  expected 'void *(*)(void *)' but got argument of type 'void *(*)(void)': & thr1
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:852: Warning: 
+INFO:FRAMAC:  implicit conversion between incompatible function types:
+INFO:FRAMAC:  void *(*)(void)
+INFO:FRAMAC:  and
+INFO:FRAMAC:  void *(*)(void *)
+INFO:FRAMAC:[kernel:typing:incompatible-types-call] output/program.c:852: Warning: 
+INFO:FRAMAC:  expected 'void *(*)(void *)' but got argument of type 'void *(*)(void)': & thr2
+INFO:FRAMAC:[kernel:CERT:MSC:37] output/program.c:857: Warning: 
+INFO:FRAMAC:  Body of function main_thread falls-through. Adding a return statement
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  __CS_round ∈ {0}
+INFO:FRAMAC:  __CS_ret ∈ {0}
+INFO:FRAMAC:  __CS_ret_PREEMPTED ∈ {1}
+INFO:FRAMAC:  __CS_ret_ERROR ∈ {2}
+INFO:FRAMAC:  __CS_ret_FINISHED ∈ {4}
+INFO:FRAMAC:  __CS_error ∈ {0}
+INFO:FRAMAC:  __CS_thread_index ∈ {0}
+INFO:FRAMAC:  __CS_thread_allocated[0..2] ∈ {0}
+INFO:FRAMAC:  __CS_thread_born_round[0..2] ∈ {0}
+INFO:FRAMAC:  __CS_thread[0..2] ∈ {0}
+INFO:FRAMAC:  __CS_thread_status[0..2][0..2] ∈ {0}
+INFO:FRAMAC:  __THREAD_UNUSED ∈ {0}
+INFO:FRAMAC:  __THREAD_RUNNING ∈ {1}
+INFO:FRAMAC:  __THREAD_FINISHED ∈ {2}
+INFO:FRAMAC:  __CS_thread_lockedon[0..2][0..2] ∈ {0}
+INFO:FRAMAC:  x[0..2] ∈ {0}
+INFO:FRAMAC:  y[0..2] ∈ {0}
+INFO:FRAMAC:  b1[0..2] ∈ {0}
+INFO:FRAMAC:  b2[0..2] ∈ {0}
+INFO:FRAMAC:  X[0..2] ∈ {0}
+INFO:FRAMAC:  __CS_u ∈ {0}
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:869: Automatic loop unrolling.
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:875: Automatic loop unrolling.
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_long_interval
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:alarm] output/program.c:858: Warning: 
+INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
+INFO:FRAMAC:[eva:alarm] output/program.c:917: Warning: 
+INFO:FRAMAC:  pointer to function with incompatible type.
+INFO:FRAMAC:  assert \valid_function(__CS_thread[1]);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:713: loop not completely unrolled
+INFO:FRAMAC:[eva:alarm] output/program.c:767: Warning: 
+INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
+INFO:FRAMAC:[eva:alarm] output/program.c:923: Warning: 
+INFO:FRAMAC:  pointer to function with incompatible type.
+INFO:FRAMAC:  assert \valid_function(__CS_thread[2]);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:790: loop not completely unrolled
+INFO:FRAMAC:[eva:alarm] output/program.c:844: Warning: 
+INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
+INFO:FRAMAC:[eva:alarm] output/program.c:542: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __CS_pthread_create:
+INFO:FRAMAC:  __CS_thread_index ∈ {1; 2}
+INFO:FRAMAC:  __CS_thread_allocated[0..1] ∈ {1}
+INFO:FRAMAC:                       [2] ∈ {0; 1}
+INFO:FRAMAC:  __CS_thread_born_round[0] ∈ {0}
+INFO:FRAMAC:                        [1..2] ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_thread[0] ∈ {{ &main_thread }}
+INFO:FRAMAC:             [1] ∈ {{ (void *(*)(void *))&thr1 }}
+INFO:FRAMAC:             [2] ∈ {{ NULL ; (void *(*)(void *))&thr2 }}
+INFO:FRAMAC:  __CS_thread_status[0][0] ∈ {1}
+INFO:FRAMAC:                    [0][1..2] ∈ {0; 1}
+INFO:FRAMAC:                    [1..2][0..2] ∈ [--..--]
+INFO:FRAMAC:  t1 ∈ {1}
+INFO:FRAMAC:  t2 ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {1; 2}
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_uchar:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_ulong:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function __CS_cs:
+INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_ret ∈ {0; 1; 2}
+INFO:FRAMAC:  k ∈ {0; 1; 2}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __CS_pthread_join:
+INFO:FRAMAC:  __CS_ret ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_error ∈ {0; 1}
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function main_thread:
+INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_ret ∈ {1; 2}
+INFO:FRAMAC:  __CS_error ∈ {0; 1}
+INFO:FRAMAC:  __CS_thread_index ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_thread_allocated[0] ∈ {1}
+INFO:FRAMAC:                       [1..2] ∈ {0; 1}
+INFO:FRAMAC:  __CS_thread_born_round[0] ∈ {0}
+INFO:FRAMAC:                        [1..2] ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_thread[0] ∈ {{ &main_thread }}
+INFO:FRAMAC:             [1] ∈ {{ NULL ; (void *(*)(void *))&thr1 }}
+INFO:FRAMAC:             [2] ∈ {{ NULL ; (void *(*)(void *))&thr2 }}
+INFO:FRAMAC:  __CS_thread_status[0][0] ∈ {1}
+INFO:FRAMAC:                    [0][1..2] ∈ {0; 1}
+INFO:FRAMAC:                    [1..2][0..2] ∈ [--..--]
+INFO:FRAMAC:  t1 ∈ [--..--]
+INFO:FRAMAC:  t2 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function thr1:
+INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_ret ∈ {1; 2}
+INFO:FRAMAC:  __CS_error ∈ {0; 1}
+INFO:FRAMAC:  x[0] ∈ {0; 1}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  y[0] ∈ {0; 1}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  b1[0] ∈ {0; 1}
+INFO:FRAMAC:    [1..2] ∈ [--..--]
+INFO:FRAMAC:  X[0] ∈ {0}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function thr2:
+INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_ret ∈ {1; 2}
+INFO:FRAMAC:  __CS_error ∈ {0; 1}
+INFO:FRAMAC:  x[0] ∈ {0; 1; 2}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  y[0] ∈ {0; 1; 2}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  b2[0] ∈ {0; 1}
+INFO:FRAMAC:    [1..2] ∈ [--..--]
+INFO:FRAMAC:  X[0] ∈ {0; 1}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_ret ∈ {1}
+INFO:FRAMAC:  __CS_error ∈ {0}
+INFO:FRAMAC:  __CS_thread_index ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_thread_allocated[0] ∈ {1}
+INFO:FRAMAC:                       [1..2] ∈ {0; 1}
+INFO:FRAMAC:  __CS_thread_born_round[0] ∈ {0}
+INFO:FRAMAC:                        [1..2] ∈ {0; 1; 2}
+INFO:FRAMAC:  __CS_thread[0] ∈ {{ &main_thread }}
+INFO:FRAMAC:             [1] ∈ {{ NULL ; (void *(*)(void *))&thr1 }}
+INFO:FRAMAC:             [2] ∈ {{ NULL ; (void *(*)(void *))&thr2 }}
+INFO:FRAMAC:  __CS_thread_status[0][0] ∈ {1; 2}
+INFO:FRAMAC:                    [0][1..2] ∈ {0; 1}
+INFO:FRAMAC:                    [1..2][0..2] ∈ [--..--]
+INFO:FRAMAC:  __CS_thread_lockedon[0..2][0..2] ∈ {0}
+INFO:FRAMAC:  x[0] ∈ {0; 1; 2}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  y[0] ∈ {0; 1; 2}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  b1[0] ∈ {0; 1}
+INFO:FRAMAC:    [1..2] ∈ [--..--]
+INFO:FRAMAC:  b2[0] ∈ {0; 1}
+INFO:FRAMAC:    [1..2] ∈ [--..--]
+INFO:FRAMAC:  X[0] ∈ {0; 1}
+INFO:FRAMAC:   [1..2] ∈ [--..--]
+INFO:FRAMAC:  __CS_cp___CS_thread_status[0][0..2] ∈ [--..--]
+INFO:FRAMAC:                            [1][0] ∈ {1; 2}
+INFO:FRAMAC:                            [1][1..2] ∈ {0; 1}
+INFO:FRAMAC:                            [2][0..2] ∈ [--..--]
+INFO:FRAMAC:  __CS_cp___CS_thread_lockedon[0][0..2] ∈ [--..--]
+INFO:FRAMAC:                              [1..2][0..2] ∈ {0}
+INFO:FRAMAC:  __CS_cp_x[0] ∈ [--..--]
+INFO:FRAMAC:           [1] ∈ {0; 1; 2}
+INFO:FRAMAC:           [2] ∈ [--..--]
+INFO:FRAMAC:  __CS_cp_y[0] ∈ [--..--]
+INFO:FRAMAC:           [1] ∈ {0; 1; 2}
+INFO:FRAMAC:           [2] ∈ [--..--]
+INFO:FRAMAC:  __CS_cp_b1[0] ∈ [--..--]
+INFO:FRAMAC:            [1] ∈ {0; 1}
+INFO:FRAMAC:            [2] ∈ [--..--]
+INFO:FRAMAC:  __CS_cp_b2[0] ∈ [--..--]
+INFO:FRAMAC:            [1] ∈ {0; 1}
+INFO:FRAMAC:            [2] ∈ [--..--]
+INFO:FRAMAC:  __CS_cp_X[0] ∈ [--..--]
+INFO:FRAMAC:           [1] ∈ {0; 1}
+INFO:FRAMAC:           [2] ∈ [--..--]
+INFO:FRAMAC:  i ∈ {3}
+INFO:FRAMAC:  j ∈ {3}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  13 functions analyzed (out of 41): 31% coverage.
+INFO:FRAMAC:  In these functions, 538 statements reached (out of 596): 90% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    9 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  2 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     3 invalid      3 total
+INFO:FRAMAC:    Preconditions     3 valid     0 unknown     1 invalid      4 total
+INFO:FRAMAC:  42% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __CS_assert
+INFO:FRAMAC:[rte:annot] annotating function __CS_assume
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_cond_broadcast
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_cond_init
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_cond_signal
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_cond_wait
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_mutex_destroy
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_mutex_init
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_mutex_lock
+INFO:FRAMAC:[rte:annot] annotating function __CS_pthread_mutex_unlock
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __bswap_32
+INFO:FRAMAC:[rte:annot] annotating function __bswap_64
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function __uint16_identity
+INFO:FRAMAC:[rte:annot] annotating function __uint32_identity
+INFO:FRAMAC:[rte:annot] annotating function __uint64_identity
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

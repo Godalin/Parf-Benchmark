@@ -1,0 +1,21 @@
+format_version: '2.0'
+input_files: recursified_bin-suffix-5.c
+options:
+  data_model: ILP32
+  language: C
+properties:
+- expected_verdict: true
+  property_file: ../properties/no-overflow.prp
+- expected_verdict: false
+  property_file: ../properties/termination.prp
+- expected_verdict: true
+  property_file: ../properties/unreach-call.prp
+# This is a trivial property for this task:
+# The task only uses a single integer variable.
+# This integer variable is referenced by a pointer, but the pointer use is very straightforward.
+# There is no pointer arithmetics or aliasing involved.
+#- expected_verdict: true
+#  property_file: ../properties/valid-memsafety.prp
+
+# original_yaml_file: bin-suffix-5.yml
+# original_input_files: bin-suffix-5.c

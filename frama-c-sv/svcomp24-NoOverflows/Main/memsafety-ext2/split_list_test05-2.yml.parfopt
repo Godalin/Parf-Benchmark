@@ -1,0 +1,625 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:188: Warning: 
+INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:193: Warning: 
+INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] output/program.c:574: allocating variable __malloc_main_l574
+INFO:FRAMAC:[eva:alarm] output/program.c:575: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&list->first);
+INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559
+INFO:FRAMAC:[eva:alarm] output/program.c:560: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&node->data);
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] output/program.c:578: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:580: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:570: Warning: 
+INFO:FRAMAC:  out of bounds write. assert \valid(&(head->last)->next);
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_0
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_1
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_2
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_3
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_4
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_5
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_6
+INFO:FRAMAC:[eva] output/program.c:591: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:593: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_7
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_8
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_9
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_10
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_11
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_12
+INFO:FRAMAC:[eva] output/program.c:559: allocating variable __malloc_append_l559_13
+INFO:FRAMAC:[eva] output/program.c:604: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:606: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:612: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:612: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((cursor->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((cursor->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((((cursor->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&((((cursor->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((((cursor->next)->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&((((cursor->next)->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((((cursor->next)->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((((cursor->next)->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:614: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:616: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&next);
+INFO:FRAMAC:[eva] output/program.c:613: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&cursor->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((((cursor->next)->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:614: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:622: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&next);
+INFO:FRAMAC:[eva] output/program.c:619: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:620: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&cursor->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((cursor->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((cursor->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((((cursor->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&((((cursor->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(cursor->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((cursor->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&(((cursor->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&((((cursor->next)->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&((((cursor->next)->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&((((cursor->next)->next)->next)->next)->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value.
+INFO:FRAMAC:  assert \initialized(&(((((cursor->next)->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
+INFO:FRAMAC:  out of bounds read.
+INFO:FRAMAC:  assert \valid_read(&(((((cursor->next)->next)->next)->next)->next)->data);
+INFO:FRAMAC:[eva:alarm] output/program.c:625: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:625: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:627: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&next);
+INFO:FRAMAC:[eva:alarm] output/program.c:630: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:630: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:632: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&next);
+INFO:FRAMAC:[eva] output/program.c:629: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:630: Warning: 
+INFO:FRAMAC:  out of bounds read. assert \valid_read(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:635: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:635: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&cursor->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
+INFO:FRAMAC:  accessing left-value that contains escaping addresses.
+INFO:FRAMAC:  assert ¬\dangling(&next);
+INFO:FRAMAC:[scope:rm_asserts] removing 52 assertion(s)
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_uchar:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_char:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function containsBody:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function containsHead:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function append:
+INFO:FRAMAC:  node ∈
+INFO:FRAMAC:      {{ &__malloc_w_append_l559 ; &__malloc_append_l559_0 ;
+INFO:FRAMAC:         &__malloc_append_l559_1 ; &__malloc_append_l559_2 ;
+INFO:FRAMAC:         &__malloc_append_l559_3 ; &__malloc_append_l559_4 ;
+INFO:FRAMAC:         &__malloc_append_l559_5 ; &__malloc_w_append_l559_6 ;
+INFO:FRAMAC:         &__malloc_append_l559_7 ; &__malloc_append_l559_8 ;
+INFO:FRAMAC:         &__malloc_append_l559_9 ; &__malloc_append_l559_10 ;
+INFO:FRAMAC:         &__malloc_append_l559_11 ; &__malloc_append_l559_12 ;
+INFO:FRAMAC:         &__malloc_w_append_l559_13 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_main_l574.first ∈ {{ NULL ; &__malloc_w_append_l559 }}
+INFO:FRAMAC:                    .last ∈
+INFO:FRAMAC:                    {{ &__malloc_w_append_l559 ; &__malloc_append_l559_0 ;
+INFO:FRAMAC:                       &__malloc_append_l559_1 ; &__malloc_append_l559_2 ;
+INFO:FRAMAC:                       &__malloc_append_l559_3 ; &__malloc_append_l559_4 ;
+INFO:FRAMAC:                       &__malloc_append_l559_5 ; &__malloc_w_append_l559_6 ;
+INFO:FRAMAC:                       &__malloc_append_l559_7 ; &__malloc_append_l559_8 ;
+INFO:FRAMAC:                       &__malloc_append_l559_9 ; &__malloc_append_l559_10 ;
+INFO:FRAMAC:                       &__malloc_append_l559_11 ; &__malloc_append_l559_12 ;
+INFO:FRAMAC:                       &__malloc_w_append_l559_13 }}
+INFO:FRAMAC:  __malloc_w_append_l559.data ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l559 }} or UNINITIALIZED
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l559 ;
+INFO:FRAMAC:                           &__malloc_append_l559_0 }} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_append_l559_0.data ∈ {60}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_w_append_l559 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_1 }}
+INFO:FRAMAC:  __malloc_append_l559_1.data ∈ {104}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_0 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_2 }}
+INFO:FRAMAC:  __malloc_append_l559_2.data ∈ {101}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_1 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_3 }}
+INFO:FRAMAC:  __malloc_append_l559_3.data ∈ {97}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_2 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_4 }}
+INFO:FRAMAC:  __malloc_append_l559_4.data ∈ {100}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_3 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_5 }}
+INFO:FRAMAC:  __malloc_append_l559_5.data ∈ {62}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_4 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_w_append_l559_6 }}
+INFO:FRAMAC:  __malloc_w_append_l559_6.data ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                          .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                          .prev ∈
+INFO:FRAMAC:                          {{ &__malloc_append_l559_5 ;
+INFO:FRAMAC:                             &__malloc_w_append_l559_6 }} or UNINITIALIZED
+INFO:FRAMAC:                          .next ∈
+INFO:FRAMAC:                          {{ NULL ; &__malloc_w_append_l559_6 ;
+INFO:FRAMAC:                             &__malloc_append_l559_7 }} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_append_l559_7.data ∈ {60}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_w_append_l559_6 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_8 }}
+INFO:FRAMAC:  __malloc_append_l559_8.data ∈ {98}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_7 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_9 }}
+INFO:FRAMAC:  __malloc_append_l559_9.data ∈ {111}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈ {{ &__malloc_append_l559_8 }}
+INFO:FRAMAC:                        .next ∈ {{ NULL ; &__malloc_append_l559_10 }}
+INFO:FRAMAC:  __malloc_append_l559_10.data ∈ {100}
+INFO:FRAMAC:                         .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                         .prev ∈ {{ &__malloc_append_l559_9 }}
+INFO:FRAMAC:                         .next ∈ {{ NULL ; &__malloc_append_l559_11 }}
+INFO:FRAMAC:  __malloc_append_l559_11.data ∈ {121}
+INFO:FRAMAC:                         .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                         .prev ∈ {{ &__malloc_append_l559_10 }}
+INFO:FRAMAC:                         .next ∈ {{ NULL ; &__malloc_append_l559_12 }}
+INFO:FRAMAC:  __malloc_append_l559_12.data ∈ {62}
+INFO:FRAMAC:                         .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                         .prev ∈ {{ &__malloc_append_l559_11 }}
+INFO:FRAMAC:                         .next ∈ {{ NULL ; &__malloc_w_append_l559_13 }}
+INFO:FRAMAC:  __malloc_w_append_l559_13.data ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                           .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                           .prev ∈
+INFO:FRAMAC:                           {{ &__malloc_append_l559_12 ;
+INFO:FRAMAC:                              &__malloc_w_append_l559_13 }} or UNINITIALIZED
+INFO:FRAMAC:                           .next ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_w_append_l559_13 }} or UNINITIALIZED
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  list ∈ ESCAPINGADDR
+INFO:FRAMAC:  cursor ∈ {0}
+INFO:FRAMAC:  next ∈ {0}
+INFO:FRAMAC:  counter ∈ {6}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:  __malloc_w_append_l559.data ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l559 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l559 ;
+INFO:FRAMAC:                           &__malloc_append_l559_0 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_0.data ∈ {60}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_w_append_l559 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_1 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_1.data ∈ {104}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_0 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_2 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_2.data ∈ {101}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_1 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_3 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_3.data ∈ {97}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_2 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_4 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_4.data ∈ {100}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_3 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_5 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_5.data ∈ {62}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_4 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l559_6 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_append_l559_6.data ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                          .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                          .prev ∈
+INFO:FRAMAC:                          {{ &__malloc_append_l559_5 ;
+INFO:FRAMAC:                             &__malloc_w_append_l559_6 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                          .next ∈
+INFO:FRAMAC:                          {{ NULL ; &__malloc_w_append_l559_6 ;
+INFO:FRAMAC:                             &__malloc_append_l559_7 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_7.data ∈ {60}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_w_append_l559_6 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_8 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_8.data ∈ {98}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_7 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_9 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_9.data ∈ {111}
+INFO:FRAMAC:                        .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .prev ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_8 }} or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ &__malloc_append_l559_10 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_10.data ∈ {100}
+INFO:FRAMAC:                         .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                         .prev ∈
+INFO:FRAMAC:                         {{ &__malloc_append_l559_9 }} or ESCAPINGADDR
+INFO:FRAMAC:                         .next ∈
+INFO:FRAMAC:                         {{ &__malloc_append_l559_11 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_11.data ∈ {121}
+INFO:FRAMAC:                         .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                         .prev ∈
+INFO:FRAMAC:                         {{ &__malloc_append_l559_10 }} or ESCAPINGADDR
+INFO:FRAMAC:                         .next ∈
+INFO:FRAMAC:                         {{ &__malloc_append_l559_12 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_append_l559_12.data ∈ {62}
+INFO:FRAMAC:                         .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                         .prev ∈
+INFO:FRAMAC:                         {{ &__malloc_append_l559_11 }} or ESCAPINGADDR
+INFO:FRAMAC:                         .next ∈
+INFO:FRAMAC:                         {{ NULL ; &__malloc_w_append_l559_13 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_append_l559_13.data ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                           .[bits 8 to 31] ∈ UNINITIALIZED
+INFO:FRAMAC:                           .prev ∈
+INFO:FRAMAC:                           {{ &__malloc_append_l559_12 ;
+INFO:FRAMAC:                              &__malloc_w_append_l559_13 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                           .next ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_w_append_l559_13 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  7 functions analyzed (out of 23): 30% coverage.
+INFO:FRAMAC:  In these functions, 154 statements reached (out of 154): 100% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  126 alarms generated by the analysis:
+INFO:FRAMAC:      48 accesses to uninitialized left-values
+INFO:FRAMAC:      40 escaping addresses
+INFO:FRAMAC:      38 invalid memory accesses
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     8 valid     0 unknown     0 invalid      8 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __bswap_32
+INFO:FRAMAC:[rte:annot] annotating function __bswap_64
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function reach_error
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

@@ -1,0 +1,208 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 10 -eva-plevel 29 -eva-partition-history 1 -eva-min-loop-unroll 2 -eva-ilevel 25 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:alarm] output/program.c:13: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert b * y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(s * y) * y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -2147483648 ≤
+INFO:FRAMAC:  (int)((int)((int)((int)((int)(q * x) * y) + (int)((int)(s * y) * y)) -
+INFO:FRAMAC:              (int)(q * x))
+INFO:FRAMAC:        - (int)(b * y))
+INFO:FRAMAC:  - (int)(s * y);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (int)((int)((int)((int)((int)((int)(q * x) * y) + (int)((int)(s * y) * y)) -
+INFO:FRAMAC:                    (int)(q * x))
+INFO:FRAMAC:              - (int)(b * y))
+INFO:FRAMAC:        - (int)(s * y))
+INFO:FRAMAC:  + b ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(k * b) + c ≤ 2147483647;
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:48: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:40: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  signed overflow. assert k * b ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:48: Warning: 
+INFO:FRAMAC:  signed overflow. assert k + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ y * s;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ s * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(q * x) * y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(s * y) * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -2147483648 ≤
+INFO:FRAMAC:  (int)((int)((int)(q * x) * y) + (int)((int)(s * y) * y)) - (int)(q * x);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -2147483648 ≤
+INFO:FRAMAC:  (int)((int)((int)((int)(q * x) * y) + (int)((int)(s * y) * y)) - (int)(q * x))
+INFO:FRAMAC:  - (int)(b * y);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (int)((int)((int)((int)((int)(q * x) * y) + (int)((int)(s * y) * y)) -
+INFO:FRAMAC:              (int)(q * x))
+INFO:FRAMAC:        - (int)(b * y))
+INFO:FRAMAC:  - (int)(s * y) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ s * k;
+INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
+INFO:FRAMAC:  signed overflow. assert temp - (int)(s * k) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ y * r;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ x * q;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert y * s ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ q * x;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert s * y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(q * x) * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (int)((int)((int)(q * x) * y) + (int)((int)(s * y) * y)) - (int)(q * x) ≤
+INFO:FRAMAC:  2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ q * k;
+INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
+INFO:FRAMAC:  signed overflow. assert temp - (int)(q * k) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
+INFO:FRAMAC:  signed overflow. assert s * k ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ temp - (int)(s * k);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:60: loop not completely unrolled
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert y * r ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ x * p;
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(y * r) + (int)(x * p);
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(y * r) + (int)(x * p) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert x * q ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(x * q) + (int)(y * s);
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(x * q) + (int)(y * s) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow. assert q * x ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ (int)((int)(q * x) * y) + (int)((int)(s * y) * y);
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert (int)((int)(q * x) * y) + (int)((int)(s * y) * y) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
+INFO:FRAMAC:  signed overflow. assert q * k ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ temp - (int)(q * k);
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert x * p ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:34: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:64: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ q * x;
+INFO:FRAMAC:[eva:alarm] output/program.c:64: Warning: 
+INFO:FRAMAC:  signed overflow. assert q * x ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:64: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ s * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:64: Warning: 
+INFO:FRAMAC:  signed overflow. assert s * y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:64: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(q * x) + (int)(s * y);
+INFO:FRAMAC:[eva:alarm] output/program.c:64: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(q * x) + (int)(s * y) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ p * x;
+INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
+INFO:FRAMAC:  signed overflow. assert p * x ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ r * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
+INFO:FRAMAC:  signed overflow. assert r * y ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(p * x) + (int)(r * y);
+INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(p * x) + (int)(r * y) ≤ 2147483647;
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  x ∈ [1..2147483647]
+INFO:FRAMAC:  y ∈ [1..49152]
+INFO:FRAMAC:  a ∈ [1..49152]
+INFO:FRAMAC:  b ∈ {0}
+INFO:FRAMAC:  p ∈ [-536870912..469762048]
+INFO:FRAMAC:  q ∈ [--..--]
+INFO:FRAMAC:  r ∈ [--..--]
+INFO:FRAMAC:  s ∈ [--..--]
+INFO:FRAMAC:  c ∈ {0}
+INFO:FRAMAC:  k ∈ [1..2147483647]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  5 functions analyzed (out of 20): 25% coverage.
+INFO:FRAMAC:  In these functions, 48 statements reached (out of 50): 96% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  52 alarms generated by the analysis:
+INFO:FRAMAC:      52 integer overflows
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown

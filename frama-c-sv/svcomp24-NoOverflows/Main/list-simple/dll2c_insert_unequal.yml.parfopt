@@ -1,0 +1,121 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 11 -eva-remove-redundant-alarms -eva-plevel 25 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 19 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:77: Warning: 
+INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:82: Warning: 
+INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] output/program.c:576: allocating variable __malloc_node_create_l576
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:573: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:588: Automatic loop unrolling.
+INFO:FRAMAC:[eva] output/program.c:576: allocating variable __malloc_node_create_l576_0
+INFO:FRAMAC:[eva] output/program.c:576: allocating variable __malloc_node_create_l576_1
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:616: Automatic loop unrolling.
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:648: Automatic loop unrolling.
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:607: loop not completely unrolled
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function dll_circular_destroy:
+INFO:FRAMAC:  head ∈ ESCAPINGADDR
+INFO:FRAMAC:  s ∈ ESCAPINGADDR
+INFO:FRAMAC:  ptr ∈ ESCAPINGADDR
+INFO:FRAMAC:[eva:final-states] Values at end of function myexit:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function node_create:
+INFO:FRAMAC:  temp ∈
+INFO:FRAMAC:      {{ &__malloc_node_create_l576 ; &__malloc_node_create_l576_0 ;
+INFO:FRAMAC:         &__malloc_node_create_l576_1 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_node_create_l576{.next; .prev} ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_node_create_l576_0 }}
+INFO:FRAMAC:                           .data ∈ {1}
+INFO:FRAMAC:  __malloc_node_create_l576_0{.next; .prev} ∈
+INFO:FRAMAC:                             {{ NULL ; &__malloc_node_create_l576 }}
+INFO:FRAMAC:                             .data ∈ {1}
+INFO:FRAMAC:  __malloc_node_create_l576_1{.next; .prev} ∈ {0}
+INFO:FRAMAC:                             .data ∈ {5}
+INFO:FRAMAC:[eva:final-states] Values at end of function dll_circular_create:
+INFO:FRAMAC:  len ∈ {1}
+INFO:FRAMAC:  head ∈ {{ &__malloc_node_create_l576_0 }}
+INFO:FRAMAC:  last ∈ {{ &__malloc_node_create_l576 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_node_create_l576{.next; .prev} ∈
+INFO:FRAMAC:                           {{ &__malloc_node_create_l576_0 }}
+INFO:FRAMAC:                           .data ∈ {1}
+INFO:FRAMAC:  __malloc_node_create_l576_0{.next; .prev} ∈
+INFO:FRAMAC:                             {{ &__malloc_node_create_l576 }}
+INFO:FRAMAC:                             .data ∈ {1}
+INFO:FRAMAC:[eva:final-states] Values at end of function dll_circular_insert:
+INFO:FRAMAC:  index_0 ∈ {0}
+INFO:FRAMAC:  new_node ∈ {{ &__malloc_node_create_l576_1 }}
+INFO:FRAMAC:  snd_to_last ∈ {{ &__malloc_node_create_l576_0 }}
+INFO:FRAMAC:  last ∈ {{ &__malloc_node_create_l576 }}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __malloc_node_create_l576.next ∈ {{ &__malloc_node_create_l576_0 }}
+INFO:FRAMAC:                           .prev ∈ {{ &__malloc_node_create_l576_1 }}
+INFO:FRAMAC:                           .data ∈ {1}
+INFO:FRAMAC:  __malloc_node_create_l576_0.next ∈ {{ &__malloc_node_create_l576_1 }}
+INFO:FRAMAC:                             .prev ∈ {{ &__malloc_node_create_l576 }}
+INFO:FRAMAC:                             .data ∈ {1}
+INFO:FRAMAC:  __malloc_node_create_l576_1.next ∈ {{ &__malloc_node_create_l576 }}
+INFO:FRAMAC:                             .prev ∈ {{ &__malloc_node_create_l576_0 }}
+INFO:FRAMAC:                             .data ∈ {5}
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  len ∈ {2}
+INFO:FRAMAC:  data ∈ {1}
+INFO:FRAMAC:  s ∈ ESCAPINGADDR
+INFO:FRAMAC:  uneq ∈ {5}
+INFO:FRAMAC:  mid_index ∈ {1}
+INFO:FRAMAC:  ptr ∈ ESCAPINGADDR
+INFO:FRAMAC:  count ∈ {3}
+INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  6 functions analyzed (out of 25): 24% coverage.
+INFO:FRAMAC:  In these functions, 82 statements reached (out of 100): 82% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  0 alarms generated by the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     0 invalid      2 total
+INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_int
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __bswap_32
+INFO:FRAMAC:[rte:annot] annotating function __bswap_64
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function reach_error
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:true

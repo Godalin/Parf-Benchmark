@@ -1,0 +1,553 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -val -rte -eva-precision 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Warning: -val is a deprecated alias for option -eva. Please use -eva instead.
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Option -eva-precision 11 detected, automatic configuration of the analysis:
+INFO:FRAMAC:  option -eva-min-loop-unroll set to 4.
+INFO:FRAMAC:  option -eva-auto-loop-unroll set to 1024.
+INFO:FRAMAC:  option -eva-widening-delay set to 6.
+INFO:FRAMAC:  option -eva-partition-history set to 2.
+INFO:FRAMAC:  option -eva-slevel set to 5000.
+INFO:FRAMAC:  option -eva-ilevel set to 256.
+INFO:FRAMAC:  option -eva-plevel set to 2000.
+INFO:FRAMAC:  option -eva-subdivide-non-linear set to 220.
+INFO:FRAMAC:  option -eva-remove-redundant-alarms set to true (default value).
+INFO:FRAMAC:  option -eva-domains set to 'cvalue,equality,gauges,octagon,symbolic-locations'.
+INFO:FRAMAC:  option -eva-split-return set to 'auto'.
+INFO:FRAMAC:  option -eva-equality-through-calls set to 'formals' (default value).
+INFO:FRAMAC:  option -eva-octagon-through-calls set to true.
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0, 1, 2, 3, 4, 5, 6 (auto)
+INFO:FRAMAC:  \return(FlQueueIrpToThread) == 259 (auto)
+INFO:FRAMAC:  \return(FloppyPnp) == -1, 259 (auto)
+INFO:FRAMAC:  \return(FloppyStartDevice) == 259 (auto)
+INFO:FRAMAC:  \return(FloppyPnpComplete) == 3221225494 (auto)
+INFO:FRAMAC:  \return(IoBuildDeviceIoControlRequest) == 0 (auto)
+INFO:FRAMAC:  \return(IofCallDriver) == 259 (auto)
+INFO:FRAMAC:  \return(FloppyCreateClose) == -1, 259 (auto)
+INFO:FRAMAC:  \return(FloppyQueueRequest) == 259 (auto)
+INFO:FRAMAC:  \return(FloppyDeviceControl) == -1, 259 (auto)
+INFO:FRAMAC:  \return(FlCheckFormatParameters) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  FloppyThread ∈ {0}
+INFO:FRAMAC:  KernelMode ∈ {0}
+INFO:FRAMAC:  Suspended ∈ {0}
+INFO:FRAMAC:  Executive ∈ {0}
+INFO:FRAMAC:  DiskController ∈ {0}
+INFO:FRAMAC:  FloppyDiskPeripheral ∈ {0}
+INFO:FRAMAC:  FlConfigCallBack ∈ {0}
+INFO:FRAMAC:  MaximumInterfaceType ∈ {0}
+INFO:FRAMAC:  MOUNTDEV_MOUNTED_DEVICE_GUID ∈ {0}
+INFO:FRAMAC:  myStatus ∈ {0}
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {0}
+INFO:FRAMAC:  DC ∈ {0}
+INFO:FRAMAC:  SKIP1 ∈ {0}
+INFO:FRAMAC:  SKIP2 ∈ {0}
+INFO:FRAMAC:  MPR1 ∈ {0}
+INFO:FRAMAC:  MPR3 ∈ {0}
+INFO:FRAMAC:  IPC ∈ {0}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0}
+INFO:FRAMAC:  PagingMutex ∈ {0}
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:alarm] output/program.c:1306: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1307: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1410: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ sizeof__USHORT + mountName__NameLength;
+INFO:FRAMAC:[eva:alarm] output/program.c:1410: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert sizeof__USHORT + mountName__NameLength ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1433: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ sizeof__USHORT + uniqueId__UniqueIdLength;
+INFO:FRAMAC:[eva:alarm] output/program.c:1433: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert sizeof__USHORT + uniqueId__UniqueIdLength ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:117: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert DisketteExtension__ThreadReferenceCount + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1501: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ highestDriveMediaType - lowestDriveMediaType;
+INFO:FRAMAC:[eva:alarm] output/program.c:1501: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert highestDriveMediaType - lowestDriveMediaType ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1502: Warning: 
+INFO:FRAMAC:  signed overflow. assert __cil_tmp89 + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:1526: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva:alarm] output/program.c:1519: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1520: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:489: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ Irp__Tail__Overlay__CurrentStackLocation - 1;
+INFO:FRAMAC:[eva] output/program.c:850: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:alarm] output/program.c:631: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ irp__Tail__Overlay__CurrentStackLocation - 1;
+INFO:FRAMAC:[eva] output/program.c:595: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva:alarm] output/program.c:248: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:249: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:279: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:280: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:309: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:310: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:317: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ Irp__Tail__Overlay__CurrentStackLocation - 1;
+INFO:FRAMAC:[eva:alarm] output/program.c:368: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:369: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:385: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:386: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:402: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ IoGetConfigurationInformation__FloppyCount - 1;
+INFO:FRAMAC:[eva:alarm] output/program.c:413: Warning: 
+INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:414: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:1627: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function FlAcpiConfigureFloppy:
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function IofCompleteRequest:
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyCreateClose:
+INFO:FRAMAC:  myStatus ∈ {0}
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {0}
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {1}
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function _BLAST_init:
+INFO:FRAMAC:  s ∈ {0}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {1}
+INFO:FRAMAC:  DC ∈ {2}
+INFO:FRAMAC:  SKIP1 ∈ {3}
+INFO:FRAMAC:  SKIP2 ∈ {4}
+INFO:FRAMAC:  MPR1 ∈ {5}
+INFO:FRAMAC:  MPR3 ∈ {6}
+INFO:FRAMAC:  IPC ∈ {7}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function FlCheckFormatParameters:
+INFO:FRAMAC:  DriveMediaConstants__driveMediaType__MediaType ∈ [--..--]
+INFO:FRAMAC:  FormatParameters__MediaType ∈ [--..--]
+INFO:FRAMAC:  FAKE_CONDITION ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0; 1}
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyQueueRequest:
+INFO:FRAMAC:  myStatus ∈ {-1073741536; 259}
+INFO:FRAMAC:  s ∈ {1; 2}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1}
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741536; 259}
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  ntStatus ∈ {-1073741536; 259}
+INFO:FRAMAC:  FAKE_CONDITION ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function IoBuildDeviceIoControlRequest:
+INFO:FRAMAC:  customIrp ∈ {1}
+INFO:FRAMAC:  malloc_0 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function IoDeleteSymbolicLink:
+INFO:FRAMAC:  tmp_ndt_6 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function IoRegisterDeviceInterface:
+INFO:FRAMAC:  tmp_ndt_8 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741808; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function IoSetDeviceInterfaceState:
+INFO:FRAMAC:  tmp_ndt_9 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function KeSetEvent:
+INFO:FRAMAC:  setEventCalled ∈ {1}
+INFO:FRAMAC:  l ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyPnpComplete:
+INFO:FRAMAC:  setEventCalled ∈ {1}
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741802}
+INFO:FRAMAC:[eva:final-states] Values at end of function KeWaitForSingleObject:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  tmp_ndt_12 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function ObReferenceObjectByHandle:
+INFO:FRAMAC:  tmp_ndt_13 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function PsCreateSystemThread:
+INFO:FRAMAC:  tmp_ndt_14 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function ZwClose:
+INFO:FRAMAC:  tmp_ndt_15 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function FlQueueIrpToThread:
+INFO:FRAMAC:  myStatus ∈ {-1073741637; -1073741101; 0}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1; 2}
+INFO:FRAMAC:  status ∈ {-1073741823; 0} or UNINITIALIZED
+INFO:FRAMAC:  threadHandle ∈ [--..--]
+INFO:FRAMAC:  DisketteExtension__PoweringDown ∈ [--..--]
+INFO:FRAMAC:  DisketteExtension__ThreadReferenceCount ∈ [--..--]
+INFO:FRAMAC:  DisketteExtension__FloppyThread ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741101} or UNINITIALIZED
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  ObjAttributes ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; -1073741101; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function errorFn:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function stubMoreProcessingRequired:
+INFO:FRAMAC:  s ∈ {5}
+INFO:FRAMAC:[eva:final-states] Values at end of function IofCallDriver:
+INFO:FRAMAC:  s ∈ {1; 4; 6}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  returnVal2 ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  compRetStatus1 ∈ {-1073741802} or UNINITIALIZED
+INFO:FRAMAC:  lcontext ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp7 ∈ {3221225494} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function FlFdcDeviceIo:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  customIrp ∈ {1}
+INFO:FRAMAC:  ntStatus ∈ {-1073741823; -1073741637; 0} or UNINITIALIZED
+INFO:FRAMAC:  irp ∈ [--..--]
+INFO:FRAMAC:  irpStack ∈ [-2147483648..2147483646] or UNINITIALIZED
+INFO:FRAMAC:  doneEvent ∈ [--..--]
+INFO:FRAMAC:  ioStatus ∈ [--..--]
+INFO:FRAMAC:  irp__Tail__Overlay__CurrentStackLocation ∈ [--..--]
+INFO:FRAMAC:  irpStack__Parameters__DeviceIoControl__Type3InputBuffer ∈
+INFO:FRAMAC:                                                         [--..--] or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp11 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; -1073741670; -1073741637; 0}
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyDeviceControl:
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483643; -1073741823; -1073741811; -1073741789; -1073741738;
+INFO:FRAMAC:           -1073741637; -1073741536; -1073741101; 0; 259}
+INFO:FRAMAC:  s ∈ {1; 2; 4}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1}
+INFO:FRAMAC:  disketteExtension__HoldNewRequests ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__IsRemoved ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__IsStarted ∈ [--..--]
+INFO:FRAMAC:  Irp__CurrentLocation ∈ [--..--]
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__TargetObject ∈ [--..--]
+INFO:FRAMAC:  irpSp__Parameters__DeviceIoControl__OutputBufferLength ∈ [--..--]
+INFO:FRAMAC:  sizeof__MOUNTDEV_NAME ∈ [--..--]
+INFO:FRAMAC:  Irp__AssociatedIrp__SystemBuffer ∈ [--..--]
+INFO:FRAMAC:  mountName__NameLength ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__DeviceName__Length ∈ [--..--]
+INFO:FRAMAC:  sizeof__USHORT ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__InterfaceString__Buffer ∈ [--..--]
+INFO:FRAMAC:  uniqueId__UniqueIdLength ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__InterfaceString__Length ∈ [--..--]
+INFO:FRAMAC:  sizeof__MOUNTDEV_UNIQUE_ID ∈ [--..--]
+INFO:FRAMAC:  irpSp__Parameters__DeviceIoControl__InputBufferLength ∈ [--..--]
+INFO:FRAMAC:  sizeof__FORMAT_PARAMETERS ∈ [--..--]
+INFO:FRAMAC:  irpSp__Parameters__DeviceIoControl__IoControlCode___1 ∈ [--..--]
+INFO:FRAMAC:  sizeof__FORMAT_EX_PARAMETERS ∈ [--..--]
+INFO:FRAMAC:  formatExParameters__FormatGapLength ∈ [--..--]
+INFO:FRAMAC:  formatExParameters__SectorsPerTrack ∈ [--..--]
+INFO:FRAMAC:  sizeof__DISK_GEOMETRY ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Status___0 ∈
+INFO:FRAMAC:                           {-2147483643; -1073741823; -1073741811;
+INFO:FRAMAC:                            -1073741789; -1073741738; -1073741101; 0} or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension ∈ [--..--]
+INFO:FRAMAC:  ntStatus ∈
+INFO:FRAMAC:          {-2147483643; -1073741823; -1073741811; -1073741789; -1073741536;
+INFO:FRAMAC:           -1073741101; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  outputBufferLength ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  lowestDriveMediaType ∈ [--..--]
+INFO:FRAMAC:  highestDriveMediaType ∈ [--..--]
+INFO:FRAMAC:  formatExParametersSize ∈ [--..--]
+INFO:FRAMAC:  formatExParameters ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp_24 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  mountName ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  uniqueId ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp41 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp44 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp45 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp50 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp55 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp60 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp65 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp66 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp69 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp72 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp75 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp78 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp81 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp82 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp83 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp88 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp89 ∈ [-2147483648..2147483646] or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp90 ∈ [-2147483647..2147483647] or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp91 ∈
+INFO:FRAMAC:             {-2147483643; -1073741823; -1073741811; -1073741789;
+INFO:FRAMAC:              -1073741101; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈
+INFO:FRAMAC:          {-2147483643; -1073741823; -1073741811; -1073741789; -1073741738;
+INFO:FRAMAC:           -1073741536; -1073741101; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyStartDevice:
+INFO:FRAMAC:  myStatus ∈ {-1073741823; -1073741670; -1073741637; 0}
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:  compRegistered ∈ {1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  customIrp ∈ {1}
+INFO:FRAMAC:  DeviceObject__DeviceExtension ∈ [--..--]
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741823; -1073741670; -1073741637; 0}
+INFO:FRAMAC:  disketteExtension__TargetObject ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__MaxTransferSize ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__DriveType ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__DeviceUnit ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__DriveOnValue ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__UnderlyingPDO ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__InterfaceString ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__IsStarted ∈ {1} or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__HoldNewRequests ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  ntStatus ∈ {-1073741823; -1073741670; -1073741637; 0}
+INFO:FRAMAC:  pnpStatus ∈ {-1073741823; -1073741808; 0} or UNINITIALIZED
+INFO:FRAMAC:  doneEvent ∈ [--..--]
+INFO:FRAMAC:  fdcInfo ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__BufferCount ∈ {0}
+INFO:FRAMAC:  fdcInfo__BufferSize ∈ {0}
+INFO:FRAMAC:  fdcInfo__MaxTransferSize ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__AcpiBios ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__AcpiFdiSupported ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__PeripheralNumber ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__ControllerNumber ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__UnitNumber ∈ [--..--]
+INFO:FRAMAC:  fdcInfo__BusNumber ∈ [--..--]
+INFO:FRAMAC:  Dc ∈ {0}
+INFO:FRAMAC:  Fp ∈ {0}
+INFO:FRAMAC:  disketteExtension ∈ [--..--]
+INFO:FRAMAC:  irpSp ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  irpSp___0 ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  nextIrpSp ∈ [-2147483648..2147483646]
+INFO:FRAMAC:  nextIrpSp__Control ∈ {0}
+INFO:FRAMAC:  irpSp___1 ∈ [-2147483648..2147483646]
+INFO:FRAMAC:  irpSp__Control ∈ {224}
+INFO:FRAMAC:  irpSp__Context ∈ [--..--]
+INFO:FRAMAC:  InterfaceType ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  KUSER_SHARED_DATA__AlternativeArchitecture_NEC98x86 ∈ [--..--]
+INFO:FRAMAC:  __cil_tmp42 ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  __cil_tmp46 ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyPnp:
+INFO:FRAMAC:  myStatus ∈ {-1073741823; -1073741738; -1073741670; -1073741637; 0}
+INFO:FRAMAC:  s ∈ {2; 4}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  compRegistered ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  customIrp ∈ {0; 1}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1}
+INFO:FRAMAC:  DeviceObject__DeviceExtension ∈ [--..--]
+INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [--..--]
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741823; -1073741738; 0} or UNINITIALIZED
+INFO:FRAMAC:  Irp__CurrentLocation ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__IsRemoved ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__IsStarted ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__TargetObject ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__HoldNewRequests ∈ {0; 1} or UNINITIALIZED
+INFO:FRAMAC:  disketteExtension__FloppyThread ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__InterfaceString__Buffer ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__InterfaceString ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__ArcName__Length ∈ [--..--]
+INFO:FRAMAC:  disketteExtension__ArcName ∈ [--..--]
+INFO:FRAMAC:  irpSp__MinorFunction ∈ [--..--]
+INFO:FRAMAC:  IoGetConfigurationInformation__FloppyCount ∈ [--..--]
+INFO:FRAMAC:  irpSp ∈ [--..--]
+INFO:FRAMAC:  disketteExtension ∈ [--..--]
+INFO:FRAMAC:  ntStatus ∈ {-1073741823; -1073741670; -1073741637; 0; 259}
+INFO:FRAMAC:  doneEvent ∈ [--..--]
+INFO:FRAMAC:  irpSp___0 ∈ [-2147483647..2147483647] or UNINITIALIZED
+INFO:FRAMAC:  nextIrpSp ∈ [-2147483648..2147483646] or UNINITIALIZED
+INFO:FRAMAC:  nextIrpSp__Control ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  irpSp___1 ∈ [-2147483648..2147483646] or UNINITIALIZED
+INFO:FRAMAC:  irpSp__Context ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  irpSp__Control ∈ {224} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp29 ∈ {-1073741823; -1073741101; 259} or UNINITIALIZED
+INFO:FRAMAC:  __cil_tmp30 ∈ {-1073741823; 0; 259} or UNINITIALIZED
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1073741823; -1073741738; -1073741670; -1073741637; 0; 259}
+INFO:FRAMAC:[eva:final-states] Values at end of function stub_driver_init:
+INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  pended ∈ {0}
+INFO:FRAMAC:  compRegistered ∈ {0}
+INFO:FRAMAC:  lowerDriverReturn ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  customIrp ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  FloppyThread ∈ {0}
+INFO:FRAMAC:  KernelMode ∈ {0}
+INFO:FRAMAC:  Suspended ∈ {0}
+INFO:FRAMAC:  Executive ∈ {0}
+INFO:FRAMAC:  DiskController ∈ {0}
+INFO:FRAMAC:  FloppyDiskPeripheral ∈ {0}
+INFO:FRAMAC:  FlConfigCallBack ∈ {0}
+INFO:FRAMAC:  MaximumInterfaceType ∈ {0}
+INFO:FRAMAC:  MOUNTDEV_MOUNTED_DEVICE_GUID ∈ {0}
+INFO:FRAMAC:  myStatus ∈
+INFO:FRAMAC:          {-2147483643; -1073741823; -1073741811; -1073741789; -1073741738;
+INFO:FRAMAC:           -1073741670; -1073741637; -1073741536; -1073741101; 0; 259}
+INFO:FRAMAC:  s ∈ {1; 2; 4}
+INFO:FRAMAC:  UNLOADED ∈ {0}
+INFO:FRAMAC:  NP ∈ {1}
+INFO:FRAMAC:  DC ∈ {2}
+INFO:FRAMAC:  SKIP1 ∈ {3}
+INFO:FRAMAC:  SKIP2 ∈ {4}
+INFO:FRAMAC:  MPR1 ∈ {5}
+INFO:FRAMAC:  MPR3 ∈ {6}
+INFO:FRAMAC:  IPC ∈ {7}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  compRegistered ∈ {0; 1}
+INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  customIrp ∈ {0; 1}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1}
+INFO:FRAMAC:  status ∈ {0}
+INFO:FRAMAC:  irp ∈ [--..--]
+INFO:FRAMAC:  pirp ∈ [--..--]
+INFO:FRAMAC:  pirp__IoStatus__Status ∈ {-1073741637; 0}
+INFO:FRAMAC:  irp_choice ∈ [--..--]
+INFO:FRAMAC:  devobj ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {-1; 0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  28 functions analyzed (out of 45): 62% coverage.
+INFO:FRAMAC:  In these functions, 806 statements reached (out of 866): 93% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  No errors or warnings raised during the analysis.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  28 alarms generated by the analysis:
+INFO:FRAMAC:      28 integer overflows
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function FloppyProcessQueuedRequests
+INFO:FRAMAC:[rte:annot] annotating function IoQueryDeviceDescription
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown

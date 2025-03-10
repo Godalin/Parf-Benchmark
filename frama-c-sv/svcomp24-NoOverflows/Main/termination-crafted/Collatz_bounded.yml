@@ -1,0 +1,15 @@
+format_version: '2.0'
+
+# version of Collatz.c where the overflow has been fixed by bounding the inputs
+input_files: 'Collatz_bounded.c'
+
+properties:
+  - property_file: ../properties/no-overflow.prp
+    expected_verdict: true
+  - property_file: ../properties/termination.prp
+    expected_verdict: true
+  - property_file: ../properties/coverage-branches.prp
+
+options:
+  language: C
+  data_model: LP64

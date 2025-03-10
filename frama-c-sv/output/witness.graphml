@@ -42,35 +42,37 @@
 <data key="producer">frama-c-sv version 0.2.8</data>
 <data key="sourcecodelang">C</data>
 <data key="architecture">32bit</data>
-<data key="programfile">sv-benchmarks/SoftwareSystems-uthash-NoOverflows/uthash-2.0.2/uthash_SFH_test7-1.i</data>
-<data key="programhash">c2bb9f0c15e3c3296f863c26b4377b27546cf1c417a60e9663a6ff48eb617ef8</data>
+<data key="programfile">./svcomp24-NoOverflows/Main/list-ext-properties/simple-ext.i</data>
+<data key="programhash">79d8454f49f42d774b494771accf13f0b47382db45ac5cfdb4c7afee633f8cd7</data>
 <data key="specification">format_version: '2.0'
 
-input_files: 'uthash_SFH_test7-1.i'
+# old file name: simple-ext_false-unreach-call_false-valid-memcleanup_true-termination.i
+input_files: 'simple-ext.i'
 
 properties:
-  - property_file: ../properties/unreach-call.prp
+  - property_file: ../properties/no-overflow.prp
     expected_verdict: true
   - property_file: ../properties/termination.prp
     expected_verdict: true
-  - property_file: ../properties/no-overflow.prp
-    expected_verdict: true
-  - property_file: ../properties/valid-memsafety.prp
-    expected_verdict: true
+  - property_file: ../properties/unreach-call.prp
+    expected_verdict: false
   - property_file: ../properties/valid-memcleanup.prp
     expected_verdict: false
+  - property_file: ../properties/coverage-branches.prp
+  - property_file: ../properties/coverage-conditions.prp
+  - property_file: ../properties/coverage-statements.prp
+  - property_file: ../properties/coverage-error-call.prp
 
 options:
   language: C
   data_model: ILP32
 </data>
-<data key="creationtime">2024-04-12T05:28:26Z</data>
-<data key="witness-type">violation_witness</data>
+<data key="creationtime">2025-03-10T07:35:51Z</data>
+<data key="witness-type">correctness_witness</data>
 <node id="N0">
 <data key="entry">true</data>
 </node>
 <node id="N1">
-<data key="violation">true</data>
 </node>
 <edge id="E0" source="N0" target="N1">
 <data key="enterFunction">main</data>

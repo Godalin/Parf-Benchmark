@@ -1,0 +1,174 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 16 -eva-subdivide-non-linear 34 -eva-split-return auto -eva-slevel 170 -eva-remove-redundant-alarms -eva-plevel 598 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 8 -eva-ilevel 181 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 173 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[kernel:annot:missing-spec] output/program.c:6: Warning: 
+INFO:FRAMAC:  Neither code nor specification for function __VERIFIER_nondet_double,
+INFO:FRAMAC:   generating default assigns. See -generated-spec-* options for more info
+INFO:FRAMAC:[eva] using specification for function __VERIFIER_nondet_double
+INFO:FRAMAC:[eva:alarm] output/program.c:22: Warning: 
+INFO:FRAMAC:  non-finite double value.
+INFO:FRAMAC:  assert \is_finite(tmp);
+INFO:FRAMAC:  (tmp from __VERIFIER_nondet_double())
+INFO:FRAMAC:[eva:alarm] output/program.c:22: Warning: 
+INFO:FRAMAC:  overflow in conversion from floating-point to integer.
+INFO:FRAMAC:  assert -2147483649 < tmp;
+INFO:FRAMAC:  (tmp from __VERIFIER_nondet_double())
+INFO:FRAMAC:[eva:alarm] output/program.c:22: Warning: 
+INFO:FRAMAC:  overflow in conversion from floating-point to integer.
+INFO:FRAMAC:  assert tmp < 2147483648;
+INFO:FRAMAC:  (tmp from __VERIFIER_nondet_double())
+INFO:FRAMAC:[eva:alarm] output/program.c:23: Warning: 
+INFO:FRAMAC:  non-finite double value.
+INFO:FRAMAC:  assert \is_finite(tmp_0);
+INFO:FRAMAC:  (tmp_0 from __VERIFIER_nondet_double())
+INFO:FRAMAC:[eva:alarm] output/program.c:23: Warning: 
+INFO:FRAMAC:  overflow in conversion from floating-point to integer.
+INFO:FRAMAC:  assert -2147483649 < tmp_0;
+INFO:FRAMAC:  (tmp_0 from __VERIFIER_nondet_double())
+INFO:FRAMAC:[eva:alarm] output/program.c:23: Warning: 
+INFO:FRAMAC:  overflow in conversion from floating-point to integer.
+INFO:FRAMAC:  assert tmp_0 < 2147483648;
+INFO:FRAMAC:  (tmp_0 from __VERIFIER_nondet_double())
+INFO:FRAMAC:[eva:alarm] output/program.c:25: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ R - 1;
+INFO:FRAMAC:[eva:alarm] output/program.c:25: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(R - 1) * (int)(R - 1) ≤ 2147483647;
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:alarm] output/program.c:29: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ 2 * R;
+INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
+INFO:FRAMAC:  signed overflow. assert R * R ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow. assert u * u ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow. assert 4 * (int)(A + r) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert (int)((int)(u * u) - (int)(v * v)) - (int)(2 * u) ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (int)((int)((int)(u * u) - (int)(v * v)) - (int)(2 * u)) + (int)(2 * v) ≤
+INFO:FRAMAC:  2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:14: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ r + u;
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow. assert A + r ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ (int)((int)(u * u) - (int)(v * v)) - (int)(2 * u);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:37: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:33: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow. assert v * v ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ 4 * (int)(A + r);
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(u * u) - (int)(v * v);
+INFO:FRAMAC:[eva:alarm] output/program.c:47: Warning: 
+INFO:FRAMAC:  signed overflow. assert 4 * A ≤ 2147483647;
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  A ∈ [1..2147483647],1%2
+INFO:FRAMAC:  R ∈ [-46340..46340]
+INFO:FRAMAC:  u ∈ [-46339..46339],1%2
+INFO:FRAMAC:  v ∈ [1..46339],1%2
+INFO:FRAMAC:  r ∈ {0}
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  4 functions analyzed (out of 20): 20% coverage.
+INFO:FRAMAC:  In these functions, 31 statements reached (out of 33): 93% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  21 alarms generated by the analysis:
+INFO:FRAMAC:      15 integer overflows
+INFO:FRAMAC:       4 illegal conversions from floating-point to integer
+INFO:FRAMAC:       2 nan or infinite floating-point values
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     0 valid     0 unknown     1 invalid      1 total
+INFO:FRAMAC:  0% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_int
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
+INFO:RESULT:unknown

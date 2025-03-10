@@ -1,0 +1,21 @@
+format_version: '2.0'
+
+# old file name: eq2_true-unreach-call_true-valid-memsafety_true-no-overflow_false-termination.c
+input_files: 'eq2.c'
+
+properties:
+  - property_file: ../properties/no-overflow.prp
+    expected_verdict: true
+  - property_file: ../properties/termination.prp
+    expected_verdict: false
+  - property_file: ../properties/unreach-call.prp
+    expected_verdict: true
+# This is a trivial property for this task:
+# The task only uses integer variables within the main method,
+# no pointers and no memory operations occur.
+#  - property_file: ../properties/valid-memsafety.prp
+#    expected_verdict: true
+
+options:
+  language: C
+  data_model: ILP32

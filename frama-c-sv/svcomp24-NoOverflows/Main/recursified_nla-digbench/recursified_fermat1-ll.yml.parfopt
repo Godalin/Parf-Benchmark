@@ -1,0 +1,248 @@
+Prover Alt-Ergo version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: BV) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: counterexamples) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.5\.[2-9]$.
+Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
+  Known versions for this prover: ^2\.4\.[0-3]$.
+4 prover(s) added (including 4 prover(s) with an unrecognized version)
+Save config to /home/parf-chinasoft/.why3.conf
+frama-c -eva -rte -eva-widening-delay 8 -eva-subdivide-non-linear 40 -eva-split-return auto -eva-slevel 49 -eva-remove-redundant-alarms -eva-plevel 148 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 48 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
+INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:[eva] Analyzing a complete application starting at main
+INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:alarm] output/program.c:99: Warning: 
+INFO:FRAMAC:  signed overflow. assert *u * *u ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:99: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert 4 * (long long)((long long)*A + *r) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:99: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:  (long long)(2 * *u) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:99: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:              (long long)(2 * *u))
+INFO:FRAMAC:  + (long long)(2 * *v) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:38: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:76: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert 4 * (long long)((long long)*A + *r) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:76: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:  (long long)(2 * *u) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:76: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:              (long long)(2 * *u))
+INFO:FRAMAC:  + (long long)(2 * *v) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:recursion] output/program.c:87: 
+INFO:FRAMAC:  detected recursive call of function func_to_recursive_line_38_to_43_0.
+INFO:FRAMAC:[eva] output/program.c:87: User Error: 
+INFO:FRAMAC:  Recursive call to func_to_recursive_line_38_to_43_0 without assigns clause.
+INFO:FRAMAC:  Generating probably incomplete assigns to interpret the call. Try to increase
+INFO:FRAMAC:  the -eva-unroll-recursive-calls parameter or write a correct specification
+INFO:FRAMAC:  for function func_to_recursive_line_38_to_43_0.
+INFO:FRAMAC:[eva] using specification for function func_to_recursive_line_38_to_43_0
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow. assert *u * *u ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow. assert *v * *v ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ 2 * *u;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ (long long)*A + *r;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow. assert (long long)*A + *r ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -9223372036854775808 ≤ 4 * (long long)((long long)*A + *r);
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert 4 * (long long)((long long)*A + *r) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:  (long long)(2 * *u);
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:  (long long)(2 * *u) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:              (long long)(2 * *u))
+INFO:FRAMAC:  + (long long)(2 * *v);
+INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)(*u * *u) - (long long)(*v * *v)) -
+INFO:FRAMAC:              (long long)(2 * *u))
+INFO:FRAMAC:  + (long long)(2 * *v) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:61: Warning: 
+INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ *r + *u;
+INFO:FRAMAC:[eva:recursion] output/program.c:64: 
+INFO:FRAMAC:  detected recursive call of function func_to_recursive_line_46_to_51_0.
+INFO:FRAMAC:[eva] output/program.c:64: User Error: 
+INFO:FRAMAC:  Recursive call to func_to_recursive_line_46_to_51_0 without assigns clause.
+INFO:FRAMAC:  Generating probably incomplete assigns to interpret the call. Try to increase
+INFO:FRAMAC:  the -eva-unroll-recursive-calls parameter or write a correct specification
+INFO:FRAMAC:  for function func_to_recursive_line_46_to_51_0.
+INFO:FRAMAC:[eva] using specification for function func_to_recursive_line_46_to_51_0
+INFO:FRAMAC:[eva:recursion] output/program.c:110: 
+INFO:FRAMAC:  detected recursive call of function func_to_recursive_line_33_to_36_0.
+INFO:FRAMAC:[eva] output/program.c:110: User Error: 
+INFO:FRAMAC:  Recursive call to func_to_recursive_line_33_to_36_0 without assigns clause.
+INFO:FRAMAC:  Generating probably incomplete assigns to interpret the call. Try to increase
+INFO:FRAMAC:  the -eva-unroll-recursive-calls parameter or write a correct specification
+INFO:FRAMAC:  for function func_to_recursive_line_33_to_36_0.
+INFO:FRAMAC:[eva] using specification for function func_to_recursive_line_33_to_36_0
+INFO:FRAMAC:[eva:alarm] output/program.c:132: Warning: 
+INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:132: Warning: 
+INFO:FRAMAC:  signed overflow. assert v * v ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:132: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
+INFO:FRAMAC:[eva:alarm] output/program.c:132: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u) ≤
+INFO:FRAMAC:  9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:132: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
+INFO:FRAMAC:              (long long)(2 * u))
+INFO:FRAMAC:  + (long long)(2 * v);
+INFO:FRAMAC:[eva:alarm] output/program.c:132: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
+INFO:FRAMAC:              (long long)(2 * u))
+INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
+INFO:FRAMAC:[eva:final-states] Values at end of function func_to_recursive_line_38_to_43_0:
+INFO:FRAMAC:  A ∈ [--..--]
+INFO:FRAMAC:  u ∈ [--..--]
+INFO:FRAMAC:  v ∈ [--..--]
+INFO:FRAMAC:  r ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function func_to_recursive_line_46_to_51_0:
+INFO:FRAMAC:  A ∈ [--..--]
+INFO:FRAMAC:  u ∈ [--..--]
+INFO:FRAMAC:  v ∈ [--..--]
+INFO:FRAMAC:  r ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function func_to_recursive_line_33_to_36_0:
+INFO:FRAMAC:  A ∈ [--..--]
+INFO:FRAMAC:  u ∈ [--..--]
+INFO:FRAMAC:  v ∈ [--..--]
+INFO:FRAMAC:  r ∈ [--..--]
+INFO:FRAMAC:[eva:final-states] Values at end of function main:
+INFO:FRAMAC:  A ∈ [--..--]
+INFO:FRAMAC:  R ∈ [--..--]
+INFO:FRAMAC:  u ∈ [-3037000499..3037000499]
+INFO:FRAMAC:  v ∈ [-3037002646..3037000511]
+INFO:FRAMAC:  r ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  8 functions analyzed (out of 23): 34% coverage.
+INFO:FRAMAC:  In these functions, 47 statements reached (out of 49): 95% coverage.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
+INFO:FRAMAC:    by the Eva analyzer:      3 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    0 warnings
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  25 alarms generated by the analysis:
+INFO:FRAMAC:      25 integer overflows
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
+INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
+INFO:FRAMAC:  ----------------------------------------------------------------------------
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_long
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uchar
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_uint
+INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_ulong
+INFO:FRAMAC:[rte:annot] annotating function __builtin_alloca
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_val
+INFO:FRAMAC:[rte:annot] annotating function __builtin_huge_valf
+INFO:FRAMAC:[rte:annot] annotating function __builtin_inff
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memcpy
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
+INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
+INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[eva] User Error: Deferred error message was emitted during execution. See above messages for more information.
+INFO:FRAMAC:[kernel] Plug-in eva aborted: invalid user input.
+INFO:RESULT:unknown(recursive)
