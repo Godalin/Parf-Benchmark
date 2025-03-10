@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 10 -eva-plevel 29 -eva-partition-history 1 -eva-min-loop-unroll 2 -eva-ilevel 25 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 11 -eva-plevel 29 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 15 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
@@ -40,20 +40,26 @@ INFO:FRAMAC:        - (int)(s * y))
 INFO:FRAMAC:  + b ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
 INFO:FRAMAC:  signed overflow. assert (int)(k * b) + c ≤ 2147483647;
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:48: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:40: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
 INFO:FRAMAC:  signed overflow. assert k * b ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:48: Warning: 
 INFO:FRAMAC:  signed overflow. assert k + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(y * r) + (int)(x * p) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ y * s;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(x * q) + (int)(y * s) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ s * y;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert (int)(q * x) * y ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(s * y) * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert (int)((int)(q * x) * y) + (int)((int)(s * y) * y) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert
@@ -82,12 +88,17 @@ INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning:
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ x * q;
 INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
 INFO:FRAMAC:  signed overflow. assert y * s ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(x * q) + (int)(y * s);
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ q * x;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert s * y ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(q * x) * y;
+INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ (int)((int)(q * x) * y) + (int)((int)(s * y) * y);
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert
@@ -101,29 +112,16 @@ INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning:
 INFO:FRAMAC:  signed overflow. assert s * k ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ temp - (int)(s * k);
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:60: loop not completely unrolled
 INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
 INFO:FRAMAC:  signed overflow. assert y * r ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ x * p;
 INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(y * r) + (int)(x * p);
-INFO:FRAMAC:[eva:alarm] output/program.c:42: Warning: 
-INFO:FRAMAC:  signed overflow. assert (int)(y * r) + (int)(x * p) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
 INFO:FRAMAC:  signed overflow. assert x * q ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(x * q) + (int)(y * s);
-INFO:FRAMAC:[eva:alarm] output/program.c:43: Warning: 
-INFO:FRAMAC:  signed overflow. assert (int)(x * q) + (int)(y * s) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert q * x ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert -2147483648 ≤ (int)((int)(q * x) * y) + (int)((int)(s * y) * y);
-INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert (int)((int)(q * x) * y) + (int)((int)(s * y) * y) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
 INFO:FRAMAC:  signed overflow. assert q * k ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
@@ -167,12 +165,12 @@ INFO:FRAMAC:  x ∈ [1..2147483647]
 INFO:FRAMAC:  y ∈ [1..49152]
 INFO:FRAMAC:  a ∈ [1..49152]
 INFO:FRAMAC:  b ∈ {0}
-INFO:FRAMAC:  p ∈ [-536870912..469762048]
+INFO:FRAMAC:  p ∈ [--..--]
 INFO:FRAMAC:  q ∈ [--..--]
 INFO:FRAMAC:  r ∈ [--..--]
 INFO:FRAMAC:  s ∈ [--..--]
 INFO:FRAMAC:  c ∈ {0}
-INFO:FRAMAC:  k ∈ [1..2147483647]
+INFO:FRAMAC:  k ∈ [0..2147483647]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 5 -eva-plevel 34 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 7 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
@@ -43,7 +43,7 @@ INFO:FRAMAC:  votedValue_History_1 ∈ {0}
 INFO:FRAMAC:  votedValue_History_2 ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
-INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:74: Automatic loop unrolling.
+INFO:FRAMAC:[eva] output/program.c:74: starting to merge loop iterations
 INFO:FRAMAC:[eva] using specification for function abort
 INFO:FRAMAC:[eva:alarm] output/program.c:533: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
@@ -71,7 +71,7 @@ INFO:FRAMAC:  __retres ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function add_history_type:
 INFO:FRAMAC:  ini_bool ∈ {0}
 INFO:FRAMAC:  ini_int ∈ {-2}
-INFO:FRAMAC:  var ∈ {0; 3}
+INFO:FRAMAC:  var ∈ {0; 1; 2; 3}
 INFO:FRAMAC:  tmp ∈ {0; 1} or UNINITIALIZED
 INFO:FRAMAC:  tmp___0 ∈ {0; 1} or UNINITIALIZED
 INFO:FRAMAC:  tmp___1 ∈ {0; 1} or UNINITIALIZED
@@ -80,21 +80,21 @@ INFO:FRAMAC:  __retres ∈ {0; 1}
 INFO:FRAMAC:[eva:final-states] Values at end of function check:
 INFO:FRAMAC:  tmp ∈ {1}
 INFO:FRAMAC:  temp_count ∈ {0; 1; 2; 3} or UNINITIALIZED
-INFO:FRAMAC:  tmp___0 ∈ {-1; 0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp___1 ∈ {-1; 0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp___2 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___0 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___1 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___2 ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  tmp___3 ∈ {0; 1}
 INFO:FRAMAC:  tmp___4 ∈ {0; 1} or UNINITIALIZED
 INFO:FRAMAC:  tmp___5 ∈ {0; 1} or UNINITIALIZED
-INFO:FRAMAC:  tmp___6 ∈ {-1; 0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___6 ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  tmp___7 ∈ {0; 1} or UNINITIALIZED
 INFO:FRAMAC:  tmp___8 ∈ {0; 1} or UNINITIALIZED
 INFO:FRAMAC:  tmp___9 ∈ {0; 1} or UNINITIALIZED
 INFO:FRAMAC:  tmp___10 ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:  tmp___11 ∈ {-1; 0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp___12 ∈ {0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp___13 ∈ {0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp___14 ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  tmp___11 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___12 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___13 ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp___14 ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  __retres ∈ {0; 1}
 INFO:FRAMAC:[eva:final-states] Values at end of function init:
 INFO:FRAMAC:  tmp ∈ {0; 1}
@@ -113,56 +113,56 @@ INFO:FRAMAC:  gate3Failed_History_0 ∈ {0; 1}
 INFO:FRAMAC:  gate3Failed_History_1 ∈ {0; 1}
 INFO:FRAMAC:  gate3Failed_History_2 ∈ {0; 1}
 INFO:FRAMAC:[eva:final-states] Values at end of function gate1_each_pals_period:
-INFO:FRAMAC:  g1v_new ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  g1v_new ∈ [--..--]
 INFO:FRAMAC:  gate1Failed ∈ {0; 1}
 INFO:FRAMAC:  gate1Failed_History_0 ∈ {0; 1}
 INFO:FRAMAC:  gate1Failed_History_1 ∈ {0; 1}
 INFO:FRAMAC:  gate1Failed_History_2 ∈ {0; 1}
-INFO:FRAMAC:  next_state ∈ {0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  next_state ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  tmp___0 ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function gate2_each_pals_period:
-INFO:FRAMAC:  g2v_new ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  g2v_new ∈ [--..--]
 INFO:FRAMAC:  gate2Failed ∈ {0; 1}
 INFO:FRAMAC:  gate2Failed_History_0 ∈ {0; 1}
 INFO:FRAMAC:  gate2Failed_History_1 ∈ {0; 1}
 INFO:FRAMAC:  gate2Failed_History_2 ∈ {0; 1}
-INFO:FRAMAC:  next_state ∈ {0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  next_state ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  tmp___0 ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function gate3_each_pals_period:
-INFO:FRAMAC:  g3v_new ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  g3v_new ∈ [--..--]
 INFO:FRAMAC:  gate3Failed ∈ {0; 1}
 INFO:FRAMAC:  gate3Failed_History_0 ∈ {0; 1}
 INFO:FRAMAC:  gate3Failed_History_1 ∈ {0; 1}
 INFO:FRAMAC:  gate3Failed_History_2 ∈ {0; 1}
-INFO:FRAMAC:  next_state ∈ {0; 1; 2} or UNINITIALIZED
-INFO:FRAMAC:  tmp ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:  next_state ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  tmp ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  tmp___0 ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function write_history_int8:
-INFO:FRAMAC:  votedValue_History_0 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  votedValue_History_0 ∈ [--..--]
 INFO:FRAMAC:  votedValue_History_1 ∈ [--..--]
 INFO:FRAMAC:  votedValue_History_2 ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function voter:
 INFO:FRAMAC:  g1v_old ∈ {-1}
 INFO:FRAMAC:  g2v_old ∈ {-1}
 INFO:FRAMAC:  g3v_old ∈ {-1}
-INFO:FRAMAC:  VALUE1 ∈ {-1; 0; 1; 2}
-INFO:FRAMAC:  VALUE2 ∈ {-1; 0; 1; 2}
-INFO:FRAMAC:  VALUE3 ∈ {-1; 0; 1; 2}
-INFO:FRAMAC:  votedValue_History_0 ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  VALUE1 ∈ [--..--]
+INFO:FRAMAC:  VALUE2 ∈ [--..--]
+INFO:FRAMAC:  VALUE3 ∈ [--..--]
+INFO:FRAMAC:  votedValue_History_0 ∈ [--..--]
 INFO:FRAMAC:  votedValue_History_1 ∈ [--..--]
 INFO:FRAMAC:  votedValue_History_2 ∈ [--..--]
-INFO:FRAMAC:  voted_value ∈ {-1; 0; 1; 2}
+INFO:FRAMAC:  voted_value ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  NON TERMINATING FUNCTION
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  19 functions analyzed (out of 31): 61% coverage.
-INFO:FRAMAC:  In these functions, 337 statements reached (out of 375): 89% coverage.
+INFO:FRAMAC:  In these functions, 340 statements reached (out of 375): 90% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  No errors or warnings raised during the analysis.
 INFO:FRAMAC:  ----------------------------------------------------------------------------

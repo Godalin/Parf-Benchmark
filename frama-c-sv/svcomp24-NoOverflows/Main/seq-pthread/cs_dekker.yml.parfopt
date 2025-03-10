@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 16 -eva-plevel 29 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 29 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 15 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:181: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
@@ -35,48 +35,6 @@ INFO:FRAMAC:  expected 'void *(*)(void *)' but got argument of type 'void *(*)(v
 INFO:FRAMAC:[kernel:CERT:MSC:37] output/program.c:789: Warning: 
 INFO:FRAMAC:  Body of function main_thread falls-through. Adding a return statement
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
-INFO:FRAMAC:[eva] Splitting return states on:
-INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
-INFO:FRAMAC:  \return(seed48) == 0 (auto)
-INFO:FRAMAC:  \return(malloc) == 0 (auto)
-INFO:FRAMAC:  \return(calloc) == 0 (auto)
-INFO:FRAMAC:  \return(realloc) == 0 (auto)
-INFO:FRAMAC:  \return(alloca) == 0 (auto)
-INFO:FRAMAC:  \return(getenv) == 0 (auto)
-INFO:FRAMAC:  \return(bsearch) == 0 (auto)
-INFO:FRAMAC:  \return(thr1) == 0 (auto)
-INFO:FRAMAC:  \return(thr2) == 0 (auto)
-INFO:FRAMAC:  \return(main_thread) == 0 (auto)
-INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
-INFO:FRAMAC:  \return(memchr) == 0 (auto)
-INFO:FRAMAC:  \return(memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
-INFO:FRAMAC:  \return(memmove) == 0 (auto)
-INFO:FRAMAC:  \return(memset) == 0 (auto)
-INFO:FRAMAC:  \return(strchr) == 0 (auto)
-INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
-INFO:FRAMAC:  \return(strrchr) == 0 (auto)
-INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
-INFO:FRAMAC:  \return(strstr) == 0 (auto)
-INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
-INFO:FRAMAC:  \return(strtok) == 0 (auto)
-INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
-INFO:FRAMAC:  \return(strsep) == 0 (auto)
-INFO:FRAMAC:  \return(strerror) == 0 (auto)
-INFO:FRAMAC:  \return(strcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strncpy) == 0 (auto)
-INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strcat) == 0 (auto)
-INFO:FRAMAC:  \return(strncat) == 0 (auto)
-INFO:FRAMAC:  \return(strdup) == 0 (auto)
-INFO:FRAMAC:  \return(strndup) == 0 (auto)
-INFO:FRAMAC:  \return(strsignal) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  __CS_round ∈ {0}
@@ -101,7 +59,6 @@ INFO:FRAMAC:  x[0..2] ∈ {0}
 INFO:FRAMAC:  __CS_u ∈ {0}
 INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:800: Automatic loop unrolling.
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
-INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:805: Automatic loop unrolling.
 INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
 INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_long_interval
@@ -111,13 +68,19 @@ INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagatio
 INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
 INFO:FRAMAC:  pointer to function with incompatible type.
 INFO:FRAMAC:  assert \valid_function(__CS_thread[1]);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:704: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:702: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:712: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:694: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:731: Warning: 
 INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
 INFO:FRAMAC:[eva:alarm] output/program.c:851: Warning: 
 INFO:FRAMAC:  pointer to function with incompatible type.
 INFO:FRAMAC:  assert \valid_function(__CS_thread[2]);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:747: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:745: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:755: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:737: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:774: Warning: 
 INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
 INFO:FRAMAC:[eva:alarm] output/program.c:542: Warning: 
@@ -205,7 +168,7 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
-INFO:FRAMAC:  __CS_ret ∈ {1}
+INFO:FRAMAC:  __CS_ret ∈ {1; 2}
 INFO:FRAMAC:  __CS_error ∈ {0}
 INFO:FRAMAC:  __CS_thread_index ∈ {0; 1; 2}
 INFO:FRAMAC:  __CS_thread_allocated[0] ∈ {1}
@@ -216,7 +179,7 @@ INFO:FRAMAC:  __CS_thread[0] ∈ {{ &main_thread }}
 INFO:FRAMAC:             [1] ∈ {{ NULL ; (void *(*)(void *))&thr1 }}
 INFO:FRAMAC:             [2] ∈ {{ NULL ; (void *(*)(void *))&thr2 }}
 INFO:FRAMAC:  __CS_thread_status[0][0] ∈ {1; 2}
-INFO:FRAMAC:                    [0][1..2] ∈ {0; 1}
+INFO:FRAMAC:                    [0][1..2] ∈ {0; 1; 2}
 INFO:FRAMAC:                    [1..2][0..2] ∈ [--..--]
 INFO:FRAMAC:  __CS_thread_lockedon[0..2][0..2] ∈ {0}
 INFO:FRAMAC:  flag1[0] ∈ {0; 1}
@@ -229,7 +192,7 @@ INFO:FRAMAC:  x[0] ∈ {0; 1}
 INFO:FRAMAC:   [1..2] ∈ [--..--]
 INFO:FRAMAC:  __CS_cp___CS_thread_status[0][0..2] ∈ [--..--]
 INFO:FRAMAC:                            [1][0] ∈ {1; 2}
-INFO:FRAMAC:                            [1][1..2] ∈ {0; 1}
+INFO:FRAMAC:                            [1][1..2] ∈ {0; 1; 2}
 INFO:FRAMAC:                            [2][0..2] ∈ [--..--]
 INFO:FRAMAC:  __CS_cp___CS_thread_lockedon[0][0..2] ∈ [--..--]
 INFO:FRAMAC:                              [1..2][0..2] ∈ {0}

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 8 -eva-subdivide-non-linear 39 -eva-split-return auto -eva-slevel 178 -eva-remove-redundant-alarms -eva-plevel 329 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 170 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 138 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 18 -eva-subdivide-non-linear 82 -eva-split-return auto -eva-slevel 195 -eva-remove-redundant-alarms -eva-plevel 445 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 6 -eva-ilevel 311 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 151 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -62,22 +62,10 @@ INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:51: loop not completely u
 INFO:FRAMAC:[eva] output/program.c:40: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:40: starting to merge loop iterations
 INFO:FRAMAC:[eva] output/program.c:48: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:49: 
-INFO:FRAMAC:  The evaluation of the expression (long long)4 * ((long long)A + r) == 
-INFO:FRAMAC:                                   ((u * u - v * v) - (long long)2 * u) + 
-INFO:FRAMAC:                                   (long long)2 * v
-INFO:FRAMAC:  led to bottom without alarms:
-INFO:FRAMAC:  at this point the product of states has no possible concretization.
-INFO:FRAMAC:[eva] output/program.c:48: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:48: Trace partitioning superposing up to 300 states
-INFO:FRAMAC:[eva] output/program.c:36: 
-INFO:FRAMAC:  The evaluation of the expression (long long)4 * ((long long)A + r) == 
-INFO:FRAMAC:                                   ((u * u - v * v) - (long long)2 * u) + 
-INFO:FRAMAC:                                   (long long)2 * v
-INFO:FRAMAC:  led to bottom without alarms:
-INFO:FRAMAC:  at this point the product of states has no possible concretization.
-INFO:FRAMAC:[eva] output/program.c:48: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:40: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:40: Trace partitioning superposing up to 300 states
 INFO:FRAMAC:[eva] output/program.c:35: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:48: Trace partitioning superposing up to 400 states
 INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
 INFO:FRAMAC:  signed overflow. assert (long long)A + r ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
@@ -86,58 +74,43 @@ INFO:FRAMAC:  assert 4 * (long long)((long long)A + r) ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert 4 * (long long)((long long)A + r) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
+INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
+INFO:FRAMAC:  signed overflow. assert v * v ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
+INFO:FRAMAC:              (long long)(2 * u))
+INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
+INFO:FRAMAC:  signed overflow. assert v * v ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:45: loop not completely unrolled
-INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert -9223372036854775808 ≤ 4 * (long long)((long long)A + r);
-INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
-INFO:FRAMAC:  signed overflow. assert v * v ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:49: Warning: 
+INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:49: Warning: 
 INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert -9223372036854775808 ≤ 4 * (long long)((long long)A + r);
-INFO:FRAMAC:[eva] output/program.c:48: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
+INFO:FRAMAC:[eva:alarm] output/program.c:49: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
+INFO:FRAMAC:              (long long)(2 * u))
+INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:53: loop not completely unrolled
-INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
-INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
-INFO:FRAMAC:  signed overflow. assert v * v ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
-INFO:FRAMAC:  signed overflow. assert 2 * u ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
-INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
-INFO:FRAMAC:              (long long)(2 * u))
-INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
-INFO:FRAMAC:[eva:alarm] output/program.c:41: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
-INFO:FRAMAC:              (long long)(2 * u))
-INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:49: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
-INFO:FRAMAC:[eva:alarm] output/program.c:49: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
-INFO:FRAMAC:              (long long)(2 * u))
-INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:49: Warning: 
-INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -160,8 +133,8 @@ INFO:FRAMAC:  In these functions, 50 statements reached (out of 52): 96% coverag
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  No errors or warnings raised during the analysis.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  16 alarms generated by the analysis:
-INFO:FRAMAC:      16 integer overflows
+INFO:FRAMAC:  12 alarms generated by the analysis:
+INFO:FRAMAC:      12 integer overflows
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total

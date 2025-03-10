@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 5 -eva-slevel 12 -eva-plevel 28 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls formals -eva-domains cvalue,gauges,symbolic-locations -eva-auto-loop-unroll 8 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:188: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
@@ -21,15 +21,20 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva] output/program.c:588: allocating variable __malloc_append_l588
 INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(&node->next);
+INFO:FRAMAC:[kernel] output/program.c:589: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
 INFO:FRAMAC:[eva] output/program.c:555: allocating variable __malloc_create_data_l555
 INFO:FRAMAC:[eva] output/program.c:556: allocating variable __malloc_create_data_l556
 INFO:FRAMAC:[eva:alarm] output/program.c:556: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(&data->array);
+INFO:FRAMAC:[kernel] output/program.c:556: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:558: Automatic loop unrolling.
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva:alarm] output/program.c:559: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(data->array + counter);
-INFO:FRAMAC:[eva] output/program.c:558: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:563: starting to merge loop iterations
+INFO:FRAMAC:[kernel] output/program.c:559: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
 INFO:FRAMAC:[eva:alarm] output/program.c:564: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert -2147483648 ≤ data->number + tmp_3;
@@ -38,50 +43,35 @@ INFO:FRAMAC:[eva:alarm] output/program.c:564: Warning:
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert data->number + tmp_3 ≤ 2147483647;
 INFO:FRAMAC:  (tmp_3 from __VERIFIER_nondet_int())
+INFO:FRAMAC:[eva] output/program.c:563: starting to merge loop iterations
 INFO:FRAMAC:[eva] output/program.c:571: allocating variable __malloc_create_data_l571
 INFO:FRAMAC:[eva:alarm] output/program.c:572: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(&nextData->array);
+INFO:FRAMAC:[kernel] output/program.c:572: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
 INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ data->number - 200;
-INFO:FRAMAC:[eva] output/program.c:570: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->number);
-INFO:FRAMAC:[eva] output/program.c:600: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:559: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->array);
-INFO:FRAMAC:[eva:alarm] output/program.c:563: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->number);
-INFO:FRAMAC:[eva:alarm] output/program.c:563: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->number);
-INFO:FRAMAC:[eva:alarm] output/program.c:564: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->number);
-INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&node->next);
+INFO:FRAMAC:[eva] output/program.c:570: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&(node->next)->data);
-INFO:FRAMAC:[eva:alarm] output/program.c:593: Warning: 
-INFO:FRAMAC:  out of bounds read. assert \valid_read(&(node->next)->data);
 INFO:FRAMAC:[eva] output/program.c:555: allocating variable __malloc_create_data_l555_0
 INFO:FRAMAC:[eva] output/program.c:556: allocating variable __malloc_create_data_l556_0
 INFO:FRAMAC:[eva] output/program.c:571: allocating variable __malloc_create_data_l571_0
 INFO:FRAMAC:[eva:alarm] output/program.c:602: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->data);
 INFO:FRAMAC:[eva:alarm] output/program.c:602: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->data);
-INFO:FRAMAC:[eva:alarm] output/program.c:602: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value.
 INFO:FRAMAC:  assert \initialized(&(list->data)->hasNextPartReference);
-INFO:FRAMAC:[eva:alarm] output/program.c:602: Warning: 
-INFO:FRAMAC:  out of bounds read. assert \valid_read(&(list->data)->hasNextPartReference);
 INFO:FRAMAC:[eva:alarm] output/program.c:552: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value.
 INFO:FRAMAC:  assert \initialized(&prevData->hasNextPartReference);
 INFO:FRAMAC:[eva:alarm] output/program.c:553: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&prevData->nextData);
+INFO:FRAMAC:[eva] output/program.c:600: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:606: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->data);
 INFO:FRAMAC:[eva:alarm] output/program.c:584: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->array);
 INFO:FRAMAC:[eva:alarm] output/program.c:584: Warning: 
@@ -89,39 +79,38 @@ INFO:FRAMAC:  out of bounds read. assert \valid_read(&data->array);
 INFO:FRAMAC:[eva:alarm] output/program.c:608: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&next);
-INFO:FRAMAC:[eva] output/program.c:604: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&list->next);
+INFO:FRAMAC:[eva:alarm] output/program.c:606: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&list->data);
 INFO:FRAMAC:[eva:alarm] output/program.c:606: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&list->data);
 INFO:FRAMAC:[eva:alarm] output/program.c:584: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&data->array);
-INFO:FRAMAC:[scope:rm_asserts] removing 3 assertion(s)
+INFO:FRAMAC:[eva] output/program.c:604: starting to merge loop iterations
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function freeData:
 INFO:FRAMAC:  data ∈
-INFO:FRAMAC:      {{ &__malloc_w_create_data_l555 ; &__malloc_w_create_data_l571 ;
-INFO:FRAMAC:         &__malloc_w_create_data_l555_0[0] ;
-INFO:FRAMAC:         &__malloc_w_create_data_l571_0 }} or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_w_append_l588[0].data ∈
-INFO:FRAMAC:                        {{ NULL ; &__malloc_w_create_data_l555 ;
+INFO:FRAMAC:      {{ &__malloc_create_data_l555 ; &__malloc_w_create_data_l571 ;
+INFO:FRAMAC:         &__malloc_w_create_data_l555_0 ; &__malloc_w_create_data_l571_0 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_w_append_l588.data ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_create_data_l555 ;
 INFO:FRAMAC:                           &__malloc_w_create_data_l571 ;
-INFO:FRAMAC:                           &__malloc_w_create_data_l555_0[0] ;
+INFO:FRAMAC:                           &__malloc_w_create_data_l555_0 ;
 INFO:FRAMAC:                           &__malloc_w_create_data_l571_0 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                        [0].next ∈
-INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l588[0] }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_w_create_data_l555.number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             .array ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l556[0] }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                             .hasNextPartReference ∈
-INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                             .nextData ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l588 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_create_data_l555.number ∈ [--..--]
+INFO:FRAMAC:                           .array ∈
+INFO:FRAMAC:                           {{ &__malloc_create_data_l556[0] }} or ESCAPINGADDR
+INFO:FRAMAC:                           .hasNextPartReference ∈ {0; 1}
+INFO:FRAMAC:                           .nextData ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_w_create_data_l571 }} or ESCAPINGADDR
 INFO:FRAMAC:  __malloc_w_create_data_l571.number ∈
 INFO:FRAMAC:                             [-2147483648..2147483447] or UNINITIALIZED
 INFO:FRAMAC:                             .array ∈ {0} or UNINITIALIZED
@@ -129,12 +118,12 @@ INFO:FRAMAC:                             .hasNextPartReference ∈
 INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
 INFO:FRAMAC:                             .nextData ∈
 INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_w_create_data_l555_0[0].number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                               [0].array ∈
-INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                               [0].hasNextPartReference ∈
+INFO:FRAMAC:  __malloc_w_create_data_l555_0.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                               .array ∈
+INFO:FRAMAC:                               {{ &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                               .hasNextPartReference ∈
 INFO:FRAMAC:                               {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                               [0].nextData ∈
+INFO:FRAMAC:                               .nextData ∈
 INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED or ESCAPINGADDR
 INFO:FRAMAC:  __malloc_w_create_data_l571_0.number ∈
 INFO:FRAMAC:                               [-2147483648..2147483447] or UNINITIALIZED
@@ -145,30 +134,25 @@ INFO:FRAMAC:                               .nextData ∈
 INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED or ESCAPINGADDR
 INFO:FRAMAC:[eva:final-states] Values at end of function create_data:
 INFO:FRAMAC:  data ∈
-INFO:FRAMAC:      {{ &__malloc_w_create_data_l555 ; &__malloc_w_create_data_l571 ;
-INFO:FRAMAC:         &__malloc_w_create_data_l555_0[0] ;
-INFO:FRAMAC:         &__malloc_w_create_data_l571_0 }} or UNINITIALIZED
+INFO:FRAMAC:      {{ &__malloc_create_data_l555 ; &__malloc_w_create_data_l571 ;
+INFO:FRAMAC:         &__malloc_w_create_data_l555_0 ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED
 INFO:FRAMAC:  counter ∈ {3} or UNINITIALIZED
 INFO:FRAMAC:  userInput ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  origData ∈
-INFO:FRAMAC:          {{ &__malloc_w_create_data_l555 ;
-INFO:FRAMAC:             &__malloc_w_create_data_l555_0[0] }} or UNINITIALIZED
+INFO:FRAMAC:          {{ &__malloc_create_data_l555 ; &__malloc_w_create_data_l555_0 }} or UNINITIALIZED
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈
-INFO:FRAMAC:          {{ NULL ; &__malloc_w_create_data_l555 ;
-INFO:FRAMAC:             &__malloc_w_create_data_l571 ;
-INFO:FRAMAC:             &__malloc_w_create_data_l555_0[0] ;
+INFO:FRAMAC:          {{ NULL ; &__malloc_create_data_l555 ;
+INFO:FRAMAC:             &__malloc_w_create_data_l571 ; &__malloc_w_create_data_l555_0 ;
 INFO:FRAMAC:             &__malloc_w_create_data_l571_0 }}
-INFO:FRAMAC:  __malloc_w_create_data_l555.number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             .array ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l556[0] }} or UNINITIALIZED
-INFO:FRAMAC:                             .hasNextPartReference ∈
-INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                             .nextData ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED
-INFO:FRAMAC:  __malloc_w_create_data_l556[0..2] ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             [3..19] ∈ UNINITIALIZED
+INFO:FRAMAC:  __malloc_create_data_l555.number ∈ [--..--]
+INFO:FRAMAC:                           .array ∈ {{ &__malloc_create_data_l556[0] }}
+INFO:FRAMAC:                           .hasNextPartReference ∈ {0; 1}
+INFO:FRAMAC:                           .nextData ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_w_create_data_l571 }}
+INFO:FRAMAC:  __malloc_create_data_l556[0..2] ∈ [--..--]
+INFO:FRAMAC:                           [3..19] ∈ UNINITIALIZED
 INFO:FRAMAC:  __malloc_w_create_data_l571.number ∈
 INFO:FRAMAC:                             [-2147483648..2147483447] or UNINITIALIZED
 INFO:FRAMAC:                             .array ∈ {0} or UNINITIALIZED
@@ -176,12 +160,12 @@ INFO:FRAMAC:                             .hasNextPartReference ∈
 INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
 INFO:FRAMAC:                             .nextData ∈
 INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED
-INFO:FRAMAC:  __malloc_w_create_data_l555_0[0].number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                               [0].array ∈
-INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED
-INFO:FRAMAC:                               [0].hasNextPartReference ∈
+INFO:FRAMAC:  __malloc_w_create_data_l555_0.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                               .array ∈
+INFO:FRAMAC:                               {{ &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED
+INFO:FRAMAC:                               .hasNextPartReference ∈
 INFO:FRAMAC:                               {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                               [0].nextData ∈
+INFO:FRAMAC:                               .nextData ∈
 INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED
 INFO:FRAMAC:  __malloc_w_create_data_l556_0[0..2] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:                               [3..19] ∈ UNINITIALIZED
@@ -193,26 +177,24 @@ INFO:FRAMAC:                               {0; 1} or UNINITIALIZED
 INFO:FRAMAC:                               .nextData ∈
 INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED
 INFO:FRAMAC:[eva:final-states] Values at end of function append:
-INFO:FRAMAC:  node ∈ {{ &__malloc_w_append_l588[0] }}
-INFO:FRAMAC:  list ∈ {{ &__malloc_w_append_l588[0] }}
+INFO:FRAMAC:  node ∈ {{ &__malloc_w_append_l588 }}
+INFO:FRAMAC:  list ∈ {{ &__malloc_w_append_l588 }}
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
-INFO:FRAMAC:  __malloc_w_append_l588[0].data ∈
-INFO:FRAMAC:                        {{ NULL ; &__malloc_w_create_data_l555 ;
+INFO:FRAMAC:  __malloc_w_append_l588.data ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_create_data_l555 ;
 INFO:FRAMAC:                           &__malloc_w_create_data_l571 ;
-INFO:FRAMAC:                           &__malloc_w_create_data_l555_0[0] ;
+INFO:FRAMAC:                           &__malloc_w_create_data_l555_0 ;
 INFO:FRAMAC:                           &__malloc_w_create_data_l571_0 }} or UNINITIALIZED
-INFO:FRAMAC:                        [0].next ∈
-INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l588[0] }} or UNINITIALIZED
-INFO:FRAMAC:  __malloc_w_create_data_l555.number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             .array ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l556[0] }} or UNINITIALIZED
-INFO:FRAMAC:                             .hasNextPartReference ∈
-INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                             .nextData ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED
-INFO:FRAMAC:  __malloc_w_create_data_l556[0..2] ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             [3..19] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l588 }} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_create_data_l555.number ∈ [--..--]
+INFO:FRAMAC:                           .array ∈ {{ &__malloc_create_data_l556[0] }}
+INFO:FRAMAC:                           .hasNextPartReference ∈ {0; 1}
+INFO:FRAMAC:                           .nextData ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_w_create_data_l571 }}
+INFO:FRAMAC:  __malloc_create_data_l556[0..2] ∈ [--..--]
+INFO:FRAMAC:                           [3..19] ∈ UNINITIALIZED
 INFO:FRAMAC:  __malloc_w_create_data_l571.number ∈
 INFO:FRAMAC:                             [-2147483648..2147483447] or UNINITIALIZED
 INFO:FRAMAC:                             .array ∈ {0} or UNINITIALIZED
@@ -220,12 +202,12 @@ INFO:FRAMAC:                             .hasNextPartReference ∈
 INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
 INFO:FRAMAC:                             .nextData ∈
 INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED
-INFO:FRAMAC:  __malloc_w_create_data_l555_0[0].number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                               [0].array ∈
-INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED
-INFO:FRAMAC:                               [0].hasNextPartReference ∈
+INFO:FRAMAC:  __malloc_w_create_data_l555_0.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                               .array ∈
+INFO:FRAMAC:                               {{ &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED
+INFO:FRAMAC:                               .hasNextPartReference ∈
 INFO:FRAMAC:                               {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                               [0].nextData ∈
+INFO:FRAMAC:                               .nextData ∈
 INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED
 INFO:FRAMAC:  __malloc_w_create_data_l556_0[0..2] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:                               [3..19] ∈ UNINITIALIZED
@@ -242,22 +224,21 @@ INFO:FRAMAC:  dataNotFinished ∈ {0}
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
-INFO:FRAMAC:  __malloc_w_append_l588[0].data ∈
-INFO:FRAMAC:                        {{ NULL ; &__malloc_w_create_data_l555 ;
+INFO:FRAMAC:  __malloc_w_append_l588.data ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_create_data_l555 ;
 INFO:FRAMAC:                           &__malloc_w_create_data_l571 ;
-INFO:FRAMAC:                           &__malloc_w_create_data_l555_0[0] ;
+INFO:FRAMAC:                           &__malloc_w_create_data_l555_0 ;
 INFO:FRAMAC:                           &__malloc_w_create_data_l571_0 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                        [0].next ∈
-INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l588[0] }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_w_create_data_l555.number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             .array ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l556[0] }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                             .hasNextPartReference ∈
-INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                             .nextData ∈
-INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_w_create_data_l556[0..2] ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                             [3..19] ∈ UNINITIALIZED
+INFO:FRAMAC:                        .next ∈
+INFO:FRAMAC:                        {{ NULL ; &__malloc_w_append_l588 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_create_data_l555.number ∈ [--..--]
+INFO:FRAMAC:                           .array ∈
+INFO:FRAMAC:                           {{ &__malloc_create_data_l556[0] }} or ESCAPINGADDR
+INFO:FRAMAC:                           .hasNextPartReference ∈ {0; 1}
+INFO:FRAMAC:                           .nextData ∈
+INFO:FRAMAC:                           {{ NULL ; &__malloc_w_create_data_l571 }} or ESCAPINGADDR
+INFO:FRAMAC:  __malloc_create_data_l556[0..2] ∈ [--..--]
+INFO:FRAMAC:                           [3..19] ∈ UNINITIALIZED
 INFO:FRAMAC:  __malloc_w_create_data_l571.number ∈
 INFO:FRAMAC:                             [-2147483648..2147483447] or UNINITIALIZED
 INFO:FRAMAC:                             .array ∈ {0} or UNINITIALIZED
@@ -265,12 +246,12 @@ INFO:FRAMAC:                             .hasNextPartReference ∈
 INFO:FRAMAC:                             {0; 1} or UNINITIALIZED
 INFO:FRAMAC:                             .nextData ∈
 INFO:FRAMAC:                             {{ NULL ; &__malloc_w_create_data_l571 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_w_create_data_l555_0[0].number ∈ [--..--] or UNINITIALIZED
-INFO:FRAMAC:                               [0].array ∈
-INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                               [0].hasNextPartReference ∈
+INFO:FRAMAC:  __malloc_w_create_data_l555_0.number ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:                               .array ∈
+INFO:FRAMAC:                               {{ &__malloc_w_create_data_l556_0[0] }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:                               .hasNextPartReference ∈
 INFO:FRAMAC:                               {0; 1} or UNINITIALIZED
-INFO:FRAMAC:                               [0].nextData ∈
+INFO:FRAMAC:                               .nextData ∈
 INFO:FRAMAC:                               {{ NULL ; &__malloc_w_create_data_l571_0 }} or UNINITIALIZED or ESCAPINGADDR
 INFO:FRAMAC:  __malloc_w_create_data_l556_0[0..2] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:                               [3..19] ∈ UNINITIALIZED
@@ -288,11 +269,11 @@ INFO:FRAMAC:  In these functions, 92 statements reached (out of 92): 100% covera
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
-INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    6 warnings
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  29 alarms generated by the analysis:
-INFO:FRAMAC:      15 accesses to uninitialized left-values
-INFO:FRAMAC:       7 invalid memory accesses
+INFO:FRAMAC:  21 alarms generated by the analysis:
+INFO:FRAMAC:       9 accesses to uninitialized left-values
+INFO:FRAMAC:       5 invalid memory accesses
 INFO:FRAMAC:       4 escaping addresses
 INFO:FRAMAC:       3 integer overflows
 INFO:FRAMAC:  ----------------------------------------------------------------------------

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 35 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 18 -eva-equality-through-calls none -eva-domains cvalue,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 4 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 7 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:63: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_float that is declared without prototype.
@@ -34,7 +34,6 @@ INFO:FRAMAC:   generating default assigns. See -generated-spec-* options for mor
 INFO:FRAMAC:[eva] using specification for function __VERIFIER_nondet_float
 INFO:FRAMAC:[eva:alarm] output/program.c:65: Warning: 
 INFO:FRAMAC:  non-finite float value. assert \is_finite(main__x);
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:104: loop not completely unrolled
 INFO:FRAMAC:[eva:alarm] output/program.c:144: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======

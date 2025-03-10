@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 14 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 9 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 15 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,gauges,symbolic-locations -eva-auto-loop-unroll 8 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
@@ -82,12 +82,13 @@ INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning:
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert
 INFO:FRAMAC:  -2147483648 ≤ (int)((int)((int)(2 * Y) * x) - (int)((int)(2 * X) * y)) - X;
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:42: loop not completely unrolled
+INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(2 * Y) * x;
 INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
 INFO:FRAMAC:  signed overflow. assert (int)(2 * Y) * x ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
 INFO:FRAMAC:  signed overflow. assert (int)(2 * X) * y ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(2 * Y) * x;
 INFO:FRAMAC:[eva] output/program.c:30: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:44: Warning: 
 INFO:FRAMAC:  signed overflow. assert 2 * x ≤ 2147483647;
@@ -149,10 +150,10 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  X ∈ [-1073741824..1073741823]
-INFO:FRAMAC:  Y ∈ [-2147483648..1073741823]
+INFO:FRAMAC:  X ∈ [-2147483647..1073741823]
+INFO:FRAMAC:  Y ∈ [-1073741824..2147483647]
 INFO:FRAMAC:  v ∈ [--..--]
-INFO:FRAMAC:  x ∈ [0..1073741825]
+INFO:FRAMAC:  x ∈ [0..2147483647]
 INFO:FRAMAC:  y ∈ [0..2147483647]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}

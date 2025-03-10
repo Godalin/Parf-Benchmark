@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 15 -eva-plevel 30 -eva-partition-history 1 -eva-min-loop-unroll 1 -eva-ilevel 20 -eva-equality-through-calls none -eva-domains cvalue,octagon -eva-auto-loop-unroll 8 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-slevel 12 -eva-remove-redundant-alarms -eva-plevel 29 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 7 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:181: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
@@ -69,13 +69,19 @@ INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagatio
 INFO:FRAMAC:[eva:alarm] output/program.c:917: Warning: 
 INFO:FRAMAC:  pointer to function with incompatible type.
 INFO:FRAMAC:  assert \valid_function(__CS_thread[1]);
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:713: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:706: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:724: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:734: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:694: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:767: Warning: 
 INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
 INFO:FRAMAC:[eva:alarm] output/program.c:923: Warning: 
 INFO:FRAMAC:  pointer to function with incompatible type.
 INFO:FRAMAC:  assert \valid_function(__CS_thread[2]);
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:790: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:783: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:801: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:811: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:771: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:844: Warning: 
 INFO:FRAMAC:  assertion 'missing_return' got status invalid (stopping propagation).
 INFO:FRAMAC:[eva:alarm] output/program.c:542: Warning: 
@@ -165,7 +171,7 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  __CS_round ∈ {0; 1; 2}
-INFO:FRAMAC:  __CS_ret ∈ {1}
+INFO:FRAMAC:  __CS_ret ∈ {1; 2}
 INFO:FRAMAC:  __CS_error ∈ {0}
 INFO:FRAMAC:  __CS_thread_index ∈ {0; 1; 2}
 INFO:FRAMAC:  __CS_thread_allocated[0] ∈ {1}
@@ -176,7 +182,7 @@ INFO:FRAMAC:  __CS_thread[0] ∈ {{ &main_thread }}
 INFO:FRAMAC:             [1] ∈ {{ NULL ; (void *(*)(void *))&thr1 }}
 INFO:FRAMAC:             [2] ∈ {{ NULL ; (void *(*)(void *))&thr2 }}
 INFO:FRAMAC:  __CS_thread_status[0][0] ∈ {1; 2}
-INFO:FRAMAC:                    [0][1..2] ∈ {0; 1}
+INFO:FRAMAC:                    [0][1..2] ∈ {0; 1; 2}
 INFO:FRAMAC:                    [1..2][0..2] ∈ [--..--]
 INFO:FRAMAC:  __CS_thread_lockedon[0..2][0..2] ∈ {0}
 INFO:FRAMAC:  x[0] ∈ {0; 1; 2}
@@ -191,7 +197,7 @@ INFO:FRAMAC:  X[0] ∈ {0; 1}
 INFO:FRAMAC:   [1..2] ∈ [--..--]
 INFO:FRAMAC:  __CS_cp___CS_thread_status[0][0..2] ∈ [--..--]
 INFO:FRAMAC:                            [1][0] ∈ {1; 2}
-INFO:FRAMAC:                            [1][1..2] ∈ {0; 1}
+INFO:FRAMAC:                            [1][1..2] ∈ {0; 1; 2}
 INFO:FRAMAC:                            [2][0..2] ∈ [--..--]
 INFO:FRAMAC:  __CS_cp___CS_thread_lockedon[0][0..2] ∈ [--..--]
 INFO:FRAMAC:                              [1..2][0..2] ∈ {0}

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 9 -eva-plevel 24 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 20 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 9 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 8 -eva-plevel 33 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 5 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -61,10 +61,10 @@ INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&src[i]);
 INFO:FRAMAC:[eva] output/program.c:26: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:27: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&src[i]);
-INFO:FRAMAC:[eva:alarm] output/program.c:32: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&dst[i]);
 INFO:FRAMAC:[eva:alarm] output/program.c:16: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:32: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&dst[i]);
 INFO:FRAMAC:[eva] output/program.c:31: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:31: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&src[i]);
@@ -75,8 +75,8 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  src[0..8] ∈ [--..--]
-INFO:FRAMAC:     [9..99999] ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:  src[0..7] ∈ [--..--]
+INFO:FRAMAC:     [8..99999] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  dst[0..99999] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:  i ∈ [0..100000]
 INFO:FRAMAC:  j ∈ {100000}

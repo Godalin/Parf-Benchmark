@@ -8,58 +8,9 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 12 -eva-remove-redundant-alarms -eva-plevel 37 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 23 -eva-equality-through-calls none -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 11 -eva-plevel 30 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 7 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
-INFO:FRAMAC:[eva] Splitting return states on:
-INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0, 1, 2, 3, 4, 5, 6 (auto)
-INFO:FRAMAC:  \return(FlQueueIrpToThread) == 259 (auto)
-INFO:FRAMAC:  \return(FloppyPnp) == -1, 259 (auto)
-INFO:FRAMAC:  \return(FloppyStartDevice) == 259 (auto)
-INFO:FRAMAC:  \return(FloppyPnpComplete) == 3221225494 (auto)
-INFO:FRAMAC:  \return(IoBuildDeviceIoControlRequest) == 0 (auto)
-INFO:FRAMAC:  \return(IofCallDriver) == 259 (auto)
-INFO:FRAMAC:  \return(FloppyCreateClose) == -1, 259 (auto)
-INFO:FRAMAC:  \return(FloppyQueueRequest) == 259 (auto)
-INFO:FRAMAC:  \return(FloppyDeviceControl) == -1, 259 (auto)
-INFO:FRAMAC:  \return(FlCheckFormatParameters) == 0 (auto)
-INFO:FRAMAC:  \return(seed48) == 0 (auto)
-INFO:FRAMAC:  \return(calloc) == 0 (auto)
-INFO:FRAMAC:  \return(malloc) == 0 (auto)
-INFO:FRAMAC:  \return(realloc) == 0 (auto)
-INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
-INFO:FRAMAC:  \return(getenv) == 0 (auto)
-INFO:FRAMAC:  \return(bsearch) == 0 (auto)
-INFO:FRAMAC:  \return(alloca) == 0 (auto)
-INFO:FRAMAC:  \return(memchr) == 0 (auto)
-INFO:FRAMAC:  \return(memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
-INFO:FRAMAC:  \return(memmove) == 0 (auto)
-INFO:FRAMAC:  \return(memset) == 0 (auto)
-INFO:FRAMAC:  \return(strchr) == 0 (auto)
-INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
-INFO:FRAMAC:  \return(strrchr) == 0 (auto)
-INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
-INFO:FRAMAC:  \return(strstr) == 0 (auto)
-INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
-INFO:FRAMAC:  \return(strtok) == 0 (auto)
-INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
-INFO:FRAMAC:  \return(strsep) == 0 (auto)
-INFO:FRAMAC:  \return(strerror) == 0 (auto)
-INFO:FRAMAC:  \return(strcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strncpy) == 0 (auto)
-INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strcat) == 0 (auto)
-INFO:FRAMAC:  \return(strncat) == 0 (auto)
-INFO:FRAMAC:  \return(strdup) == 0 (auto)
-INFO:FRAMAC:  \return(strndup) == 0 (auto)
-INFO:FRAMAC:  \return(strsignal) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  FloppyThread ∈ {0}
@@ -89,7 +40,6 @@ INFO:FRAMAC:  customIrp ∈ {0}
 INFO:FRAMAC:  PagingReferenceCount ∈ {0}
 INFO:FRAMAC:  PagingMutex ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
-INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva:alarm] output/program.c:1306: Warning: 
 INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:1307: Warning: 
@@ -126,10 +76,11 @@ INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647
 INFO:FRAMAC:[eva:alarm] output/program.c:489: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert -2147483648 ≤ Irp__Tail__Overlay__CurrentStackLocation - 1;
-INFO:FRAMAC:[eva] output/program.c:850: cannot properly split on \result == 0
 INFO:FRAMAC:[eva:alarm] output/program.c:631: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert -2147483648 ≤ irp__Tail__Overlay__CurrentStackLocation - 1;
+INFO:FRAMAC:[eva:alarm] output/program.c:1627: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:248: Warning: 
 INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:249: Warning: 
@@ -166,19 +117,8 @@ INFO:FRAMAC:  signed overflow. assert Irp__CurrentLocation + 1 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:414: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert Irp__Tail__Overlay__CurrentStackLocation + 1 ≤ 2147483647;
-INFO:FRAMAC:[eva] output/program.c:431: cannot properly split on \result == 259
-INFO:FRAMAC:[eva:alarm] output/program.c:1627: Warning: 
-INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function FlAcpiConfigureFloppy:
-INFO:FRAMAC:  __retres ∈ {0}
-INFO:FRAMAC:[eva:final-states] Values at end of function IofCompleteRequest:
-INFO:FRAMAC:  s ∈ {2}
-INFO:FRAMAC:[eva:final-states] Values at end of function FloppyCreateClose:
-INFO:FRAMAC:  myStatus ∈ {0}
-INFO:FRAMAC:  s ∈ {2}
-INFO:FRAMAC:  Irp__IoStatus__Status ∈ {0}
-INFO:FRAMAC:  Irp__IoStatus__Information ∈ {1}
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:final-states] Values at end of function _BLAST_init:
 INFO:FRAMAC:  s ∈ {0}
@@ -203,16 +143,6 @@ INFO:FRAMAC:  FormatParameters__MediaType ∈ [--..--]
 INFO:FRAMAC:  FAKE_CONDITION ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0; 1}
-INFO:FRAMAC:[eva:final-states] Values at end of function FloppyQueueRequest:
-INFO:FRAMAC:  myStatus ∈ {-1073741536; 259}
-INFO:FRAMAC:  s ∈ {1; 2}
-INFO:FRAMAC:  pended ∈ {0; 1}
-INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1}
-INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741536; 259}
-INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
-INFO:FRAMAC:  ntStatus ∈ {-1073741536; 259}
-INFO:FRAMAC:  FAKE_CONDITION ∈ [--..--]
-INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function IoBuildDeviceIoControlRequest:
 INFO:FRAMAC:  customIrp ∈ {1}
 INFO:FRAMAC:  malloc_0 ∈ [--..--]
@@ -240,7 +170,8 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {-1073741802}
 INFO:FRAMAC:[eva:final-states] Values at end of function KeWaitForSingleObject:
 INFO:FRAMAC:  s ∈ {1}
-INFO:FRAMAC:  setEventCalled ∈ {0}
+INFO:FRAMAC:  setEventCalled ∈ {0; 1}
+INFO:FRAMAC:  customIrp ∈ {0; 1}
 INFO:FRAMAC:  tmp_ndt_12 ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {-1073741823; 0}
@@ -272,6 +203,24 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {-1073741823; -1073741101; 259}
 INFO:FRAMAC:[eva:final-states] Values at end of function errorFn:
 INFO:FRAMAC:  NON TERMINATING FUNCTION
+INFO:FRAMAC:[eva:final-states] Values at end of function IofCompleteRequest:
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyCreateClose:
+INFO:FRAMAC:  myStatus ∈ {0}
+INFO:FRAMAC:  s ∈ {2}
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {0}
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {1}
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:[eva:final-states] Values at end of function FloppyQueueRequest:
+INFO:FRAMAC:  myStatus ∈ {-1073741536; 259}
+INFO:FRAMAC:  s ∈ {1; 2}
+INFO:FRAMAC:  pended ∈ {0; 1}
+INFO:FRAMAC:  PagingReferenceCount ∈ {0; 1}
+INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741536; 259}
+INFO:FRAMAC:  Irp__IoStatus__Information ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  ntStatus ∈ {-1073741536; 259}
+INFO:FRAMAC:  FAKE_CONDITION ∈ [--..--]
+INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function stubMoreProcessingRequired:
 INFO:FRAMAC:  s ∈ {5}
 INFO:FRAMAC:[eva:final-states] Values at end of function IofCallDriver:
@@ -284,10 +233,10 @@ INFO:FRAMAC:  lcontext ∈ [--..--]
 INFO:FRAMAC:  __cil_tmp7 ∈ {3221225494} or UNINITIALIZED
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function FlFdcDeviceIo:
-INFO:FRAMAC:  s ∈ {1}
+INFO:FRAMAC:  s ∈ {1; 6}
 INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
 INFO:FRAMAC:  setEventCalled ∈ {0; 1}
-INFO:FRAMAC:  customIrp ∈ {1}
+INFO:FRAMAC:  customIrp ∈ {0; 1}
 INFO:FRAMAC:  ntStatus ∈ {-1073741823; -1073741637; 0} or UNINITIALIZED
 INFO:FRAMAC:  irp ∈ [--..--]
 INFO:FRAMAC:  irpStack ∈ [-2147483648..2147483646] or UNINITIALIZED
@@ -378,7 +327,7 @@ INFO:FRAMAC:  s ∈ {2}
 INFO:FRAMAC:  compRegistered ∈ {1}
 INFO:FRAMAC:  lowerDriverReturn ∈ {-1073741823; 0; 259}
 INFO:FRAMAC:  setEventCalled ∈ {0; 1}
-INFO:FRAMAC:  customIrp ∈ {1}
+INFO:FRAMAC:  customIrp ∈ {0; 1}
 INFO:FRAMAC:  DeviceObject__DeviceExtension ∈ [--..--]
 INFO:FRAMAC:  Irp__Tail__Overlay__CurrentStackLocation ∈ [-2147483647..2147483647]
 INFO:FRAMAC:  Irp__IoStatus__Status ∈ {-1073741823; -1073741670; -1073741637; 0}
@@ -504,7 +453,7 @@ INFO:FRAMAC:  __retres ∈ {-1; 0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  28 functions analyzed (out of 45): 62% coverage.
-INFO:FRAMAC:  In these functions, 808 statements reached (out of 866): 93% coverage.
+INFO:FRAMAC:  In these functions, 812 statements reached (out of 866): 93% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  No errors or warnings raised during the analysis.
 INFO:FRAMAC:  ----------------------------------------------------------------------------

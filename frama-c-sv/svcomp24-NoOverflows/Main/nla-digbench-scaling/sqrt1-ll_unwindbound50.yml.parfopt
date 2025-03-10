@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 8 -eva-subdivide-non-linear 9 -eva-split-return auto -eva-slevel 55 -eva-plevel 141 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 68 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 33 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 5 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 56 -eva-remove-redundant-alarms -eva-plevel 126 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 90 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 63 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -55,6 +55,7 @@ INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  counter ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:30: Automatic loop unrolling.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  

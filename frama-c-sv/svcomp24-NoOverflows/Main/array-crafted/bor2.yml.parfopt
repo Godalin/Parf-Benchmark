@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 197 -eva-split-return auto -eva-slevel 5682 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 9 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 834 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 335 -eva-split-return auto -eva-slevel 5515 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1085 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:38: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
@@ -56,9 +56,9 @@ INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:37: Automatic loop unrolling.
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:37: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 300 states
@@ -69,7 +69,7 @@ INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 700 
 INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 800 states
 INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 900 states
 INFO:FRAMAC:[eva] output/program.c:37: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:23: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:23: Automatic loop unrolling.
 INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 300 states
@@ -80,7 +80,7 @@ INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 700 
 INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 800 states
 INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 900 states
 INFO:FRAMAC:[eva] output/program.c:23: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:46: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:46: Automatic loop unrolling.
 INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======

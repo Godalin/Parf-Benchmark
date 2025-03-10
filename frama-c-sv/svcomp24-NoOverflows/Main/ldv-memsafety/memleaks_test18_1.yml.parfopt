@@ -8,25 +8,68 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 9 -eva-subdivide-non-linear 13 -eva-split-return auto -eva-slevel 54 -eva-remove-redundant-alarms -eva-plevel 132 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 50 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 34 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:162: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:167: Warning: 
 INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_malloc) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_zalloc) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_msg_alloc) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_kobject_get) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_kobject_create) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_dev_get_drvdata) == 0 (auto)
+INFO:FRAMAC:  \return(ldv_atomic_sub_return) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  ldv_global_msg_list{.next; .prev} ∈ {{ &ldv_global_msg_list }}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] output/program.c:527: allocating variable __malloc_ldv_malloc_l527
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:767: Automatic loop unrolling.
 INFO:FRAMAC:[eva] output/program.c:527: allocating variable __malloc_ldv_malloc_l527_0
-INFO:FRAMAC:[eva] output/program.c:767: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:774: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(array + j);
-INFO:FRAMAC:[eva:alarm] output/program.c:774: Warning: 
-INFO:FRAMAC:  out of bounds read. assert \valid_read(array + j);
-INFO:FRAMAC:[eva] output/program.c:773: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:773: Automatic loop unrolling.
 INFO:FRAMAC:[eva:alarm] output/program.c:774: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(array + j);
@@ -44,7 +87,7 @@ INFO:FRAMAC:  len ∈ {10}
 INFO:FRAMAC:  array ∈ {{ NULL ; (struct A18 **)&__malloc_ldv_malloc_l527 }}
 INFO:FRAMAC:  p ∈
 INFO:FRAMAC:   {{ NULL ; (struct A18 *)&__malloc_w_ldv_malloc_l527_0 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:  i ∈ [0..2147483647]
+INFO:FRAMAC:  i ∈ [0..10]
 INFO:FRAMAC:  j ∈ {-1} or UNINITIALIZED
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -64,9 +107,7 @@ INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
 INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  3 alarms generated by the analysis:
-INFO:FRAMAC:       1 invalid memory access
-INFO:FRAMAC:       1 access to uninitialized left-values
+INFO:FRAMAC:  1 alarm generated by the analysis:
 INFO:FRAMAC:       1 escaping address
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:

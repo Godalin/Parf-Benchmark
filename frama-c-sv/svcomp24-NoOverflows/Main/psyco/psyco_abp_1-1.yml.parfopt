@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 20 -eva-subdivide-non-linear 90 -eva-split-return auto -eva-slevel 496 -eva-remove-redundant-alarms -eva-plevel 2297 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 395 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 317 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 6 -eva-subdivide-non-linear 39 -eva-split-return auto -eva-slevel 169 -eva-remove-redundant-alarms -eva-plevel 380 -eva-partition-history 8 -eva-octagon-through-calls -eva-min-loop-unroll 7 -eva-ilevel 179 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 174 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:29: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
@@ -64,6 +64,9 @@ INFO:FRAMAC:  m_recv_ack_1_1 ∈ {6}
 INFO:FRAMAC:  m_recv_ack_1_2 ∈ {7}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 500 states
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:60: loop not completely unrolled
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:63: loop not completely unrolled
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:80: loop not completely unrolled
@@ -94,24 +97,17 @@ INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:528: loop not completely 
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:544: loop not completely unrolled
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:560: loop not completely unrolled
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:563: loop not completely unrolled
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 100 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 300 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 500 states
 INFO:FRAMAC:[eva] output/program.c:26: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 600 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 700 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 800 states
 INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 900 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1100 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1200 states
 INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1300 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1400 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1500 states
 INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1600 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1700 states
 INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1800 states
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 1900 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 2100 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 2500 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 2700 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 2800 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 2900 states
 INFO:FRAMAC:[eva:alarm] output/program.c:571: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
@@ -120,14 +116,14 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  q ∈ {2}
 INFO:FRAMAC:  method_id ∈ {2; 3; 4; 5; 6; 7}
-INFO:FRAMAC:  this_expect ∈ [-16..16]
+INFO:FRAMAC:  this_expect ∈ {-16; -15} ∪ [0..16]
 INFO:FRAMAC:  this_buffer_empty ∈ {0; 1}
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  3 functions analyzed (out of 18): 16% coverage.
-INFO:FRAMAC:  In these functions, 445 statements reached (out of 558): 79% coverage.
+INFO:FRAMAC:  In these functions, 366 statements reached (out of 558): 65% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings

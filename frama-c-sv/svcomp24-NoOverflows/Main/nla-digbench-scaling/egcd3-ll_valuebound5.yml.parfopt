@@ -8,152 +8,79 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 20 -eva-subdivide-non-linear 92 -eva-split-return auto -eva-slevel 490 -eva-remove-redundant-alarms -eva-plevel 992 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 9 -eva-ilevel 359 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 309 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] using specification for function abort
 INFO:FRAMAC:[eva:alarm] output/program.c:13: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
-INFO:FRAMAC:[eva] output/program.c:49: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:58: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
 INFO:FRAMAC:  signed overflow. assert b * d ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:55: Warning: 
-INFO:FRAMAC:  signed overflow. assert 2 * v ≤ 9223372036854775807;
+INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ 2 * v;
 INFO:FRAMAC:[eva:alarm] output/program.c:57: Warning: 
 INFO:FRAMAC:  signed overflow. assert 2 * d ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:58: Warning: 
-INFO:FRAMAC:  signed overflow. assert 2 * v ≤ 9223372036854775807;
-INFO:FRAMAC:[eva] output/program.c:42: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:52: Warning: 
-INFO:FRAMAC:  signed overflow. assert k * b ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:52: Warning: 
-INFO:FRAMAC:  signed overflow. assert (long long)(k * b) + c ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:61: Warning: 
-INFO:FRAMAC:  signed overflow. assert k + d ≤ 9223372036854775807;
-INFO:FRAMAC:[eva] output/program.c:35: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:51: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ (long long)y * s;
-INFO:FRAMAC:[eva:alarm] output/program.c:52: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ k * b;
-INFO:FRAMAC:[eva:alarm] output/program.c:52: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ (long long)(k * b) + c;
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:49: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:53: Warning: 
 INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ b * d;
-INFO:FRAMAC:[eva:alarm] output/program.c:55: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ 2 * v;
 INFO:FRAMAC:[eva:alarm] output/program.c:58: Warning: 
 INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ 2 * v;
-INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ c - v;
-INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
-INFO:FRAMAC:  signed overflow. assert c - v ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:72: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ s * k;
-INFO:FRAMAC:[eva:alarm] output/program.c:72: Warning: 
-INFO:FRAMAC:  signed overflow. assert temp - (long long)(s * k) ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ (long long)y * r;
-INFO:FRAMAC:[eva:alarm] output/program.c:51: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ (long long)x * q;
-INFO:FRAMAC:[eva:alarm] output/program.c:51: Warning: 
-INFO:FRAMAC:  signed overflow. assert (long long)y * s ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:51: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)x * q) + (long long)((long long)y * s);
-INFO:FRAMAC:[eva:alarm] output/program.c:51: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)x * q) + (long long)((long long)y * s) ≤
-INFO:FRAMAC:  9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ q * k;
-INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 
-INFO:FRAMAC:  signed overflow. assert temp - (long long)(q * k) ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:72: Warning: 
-INFO:FRAMAC:  signed overflow. assert s * k ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:72: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ temp - (long long)(s * k);
-INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
-INFO:FRAMAC:  signed overflow. assert (long long)y * r ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ (long long)x * p;
-INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)y * r) + (long long)((long long)x * p);
-INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)y * r) + (long long)((long long)x * p) ≤
-INFO:FRAMAC:  9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:51: Warning: 
-INFO:FRAMAC:  signed overflow. assert (long long)x * q ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 
-INFO:FRAMAC:  signed overflow. assert q * k ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ temp - (long long)(q * k);
-INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
-INFO:FRAMAC:  signed overflow. assert (long long)x * p ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ p * (long long)x;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert p * (long long)x ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ q * (long long)x;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert q * (long long)x ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ r * (long long)y;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert r * (long long)y ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ s * (long long)y;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow. assert s * (long long)y ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)(p * (long long)x) - (long long)(q * (long long)x);
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)(p * (long long)x) - (long long)(q * (long long)x) ≤
-INFO:FRAMAC:  9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)(p * (long long)x) - (long long)(q * (long long)x)) +
-INFO:FRAMAC:  (long long)(r * (long long)y);
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)(p * (long long)x) - (long long)(q * (long long)x)) +
-INFO:FRAMAC:  (long long)(r * (long long)y) ≤ 9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)((long long)(p * (long long)x) -
-INFO:FRAMAC:                          (long long)(q * (long long)x))
-INFO:FRAMAC:              + (long long)(r * (long long)y))
-INFO:FRAMAC:  - (long long)(s * (long long)y);
-INFO:FRAMAC:[eva:alarm] output/program.c:74: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  (long long)((long long)((long long)(p * (long long)x) -
-INFO:FRAMAC:                          (long long)(q * (long long)x))
-INFO:FRAMAC:              + (long long)(r * (long long)y))
-INFO:FRAMAC:  - (long long)(s * (long long)y) ≤ 9223372036854775807;
-INFO:FRAMAC:[scope:rm_asserts] removing 2 assertion(s)
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 800 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:49: Trace partitioning superposing up to 1000 states
+INFO:FRAMAC:[scope:rm_asserts] removing 1 assertion(s)
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -162,14 +89,17 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  x ∈ [1..2147483647]
-INFO:FRAMAC:  y ∈ [1..2147483647]
-INFO:FRAMAC:  a ∈ [-9223372036854775807..2147483647]
+INFO:FRAMAC:  x ∈ {1; 2; 3; 4; 5}
+INFO:FRAMAC:  y ∈ {1; 2; 3; 4; 5}
+INFO:FRAMAC:  a ∈ {1; 2; 3; 4; 5}
 INFO:FRAMAC:  b ∈ {0}
-INFO:FRAMAC:  p ∈ [--..--]
-INFO:FRAMAC:  q ∈ [--..--]
-INFO:FRAMAC:  r ∈ [--..--]
-INFO:FRAMAC:  s ∈ [--..--]
+INFO:FRAMAC:  p ∈
+INFO:FRAMAC:   [-213..-206] ∪ [-188..-181] ∪ [-173..-165] ∪ [-163..-156]
+INFO:FRAMAC:    ∪ [-153..-145] ∪ [-140..11]
+INFO:FRAMAC:    ∪ {13; 15; 16; 17; 19; 21; 22; 25; 26; 29; 31; 33; 36; 41}
+INFO:FRAMAC:  q ∈ [-172..1319]
+INFO:FRAMAC:  r ∈ [-128..665]
+INFO:FRAMAC:  s ∈ [-4118..537]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
@@ -179,8 +109,8 @@ INFO:FRAMAC:  In these functions, 66 statements reached (out of 68): 97% coverag
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  No errors or warnings raised during the analysis.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  48 alarms generated by the analysis:
-INFO:FRAMAC:      48 integer overflows
+INFO:FRAMAC:  5 alarms generated by the analysis:
+INFO:FRAMAC:       5 integer overflows
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total

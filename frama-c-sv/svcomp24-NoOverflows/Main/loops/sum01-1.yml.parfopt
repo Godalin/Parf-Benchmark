@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 10 -eva-plevel 37 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 14 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 9 -eva-plevel 32 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,gauges -eva-auto-loop-unroll 9 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:23: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_uint that is declared without prototype.
@@ -57,6 +57,7 @@ INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:24: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:24: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:24: Warning: 
 INFO:FRAMAC:  signed overflow. assert i + 1 ≤ 2147483647;

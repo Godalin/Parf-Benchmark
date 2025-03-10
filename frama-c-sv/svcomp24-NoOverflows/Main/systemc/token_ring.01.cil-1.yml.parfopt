@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-slevel 14 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls none -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 18 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:58: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
@@ -29,8 +29,14 @@ INFO:FRAMAC:  E_1 ∈ {2}
 INFO:FRAMAC:  token ∈ {0}
 INFO:FRAMAC:  local ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] output/program.c:210: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 
+INFO:FRAMAC:  signed overflow. assert local + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:20: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:107: Warning: 
 INFO:FRAMAC:  signed overflow. assert token + 1 ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:428: starting to merge loop iterations
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -56,12 +62,14 @@ INFO:FRAMAC:  t1_st ∈ {0; 1; 2}
 INFO:FRAMAC:  tmp ∈ {0; 1}
 INFO:FRAMAC:  tmp___0 ∈ {0; 1}
 INFO:FRAMAC:[eva:final-states] Values at end of function immediate_notify:
-INFO:FRAMAC:  m_st ∈ {0; 1}
-INFO:FRAMAC:  t1_st ∈ {0; 1}
+INFO:FRAMAC:  m_st ∈ {0; 1; 2}
+INFO:FRAMAC:  t1_st ∈ {0; 1; 2}
+INFO:FRAMAC:[eva:final-states] Values at end of function error:
+INFO:FRAMAC:  NON TERMINATING FUNCTION
 INFO:FRAMAC:[eva:final-states] Values at end of function master:
 INFO:FRAMAC:  m_pc ∈ {1}
 INFO:FRAMAC:  m_st ∈ {2}
-INFO:FRAMAC:  t1_st ∈ {0}
+INFO:FRAMAC:  t1_st ∈ {0; 2}
 INFO:FRAMAC:  E_1 ∈ {2}
 INFO:FRAMAC:  token ∈ [--..--]
 INFO:FRAMAC:  local ∈ [--..--]
@@ -71,19 +79,19 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function reset_time_events:
 INFO:FRAMAC:  M_E ∈ {2}
 INFO:FRAMAC:[eva:final-states] Values at end of function stop_simulation:
-INFO:FRAMAC:  tmp ∈ {0}
-INFO:FRAMAC:  __retres2 ∈ {1}
+INFO:FRAMAC:  tmp ∈ {0; 1}
+INFO:FRAMAC:  __retres2 ∈ {0; 1}
 INFO:FRAMAC:[eva:final-states] Values at end of function transmit1:
 INFO:FRAMAC:  t1_pc ∈ {1}
-INFO:FRAMAC:  m_st ∈ {0}
+INFO:FRAMAC:  m_st ∈ {0; 2}
 INFO:FRAMAC:  t1_st ∈ {2}
 INFO:FRAMAC:  E_M ∈ {2}
-INFO:FRAMAC:  token ∈ [-2147483647..2147483647]
+INFO:FRAMAC:  token ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function eval:
-INFO:FRAMAC:  m_pc ∈ {1}
-INFO:FRAMAC:  t1_pc ∈ {1}
-INFO:FRAMAC:  m_st ∈ {2}
-INFO:FRAMAC:  t1_st ∈ {2}
+INFO:FRAMAC:  m_pc ∈ {0; 1}
+INFO:FRAMAC:  t1_pc ∈ {0; 1}
+INFO:FRAMAC:  m_st ∈ {0; 2}
+INFO:FRAMAC:  t1_st ∈ {0; 2}
 INFO:FRAMAC:  E_M ∈ {2}
 INFO:FRAMAC:  E_1 ∈ {2}
 INFO:FRAMAC:  token ∈ [--..--]
@@ -93,24 +101,24 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function update_channels:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function start_simulation:
-INFO:FRAMAC:  m_pc ∈ {1}
-INFO:FRAMAC:  t1_pc ∈ {1}
-INFO:FRAMAC:  m_st ∈ {2}
-INFO:FRAMAC:  t1_st ∈ {2}
+INFO:FRAMAC:  m_pc ∈ {0; 1}
+INFO:FRAMAC:  t1_pc ∈ {0; 1}
+INFO:FRAMAC:  m_st ∈ {0; 2}
+INFO:FRAMAC:  t1_st ∈ {0; 2}
 INFO:FRAMAC:  M_E ∈ {2}
 INFO:FRAMAC:  E_M ∈ {2}
 INFO:FRAMAC:  E_1 ∈ {2}
 INFO:FRAMAC:  token ∈ [--..--]
 INFO:FRAMAC:  local ∈ [--..--]
-INFO:FRAMAC:  kernel_st ∈ {4}
-INFO:FRAMAC:  tmp ∈ {0}
+INFO:FRAMAC:  kernel_st ∈ {3; 4}
+INFO:FRAMAC:  tmp ∈ {0; 1}
 INFO:FRAMAC:  tmp___0 ∈ {1}
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  m_pc ∈ {1}
-INFO:FRAMAC:  t1_pc ∈ {1}
-INFO:FRAMAC:  m_st ∈ {2}
-INFO:FRAMAC:  t1_st ∈ {2}
+INFO:FRAMAC:  m_pc ∈ {0; 1}
+INFO:FRAMAC:  t1_pc ∈ {0; 1}
+INFO:FRAMAC:  m_st ∈ {0; 2}
+INFO:FRAMAC:  t1_st ∈ {0; 2}
 INFO:FRAMAC:  m_i ∈ {1}
 INFO:FRAMAC:  t1_i ∈ {1}
 INFO:FRAMAC:  M_E ∈ {2}
@@ -122,20 +130,20 @@ INFO:FRAMAC:  __retres1 ∈ {0}
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  19 functions analyzed (out of 36): 52% coverage.
-INFO:FRAMAC:  In these functions, 171 statements reached (out of 189): 90% coverage.
+INFO:FRAMAC:  21 functions analyzed (out of 36): 58% coverage.
+INFO:FRAMAC:  In these functions, 176 statements reached (out of 195): 90% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
 INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  1 alarm generated by the analysis:
-INFO:FRAMAC:       1 integer overflow
+INFO:FRAMAC:  2 alarms generated by the analysis:
+INFO:FRAMAC:       2 integer overflows
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
-INFO:FRAMAC:    Preconditions     1 valid     0 unknown     0 invalid      1 total
-INFO:FRAMAC:  100% of the logical properties reached have been proven.
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     1 invalid      2 total
+INFO:FRAMAC:  50% of the logical properties reached have been proven.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
@@ -152,7 +160,5 @@ INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
 INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
 INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
 INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
-INFO:FRAMAC:[rte:annot] annotating function error
-INFO:FRAMAC:[rte:annot] annotating function reach_error
 INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
 INFO:RESULT:unknown

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 16 -eva-subdivide-non-linear 32 -eva-split-return auto -eva-slevel 178 -eva-remove-redundant-alarms -eva-plevel 368 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 4 -eva-ilevel 153 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 114 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 8 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 49 -eva-remove-redundant-alarms -eva-plevel 171 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 62 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 61 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -58,7 +58,6 @@ INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] using specification for function abort
 INFO:FRAMAC:[eva:alarm] output/program.c:17: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
-INFO:FRAMAC:[eva] output/program.c:47: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:61: loop not completely unrolled
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
@@ -70,7 +69,7 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  x ∈ [0..10]
 INFO:FRAMAC:  y ∈ [1..10]
-INFO:FRAMAC:  q ∈ [0..10]
+INFO:FRAMAC:  q ∈ [0..11]
 INFO:FRAMAC:  r ∈ [-8..9]
 INFO:FRAMAC:  a ∈ {0; 1; 2; 4; 8}
 INFO:FRAMAC:  b ∈ [0..10]

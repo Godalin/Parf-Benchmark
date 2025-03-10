@@ -8,37 +8,75 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 30 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 13 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:174: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:179: Warning: 
 INFO:FRAMAC:  __builtin_bswap64 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:537: Automatic loop unrolling.
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] output/program.c:539: allocating variable __malloc_main_l539
 INFO:FRAMAC:[eva] using specification for function abort
 INFO:FRAMAC:[eva] output/program.c:549: allocating variable __malloc_main_l549
 INFO:FRAMAC:[eva:alarm] output/program.c:554: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(&lItem->next);
-INFO:FRAMAC:[eva] output/program.c:537: starting to merge loop iterations
+INFO:FRAMAC:[kernel] output/program.c:554: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
+INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(&lItem->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:551: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:563: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
+INFO:FRAMAC:[kernel] output/program.c:551: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
 INFO:FRAMAC:[eva:alarm] output/program.c:564: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->data);
 INFO:FRAMAC:[eva:alarm] output/program.c:565: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:565: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&(data->next)->data);
-INFO:FRAMAC:[eva:alarm] output/program.c:566: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:567: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&lItem->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:569: Warning: 
@@ -52,59 +90,37 @@ INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning:
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&item->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:576: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&item2->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:578: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(dst);
 INFO:FRAMAC:[eva] output/program.c:570: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:572: Warning: 
-INFO:FRAMAC:  out of bounds write. assert \valid(dst);
-INFO:FRAMAC:[eva:alarm] output/program.c:575: Warning: 
-INFO:FRAMAC:  out of bounds write. assert \valid(dst);
-INFO:FRAMAC:[eva:alarm] output/program.c:581: Warning: 
-INFO:FRAMAC:  out of bounds write. assert \valid(dst);
-INFO:FRAMAC:[eva:alarm] output/program.c:584: Warning: 
-INFO:FRAMAC:  out of bounds write. assert \valid(dst);
 INFO:FRAMAC:[eva:alarm] output/program.c:588: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:588: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&data->next);
-INFO:FRAMAC:[eva] output/program.c:563: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:563: Warning: 
+INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:563: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&data->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:565: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&data->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:566: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&data->next);
-INFO:FRAMAC:[eva:alarm] output/program.c:567: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&lItem->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:590: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&data->data);
 INFO:FRAMAC:[eva:alarm] output/program.c:594: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&item->next);
 INFO:FRAMAC:[eva:alarm] output/program.c:595: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&item2->value);
-INFO:FRAMAC:[eva:alarm] output/program.c:595: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&item2->value);
-INFO:FRAMAC:[eva] output/program.c:592: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:592: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&item);
 INFO:FRAMAC:[eva:alarm] output/program.c:594: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&item->next);
-INFO:FRAMAC:[scope:rm_asserts] removing 5 assertion(s)
+INFO:FRAMAC:[eva] output/program.c:592: starting to merge loop iterations
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  data ∈ {{ NULL ; &__malloc_w_main_l549 }} or ESCAPINGADDR
 INFO:FRAMAC:  item ∈ {0} or UNINITIALIZED
-INFO:FRAMAC:  item2 ∈
-INFO:FRAMAC:       {{ NULL ; &__malloc_w_main_l539 }} or UNINITIALIZED or ESCAPINGADDR
+INFO:FRAMAC:  item2 ∈ {{ &__malloc_w_main_l539 }} or UNINITIALIZED or ESCAPINGADDR
 INFO:FRAMAC:  lItem ∈
 INFO:FRAMAC:       {{ NULL ; &__malloc_w_main_l549 }} or UNINITIALIZED or ESCAPINGADDR
 INFO:FRAMAC:  c1 ∈ {0; 1; 2; 3; 4; 5}
@@ -113,7 +129,7 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:  __malloc_w_main_l539.next ∈
 INFO:FRAMAC:                      {{ NULL ; &__malloc_w_main_l539 }} or UNINITIALIZED or ESCAPINGADDR
-INFO:FRAMAC:                      .value ∈ [2..14] or UNINITIALIZED
+INFO:FRAMAC:                      .value ∈ {4; 5; 6; 8; 10; 12; 14} or UNINITIALIZED
 INFO:FRAMAC:  __malloc_w_main_l549.next ∈
 INFO:FRAMAC:                      {{ &__malloc_w_main_l549 }} or UNINITIALIZED or ESCAPINGADDR
 INFO:FRAMAC:                      .data ∈
@@ -125,12 +141,12 @@ INFO:FRAMAC:  In these functions, 78 statements reached (out of 78): 100% covera
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
-INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    4 warnings
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  31 alarms generated by the analysis:
-INFO:FRAMAC:      17 accesses to uninitialized left-values
-INFO:FRAMAC:       8 escaping addresses
-INFO:FRAMAC:       6 invalid memory accesses
+INFO:FRAMAC:  20 alarms generated by the analysis:
+INFO:FRAMAC:      13 accesses to uninitialized left-values
+INFO:FRAMAC:       5 escaping addresses
+INFO:FRAMAC:       2 invalid memory accesses
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total

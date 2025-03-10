@@ -8,33 +8,72 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 26 -eva-partition-history 1 -eva-min-loop-unroll 1 -eva-ilevel 23 -eva-equality-through-calls none -eva-domains cvalue,equality,octagon -eva-auto-loop-unroll 5 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
+INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] using specification for function abort
-INFO:FRAMAC:[eva] output/program.c:52: Warning: 
-INFO:FRAMAC:  calloc out of bounds: assert(nmemb * size <= SIZE_MAX)
 INFO:FRAMAC:[eva] output/program.c:52: allocating variable __calloc_main_l52
 INFO:FRAMAC:[eva:alarm] output/program.c:29: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(a + i);
 INFO:FRAMAC:[eva:alarm] output/program.c:30: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(a + j);
+INFO:FRAMAC:[kernel] output/program.c:29: Warning: 
+INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
 INFO:FRAMAC:[eva:alarm] output/program.c:38: Warning: 
 INFO:FRAMAC:  out of bounds read. assert \valid_read(a + i);
 INFO:FRAMAC:[eva:alarm] output/program.c:38: Warning: 
 INFO:FRAMAC:  out of bounds read. assert \valid_read(a + j);
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:37: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:37: starting to merge loop iterations
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:36: loop not completely unrolled
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:37: Automatic loop unrolling.
 INFO:FRAMAC:[eva] output/program.c:36: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:10: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
-INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&i);
-INFO:FRAMAC:[eva:alarm] output/program.c:61: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&j);
 INFO:FRAMAC:[eva:alarm] output/program.c:63: Warning: 
 INFO:FRAMAC:  out of bounds read. assert \valid_read(a + i);
 INFO:FRAMAC:[eva:alarm] output/program.c:63: Warning: 
@@ -46,23 +85,23 @@ INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function finddup:
 INFO:FRAMAC:  i ∈ [0..2147483647]
-INFO:FRAMAC:  j ∈ [1..2147483647] or UNINITIALIZED
-INFO:FRAMAC:  i ∈ [0..1073741823] or UNINITIALIZED
-INFO:FRAMAC:  j ∈ [1..1073741823] or UNINITIALIZED
+INFO:FRAMAC:  j ∈ [1..2147483647]
+INFO:FRAMAC:  i ∈ [0..1073741822] or UNINITIALIZED
+INFO:FRAMAC:  j ∈ [1..1073741822] or UNINITIALIZED
 INFO:FRAMAC:  __retres ∈ {0; 1}
 INFO:FRAMAC:[eva:final-states] Values at end of function mkdup:
-INFO:FRAMAC:  i ∈ [0..1073741823]
-INFO:FRAMAC:  j ∈ [0..1073741823]
+INFO:FRAMAC:  i ∈ [0..1073741822]
+INFO:FRAMAC:  j ∈ [0..1073741822]
 INFO:FRAMAC:  x ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
-INFO:FRAMAC:  __calloc_main_l52[0..1073741823] ∈ [--..--]
+INFO:FRAMAC:  __calloc_main_l52[0..1073741822] ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  n ∈ [--..--]
+INFO:FRAMAC:  n ∈ [2..1073741823]
 INFO:FRAMAC:  a ∈ ESCAPINGADDR
-INFO:FRAMAC:  i ∈ [0..1073741823]
-INFO:FRAMAC:  j ∈ [1..1073741823]
+INFO:FRAMAC:  i ∈ [0..1073741822]
+INFO:FRAMAC:  j ∈ [1..1073741822]
 INFO:FRAMAC:  r ∈ {1}
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -73,12 +112,11 @@ INFO:FRAMAC:  7 functions analyzed (out of 22): 31% coverage.
 INFO:FRAMAC:  In these functions, 73 statements reached (out of 78): 93% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
-INFO:FRAMAC:    by the Eva analyzer:      0 errors    1 warning
-INFO:FRAMAC:    by the Frama-C kernel:    0 errors    0 warnings
+INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
+INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  8 alarms generated by the analysis:
+INFO:FRAMAC:  6 alarms generated by the analysis:
 INFO:FRAMAC:       6 invalid memory accesses
-INFO:FRAMAC:       2 accesses to uninitialized left-values
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 27 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 9 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:162: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
@@ -22,12 +22,6 @@ INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] output/program.c:527: allocating variable __malloc_ldv_malloc_l527
 INFO:FRAMAC:[eva] FRAMAC_SHARE/libc/string.h:134: 
 INFO:FRAMAC:  cannot evaluate ACSL term, unsupported ACSL construct: logic function memset
-INFO:FRAMAC:[eva:alarm] output/program.c:658: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&v->counter);
-INFO:FRAMAC:[eva:alarm] output/program.c:666: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&v->counter);
-INFO:FRAMAC:[eva:alarm] output/program.c:699: Warning: 
-INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&kobj->name);
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function LDV_INIT_LIST_HEAD:
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0}
@@ -38,47 +32,31 @@ INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_atomic_add_return:
 INFO:FRAMAC:  temp ∈ {2}
-INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0}
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
-INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} repeated %32 
 INFO:FRAMAC:                          [bits 96 to 127] ∈ {2}
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_atomic_sub_return:
-INFO:FRAMAC:  temp ∈ {0; 1}
-INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  temp ∈ {1}
+INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0}
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
-INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {0; 1}
-INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kobject_cleanup:
-INFO:FRAMAC:  kref ∈ ESCAPINGADDR
-INFO:FRAMAC:  kref ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ ESCAPINGADDR
-INFO:FRAMAC:  name ∈ {0}
-INFO:FRAMAC:  kref ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ {0} or ESCAPINGADDR
-INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kobject_release:
-INFO:FRAMAC:  kref ∈ ESCAPINGADDR
-INFO:FRAMAC:  kref ∈ ESCAPINGADDR
-INFO:FRAMAC:  kref ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈ {0} or ESCAPINGADDR
+INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} repeated %32 
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {1}
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kref_get:
-INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0}
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
-INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
+INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} repeated %32 
 INFO:FRAMAC:                          [bits 96 to 127] ∈ {2}
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kobject_get:
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {1; 2} or UNINITIALIZED
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {2} or UNINITIALIZED
 INFO:FRAMAC:[eva:final-states] Values at end of function f_22_get:
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {1; 2} or UNINITIALIZED
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {2} or UNINITIALIZED
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kref_init:
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..11] ∈ {0}
 INFO:FRAMAC:                          [bits 96 to 127] ∈ {1}
@@ -93,39 +71,21 @@ INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} repeated %32 
 INFO:FRAMAC:                          [bits 96 to 127] ∈ {1}
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kref_sub:
-INFO:FRAMAC:  kref ∈
-INFO:FRAMAC:      {{ (struct ldv_kref *)&__malloc_ldv_malloc_l527[12] }} or ESCAPINGADDR
-INFO:FRAMAC:  kref ∈
-INFO:FRAMAC:      {{ (struct ldv_kref *)&__malloc_ldv_malloc_l527[12] }} or ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ NULL ; (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
-INFO:FRAMAC:  __retres ∈ {0; 1}
-INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  __retres ∈ {0}
+INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0}
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
-INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {0; 1}
+INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} repeated %32 
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {1}
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kref_put:
-INFO:FRAMAC:  kref ∈
-INFO:FRAMAC:      {{ (struct ldv_kref *)&__malloc_ldv_malloc_l527[12] }} or ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ NULL ; (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
-INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
+INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0}
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
-INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {0; 1}
+INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} repeated %32 
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {1}
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_kobject_put:
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ NULL ; (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ NULL ; (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:[eva:final-states] Values at end of function ldv_malloc:
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -140,36 +100,34 @@ INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
 INFO:FRAMAC:                          [bits 96 to 127] ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:[eva:final-states] Values at end of function entry_point:
-INFO:FRAMAC:  kobj ∈
-INFO:FRAMAC:      {{ NULL ; (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }} or ESCAPINGADDR
+INFO:FRAMAC:  kobj ∈ {{ NULL ; (struct ldv_kobject *)&__malloc_ldv_malloc_l527 }}
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __malloc_ldv_malloc_l527[0..3] ∈ {0} or UNINITIALIZED
 INFO:FRAMAC:                          [bits 32 to 95]# ∈
 INFO:FRAMAC:                          {{ (? *)&__malloc_ldv_malloc_l527[4] }} or UNINITIALIZED repeated %32 
-INFO:FRAMAC:                          [bits 96 to 127] ∈ {0; 1; 2} or UNINITIALIZED
+INFO:FRAMAC:                          [bits 96 to 127] ∈ {1} or UNINITIALIZED
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  19 functions analyzed (out of 58): 32% coverage.
-INFO:FRAMAC:  In these functions, 79 statements reached (out of 84): 94% coverage.
+INFO:FRAMAC:  17 functions analyzed (out of 58): 29% coverage.
+INFO:FRAMAC:  In these functions, 65 statements reached (out of 73): 89% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
 INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  3 alarms generated by the analysis:
-INFO:FRAMAC:       3 accesses to uninitialized left-values
+INFO:FRAMAC:  0 alarms generated by the analysis.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
-INFO:FRAMAC:    Preconditions     3 valid     0 unknown     0 invalid      3 total
+INFO:FRAMAC:    Preconditions     2 valid     0 unknown     0 invalid      2 total
 INFO:FRAMAC:  100% of the logical properties reached have been proven.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
@@ -200,7 +158,9 @@ INFO:FRAMAC:[rte:annot] annotating function g
 INFO:FRAMAC:[rte:annot] annotating function ldv_destroy_msgs
 INFO:FRAMAC:[rte:annot] annotating function ldv_dev_get_drvdata
 INFO:FRAMAC:[rte:annot] annotating function ldv_dev_set_drvdata
+INFO:FRAMAC:[rte:annot] annotating function ldv_kobject_cleanup
 INFO:FRAMAC:[rte:annot] annotating function ldv_kobject_del
+INFO:FRAMAC:[rte:annot] annotating function ldv_kobject_release
 INFO:FRAMAC:[rte:annot] annotating function ldv_list_add
 INFO:FRAMAC:[rte:annot] annotating function ldv_list_add_tail
 INFO:FRAMAC:[rte:annot] annotating function ldv_list_del

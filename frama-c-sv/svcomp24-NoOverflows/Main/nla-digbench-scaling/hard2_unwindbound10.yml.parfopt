@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 7 -eva-subdivide-non-linear 9 -eva-split-return auto -eva-slevel 71 -eva-remove-redundant-alarms -eva-plevel 136 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 59 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 46 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 8 -eva-subdivide-non-linear 7 -eva-split-return auto -eva-slevel 57 -eva-remove-redundant-alarms -eva-plevel 133 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 59 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges -eva-auto-loop-unroll 44 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -56,22 +56,22 @@ INFO:FRAMAC:  counter ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:34: Automatic loop unrolling.
-INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:44: Automatic loop unrolling.
 INFO:FRAMAC:[eva:alarm] output/program.c:17: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:44: Automatic loop unrolling.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  counter ∈ {2; 4; 6; 8; 10}
-INFO:FRAMAC:  A ∈ [-2147483648..15]
+INFO:FRAMAC:  counter ∈ {2; 4; 6; 8; 10; 11; 12}
+INFO:FRAMAC:  A ∈ [-2147483648..31]
 INFO:FRAMAC:  B ∈ {1}
-INFO:FRAMAC:  r ∈ [-2147483648..0]
+INFO:FRAMAC:  r ∈ [-2147483648..1]
 INFO:FRAMAC:  d ∈ {1}
-INFO:FRAMAC:  p ∈ {1}
-INFO:FRAMAC:  q ∈ [0..15]
+INFO:FRAMAC:  p ∈ {1; 2}
+INFO:FRAMAC:  q ∈ [0..31]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======

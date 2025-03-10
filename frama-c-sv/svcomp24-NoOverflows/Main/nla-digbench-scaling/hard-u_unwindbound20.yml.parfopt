@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 49 -eva-remove-redundant-alarms -eva-plevel 83 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 38 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 35 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 8 -eva-split-return auto -eva-slevel 33 -eva-plevel 94 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 43 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 40 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -74,7 +74,7 @@ INFO:FRAMAC:  r ∈ [--..--]
 INFO:FRAMAC:  d ∈ [1..4294967295]
 INFO:FRAMAC:  p ∈
 INFO:FRAMAC:   {1; 2; 4; 8; 16; 32; 64; 128; 256; 512; 1024; 2048; 4096; 8192; 16384;
-INFO:FRAMAC:    32768; 65536; 131072; 1048576}
+INFO:FRAMAC:    32768; 65536; 131072; 524288; 1048576}
 INFO:FRAMAC:  q ∈ [0..262143]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}

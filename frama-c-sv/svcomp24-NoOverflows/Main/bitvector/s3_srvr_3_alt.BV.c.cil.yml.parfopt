@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 12 -eva-subdivide-non-linear 86 -eva-split-return auto -eva-slevel 374 -eva-remove-redundant-alarms -eva-plevel 575 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 235 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 275 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 12 -eva-subdivide-non-linear 62 -eva-split-return auto -eva-slevel 304 -eva-remove-redundant-alarms -eva-plevel 643 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 204 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 226 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:CERT:EXP:46] output/program.c:371: Warning: 
 INFO:FRAMAC:  operand of bitwise operator is a logical relation
@@ -63,18 +63,18 @@ INFO:FRAMAC:  signed overflow. assert s__in_handshake + 1 ≤ 2147483647;
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva] output/program.c:391: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 500 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 600 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 700 states
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:664: loop not completely unrolled
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 800 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 700 states
 INFO:FRAMAC:[eva] output/program.c:108: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 800 states
 INFO:FRAMAC:[eva:alarm] output/program.c:511: Warning: 
 INFO:FRAMAC:  division by zero. assert s__s3__tmp__next_state___0 ≢ 0;
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1200 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1400 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1700 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1300 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1500 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 1800 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 2000 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 2300 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 2600 states
@@ -82,15 +82,14 @@ INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 290
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 3200 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 3500 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 3800 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 3900 states
+INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 4000 states
 INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 4100 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 4200 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 4300 states
-INFO:FRAMAC:[eva] output/program.c:664: Trace partitioning superposing up to 4400 states
 INFO:FRAMAC:[eva:alarm] output/program.c:677: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:582: Warning: 
 INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_accept_good + 1 ≤ 2147483647;
-INFO:FRAMAC:[eva] output/program.c:694: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:694: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]

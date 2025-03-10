@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 300 -eva-split-return auto -eva-slevel 5426 -eva-remove-redundant-alarms -eva-plevel 2785 -eva-partition-history 5 -eva-octagon-through-calls -eva-min-loop-unroll 7 -eva-ilevel 466 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1381 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 18 -eva-split-return auto -eva-slevel 44 -eva-remove-redundant-alarms -eva-plevel 110 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 40 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 34 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -66,25 +66,17 @@ INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:41: loop not completely u
 INFO:FRAMAC:[eva:alarm] output/program.c:46: Warning: 
 INFO:FRAMAC:  signed overflow. assert B * p ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning: 
-INFO:FRAMAC:  signed overflow. assert (int)(q * B) + r ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning: 
 INFO:FRAMAC:  signed overflow. assert q * B ≤ 2147483647;
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 400 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 800 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 1600 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 3200 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 6100 states
+INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(q * B) + r ≤ 2147483647;
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:52: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:44: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 6200 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 6300 states
 INFO:FRAMAC:[eva:alarm] output/program.c:54: Warning: 
 INFO:FRAMAC:  signed overflow. assert q + p ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:58: Warning: 
-INFO:FRAMAC:  signed overflow. assert (int)(d * q) + r ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:58: Warning: 
 INFO:FRAMAC:  signed overflow. assert d * q ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:58: Warning: 
+INFO:FRAMAC:  signed overflow. assert (int)(d * q) + r ≤ 2147483647;
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]

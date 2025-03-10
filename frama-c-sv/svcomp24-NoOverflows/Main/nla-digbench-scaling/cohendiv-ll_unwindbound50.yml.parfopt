@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 206 -eva-split-return auto -eva-slevel 659 -eva-remove-redundant-alarms -eva-plevel 2536 -eva-partition-history 7 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 566 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 14 -eva-subdivide-non-linear 33 -eva-split-return auto -eva-slevel 121 -eva-remove-redundant-alarms -eva-plevel 425 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 188 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 109 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -62,42 +62,22 @@ INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:54: Warning: 
 INFO:FRAMAC:  signed overflow. assert 2 * y ≤ 2147483647;
 INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 100 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 300 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 400 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 500 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 600 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 700 states
 INFO:FRAMAC:[eva] output/program.c:46: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 800 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
 INFO:FRAMAC:  signed overflow. assert q * (long long)y ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert (long long)(q * (long long)y) + r ≤ 9223372036854775807;
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:37: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 800 states
 INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 900 states
 INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1100 states
-INFO:FRAMAC:[eva] output/program.c:59: Trace partitioning superposing up to 1200 states
-INFO:FRAMAC:[eva] output/program.c:59: Trace partitioning superposing up to 1300 states
-INFO:FRAMAC:[eva] output/program.c:59: Trace partitioning superposing up to 1400 states
-INFO:FRAMAC:[eva] output/program.c:59: Trace partitioning superposing up to 1500 states
-INFO:FRAMAC:[eva] output/program.c:59: Trace partitioning superposing up to 1600 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1700 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1800 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1900 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2000 states
-INFO:FRAMAC:[eva] output/program.c:37: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2100 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2200 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2300 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2400 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2500 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2600 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2700 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2800 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 2900 states
-INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 3000 states
 INFO:FRAMAC:[eva:alarm] output/program.c:60: Warning: 
 INFO:FRAMAC:  signed overflow. assert q + a ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:63: Warning: 

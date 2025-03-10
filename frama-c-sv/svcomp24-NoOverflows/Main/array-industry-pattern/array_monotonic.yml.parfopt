@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-slevel 9 -eva-remove-redundant-alarms -eva-plevel 25 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges,symbolic-locations -eva-auto-loop-unroll 12 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 11 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls formals -eva-domains cvalue,gauges,symbolic-locations -eva-auto-loop-unroll 12 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:22: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
@@ -20,20 +20,20 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] output/program.c:20: starting to merge loop iterations
 INFO:FRAMAC:[kernel] output/program.c:22: 
-INFO:FRAMAC:  more than 25(49997) locations to update in array. Approximating.
+INFO:FRAMAC:  more than 33(49997) locations to update in array. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:22: 
-INFO:FRAMAC:  more than 25(49997) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(49997) elements to enumerate. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:24: 
-INFO:FRAMAC:  more than 25(49997) locations to update in array. Approximating.
+INFO:FRAMAC:  more than 33(49997) locations to update in array. Approximating.
 INFO:FRAMAC:[eva:alarm] output/program.c:29: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&b[i]);
 INFO:FRAMAC:[eva:alarm] output/program.c:28: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&a[i]);
 INFO:FRAMAC:[eva] output/program.c:26: starting to merge loop iterations
 INFO:FRAMAC:[kernel] output/program.c:28: 
-INFO:FRAMAC:  more than 25(49995) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(49994) elements to enumerate. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:22: 
-INFO:FRAMAC:  more than 25(50000) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(50000) elements to enumerate. Approximating.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
@@ -50,7 +50,9 @@ INFO:FRAMAC:   [5] ∈ UNINITIALIZED
 INFO:FRAMAC:   [6] ∈ [--..--]
 INFO:FRAMAC:   [7] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:   [8] ∈ [--..--]
-INFO:FRAMAC:   [9..99998] ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:   [9] ∈ [--..--] or UNINITIALIZED
+INFO:FRAMAC:   [10] ∈ [--..--]
+INFO:FRAMAC:   [11..99998] ∈ [--..--] or UNINITIALIZED
 INFO:FRAMAC:   [99999] ∈ UNINITIALIZED
 INFO:FRAMAC:  b[0] ∈ {20} or UNINITIALIZED
 INFO:FRAMAC:   [1] ∈ UNINITIALIZED

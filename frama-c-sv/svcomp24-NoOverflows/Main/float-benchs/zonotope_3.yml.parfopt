@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 98 -eva-split-return auto -eva-slevel 739 -eva-remove-redundant-alarms -eva-plevel 2427 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 433 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 304 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 7 -eva-subdivide-non-linear 13 -eva-split-return auto -eva-slevel 67 -eva-remove-redundant-alarms -eva-plevel 124 -eva-partition-history 7 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 66 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 37 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:parser:decimal-float] output/program.c:48: Warning: 
 INFO:FRAMAC:  Floating-point constant 6.9f is not represented exactly. Will use 0x1.b9999a0000000p2.
@@ -63,28 +63,9 @@ INFO:FRAMAC:[eva] using specification for function __VERIFIER_nondet_float
 INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
 INFO:FRAMAC:  non-finite float value. assert \is_finite(x);
 INFO:FRAMAC:[eva] using specification for function abort
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:36: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 300 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 400 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 500 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 600 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 700 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 800 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 900 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1100 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1200 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1300 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1400 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1500 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1600 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1700 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1800 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 1900 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 2000 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 2100 states
-INFO:FRAMAC:[eva] output/program.c:39: Trace partitioning superposing up to 2200 states
 INFO:FRAMAC:[eva] output/program.c:36: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:15: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.

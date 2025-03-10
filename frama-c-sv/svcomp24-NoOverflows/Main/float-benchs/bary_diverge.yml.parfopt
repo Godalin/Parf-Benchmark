@@ -8,12 +8,51 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 6 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,octagon -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:parser:decimal-float] output/program.c:47: Warning: 
 INFO:FRAMAC:  Floating-point constant 0.50000001f is not represented exactly. Will use 0x1.0000000000000p-1.
 INFO:FRAMAC:  (warn-once: no further messages from category 'parser:decimal-float' will be emitted)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
+INFO:FRAMAC:[eva] Splitting return states on:
+INFO:FRAMAC:  \return(seed48) == 0 (auto)
+INFO:FRAMAC:  \return(calloc) == 0 (auto)
+INFO:FRAMAC:  \return(malloc) == 0 (auto)
+INFO:FRAMAC:  \return(realloc) == 0 (auto)
+INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
+INFO:FRAMAC:  \return(getenv) == 0 (auto)
+INFO:FRAMAC:  \return(bsearch) == 0 (auto)
+INFO:FRAMAC:  \return(alloca) == 0 (auto)
+INFO:FRAMAC:  \return(memchr) == 0 (auto)
+INFO:FRAMAC:  \return(memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
+INFO:FRAMAC:  \return(memmove) == 0 (auto)
+INFO:FRAMAC:  \return(memset) == 0 (auto)
+INFO:FRAMAC:  \return(strchr) == 0 (auto)
+INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
+INFO:FRAMAC:  \return(strrchr) == 0 (auto)
+INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
+INFO:FRAMAC:  \return(strstr) == 0 (auto)
+INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
+INFO:FRAMAC:  \return(strtok) == 0 (auto)
+INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
+INFO:FRAMAC:  \return(strsep) == 0 (auto)
+INFO:FRAMAC:  \return(strerror) == 0 (auto)
+INFO:FRAMAC:  \return(strcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strncpy) == 0 (auto)
+INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
+INFO:FRAMAC:  \return(strcat) == 0 (auto)
+INFO:FRAMAC:  \return(strncat) == 0 (auto)
+INFO:FRAMAC:  \return(strdup) == 0 (auto)
+INFO:FRAMAC:  \return(strndup) == 0 (auto)
+INFO:FRAMAC:  \return(strsignal) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
+INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
+INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
+INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  INIT ∈ {FALSE}
@@ -29,56 +68,47 @@ INFO:FRAMAC:[eva] using specification for function __VERIFIER_nondet_float
 INFO:FRAMAC:[eva:alarm] output/program.c:26: Warning: 
 INFO:FRAMAC:  non-finite float value. assert \is_finite(x);
 INFO:FRAMAC:[eva] using specification for function abort
-INFO:FRAMAC:[eva:alarm] output/program.c:14: Warning: 
-INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:63: Warning: 
 INFO:FRAMAC:  overflow in conversion from floating-point to integer.
 INFO:FRAMAC:  assert -1 < tmp;
 INFO:FRAMAC:  (tmp from RANDOM_INPUT())
-INFO:FRAMAC:[eva:alarm] output/program.c:63: Warning: 
-INFO:FRAMAC:  overflow in conversion from floating-point to integer.
-INFO:FRAMAC:  assert tmp < 4294967296;
-INFO:FRAMAC:  (tmp from RANDOM_INPUT())
 INFO:FRAMAC:[eva] output/program.c:61: starting to merge loop iterations
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
+INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
+INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function RANDOM_INPUT:
-INFO:FRAMAC:  x ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
-INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
-INFO:FRAMAC:  
+INFO:FRAMAC:  x ∈ [-1. .. 1.]
 INFO:FRAMAC:[eva:final-states] Values at end of function bary:
-INFO:FRAMAC:  bary_X ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
-INFO:FRAMAC:  bary_Y ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
-INFO:FRAMAC:  bary_Z ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+INFO:FRAMAC:  bary_X ∈ [-1. .. 1.]
+INFO:FRAMAC:  bary_Y ∈ [-1. .. 1.]
+INFO:FRAMAC:  bary_Z ∈ [-1. .. 1.]
 INFO:FRAMAC:[eva:final-states] Values at end of function wait_for_clock:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  INIT ∈ [0..4294967040]
-INFO:FRAMAC:  C1 ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
-INFO:FRAMAC:  I ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+INFO:FRAMAC:  INIT ∈ {FALSE; TRUE}
+INFO:FRAMAC:  C1 ∈ [-1. .. 1.]
+INFO:FRAMAC:  I ∈ [-1. .. 1.]
 INFO:FRAMAC:  i ∈ {3600000}
-INFO:FRAMAC:  bary_X ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
-INFO:FRAMAC:  bary_Y ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
-INFO:FRAMAC:  bary_Z ∈ [-3.40282346639e+38 .. 3.40282346639e+38]
+INFO:FRAMAC:  bary_X ∈ [-1. .. 1.]
+INFO:FRAMAC:  bary_Y ∈ [-1. .. 1.]
+INFO:FRAMAC:  bary_Z ∈ [-1. .. 1.]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  7 functions analyzed (out of 23): 30% coverage.
-INFO:FRAMAC:  In these functions, 49 statements reached (out of 52): 94% coverage.
+INFO:FRAMAC:  6 functions analyzed (out of 23): 26% coverage.
+INFO:FRAMAC:  In these functions, 45 statements reached (out of 50): 90% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
 INFO:FRAMAC:    by the Frama-C kernel:    0 errors    2 warnings
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  3 alarms generated by the analysis:
-INFO:FRAMAC:       2 illegal conversions from floating-point to integer
+INFO:FRAMAC:  2 alarms generated by the analysis:
 INFO:FRAMAC:       1 nan or infinite floating-point value
+INFO:FRAMAC:       1 illegal conversion from floating-point to integer
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
-INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
-INFO:FRAMAC:    Preconditions     0 valid     0 unknown     1 invalid      1 total
-INFO:FRAMAC:  0% of the logical properties reached have been proven.
+INFO:FRAMAC:  No logical properties have been reached by the analysis.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char
@@ -96,5 +126,6 @@ INFO:FRAMAC:[rte:annot] annotating function __builtin_memmove
 INFO:FRAMAC:[rte:annot] annotating function __builtin_memset
 INFO:FRAMAC:[rte:annot] annotating function __builtin_nan
 INFO:FRAMAC:[rte:annot] annotating function __builtin_nanf
+INFO:FRAMAC:[rte:annot] annotating function reach_error
 INFO:FRAMAC:[report] Dumping properties in 'output/report.csv'
 INFO:RESULT:true

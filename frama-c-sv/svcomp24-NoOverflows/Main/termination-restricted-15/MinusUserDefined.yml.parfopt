@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 11 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 13 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 3 -eva-split-return auto -eva-slevel 10 -eva-remove-redundant-alarms -eva-plevel 32 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 22 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 8 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -57,8 +57,8 @@ INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] output/program.c:13: starting to merge loop iterations
 INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:21: Automatic loop unrolling.
-INFO:FRAMAC:[eva] output/program.c:18: starting to merge loop iterations
 INFO:FRAMAC:[eva] output/program.c:21: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:18: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:20: Warning: 
 INFO:FRAMAC:  signed overflow. assert res + 1 ≤ 2147483647;
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======

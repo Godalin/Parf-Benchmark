@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 17 -eva-subdivide-non-linear 51 -eva-split-return auto -eva-slevel 165 -eva-remove-redundant-alarms -eva-plevel 389 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 197 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 169 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 15 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls formals -eva-domains cvalue,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -70,18 +70,18 @@ INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  counter ∈ {4; 5; 6; 7}
 INFO:FRAMAC:  x ∈ [1..2147483647]
 INFO:FRAMAC:  y ∈ [1..2147483647]
-INFO:FRAMAC:  a ∈ [1..2147483647]
-INFO:FRAMAC:  b ∈ [0..2147483645]
+INFO:FRAMAC:  a ∈ [-2147483646..2147483647]
+INFO:FRAMAC:  b ∈ [-2147483645..4294967293]
 INFO:FRAMAC:  p ∈ {0; 1}
 INFO:FRAMAC:  q ∈ {-2; -1; 1}
 INFO:FRAMAC:  r ∈ {-1; 0; 1}
 INFO:FRAMAC:  s ∈ {-4; -3; -2; -1; 1; 2}
-INFO:FRAMAC:  c ∈ [0..2147483645]
+INFO:FRAMAC:  c ∈ [-2147483646..4294967293]
 INFO:FRAMAC:  k ∈ {1; 2; 3; 4}
 INFO:FRAMAC:  xy ∈ [1..2147483646]
 INFO:FRAMAC:  yy ∈ [1..2147483646]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
-INFO:FRAMAC:  __retres ∈ [1..2147483647]
+INFO:FRAMAC:  __retres ∈ [-2147483646..2147483647]
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  5 functions analyzed (out of 20): 25% coverage.

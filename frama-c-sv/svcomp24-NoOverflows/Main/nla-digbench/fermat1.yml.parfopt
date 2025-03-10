@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 18 -eva-subdivide-non-linear 82 -eva-split-return auto -eva-slevel 300 -eva-remove-redundant-alarms -eva-plevel 512 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 9 -eva-ilevel 293 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 214 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 19 -eva-subdivide-non-linear 44 -eva-split-return auto -eva-slevel 148 -eva-remove-redundant-alarms -eva-plevel 625 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 9 -eva-ilevel 260 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 188 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -108,13 +108,14 @@ INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning:
 INFO:FRAMAC:  signed overflow. assert 4 * (int)(A + r) ≤ 2147483647;
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:43: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 100 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 300 states
 INFO:FRAMAC:[eva] output/program.c:38: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ 4 * (int)(A + r);
 INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
 INFO:FRAMAC:  signed overflow. assert v * v ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert -2147483648 ≤ (int)((int)(u * u) - (int)(v * v)) - (int)(2 * u);
 INFO:FRAMAC:[eva:alarm] output/program.c:47: Warning: 
 INFO:FRAMAC:  signed overflow. assert 4 * (int)(A + r) ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:47: Warning: 
@@ -140,33 +141,26 @@ INFO:FRAMAC:[eva:alarm] output/program.c:47: Warning:
 INFO:FRAMAC:  signed overflow. assert A + r ≤ 2147483647;
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:51: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:46: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:39: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert -2147483648 ≤ (int)((int)(u * u) - (int)(v * v)) - (int)(2 * u);
+INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 300 states
 INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 400 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 500 states
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:49: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 500 states
 INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 600 states
 INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 700 states
 INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 800 states
 INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 900 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1000 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1100 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1200 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1300 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1400 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1500 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1600 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1700 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1800 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 1900 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 2000 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 2100 states
 INFO:FRAMAC:[eva] output/program.c:33: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 2200 states
-INFO:FRAMAC:[eva] output/program.c:38: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1000 states
+INFO:FRAMAC:[eva] output/program.c:46: Trace partitioning superposing up to 1100 states
 INFO:FRAMAC:[eva:alarm] output/program.c:55: Warning: 
 INFO:FRAMAC:  signed overflow. assert 4 * A ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:55: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (int)((int)((int)(u * u) - (int)(v * v)) - (int)(2 * u)) + (int)(2 * v) ≤
+INFO:FRAMAC:  2147483647;
+INFO:FRAMAC:[scope:rm_asserts] removing 1 assertion(s)
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function assume_abort_if_not:
 INFO:FRAMAC:  
@@ -188,8 +182,8 @@ INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
 INFO:FRAMAC:    by the Frama-C kernel:    0 errors    1 warning
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  28 alarms generated by the analysis:
-INFO:FRAMAC:      22 integer overflows
+INFO:FRAMAC:  29 alarms generated by the analysis:
+INFO:FRAMAC:      23 integer overflows
 INFO:FRAMAC:       4 illegal conversions from floating-point to integer
 INFO:FRAMAC:       2 nan or infinite floating-point values
 INFO:FRAMAC:  ----------------------------------------------------------------------------

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 16 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 170 -eva-remove-redundant-alarms -eva-plevel 469 -eva-partition-history 2 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 239 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 124 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 11 -eva-subdivide-non-linear 12 -eva-split-return auto -eva-slevel 137 -eva-remove-redundant-alarms -eva-plevel 212 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 123 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 120 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -78,9 +78,6 @@ INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 300 states
-INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 400 states
-INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 500 states
-INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 600 states
 INFO:FRAMAC:[eva:alarm] output/program.c:48: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert
@@ -88,12 +85,12 @@ INFO:FRAMAC:  (long long)((long long)((long long)(u * u) - (long long)(v * v)) -
 INFO:FRAMAC:              (long long)(2 * u))
 INFO:FRAMAC:  + (long long)(2 * v) ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:48: Warning: 
+INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:48: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert
 INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u) ≤
 INFO:FRAMAC:  9223372036854775807;
-INFO:FRAMAC:[eva:alarm] output/program.c:48: Warning: 
-INFO:FRAMAC:  signed overflow. assert u * u ≤ 9223372036854775807;
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
@@ -105,7 +102,7 @@ INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  counter ∈ [1..101]
 INFO:FRAMAC:  A ∈ [1..2147483647],1%2
 INFO:FRAMAC:  R ∈ [--..--]
-INFO:FRAMAC:  u ∈ [-3038241279..3037724855],1%2
+INFO:FRAMAC:  u ∈ [-3037436095..3037200569],1%2
 INFO:FRAMAC:  v ∈
 INFO:FRAMAC:   {1; 3; 5; 7; 9; 11; 13; 15; 17; 19; 21; 23; 25; 27; 29; 31; 33; 35; 37;
 INFO:FRAMAC:    39; 41; 43; 45; 47; 49; 51; 53; 55; 57; 59; 61; 63; 65; 67; 69; 71; 73;
@@ -114,7 +111,7 @@ INFO:FRAMAC:    109; 111; 113; 115; 117; 119; 121; 123; 125; 127; 129; 131; 133;
 INFO:FRAMAC:    137; 139; 141; 143; 145; 147; 149; 151; 153; 155; 157; 159; 161; 163;
 INFO:FRAMAC:    165; 167; 169; 171; 173; 175; 177; 179; 181; 183; 185; 187; 189; 191;
 INFO:FRAMAC:    193; 195; 197; 199; 201}
-INFO:FRAMAC:  r ∈ [-305965677037..4611686018427387549]
+INFO:FRAMAC:  r ∈ [-305888497533..4611686018427387747]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======

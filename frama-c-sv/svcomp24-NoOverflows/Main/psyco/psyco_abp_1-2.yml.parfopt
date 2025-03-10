@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 9 -eva-plevel 31 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 8 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 8 -eva-remove-redundant-alarms -eva-plevel 34 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,gauges,symbolic-locations -eva-auto-loop-unroll 8 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:29: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
@@ -65,9 +65,11 @@ INFO:FRAMAC:  m_recv_ack_1_2 ∈ {7}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] output/program.c:26: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva:alarm] output/program.c:422: Warning: 
 INFO:FRAMAC:  signed overflow. assert this_expect + 1 ≤ 2147483647;
-INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:26: Trace partitioning superposing up to 300 states
 INFO:FRAMAC:[eva:alarm] output/program.c:567: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
@@ -83,7 +85,7 @@ INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  3 functions analyzed (out of 18): 16% coverage.
-INFO:FRAMAC:  In these functions, 521 statements reached (out of 556): 93% coverage.
+INFO:FRAMAC:  In these functions, 443 statements reached (out of 556): 79% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings

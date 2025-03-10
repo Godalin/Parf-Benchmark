@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return auto -eva-slevel 13 -eva-plevel 30 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,gauges -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 13 -eva-split-return auto -eva-slevel 51 -eva-remove-redundant-alarms -eva-plevel 86 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 47 -eva-equality-through-calls formals -eva-domains cvalue,symbolic-locations -eva-auto-loop-unroll 24 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:529: Warning: 
 INFO:FRAMAC:  Calling function ERR that is declared without prototype.
@@ -65,6 +65,7 @@ INFO:FRAMAC:[eva:alarm] output/program.c:101: Warning:
 INFO:FRAMAC:  signed overflow. assert tmp___1 + 12288 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:102: Warning: 
 INFO:FRAMAC:  signed overflow. assert tmp___2 + 16384 ≤ 2147483647;
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:613: loop not completely unrolled
 INFO:FRAMAC:[eva:alarm] output/program.c:359: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ tmp___6 * 8;
 INFO:FRAMAC:[eva:alarm] output/program.c:359: Warning: 
@@ -78,10 +79,10 @@ INFO:FRAMAC:  signed overflow. assert s__verify_mode + 2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:446: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value.
 INFO:FRAMAC:  assert \initialized(&s__s3__tmp__next_state___0);
+INFO:FRAMAC:[eva] output/program.c:613: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva:alarm] output/program.c:630: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
-INFO:FRAMAC:[eva] output/program.c:110: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:559: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:559: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva:alarm] output/program.c:548: Warning: 
 INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_accept_good + 1 ≤ 2147483647;
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======

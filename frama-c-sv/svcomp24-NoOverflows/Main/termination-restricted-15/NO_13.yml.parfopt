@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 12 -eva-subdivide-non-linear 80 -eva-split-return auto -eva-slevel 350 -eva-remove-redundant-alarms -eva-plevel 628 -eva-partition-history 6 -eva-octagon-through-calls -eva-min-loop-unroll 5 -eva-ilevel 211 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 261 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 9 -eva-subdivide-non-linear 27 -eva-split-return auto -eva-slevel 149 -eva-remove-redundant-alarms -eva-plevel 240 -eva-partition-history 4 -eva-octagon-through-calls -eva-min-loop-unroll 3 -eva-ilevel 81 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 105 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -55,8 +55,6 @@ INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:12: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:11: Trace partitioning superposing up to 100 states
-INFO:FRAMAC:[eva] output/program.c:11: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:11: Trace partitioning superposing up to 300 states
 INFO:FRAMAC:[eva] output/program.c:11: starting to merge loop iterations
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function main:

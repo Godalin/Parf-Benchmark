@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 9 -eva-subdivide-non-linear 26 -eva-split-return auto -eva-slevel 137 -eva-remove-redundant-alarms -eva-plevel 239 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 94 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 113 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 6 -eva-subdivide-non-linear 30 -eva-split-return auto -eva-slevel 127 -eva-plevel 225 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 88 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 95 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -56,9 +56,9 @@ INFO:FRAMAC:  counter ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva] using specification for function abort
-INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:42: Automatic loop unrolling.
 INFO:FRAMAC:[eva:alarm] output/program.c:24: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:52: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:51: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:

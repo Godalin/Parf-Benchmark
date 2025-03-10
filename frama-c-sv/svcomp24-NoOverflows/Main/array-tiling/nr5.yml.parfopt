@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 5 -eva-split-return auto -eva-slevel 11 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,gauges,symbolic-locations -eva-auto-loop-unroll 9 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 13 -eva-remove-redundant-alarms -eva-plevel 33 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 14 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -64,31 +64,30 @@ INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning:
 INFO:FRAMAC:  out of bounds write. assert \valid(volArray + (int)((int)(i * 5) - j));
 INFO:FRAMAC:[eva:alarm] output/program.c:38: Warning: 
 INFO:FRAMAC:  out of bounds write. assert \valid(volArray + (int)((int)(i * 5) - j));
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:28: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:30: starting to merge loop iterations
 INFO:FRAMAC:[eva] output/program.c:28: starting to merge loop iterations
 INFO:FRAMAC:[kernel] output/program.c:34: 
-INFO:FRAMAC:  more than 31(214748363) locations to update in array. Approximating.
+INFO:FRAMAC:  more than 33(214748362) locations to update in array. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:34: 
-INFO:FRAMAC:  more than 31(214748363) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(214748362) elements to enumerate. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:34: 
-INFO:FRAMAC:  more than 31(214748362) locations to update in array. Approximating.
+INFO:FRAMAC:  more than 33(214748363) locations to update in array. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:34: 
-INFO:FRAMAC:  more than 31(214748362) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(214748363) elements to enumerate. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:38: 
-INFO:FRAMAC:  more than 31(214748362) locations to update in array. Approximating.
+INFO:FRAMAC:  more than 33(214748362) locations to update in array. Approximating.
 INFO:FRAMAC:[kernel] output/program.c:38: 
-INFO:FRAMAC:  more than 31(214748362) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(214748362) elements to enumerate. Approximating.
+INFO:FRAMAC:[eva] output/program.c:30: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning: 
 INFO:FRAMAC:  out of bounds read. assert \valid_read(volArray + i);
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:43: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:43: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning: 
 INFO:FRAMAC:  out of bounds read. assert \valid_read(volArray + i);
 INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(volArray + i);
-INFO:FRAMAC:[eva] output/program.c:43: starting to merge loop iterations
 INFO:FRAMAC:[kernel] output/program.c:38: 
-INFO:FRAMAC:  more than 31(214748364) elements to enumerate. Approximating.
+INFO:FRAMAC:  more than 33(214748364) elements to enumerate. Approximating.
 INFO:FRAMAC:[scope:rm_asserts] removing 1 assertion(s)
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:

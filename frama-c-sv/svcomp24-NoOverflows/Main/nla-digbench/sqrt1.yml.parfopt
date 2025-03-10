@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 6 -eva-subdivide-non-linear 13 -eva-split-return auto -eva-slevel 53 -eva-remove-redundant-alarms -eva-plevel 118 -eva-partition-history 5 -eva-min-loop-unroll 6 -eva-ilevel 52 -eva-equality-through-calls none -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 52 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 28 -eva-split-return auto -eva-slevel 669 -eva-remove-redundant-alarms -eva-plevel 2473 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 305 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -55,7 +55,12 @@ INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
 INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:39: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:28: Trace partitioning superposing up to 100 states
+INFO:FRAMAC:[eva] output/program.c:28: Trace partitioning superposing up to 200 states
+INFO:FRAMAC:[eva] output/program.c:28: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:28: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:28: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva] output/program.c:28: Trace partitioning superposing up to 600 states
 INFO:FRAMAC:[eva] output/program.c:28: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:14: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
@@ -84,7 +89,7 @@ INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  n ∈ [-2147483648..536851672]
+INFO:FRAMAC:  n ∈ [-2147483648..537296459]
 INFO:FRAMAC:  a ∈ [0..23169]
 INFO:FRAMAC:  s ∈ [1..536848900]
 INFO:FRAMAC:  t ∈ [1..46339],1%2

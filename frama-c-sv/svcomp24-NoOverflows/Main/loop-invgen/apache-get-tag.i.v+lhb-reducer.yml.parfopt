@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 2 -eva-split-return auto -eva-slevel 16 -eva-plevel 38 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 12 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-split-return auto -eva-slevel 11 -eva-plevel 25 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 18 -eva-equality-through-calls none -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 12 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:19: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
@@ -67,7 +67,11 @@ INFO:FRAMAC:[eva:alarm] output/program.c:309: Warning:
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:345: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:84: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:126: Warning: 
+INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:alarm] output/program.c:154: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:236: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
@@ -89,7 +93,7 @@ INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  3 functions analyzed (out of 19): 15% coverage.
-INFO:FRAMAC:  In these functions, 132 statements reached (out of 218): 60% coverage.
+INFO:FRAMAC:  In these functions, 136 statements reached (out of 218): 62% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
@@ -100,8 +104,8 @@ INFO:FRAMAC:       1 integer overflow
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
 INFO:FRAMAC:    Assertions        0 valid     0 unknown     0 invalid      0 total
-INFO:FRAMAC:    Preconditions     1 valid     0 unknown     6 invalid      7 total
-INFO:FRAMAC:  14% of the logical properties reached have been proven.
+INFO:FRAMAC:    Preconditions     1 valid     0 unknown     8 invalid      9 total
+INFO:FRAMAC:  11% of the logical properties reached have been proven.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_bool
 INFO:FRAMAC:[rte:annot] annotating function __VERIFIER_nondet_char

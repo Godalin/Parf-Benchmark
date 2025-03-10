@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 5 -eva-subdivide-non-linear 17 -eva-slevel 42 -eva-plevel 126 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 65 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon -eva-auto-loop-unroll 31 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-slevel 7 -eva-plevel 26 -eva-partition-history 0 -eva-min-loop-unroll 2 -eva-ilevel 20 -eva-equality-through-calls none -eva-domains cvalue,equality,octagon,symbolic-locations -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
@@ -29,11 +29,8 @@ INFO:FRAMAC:  X ∈ [--..--]
 INFO:FRAMAC:  Y ∈ [--..--]
 INFO:FRAMAC:  x ∈ [0..10]
 INFO:FRAMAC:  y ∈ [0..10]
-INFO:FRAMAC:  v ∈ [-49392123903..47244640128]
-INFO:FRAMAC:  xy ∈
-INFO:FRAMAC:    [0..10]
-INFO:FRAMAC:     ∪ {12; 14; 15; 16; 18; 20; 21; 24; 25; 27; 28; 30; 32; 35; 36; 40; 42;
-INFO:FRAMAC:          45; 48; 49; 50; 54; 56; 60; 63; 64; 70; 72; 80; 81; 90; 100}
+INFO:FRAMAC:  v ∈ [-49392123903..47244640140]
+INFO:FRAMAC:  xy ∈ [0..100]
 INFO:FRAMAC:  yx ∈ [-21474836480..21474836470]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}

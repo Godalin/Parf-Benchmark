@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 50 -eva-remove-redundant-alarms -eva-plevel 100 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 40 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 35 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 60 -eva-remove-redundant-alarms -eva-plevel 85 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 32 -eva-equality-through-calls formals -eva-domains cvalue,gauges,octagon -eva-auto-loop-unroll 33 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -53,7 +53,6 @@ INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:20: loop not completely unrolled
 INFO:FRAMAC:[eva:alarm] output/program.c:20: Warning: 
 INFO:FRAMAC:  signed overflow. assert 3 * y ≤ 2147483647;
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======

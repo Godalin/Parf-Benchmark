@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return auto -eva-slevel 9 -eva-plevel 26 -eva-partition-history 0 -eva-min-loop-unroll 1 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 17 -eva-plevel 31 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,octagon,symbolic-locations -eva-auto-loop-unroll 9 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -55,7 +55,6 @@ INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  counter ∈ {0}
 INFO:FRAMAC:[eva] using specification for function Frama_C_unsigned_int_interval
 INFO:FRAMAC:[eva] using specification for function abort
-INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:36: Automatic loop unrolling.
 INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:40: Automatic loop unrolling.
 INFO:FRAMAC:[eva:alarm] output/program.c:21: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
@@ -67,12 +66,12 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  counter ∈ [2..20]
+INFO:FRAMAC:  counter ∈ {2} ∪ [4..12]
 INFO:FRAMAC:  A ∈ [--..--]
 INFO:FRAMAC:  B ∈ [1..2147483646]
-INFO:FRAMAC:  q ∈ [0..511]
+INFO:FRAMAC:  q ∈ [0..255]
 INFO:FRAMAC:  r ∈ [--..--]
-INFO:FRAMAC:  b ∈ [0..4294967292]
+INFO:FRAMAC:  b ∈ [0..4294966784]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======

@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 18 -eva-subdivide-non-linear 7 -eva-split-return auto -eva-slevel 229 -eva-remove-redundant-alarms -eva-plevel 407 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 201 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 83 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return auto -eva-slevel 8 -eva-plevel 34 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls none -eva-domains cvalue,symbolic-locations -eva-auto-loop-unroll 13 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -68,24 +68,17 @@ INFO:FRAMAC:[eva:alarm] output/program.c:45: Warning:
 INFO:FRAMAC:  signed overflow. assert y * a ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:52: Warning: 
 INFO:FRAMAC:  signed overflow. assert (int)(2 * y) * a ≤ 2147483647;
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:55: loop not completely unrolled
+INFO:FRAMAC:[eva] output/program.c:44: starting to merge loop iterations
+INFO:FRAMAC:[eva:alarm] output/program.c:54: Warning: 
+INFO:FRAMAC:  signed overflow. assert 2 * a ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:36: Warning: 
 INFO:FRAMAC:  signed overflow. assert y * a ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:37: Warning: 
 INFO:FRAMAC:  signed overflow. assert q * y ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:37: Warning: 
 INFO:FRAMAC:  signed overflow. assert (int)(q * y) + r ≤ 2147483647;
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 100 states
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva] output/program.c:44: starting to merge loop iterations
-INFO:FRAMAC:[eva:alarm] output/program.c:54: Warning: 
-INFO:FRAMAC:  signed overflow. assert 2 * a ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:58: Warning: 
 INFO:FRAMAC:  signed overflow. assert q + a ≤ 2147483647;
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:58: loop not completely unrolled
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 400 states
-INFO:FRAMAC:[eva] output/program.c:35: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:44: Trace partitioning superposing up to 500 states
 INFO:FRAMAC:[scope:rm_asserts] removing 1 assertion(s)
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
@@ -95,12 +88,12 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_assert:
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
-INFO:FRAMAC:  x ∈ [-2147483648..2147483646]
+INFO:FRAMAC:  x ∈ [--..--]
 INFO:FRAMAC:  y ∈ [1..2147483647]
 INFO:FRAMAC:  q ∈ [0..2147483647]
 INFO:FRAMAC:  r ∈ [-2147483648..2147483646]
 INFO:FRAMAC:  a ∈ [0..2147483646]
-INFO:FRAMAC:  b ∈ [0..2147483644]
+INFO:FRAMAC:  b ∈ [0..2147483646]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======

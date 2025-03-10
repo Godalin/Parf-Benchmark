@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 7 -eva-plevel 29 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 22 -eva-equality-through-calls none -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-split-return auto -eva-slevel 11 -eva-plevel 35 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 2 -eva-ilevel 19 -eva-equality-through-calls none -eva-domains cvalue,equality -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -61,6 +61,7 @@ INFO:FRAMAC:  out of bounds write. assert \valid(&s->n);
 INFO:FRAMAC:[kernel] output/program.c:33: Warning: 
 INFO:FRAMAC:  all target addresses were invalid. This path is assumed to be dead.
 INFO:FRAMAC:[eva] output/program.c:39: allocating variable __malloc_main_l39
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:26: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:26: starting to merge loop iterations
 INFO:FRAMAC:[eva] output/program.c:48: allocating variable __malloc_main_l48
 INFO:FRAMAC:[eva:alarm] output/program.c:52: Warning: 
@@ -69,6 +70,7 @@ INFO:FRAMAC:[eva:alarm] output/program.c:54: Warning:
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&s1->p);
 INFO:FRAMAC:[eva:alarm] output/program.c:16: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
+INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:49: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:49: starting to merge loop iterations
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:

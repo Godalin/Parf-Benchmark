@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 4 -eva-subdivide-non-linear 26 -eva-split-return auto -eva-slevel 52 -eva-remove-redundant-alarms -eva-plevel 152 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 47 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 28 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 5 -eva-subdivide-non-linear 19 -eva-split-return auto -eva-slevel 65 -eva-remove-redundant-alarms -eva-plevel 139 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 56 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 27 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -66,7 +66,13 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  k ∈ [0..50]
 INFO:FRAMAC:  y ∈ [0..50]
-INFO:FRAMAC:  x ∈ [0..65666665]
+INFO:FRAMAC:  x ∈
+INFO:FRAMAC:   {0; 1; 17; 98; 354; 979; 2275; 4676; 8772; 15333; 25333; 39974; 60710;
+INFO:FRAMAC:    89271; 127687; 178312; 243848; 327369; 432345; 562666; 722666; 917147;
+INFO:FRAMAC:    1151403; 1431244; 1763020; 2153645; 2610621; 3142062; 3756718; 4463999;
+INFO:FRAMAC:    5273999; 6197520; 7246096; 8432017; 9768353; 11268978; 12948594;
+INFO:FRAMAC:    14822755; 16907891; 19221332; 21781332; 24607093; 27718789; 31137590;
+INFO:FRAMAC:    34885686; 38986311; 43463767; 48343448; 53651864; 59416665; 65666665}
 INFO:FRAMAC:  c ∈ [0..50]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======

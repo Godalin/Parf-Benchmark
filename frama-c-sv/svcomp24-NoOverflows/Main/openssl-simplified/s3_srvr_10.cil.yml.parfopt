@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 28 -eva-split-return auto -eva-slevel 466 -eva-remove-redundant-alarms -eva-plevel 2509 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 424 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 320 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 441 -eva-split-return auto -eva-slevel 5386 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1389 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -74,14 +74,134 @@ INFO:FRAMAC:  signed overflow. assert s__verify_mode + 2 ≤ 2147483647;
 INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 300 states
 INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 400 states
 INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 700 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 1400 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 1600 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 2300 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 2600 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 3300 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 3700 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 3900 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 4600 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 4900 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 5800 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 5900 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6000 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6100 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6200 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6300 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6400 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6500 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6600 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6700 states
+INFO:FRAMAC:[eva] output/program.c:629: Trace partitioning superposing up to 6800 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 6900 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7000 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7100 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7200 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7300 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7400 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7500 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7600 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7700 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7800 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 7900 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8000 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8100 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8200 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8300 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8400 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8500 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8600 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8700 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8800 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 8900 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9000 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9100 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9200 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9300 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9400 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9500 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9600 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9700 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9800 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 9900 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 10000 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 10100 states
+INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 10200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10500 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 10900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11000 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11100 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11500 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 11900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12000 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12100 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12500 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 12900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13000 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13100 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13500 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 13900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14000 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14100 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14500 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 14900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15000 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15100 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15500 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 15900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16000 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16100 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16200 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16300 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16400 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16500 states
 INFO:FRAMAC:[eva] output/program.c:116: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 800 states
-INFO:FRAMAC:[eva] output/program.c:620: Trace partitioning superposing up to 900 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16600 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16700 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16800 states
+INFO:FRAMAC:[eva] output/program.c:566: Trace partitioning superposing up to 16900 states
 INFO:FRAMAC:[eva:alarm] output/program.c:640: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:555: Warning: 
 INFO:FRAMAC:  signed overflow. assert s__ctx__stats__sess_accept_good + 1 ≤ 2147483647;
-INFO:FRAMAC:[eva] output/program.c:635: Trace partitioning superposing up to 1100 states
+INFO:FRAMAC:[eva] output/program.c:635: Trace partitioning superposing up to 17000 states
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]

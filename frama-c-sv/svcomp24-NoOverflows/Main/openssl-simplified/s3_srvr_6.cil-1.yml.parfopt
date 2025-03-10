@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 298 -eva-split-return auto -eva-slevel 5532 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1517 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 299 -eva-split-return auto -eva-slevel 5526 -eva-remove-redundant-alarms -eva-plevel 4001 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 513 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 1073 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -62,7 +62,6 @@ INFO:FRAMAC:[eva:alarm] output/program.c:104: Warning:
 INFO:FRAMAC:  signed overflow. assert tmp___1 + 12288 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:105: Warning: 
 INFO:FRAMAC:  signed overflow. assert tmp___2 + 16384 ≤ 2147483647;
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:671: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:671: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva:alarm] output/program.c:366: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ tmp___6 * 8;
@@ -460,12 +459,11 @@ INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 467
 INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 46800 states
 INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 46900 states
 INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47000 states
-INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47100 states
 INFO:FRAMAC:[eva] output/program.c:113: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47100 states
 INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47200 states
 INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47300 states
 INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47400 states
-INFO:FRAMAC:[eva] output/program.c:617: Trace partitioning superposing up to 47500 states
 INFO:FRAMAC:[eva:alarm] output/program.c:682: Warning: 
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva:alarm] output/program.c:606: Warning: 

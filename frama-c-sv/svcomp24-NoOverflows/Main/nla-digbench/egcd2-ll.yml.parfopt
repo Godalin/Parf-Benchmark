@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 8 -eva-subdivide-non-linear 11 -eva-split-return auto -eva-slevel 42 -eva-remove-redundant-alarms -eva-plevel 137 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 64 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 42 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 6 -eva-split-return auto -eva-slevel 41 -eva-remove-redundant-alarms -eva-plevel 92 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 1 -eva-ilevel 39 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 26 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -185,7 +185,6 @@ INFO:FRAMAC:[eva:alarm] output/program.c:47: Warning:
 INFO:FRAMAC:  signed overflow. assert (long long)x * p ≤ 9223372036854775807;
 INFO:FRAMAC:[eva] output/program.c:45: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:39: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:45: Trace partitioning superposing up to 200 states
 INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 
 INFO:FRAMAC:  signed overflow. assert -9223372036854775808 ≤ q * (long long)x;
 INFO:FRAMAC:[eva:alarm] output/program.c:69: Warning: 

@@ -8,51 +8,12 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 0 -eva-split-return auto -eva-slevel 5 -eva-plevel 31 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls formals -eva-domains cvalue,equality,symbolic-locations -eva-auto-loop-unroll 10 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 1 -eva-slevel 18 -eva-remove-redundant-alarms -eva-plevel 31 -eva-partition-history 1 -eva-min-loop-unroll 0 -eva-ilevel 16 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 13 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:no-proto] output/program.c:37: Warning: 
 INFO:FRAMAC:  Calling function __VERIFIER_nondet_int that is declared without prototype.
 INFO:FRAMAC:  Its formals will be inferred from actual arguments
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
-INFO:FRAMAC:[eva] Splitting return states on:
-INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
-INFO:FRAMAC:  \return(seed48) == 0 (auto)
-INFO:FRAMAC:  \return(calloc) == 0 (auto)
-INFO:FRAMAC:  \return(malloc) == 0 (auto)
-INFO:FRAMAC:  \return(realloc) == 0 (auto)
-INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
-INFO:FRAMAC:  \return(getenv) == 0 (auto)
-INFO:FRAMAC:  \return(bsearch) == 0 (auto)
-INFO:FRAMAC:  \return(alloca) == 0 (auto)
-INFO:FRAMAC:  \return(memchr) == 0 (auto)
-INFO:FRAMAC:  \return(memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
-INFO:FRAMAC:  \return(memmove) == 0 (auto)
-INFO:FRAMAC:  \return(memset) == 0 (auto)
-INFO:FRAMAC:  \return(strchr) == 0 (auto)
-INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
-INFO:FRAMAC:  \return(strrchr) == 0 (auto)
-INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
-INFO:FRAMAC:  \return(strstr) == 0 (auto)
-INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
-INFO:FRAMAC:  \return(strtok) == 0 (auto)
-INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
-INFO:FRAMAC:  \return(strsep) == 0 (auto)
-INFO:FRAMAC:  \return(strerror) == 0 (auto)
-INFO:FRAMAC:  \return(strcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strncpy) == 0 (auto)
-INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strcat) == 0 (auto)
-INFO:FRAMAC:  \return(strncat) == 0 (auto)
-INFO:FRAMAC:  \return(strdup) == 0 (auto)
-INFO:FRAMAC:  \return(strndup) == 0 (auto)
-INFO:FRAMAC:  \return(strsignal) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  m_init ∈ {1}
@@ -65,7 +26,6 @@ INFO:FRAMAC:  m_dataReceived ∈ {7}
 INFO:FRAMAC:  m_connect_1 ∈ {8}
 INFO:FRAMAC:  m_connect_2 ∈ {9}
 INFO:FRAMAC:[eva] using specification for function Frama_C_interval
-INFO:FRAMAC:[eva] harness.c:20: cannot properly split on \result == 0
 INFO:FRAMAC:[eva:alarm] output/program.c:445: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:445: Warning: 
@@ -97,9 +57,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:525: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:525: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:525: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
@@ -107,9 +67,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:541: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:557: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:557: Warning: 
@@ -117,9 +77,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:557: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:557: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:557: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
@@ -127,9 +87,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:573: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
@@ -137,9 +97,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:589: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
@@ -147,9 +107,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:605: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:621: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:621: Warning: 
@@ -157,9 +117,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:621: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:621: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:621: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
@@ -167,9 +127,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:637: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:653: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:653: Warning: 
@@ -177,9 +137,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:653: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:653: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:653: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:669: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:669: Warning: 
@@ -187,9 +147,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:669: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:669: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:669: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:669: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:685: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:685: Warning: 
@@ -197,9 +157,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:685: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:685: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:685: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
@@ -207,9 +167,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:701: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:717: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:717: Warning: 
@@ -217,9 +177,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:717: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:717: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:717: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:733: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:733: Warning: 
@@ -227,9 +187,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:733: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:733: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:733: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:733: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:749: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:749: Warning: 
@@ -237,9 +197,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:749: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:749: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:749: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:765: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:765: Warning: 
@@ -247,9 +207,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:765: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:765: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:765: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:781: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:781: Warning: 
@@ -257,9 +217,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:781: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:781: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:781: Warning: 
-INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:797: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:797: Warning: 
@@ -267,9 +227,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:797: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:797: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:797: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:797: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
@@ -277,9 +237,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:813: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:829: Warning: 
@@ -289,10 +249,10 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:829: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:829: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:829: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:829: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:829: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
@@ -301,10 +261,10 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
+INFO:FRAMAC:[eva:alarm] output/program.c:845: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:861: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
@@ -313,9 +273,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:861: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:861: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:861: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:861: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:861: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:877: Warning: 
@@ -325,9 +285,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:877: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:877: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:877: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:877: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:877: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:893: Warning: 
@@ -337,9 +297,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:893: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:893: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:893: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:893: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:893: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:909: Warning: 
@@ -349,9 +309,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:909: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:909: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:909: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:909: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:909: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:925: Warning: 
@@ -361,9 +321,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:925: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:925: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:925: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:925: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:925: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:941: Warning: 
@@ -373,9 +333,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:941: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:941: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:941: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:941: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:941: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:957: Warning: 
@@ -385,9 +345,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:957: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:957: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:957: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:957: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:957: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:973: Warning: 
@@ -397,9 +357,9 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:973: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:973: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:973: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:973: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:973: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:989: Warning: 
@@ -409,18 +369,20 @@ INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:989: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:989: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:989: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:989: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:989: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva] output/program.c:34: starting to merge loop iterations
-INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva:alarm] output/program.c:253: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
+INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 400 states
+INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 600 states
+INFO:FRAMAC:[eva] output/program.c:34: Trace partitioning superposing up to 700 states
 INFO:FRAMAC:[eva:alarm] output/program.c:253: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:253: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P3 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:253: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:253: Warning: 
@@ -436,9 +398,9 @@ INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P3) - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:1173: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P3 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:1173: Warning: 
-INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
-INFO:FRAMAC:[eva:alarm] output/program.c:1173: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ (int)(-P2) - 50;
+INFO:FRAMAC:[eva:alarm] output/program.c:1173: Warning: 
+INFO:FRAMAC:  signed overflow. assert -P2 ≤ 2147483647;
 INFO:FRAMAC:[eva:alarm] output/program.c:1173: Warning: 
 INFO:FRAMAC:  signed overflow. assert -2147483648 ≤ P2 - 50;
 INFO:FRAMAC:[eva:alarm] output/program.c:1256: Warning: 
@@ -462,7 +424,7 @@ INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:[eva:summary] ====== ANALYSIS SUMMARY ======
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  3 functions analyzed (out of 18): 16% coverage.
-INFO:FRAMAC:  In these functions, 9928 statements reached (out of 12929): 76% coverage.
+INFO:FRAMAC:  In these functions, 9884 statements reached (out of 12929): 76% coverage.
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings

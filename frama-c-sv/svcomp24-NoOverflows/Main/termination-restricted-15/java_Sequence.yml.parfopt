@@ -8,52 +8,12 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 3 -eva-subdivide-non-linear 10 -eva-split-return auto -eva-slevel 59 -eva-remove-redundant-alarms -eva-plevel 85 -eva-partition-history 1 -eva-min-loop-unroll 2 -eva-ilevel 39 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 36 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 10 -eva-plevel 30 -eva-partition-history 1 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 17 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,symbolic-locations -eva-auto-loop-unroll 11 -machdep x86_64 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
-INFO:FRAMAC:[eva] Splitting return states on:
-INFO:FRAMAC:  \return(__VERIFIER_nondet_int) == 0 (auto)
-INFO:FRAMAC:  \return(seed48) == 0 (auto)
-INFO:FRAMAC:  \return(calloc) == 0 (auto)
-INFO:FRAMAC:  \return(malloc) == 0 (auto)
-INFO:FRAMAC:  \return(realloc) == 0 (auto)
-INFO:FRAMAC:  \return(reallocarray) == 0 (auto)
-INFO:FRAMAC:  \return(getenv) == 0 (auto)
-INFO:FRAMAC:  \return(bsearch) == 0 (auto)
-INFO:FRAMAC:  \return(alloca) == 0 (auto)
-INFO:FRAMAC:  \return(memchr) == 0 (auto)
-INFO:FRAMAC:  \return(memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(mempcpy) == 0 (auto)
-INFO:FRAMAC:  \return(memmove) == 0 (auto)
-INFO:FRAMAC:  \return(memset) == 0 (auto)
-INFO:FRAMAC:  \return(strchr) == 0 (auto)
-INFO:FRAMAC:  \return(strchrnul) == 0 (auto)
-INFO:FRAMAC:  \return(strrchr) == 0 (auto)
-INFO:FRAMAC:  \return(strpbrk) == 0 (auto)
-INFO:FRAMAC:  \return(strstr) == 0 (auto)
-INFO:FRAMAC:  \return(strcasestr) == 0 (auto)
-INFO:FRAMAC:  \return(strtok) == 0 (auto)
-INFO:FRAMAC:  \return(strtok_r) == 0 (auto)
-INFO:FRAMAC:  \return(strsep) == 0 (auto)
-INFO:FRAMAC:  \return(strerror) == 0 (auto)
-INFO:FRAMAC:  \return(strcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strncpy) == 0 (auto)
-INFO:FRAMAC:  \return(stpcpy) == 0 (auto)
-INFO:FRAMAC:  \return(strcat) == 0 (auto)
-INFO:FRAMAC:  \return(strncat) == 0 (auto)
-INFO:FRAMAC:  \return(strdup) == 0 (auto)
-INFO:FRAMAC:  \return(strndup) == 0 (auto)
-INFO:FRAMAC:  \return(strsignal) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_nondet_ptr) == 0 (auto)
-INFO:FRAMAC:  \return(Frama_C_malloc_fresh) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_alloca) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memcpy) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memset) == 0 (auto)
-INFO:FRAMAC:  \return(__builtin_memmove) == 0 (auto)
 INFO:FRAMAC:[eva] Analyzing a complete application starting at main
 INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:12: loop not completely unrolled
 INFO:FRAMAC:[eva] output/program.c:10: starting to merge loop iterations
 INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:15: Automatic loop unrolling.
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======

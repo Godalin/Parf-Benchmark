@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 18 -eva-subdivide-non-linear 34 -eva-split-return auto -eva-slevel 254 -eva-remove-redundant-alarms -eva-plevel 445 -eva-partition-history 3 -eva-octagon-through-calls -eva-min-loop-unroll 9 -eva-ilevel 214 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 145 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 21 -eva-subdivide-non-linear 58 -eva-split-return auto -eva-slevel 548 -eva-remove-redundant-alarms -eva-plevel 2520 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 473 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges,octagon,symbolic-locations -eva-auto-loop-unroll 465 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel] Parsing harness.c (with preprocessing)
 INFO:FRAMAC:[eva] Splitting return states on:
@@ -76,9 +76,15 @@ INFO:FRAMAC:[eva:alarm] output/program.c:14: Warning:
 INFO:FRAMAC:  function reach_error: precondition 'unreach' got status invalid.
 INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 100 states
 INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 200 states
-INFO:FRAMAC:[eva:loop-unroll:partial] output/program.c:37: loop not completely unrolled
-INFO:FRAMAC:[eva] output/program.c:33: starting to merge loop iterations
 INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 300 states
+INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 500 states
+INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
+INFO:FRAMAC:[eva] output/program.c:33: starting to merge loop iterations
+INFO:FRAMAC:[eva] output/program.c:33: Trace partitioning superposing up to 600 states
 INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert -9223372036854775808 ≤ 4 * (long long)((long long)A + r);
@@ -89,11 +95,6 @@ INFO:FRAMAC:  signed overflow. assert v * v ≤ 9223372036854775807;
 INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
 INFO:FRAMAC:  signed overflow.
 INFO:FRAMAC:  assert -9223372036854775808 ≤ (long long)(u * u) - (long long)(v * v);
-INFO:FRAMAC:[eva:alarm] output/program.c:34: Warning: 
-INFO:FRAMAC:  signed overflow.
-INFO:FRAMAC:  assert
-INFO:FRAMAC:  -9223372036854775808 ≤
-INFO:FRAMAC:  (long long)((long long)(u * u) - (long long)(v * v)) - (long long)(2 * u);
 INFO:FRAMAC:[eva] output/program.c:47: 
 INFO:FRAMAC:  The evaluation of the expression (long long)4 * (long long)A == ((u * u - 
 INFO:FRAMAC:                                                                    v * v) - 
@@ -111,7 +112,7 @@ INFO:FRAMAC:
 INFO:FRAMAC:[eva:final-states] Values at end of function main:
 INFO:FRAMAC:  A ∈ [1..2147483647],1%2
 INFO:FRAMAC:  R ∈ [--..--]
-INFO:FRAMAC:  u ∈ [-3037000501..3037000703],1%2
+INFO:FRAMAC:  u ∈ [-3037000497..3037000499],1%2
 INFO:FRAMAC:  v ∈ [1..3037000499],1%2
 INFO:FRAMAC:  r ∈ {0}
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]

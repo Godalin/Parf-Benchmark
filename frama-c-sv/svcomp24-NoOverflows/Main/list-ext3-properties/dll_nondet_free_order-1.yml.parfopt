@@ -8,7 +8,7 @@ Prover Alt-Ergo (alternative: FPA) version 2.6.0 is not recognized.
   Known versions for this prover: ^2\.4\.[0-3]$.
 4 prover(s) added (including 4 prover(s) with an unrecognized version)
 Save config to /home/parf-chinasoft/.why3.conf
-frama-c -eva -rte -eva-widening-delay 1 -eva-subdivide-non-linear 0 -eva-slevel 0 -eva-plevel 10 -eva-partition-history 0 -eva-min-loop-unroll 0 -eva-ilevel 8 -eva-equality-through-calls none -eva-domains cvalue -eva-auto-loop-unroll 0 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
+frama-c -eva -rte -eva-widening-delay 2 -eva-subdivide-non-linear 4 -eva-slevel 8 -eva-plevel 25 -eva-partition-history 0 -eva-octagon-through-calls -eva-min-loop-unroll 0 -eva-ilevel 19 -eva-equality-through-calls formals -eva-domains cvalue,equality,gauges -eva-auto-loop-unroll 5 -machdep x86_32 /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/program.c /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/harness.c -kernel-warn-key CERT:MSC:38=inactive -then -report-csv /home/parf-chinasoft/Parf-Benchmark/frama-c-sv/output/report.csv
 INFO:FRAMAC:[kernel] Parsing output/program.c (with preprocessing)
 INFO:FRAMAC:[kernel:typing:implicit-function-declaration] output/program.c:66: Warning: 
 INFO:FRAMAC:  __builtin_bswap32 is a compiler builtin, only allowed for GCC-based machdeps; see option -machdep or run 'frama-c -machdep help' for the list of available machdeps
@@ -23,9 +23,9 @@ INFO:FRAMAC:[eva:initial-state] Values of globals at initialization
 INFO:FRAMAC:  
 INFO:FRAMAC:[eva] output/program.c:564: 
 INFO:FRAMAC:  allocating variable __malloc_dll_circular_create_l564
+INFO:FRAMAC:[eva:loop-unroll:auto] output/program.c:571: Automatic loop unrolling.
 INFO:FRAMAC:[eva] output/program.c:572: 
 INFO:FRAMAC:  allocating variable __malloc_dll_circular_create_l572
-INFO:FRAMAC:[eva] output/program.c:571: starting to merge loop iterations
 INFO:FRAMAC:[eva:alarm] output/program.c:586: Warning: 
 INFO:FRAMAC:  accessing uninitialized left-value. assert \initialized(&head->prev);
 INFO:FRAMAC:[eva:alarm] output/program.c:587: Warning: 
@@ -43,50 +43,33 @@ INFO:FRAMAC:  assert ¬\dangling(&pred);
 INFO:FRAMAC:[eva:alarm] output/program.c:595: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&succ);
-INFO:FRAMAC:[eva:alarm] output/program.c:600: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&head);
 INFO:FRAMAC:[eva:alarm] output/program.c:601: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&pred);
 INFO:FRAMAC:[eva:alarm] output/program.c:603: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&pred);
-INFO:FRAMAC:[eva:alarm] output/program.c:604: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&head);
-INFO:FRAMAC:[eva:alarm] output/program.c:609: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&head);
 INFO:FRAMAC:[eva:alarm] output/program.c:610: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&succ);
 INFO:FRAMAC:[eva:alarm] output/program.c:612: Warning: 
 INFO:FRAMAC:  accessing left-value that contains escaping addresses.
 INFO:FRAMAC:  assert ¬\dangling(&succ);
-INFO:FRAMAC:[eva:alarm] output/program.c:613: Warning: 
-INFO:FRAMAC:  accessing left-value that contains escaping addresses.
-INFO:FRAMAC:  assert ¬\dangling(&head);
 INFO:FRAMAC:[eva] ====== VALUES COMPUTED ======
 INFO:FRAMAC:[eva:final-states] Values at end of function __VERIFIER_nondet_int:
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:[eva:final-states] Values at end of function _destroy_in_nondeterministic_order:
-INFO:FRAMAC:  head ∈
-INFO:FRAMAC:      {{ &__malloc_dll_circular_create_l564 ;
-INFO:FRAMAC:         &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
+INFO:FRAMAC:  head ∈ {{ &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
 INFO:FRAMAC:  pred ∈
 INFO:FRAMAC:      {{ &__malloc_dll_circular_create_l564 ;
 INFO:FRAMAC:         &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
 INFO:FRAMAC:  succ ∈
 INFO:FRAMAC:      {{ &__malloc_dll_circular_create_l564 ;
 INFO:FRAMAC:         &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
-INFO:FRAMAC:  head ∈
-INFO:FRAMAC:      {{ &__malloc_dll_circular_create_l564 ;
-INFO:FRAMAC:         &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
+INFO:FRAMAC:  head ∈ {{ &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __malloc_dll_circular_create_l564{.next; .prev} ∈
-INFO:FRAMAC:                                   {{ &__malloc_dll_circular_create_l564 ;
-INFO:FRAMAC:                                      &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
+INFO:FRAMAC:                                   {{ &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
 INFO:FRAMAC:  __malloc_w_dll_circular_create_l572{.next; .prev} ∈
 INFO:FRAMAC:                                     {{ &__malloc_dll_circular_create_l564 ;
 INFO:FRAMAC:                                        &__malloc_w_dll_circular_create_l572 }} or UNINITIALIZED or ESCAPINGADDR
@@ -95,13 +78,10 @@ INFO:FRAMAC:  NON TERMINATING FUNCTION
 INFO:FRAMAC:[eva:final-states] Values at end of function dll_circular_create:
 INFO:FRAMAC:  len ∈ {1}
 INFO:FRAMAC:  last ∈ {{ &__malloc_dll_circular_create_l564 }}
-INFO:FRAMAC:  head ∈
-INFO:FRAMAC:      {{ &__malloc_dll_circular_create_l564 ;
-INFO:FRAMAC:         &__malloc_w_dll_circular_create_l572 }}
+INFO:FRAMAC:  head ∈ {{ &__malloc_w_dll_circular_create_l572 }}
 INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  __malloc_dll_circular_create_l564{.next; .prev} ∈
-INFO:FRAMAC:                                   {{ &__malloc_dll_circular_create_l564 ;
-INFO:FRAMAC:                                      &__malloc_w_dll_circular_create_l572 }}
+INFO:FRAMAC:                                   {{ &__malloc_w_dll_circular_create_l572 }}
 INFO:FRAMAC:  __malloc_w_dll_circular_create_l572{.next; .prev} ∈
 INFO:FRAMAC:                                     {{ &__malloc_dll_circular_create_l564 ;
 INFO:FRAMAC:                                        &__malloc_w_dll_circular_create_l572 }} or UNINITIALIZED
@@ -112,8 +92,7 @@ INFO:FRAMAC:  __fc_heap_status ∈ [--..--]
 INFO:FRAMAC:  Frama_C_entropy_source ∈ [--..--]
 INFO:FRAMAC:  __retres ∈ {0}
 INFO:FRAMAC:  __malloc_dll_circular_create_l564{.next; .prev} ∈
-INFO:FRAMAC:                                   {{ &__malloc_dll_circular_create_l564 ;
-INFO:FRAMAC:                                      &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
+INFO:FRAMAC:                                   {{ &__malloc_w_dll_circular_create_l572 }} or ESCAPINGADDR
 INFO:FRAMAC:  __malloc_w_dll_circular_create_l572{.next; .prev} ∈
 INFO:FRAMAC:                                     {{ &__malloc_dll_circular_create_l564 ;
 INFO:FRAMAC:                                        &__malloc_w_dll_circular_create_l572 }} or UNINITIALIZED or ESCAPINGADDR
@@ -126,8 +105,8 @@ INFO:FRAMAC:  Some errors and warnings have been raised during the analysis:
 INFO:FRAMAC:    by the Eva analyzer:      0 errors    0 warnings
 INFO:FRAMAC:    by the Frama-C kernel:    0 errors    3 warnings
 INFO:FRAMAC:  ----------------------------------------------------------------------------
-INFO:FRAMAC:  14 alarms generated by the analysis:
-INFO:FRAMAC:      12 escaping addresses
+INFO:FRAMAC:  10 alarms generated by the analysis:
+INFO:FRAMAC:       8 escaping addresses
 INFO:FRAMAC:       2 accesses to uninitialized left-values
 INFO:FRAMAC:  ----------------------------------------------------------------------------
 INFO:FRAMAC:  Evaluation of the logical properties reached by the analysis:
