@@ -25,10 +25,10 @@ def scoring(task_file):
                     score += 1
                     f_correct += 1
                 elif answer == 'false' and result == 'true':
-                    score -= 16
+                    score -= 32
                     t_incorrect += 1
                 elif answer == 'true' and result == 'false':
-                    score -= 32
+                    score -= 16
                     f_incorrect += 1
                 else:
                     print(f"Error: Task file {filename} cantains illegal result.")

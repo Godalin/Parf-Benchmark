@@ -19,7 +19,7 @@ def check_analysis_file(filename):
     return result
 
 
-def process_task_file(task_file, output_file):
+def process_task_file(target, task_file, output_file):
     """
     处理目标文件并生成输出文件。
     :param task_file: 目标文件路径
@@ -33,8 +33,12 @@ def process_task_file(task_file, output_file):
                     continue
                 # 解析目标文件的每一行
                 filename, _, _, verdict = line.split()
-                # analysis_file = f"{filename}.framac"
-                analysis_file = f"{filename}.parfopt"
+                if target == 'framac':
+                    analysis_file = f"{filename}.framac"
+                elif target == 'parf':
+                    analysis_file = f"{filename}.parfopt"
+                else:
+                    analysis_file = "no_file"
                 # 检查分析文件并获取结果
                 result = check_analysis_file(analysis_file)
                 # 写入输出文件
@@ -47,11 +51,12 @@ def process_task_file(task_file, output_file):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python collect_answer.py <task-file> <output-file>")
+    if len(sys.argv) != 4 or (sys.argv[1] != "framac" and sys.argv[1] != "parf"):
+        print("Usage: python collect_answer.py <framac/parf> <task-file> <output-file>")
         sys.exit(1)
 
-    task_file = sys.argv[1]
-    output_file = sys.argv[2]
+    target = sys.argv[1]
+    task_file = sys.argv[2]
+    output_file = sys.argv[3]
 
-    process_task_file(task_file, output_file)
+    process_task_file(target, task_file, output_file)

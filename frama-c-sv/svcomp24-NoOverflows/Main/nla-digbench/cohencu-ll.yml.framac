@@ -167,3 +167,32 @@ INFO:FRAMAC:  assert
 INFO:FRAMAC:  (long long)((long long)((long long)((int)(6 * (int)a)) * x) -
 INFO:FRAMAC:              (long long)(x * z))
 INFO:FRAMAC:  + (long long)(12 * x) ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
+INFO:FRAMAC:  signed overflow. assert 18 * x ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
+INFO:FRAMAC:  signed overflow. assert (long long)(2 * y) * y ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
+INFO:FRAMAC:  signed overflow. assert (long long)(3 * x) * z ≤ 9223372036854775807;
+INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)((long long)(2 * y) * y) -
+INFO:FRAMAC:              (long long)((long long)(3 * x) * z))
+INFO:FRAMAC:  - (long long)(18 * x);
+INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  -9223372036854775808 ≤
+INFO:FRAMAC:  (long long)((long long)((long long)((long long)(2 * y) * y) -
+INFO:FRAMAC:                          (long long)((long long)(3 * x) * z))
+INFO:FRAMAC:              - (long long)(18 * x))
+INFO:FRAMAC:  - (long long)(10 * y);
+INFO:FRAMAC:[eva:alarm] output/program.c:50: Warning: 
+INFO:FRAMAC:  signed overflow.
+INFO:FRAMAC:  assert
+INFO:FRAMAC:  (long long)((long long)((long long)((long long)((long long)(2 * y) * y) -
+INFO:FRAMAC:                                      (long long)((long long)(3 * x) * z))
+INFO:FRAMAC:                          - (long long)(18 * x))
+INFO:FRAMAC:              - (long long)(10 * y))
+INFO:FRAMAC:  + (long long)(3 * z) ≤ 9223372036854775807;
